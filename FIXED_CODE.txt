@@ -1,0 +1,53 @@
+import json
+
+def main(detail_body, excel_sku_name):
+    # 1. 解析输入
+    if isinstance(excel_sku_name, list) and len(excel_sku_name) > 0: excel_sku_name = excel_sku_name[0]
+    if isinstance(excel_sku_name, dict): excel_sku_name = excel_sku_name.get("sku_id", "")
+    input_val = str(excel_sku_name or "").strip().upper()
+    
+    # 2. 解析 JSON
+    try:
+        if isinstance(detail_body, str): db = json.loads(detail_body)
+        elif isinstance(detail_body, list) and len(detail_body) > 0: db = detail_body[0]
+        else: db = detail_body
+    except: return {"final_sku_id": 0, "final_spec_id": "", "product_index_uuid": "", "status": "JSON_ERROR"}
+    
+    if not isinstance(db, dict): db = {}
+    
+    # 3. 提取基础信息 (加入防御式提取，防止 API 返回 "data": [])
+    db_data = db.get("data")
+    if not isinstance(db_data, dict): db_data = {}
+    
+    inner = db_data.get("data")
+    if not isinstance(inner, dict): inner = {}
+    
+    uuid = str(inner.get("product_index_uuid", ""))
+    sku_list = inner.get("productSkuInfos")
+    if not isinstance(sku_list, list): sku_list = []
+    
+    if not sku_list: return {"final_sku_id": 0, "final_spec_id": "", "product_index_uuid": uuid, "status": "EMPTY_OR_OFFSHELF"}
+    
+    # 4. 匹配 SKU
+    target_sku = sku_list[0]
+    for s in sku_list:
+        spec_id = str(s.get("specId", "")).upper()
+        sku_id = str(s.get("skuId", ""))
+        if sku_id == input_val or spec_id == input_val:
+            target_sku = s
+            break
+            
+    # 如果 ID 没匹配上，匹配属性名
+    if target_sku == sku_list[0]:
+        for s in sku_list:
+            attrs = " ".join([str(a.get("value", "")) for a in s.get("skuAttributes", [])]).upper()
+            if input_val in attrs or attrs in input_val:
+                target_sku = s
+                break
+        
+    return {
+        "final_sku_id": int(target_sku.get("skuId") or 0),
+        "final_spec_id": str(target_sku.get("specId") or ""),
+        "product_index_uuid": uuid,
+        "status": "SUCCESS"
+    }

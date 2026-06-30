@@ -1,0 +1,379 @@
+- generic [ref=e4]:
+  - button [ref=e9] [cursor=pointer]:
+    - img [ref=e10]
+  - generic [ref=e14]:
+    - list [ref=e17]:
+      - listitem [ref=e18]:
+        - link "app" [ref=e20] [cursor=pointer]:
+          - /url: http://127.0.0.1:8501/app
+          - generic [ref=e21]: app
+      - listitem [ref=e22]:
+        - link "测试执行" [ref=e24] [cursor=pointer]:
+          - /url: http://127.0.0.1:8501/测试执行
+          - generic [ref=e26]: 🧪
+          - generic [ref=e27]: 测试执行
+      - listitem [ref=e28]:
+        - link "sku verify" [ref=e30] [cursor=pointer]:
+          - /url: http://127.0.0.1:8501/sku_verify
+          - generic [ref=e31]: sku verify
+      - listitem [ref=e32]:
+        - link "性能压测" [ref=e34] [cursor=pointer]:
+          - /url: http://127.0.0.1:8501/性能压测
+          - generic [ref=e35]: 性能压测
+    - generic [ref=e41]:
+      - heading " 测试工作台" [level=3] [ref=e45]:
+        - generic [ref=e46]: 
+        - text: 测试工作台
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - generic [ref=e51]: 
+          - text: 全局视图
+        - link "筛选用例总数用例" [ref=e52] [cursor=pointer]:
+          - /url: /测试执行?status=All&tc=614
+          - generic [ref=e53]:
+            - generic [ref=e54]:
+              - text: 
+              - generic [ref=e55]: 
+            - generic [ref=e56]:
+              - generic [ref=e57]: "619"
+              - generic [ref=e58]: 用例总数
+        - link "筛选已通过用例" [ref=e59] [cursor=pointer]:
+          - /url: /测试执行?status=Pass&tc=831
+          - generic [ref=e60]:
+            - generic [ref=e61]:
+              - text: 
+              - generic [ref=e62]: 
+            - generic [ref=e63]:
+              - generic [ref=e64]: "469"
+              - generic [ref=e65]: 已通过
+        - link "筛选已失败用例":
+          - /url: /测试执行?status=Fail&tc=614
+          - generic:
+            - generic:
+              - text: 
+              - generic: 
+            - generic:
+              - generic: "0"
+              - generic: 已失败
+        - link "筛选未执行用例" [ref=e66] [cursor=pointer]:
+          - /url: /测试执行?status=Untested&tc=614
+          - generic [ref=e67]:
+            - generic [ref=e68]:
+              - text: 
+              - generic [ref=e69]: 
+            - generic [ref=e70]:
+              - generic [ref=e71]: "89"
+              - generic [ref=e72]: 未执行
+        - link "筛选阻塞用例" [ref=e73] [cursor=pointer]:
+          - /url: /测试执行?status=Blocked&tc=1287
+          - generic [ref=e74]:
+            - generic [ref=e75]:
+              - text: 
+              - generic [ref=e76]: 
+            - generic [ref=e77]:
+              - generic [ref=e78]: "61"
+              - generic [ref=e79]: 阻塞
+        - generic [ref=e80]:
+          - generic [ref=e81]:
+            - generic [ref=e82]: 整体进度
+            - generic [ref=e83]: 85.6%
+          - 'generic "通过: 469, 失败: 0, 未执行: 89, 阻塞: 61" [ref=e494]'
+      - generic [ref=e87]:
+        - button "⏳ 未执行 (89)" [ref=e497] [cursor=pointer]:
+          - paragraph [ref=e499]: ⏳ 未执行 (89)
+        - button "🚫 阻塞 (61)" [ref=e103] [cursor=pointer]:
+          - paragraph [ref=e105]: 🚫 阻塞 (61)
+      - separator [ref=e109]
+      - heading "⚙️ 操作" [level=3] [ref=e113]
+      - button "📥 导出全局报告" [ref=e532] [cursor=pointer]:
+        - paragraph [ref=e534]: 📥 导出全局报告
+      - button "🗑️ 重置所有结果" [ref=e124] [cursor=pointer]:
+        - paragraph [ref=e126]: 🗑️ 重置所有结果
+  - generic [ref=e131]:
+    - button "⬅️ 返回项目首页" [ref=e134] [cursor=pointer]:
+      - paragraph [ref=e136]: ⬅️ 返回项目首页
+    - generic [ref=e137]:
+      - generic [ref=e141]:
+        - generic [ref=e145]:
+          - generic [ref=e146]: 
+          - text: 用例结构
+          - generic [ref=e147]: 619 条
+        - iframe [active] [ref=e149]:
+          - generic [active] [ref=f1e1]:
+            - generic [ref=f1e2]:
+              - generic: 
+              - textbox "搜索用例 ID 或标题…" [ref=f1e3]: TC-SRCH-008
+            - generic [ref=f1e4]:
+              - generic [ref=f1e2729] [cursor=pointer]:
+                - generic [ref=f1e2730]: 
+                - generic [ref=f1e2731]: 
+                - generic [ref=f1e2732]: 未分类
+              - generic [ref=f1e2735]:
+                - generic [ref=f1e2736] [cursor=pointer]:
+                  - generic [ref=f1e2737]: 
+                  - generic [ref=f1e2738]: 
+                  - generic [ref=f1e2739]: 模块 [BW]
+                - text:                              
+                - generic [ref=f1e2740] [cursor=pointer]:
+                  - generic [ref=f1e2741]: 
+                  - generic [ref=f1e2742]: 
+                  - generic [ref=f1e2743]: 模块 [MV]
+                - text:                                         
+                - generic [ref=f1e2744] [cursor=pointer]:
+                  - generic [ref=f1e2745]: 
+                  - generic [ref=f1e2746]: 
+                  - generic [ref=f1e2747]: 模块 [FT]
+                - text:                         
+                - generic [ref=f1e2748] [cursor=pointer]:
+                  - generic [ref=f1e2749]: 
+                  - generic [ref=f1e2750]: 
+                  - generic [ref=f1e2751]: 模块 [BI]
+                - text:                                                                                   
+                - generic [ref=f1e2752] [cursor=pointer]:
+                  - generic [ref=f1e2753]: 
+                  - generic [ref=f1e2754]: 
+                  - generic [ref=f1e2755]: 模块 [OD]
+                - text:                                                                     
+                - generic [ref=f1e2756] [cursor=pointer]:
+                  - generic [ref=f1e2757]: 
+                  - generic [ref=f1e2758]: 
+                  - generic [ref=f1e2759]: 模块 [BUB]
+                - text:            
+                - generic [ref=f1e2760] [cursor=pointer]:
+                  - generic [ref=f1e2761]: 
+                  - generic [ref=f1e2762]: 
+                  - generic [ref=f1e2763]: 模块 [AUTH]
+                - text:           
+                - generic [ref=f1e2764] [cursor=pointer]:
+                  - generic [ref=f1e2765]: 
+                  - generic [ref=f1e2766]: 
+                  - generic [ref=f1e2767]: 模块 [SRCH]
+                - generic [ref=f1e2768]:
+                  - generic [ref=f1e2769] [cursor=pointer]:
+                    - generic [ref=f1e2770]: 
+                    - generic [ref=f1e2771]: 
+                    - generic [ref=f1e2772]: 2.1 日文搜索
+                  - text:     
+                  - generic [ref=f1e2773] [cursor=pointer]:
+                    - generic [ref=f1e2774]: 
+                    - generic [ref=f1e2775]: 
+                    - generic [ref=f1e2776]: 2.2 筛选排序
+                  - generic [ref=f1e2777]:
+                    - text:  
+                    - generic [ref=f1e2778] [cursor=pointer]:
+                      - generic [ref=f1e2779]: 
+                      - generic [ref=f1e2780]:
+                        - generic [ref=f1e2781]: TC-SRCH-008
+                        - generic [ref=f1e2782]: "[TC-SRCH-008] 【异常】未知筛选字段返回 400"
+                    - text: 
+                  - generic [ref=f1e2784] [cursor=pointer]:
+                    - generic [ref=f1e2785]: 
+                    - generic [ref=f1e2786]: 
+                    - generic [ref=f1e2787]: 2.3 详情补充与缓存
+                  - text:   
+                - generic [ref=f1e2788] [cursor=pointer]:
+                  - generic [ref=f1e2789]: 
+                  - generic [ref=f1e2790]: 
+                  - generic [ref=f1e2791]: 模块 [CM]
+                - text:         
+                - generic [ref=f1e2792] [cursor=pointer]:
+                  - generic [ref=f1e2793]: 
+                  - generic [ref=f1e2794]: 
+                  - generic [ref=f1e2795]: 模块 [ST]
+                - text:        
+                - generic [ref=f1e2796] [cursor=pointer]:
+                  - generic [ref=f1e2797]: 
+                  - generic [ref=f1e2798]: 
+                  - generic [ref=f1e2799]: 模块 [ORD]
+                - text:          
+                - generic [ref=f1e2800] [cursor=pointer]:
+                  - generic [ref=f1e2801]: 
+                  - generic [ref=f1e2802]: 
+                  - generic [ref=f1e2803]: 模块 [AC]
+                - text:            
+                - generic [ref=f1e2804] [cursor=pointer]:
+                  - generic [ref=f1e2805]: 
+                  - generic [ref=f1e2806]: 
+                  - generic [ref=f1e2807]: 模块 [DT]
+                - text:              
+                - generic [ref=f1e2808] [cursor=pointer]:
+                  - generic [ref=f1e2809]: 
+                  - generic [ref=f1e2810]: 
+                  - generic [ref=f1e2811]: 模块 [DET]
+                - text:         
+                - generic [ref=f1e2812] [cursor=pointer]:
+                  - generic [ref=f1e2813]: 
+                  - generic [ref=f1e2814]: 
+                  - generic [ref=f1e2815]: 模块 [AD]
+                - text:              
+                - generic [ref=f1e2816] [cursor=pointer]:
+                  - generic [ref=f1e2817]: 
+                  - generic [ref=f1e2818]: 
+                  - generic [ref=f1e2819]: 模块 [SHIP]
+                - text:       
+                - generic [ref=f1e2820] [cursor=pointer]:
+                  - generic [ref=f1e2821]: 
+                  - generic [ref=f1e2822]: 
+                  - generic [ref=f1e2823]: 模块 [STAT]
+                - text:             
+                - generic [ref=f1e2824] [cursor=pointer]:
+                  - generic [ref=f1e2825]: 
+                  - generic [ref=f1e2826]: 
+                  - generic [ref=f1e2827]: 模块 [MI]
+                - text:            
+                - generic [ref=f1e2828] [cursor=pointer]:
+                  - generic [ref=f1e2829]: 
+                  - generic [ref=f1e2830]: 
+                  - generic [ref=f1e2831]: 模块 [PV]
+                - text:        
+                - generic [ref=f1e2832] [cursor=pointer]:
+                  - generic [ref=f1e2833]: 
+                  - generic [ref=f1e2834]: 
+                  - generic [ref=f1e2835]: 模块 [INT]
+                - text:     
+                - generic [ref=f1e2836] [cursor=pointer]:
+                  - generic [ref=f1e2837]: 
+                  - generic [ref=f1e2838]: 
+                  - generic [ref=f1e2839]: 模块 [AL]
+                - text:                               
+                - generic [ref=f1e2840] [cursor=pointer]:
+                  - generic [ref=f1e2841]: 
+                  - generic [ref=f1e2842]: 
+                  - generic [ref=f1e2843]: 模块 [TO]
+                - text:              
+                - generic [ref=f1e2844] [cursor=pointer]:
+                  - generic [ref=f1e2845]: 
+                  - generic [ref=f1e2846]: 
+                  - generic [ref=f1e2847]: 模块 [TODO]
+                - text:                  
+                - generic [ref=f1e2848] [cursor=pointer]:
+                  - generic [ref=f1e2849]: 
+                  - generic [ref=f1e2850]: 
+                  - generic [ref=f1e2851]: 模块 [FD]
+                - text:                                          
+                - generic [ref=f1e2852] [cursor=pointer]:
+                  - generic [ref=f1e2853]: 
+                  - generic [ref=f1e2854]: 
+                  - generic [ref=f1e2855]: 模块 [ADM]
+                - text:       
+                - generic [ref=f1e2856] [cursor=pointer]:
+                  - generic [ref=f1e2857]: 
+                  - generic [ref=f1e2858]: 
+                  - generic [ref=f1e2859]: 模块 [PP]
+                - text:       
+                - generic [ref=f1e2860] [cursor=pointer]:
+                  - generic [ref=f1e2861]: 
+                  - generic [ref=f1e2862]: 
+                  - generic [ref=f1e2863]: 模块 [LOG]
+                - text:     
+                - generic [ref=f1e2864] [cursor=pointer]:
+                  - generic [ref=f1e2865]: 
+                  - generic [ref=f1e2866]: 
+                  - generic [ref=f1e2867]: 模块 [PG]
+                - text:        
+                - generic [ref=f1e2868] [cursor=pointer]:
+                  - generic [ref=f1e2869]: 
+                  - generic [ref=f1e2870]: 
+                  - generic [ref=f1e2871]: 模块 [UI]
+                - text:        
+                - generic [ref=f1e2872] [cursor=pointer]:
+                  - generic [ref=f1e2873]: 
+                  - generic [ref=f1e2874]: 
+                  - generic [ref=f1e2875]: 模块 [TB]
+                - text:                                
+                - generic [ref=f1e2876] [cursor=pointer]:
+                  - generic [ref=f1e2877]: 
+                  - generic [ref=f1e2878]: 
+                  - generic [ref=f1e2879]: 模块 [NP]
+                - text:        
+                - generic [ref=f1e2880] [cursor=pointer]:
+                  - generic [ref=f1e2881]: 
+                  - generic [ref=f1e2882]: 
+                  - generic [ref=f1e2883]: 模块 [SMS]
+                - text:      
+                - generic [ref=f1e2884] [cursor=pointer]:
+                  - generic [ref=f1e2885]: 
+                  - generic [ref=f1e2886]: 
+                  - generic [ref=f1e2887]: 模块 [NAV]
+                - text:       
+                - generic [ref=f1e2888] [cursor=pointer]:
+                  - generic [ref=f1e2889]: 
+                  - generic [ref=f1e2890]: 
+                  - generic [ref=f1e2891]: 模块 [IV]
+                - text:            
+                - generic [ref=f1e2892] [cursor=pointer]:
+                  - generic [ref=f1e2893]: 
+                  - generic [ref=f1e2894]: 
+                  - generic [ref=f1e2895]: 模块 [STB]
+                - text:      
+                - generic [ref=f1e2896] [cursor=pointer]:
+                  - generic [ref=f1e2897]: 
+                  - generic [ref=f1e2898]: 
+                  - generic [ref=f1e2899]: 模块 [OP]
+                - text:               
+                - generic [ref=f1e2900] [cursor=pointer]:
+                  - generic [ref=f1e2901]: 
+                  - generic [ref=f1e2902]: 
+                  - generic [ref=f1e2903]: 模块 [WB]
+                - text:            
+                - generic [ref=f1e2904] [cursor=pointer]:
+                  - generic [ref=f1e2905]: 
+                  - generic [ref=f1e2906]: 
+                  - generic [ref=f1e2907]: 模块 [PM]
+                - text:          
+                - generic [ref=f1e2908] [cursor=pointer]:
+                  - generic [ref=f1e2909]: 
+                  - generic [ref=f1e2910]: 
+                  - generic [ref=f1e2911]: 模块 [SH]
+                - text:        
+              - generic [ref=f1e2912] [cursor=pointer]:
+                - generic [ref=f1e2913]: 
+                - generic [ref=f1e2914]: 
+                - generic [ref=f1e2915]: 管理端
+              - text:                                                                                                                                                                  
+              - generic [ref=f1e2918] [cursor=pointer]:
+                - generic [ref=f1e2919]: 
+                - generic [ref=f1e2920]: 
+                - generic [ref=f1e2921]: 全球站
+              - text:                                                  
+              - generic [ref=f1e2923] [cursor=pointer]:
+                - generic [ref=f1e2924]: 
+                - generic [ref=f1e2925]: 
+                - generic [ref=f1e2926]: 客户端
+              - text:                                                                                                                                         
+      - generic [ref=e153]:
+        - generic [ref=e157]: 未分类 › 模块 [SRCH] › 2.2 筛选排序
+        - generic [ref=e164]:
+          - generic [ref=e165]: TC-SRCH-008
+          - generic [ref=e166]: "[TC-SRCH-008] 【异常】未知筛选字段返回 400"
+          - generic [ref=e167]: 🔴 P0⬜ 未执行
+        - generic [ref=e168]:
+          - button "✅ 通过" [ref=e537] [cursor=pointer]:
+            - paragraph [ref=e539]: ✅ 通过
+          - button "❌ 失败" [ref=e542] [cursor=pointer]:
+            - paragraph [ref=e544]: ❌ 失败
+          - button "🚫 阻塞" [ref=e547] [cursor=pointer]:
+            - paragraph [ref=e549]: 🚫 阻塞
+          - button "⬅️ 上一条 (Prev)" [ref=e552] [cursor=pointer]:
+            - paragraph [ref=e554]: ⬅️ 上一条 (Prev)
+          - button "下一条 (Next) ➡️" [ref=e557] [cursor=pointer]:
+            - paragraph [ref=e559]: 下一条 (Next) ➡️
+        - generic [ref=e217]:
+          - generic [ref=e221]:
+            - heading " 操作步骤" [level=3] [ref=e226]:
+              - generic [ref=e227]: 
+              - text: 操作步骤
+            - generic [ref=e232]:
+              - text: 【前置条件】
+              - text: 7182 有效 Token
+              - text: 【操作步骤】
+              - text: "1. 调用搜索接口额外传入 `unknown_filter=true`"
+              - text: 2. 查看响应和 1688 调用记录
+          - generic [ref=e236]:
+            - heading " 预期结果" [level=3] [ref=e241]:
+              - generic [ref=e242]: 
+              - text: 预期结果
+            - generic [ref=e247]:
+              - text: 1. 返回 400 日文参数错误
+              - text: 2. 不调用 1688
+              - text: 3. 错误说明无效字段，避免客户误以为筛选生效

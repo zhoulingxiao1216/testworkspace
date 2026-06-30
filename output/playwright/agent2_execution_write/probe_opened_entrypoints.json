@@ -1,0 +1,1407 @@
+{
+  "quote": {
+    "clicked": {
+      "found": false,
+      "candidates": []
+    },
+    "state": {
+      "url": "https://hlc-admin.hubbuyer.com/b2b/order/quote",
+      "title": "报价单",
+      "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n报价单\n35\n代购订单\n98\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家\n请选择国家\n报价单类型\n请选择报价单类型\n报价单编号\n支付状态\n请选择支付状态\n查询\n重置\n展开\n待审核(35)\n无需审核(196)\n审核完成(174)\n已取消(257)\n已驳回(8)\n全部(670)\n国家\n\t\n类型\n\t\n报价单编号\n\t\n报价单状态\n\t\n支付状态\n\t\n客户信息\n\t\n会员等级\n\t\n报价单金额\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n提交日期\n\t\n操作\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260423-083\n\t\n待审核\n\t\n---\n\t\nS-JPN34-TEST-柴思丽\n\t\n一般会员\n\t\n6090.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-04-23 08:30\n\t\n审核\n\n\nKorea\n\t\n手动\n\t\nB2B-BJ-KOR8-260409-091\n\t\n待审核\n\t\n---\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n78.75\n\t\n金月明\n\t\n张佳唯\n\t\n包瑞楠\n\t\n2026-04-09 09:49\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260401-059\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n670.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-04-01 14:48\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260401-058\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n82900.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-04-01 13:29\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN15-260327-001\n\t\n待审核\n\t\n---\n\t\nS-CHN15-测试123\n\t\n一般会员\n\t\n312.90\n\t\n\t\n\t\n\t\n2026-03-27 08:29\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260323-044\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n362000.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-03-23 14:20\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260323-040\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n1280.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-03-23 09:17\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260317-039\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n61590.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-03-17 11:47\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN12-260313-002\n\t\n待审核\n\t\n---\n\t\nC-CHN12-10201220\n\t\n一般会员\n\t\n3066.65\n\t\n崔红梅\n\t\n张佳唯\n\t\n包佳民\n\t\n2026-03-13 16:58\n\t\n审核\n\n\nAmerica\n\t\n手动\n\t\nB2B-BJ-USA5-260228-004\n\t\n待审核\n\t\n---\n\t\nB-USA5-1010\n\t\n一般会员\n\t\n12924.02\n\t\n金月明\n\t\n唐芬芬\n\t\n陈牧鹏\n\t\n2026-02-28 15:45\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN2-260120-003\n\t\n待审核\n\t\n---\n\t\nS-JPN2-何鹏彪\n\t\n一般会员\n\t\n75875.00\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2026-01-20 13:25\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN8-260120-003\n\t\n待审核\n\t\n---\n\t\nS-CHN8-123213\n\t\n一般会员\n\t\n1401.60\n\t\n崔红梅\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2026-01-20 08:50\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN8-260119-002\n\t\n待审核\n\t\n---\n\t\nS-CHN8-123213\n\t\n一般会员\n\t\n171.20\n\t\n崔红梅\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2026-01-19 14:32\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN26-251230-006\n\t\n待审核\n\t\n---\n\t\nD-JPN26-金子東\n\t\n一般会员\n\t\n7724.00\n\t\n金月明\n\t\n张佳唯\n\t\n包瑞楠\n\t\n2025-12-30 19:41\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN26-251230-003\n\t\n待审核\n\t\n---\n\t\nD-JPN26-金子東\n\t\n一般会员\n\t\n230.00\n\t\n金月明\n\t\n张佳唯\n\t\n包瑞楠\n\t\n2025-12-30 18:57\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN30-251223-001\n\t\n待审核\n\t\n---\n\t\nS-JPN30-朴测试23\n\t\n一般会员\n\t\n20892.55\n\t\n崔红梅\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2025-12-23 15:17\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN6-251223-013\n\t\n待审核\n\t\n---\n\t\nC-CHN6-wh\n\t\n商务会员\n\t\n49.50\n\t\n崔红梅\n\t\n张佳唯\n\t\n包佳民\n\t\n2025-12-23 10:40\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN25-251220-004\n\t\n待审核\n\t\n---\n\t\nB-JPN25-12.20生产\n\t\n一般会员\n\t\n107.00\n\t\n崔红梅\n\t\n徐榕\n\t\n包佳民\n\t\n2025-12-20 18:54\n\t\n审核\n\n\nKorea\n\t\n手动\n\t\nB2B-BJ-KOR2-251220-004\n\t\n待审核\n\t\n---\n\t\nD-KOR2-21222\n\t\n一般会员\n\t\n76.00\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2025-12-20 15:10\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN11-251220-020\n\t\n待审核\n\t\n---\n\t\nB-JPN11-朴国哲\n\t\n一般会员\n\t\n18096.96\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2025-12-20 14:49\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN3-251220-010\n\t\n待审核\n\t\n---\n\t\nS-JPN3-胡兴华\n\t\n一般会员\n\t\n343.00\n\t\n崔红梅\n\t\n吴四佳\n\t\n包瑞楠\n\t\n2025-12-20 09:28\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN6-251218-006\n\t\n待审核\n\t\n---\n\t\nC-CHN6-wh\n\t\n一般会员\n\t\n315006.30\n\t\n崔红梅\n\t\n张佳唯\n\t\n包佳民\n\t\n2025-12-18 13:57\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN21-251218-001\n\t\n待审核\n\t\n---\n\t\nD-JPN21-test朴雪锦\n\t\n一般会员\n\t\n89.00\n\t\n崔红梅\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2025-12-18 13:56\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN15-251218-008\n\t\n待审核\n\t\n---\n\t\nS-JPN15-仓木麻衣\n\t\n一般会员\n\t\n1556.50\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2025-12-18 13:49\n\t\n审核\n\n\nAmerica\n\t\n手动\n\t\nB2B-BJ-USA4-251218-006\n\t\n待审核\n\t\n---\n\t\nS-USA4-PeterLee\n\t\n一般会员\n\t\n1556.50\n\t\n崔红梅\n\t\n金月明\n\t\n陈牧鹏\n\t\n2025-12-18 11:22\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN9-25",
+      "dialogs": [],
+      "buttons": [
+        {
+          "idx": 0,
+          "text": "你好， admin",
+          "x": 1312,
+          "y": 19,
+          "w": 88,
+          "h": 14
+        },
+        {
+          "idx": 1,
+          "text": "查询",
+          "x": 225,
+          "y": 115,
+          "w": 80,
+          "h": 32
+        },
+        {
+          "idx": 2,
+          "text": "重置",
+          "x": 317,
+          "y": 115,
+          "w": 80,
+          "h": 32
+        },
+        {
+          "idx": 3,
+          "text": "展开",
+          "x": 409,
+          "y": 115,
+          "w": 78,
+          "h": 32
+        },
+        {
+          "idx": 4,
+          "text": "审核",
+          "x": 1257,
+          "y": 242,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 5,
+          "text": "审核",
+          "x": 1257,
+          "y": 291,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 6,
+          "text": "审核",
+          "x": 1257,
+          "y": 340,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 7,
+          "text": "审核",
+          "x": 1257,
+          "y": 389,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 8,
+          "text": "审核",
+          "x": 1257,
+          "y": 438,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 9,
+          "text": "审核",
+          "x": 1257,
+          "y": 487,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 10,
+          "text": "审核",
+          "x": 1257,
+          "y": 536,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 11,
+          "text": "审核",
+          "x": 1257,
+          "y": 585,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 12,
+          "text": "审核",
+          "x": 1257,
+          "y": 634,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 13,
+          "text": "审核",
+          "x": 1257,
+          "y": 683,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 14,
+          "text": "审核",
+          "x": 1257,
+          "y": 732,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 15,
+          "text": "审核",
+          "x": 1257,
+          "y": 781,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 16,
+          "text": "审核",
+          "x": 1257,
+          "y": 830,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 17,
+          "text": "审核",
+          "x": 1257,
+          "y": 879,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 18,
+          "text": "审核",
+          "x": 1257,
+          "y": 928,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 19,
+          "text": "审核",
+          "x": 1257,
+          "y": 977,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 20,
+          "text": "审核",
+          "x": 1257,
+          "y": 1026,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 21,
+          "text": "审核",
+          "x": 1257,
+          "y": 1075,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 22,
+          "text": "审核",
+          "x": 1257,
+          "y": 1124,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 23,
+          "text": "审核",
+          "x": 1257,
+          "y": 1173,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 24,
+          "text": "审核",
+          "x": 1257,
+          "y": 1222,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 25,
+          "text": "审核",
+          "x": 1257,
+          "y": 1271,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 26,
+          "text": "审核",
+          "x": 1257,
+          "y": 1320,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 27,
+          "text": "审核",
+          "x": 1257,
+          "y": 1369,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 28,
+          "text": "审核",
+          "x": 1257,
+          "y": 1418,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 29,
+          "text": "审核",
+          "x": 1257,
+          "y": 1467,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 30,
+          "text": "审核",
+          "x": 1257,
+          "y": 1516,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 31,
+          "text": "审核",
+          "x": 1257,
+          "y": 1565,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 32,
+          "text": "审核",
+          "x": 1257,
+          "y": 1614,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 33,
+          "text": "审核",
+          "x": 1257,
+          "y": 1663,
+          "w": 60,
+          "h": 32
+        }
+      ],
+      "inputs": [
+        {
+          "idx": 0,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "",
+          "value": "",
+          "x": 327,
+          "y": 77,
+          "w": 132,
+          "h": 24
+        },
+        {
+          "idx": 1,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "",
+          "value": "",
+          "x": 625,
+          "y": 77,
+          "w": 132,
+          "h": 24
+        },
+        {
+          "idx": 2,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "请输入编号",
+          "value": "",
+          "x": 921,
+          "y": 74,
+          "w": 154,
+          "h": 30
+        },
+        {
+          "idx": 3,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "",
+          "value": "",
+          "x": 1220,
+          "y": 77,
+          "w": 132,
+          "h": 24
+        },
+        {
+          "idx": 4,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "100",
+          "x": 225,
+          "y": 159,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 5,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "2000",
+          "x": 323,
+          "y": 159,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 6,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "200",
+          "x": 443,
+          "y": 159,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 7,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "400",
+          "x": 563,
+          "y": 159,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 8,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "500",
+          "x": 669,
+          "y": 159,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 9,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "",
+          "x": 758,
+          "y": 159,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 10,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "",
+          "value": "",
+          "x": 237,
+          "y": 853,
+          "w": 84,
+          "h": 24
+        },
+        {
+          "idx": 11,
+          "tag": "INPUT",
+          "type": "number",
+          "placeholder": "",
+          "value": "1",
+          "x": 1348,
+          "y": 850,
+          "w": 34,
+          "h": 30
+        }
+      ]
+    }
+  },
+  "agentBuy": {
+    "clicked": {
+      "found": false,
+      "candidates": []
+    },
+    "state": {
+      "url": "https://hlc-admin.hubbuyer.com/b2b/order/agentBuy",
+      "title": "代购订单",
+      "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n报价单\n35\n代购订单\n98\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家\n请选择国家\n订单编号\n支付日期\n至\n客户姓名/ID\n客户等级\n请选择客户等级\n会员等级\n请选择会员等级\n客户经理\n请选择客户经理\n业务\n请选择业务\n用户注文\n查询\n重置\n展开\n待审核(98)\n进行中(114)\n待清算(25)\n已清算(122)\n已关闭(11)\n全部(370)\n国家\n\t\n编号\n\t\n订单状态\n\t\n客户信息\n\t\n会员等级\n\t\n订单金额\n\t\n下单数\n\t\n购入数\n\t\n到货数\n\t\n不良数\n\t\n正品数\n\t\n入库数\n\t\n发货数\n\t\n在库数\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n部门备注\n\t\n支付日期\n\t\n操作\nJapan\n\t\nB2B-DD-JPN12-260525-009\n\t\n待审核\n\t\nB-JPN12-TEST-朴国哲\n\t\n一般会员\n\t\n74.80\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n吴四佳\n\t\n周凌虓\n\t\n---\n\t\n2026-05-25 09:40\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN12-260525-008\n\t\n待审核\n\t\nB-JPN12-TEST-朴国哲\n\t\n一般会员\n\t\n531.60\n\t\n14\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n吴四佳\n\t\n周凌虓\n\t\n---\n\t\n2026-05-25 09:37\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260405-083\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n102.15\n\t\n4\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-04-05 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260401-079\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n113.02\n\t\n4\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-04-01 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260328-075\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n75.82\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-28 08:01\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN34-260325-049\n\t\n待审核\n\t\nS-JPN34-TEST-柴思丽\n\t\n一般会员\n\t\n100.00\n\t\n500\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n---\n\t\n2026-03-25 14:12\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260325-072\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n144.53\n\t\n7\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-25 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260321-068\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n102.75\n\t\n3\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-21 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260318-065\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n129.77\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-18 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260315-062\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n119.75\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-15 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260312-059\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n109.97\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-12 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260308-055\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n112.90\n\t\n4\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-08 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260304-051\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n134.07\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-04 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260301-048\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n99.40\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-01 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260225-044\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n105.75\n\t\n3\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-25 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260221-040\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n72.82\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-21 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260217-036\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n84.92\n\t\n3\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-17 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260213-032\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n88.62\n\t\n3\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-13 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260209-028\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n172.14\n\t\n2\n",
+      "dialogs": [],
+      "buttons": [
+        {
+          "idx": 0,
+          "text": "你好， admin",
+          "x": 1312,
+          "y": 19,
+          "w": 88,
+          "h": 14
+        },
+        {
+          "idx": 1,
+          "text": "查询",
+          "x": 225,
+          "y": 199,
+          "w": 80,
+          "h": 32
+        },
+        {
+          "idx": 2,
+          "text": "重置",
+          "x": 317,
+          "y": 199,
+          "w": 80,
+          "h": 32
+        },
+        {
+          "idx": 3,
+          "text": "展开",
+          "x": 409,
+          "y": 199,
+          "w": 78,
+          "h": 32
+        },
+        {
+          "idx": 4,
+          "text": "详情",
+          "x": 1257,
+          "y": 340,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 5,
+          "text": "详情",
+          "x": 1257,
+          "y": 417,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 6,
+          "text": "详情",
+          "x": 1257,
+          "y": 494,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 7,
+          "text": "详情",
+          "x": 1257,
+          "y": 571,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 8,
+          "text": "详情",
+          "x": 1257,
+          "y": 648,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 9,
+          "text": "详情",
+          "x": 1257,
+          "y": 725,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 10,
+          "text": "详情",
+          "x": 1257,
+          "y": 802,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 11,
+          "text": "详情",
+          "x": 1257,
+          "y": 879,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 12,
+          "text": "详情",
+          "x": 1257,
+          "y": 956,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 13,
+          "text": "详情",
+          "x": 1257,
+          "y": 1033,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 14,
+          "text": "详情",
+          "x": 1257,
+          "y": 1110,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 15,
+          "text": "详情",
+          "x": 1257,
+          "y": 1187,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 16,
+          "text": "详情",
+          "x": 1257,
+          "y": 1264,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 17,
+          "text": "详情",
+          "x": 1257,
+          "y": 1341,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 18,
+          "text": "详情",
+          "x": 1257,
+          "y": 1418,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 19,
+          "text": "详情",
+          "x": 1257,
+          "y": 1495,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 20,
+          "text": "详情",
+          "x": 1257,
+          "y": 1572,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 21,
+          "text": "详情",
+          "x": 1257,
+          "y": 1649,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 22,
+          "text": "详情",
+          "x": 1257,
+          "y": 1726,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 23,
+          "text": "详情",
+          "x": 1257,
+          "y": 1803,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 24,
+          "text": "详情",
+          "x": 1257,
+          "y": 1880,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 25,
+          "text": "详情",
+          "x": 1257,
+          "y": 1957,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 26,
+          "text": "详情",
+          "x": 1257,
+          "y": 2034,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 27,
+          "text": "详情",
+          "x": 1257,
+          "y": 2111,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 28,
+          "text": "详情",
+          "x": 1257,
+          "y": 2188,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 29,
+          "text": "详情",
+          "x": 1257,
+          "y": 2265,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 30,
+          "text": "详情",
+          "x": 1257,
+          "y": 2342,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 31,
+          "text": "详情",
+          "x": 1257,
+          "y": 2419,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 32,
+          "text": "详情",
+          "x": 1257,
+          "y": 2496,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 33,
+          "text": "详情",
+          "x": 1257,
+          "y": 2573,
+          "w": 60,
+          "h": 32
+        }
+      ],
+      "inputs": [
+        {
+          "idx": 0,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "",
+          "value": "",
+          "x": 327,
+          "y": 77,
+          "w": 132,
+          "h": 24
+        },
+        {
+          "idx": 1,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "请输入订单编号",
+          "value": "",
+          "x": 624,
+          "y": 74,
+          "w": 154,
+          "h": 30
+        },
+        {
+          "idx": 2,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "开始日期",
+          "value": "",
+          "x": 934,
+          "y": 74,
+          "w": 52,
+          "h": 30
+        },
+        {
+          "idx": 3,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "结束日期",
+          "value": "",
+          "x": 1010,
+          "y": 74,
+          "w": 52,
+          "h": 30
+        },
+        {
+          "idx": 4,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "请输入客户ID",
+          "value": "",
+          "x": 1219,
+          "y": 74,
+          "w": 154,
+          "h": 30
+        },
+        {
+          "idx": 5,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "",
+          "value": "",
+          "x": 327,
+          "y": 119,
+          "w": 132,
+          "h": 24
+        },
+        {
+          "idx": 6,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "",
+          "value": "",
+          "x": 625,
+          "y": 119,
+          "w": 132,
+          "h": 24
+        },
+        {
+          "idx": 7,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "",
+          "value": "",
+          "x": 922,
+          "y": 119,
+          "w": 132,
+          "h": 24
+        },
+        {
+          "idx": 8,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "",
+          "value": "",
+          "x": 1220,
+          "y": 119,
+          "w": 132,
+          "h": 24
+        },
+        {
+          "idx": 9,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "请输入用户注文",
+          "value": "",
+          "x": 326,
+          "y": 158,
+          "w": 154,
+          "h": 30
+        },
+        {
+          "idx": 10,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "100",
+          "x": 225,
+          "y": 243,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 11,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "110",
+          "x": 323,
+          "y": 243,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 12,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "120",
+          "x": 429,
+          "y": 243,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 13,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "200",
+          "x": 527,
+          "y": 243,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 14,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "2000",
+          "x": 633,
+          "y": 243,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 15,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "0",
+          "x": 730,
+          "y": 243,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 16,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "",
+          "value": "",
+          "x": 237,
+          "y": 895,
+          "w": 84,
+          "h": 24
+        },
+        {
+          "idx": 17,
+          "tag": "INPUT",
+          "type": "number",
+          "placeholder": "",
+          "value": "1",
+          "x": 1348,
+          "y": 892,
+          "w": 34,
+          "h": 30
+        }
+      ]
+    }
+  },
+  "ship": {
+    "clicked": {
+      "found": false,
+      "candidates": []
+    },
+    "state": {
+      "url": "https://hlc-admin.hubbuyer.com/b2b/logistics/billOfParcels",
+      "title": "发货单列表",
+      "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n仓库管理\n发货配送\n10\n发货单列表\n10\n破箱审核\n售后服务\n物流清算记录\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家\n请选择\n发货单编号\n客户ID\n客户姓名\n查询\n重置\n展开\n导出发货记录\n待审核(10)\n审核中(1)\n待配货(2)\n待打包(32)\n待清算(3)\n待发货(3)\n已发货(5)\n已签收(123)\n已取消(32)\n已驳回(3)\n全部(214)\n客户信息\n\t\n物流信息\n\t\n客户备注\n\t\n状态\n\t\n合计总金额(元)\n\t\n业务员\n\t\n发货状态\n\t\n下单时间\n\t\n操作\n商务会员\nChina\nC-CHN6-wh\n\t\nLDX--快速船便\nWL-CHN6-251222-003\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n张佳唯\n\t\n--\n\t\n2025-12-22 15:49\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nS-JPN3-test-胡兴华\n\t\n海源--DG(電子特殊航空便)\nWL-JPN3-251220-015\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 21:19\n\t\n审核发货单\n取消\n查看日志\n\n\n商务会员\nChina\nC-CHN6-wh\n\t\nLDX--快速船便\nWL-CHN6-251220-013\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n张佳唯\n\t\n--\n\t\n2025-12-20 21:18\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nS-JPN2-何鹏彪\n\t\nFOB-高柜\nWL-JPN2-251220-012\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 21:15\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\n海源--DG(電子特殊航空便)\nWL-JPN11-251220-009\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:40\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\n邮政船运\nWL-JPN11-251220-008\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:40\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\nOCS\nWL-JPN11-251220-007\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:39\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\nEMS\nWL-JPN11-251220-006\n客户创建\n\t\n查看\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:37\n\t\n审核发货单\n未打印\n取消\n查看日志\n\n\n一般会员\nJapan\nS-JPN15-仓木麻衣\n\t\nLDX--快速船便\nWL-JPN15-251220-005\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 15:34\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nChina\nC-CHN6-wh\n\t\nLDX--快速船便\nWL-CHN6-251218-002\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n张佳唯\n\t\n--\n\t\n2025-12-18 14:23\n\t\n审核发货单\n取消\n查看日志\n30条/页\n共 10 条\n1\n前往\n页",
+      "dialogs": [],
+      "buttons": [
+        {
+          "idx": 0,
+          "text": "你好， admin",
+          "x": 1312,
+          "y": 19,
+          "w": 88,
+          "h": 14
+        },
+        {
+          "idx": 1,
+          "text": "查询",
+          "x": 225,
+          "y": 123,
+          "w": 80,
+          "h": 32
+        },
+        {
+          "idx": 2,
+          "text": "重置",
+          "x": 317,
+          "y": 123,
+          "w": 80,
+          "h": 32
+        },
+        {
+          "idx": 3,
+          "text": "展开",
+          "x": 409,
+          "y": 123,
+          "w": 78,
+          "h": 32
+        },
+        {
+          "idx": 4,
+          "text": "导出发货记录",
+          "x": 1279,
+          "y": 123,
+          "w": 136,
+          "h": 32
+        },
+        {
+          "idx": 5,
+          "text": "审核发货单",
+          "x": 1547,
+          "y": 279,
+          "w": 102,
+          "h": 32
+        },
+        {
+          "idx": 6,
+          "text": "取消",
+          "x": 1661,
+          "y": 279,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 7,
+          "text": "查看日志",
+          "x": 1733,
+          "y": 279,
+          "w": 88,
+          "h": 32
+        },
+        {
+          "idx": 9,
+          "text": "审核发货单",
+          "x": 1547,
+          "y": 365,
+          "w": 102,
+          "h": 32
+        },
+        {
+          "idx": 10,
+          "text": "取消",
+          "x": 1661,
+          "y": 365,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 11,
+          "text": "查看日志",
+          "x": 1733,
+          "y": 365,
+          "w": 88,
+          "h": 32
+        },
+        {
+          "idx": 13,
+          "text": "审核发货单",
+          "x": 1547,
+          "y": 451,
+          "w": 102,
+          "h": 32
+        },
+        {
+          "idx": 14,
+          "text": "取消",
+          "x": 1661,
+          "y": 451,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 15,
+          "text": "查看日志",
+          "x": 1733,
+          "y": 451,
+          "w": 88,
+          "h": 32
+        },
+        {
+          "idx": 17,
+          "text": "审核发货单",
+          "x": 1547,
+          "y": 537,
+          "w": 102,
+          "h": 32
+        },
+        {
+          "idx": 18,
+          "text": "取消",
+          "x": 1661,
+          "y": 537,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 19,
+          "text": "查看日志",
+          "x": 1733,
+          "y": 537,
+          "w": 88,
+          "h": 32
+        },
+        {
+          "idx": 21,
+          "text": "审核发货单",
+          "x": 1547,
+          "y": 623,
+          "w": 102,
+          "h": 32
+        },
+        {
+          "idx": 22,
+          "text": "取消",
+          "x": 1661,
+          "y": 623,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 23,
+          "text": "查看日志",
+          "x": 1733,
+          "y": 623,
+          "w": 88,
+          "h": 32
+        },
+        {
+          "idx": 25,
+          "text": "审核发货单",
+          "x": 1547,
+          "y": 709,
+          "w": 102,
+          "h": 32
+        },
+        {
+          "idx": 26,
+          "text": "取消",
+          "x": 1661,
+          "y": 709,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 27,
+          "text": "查看日志",
+          "x": 1733,
+          "y": 709,
+          "w": 88,
+          "h": 32
+        },
+        {
+          "idx": 29,
+          "text": "审核发货单",
+          "x": 1547,
+          "y": 795,
+          "w": 102,
+          "h": 32
+        },
+        {
+          "idx": 30,
+          "text": "取消",
+          "x": 1661,
+          "y": 795,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 31,
+          "text": "查看日志",
+          "x": 1733,
+          "y": 795,
+          "w": 88,
+          "h": 32
+        },
+        {
+          "idx": 33,
+          "text": "查看",
+          "x": 638,
+          "y": 888,
+          "w": 34,
+          "h": 20
+        },
+        {
+          "idx": 34,
+          "text": "审核发货单",
+          "x": 1547,
+          "y": 881,
+          "w": 102,
+          "h": 32
+        },
+        {
+          "idx": 35,
+          "text": "未打印",
+          "x": 1661,
+          "y": 881,
+          "w": 74,
+          "h": 32
+        },
+        {
+          "idx": 36,
+          "text": "取消",
+          "x": 1747,
+          "y": 881,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 37,
+          "text": "查看日志",
+          "x": 1819,
+          "y": 881,
+          "w": 88,
+          "h": 32
+        },
+        {
+          "idx": 38,
+          "text": "审核发货单",
+          "x": 1547,
+          "y": 967,
+          "w": 102,
+          "h": 32
+        },
+        {
+          "idx": 39,
+          "text": "取消",
+          "x": 1661,
+          "y": 967,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 40,
+          "text": "查看日志",
+          "x": 1733,
+          "y": 967,
+          "w": 88,
+          "h": 32
+        },
+        {
+          "idx": 42,
+          "text": "审核发货单",
+          "x": 1547,
+          "y": 1053,
+          "w": 102,
+          "h": 32
+        },
+        {
+          "idx": 43,
+          "text": "取消",
+          "x": 1661,
+          "y": 1053,
+          "w": 60,
+          "h": 32
+        },
+        {
+          "idx": 44,
+          "text": "查看日志",
+          "x": 1733,
+          "y": 1053,
+          "w": 88,
+          "h": 32
+        }
+      ],
+      "inputs": [
+        {
+          "idx": 0,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "",
+          "value": "",
+          "x": 322,
+          "y": 77,
+          "w": 137,
+          "h": 24
+        },
+        {
+          "idx": 1,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "请输入发货单编号",
+          "value": "",
+          "x": 619,
+          "y": 74,
+          "w": 159,
+          "h": 30
+        },
+        {
+          "idx": 2,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "请输入客户ID",
+          "value": "",
+          "x": 916,
+          "y": 74,
+          "w": 159,
+          "h": 30
+        },
+        {
+          "idx": 3,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "请输入客户姓名",
+          "value": "",
+          "x": 1214,
+          "y": 74,
+          "w": 159,
+          "h": 30
+        },
+        {
+          "idx": 4,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "100",
+          "x": 225,
+          "y": 172,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 5,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "102",
+          "x": 323,
+          "y": 172,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 6,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "105",
+          "x": 412,
+          "y": 172,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 7,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "110",
+          "x": 502,
+          "y": 172,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 8,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "120",
+          "x": 600,
+          "y": 172,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 9,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "130",
+          "x": 689,
+          "y": 172,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 10,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "200",
+          "x": 779,
+          "y": 172,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 11,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "210",
+          "x": 868,
+          "y": 172,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 12,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "400",
+          "x": 974,
+          "y": 172,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 13,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "500",
+          "x": 1072,
+          "y": 172,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 14,
+          "tag": "INPUT",
+          "type": "radio",
+          "placeholder": "",
+          "value": "",
+          "x": 1162,
+          "y": 172,
+          "w": 13,
+          "h": 13
+        },
+        {
+          "idx": 15,
+          "tag": "INPUT",
+          "type": "text",
+          "placeholder": "",
+          "value": "",
+          "x": 237,
+          "y": 851,
+          "w": 84,
+          "h": 24
+        },
+        {
+          "idx": 16,
+          "tag": "INPUT",
+          "type": "number",
+          "placeholder": "",
+          "value": "1",
+          "x": 1348,
+          "y": 848,
+          "w": 34,
+          "h": 30
+        }
+      ]
+    }
+  }
+}

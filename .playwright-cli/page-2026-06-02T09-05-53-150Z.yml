@@ -1,0 +1,519 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e7]:
+      - button "Deploy" [ref=e9] [cursor=pointer]:
+        - generic [ref=e11]: Deploy
+      - button [ref=e13] [cursor=pointer]:
+        - img [ref=e14]
+  - generic [ref=e4]:
+    - button [ref=e19] [cursor=pointer]:
+      - img [ref=e20]
+    - list [ref=e27]:
+      - listitem [ref=e28]:
+        - link "app" [ref=e30] [cursor=pointer]:
+          - /url: http://localhost:8501/app
+          - generic [ref=e31]: app
+      - listitem [ref=e32]:
+        - link "测试执行" [ref=e34] [cursor=pointer]:
+          - /url: http://localhost:8501/测试执行
+          - generic [ref=e36]: 🧪
+          - generic [ref=e37]: 测试执行
+      - listitem [ref=e38]:
+        - link "sku verify" [ref=e40] [cursor=pointer]:
+          - /url: http://localhost:8501/sku_verify
+          - generic [ref=e41]: sku verify
+      - listitem [ref=e42]:
+        - link "性能压测" [ref=e44] [cursor=pointer]:
+          - /url: http://localhost:8501/性能压测
+          - generic [ref=e45]: 性能压测
+    - generic [ref=e51]:
+      - heading "🚦 性能压测" [level=1] [ref=e56]: 🚦 性能压测
+      - button "⬅️ 返回项目首页" [ref=e60] [cursor=pointer]:
+        - paragraph [ref=e62]: ⬅️ 返回项目首页
+      - generic [ref=e63]:
+        - alert [ref=e70]:
+          - paragraph [ref=e75]:
+            - text: 当前任务：
+            - code [ref=e76]: stress_test_2r_0v_2_20260602_162655
+            - text: "| 状态："
+            - strong [ref=e77]: finished
+            - text: "| PID："
+            - code [ref=e78]: "18284"
+        - button "刷新进程" [ref=e85] [cursor=pointer]:
+          - paragraph [ref=e87]: 刷新进程
+      - separator [ref=e91]
+      - generic [ref=e92]:
+        - generic [ref=e96]:
+          - heading "启动配置" [level=3] [ref=e101]: 启动配置
+          - generic [ref=e104]:
+            - paragraph [ref=e107]: 压测环境
+            - generic [ref=e109]:
+              - generic [ref=e110]:
+                - generic [ref=e111]: test
+                - combobox "Selected test. 压测环境" [ref=e113]
+              - img "open" [ref=e115]
+          - paragraph [ref=e120]:
+            - text: 当前
+            - code [ref=e121]: test
+            - text: 环境账号池：51 个真实注册账号
+          - paragraph [ref=e125]:
+            - strong [ref=e126]: 批量选择账号
+          - generic [ref=e127]:
+            - button "全选全部" [ref=e134] [cursor=pointer]:
+              - paragraph [ref=e136]: 全选全部
+            - button "全选 mock" [active] [ref=e143] [cursor=pointer]:
+              - paragraph [ref=e145]: 全选 mock
+            - button "清空" [ref=e152] [cursor=pointer]:
+              - paragraph [ref=e154]: 清空
+            - generic [ref=e158]:
+              - generic [ref=e160]:
+                - paragraph [ref=e163]: 选择前 N 个 mock
+                - spinbutton "选择前 N 个 mock" [ref=e167]: "50"
+              - button "应用数量" [ref=e170] [cursor=pointer]:
+                - paragraph [ref=e172]: 应用数量
+          - group [ref=e174]:
+            - generic "真实注册账号（勾选参与压测的账号）" [ref=e175] [cursor=pointer]:
+              - paragraph [ref=e178]: 真实注册账号（勾选参与压测的账号）
+              - img [ref=e179]
+            - generic [ref=e186]:
+              - generic [ref=e190]:
+                - generic [ref=e193] [cursor=pointer]:
+                  - checkbox "369901314@qq.com"
+                  - paragraph [ref=e198]:
+                    - link "369901314@qq.com" [ref=e199]:
+                      - /url: mailto:369901314@qq.com
+                - generic [ref=e202] [cursor=pointer]:
+                  - checkbox "performance_test_003@126.com" [checked]
+                  - paragraph [ref=e207]:
+                    - link "performance_test_003@126.com" [ref=e208]:
+                      - /url: mailto:performance_test_003@126.com
+                - generic [ref=e211] [cursor=pointer]:
+                  - checkbox "performance_test_006@126.com" [checked]
+                  - paragraph [ref=e216]:
+                    - link "performance_test_006@126.com" [ref=e217]:
+                      - /url: mailto:performance_test_006@126.com
+                - generic [ref=e220] [cursor=pointer]:
+                  - checkbox "performance_test_009@126.com" [checked]
+                  - paragraph [ref=e225]:
+                    - link "performance_test_009@126.com" [ref=e226]:
+                      - /url: mailto:performance_test_009@126.com
+                - generic [ref=e229] [cursor=pointer]:
+                  - checkbox "performance_test_012@126.com" [checked]
+                  - paragraph [ref=e234]:
+                    - link "performance_test_012@126.com" [ref=e235]:
+                      - /url: mailto:performance_test_012@126.com
+                - generic [ref=e238] [cursor=pointer]:
+                  - checkbox "performance_test_015@126.com" [checked]
+                  - paragraph [ref=e243]:
+                    - link "performance_test_015@126.com" [ref=e244]:
+                      - /url: mailto:performance_test_015@126.com
+                - generic [ref=e247] [cursor=pointer]:
+                  - checkbox "performance_test_018@126.com" [checked]
+                  - paragraph [ref=e252]:
+                    - link "performance_test_018@126.com" [ref=e253]:
+                      - /url: mailto:performance_test_018@126.com
+                - generic [ref=e256] [cursor=pointer]:
+                  - checkbox "performance_test_021@126.com" [checked]
+                  - paragraph [ref=e261]:
+                    - link "performance_test_021@126.com" [ref=e262]:
+                      - /url: mailto:performance_test_021@126.com
+                - generic [ref=e265] [cursor=pointer]:
+                  - checkbox "performance_test_024@126.com" [checked]
+                  - paragraph [ref=e270]:
+                    - link "performance_test_024@126.com" [ref=e271]:
+                      - /url: mailto:performance_test_024@126.com
+                - generic [ref=e274] [cursor=pointer]:
+                  - checkbox "performance_test_027@126.com" [checked]
+                  - paragraph [ref=e279]:
+                    - link "performance_test_027@126.com" [ref=e280]:
+                      - /url: mailto:performance_test_027@126.com
+                - generic [ref=e283] [cursor=pointer]:
+                  - checkbox "performance_test_030@126.com" [checked]
+                  - paragraph [ref=e288]:
+                    - link "performance_test_030@126.com" [ref=e289]:
+                      - /url: mailto:performance_test_030@126.com
+                - generic [ref=e292] [cursor=pointer]:
+                  - checkbox "performance_test_033@126.com" [checked]
+                  - paragraph [ref=e297]:
+                    - link "performance_test_033@126.com" [ref=e298]:
+                      - /url: mailto:performance_test_033@126.com
+                - generic [ref=e301] [cursor=pointer]:
+                  - checkbox "performance_test_036@126.com" [checked]
+                  - paragraph [ref=e306]:
+                    - link "performance_test_036@126.com" [ref=e307]:
+                      - /url: mailto:performance_test_036@126.com
+                - generic [ref=e310] [cursor=pointer]:
+                  - checkbox "performance_test_039@126.com" [checked]
+                  - paragraph [ref=e315]:
+                    - link "performance_test_039@126.com" [ref=e316]:
+                      - /url: mailto:performance_test_039@126.com
+                - generic [ref=e319] [cursor=pointer]:
+                  - checkbox "performance_test_042@126.com" [checked]
+                  - paragraph [ref=e324]:
+                    - link "performance_test_042@126.com" [ref=e325]:
+                      - /url: mailto:performance_test_042@126.com
+                - generic [ref=e328] [cursor=pointer]:
+                  - checkbox "performance_test_045@126.com" [checked]
+                  - paragraph [ref=e333]:
+                    - link "performance_test_045@126.com" [ref=e334]:
+                      - /url: mailto:performance_test_045@126.com
+                - generic [ref=e337] [cursor=pointer]:
+                  - checkbox "performance_test_048@126.com" [checked]
+                  - paragraph [ref=e342]:
+                    - link "performance_test_048@126.com" [ref=e343]:
+                      - /url: mailto:performance_test_048@126.com
+              - generic [ref=e347]:
+                - generic [ref=e350] [cursor=pointer]:
+                  - checkbox "performance_test_001@126.com" [checked]
+                  - paragraph [ref=e355]:
+                    - link "performance_test_001@126.com" [ref=e356]:
+                      - /url: mailto:performance_test_001@126.com
+                - generic [ref=e359] [cursor=pointer]:
+                  - checkbox "performance_test_004@126.com" [checked]
+                  - paragraph [ref=e364]:
+                    - link "performance_test_004@126.com" [ref=e365]:
+                      - /url: mailto:performance_test_004@126.com
+                - generic [ref=e368] [cursor=pointer]:
+                  - checkbox "performance_test_007@126.com" [checked]
+                  - paragraph [ref=e373]:
+                    - link "performance_test_007@126.com" [ref=e374]:
+                      - /url: mailto:performance_test_007@126.com
+                - generic [ref=e377] [cursor=pointer]:
+                  - checkbox "performance_test_010@126.com" [checked]
+                  - paragraph [ref=e382]:
+                    - link "performance_test_010@126.com" [ref=e383]:
+                      - /url: mailto:performance_test_010@126.com
+                - generic [ref=e386] [cursor=pointer]:
+                  - checkbox "performance_test_013@126.com" [checked]
+                  - paragraph [ref=e391]:
+                    - link "performance_test_013@126.com" [ref=e392]:
+                      - /url: mailto:performance_test_013@126.com
+                - generic [ref=e395] [cursor=pointer]:
+                  - checkbox "performance_test_016@126.com" [checked]
+                  - paragraph [ref=e400]:
+                    - link "performance_test_016@126.com" [ref=e401]:
+                      - /url: mailto:performance_test_016@126.com
+                - generic [ref=e404] [cursor=pointer]:
+                  - checkbox "performance_test_019@126.com" [checked]
+                  - paragraph [ref=e409]:
+                    - link "performance_test_019@126.com" [ref=e410]:
+                      - /url: mailto:performance_test_019@126.com
+                - generic [ref=e413] [cursor=pointer]:
+                  - checkbox "performance_test_022@126.com" [checked]
+                  - paragraph [ref=e418]:
+                    - link "performance_test_022@126.com" [ref=e419]:
+                      - /url: mailto:performance_test_022@126.com
+                - generic [ref=e422] [cursor=pointer]:
+                  - checkbox "performance_test_025@126.com" [checked]
+                  - paragraph [ref=e427]:
+                    - link "performance_test_025@126.com" [ref=e428]:
+                      - /url: mailto:performance_test_025@126.com
+                - generic [ref=e431] [cursor=pointer]:
+                  - checkbox "performance_test_028@126.com" [checked]
+                  - paragraph [ref=e436]:
+                    - link "performance_test_028@126.com" [ref=e437]:
+                      - /url: mailto:performance_test_028@126.com
+                - generic [ref=e440] [cursor=pointer]:
+                  - checkbox "performance_test_031@126.com" [checked]
+                  - paragraph [ref=e445]:
+                    - link "performance_test_031@126.com" [ref=e446]:
+                      - /url: mailto:performance_test_031@126.com
+                - generic [ref=e449] [cursor=pointer]:
+                  - checkbox "performance_test_034@126.com" [checked]
+                  - paragraph [ref=e454]:
+                    - link "performance_test_034@126.com" [ref=e455]:
+                      - /url: mailto:performance_test_034@126.com
+                - generic [ref=e458] [cursor=pointer]:
+                  - checkbox "performance_test_037@126.com" [checked]
+                  - paragraph [ref=e463]:
+                    - link "performance_test_037@126.com" [ref=e464]:
+                      - /url: mailto:performance_test_037@126.com
+                - generic [ref=e467] [cursor=pointer]:
+                  - checkbox "performance_test_040@126.com" [checked]
+                  - paragraph [ref=e472]:
+                    - link "performance_test_040@126.com" [ref=e473]:
+                      - /url: mailto:performance_test_040@126.com
+                - generic [ref=e476] [cursor=pointer]:
+                  - checkbox "performance_test_043@126.com" [checked]
+                  - paragraph [ref=e481]:
+                    - link "performance_test_043@126.com" [ref=e482]:
+                      - /url: mailto:performance_test_043@126.com
+                - generic [ref=e485] [cursor=pointer]:
+                  - checkbox "performance_test_046@126.com" [checked]
+                  - paragraph [ref=e490]:
+                    - link "performance_test_046@126.com" [ref=e491]:
+                      - /url: mailto:performance_test_046@126.com
+                - generic [ref=e494] [cursor=pointer]:
+                  - checkbox "performance_test_049@126.com" [checked]
+                  - paragraph [ref=e499]:
+                    - link "performance_test_049@126.com" [ref=e500]:
+                      - /url: mailto:performance_test_049@126.com
+              - generic [ref=e504]:
+                - generic [ref=e507] [cursor=pointer]:
+                  - checkbox "performance_test_002@126.com" [checked]
+                  - paragraph [ref=e512]:
+                    - link "performance_test_002@126.com" [ref=e513]:
+                      - /url: mailto:performance_test_002@126.com
+                - generic [ref=e516] [cursor=pointer]:
+                  - checkbox "performance_test_005@126.com" [checked]
+                  - paragraph [ref=e521]:
+                    - link "performance_test_005@126.com" [ref=e522]:
+                      - /url: mailto:performance_test_005@126.com
+                - generic [ref=e525] [cursor=pointer]:
+                  - checkbox "performance_test_008@126.com" [checked]
+                  - paragraph [ref=e530]:
+                    - link "performance_test_008@126.com" [ref=e531]:
+                      - /url: mailto:performance_test_008@126.com
+                - generic [ref=e534] [cursor=pointer]:
+                  - checkbox "performance_test_011@126.com" [checked]
+                  - paragraph [ref=e539]:
+                    - link "performance_test_011@126.com" [ref=e540]:
+                      - /url: mailto:performance_test_011@126.com
+                - generic [ref=e543] [cursor=pointer]:
+                  - checkbox "performance_test_014@126.com" [checked]
+                  - paragraph [ref=e548]:
+                    - link "performance_test_014@126.com" [ref=e549]:
+                      - /url: mailto:performance_test_014@126.com
+                - generic [ref=e552] [cursor=pointer]:
+                  - checkbox "performance_test_017@126.com" [checked]
+                  - paragraph [ref=e557]:
+                    - link "performance_test_017@126.com" [ref=e558]:
+                      - /url: mailto:performance_test_017@126.com
+                - generic [ref=e561] [cursor=pointer]:
+                  - checkbox "performance_test_020@126.com" [checked]
+                  - paragraph [ref=e566]:
+                    - link "performance_test_020@126.com" [ref=e567]:
+                      - /url: mailto:performance_test_020@126.com
+                - generic [ref=e570] [cursor=pointer]:
+                  - checkbox "performance_test_023@126.com" [checked]
+                  - paragraph [ref=e575]:
+                    - link "performance_test_023@126.com" [ref=e576]:
+                      - /url: mailto:performance_test_023@126.com
+                - generic [ref=e579] [cursor=pointer]:
+                  - checkbox "performance_test_026@126.com" [checked]
+                  - paragraph [ref=e584]:
+                    - link "performance_test_026@126.com" [ref=e585]:
+                      - /url: mailto:performance_test_026@126.com
+                - generic [ref=e588] [cursor=pointer]:
+                  - checkbox "performance_test_029@126.com" [checked]
+                  - paragraph [ref=e593]:
+                    - link "performance_test_029@126.com" [ref=e594]:
+                      - /url: mailto:performance_test_029@126.com
+                - generic [ref=e597] [cursor=pointer]:
+                  - checkbox "performance_test_032@126.com" [checked]
+                  - paragraph [ref=e602]:
+                    - link "performance_test_032@126.com" [ref=e603]:
+                      - /url: mailto:performance_test_032@126.com
+                - generic [ref=e606] [cursor=pointer]:
+                  - checkbox "performance_test_035@126.com" [checked]
+                  - paragraph [ref=e611]:
+                    - link "performance_test_035@126.com" [ref=e612]:
+                      - /url: mailto:performance_test_035@126.com
+                - generic [ref=e615] [cursor=pointer]:
+                  - checkbox "performance_test_038@126.com" [checked]
+                  - paragraph [ref=e620]:
+                    - link "performance_test_038@126.com" [ref=e621]:
+                      - /url: mailto:performance_test_038@126.com
+                - generic [ref=e624] [cursor=pointer]:
+                  - checkbox "performance_test_041@126.com" [checked]
+                  - paragraph [ref=e629]:
+                    - link "performance_test_041@126.com" [ref=e630]:
+                      - /url: mailto:performance_test_041@126.com
+                - generic [ref=e633] [cursor=pointer]:
+                  - checkbox "performance_test_044@126.com" [checked]
+                  - paragraph [ref=e638]:
+                    - link "performance_test_044@126.com" [ref=e639]:
+                      - /url: mailto:performance_test_044@126.com
+                - generic [ref=e642] [cursor=pointer]:
+                  - checkbox "performance_test_047@126.com" [checked]
+                  - paragraph [ref=e647]:
+                    - link "performance_test_047@126.com" [ref=e648]:
+                      - /url: mailto:performance_test_047@126.com
+                - generic [ref=e651] [cursor=pointer]:
+                  - checkbox "performance_test_050@126.com" [checked]
+                  - paragraph [ref=e656]:
+                    - link "performance_test_050@126.com" [ref=e657]:
+                      - /url: mailto:performance_test_050@126.com
+          - paragraph [ref=e661]:
+            - text: 已勾选
+            - code [ref=e662]: "50"
+            - text: 个账号；mock 可选
+            - code [ref=e663]: "50"
+            - text: 个。
+          - generic [ref=e667]:
+            - generic [ref=e669]:
+              - generic [ref=e670]:
+                - paragraph [ref=e672]: 真实账号并发数
+                - img [ref=e676]
+              - generic [ref=e679]:
+                - spinbutton "真实账号并发数" [ref=e682]: "5"
+                - generic [ref=e683]:
+                  - button [ref=e684] [cursor=pointer]:
+                    - img [ref=e685]
+                  - button [ref=e687] [cursor=pointer]:
+                    - img [ref=e688]
+            - generic [ref=e691]:
+              - paragraph [ref=e694]: 虚拟账号数量
+              - generic [ref=e695]:
+                - spinbutton "虚拟账号数量" [ref=e698]: "20"
+                - generic [ref=e699]:
+                  - button [ref=e700] [cursor=pointer]:
+                    - img [ref=e701]
+                  - button [ref=e703] [cursor=pointer]:
+                    - img [ref=e704]
+            - generic [ref=e706]:
+              - generic [ref=e712]:
+                - paragraph [ref=e715]: 真实账号加载速率 / 秒
+                - generic [ref=e716]:
+                  - spinbutton "真实账号加载速率 / 秒" [ref=e719]: "1.00"
+                  - generic [ref=e720]:
+                    - button [ref=e721] [cursor=pointer]:
+                      - img [ref=e722]
+                    - button [ref=e724] [cursor=pointer]:
+                      - img [ref=e725]
+              - generic [ref=e732]:
+                - paragraph [ref=e735]: 虚拟账号加载速率 / 秒
+                - generic [ref=e736]:
+                  - spinbutton "虚拟账号加载速率 / 秒" [ref=e739]: "10.00"
+                  - generic [ref=e740]:
+                    - button [ref=e741] [cursor=pointer]:
+                      - img [ref=e742]
+                    - button [ref=e744] [cursor=pointer]:
+                      - img [ref=e745]
+            - generic [ref=e748]:
+              - generic [ref=e749]:
+                - paragraph [ref=e751]: 压测时间
+                - img [ref=e755]
+              - textbox "压测时间" [ref=e760]:
+                - /placeholder: ""
+                - text: 10m
+            - paragraph [ref=e764]:
+              - strong [ref=e765]: 压测策略
+            - generic [ref=e767]:
+              - paragraph [ref=e770]: 每个真实链路浏览步数
+              - generic [ref=e771]:
+                - spinbutton "每个真实链路浏览步数" [ref=e774]: "2"
+                - generic [ref=e775]:
+                  - button [ref=e776] [cursor=pointer]:
+                    - img [ref=e777]
+                  - button [ref=e779] [cursor=pointer]:
+                    - img [ref=e780]
+            - generic [ref=e784] [cursor=pointer]:
+              - checkbox "启用浏览 + 加购链路" [checked]
+              - paragraph [ref=e789]: 启用浏览 + 加购链路
+            - generic [ref=e792] [cursor=pointer]:
+              - checkbox "启用浏览 + 加购 + 提交报价单链路"
+              - paragraph [ref=e797]: 启用浏览 + 加购 + 提交报价单链路
+            - generic [ref=e799]:
+              - paragraph [ref=e802]: 每次提交报价单最多购物车明细数
+              - generic [ref=e803]:
+                - spinbutton "每次提交报价单最多购物车明细数" [disabled] [ref=e806]: "1"
+                - generic [ref=e807]:
+                  - button [disabled] [ref=e808]:
+                    - img [ref=e809]
+                  - button [disabled] [ref=e811]:
+                    - img [ref=e812]
+            - button "确认配置" [ref=e817] [cursor=pointer]:
+              - paragraph [ref=e819]: 确认配置
+        - generic [ref=e823]:
+          - heading "执行预览" [level=3] [ref=e828]: 执行预览
+          - alert [ref=e832]:
+            - paragraph [ref=e837]: 请先在左侧完成配置并点击「确认配置」，这里会展示即将执行的压测参数。
+          - generic [ref=e840]:
+            - paragraph [ref=e844]:
+              - strong [ref=e845]: 预览会包含
+            - list [ref=e849]:
+              - listitem [ref=e850]: 本次用户规模、加载速率和时长。
+            - list [ref=e854]:
+              - listitem [ref=e855]: 真实账号链路会执行哪些动作。
+            - list [ref=e859]:
+              - listitem [ref=e860]: 虚拟账号链路会执行哪些动作。
+            - list [ref=e864]:
+              - listitem [ref=e865]: 平台注入 Locust 的核心环境变量和启动命令。
+          - group [ref=e867]:
+            - generic "最近一次启动命令" [ref=e868] [cursor=pointer]:
+              - paragraph [ref=e871]: 最近一次启动命令
+              - img [ref=e872]
+      - separator [ref=e878]
+      - heading "压测进程监控" [level=3] [ref=e883]: 压测进程监控
+      - generic [ref=e885]:
+        - generic [ref=e891]:
+          - paragraph [ref=e895]: 系统 Locust 进程
+          - generic [ref=e897]: "0"
+        - generic [ref=e903]:
+          - paragraph [ref=e907]: 平台历史任务
+          - generic [ref=e909]: "6"
+        - generic [ref=e915]:
+          - paragraph [ref=e919]: 运行状态
+          - generic [ref=e921]: 空闲
+      - alert [ref=e924]:
+        - paragraph [ref=e929]: 当前未检测到 Locust 压测进程。
+      - group [ref=e931]:
+        - generic "平台压测任务历史" [ref=e932] [cursor=pointer]:
+          - paragraph [ref=e935]: 平台压测任务历史
+          - img [ref=e936]
+        - generic [ref=e947]:
+          - button "Download as CSV" [ref=e950] [cursor=pointer]:
+            - img [ref=e951]
+          - button "Search" [ref=e956] [cursor=pointer]:
+            - img [ref=e957]
+          - button "Fullscreen" [ref=e962] [cursor=pointer]:
+            - img [ref=e963]
+      - separator [ref=e977]
+      - heading "日志与报告" [level=3] [ref=e982]: 日志与报告
+      - generic [ref=e985]:
+        - tablist [ref=e987]:
+          - tab "总览" [selected] [ref=e988] [cursor=pointer]:
+            - paragraph [ref=e990]: 总览
+          - tab "失败" [ref=e991] [cursor=pointer]:
+            - paragraph [ref=e993]: 失败
+          - tab "慢接口" [ref=e994] [cursor=pointer]:
+            - paragraph [ref=e996]: 慢接口
+          - tab "请求明细" [ref=e997] [cursor=pointer]:
+            - paragraph [ref=e999]: 请求明细
+          - tab "日志" [ref=e1000] [cursor=pointer]:
+            - paragraph [ref=e1002]: 日志
+          - tab "报告" [ref=e1003] [cursor=pointer]:
+            - paragraph [ref=e1005]: 报告
+        - tabpanel "总览" [ref=e1008]:
+          - generic [ref=e1011]:
+            - generic [ref=e1012]:
+              - generic [ref=e1018]:
+                - paragraph [ref=e1022]: 总请求
+                - generic [ref=e1024]: "1"
+              - generic [ref=e1030]:
+                - paragraph [ref=e1034]: 失败
+                - generic [ref=e1036]: "0"
+                - generic [ref=e1037]:
+                  - img [ref=e1038]
+                  - generic [ref=e1041]: 0.00%
+              - generic [ref=e1047]:
+                - paragraph [ref=e1051]: 平均响应
+                - generic [ref=e1053]: 846ms
+              - generic [ref=e1059]:
+                - paragraph [ref=e1063]: P95
+                - generic [ref=e1065]: 850ms
+              - generic [ref=e1071]:
+                - paragraph [ref=e1075]: RPS
+                - generic [ref=e1077]: "1.18"
+            - alert [ref=e1080]:
+              - paragraph [ref=e1085]: 本次统计未发现失败请求。
+            - generic [ref=e1086]:
+              - generic [ref=e1090]:
+                - paragraph [ref=e1094]:
+                  - strong [ref=e1095]: 失败接口 Top
+                - paragraph [ref=e1099]: 暂无失败接口。
+              - generic [ref=e1103]:
+                - paragraph [ref=e1107]:
+                  - strong [ref=e1108]: 慢接口 Top
+                - generic [ref=e1113]:
+                  - button "Download as CSV" [ref=e1116] [cursor=pointer]:
+                    - img [ref=e1117]
+                  - button "Search" [ref=e1122] [cursor=pointer]:
+                    - img [ref=e1123]
+                  - button "Fullscreen" [ref=e1128] [cursor=pointer]:
+                    - img [ref=e1129]
+      - group [ref=e1141]:
+        - generic "历史 HTML 报告" [ref=e1142] [cursor=pointer]:
+          - paragraph [ref=e1145]: 历史 HTML 报告
+          - img [ref=e1146]

@@ -1,0 +1,39 @@
+{
+  "url": "https://wlz-admin-all-view.hubbuyer.com/login",
+  "title": "",
+  "text_excerpt": "ee-supply\n\n欢迎回来 👋🏻\n\n请输入您的帐户信息登录系统\n\n账号\n密码\n记住账号\n登录",
+  "inputs": [
+    {
+      "i": 0,
+      "type": "text",
+      "placeholder": "请输入账号",
+      "value": "",
+      "visible": true,
+      "cls": "el-input__inner"
+    },
+    {
+      "i": 1,
+      "type": "password",
+      "placeholder": "请输入密码",
+      "value": "",
+      "visible": true,
+      "cls": "el-input__inner"
+    },
+    {
+      "i": 2,
+      "type": "checkbox",
+      "placeholder": null,
+      "value": "记住账号",
+      "visible": true,
+      "cls": "el-checkbox__original"
+    }
+  ],
+  "buttons": [
+    {
+      "i": 0,
+      "text": "登录",
+      "visible": true,
+      "cls": "el-button el-button--primary el-button--large w-full"
+    }
+  ]
+}

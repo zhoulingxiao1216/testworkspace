@@ -1,0 +1,50 @@
+[
+  {
+    "action": "click order first-level badge",
+    "click": {
+      "text": "订单管理\n99+",
+      "badge": "99+",
+      "x": 121.015625,
+      "y": 237,
+      "w": 36.984375,
+      "h": 18
+    },
+    "state": {
+      "url": "https://hlc-admin.hubbuyer.com/b2b/dashboard/complain",
+      "title": "吐槽记录",
+      "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n报价单\n35\n代购订单\n98\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n吐槽部门\n请选择吐槽部门\n吐槽原因\n请选择吐槽原因\n吐槽人员\n请选择吐槽人员\n订单编号\n查询\n重置\n展开\n吐槽原因\n\t\n吐槽部门\n\t\n吐槽人员\n\t\n订单编号\n\t\n产品ID\n\t\n赔付金额\n\t\n客户信息\n\t\n提交人\n\t\n吐槽日期\n\t\n操作\n质检-问题报告没有及时处理\n\t\n质控\n\t\n订单\n\t\nWL-JPN12-260519-001\n\t\n\t\n123.00\n\t\nB-JPN12-TEST-朴国哲\n\t\nadmin\n\t\n2026-05-25 09:51\n\t\n详情\n\n\n业务部-附加项未选中\n\t\n业务\n\t\n吴四佳\n\t\nWL-JPN22-251223-007\n\t\n\t\n222.00\n\t\nB-JPN22-TEST-吴四佳\n\t\n周凌虓\n\t\n2026-05-25 09:50\n\t\n详情\n\n\n质控部-多配/少配/配错\n\t\n质控\n\t\n夏飞\n\t\nWL-NZL1-251223-009\n\t\n\t\n0.00\n\t\nD-NZL1-新西兰-夏飞\n\t\nadmin\n\t\n2025-12-23 17:07\n\t\n详情\n\n\n采购部-买错/多买/少买\n\t\n采购\n\t\n包瑞楠\n\t\nB2B-DD-JPN11-251217-005\n\t\nD000000332\n\t\n0.00\n\t\nB-JPN11-TEST-朴国哲2\n\t\n朴国哲\n\t\n2025-12-19 10:20\n\t\n详情\n30条/页\n共 4 条\n1\n前往\n页"
+    }
+  },
+  {
+    "action": "click quote secondary badge",
+    "click": {
+      "text": "报价单\n35",
+      "badge": "35",
+      "x": 107.921875,
+      "y": 188,
+      "w": 28.078125,
+      "h": 18
+    },
+    "state": {
+      "url": "https://hlc-admin.hubbuyer.com/b2b/order/quote",
+      "title": "报价单",
+      "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n报价单\n35\n代购订单\n98\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家\n请选择国家\n报价单类型\n请选择报价单类型\n报价单编号\n支付状态\n请选择支付状态\n查询\n重置\n展开\n待审核(35)\n无需审核(196)\n审核完成(174)\n已取消(257)\n已驳回(8)\n全部(670)\n国家\n\t\n类型\n\t\n报价单编号\n\t\n报价单状态\n\t\n支付状态\n\t\n客户信息\n\t\n会员等级\n\t\n报价单金额\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n提交日期\n\t\n操作\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260423-083\n\t\n待审核\n\t\n---\n\t\nS-JPN34-TEST-柴思丽\n\t\n一般会员\n\t\n6090.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-04-23 08:30\n\t\n审核\n\n\nKorea\n\t\n手动\n\t\nB2B-BJ-KOR8-260409-091\n\t\n待审核\n\t\n---\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n78.75\n\t\n金月明\n\t\n张佳唯\n\t\n包瑞楠\n\t\n2026-04-09 09:49\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260401-059\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n670.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-04-01 14:48\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260401-058\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n82900.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-04-01 13:29\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN15-260327-001\n\t\n待审核\n\t\n---\n\t\nS-CHN15-测试123\n\t\n一般会员\n\t\n312.90\n\t\n\t\n\t\n\t\n2026-03-27 08:29\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260323-044\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n362000.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-03-23 14:20\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260323-040\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n1280.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-03-23 09:17\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260317-039\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n61590.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-03-17 11:47\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN12-260313-002\n\t\n待审核\n\t\n---\n\t\nC-CHN12-10201220\n\t\n一般会员\n\t\n3066.65\n\t\n崔红梅\n\t\n张佳唯\n\t\n包佳民\n\t\n2026-03-13 16:58\n\t\n审核\n\n\nAmerica\n\t\n手动\n\t\n"
+    }
+  },
+  {
+    "action": "click shiplist secondary badge",
+    "click": {
+      "text": "发货单列表\n10",
+      "badge": "10",
+      "x": 135.921875,
+      "y": 292,
+      "w": 28.078125,
+      "h": 18
+    },
+    "state": {
+      "url": "https://hlc-admin.hubbuyer.com/b2b/logistics/billOfParcels",
+      "title": "发货单列表",
+      "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n仓库管理\n发货配送\n10\n发货单列表\n10\n破箱审核\n售后服务\n物流清算记录\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家\n请选择\n发货单编号\n客户ID\n客户姓名\n查询\n重置\n展开\n导出发货记录\n待审核(10)\n审核中(1)\n待配货(2)\n待打包(32)\n待清算(3)\n待发货(3)\n已发货(5)\n已签收(123)\n已取消(32)\n已驳回(3)\n全部(214)\n客户信息\n\t\n物流信息\n\t\n客户备注\n\t\n状态\n\t\n合计总金额(元)\n\t\n业务员\n\t\n发货状态\n\t\n下单时间\n\t\n操作\n商务会员\nChina\nC-CHN6-wh\n\t\nLDX--快速船便\nWL-CHN6-251222-003\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n张佳唯\n\t\n--\n\t\n2025-12-22 15:49\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nS-JPN3-test-胡兴华\n\t\n海源--DG(電子特殊航空便)\nWL-JPN3-251220-015\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 21:19\n\t\n审核发货单\n取消\n查看日志\n\n\n商务会员\nChina\nC-CHN6-wh\n\t\nLDX--快速船便\nWL-CHN6-251220-013\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n张佳唯\n\t\n--\n\t\n2025-12-20 21:18\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nS-JPN2-何鹏彪\n\t\nFOB-高柜\nWL-JPN2-251220-012\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 21:15\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\n海源--DG(電子特殊航空便)\nWL-JPN11-251220-009\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:40\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\n邮政船运\nWL-JPN11-251220-008\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:40\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\nOCS\nWL-JPN11-251220-007\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:39\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\nEMS\nWL-JPN11-251220-006\n客户创建\n\t\n查看\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:37\n\t\n审核发货单\n未打印\n取消\n查看日志\n\n\n一般会员\nJapan\nS-JPN15-仓木麻衣\n\t\nLDX--快速船便\nWL-JPN15-251220-005\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 15:34\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nChina\nC-CHN6-wh\n\t\nLDX--快速船便\nWL-CHN6-251218-002\n客户创建\n\t\n\t\n待审核\n\t"
+    }
+  }
+]

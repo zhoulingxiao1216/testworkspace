@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "click_top_b2b": {
+        "clicked": true,
+        "text": "B2B系统",
+        "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 flex items-center h-36 box-border"
+      }
+    },
+    {
+      "click_sidebar_customer_info": {
+        "clicked": false,
+        "steps": [
+          {
+            "clicked": "mgmt",
+            "text": "客户管理",
+            "cls": "el-sub-menu"
+          }
+        ],
+        "candidates": [
+          {
+            "text": "吐槽记录",
+            "cls": "el-menu-item is-active"
+          },
+          {
+            "text": "内部通知",
+            "cls": "el-menu-item"
+          }
+        ]
+      }
+    },
+    {
+      "click_detail": {
+        "rowText": "质控部-多配/少配/配错 质控 夏飞 WL-NZL1-251223-009 0.00 D-NZL1-新西兰-夏飞 admin 2025-12-23 17:07 详情"
+      }
+    }
+  ],
+  "responses": [],
+  "console": [],
+  "detail_count": 2,
+  "customer_info_url": "https://wlz-admin-all-view.hubbuyer.com/b2b/dashboard/complain",
+  "found_batch": false
+}

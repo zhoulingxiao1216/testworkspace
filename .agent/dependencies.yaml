@@ -1,0 +1,189 @@
+version: 1
+updated_at: "2026-05-22"
+
+policy:
+  purpose: "Single source of truth for agent dependency paths."
+  path_reference_rule: "Skills and workflows should reference aliases from this file instead of duplicating concrete paths."
+  alias_style: "Use deps.<alias> in human-facing agent documents."
+  no_secret_storage: true
+  secret_rule: "Do not store passwords, tokens, cookies, private keys, or raw customer data in this manifest."
+
+paths:
+  dependencies_yaml: ".agent/dependencies.yaml"
+  agent_root: ".agent"
+  agent_ability_map: ".agent/Agent能力图.md"
+  agents_manifest: ".agent/agents.yaml"
+
+  skills_dir: ".agent/skills"
+  skill_agent1_test_design: ".agent/skills/test-design/SKILL.md"
+  skill_agent2_test_execution: ".agent/skills/test-execution/SKILL.md"
+
+  workflows_dir: ".agent/workflows"
+  workflow_agent1_kickoff: ".agent/workflows/kickoff_test_engine.md"
+  workflow_agent2_run_suite: ".agent/workflows/run_test_suite.md"
+  workflow_cross_agent_review: ".agent/workflows/cross_agent_review.md"
+  workflow_lookup_testcase: ".agent/workflows/lookup-testcase.md"
+  workflow_git_sync_rules: ".agent/workflows/gitee_repo_sync_rules.md"
+
+  runs_dir: ".agent/runs"
+  runs_readme: ".agent/runs/README.md"
+  run_state_pattern: ".agent/runs/{run_id}/run.yaml"
+  run_agent1_output_pattern: ".agent/runs/{run_id}/agent1_output.yaml"
+  run_agent2_review_pattern: ".agent/runs/{run_id}/agent2_review.yaml"
+  run_orchestrator_decision_pattern: ".agent/runs/{run_id}/orchestrator_decision.yaml"
+  run_remediation_pattern: ".agent/runs/{run_id}/remediation.yaml"
+  run_final_summary_pattern: ".agent/runs/{run_id}/final_summary.md"
+
+  runtime_scripts_dir: ".agent/scripts"
+  runtime_setup_playwright: ".agent/scripts/setup_playwright.ps1"
+  runtime_dir: ".agent/runtime"
+  runtime_requirements: ".agent/runtime/requirements.txt"
+  runtime_helpers_dir: ".agent/runtime/helpers"
+  runtime_db_helper: ".agent/runtime/helpers/db_helper.py"
+  runtime_playwright_runner_dir: ".agent/playwright-runner"
+  runtime_playwright_e1_precheck: ".agent/playwright-runner/e1_precheck.js"
+
+  templates_dir: ".agent/templates"
+  template_db_env_example: ".agent/templates/db.env.example"
+
+  global_specs_root: "00_全局测试规约库"
+  superpowers_base: "00_全局测试规约库/superpowers-base.md"
+  design_specs_dir: "00_全局测试规约库/设计规范"
+  execution_specs_dir: "00_全局测试规约库/执行规范"
+  acceptance_report_spec: "00_全局测试规约库/执行规范/上线验收测试报告规范.md"
+  execution_report_spec: "00_全局测试规约库/执行规范/测试执行报告规范.md"
+  defect_report_spec: "00_全局测试规约库/执行规范/缺陷报告编写规范.md"
+  acceptance_report_tools_dir: "00_全局测试规约库/工具脚本/上线验收报告"
+  acceptance_report_md_to_pdf: "00_全局测试规约库/工具脚本/上线验收报告/md_to_pdf.py"
+  acceptance_report_render_pdf_pages: "00_全局测试规约库/工具脚本/上线验收报告/render_pdf_pages.py"
+
+  pm_docs_root: "global-workspace/docs/pm"
+  test_workspace_root: "."
+  project_root_pattern: "{project}"
+  project_test_docs_dir_pattern: "{project}/测试文档"
+  project_superpowers_pattern: "{project}/测试文档/superpowers.md"
+  project_test_outline_pattern: "{project}/测试文档/测试点大纲.md"
+  project_test_cases_pattern: "{project}/测试文档/{project_name}测试用例.md"
+  project_handoff_manifest_pattern: "{project}/测试文档/执行交接清单.yaml"
+  project_execution_report_dir_pattern: "{project}/测试文档/执行报告"
+  project_api_endpoints_pattern: "{project}/测试文档/api_endpoints.md"
+  project_env_file_pattern: "{project}/测试文档/.env"
+
+  memory_root: ".agent/memory"
+  memory_readme: ".agent/memory/README.md"
+  memory_shared_dir: ".agent/memory/shared"
+  memory_agent1_dir: ".agent/memory/agent1-test-design"
+  memory_agent2_dir: ".agent/memory/agent2-test-execution"
+  memory_exchange_dir: ".agent/memory/exchange"
+  memory_shared_project_registry: ".agent/memory/shared/project_registry.yaml"
+  memory_shared_environment_registry: ".agent/memory/shared/environment_registry.yaml"
+  memory_shared_decision_log: ".agent/memory/shared/decision_log.md"
+  memory_shared_known_issues: ".agent/memory/shared/known_issues.md"
+  memory_agent1_design_patterns: ".agent/memory/agent1-test-design/design_patterns.md"
+  memory_agent1_requirement_audit: ".agent/memory/agent1-test-design/requirement_audit_memory.md"
+  memory_agent1_coverage_gap: ".agent/memory/agent1-test-design/coverage_gap_memory.md"
+  memory_agent2_selector: ".agent/memory/agent2-test-execution/selector_memory.yaml"
+  memory_agent2_api: ".agent/memory/agent2-test-execution/api_memory.yaml"
+  memory_agent2_execution_history: ".agent/memory/agent2-test-execution/execution_history.jsonl"
+  memory_agent2_env_blockers: ".agent/memory/agent2-test-execution/env_blockers.md"
+  memory_agent2_db_mock_audit: ".agent/memory/agent2-test-execution/db_mock_audit.jsonl"
+  memory_exchange_agent2_review_feedback: ".agent/memory/exchange/agent2_review_feedback.md"
+  memory_exchange_feedback_schema: ".agent/memory/exchange/feedback_schema.yaml"
+  memory_exchange_orchestrator_decision_schema: ".agent/memory/exchange/orchestrator_decision_schema.yaml"
+  memory_exchange_orchestrator_decisions: ".agent/memory/exchange/orchestrator_decisions.md"
+  memory_exchange_needs_more_cases: ".agent/memory/exchange/needs_more_cases.md"
+  memory_exchange_remediation_log: ".agent/memory/exchange/remediation_log.md"
+
+  reflections_dir: ".agent/reflections"
+  reflection_template: ".agent/reflections/README.md"
+
+  evolution_dir: ".agent/evolution"
+  evolution_governance: ".agent/evolution/governance.md"
+  evolution_promotion_candidates: ".agent/evolution/promotion_candidates.md"
+  evolution_rejected_learnings: ".agent/evolution/rejected_learnings.md"
+
+agents:
+  agent1_test_design:
+    skill: "skill_agent1_test_design"
+    primary_workflow: "workflow_agent1_kickoff"
+    supporting_workflows:
+      - "workflow_cross_agent_review"
+      - "workflow_git_sync_rules"
+    memory_read:
+      - "memory_shared_project_registry"
+      - "memory_shared_decision_log"
+      - "memory_shared_known_issues"
+      - "memory_agent1_design_patterns"
+      - "memory_agent1_requirement_audit"
+      - "memory_agent1_coverage_gap"
+      - "memory_exchange_needs_more_cases"
+      - "memory_exchange_remediation_log"
+    memory_write:
+      - "memory_agent1_design_patterns"
+      - "memory_agent1_requirement_audit"
+      - "memory_agent1_coverage_gap"
+      - "memory_exchange_remediation_log"
+    promotion_target: "evolution_promotion_candidates"
+
+  agent2_test_execution:
+    skill: "skill_agent2_test_execution"
+    primary_workflow: "workflow_agent2_run_suite"
+    supporting_workflows:
+      - "workflow_cross_agent_review"
+    memory_read:
+      - "memory_shared_project_registry"
+      - "memory_shared_environment_registry"
+      - "memory_shared_known_issues"
+      - "memory_agent2_selector"
+      - "memory_agent2_api"
+      - "memory_agent2_env_blockers"
+      - "memory_agent2_execution_history"
+      - "memory_agent2_db_mock_audit"
+      - "memory_exchange_agent2_review_feedback"
+      - "memory_exchange_needs_more_cases"
+    memory_write:
+      - "memory_agent2_selector"
+      - "memory_agent2_api"
+      - "memory_agent2_env_blockers"
+      - "memory_agent2_execution_history"
+      - "memory_agent2_db_mock_audit"
+      - "memory_exchange_agent2_review_feedback"
+      - "memory_exchange_needs_more_cases"
+      - "memory_exchange_remediation_log"
+    promotion_target: "evolution_promotion_candidates"
+
+workflows:
+  cross_agent_review:
+    file: "workflow_cross_agent_review"
+    required_inputs:
+      - "agents_manifest"
+      - "runs_readme"
+      - "memory_exchange_feedback_schema"
+      - "memory_exchange_orchestrator_decision_schema"
+      - "project_handoff_manifest_pattern"
+      - "project_test_cases_pattern"
+      - "project_superpowers_pattern"
+    exchange_memory:
+      - "memory_exchange_agent2_review_feedback"
+      - "memory_exchange_orchestrator_decisions"
+      - "memory_exchange_remediation_log"
+
+  kickoff_test_engine:
+    file: "workflow_agent1_kickoff"
+    required_dependencies:
+      - "skill_agent1_test_design"
+      - "superpowers_base"
+      - "design_specs_dir"
+      - "pm_docs_root"
+      - "memory_readme"
+
+  run_test_suite:
+    file: "workflow_agent2_run_suite"
+    required_dependencies:
+      - "skill_agent2_test_execution"
+      - "execution_report_spec"
+      - "defect_report_spec"
+      - "runtime_requirements"
+      - "runtime_db_helper"
+      - "template_db_env_example"
+      - "memory_readme"

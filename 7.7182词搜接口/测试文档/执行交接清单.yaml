@@ -1,0 +1,147 @@
+project: "7.7182词搜接口"
+generated_by: "agent1_test_design"
+generated_at: "2026-06-05"
+status: "DESIGN_READY_WITH_CONFIRMATION_ITEMS"
+source_documents:
+  - "7182词搜接口PRD.md"
+  - "7182词搜接口功能清单.md"
+  - "7182词搜接口流程图.md"
+  - "后台页面/API客户授权.html"
+  - "后台页面/调用日志记录.html"
+  - "后台页面/商品状态查询.html"
+  - "7182导入系统的表格模板.xlsx"
+  - "7182客户商品状态查询.pdf"
+artifacts:
+  requirement_summary: "测试文档/架构级需求摘要.md"
+  audit_questions: "测试文档/审计待确认问题单.md"
+  superpowers: "测试文档/superpowers.md"
+  outline: "测试文档/测试点大纲.md"
+  test_cases: "测试文档/7182词搜接口测试用例.md"
+  rule_mapping_review: "测试文档/第六阶段_用例反射评审报告.md"
+  effort_estimate: "测试文档/工期评估.md"
+total_cases: 49
+priority_distribution:
+  Critical: 18
+  High: 23
+  Medium: 8
+  Low: 0
+env_requirements:
+  accounts:
+    - "启用状态 7182 API 客户 SKR7182，Secret 通过安全凭据引用获取"
+    - "禁用状态 7182 API 客户或可被禁用的测试客户"
+    - "API维护后台管理员账号"
+    - "API维护无权限账号"
+  tokens:
+    - "有效 Bearer Token"
+    - "过期 Token"
+    - "无效签名 Token"
+    - "禁用客户历史 Token"
+  upstream:
+    - "1688 日文关键词可返回结果的稳定样例"
+    - "1688 无结果关键词样例"
+    - "合法 offer_id"
+    - "不存在、下架或无权限 offer_id"
+    - "可控制或模拟上游超时、限流、鉴权失败"
+  product_status_data:
+    - "覆盖 受理中、到着未質検、正品未梱包、梱包済、発送済、取消済 的 7182 商品状态记录"
+    - "包含 consumer_order_no、sku_code、jan_code、cart_id 的完整链路记录"
+    - "导入记录存在但 cart_id、订单或全商品链路缺失的记录"
+  security:
+    - "执行记录不得写入 client_secret、Bearer Token、1688 access_token、AppSecret、签名明文"
+estimated_time:
+  total_person_days: 7.2
+  suggested_schedule: "2 人并行约 4 个自然工作日"
+execution_queue:
+  smoke:
+    - "TC-AUTH-001"
+    - "TC-AUTH-003"
+    - "TC-AUTH-004"
+    - "TC-AUTH-005"
+    - "TC-AUTH-006"
+    - "TC-AUTH-007"
+    - "TC-SRCH-003"
+    - "TC-SRCH-010"
+    - "TC-DET-006"
+    - "TC-STAT-001"
+    - "TC-STAT-006"
+    - "TC-STAT-007"
+    - "TC-ADM-002"
+    - "TC-ADM-003"
+    - "TC-ADM-004"
+    - "TC-LOG-003"
+    - "TC-UI-001"
+    - "TC-UI-006"
+  auth:
+    - "TC-AUTH-001"
+    - "TC-AUTH-002"
+    - "TC-AUTH-003"
+    - "TC-AUTH-004"
+    - "TC-AUTH-005"
+    - "TC-AUTH-006"
+    - "TC-AUTH-007"
+  search:
+    - "TC-SRCH-001"
+    - "TC-SRCH-002"
+    - "TC-SRCH-003"
+    - "TC-SRCH-004"
+    - "TC-SRCH-005"
+    - "TC-SRCH-006"
+    - "TC-SRCH-007"
+    - "TC-SRCH-008"
+    - "TC-SRCH-009"
+    - "TC-SRCH-010"
+    - "TC-SRCH-011"
+    - "TC-SRCH-012"
+  detail:
+    - "TC-DET-001"
+    - "TC-DET-002"
+    - "TC-DET-003"
+    - "TC-DET-004"
+    - "TC-DET-005"
+    - "TC-DET-006"
+    - "TC-DET-007"
+  status:
+    - "TC-STAT-001"
+    - "TC-STAT-002"
+    - "TC-STAT-003"
+    - "TC-STAT-004"
+    - "TC-STAT-005"
+    - "TC-STAT-006"
+    - "TC-STAT-007"
+    - "TC-STAT-008"
+    - "TC-STAT-009"
+  admin:
+    - "TC-ADM-001"
+    - "TC-ADM-002"
+    - "TC-ADM-003"
+    - "TC-ADM-004"
+    - "TC-ADM-005"
+  logs:
+    - "TC-LOG-001"
+    - "TC-LOG-002"
+    - "TC-LOG-003"
+  frontend:
+    - "TC-UI-001"
+    - "TC-UI-002"
+    - "TC-UI-003"
+    - "TC-UI-004"
+    - "TC-UI-005"
+    - "TC-UI-006"
+conditional_cases:
+  - case_id: "TC-ADM-003"
+    condition: "需先确认生成新 Token 后旧 Token 是立即失效还是存在宽限期。"
+  - case_id: "TC-STAT-006"
+    condition: "需开发提供 6 个日文状态与全球站状态码的代码级映射表。"
+  - case_id: "TC-STAT-003"
+    condition: "需确认 JAN 来源表、索引和匹配规则。"
+blocking_risks:
+  - id: "BR-001"
+    risk: "1688 搜索和详情字段以控制台实际文档为准，若无联调样例，SRCH/DET 字段断言只能执行契约级校验。"
+    owner: "后端/1688联调"
+  - id: "BR-002"
+    risk: "状态映射表未确认时，STAT/UI 的 6 状态精确归类无法判定。"
+    owner: "后端/产品"
+  - id: "BR-003"
+    risk: "真实 Secret、Token、1688 密钥不得写入执行记录，执行工具需使用安全凭据引用。"
+    owner: "测试/安全"
+

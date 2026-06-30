@@ -1,0 +1,67 @@
+{
+  "order_no": "",
+  "auto_resolve_order_no": true,
+  "allowed_envs": ["main", "prod", "test"],
+  "sample_mode": "first_by_platform",
+  "sample_seller_index": 0,
+  "prefer_platforms": ["1688", "tb"],
+  "default_ku_shelves_ku_id": 69,
+  "default_ku_shelves_code": "B-2-003",
+  "warehouse_in_skip_without_purchase_price": true,
+  "detail_api": {
+    "enabled": true,
+    "url": "/admin_b2b/orderDetail/list",
+    "method": "POST",
+    "admin_site_origin": "",
+    "headers": {},
+    "json": {}
+  },
+  "steps": {
+    "one_click_purchase": {
+      "enabled": true,
+      "desc": "一键采购",
+      "url": "/admin_b2b/orderDetailUpdate/oneClickPurchase",
+      "method": "POST",
+      "admin_site_origin": "",
+      "headers": {},
+      "json": {},
+      "idempotent_codes": [40000],
+      "idempotent_message_contains": ["已采购", "没有可操作"]
+    },
+    "one_click_arrival": {
+      "enabled": true,
+      "desc": "一键到货",
+      "url": "/admin_b2b/orderDetailUpdate/oneClickArrive",
+      "method": "POST",
+      "admin_site_origin": "",
+      "headers": {},
+      "json": {},
+      "idempotent_codes": [40000],
+      "idempotent_message_contains": ["已到货", "到货", "没有可操作"]
+    },
+    "one_click_genuine": {
+      "enabled": true,
+      "desc": "一键正品",
+      "url": "/admin_b2b/orderDetailUpdate/oneClickGenuine",
+      "method": "POST",
+      "admin_site_origin": "",
+      "headers": {},
+      "json": {},
+      "idempotent_codes": [40000],
+      "idempotent_message_contains": ["已正品", "正品", "没有可操作", "已到货"]
+    },
+    "warehouse_in": {
+      "enabled": true,
+      "desc": "入库",
+      "url": "/admin_b2b/KuStockInLog/putInStock",
+      "method": "POST",
+      "admin_site_origin": "",
+      "headers": {},
+      "ku_shelves_ku_id": 69,
+      "ku_shelves_code": "B-2-003",
+      "line_mode": "first_pending_line",
+      "idempotent_codes": [40000],
+      "idempotent_message_contains": ["已入库", "入库"]
+    }
+  }
+}

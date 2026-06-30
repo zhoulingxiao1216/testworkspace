@@ -1,0 +1,63 @@
+version: 1
+updated_at: "2026-05-22"
+
+purpose: >
+  Define how the orchestrator classifies feedback from Agent 2 before any
+  remediation is assigned to Agent 1 or any execution blocker is escalated to a
+  human owner.
+
+decision_item:
+  feedback_id: "F-001"
+  run_id: "YYYY-MM-DD_project_slug"
+  project: "Project display name"
+  submitted_by: "agent2_test_execution"
+  decided_by: "orchestrator"
+  decision: "external_blocker"
+  assigned_to: "human"
+  status: "open"
+  reason: "Why this feedback is routed this way"
+  expected_action: "Concrete next action"
+  related_artifacts:
+    - "执行交接清单.yaml"
+  created_at: "YYYY-MM-DD HH:mm:ss"
+  updated_at: "YYYY-MM-DD HH:mm:ss"
+
+allowed_values:
+  decision:
+    - "assign_to_agent1"
+    - "external_blocker"
+    - "human_confirmation"
+    - "memory_candidate"
+    - "evolution_candidate"
+    - "execution_confirmation"
+    - "no_action"
+  assigned_to:
+    - "agent1_test_design"
+    - "agent2_test_execution"
+    - "orchestrator"
+    - "human"
+    - "product"
+    - "developer"
+    - "qa"
+  status:
+    - "open"
+    - "assigned"
+    - "resolved"
+    - "deferred"
+    - "rejected"
+
+routing_rules:
+  - rule: "Design artifact is incomplete, ambiguous, or internally inconsistent"
+    decision: "assign_to_agent1"
+  - rule: "Missing environment, account, permission, test data, SMS channel, or mock authorization"
+    decision: "external_blocker"
+  - rule: "Expected result depends on product scope or business rule confirmation"
+    decision: "human_confirmation"
+  - rule: "Feedback reveals a reusable but not-yet-proven lesson"
+    decision: "memory_candidate"
+  - rule: "Feedback repeats across projects or blocks E1/Smoke execution"
+    decision: "evolution_candidate"
+  - rule: "Agent 2 review is complete and real execution has not been explicitly allowed or forbidden"
+    decision: "execution_confirmation"
+  - rule: "Feedback is already covered or not applicable"
+    decision: "no_action"

@@ -1,0 +1,226 @@
+{
+  "manage": {
+    "url": "https://hlc-admin.hubbuyer.com/admin/user/list",
+    "title": "客户信息",
+    "menu": [
+      {
+        "idx": 0,
+        "text": "客户管理\n43",
+        "badge": "43",
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 68,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 1,
+        "text": "客户信息\n43",
+        "badge": "43",
+        "cls": "el-menu-item is-active",
+        "x": 20,
+        "y": 120,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "idx": 2,
+        "text": "客户等级",
+        "badge": null,
+        "cls": "el-menu-item",
+        "x": 20,
+        "y": 170,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "idx": 3,
+        "text": "客户咨询",
+        "badge": null,
+        "cls": "el-menu-item",
+        "x": 20,
+        "y": 220,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "idx": 4,
+        "text": "管理员管理",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 270,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 5,
+        "text": "国际物流",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 322,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 6,
+        "text": "黑名单",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 374,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 7,
+        "text": "邮件管理",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 426,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 8,
+        "text": "产品管理",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 478,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 9,
+        "text": "意见反馈",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 530,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 10,
+        "text": "系统设置",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 582,
+        "w": 170,
+        "h": 52
+      }
+    ],
+    "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n客户管理\n43\n客户信息\n43\n客户等级\n客户咨询\n管理员管理\n国际物流\n黑名单\n邮件管理\n产品管理\n意见反馈\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n查询\n重置\n展开\n批量禁用\n批量导出\n全部（102）\nS级客户（38）\nA级客户（2）\nB级客户（11）\nC级客户（5）\nD级客户（46）\n\t\n姓名\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n业务\n\t\n采购\n\t\n客户经理\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nC-CHN19-测试1米\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n金月明\n\t\nyangweibin@sakuradk.com\n\t\n12541526325\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\nYouTube\n\t\n2026-05-08 15:44\n\t\n2026-05-08 15:43\n\t\n详情\n登录\n\n\n\t\nD-POL1-senaelorhan\n\t\nPoland\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nelorhanlindo@gmail.com\n\t\n692956183\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-05-07 19:04\n\t\n2026-05-07 19:02\n\t\n详情\n登录\n\n\n\t\nD-TUR2-YILDIRIMALİ\n\t\nTurkey\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nhingo2566@gmail.com\n\t\n5459653288\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n\t\n2026-04-29 20:31\n\t\n2026-04-29 20:30\n\t\n详情\n登录\n\n\n\t\nS-USA10-111\n\t\nAmerica\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nlihaokanya@gmail.com\n\t\n1234567890\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n熟人介绍\n\t\n2026-04-29 12:01\n\t\n2026-04-29 12:00\n\t\n详情\n登录\n\n\n\t\nD-IDN1-ImanAaron\n\t\nIndonesia\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nimansie@gmail.com\n\t\n081389895300\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n\t\n2026-04-28 15:40\n\t\n2026-04-28 15:40\n\t\n详情\n登录\n\n\n\t\nD-CHN18-户连超测试\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nzrkjhlc@gmail.com\n\t\n15268453999\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n熟人介绍\n\t\n2026-05-15 11:54\n\t\n2026-04-23 14:23\n\t\n详情\n登录\n\n\n\t\nD-JPN43-小林莉乃\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nrii20040728@icloud.com\n\t\n07021540728\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n\t\n2026-04-22 03:42\n\t\n2026-04-22 03:25\n\t\n详情\n登录\n\n\n\t\nD-TUR1-RahhalBasel\n\t\nTurkey\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\neng.import3@gmail.com\n\t\n5510320210\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-04-17 21:23\n\t\n2026-04-17 21:21\n\t\n详情\n登录\n\n\n\t\nS-JPN42-小林滉平\n\t\nJapan"
+  },
+  "b2b": {
+    "url": "https://hlc-admin.hubbuyer.com/b2b/dashboard/complain",
+    "title": "吐槽记录",
+    "menu": [
+      {
+        "idx": 0,
+        "text": "工作台",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 68,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 1,
+        "text": "吐槽记录",
+        "badge": null,
+        "cls": "el-menu-item is-active",
+        "x": 20,
+        "y": 120,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "idx": 2,
+        "text": "内部通知",
+        "badge": null,
+        "cls": "el-menu-item",
+        "x": 20,
+        "y": 170,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "idx": 3,
+        "text": "订单管理\n99+",
+        "badge": "99+",
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 220,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 4,
+        "text": "仓库管理",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 272,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 5,
+        "text": "发货配送\n10",
+        "badge": "10",
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 324,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 6,
+        "text": "客户管理\n43",
+        "badge": "43",
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 376,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 7,
+        "text": "营销管理",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 428,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 8,
+        "text": "附加项",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 480,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 9,
+        "text": "系统设置",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 532,
+        "w": 170,
+        "h": 52
+      }
+    ],
+    "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n吐槽记录\n内部通知\n订单管理\n99+\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n吐槽部门\n请选择吐槽部门\n吐槽原因\n请选择吐槽原因\n吐槽人员\n请选择吐槽人员\n订单编号\n查询\n重置\n展开\n吐槽原因\n\t\n吐槽部门\n\t\n吐槽人员\n\t\n订单编号\n\t\n产品ID\n\t\n赔付金额\n\t\n客户信息\n\t\n提交人\n\t\n吐槽日期\n\t\n操作\n质检-问题报告没有及时处理\n\t\n质控\n\t\n订单\n\t\nWL-JPN12-260519-001\n\t\n\t\n123.00\n\t\nB-JPN12-TEST-朴国哲\n\t\nadmin\n\t\n2026-05-25 09:51\n\t\n详情\n\n\n业务部-附加项未选中\n\t\n业务\n\t\n吴四佳\n\t\nWL-JPN22-251223-007\n\t\n\t\n222.00\n\t\nB-JPN22-TEST-吴四佳\n\t\n周凌虓\n\t\n2026-05-25 09:50\n\t\n详情\n\n\n质控部-多配/少配/配错\n\t\n质控\n\t\n夏飞\n\t\nWL-NZL1-251223-009\n\t\n\t\n0.00\n\t\nD-NZL1-新西兰-夏飞\n\t\nadmin\n\t\n2025-12-23 17:07\n\t\n详情\n\n\n采购部-买错/多买/少买\n\t\n采购\n\t\n包瑞楠\n\t\nB2B-DD-JPN11-251217-005\n\t\nD000000332\n\t\n0.00\n\t\nB-JPN11-TEST-朴国哲2\n\t\n朴国哲\n\t\n2025-12-19 10:20\n\t\n详情\n30条/页\n共 4 条\n1\n前往\n页"
+  }
+}

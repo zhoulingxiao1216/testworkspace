@@ -1,0 +1,9 @@
+{
+  "D2C_saveAddress": {},
+  "D2C_submit": {},
+  "B2B_submit": {
+    "quote_type": 1,
+    "logistics_config_id": 27,
+    "cart_detail_id_arr": []
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "order_id": "756126042548",
+  "total": 199,
+  "matched": 198,
+  "mismatched": 1,
+  "errors": 0,
+  "mismatch_details": [
+    {
+      "order_id": 985654,
+      "expected_sku": "sbg-ps-236o",
+      "actual_sku_on_image": "sbg-ps-2360",
+      "all_ocr_text": [
+        "SBG",
+        "sbg-ps-2360",
+        "￥2490",
+        "力-",
+        "サ",
+        "FREE"
+      ]
+    }
+  ],
+  "error_details": []
+}

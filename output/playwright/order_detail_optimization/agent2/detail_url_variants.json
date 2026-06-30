@@ -1,0 +1,254 @@
+[
+  {
+    "variant": "/b2b/order/agentBuy/detail?order_no=B2B-DD-KOR8-260519-145",
+    "finalUrl": "https://wlz-admin-all-view.hubbuyer.com/b2b/order/agentBuy/detail?order_no=B2B-DD-KOR8-260519-145",
+    "bodySnippet": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， test-zhou\n工作台\n订单管理\n报价单\n代购订单\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n客户管理\n营销管理\n附加项\n系统设置\n订单编号：B2B-DD-KOR8-260519-145\n支付日期：2026-05-19 09:36\n客户经理：金月明\n业务：唐芬芬\n采购：包瑞楠\n导出excel\n联系客户\n进行中\n客户信息：\nD-KOR8-TEST-1010\n一般会员\n国家：Korea\n订单清算\n店铺数\n\t\nSKU数\n\t\n下单数\n\t\n购入数\n\t\n到货数\n\t\n正品数\n\t\n待检数\n\t\n不良数\n\t\n待定数\n\t\n退货数\n\t\n换货数\n\t\n入库数\n\t\n已发货数\n\t\n可发货数\n4\n\t\n69\n\t\n841\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n商品信息\n\t\n商品属性\n\t\n采购\n\t\n到货\n\t\n待检\n\t\n不良\n\t\n待定\n\t\n退/换\n\t\n正品\n\t\n入库\n\t\n已发\n\t\n质检/附加项\n\t\n订单备注\n\t\n操作\n菲哲服装厂\n联系商家\n一键下单\n一键采购\n一键到货\n一键没货\n国内运单\n\t\n待采购\n\n空气棉运动裤女春季女裤高腰垂感拖地直筒裤女装休闲窄版阔腿裤\n\nID:D000005653\n\nMySKU:451360018260, bdo-pnt-021blk-l 复制\nASIN:---\n颜色:黑色常规款;\n尺码:L;\n\n\t\n\n单价:\n\n￥27.50\n\n下单数量:\n15\n小计: 412.50\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n全数详细\n首饰底卡\n普通贴纸\n吊牌替换\n查看\n修改\n\t\n---\n\t\n工单处理\n内部备注\n\n\n\t\n待采购\n\n空气棉运动裤女春季女裤高腰垂感拖地直筒裤女装休闲窄版阔腿裤\n\nID:D000005654\n\nMySKU:451360018261, bdo-pnt-021blk-m 复制\nASIN:---\n颜色:黑色常规款;\n尺码:M;\n\n\t\n\n单价:\n\n￥27.50\n\n下单数量:\n10\n小计: 275.00\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n全数详细\n首饰底卡\n普通贴纸\n吊牌替换\n查看\n修改\n\t\n---\n\t\n工单处理\n内部备注\n\n\n\t\n待采购\n\n空气棉运动裤女春季女裤高腰垂感拖地直筒裤女装休闲窄版阔腿裤\n\nID:D000005655\n\nMySKU:451360018262, bdo-pnt-021blk-s 复制\nASIN:---\n颜色:黑色常规款;\n尺码:S;\n\n\t\n\n单价:\n\n￥27.50\n\n下单数量:\n25\n小计: 687.50\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n全数详细\n首饰底卡\n普通贴纸\n吊牌替换\n查看\n修改\n\t\n---\n\t\n工单处理\n内部备注\n\n\n\t\n待采购",
+    "api": [
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/chat/room/list",
+        "post": "{}",
+        "body": "{\"code\":200,\"app\":\"chat\",\"field\":\"success\",\"message\":\"success\",\"data\":{\"data\":[{\"id\":1,\"uuid\":\"251211660051\",\"avatar\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/chat\\/avatar\\/group-avatar.png\",\"group_admin_id\":7,\"name\":\"系统群\",\"user_name\":\"专属客服 - 朴雪锦\",\"user_ids\":\"-3-\",\"admin_ids\":\"-7-127-6-\",\"site\":\"\",\"type\":\"\",\"admin_name\":\"业务沟通群\",\"status\":200,\"date\":\"2025-12-11\",\"created_at\":\"2025-12-11 22:55:19\",\"updated_at\":\"2025-12-22 15:40:55\",\"last_data\":{\"content\":\"<p>1213123<\\/p>\",\"data\":{\"content\":\"<"
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/LanguageConfig/language",
+        "post": "{\"language_page\":\"B2B后台/打印\"}",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"field\":\"success\",\"message\":\"success\",\"data\":{\"data\":{\"Download_order\":{\"korean\":\"주문 다운로드\",\"english\":\"Download order\",\"japanese\":\"注文情報ダウンロード\",\"chinese_simplified\":\"下载订单\"},\"product_id\":{\"korean\":\"상품 ID\",\"english\":\"Product ID\",\"japanese\":\"商品ID\",\"chinese_simplified\":\"商品ID\"},\"specification‌\":{\"korean\":\"규격\",\"english\":\"Specifications\",\"japanese\":\"仕様\",\"chinese_simplified\":\"规格‌\"},\"arrival_quantity‌\":{\"korean\":\"입고 수량\",\"english\":\"Arrived quantity\",\"japanese\":\"入荷数\",\"chinese_si"
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/quote/productDisableLogo",
+        "post": "",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"message\":\"success\",\"data\":{\"data\":[{\"id\":1,\"uuid\":\"CHUAN-YUN\",\"icon\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/b2b\\/admin\\/chuan_yun.png\",\"name_language\":{\"chinese_simplified\":\"船运\",\"english\":\"shipping\",\"japanese\":\"海運\",\"korean\":\"선박 운송\",\"arabic\":\"\",\"spanish\":\"\",\"russian\":\"\",\"french\":\"\"}},{\"id\":2,\"uuid\":\"YI-SUI\",\"icon\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/b2b\\/admin\\/yi_sui.png\",\"name_language\":{\"chinese_simplified\":\"易碎\",\"english\":\"fragile\",\"japanese\":\""
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/orderDetail/statOrderData",
+        "post": "{\"order_no\":\"B2B-DD-KOR8-260519-145\"}",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"message\":\"success\",\"data\":{\"total_shop_num\":4,\"total_sku_num\":69,\"total_quantity\":841,\"total_change_quantity\":841,\"total_purchase_qty\":\"\",\"total_arrive_qty\":\"\",\"total_wait_check_qty\":\"\",\"total_genuine_qty\":\"\",\"total_bad_qty\":\"\",\"total_wait_qty\":\"\",\"total_return_qty\":\"\",\"total_change_qty\":\"\",\"total_store_qty\":\"\",\"total_send_qty\":\"\",\"total_stock_num\":\"\"}}"
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/orderDetail/list",
+        "post": "{\"order_no\":\"B2B-DD-KOR8-260519-145\"}",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"message\":\"success\",\"data\":{\"order_seller_data\":[{\"id\":1584,\"quote_seller_id\":2176,\"order_no\":\"B2B-DD-KOR8-260519-145\",\"user_main_uuid\":\"KOR8\",\"seller_open_id\":\"BBBLtZk4TT6mbOFHnYyuNkUPg\",\"seller_name\":\"菲哲服装厂\",\"product_platform\":\"1688\",\"goods_total_amount\":\"8250.00\",\"change_total_amount\":null,\"genuine_total_amount\":null,\"no_goods_total_amount\":null,\"no_goods_refund_total_amount\":null,\"bad_return_amount\":null,\"return_amount_review_status\":0,\"real_pay_amount\":null,\"us"
+      }
+    ]
+  },
+  {
+    "variant": "/b2b/order/agentBuy/detail?orderNo=B2B-DD-KOR8-260519-145",
+    "finalUrl": "https://wlz-admin-all-view.hubbuyer.com/b2b/order/agentBuy/detail?orderNo=B2B-DD-KOR8-260519-145",
+    "bodySnippet": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， test-zhou\n工作台\n订单管理\n报价单\n代购订单\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n客户管理\n营销管理\n附加项\n系统设置\n订单编号：---\n支付日期：---\n客户经理：---\n业务：---\n采购：---\n导出excel\n联系客户\n---\n客户信息：\n---\n---\n国家：---\n订单清算\n店铺数\n\t\nSKU数\n\t\n下单数\n\t\n购入数\n\t\n到货数\n\t\n正品数\n\t\n待检数\n\t\n不良数\n\t\n待定数\n\t\n退货数\n\t\n换货数\n\t\n入库数\n\t\n已发货数\n\t\n可发货数\n0\n\t\n0\n\t\n0\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\n暂无数据",
+    "api": [
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/chat/room/list",
+        "post": "{}",
+        "body": "{\"code\":200,\"app\":\"chat\",\"field\":\"success\",\"message\":\"success\",\"data\":{\"data\":[{\"id\":1,\"uuid\":\"251211660051\",\"avatar\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/chat\\/avatar\\/group-avatar.png\",\"group_admin_id\":7,\"name\":\"系统群\",\"user_name\":\"专属客服 - 朴雪锦\",\"user_ids\":\"-3-\",\"admin_ids\":\"-7-127-6-\",\"site\":\"\",\"type\":\"\",\"admin_name\":\"业务沟通群\",\"status\":200,\"date\":\"2025-12-11\",\"created_at\":\"2025-12-11 22:55:19\",\"updated_at\":\"2025-12-22 15:40:55\",\"last_data\":{\"content\":\"<p>1213123<\\/p>\",\"data\":{\"content\":\"<"
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/LanguageConfig/language",
+        "post": "{\"language_page\":\"B2B后台/打印\"}",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"field\":\"success\",\"message\":\"success\",\"data\":{\"data\":{\"Download_order\":{\"korean\":\"주문 다운로드\",\"english\":\"Download order\",\"japanese\":\"注文情報ダウンロード\",\"chinese_simplified\":\"下载订单\"},\"product_id\":{\"korean\":\"상품 ID\",\"english\":\"Product ID\",\"japanese\":\"商品ID\",\"chinese_simplified\":\"商品ID\"},\"specification‌\":{\"korean\":\"규격\",\"english\":\"Specifications\",\"japanese\":\"仕様\",\"chinese_simplified\":\"规格‌\"},\"arrival_quantity‌\":{\"korean\":\"입고 수량\",\"english\":\"Arrived quantity\",\"japanese\":\"入荷数\",\"chinese_si"
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/quote/productDisableLogo",
+        "post": "",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"message\":\"success\",\"data\":{\"data\":[{\"id\":1,\"uuid\":\"CHUAN-YUN\",\"icon\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/b2b\\/admin\\/chuan_yun.png\",\"name_language\":{\"chinese_simplified\":\"船运\",\"english\":\"shipping\",\"japanese\":\"海運\",\"korean\":\"선박 운송\",\"arabic\":\"\",\"spanish\":\"\",\"russian\":\"\",\"french\":\"\"}},{\"id\":2,\"uuid\":\"YI-SUI\",\"icon\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/b2b\\/admin\\/yi_sui.png\",\"name_language\":{\"chinese_simplified\":\"易碎\",\"english\":\"fragile\",\"japanese\":\""
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/orderDetail/statOrderData",
+        "post": "{}",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"message\":\"success\",\"data\":{\"total_shop_num\":0,\"total_sku_num\":0,\"total_quantity\":0,\"total_change_quantity\":0,\"total_purchase_qty\":\"\",\"total_arrive_qty\":\"\",\"total_wait_check_qty\":\"\",\"total_genuine_qty\":\"\",\"total_bad_qty\":\"\",\"total_wait_qty\":\"\",\"total_return_qty\":\"\",\"total_change_qty\":\"\",\"total_store_qty\":\"\",\"total_send_qty\":\"\",\"total_stock_num\":\"\"}}"
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/orderDetail/list",
+        "post": "{}",
+        "body": "{\n    \"code\": 500,\n    \"msg\": \"Attempt to read property \\\"user_main_uuid\\\" on null\",\n    \"traces\": \"ErrorException: Attempt to read property \\\"user_main_uuid\\\" on null in /www/wwwroot/wlz/api-all/app/admin_b2b/controller/OrderDetailController.php:101\\nStack trace:\\n#0 /www/wwwroot/wlz/api-all/app/admin_b2b/controller/OrderDetailController.php(101): support\\\\App::{closure}()\\n#1 /www/wwwroot/wlz/api-all/vendor/workerman/webman-framework/src/App.php(336): app\\\\admin_b2b\\\\controller\\\\OrderDetailCon"
+      }
+    ]
+  },
+  {
+    "variant": "/b2b/order/agentBuy/detail?id=406",
+    "finalUrl": "https://wlz-admin-all-view.hubbuyer.com/b2b/order/agentBuy/detail?id=406",
+    "bodySnippet": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， test-zhou\n工作台\n订单管理\n报价单\n代购订单\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n客户管理\n营销管理\n附加项\n系统设置\n订单编号：---\n支付日期：---\n客户经理：---\n业务：---\n采购：---\n导出excel\n联系客户\n---\n客户信息：\n---\n---\n国家：---\n订单清算\n店铺数\n\t\nSKU数\n\t\n下单数\n\t\n购入数\n\t\n到货数\n\t\n正品数\n\t\n待检数\n\t\n不良数\n\t\n待定数\n\t\n退货数\n\t\n换货数\n\t\n入库数\n\t\n已发货数\n\t\n可发货数\n0\n\t\n0\n\t\n0\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\n暂无数据",
+    "api": [
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/chat/room/list",
+        "post": "{}",
+        "body": "{\"code\":200,\"app\":\"chat\",\"field\":\"success\",\"message\":\"success\",\"data\":{\"data\":[{\"id\":1,\"uuid\":\"251211660051\",\"avatar\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/chat\\/avatar\\/group-avatar.png\",\"group_admin_id\":7,\"name\":\"系统群\",\"user_name\":\"专属客服 - 朴雪锦\",\"user_ids\":\"-3-\",\"admin_ids\":\"-7-127-6-\",\"site\":\"\",\"type\":\"\",\"admin_name\":\"业务沟通群\",\"status\":200,\"date\":\"2025-12-11\",\"created_at\":\"2025-12-11 22:55:19\",\"updated_at\":\"2025-12-22 15:40:55\",\"last_data\":{\"content\":\"<p>1213123<\\/p>\",\"data\":{\"content\":\"<"
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/LanguageConfig/language",
+        "post": "{\"language_page\":\"B2B后台/打印\"}",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"field\":\"success\",\"message\":\"success\",\"data\":{\"data\":{\"Download_order\":{\"korean\":\"주문 다운로드\",\"english\":\"Download order\",\"japanese\":\"注文情報ダウンロード\",\"chinese_simplified\":\"下载订单\"},\"product_id\":{\"korean\":\"상품 ID\",\"english\":\"Product ID\",\"japanese\":\"商品ID\",\"chinese_simplified\":\"商品ID\"},\"specification‌\":{\"korean\":\"규격\",\"english\":\"Specifications\",\"japanese\":\"仕様\",\"chinese_simplified\":\"规格‌\"},\"arrival_quantity‌\":{\"korean\":\"입고 수량\",\"english\":\"Arrived quantity\",\"japanese\":\"入荷数\",\"chinese_si"
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/orderDetail/list",
+        "post": "{}",
+        "body": "{\n    \"code\": 500,\n    \"msg\": \"Attempt to read property \\\"user_main_uuid\\\" on null\",\n    \"traces\": \"ErrorException: Attempt to read property \\\"user_main_uuid\\\" on null in /www/wwwroot/wlz/api-all/app/admin_b2b/controller/OrderDetailController.php:101\\nStack trace:\\n#0 /www/wwwroot/wlz/api-all/app/admin_b2b/controller/OrderDetailController.php(101): support\\\\App::{closure}()\\n#1 /www/wwwroot/wlz/api-all/vendor/workerman/webman-framework/src/App.php(336): app\\\\admin_b2b\\\\controller\\\\OrderDetailCon"
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/orderDetail/statOrderData",
+        "post": "{}",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"message\":\"success\",\"data\":{\"total_shop_num\":0,\"total_sku_num\":0,\"total_quantity\":0,\"total_change_quantity\":0,\"total_purchase_qty\":\"\",\"total_arrive_qty\":\"\",\"total_wait_check_qty\":\"\",\"total_genuine_qty\":\"\",\"total_bad_qty\":\"\",\"total_wait_qty\":\"\",\"total_return_qty\":\"\",\"total_change_qty\":\"\",\"total_store_qty\":\"\",\"total_send_qty\":\"\",\"total_stock_num\":\"\"}}"
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/quote/productDisableLogo",
+        "post": "",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"message\":\"success\",\"data\":{\"data\":[{\"id\":1,\"uuid\":\"CHUAN-YUN\",\"icon\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/b2b\\/admin\\/chuan_yun.png\",\"name_language\":{\"chinese_simplified\":\"船运\",\"english\":\"shipping\",\"japanese\":\"海運\",\"korean\":\"선박 운송\",\"arabic\":\"\",\"spanish\":\"\",\"russian\":\"\",\"french\":\"\"}},{\"id\":2,\"uuid\":\"YI-SUI\",\"icon\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/b2b\\/admin\\/yi_sui.png\",\"name_language\":{\"chinese_simplified\":\"易碎\",\"english\":\"fragile\",\"japanese\":\""
+      }
+    ]
+  },
+  {
+    "variant": "/b2b/order/agentBuy/detail?order_id=406",
+    "finalUrl": "https://wlz-admin-all-view.hubbuyer.com/b2b/order/agentBuy/detail?order_id=406",
+    "bodySnippet": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， test-zhou\n工作台\n订单管理\n报价单\n代购订单\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n客户管理\n营销管理\n附加项\n系统设置\n订单编号：---\n支付日期：---\n客户经理：---\n业务：---\n采购：---\n导出excel\n联系客户\n---\n客户信息：\n---\n---\n国家：---\n订单清算\n店铺数\n\t\nSKU数\n\t\n下单数\n\t\n购入数\n\t\n到货数\n\t\n正品数\n\t\n待检数\n\t\n不良数\n\t\n待定数\n\t\n退货数\n\t\n换货数\n\t\n入库数\n\t\n已发货数\n\t\n可发货数\n0\n\t\n0\n\t\n0\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\n暂无数据",
+    "api": [
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/chat/room/list",
+        "post": "{}",
+        "body": "{\"code\":200,\"app\":\"chat\",\"field\":\"success\",\"message\":\"success\",\"data\":{\"data\":[{\"id\":1,\"uuid\":\"251211660051\",\"avatar\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/chat\\/avatar\\/group-avatar.png\",\"group_admin_id\":7,\"name\":\"系统群\",\"user_name\":\"专属客服 - 朴雪锦\",\"user_ids\":\"-3-\",\"admin_ids\":\"-7-127-6-\",\"site\":\"\",\"type\":\"\",\"admin_name\":\"业务沟通群\",\"status\":200,\"date\":\"2025-12-11\",\"created_at\":\"2025-12-11 22:55:19\",\"updated_at\":\"2025-12-22 15:40:55\",\"last_data\":{\"content\":\"<p>1213123<\\/p>\",\"data\":{\"content\":\"<"
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/quote/productDisableLogo",
+        "post": "",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"message\":\"success\",\"data\":{\"data\":[{\"id\":1,\"uuid\":\"CHUAN-YUN\",\"icon\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/b2b\\/admin\\/chuan_yun.png\",\"name_language\":{\"chinese_simplified\":\"船运\",\"english\":\"shipping\",\"japanese\":\"海運\",\"korean\":\"선박 운송\",\"arabic\":\"\",\"spanish\":\"\",\"russian\":\"\",\"french\":\"\"}},{\"id\":2,\"uuid\":\"YI-SUI\",\"icon\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/b2b\\/admin\\/yi_sui.png\",\"name_language\":{\"chinese_simplified\":\"易碎\",\"english\":\"fragile\",\"japanese\":\""
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/LanguageConfig/language",
+        "post": "{\"language_page\":\"B2B后台/打印\"}",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"field\":\"success\",\"message\":\"success\",\"data\":{\"data\":{\"Download_order\":{\"korean\":\"주문 다운로드\",\"english\":\"Download order\",\"japanese\":\"注文情報ダウンロード\",\"chinese_simplified\":\"下载订单\"},\"product_id\":{\"korean\":\"상품 ID\",\"english\":\"Product ID\",\"japanese\":\"商品ID\",\"chinese_simplified\":\"商品ID\"},\"specification‌\":{\"korean\":\"규격\",\"english\":\"Specifications\",\"japanese\":\"仕様\",\"chinese_simplified\":\"规格‌\"},\"arrival_quantity‌\":{\"korean\":\"입고 수량\",\"english\":\"Arrived quantity\",\"japanese\":\"入荷数\",\"chinese_si"
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/orderDetail/statOrderData",
+        "post": "{}",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"message\":\"success\",\"data\":{\"total_shop_num\":0,\"total_sku_num\":0,\"total_quantity\":0,\"total_change_quantity\":0,\"total_purchase_qty\":\"\",\"total_arrive_qty\":\"\",\"total_wait_check_qty\":\"\",\"total_genuine_qty\":\"\",\"total_bad_qty\":\"\",\"total_wait_qty\":\"\",\"total_return_qty\":\"\",\"total_change_qty\":\"\",\"total_store_qty\":\"\",\"total_send_qty\":\"\",\"total_stock_num\":\"\"}}"
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/orderDetail/list",
+        "post": "{}",
+        "body": "{\n    \"code\": 500,\n    \"msg\": \"Attempt to read property \\\"user_main_uuid\\\" on null\",\n    \"traces\": \"ErrorException: Attempt to read property \\\"user_main_uuid\\\" on null in /www/wwwroot/wlz/api-all/app/admin_b2b/controller/OrderDetailController.php:101\\nStack trace:\\n#0 /www/wwwroot/wlz/api-all/app/admin_b2b/controller/OrderDetailController.php(101): support\\\\App::{closure}()\\n#1 /www/wwwroot/wlz/api-all/vendor/workerman/webman-framework/src/App.php(336): app\\\\admin_b2b\\\\controller\\\\OrderDetailCon"
+      }
+    ]
+  },
+  {
+    "variant": "/b2b/order/agentBuy/detail?order_no=B2B-DD-KOR8-260519-145&id=406",
+    "finalUrl": "https://wlz-admin-all-view.hubbuyer.com/b2b/order/agentBuy/detail?order_no=B2B-DD-KOR8-260519-145&id=406",
+    "bodySnippet": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， test-zhou\n工作台\n订单管理\n报价单\n代购订单\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n客户管理\n营销管理\n附加项\n系统设置\n订单编号：B2B-DD-KOR8-260519-145\n支付日期：2026-05-19 09:36\n客户经理：金月明\n业务：唐芬芬\n采购：包瑞楠\n导出excel\n联系客户\n进行中\n客户信息：\nD-KOR8-TEST-1010\n一般会员\n国家：Korea\n订单清算\n店铺数\n\t\nSKU数\n\t\n下单数\n\t\n购入数\n\t\n到货数\n\t\n正品数\n\t\n待检数\n\t\n不良数\n\t\n待定数\n\t\n退货数\n\t\n换货数\n\t\n入库数\n\t\n已发货数\n\t\n可发货数\n4\n\t\n69\n\t\n841\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n商品信息\n\t\n商品属性\n\t\n采购\n\t\n到货\n\t\n待检\n\t\n不良\n\t\n待定\n\t\n退/换\n\t\n正品\n\t\n入库\n\t\n已发\n\t\n质检/附加项\n\t\n订单备注\n\t\n操作\n菲哲服装厂\n联系商家\n一键下单\n一键采购\n一键到货\n一键没货\n国内运单\n\t\n待采购\n\n空气棉运动裤女春季女裤高腰垂感拖地直筒裤女装休闲窄版阔腿裤\n\nID:D000005653\n\nMySKU:451360018260, bdo-pnt-021blk-l 复制\nASIN:---\n颜色:黑色常规款;\n尺码:L;\n\n\t\n\n单价:\n\n￥27.50\n\n下单数量:\n15\n小计: 412.50\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n全数详细\n首饰底卡\n普通贴纸\n吊牌替换\n查看\n修改\n\t\n---\n\t\n工单处理\n内部备注\n\n\n\t\n待采购\n\n空气棉运动裤女春季女裤高腰垂感拖地直筒裤女装休闲窄版阔腿裤\n\nID:D000005654\n\nMySKU:451360018261, bdo-pnt-021blk-m 复制\nASIN:---\n颜色:黑色常规款;\n尺码:M;\n\n\t\n\n单价:\n\n￥27.50\n\n下单数量:\n10\n小计: 275.00\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n全数详细\n首饰底卡\n普通贴纸\n吊牌替换\n查看\n修改\n\t\n---\n\t\n工单处理\n内部备注\n\n\n\t\n待采购\n\n空气棉运动裤女春季女裤高腰垂感拖地直筒裤女装休闲窄版阔腿裤\n\nID:D000005655\n\nMySKU:451360018262, bdo-pnt-021blk-s 复制\nASIN:---\n颜色:黑色常规款;\n尺码:S;\n\n\t\n\n单价:\n\n￥27.50\n\n下单数量:\n25\n小计: 687.50\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n全数详细\n首饰底卡\n普通贴纸\n吊牌替换\n查看\n修改\n\t\n---\n\t\n工单处理\n内部备注\n\n\n\t\n待采购",
+    "api": [
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/chat/room/list",
+        "post": "{}",
+        "body": "{\"code\":200,\"app\":\"chat\",\"field\":\"success\",\"message\":\"success\",\"data\":{\"data\":[{\"id\":1,\"uuid\":\"251211660051\",\"avatar\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/chat\\/avatar\\/group-avatar.png\",\"group_admin_id\":7,\"name\":\"系统群\",\"user_name\":\"专属客服 - 朴雪锦\",\"user_ids\":\"-3-\",\"admin_ids\":\"-7-127-6-\",\"site\":\"\",\"type\":\"\",\"admin_name\":\"业务沟通群\",\"status\":200,\"date\":\"2025-12-11\",\"created_at\":\"2025-12-11 22:55:19\",\"updated_at\":\"2025-12-22 15:40:55\",\"last_data\":{\"content\":\"<p>1213123<\\/p>\",\"data\":{\"content\":\"<"
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/quote/productDisableLogo",
+        "post": "",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"message\":\"success\",\"data\":{\"data\":[{\"id\":1,\"uuid\":\"CHUAN-YUN\",\"icon\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/b2b\\/admin\\/chuan_yun.png\",\"name_language\":{\"chinese_simplified\":\"船运\",\"english\":\"shipping\",\"japanese\":\"海運\",\"korean\":\"선박 운송\",\"arabic\":\"\",\"spanish\":\"\",\"russian\":\"\",\"french\":\"\"}},{\"id\":2,\"uuid\":\"YI-SUI\",\"icon\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/b2b\\/admin\\/yi_sui.png\",\"name_language\":{\"chinese_simplified\":\"易碎\",\"english\":\"fragile\",\"japanese\":\""
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/LanguageConfig/language",
+        "post": "{\"language_page\":\"B2B后台/打印\"}",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"field\":\"success\",\"message\":\"success\",\"data\":{\"data\":{\"Download_order\":{\"korean\":\"주문 다운로드\",\"english\":\"Download order\",\"japanese\":\"注文情報ダウンロード\",\"chinese_simplified\":\"下载订单\"},\"product_id\":{\"korean\":\"상품 ID\",\"english\":\"Product ID\",\"japanese\":\"商品ID\",\"chinese_simplified\":\"商品ID\"},\"specification‌\":{\"korean\":\"규격\",\"english\":\"Specifications\",\"japanese\":\"仕様\",\"chinese_simplified\":\"规格‌\"},\"arrival_quantity‌\":{\"korean\":\"입고 수량\",\"english\":\"Arrived quantity\",\"japanese\":\"入荷数\",\"chinese_si"
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/orderDetail/statOrderData",
+        "post": "{\"order_no\":\"B2B-DD-KOR8-260519-145\"}",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"message\":\"success\",\"data\":{\"total_shop_num\":4,\"total_sku_num\":69,\"total_quantity\":841,\"total_change_quantity\":841,\"total_purchase_qty\":\"\",\"total_arrive_qty\":\"\",\"total_wait_check_qty\":\"\",\"total_genuine_qty\":\"\",\"total_bad_qty\":\"\",\"total_wait_qty\":\"\",\"total_return_qty\":\"\",\"total_change_qty\":\"\",\"total_store_qty\":\"\",\"total_send_qty\":\"\",\"total_stock_num\":\"\"}}"
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/orderDetail/list",
+        "post": "{\"order_no\":\"B2B-DD-KOR8-260519-145\"}",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"message\":\"success\",\"data\":{\"order_seller_data\":[{\"id\":1584,\"quote_seller_id\":2176,\"order_no\":\"B2B-DD-KOR8-260519-145\",\"user_main_uuid\":\"KOR8\",\"seller_open_id\":\"BBBLtZk4TT6mbOFHnYyuNkUPg\",\"seller_name\":\"菲哲服装厂\",\"product_platform\":\"1688\",\"goods_total_amount\":\"8250.00\",\"change_total_amount\":null,\"genuine_total_amount\":null,\"no_goods_total_amount\":null,\"no_goods_refund_total_amount\":null,\"bad_return_amount\":null,\"return_amount_review_status\":0,\"real_pay_amount\":null,\"us"
+      }
+    ]
+  },
+  {
+    "variant": "/b2b/order/agentBuy/detail?order_no=B2B-DD-KOR8-260519-145&status=110",
+    "finalUrl": "https://wlz-admin-all-view.hubbuyer.com/b2b/order/agentBuy/detail?order_no=B2B-DD-KOR8-260519-145&status=110",
+    "bodySnippet": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， test-zhou\n工作台\n订单管理\n报价单\n代购订单\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n客户管理\n营销管理\n附加项\n系统设置\n订单编号：B2B-DD-KOR8-260519-145\n支付日期：2026-05-19 09:36\n客户经理：金月明\n业务：唐芬芬\n采购：包瑞楠\n导出excel\n联系客户\n进行中\n客户信息：\nD-KOR8-TEST-1010\n一般会员\n国家：Korea\n订单清算\n店铺数\n\t\nSKU数\n\t\n下单数\n\t\n购入数\n\t\n到货数\n\t\n正品数\n\t\n待检数\n\t\n不良数\n\t\n待定数\n\t\n退货数\n\t\n换货数\n\t\n入库数\n\t\n已发货数\n\t\n可发货数\n4\n\t\n69\n\t\n841\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n商品信息\n\t\n商品属性\n\t\n采购\n\t\n到货\n\t\n待检\n\t\n不良\n\t\n待定\n\t\n退/换\n\t\n正品\n\t\n入库\n\t\n已发\n\t\n质检/附加项\n\t\n订单备注\n\t\n操作\n菲哲服装厂\n联系商家\n一键下单\n一键采购\n一键到货\n一键没货\n国内运单\n\t\n待采购\n\n空气棉运动裤女春季女裤高腰垂感拖地直筒裤女装休闲窄版阔腿裤\n\nID:D000005653\n\nMySKU:451360018260, bdo-pnt-021blk-l 复制\nASIN:---\n颜色:黑色常规款;\n尺码:L;\n\n\t\n\n单价:\n\n￥27.50\n\n下单数量:\n15\n小计: 412.50\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n全数详细\n首饰底卡\n普通贴纸\n吊牌替换\n查看\n修改\n\t\n---\n\t\n工单处理\n内部备注\n\n\n\t\n待采购\n\n空气棉运动裤女春季女裤高腰垂感拖地直筒裤女装休闲窄版阔腿裤\n\nID:D000005654\n\nMySKU:451360018261, bdo-pnt-021blk-m 复制\nASIN:---\n颜色:黑色常规款;\n尺码:M;\n\n\t\n\n单价:\n\n￥27.50\n\n下单数量:\n10\n小计: 275.00\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n全数详细\n首饰底卡\n普通贴纸\n吊牌替换\n查看\n修改\n\t\n---\n\t\n工单处理\n内部备注\n\n\n\t\n待采购\n\n空气棉运动裤女春季女裤高腰垂感拖地直筒裤女装休闲窄版阔腿裤\n\nID:D000005655\n\nMySKU:451360018262, bdo-pnt-021blk-s 复制\nASIN:---\n颜色:黑色常规款;\n尺码:S;\n\n\t\n\n单价:\n\n￥27.50\n\n下单数量:\n25\n小计: 687.50\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n全数详细\n首饰底卡\n普通贴纸\n吊牌替换\n查看\n修改\n\t\n---\n\t\n工单处理\n内部备注\n\n\n\t\n待采购",
+    "api": [
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/chat/room/list",
+        "post": "{}",
+        "body": "{\"code\":200,\"app\":\"chat\",\"field\":\"success\",\"message\":\"success\",\"data\":{\"data\":[{\"id\":1,\"uuid\":\"251211660051\",\"avatar\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/chat\\/avatar\\/group-avatar.png\",\"group_admin_id\":7,\"name\":\"系统群\",\"user_name\":\"专属客服 - 朴雪锦\",\"user_ids\":\"-3-\",\"admin_ids\":\"-7-127-6-\",\"site\":\"\",\"type\":\"\",\"admin_name\":\"业务沟通群\",\"status\":200,\"date\":\"2025-12-11\",\"created_at\":\"2025-12-11 22:55:19\",\"updated_at\":\"2025-12-22 15:40:55\",\"last_data\":{\"content\":\"<p>1213123<\\/p>\",\"data\":{\"content\":\"<"
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/quote/productDisableLogo",
+        "post": "",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"message\":\"success\",\"data\":{\"data\":[{\"id\":1,\"uuid\":\"CHUAN-YUN\",\"icon\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/b2b\\/admin\\/chuan_yun.png\",\"name_language\":{\"chinese_simplified\":\"船运\",\"english\":\"shipping\",\"japanese\":\"海運\",\"korean\":\"선박 운송\",\"arabic\":\"\",\"spanish\":\"\",\"russian\":\"\",\"french\":\"\"}},{\"id\":2,\"uuid\":\"YI-SUI\",\"icon\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/b2b\\/admin\\/yi_sui.png\",\"name_language\":{\"chinese_simplified\":\"易碎\",\"english\":\"fragile\",\"japanese\":\""
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/LanguageConfig/language",
+        "post": "{\"language_page\":\"B2B后台/打印\"}",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"field\":\"success\",\"message\":\"success\",\"data\":{\"data\":{\"Download_order\":{\"korean\":\"주문 다운로드\",\"english\":\"Download order\",\"japanese\":\"注文情報ダウンロード\",\"chinese_simplified\":\"下载订单\"},\"product_id\":{\"korean\":\"상품 ID\",\"english\":\"Product ID\",\"japanese\":\"商品ID\",\"chinese_simplified\":\"商品ID\"},\"specification‌\":{\"korean\":\"규격\",\"english\":\"Specifications\",\"japanese\":\"仕様\",\"chinese_simplified\":\"规格‌\"},\"arrival_quantity‌\":{\"korean\":\"입고 수량\",\"english\":\"Arrived quantity\",\"japanese\":\"入荷数\",\"chinese_si"
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/orderDetail/statOrderData",
+        "post": "{\"order_no\":\"B2B-DD-KOR8-260519-145\"}",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"message\":\"success\",\"data\":{\"total_shop_num\":4,\"total_sku_num\":69,\"total_quantity\":841,\"total_change_quantity\":841,\"total_purchase_qty\":\"\",\"total_arrive_qty\":\"\",\"total_wait_check_qty\":\"\",\"total_genuine_qty\":\"\",\"total_bad_qty\":\"\",\"total_wait_qty\":\"\",\"total_return_qty\":\"\",\"total_change_qty\":\"\",\"total_store_qty\":\"\",\"total_send_qty\":\"\",\"total_stock_num\":\"\"}}"
+      },
+      {
+        "method": "POST",
+        "status": 200,
+        "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/orderDetail/list",
+        "post": "{\"order_no\":\"B2B-DD-KOR8-260519-145\"}",
+        "body": "{\"code\":200,\"app\":\"admin_b2b\",\"message\":\"success\",\"data\":{\"order_seller_data\":[{\"id\":1584,\"quote_seller_id\":2176,\"order_no\":\"B2B-DD-KOR8-260519-145\",\"user_main_uuid\":\"KOR8\",\"seller_open_id\":\"BBBLtZk4TT6mbOFHnYyuNkUPg\",\"seller_name\":\"菲哲服装厂\",\"product_platform\":\"1688\",\"goods_total_amount\":\"8250.00\",\"change_total_amount\":null,\"genuine_total_amount\":null,\"no_goods_total_amount\":null,\"no_goods_refund_total_amount\":null,\"bad_return_amount\":null,\"return_amount_review_status\":0,\"real_pay_amount\":null,\"us"
+      }
+    ]
+  }
+]

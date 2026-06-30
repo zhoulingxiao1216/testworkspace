@@ -1,0 +1,1297 @@
+{
+  "url": "https://wlz-admin-all-view.hubbuyer.com/b2b/dashboard/complain",
+  "title": "吐槽记录",
+  "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n吐槽记录\n内部通知\n订单管理\n仓库管理\n发货配送\n客户管理\n营销管理\n附加项\n系统设置\n吐槽部门\n请选择吐槽部门\n吐槽原因\n请选择吐槽原因\n吐槽人员\n请选择吐槽人员\n订单编号\n查询\n重置\n展开\n吐槽原因\n\t\n吐槽部门\n\t\n吐槽人员\n\t\n订单编号\n\t\n产品ID\n\t\n赔付金额\n\t\n客户信息\n\t\n提交人\n\t\n吐槽日期\n\t\n操作\n质控部-多配/少配/配错\n\t\n质控\n\t\n夏飞\n\t\nWL-NZL1-251223-009\n\t\n\t\n0.00\n\t\nD-NZL1-新西兰-夏飞\n\t\nadmin\n\t\n2025-12-23 17:07\n\t\n详情\n\n\n采购部-买错/多买/少买\n\t\n采购\n\t\n包瑞楠\n\t\nB2B-DD-JPN11-251217-005\n\t\nD000000332\n\t\n0.00\n\t\nB-JPN11-TEST-朴国哲2\n\t\n朴国哲\n\t\n2025-12-19 10:20\n\t\n详情\n30条/页\n共 2 条\n1\n前往\n页",
+  "contains_batch": false,
+  "contains_detail": true,
+  "controls": [
+    {
+      "i": 0,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统 你好， admin 工作台 吐槽记录 内部通知 订单管理 仓库管理 发货配送 客户管理 营销管理 附加项 系统设置 吐槽部门 请选择吐槽部门 吐槽原因 请选择吐槽原因 吐槽人员 请选择吐槽人员 订单编号 查询 重置 展开 吐槽原因 吐槽部门 吐槽人员 订单编号 产品ID 赔付",
+      "cls": ""
+    },
+    {
+      "i": 1,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统 你好， admin 工作台 吐槽记录 内部通知 订单管理 仓库管理 发货配送 客户管理 营销管理 附加项 系统设置 吐槽部门 请选择吐槽部门 吐槽原因 请选择吐槽原因 吐槽人员 请选择吐槽人员 订单编号 查询 重置 展开 吐槽原因 吐槽部门 吐槽人员 订单编号 产品ID 赔付",
+      "cls": "home h-full"
+    },
+    {
+      "i": 2,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统 你好， admin",
+      "cls": "headers pt-11 box-border color-#333"
+    },
+    {
+      "i": 3,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统 你好， admin",
+      "cls": "px-20 box-border flex justify-between"
+    },
+    {
+      "i": 4,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统",
+      "cls": ""
+    },
+    {
+      "i": 5,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统",
+      "cls": "top-menus"
+    },
+    {
+      "i": 6,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统",
+      "cls": "el-scrollbar"
+    },
+    {
+      "i": 7,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统",
+      "cls": "el-scrollbar__wrap el-scrollbar__wrap--hidden-default"
+    },
+    {
+      "i": 8,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统",
+      "cls": "el-scrollbar__view"
+    },
+    {
+      "i": 9,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统",
+      "cls": "w-full flex"
+    },
+    {
+      "i": 10,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统",
+      "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 flex items-center h-36 box-border"
+    },
+    {
+      "i": 11,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统",
+      "cls": "ml-5 flex-1 inline-block"
+    },
+    {
+      "i": 12,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "B2B系统",
+      "cls": "menu-check menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 flex items-center h-36 box-border"
+    },
+    {
+      "i": 13,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "B2B系统",
+      "cls": "ml-5 flex-1 inline-block"
+    },
+    {
+      "i": 14,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "D2C系统",
+      "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 flex items-center h-36 box-border"
+    },
+    {
+      "i": 15,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "D2C系统",
+      "cls": "ml-5 flex-1 inline-block"
+    },
+    {
+      "i": 16,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "介绍中心",
+      "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 flex items-center h-36 box-border"
+    },
+    {
+      "i": 17,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "介绍中心",
+      "cls": "ml-5 flex-1 inline-block"
+    },
+    {
+      "i": 18,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "云仓系统",
+      "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 flex items-center h-36 box-border"
+    },
+    {
+      "i": 19,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "云仓系统",
+      "cls": "ml-5 flex-1 inline-block"
+    },
+    {
+      "i": 20,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "物流系统",
+      "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 flex items-center h-36 box-border"
+    },
+    {
+      "i": 21,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "物流系统",
+      "cls": "ml-5 flex-1 inline-block"
+    },
+    {
+      "i": 22,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "财务系统",
+      "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 flex items-center h-36 box-border"
+    },
+    {
+      "i": 23,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "财务系统",
+      "cls": "ml-5 flex-1 inline-block"
+    },
+    {
+      "i": 24,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "日志系统",
+      "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 flex items-center h-36 box-border"
+    },
+    {
+      "i": 25,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "日志系统",
+      "cls": "ml-5 flex-1 inline-block"
+    },
+    {
+      "i": 30,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "你好， admin",
+      "cls": "flex items-center justify-end fs-14 w-300 h-30 pr-20 box-border"
+    },
+    {
+      "i": 31,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "0",
+      "cls": "el-badge mr-30"
+    },
+    {
+      "i": 32,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "你好， admin",
+      "cls": "flex items-center"
+    },
+    {
+      "i": 33,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "你好， admin",
+      "cls": "el-dropdown"
+    },
+    {
+      "i": 34,
+      "tag": "DIV",
+      "role": "button",
+      "visible": true,
+      "text": "你好， admin",
+      "cls": "cursor-pointer el-tooltip__trigger el-tooltip__trigger"
+    },
+    {
+      "i": 35,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "admin",
+      "cls": "color-primary"
+    },
+    {
+      "i": 36,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "偏好设置恢复默认",
+      "cls": ""
+    },
+    {
+      "i": 44,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "工作台 吐槽记录 内部通知 订单管理 仓库管理 发货配送 客户管理 营销管理 附加项 系统设置 吐槽部门 请选择吐槽部门 吐槽原因 请选择吐槽原因 吐槽人员 请选择吐槽人员 订单编号 查询 重置 展开 吐槽原因 吐槽部门 吐槽人员 订单编号 产品ID 赔付金额 客户信息 提交人 吐槽日期 操作 质控部-多配/少配/配错 质控 夏飞 WL-NZL1-25122",
+      "cls": "container-box pl-10 pr-10 pt-10 box-border gl-bd-top-transparent"
+    },
+    {
+      "i": 45,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "工作台 吐槽记录 内部通知 订单管理 仓库管理 发货配送 客户管理 营销管理 附加项 系统设置",
+      "cls": "inner"
+    },
+    {
+      "i": 46,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "工作台 吐槽记录 内部通知 订单管理 仓库管理 发货配送 客户管理 营销管理 附加项 系统设置",
+      "cls": "h-100% menu-box"
+    },
+    {
+      "i": 47,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "工作台 吐槽记录 内部通知 订单管理 仓库管理 发货配送 客户管理 营销管理 附加项 系统设置",
+      "cls": "el-scrollbar h-100%"
+    },
+    {
+      "i": 48,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "工作台 吐槽记录 内部通知 订单管理 仓库管理 发货配送 客户管理 营销管理 附加项 系统设置",
+      "cls": "el-scrollbar__wrap el-scrollbar__wrap--hidden-default"
+    },
+    {
+      "i": 49,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "工作台 吐槽记录 内部通知 订单管理 仓库管理 发货配送 客户管理 营销管理 附加项 系统设置",
+      "cls": "el-scrollbar__view"
+    },
+    {
+      "i": 50,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "工作台 吐槽记录 内部通知",
+      "cls": "el-sub-menu is-active is-opened"
+    },
+    {
+      "i": 51,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "工作台",
+      "cls": "el-sub-menu__title"
+    },
+    {
+      "i": 54,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "工作台",
+      "cls": ""
+    },
+    {
+      "i": 55,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "吐槽记录",
+      "cls": "el-menu-item is-active"
+    },
+    {
+      "i": 56,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "吐槽记录",
+      "cls": ""
+    },
+    {
+      "i": 57,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "内部通知",
+      "cls": "el-menu-item"
+    },
+    {
+      "i": 58,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "内部通知",
+      "cls": ""
+    },
+    {
+      "i": 59,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "订单管理",
+      "cls": "el-sub-menu"
+    },
+    {
+      "i": 60,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "订单管理",
+      "cls": "el-sub-menu__title"
+    },
+    {
+      "i": 63,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "订单管理",
+      "cls": ""
+    },
+    {
+      "i": 74,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "仓库管理",
+      "cls": "el-sub-menu"
+    },
+    {
+      "i": 75,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "仓库管理",
+      "cls": "el-sub-menu__title"
+    },
+    {
+      "i": 78,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "仓库管理",
+      "cls": ""
+    },
+    {
+      "i": 91,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "发货配送",
+      "cls": "el-sub-menu"
+    },
+    {
+      "i": 92,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "发货配送",
+      "cls": "el-sub-menu__title"
+    },
+    {
+      "i": 95,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "发货配送",
+      "cls": ""
+    },
+    {
+      "i": 104,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "客户管理",
+      "cls": "el-sub-menu"
+    },
+    {
+      "i": 105,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "客户管理",
+      "cls": "el-sub-menu__title"
+    },
+    {
+      "i": 108,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "客户管理",
+      "cls": ""
+    },
+    {
+      "i": 113,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "营销管理",
+      "cls": "el-sub-menu"
+    },
+    {
+      "i": 114,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "营销管理",
+      "cls": "el-sub-menu__title"
+    },
+    {
+      "i": 117,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "营销管理",
+      "cls": ""
+    },
+    {
+      "i": 122,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "附加项",
+      "cls": "el-sub-menu"
+    },
+    {
+      "i": 123,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "附加项",
+      "cls": "el-sub-menu__title"
+    },
+    {
+      "i": 126,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "附加项",
+      "cls": ""
+    },
+    {
+      "i": 143,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "系统设置",
+      "cls": "el-sub-menu"
+    },
+    {
+      "i": 144,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "系统设置",
+      "cls": "el-sub-menu__title"
+    },
+    {
+      "i": 147,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "系统设置",
+      "cls": ""
+    },
+    {
+      "i": 185,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "吐槽部门 请选择吐槽部门 吐槽原因 请选择吐槽原因 吐槽人员 请选择吐槽人员 订单编号 查询 重置 展开 吐槽原因 吐槽部门 吐槽人员 订单编号 产品ID 赔付金额 客户信息 提交人 吐槽日期 操作 质控部-多配/少配/配错 质控 夏飞 WL-NZL1-251223-009 0.00 D-NZL1-新西兰-夏飞 admin 2025-12-23 17:07 ",
+      "cls": "el-scrollbar"
+    },
+    {
+      "i": 186,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "吐槽部门 请选择吐槽部门 吐槽原因 请选择吐槽原因 吐槽人员 请选择吐槽人员 订单编号 查询 重置 展开 吐槽原因 吐槽部门 吐槽人员 订单编号 产品ID 赔付金额 客户信息 提交人 吐槽日期 操作 质控部-多配/少配/配错 质控 夏飞 WL-NZL1-251223-009 0.00 D-NZL1-新西兰-夏飞 admin 2025-12-23 17:07 ",
+      "cls": "el-scrollbar__wrap el-scrollbar__wrap--hidden-default"
+    },
+    {
+      "i": 187,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "吐槽部门 请选择吐槽部门 吐槽原因 请选择吐槽原因 吐槽人员 请选择吐槽人员 订单编号 查询 重置 展开 吐槽原因 吐槽部门 吐槽人员 订单编号 产品ID 赔付金额 客户信息 提交人 吐槽日期 操作 质控部-多配/少配/配错 质控 夏飞 WL-NZL1-251223-009 0.00 D-NZL1-新西兰-夏飞 admin 2025-12-23 17:07 ",
+      "cls": "el-scrollbar__view"
+    },
+    {
+      "i": 188,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "吐槽部门 请选择吐槽部门 吐槽原因 请选择吐槽原因 吐槽人员 请选择吐槽人员 订单编号 查询 重置 展开 吐槽原因 吐槽部门 吐槽人员 订单编号 产品ID 赔付金额 客户信息 提交人 吐槽日期 操作 质控部-多配/少配/配错 质控 夏飞 WL-NZL1-251223-009 0.00 D-NZL1-新西兰-夏飞 admin 2025-12-23 17:07 ",
+      "cls": "w-full h-full p-15 box-border"
+    },
+    {
+      "i": 189,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "吐槽部门 请选择吐槽部门 吐槽原因 请选择吐槽原因 吐槽人员 请选择吐槽人员 订单编号 查询 重置 展开 吐槽原因 吐槽部门 吐槽人员 订单编号 产品ID 赔付金额 客户信息 提交人 吐槽日期 操作 质控部-多配/少配/配错 质控 夏飞 WL-NZL1-251223-009 0.00 D-NZL1-新西兰-夏飞 admin 2025-12-23 17:07 ",
+      "cls": "w-full h-full overflow-x-hidden"
+    },
+    {
+      "i": 190,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "吐槽部门 请选择吐槽部门 吐槽原因 请选择吐槽原因 吐槽人员 请选择吐槽人员 订单编号 查询 重置 展开 吐槽原因 吐槽部门 吐槽人员 订单编号 产品ID 赔付金额 客户信息 提交人 吐槽日期 操作 质控部-多配/少配/配错 质控 夏飞 WL-NZL1-251223-009 0.00 D-NZL1-新西兰-夏飞 admin 2025-12-23 17:07 ",
+      "cls": ""
+    },
+    {
+      "i": 191,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "吐槽部门 请选择吐槽部门 吐槽原因 请选择吐槽原因 吐槽人员 请选择吐槽人员 订单编号",
+      "cls": ""
+    },
+    {
+      "i": 192,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "吐槽部门 请选择吐槽部门 吐槽原因 请选择吐槽原因 吐槽人员 请选择吐槽人员 订单编号",
+      "cls": "grid-cols-4 grid"
+    },
+    {
+      "i": 193,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "吐槽部门 请选择吐槽部门",
+      "cls": "el-form-item asterisk-left el-form-item--label-right"
+    },
+    {
+      "i": 194,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择吐槽部门",
+      "cls": "el-form-item__content"
+    },
+    {
+      "i": 195,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择吐槽部门",
+      "cls": "el-select"
+    },
+    {
+      "i": 196,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择吐槽部门",
+      "cls": "el-select__wrapper el-tooltip__trigger el-tooltip__trigger"
+    },
+    {
+      "i": 197,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择吐槽部门",
+      "cls": "el-select__selection"
+    },
+    {
+      "i": 199,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择吐槽部门",
+      "cls": "el-select__selected-item el-select__placeholder is-transparent"
+    },
+    {
+      "i": 200,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "请选择吐槽部门",
+      "cls": ""
+    },
+    {
+      "i": 202,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "吐槽原因 请选择吐槽原因",
+      "cls": "el-form-item asterisk-left el-form-item--label-right"
+    },
+    {
+      "i": 203,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择吐槽原因",
+      "cls": "el-form-item__content"
+    },
+    {
+      "i": 204,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择吐槽原因",
+      "cls": "el-select"
+    },
+    {
+      "i": 205,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择吐槽原因",
+      "cls": "el-select__wrapper el-tooltip__trigger el-tooltip__trigger"
+    },
+    {
+      "i": 206,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择吐槽原因",
+      "cls": "el-select__selection"
+    },
+    {
+      "i": 208,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择吐槽原因",
+      "cls": "el-select__selected-item el-select__placeholder is-transparent"
+    },
+    {
+      "i": 209,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "请选择吐槽原因",
+      "cls": ""
+    },
+    {
+      "i": 211,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "吐槽人员 请选择吐槽人员",
+      "cls": "el-form-item asterisk-left el-form-item--label-right"
+    },
+    {
+      "i": 212,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择吐槽人员",
+      "cls": "el-form-item__content"
+    },
+    {
+      "i": 213,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择吐槽人员",
+      "cls": "el-select"
+    },
+    {
+      "i": 214,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择吐槽人员",
+      "cls": "el-select__wrapper el-tooltip__trigger el-tooltip__trigger"
+    },
+    {
+      "i": 215,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择吐槽人员",
+      "cls": "el-select__selection"
+    },
+    {
+      "i": 217,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择吐槽人员",
+      "cls": "el-select__selected-item el-select__placeholder is-transparent"
+    },
+    {
+      "i": 218,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "请选择吐槽人员",
+      "cls": ""
+    },
+    {
+      "i": 220,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "订单编号",
+      "cls": "el-form-item asterisk-left el-form-item--label-right"
+    },
+    {
+      "i": 224,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "查询 重置 展开",
+      "cls": "flex justify-between mb-15"
+    },
+    {
+      "i": 225,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "查询 重置 展开",
+      "cls": ""
+    },
+    {
+      "i": 226,
+      "tag": "BUTTON",
+      "role": null,
+      "visible": true,
+      "text": "查询",
+      "cls": "el-button el-button--primary"
+    },
+    {
+      "i": 227,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "查询",
+      "cls": ""
+    },
+    {
+      "i": 228,
+      "tag": "BUTTON",
+      "role": null,
+      "visible": true,
+      "text": "重置",
+      "cls": "el-button is-plain"
+    },
+    {
+      "i": 229,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "重置",
+      "cls": ""
+    },
+    {
+      "i": 230,
+      "tag": "BUTTON",
+      "role": null,
+      "visible": true,
+      "text": "展开",
+      "cls": "el-button el-button--info is-text"
+    },
+    {
+      "i": 231,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "展开",
+      "cls": ""
+    },
+    {
+      "i": 232,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "吐槽原因 吐槽部门 吐槽人员 订单编号 产品ID 赔付金额 客户信息 提交人 吐槽日期 操作 质控部-多配/少配/配错 质控 夏飞 WL-NZL1-251223-009 0.00 D-NZL1-新西兰-夏飞 admin 2025-12-23 17:07 详情 采购部-买错/多买/少买 采购 包瑞楠 B2B-DD-JPN11-251217-005 D00000",
+      "cls": "mt-5"
+    },
+    {
+      "i": 233,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "吐槽原因 吐槽部门 吐槽人员 订单编号 产品ID 赔付金额 客户信息 提交人 吐槽日期 操作 质控部-多配/少配/配错 质控 夏飞 WL-NZL1-251223-009 0.00 D-NZL1-新西兰-夏飞 admin 2025-12-23 17:07 详情 采购部-买错/多买/少买 采购 包瑞楠 B2B-DD-JPN11-251217-005 D00000",
+      "cls": "el-table--fit el-table--border el-table--enable-row-hover el-table--enable-row-transition el-table el-table--layout-fixed custom-t"
+    },
+    {
+      "i": 234,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "吐槽原因 吐槽部门 吐槽人员 订单编号 产品ID 赔付金额 客户信息 提交人 吐槽日期 操作 质控部-多配/少配/配错 质控 夏飞 WL-NZL1-251223-009 0.00 D-NZL1-新西兰-夏飞 admin 2025-12-23 17:07 详情 采购部-买错/多买/少买 采购 包瑞楠 B2B-DD-JPN11-251217-005 D00000",
+      "cls": "el-table__inner-wrapper"
+    },
+    {
+      "i": 246,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "吐槽原因 吐槽部门 吐槽人员 订单编号 产品ID 赔付金额 客户信息 提交人 吐槽日期 操作",
+      "cls": "el-table__header-wrapper"
+    },
+    {
+      "i": 247,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "吐槽原因",
+      "cls": "cell"
+    },
+    {
+      "i": 248,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "吐槽部门",
+      "cls": "cell"
+    },
+    {
+      "i": 249,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "吐槽人员",
+      "cls": "cell"
+    },
+    {
+      "i": 250,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "订单编号",
+      "cls": "cell"
+    },
+    {
+      "i": 251,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "产品ID",
+      "cls": "cell"
+    },
+    {
+      "i": 252,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "赔付金额",
+      "cls": "cell"
+    },
+    {
+      "i": 253,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "客户信息",
+      "cls": "cell"
+    },
+    {
+      "i": 254,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "提交人",
+      "cls": "cell"
+    },
+    {
+      "i": 255,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "吐槽日期",
+      "cls": "cell"
+    },
+    {
+      "i": 256,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "操作",
+      "cls": "cell"
+    },
+    {
+      "i": 257,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "质控部-多配/少配/配错 质控 夏飞 WL-NZL1-251223-009 0.00 D-NZL1-新西兰-夏飞 admin 2025-12-23 17:07 详情 采购部-买错/多买/少买 采购 包瑞楠 B2B-DD-JPN11-251217-005 D000000332 0.00 B-JPN11-TEST-朴国哲2 朴国哲 2025-12-19 10:2",
+      "cls": "el-table__body-wrapper"
+    },
+    {
+      "i": 258,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "质控部-多配/少配/配错 质控 夏飞 WL-NZL1-251223-009 0.00 D-NZL1-新西兰-夏飞 admin 2025-12-23 17:07 详情 采购部-买错/多买/少买 采购 包瑞楠 B2B-DD-JPN11-251217-005 D000000332 0.00 B-JPN11-TEST-朴国哲2 朴国哲 2025-12-19 10:2",
+      "cls": "el-scrollbar"
+    },
+    {
+      "i": 259,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "质控部-多配/少配/配错 质控 夏飞 WL-NZL1-251223-009 0.00 D-NZL1-新西兰-夏飞 admin 2025-12-23 17:07 详情 采购部-买错/多买/少买 采购 包瑞楠 B2B-DD-JPN11-251217-005 D000000332 0.00 B-JPN11-TEST-朴国哲2 朴国哲 2025-12-19 10:2",
+      "cls": "el-scrollbar__wrap el-scrollbar__wrap--hidden-default"
+    },
+    {
+      "i": 260,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "质控部-多配/少配/配错 质控 夏飞 WL-NZL1-251223-009 0.00 D-NZL1-新西兰-夏飞 admin 2025-12-23 17:07 详情 采购部-买错/多买/少买 采购 包瑞楠 B2B-DD-JPN11-251217-005 D000000332 0.00 B-JPN11-TEST-朴国哲2 朴国哲 2025-12-19 10:2",
+      "cls": "el-scrollbar__view"
+    },
+    {
+      "i": 261,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "质控部-多配/少配/配错",
+      "cls": "cell el-tooltip"
+    },
+    {
+      "i": 262,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "质控",
+      "cls": "cell el-tooltip"
+    },
+    {
+      "i": 263,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "夏飞",
+      "cls": "cell el-tooltip"
+    },
+    {
+      "i": 264,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "WL-NZL1-251223-009",
+      "cls": "cell el-tooltip"
+    },
+    {
+      "i": 266,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "0.00",
+      "cls": "cell el-tooltip"
+    },
+    {
+      "i": 267,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "D-NZL1-新西兰-夏飞",
+      "cls": "cell el-tooltip"
+    },
+    {
+      "i": 268,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "admin",
+      "cls": "cell el-tooltip"
+    },
+    {
+      "i": 269,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "2025-12-23 17:07",
+      "cls": "cell el-tooltip"
+    },
+    {
+      "i": 270,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "详情",
+      "cls": "cell el-tooltip"
+    },
+    {
+      "i": 271,
+      "tag": "BUTTON",
+      "role": null,
+      "visible": true,
+      "text": "详情",
+      "cls": "el-button el-button--primary"
+    },
+    {
+      "i": 272,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "详情",
+      "cls": ""
+    },
+    {
+      "i": 273,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "采购部-买错/多买/少买",
+      "cls": "cell el-tooltip"
+    },
+    {
+      "i": 274,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "采购",
+      "cls": "cell el-tooltip"
+    },
+    {
+      "i": 275,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "包瑞楠",
+      "cls": "cell el-tooltip"
+    },
+    {
+      "i": 276,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "B2B-DD-JPN11-251217-005",
+      "cls": "cell el-tooltip"
+    },
+    {
+      "i": 277,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "D000000332",
+      "cls": "cell el-tooltip"
+    },
+    {
+      "i": 278,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "0.00",
+      "cls": "cell el-tooltip"
+    },
+    {
+      "i": 279,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "B-JPN11-TEST-朴国哲2",
+      "cls": "cell el-tooltip"
+    },
+    {
+      "i": 280,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "朴国哲",
+      "cls": "cell el-tooltip"
+    },
+    {
+      "i": 281,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "2025-12-19 10:20",
+      "cls": "cell el-tooltip"
+    },
+    {
+      "i": 282,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "详情",
+      "cls": "cell el-tooltip"
+    },
+    {
+      "i": 283,
+      "tag": "BUTTON",
+      "role": null,
+      "visible": true,
+      "text": "详情",
+      "cls": "el-button el-button--primary"
+    },
+    {
+      "i": 284,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "详情",
+      "cls": ""
+    },
+    {
+      "i": 291,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "30条/页 共 2 条 1 前往 页",
+      "cls": "w-full"
+    },
+    {
+      "i": 292,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "30条/页 共 2 条 1 前往 页",
+      "cls": "el-pagination is-background"
+    },
+    {
+      "i": 293,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "30条/页",
+      "cls": "el-pagination__sizes is-first"
+    },
+    {
+      "i": 294,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "30条/页",
+      "cls": "el-select"
+    },
+    {
+      "i": 295,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "30条/页",
+      "cls": "el-select__wrapper el-tooltip__trigger el-tooltip__trigger"
+    },
+    {
+      "i": 296,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "30条/页",
+      "cls": "el-select__selection"
+    },
+    {
+      "i": 298,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "30条/页",
+      "cls": "el-select__selected-item el-select__placeholder"
+    },
+    {
+      "i": 299,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "30条/页",
+      "cls": ""
+    },
+    {
+      "i": 301,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "共 2 条",
+      "cls": "el-pagination__total is-last"
+    },
+    {
+      "i": 302,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "1 前往 页",
+      "cls": "el-pagination__rightwrapper"
+    },
+    {
+      "i": 304,
+      "tag": "LI",
+      "role": null,
+      "visible": true,
+      "text": "1",
+      "cls": "is-active number"
+    },
+    {
+      "i": 306,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "前往 页",
+      "cls": "el-pagination__jump is-last"
+    },
+    {
+      "i": 307,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "前往",
+      "cls": "el-pagination__goto"
+    },
+    {
+      "i": 310,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "页",
+      "cls": "el-pagination__classifier"
+    },
+    {
+      "i": 317,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "偏好设置退出登录采购业务质检质控打包/配货-多配/少配/配错业务部-用户特点备注不明确业务部-审单遗漏/不及时业务部-附加项未选中业务部-待定问题回复不及时(超2天)业务部-备注内容不够清晰明确采购部-审单遗漏/不及时采购部-备注内容不够清晰明确采购部-买错/多买/少买采购部-换货不良并没有强调采购部-没有及时更新物流单号尾检-备注内容，图片不规范尾检-正品",
+      "cls": ""
+    }
+  ]
+}

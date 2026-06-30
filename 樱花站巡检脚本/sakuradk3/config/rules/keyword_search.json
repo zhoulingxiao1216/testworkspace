@@ -1,0 +1,25 @@
+{
+  "keyword_search_task": {
+    "key": "check_api_keyword_search",
+    "desc": "B2B 关键字搜索接口校验（1688&淘宝）",
+    "script": "checker/api/keyword_search.py",
+    "login_account": "qa1tr@2200freefonts.com",
+    "rules": {
+      "status_code": 200
+    }
+  },
+  "keyword_taobao": {
+    "keyword": "手机壳",
+    "json_match": {
+      "status": 200
+    },
+    "data_not_empty": true
+  },
+  "keyword_1688": {
+    "keyword": "手机壳",
+    "json_match": {
+      "status": 200
+    },
+    "data_not_empty": true
+  }
+}

@@ -1,0 +1,131 @@
+version: 1
+updated_at: "2026-05-22"
+
+purpose: >
+  Define workspace agent boundaries for multi-agent style execution.
+  Skills describe how an agent thinks and works; this file describes what each
+  agent owns, can read, can write, and must hand off.
+
+orchestrator:
+  role: "state_controller"
+  responsibilities:
+    - "Create and update .agent/runs/{run_id}/run.yaml"
+    - "Select the next agent according to run state"
+    - "Prevent agents from writing outside their ownership boundary"
+    - "Classify Agent 2 feedback before assigning remediation"
+    - "Route feedback to Agent 1, human owners, memory, or evolution candidates"
+    - "Hold real test execution until the user answers Agent 2's Y/N confirmation"
+    - "Summarize final run outcome"
+  can_write:
+    - ".agent/runs/**"
+    - ".agent/memory/exchange/**"
+  cannot_do:
+    - "Rewrite role-specific memory without the owning agent"
+    - "Treat one run's reflection as a promoted workflow rule"
+    - "Ask Agent 1 to resolve missing environment, account, data, SMS channel, or mock authorization by inventing details"
+    - "Let Agent 2 execute real tests while mode.real_execution is pending_confirmation"
+  feedback_decisions:
+    - "assign_to_agent1"
+    - "external_blocker"
+    - "human_confirmation"
+    - "memory_candidate"
+    - "evolution_candidate"
+    - "no_action"
+
+agents:
+  agent1_test_design:
+    display_name: "Agent 1 / Test Architect"
+    role: "test_design"
+    skill: "deps.skill_agent1_test_design"
+    primary_workflow: "deps.workflow_agent1_kickoff"
+    owns:
+      - "Requirement summary"
+      - "Requirement audit questions"
+      - "Project superpowers"
+      - "Test outline"
+      - "Test cases"
+      - "Effort estimate"
+      - "Execution handoff manifest"
+    can_read:
+      - "deps.memory_shared_dir"
+      - "deps.memory_agent1_dir"
+      - "deps.memory_exchange_dir"
+      - "deps.project_root_pattern"
+    can_write:
+      - "deps.memory_agent1_dir"
+      - "deps.memory_exchange_remediation_log"
+      - "deps.project_test_docs_dir_pattern"
+      - "deps.reflections_dir"
+    cannot_write:
+      - "deps.memory_agent2_dir"
+      - "Production code repositories unless explicitly requested"
+      - "Execution reports or defect reports"
+    handoff_outputs:
+      - "deps.project_superpowers_pattern"
+      - "deps.project_test_outline_pattern"
+      - "deps.project_test_cases_pattern"
+      - "deps.project_handoff_manifest_pattern"
+    exchange_contract:
+      receives:
+        - "Orchestrator-assigned remediation tasks with feedback ids F-xxx"
+      sends:
+        - "Remediation records for each feedback item"
+
+  agent2_test_execution:
+    display_name: "Agent 2 / Test Runner"
+    role: "test_execution"
+    skill: "deps.skill_agent2_test_execution"
+    primary_workflow: "deps.workflow_agent2_run_suite"
+    owns:
+      - "Executability review"
+      - "Environment pre-check"
+      - "Execution queue"
+      - "Execution confirmation prompt"
+      - "Test execution report"
+      - "Defect report"
+      - "DB mock audit"
+      - "Execution history"
+    can_read:
+      - "deps.memory_shared_dir"
+      - "deps.memory_agent2_dir"
+      - "deps.memory_exchange_dir"
+      - "deps.project_test_docs_dir_pattern"
+    can_write:
+      - "deps.memory_agent2_dir"
+      - "deps.memory_exchange_agent2_review_feedback"
+      - "deps.memory_exchange_needs_more_cases"
+      - "deps.memory_exchange_remediation_log"
+      - "deps.project_execution_report_dir_pattern"
+    cannot_write:
+      - "deps.memory_agent1_dir"
+      - "deps.project_superpowers_pattern"
+      - "deps.project_test_outline_pattern"
+      - "deps.project_test_cases_pattern"
+    runtime_permissions:
+      browser_execution: true
+      api_requests: true
+      database_readonly: true
+      database_mock_write:
+        allowed: true
+        helper: "deps.runtime_db_helper"
+        audit_log: "deps.memory_agent2_db_mock_audit"
+        restrictions:
+          - "Only non-production environments"
+          - "Only allowlisted mock tables"
+          - "Only SQL marked with /* AGENT_MOCK_DATA */"
+          - "Always write audit records"
+    exchange_contract:
+      receives:
+        - "Agent1 design deliverables and handoff manifest"
+        - "Agent1 remediation records"
+      sends:
+        - "Executability review feedback proposals with ids F-xxx to Orchestrator"
+        - "Execution blockers and coverage gaps for Orchestrator triage"
+        - "Execution confirmation question: 是否执行真实测试？请输入 Y/N。"
+
+memory_rules:
+  shared_memory_requires_stable_fact: true
+  role_memory_owner_only: true
+  cross_agent_communication_path: "deps.memory_exchange_dir"
+  one_observation_cannot_modify_skill_or_workflow: true
+  promotion_target: "deps.evolution_promotion_candidates"

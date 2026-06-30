@@ -1,0 +1,778 @@
+{
+  "responses": [
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/css/FormalOrder%E2%80%8C.CJnvGvVs.css",
+      "status": 200,
+      "method": "GET",
+      "duration_ms": 71.3
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/js/FormalOrder%E2%80%8C.Do7dQ2XK.js",
+      "status": 200,
+      "method": "GET",
+      "duration_ms": 64.33
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin/user/list",
+      "status": 200,
+      "method": "POST",
+      "duration_ms": 177.05
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/b2b/user/list",
+      "status": 200,
+      "method": "GET",
+      "duration_ms": 91.51
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/js/FormalOrder%E2%80%8C.Do7dQ2XK.js",
+      "status": 200,
+      "method": "GET",
+      "duration_ms": null
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/css/FormalOrder%E2%80%8C.CJnvGvVs.css",
+      "status": 200,
+      "method": "GET",
+      "duration_ms": null
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "duration_ms": 129.54
+    }
+  ],
+  "steps": [
+    {
+      "open_b2b_user_list": {
+        "url": "https://wlz-admin-all-view.hubbuyer.com/b2b/user/list",
+        "contains_detail": true
+      }
+    },
+    {
+      "click_first_detail": {
+        "clicked": true,
+        "tag": "DIV",
+        "text": "详情",
+        "cls": "cell el-tooltip",
+        "rowText": "C-CHN19-测试1米 CHN19 China 已审核 一般会员 永久 2099-12-31 23:59 待沟通 金月明 张佳唯 陈牧鹏 yangweibin@sakuradk.com 12541526325 3 暂无 45063.82 /B2B YouTube 2026-05-13 08:12 2026-05-08 15:43 详情"
+      }
+    },
+    {
+      "detail_opened": {
+        "url": "https://wlz-admin-all-view.hubbuyer.com/b2b/user/list",
+        "contains_batch_import": false,
+        "detail_click": {
+          "clicked": true,
+          "tag": "DIV",
+          "text": "详情",
+          "cls": "cell el-tooltip",
+          "rowText": "C-CHN19-测试1米 CHN19 China 已审核 一般会员 永久 2099-12-31 23:59 待沟通 金月明 张佳唯 陈牧鹏 yangweibin@sakuradk.com 12541526325 3 暂无 45063.82 /B2B YouTube 2026-05-13 08:12 2026-05-08 15:43 详情"
+        }
+      }
+    },
+    {
+      "click_batch_import_tab": {
+        "clicked": false,
+        "candidates": [
+          {
+            "tag": "DIV",
+            "text": "管理系统",
+            "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 fl"
+          },
+          {
+            "tag": "DIV",
+            "text": "管理系统",
+            "cls": "ml-5 flex-1 inline-block"
+          },
+          {
+            "tag": "DIV",
+            "text": "B2B系统",
+            "cls": "menu-check menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#2222"
+          },
+          {
+            "tag": "DIV",
+            "text": "B2B系统",
+            "cls": "ml-5 flex-1 inline-block"
+          },
+          {
+            "tag": "DIV",
+            "text": "D2C系统",
+            "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 fl"
+          },
+          {
+            "tag": "DIV",
+            "text": "D2C系统",
+            "cls": "ml-5 flex-1 inline-block"
+          },
+          {
+            "tag": "DIV",
+            "text": "介绍中心",
+            "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 fl"
+          },
+          {
+            "tag": "DIV",
+            "text": "介绍中心",
+            "cls": "ml-5 flex-1 inline-block"
+          },
+          {
+            "tag": "DIV",
+            "text": "云仓系统",
+            "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 fl"
+          },
+          {
+            "tag": "DIV",
+            "text": "云仓系统",
+            "cls": "ml-5 flex-1 inline-block"
+          },
+          {
+            "tag": "DIV",
+            "text": "物流系统",
+            "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 fl"
+          },
+          {
+            "tag": "DIV",
+            "text": "物流系统",
+            "cls": "ml-5 flex-1 inline-block"
+          },
+          {
+            "tag": "DIV",
+            "text": "财务系统",
+            "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 fl"
+          },
+          {
+            "tag": "DIV",
+            "text": "财务系统",
+            "cls": "ml-5 flex-1 inline-block"
+          },
+          {
+            "tag": "DIV",
+            "text": "日志系统",
+            "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 fl"
+          },
+          {
+            "tag": "DIV",
+            "text": "日志系统",
+            "cls": "ml-5 flex-1 inline-block"
+          },
+          {
+            "tag": "DIV",
+            "text": "你好， admin",
+            "cls": "flex items-center justify-end fs-14 w-300 h-30 pr-20 box-border"
+          },
+          {
+            "tag": "DIV",
+            "text": "0",
+            "cls": "el-badge mr-30"
+          },
+          {
+            "tag": "DIV",
+            "text": "你好， admin",
+            "cls": "flex items-center"
+          },
+          {
+            "tag": "DIV",
+            "text": "你好， admin",
+            "cls": "el-dropdown"
+          },
+          {
+            "tag": "DIV",
+            "text": "你好， admin",
+            "cls": "cursor-pointer el-tooltip__trigger el-tooltip__trigger"
+          },
+          {
+            "tag": "SPAN",
+            "text": "admin",
+            "cls": "color-primary"
+          },
+          {
+            "tag": "DIV",
+            "text": "偏好设置恢复默认",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "工作台",
+            "cls": "el-sub-menu__title"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "flex justify-center"
+          },
+          {
+            "tag": "SPAN",
+            "text": "",
+            "cls": "inline-block w-28 flex justify-start"
+          },
+          {
+            "tag": "SPAN",
+            "text": "工作台",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "订单管理",
+            "cls": "el-sub-menu__title"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "flex justify-center"
+          },
+          {
+            "tag": "SPAN",
+            "text": "",
+            "cls": "inline-block w-28 flex justify-start"
+          },
+          {
+            "tag": "SPAN",
+            "text": "订单管理",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "仓库管理",
+            "cls": "el-sub-menu__title"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "flex justify-center"
+          },
+          {
+            "tag": "SPAN",
+            "text": "",
+            "cls": "inline-block w-28 flex justify-start"
+          },
+          {
+            "tag": "SPAN",
+            "text": "仓库管理",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "发货配送",
+            "cls": "el-sub-menu__title"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "flex justify-center"
+          },
+          {
+            "tag": "SPAN",
+            "text": "",
+            "cls": "inline-block w-28 flex justify-start"
+          },
+          {
+            "tag": "SPAN",
+            "text": "发货配送",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "客户管理",
+            "cls": "el-sub-menu__title"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "flex justify-center"
+          },
+          {
+            "tag": "SPAN",
+            "text": "",
+            "cls": "inline-block w-28 flex justify-start"
+          },
+          {
+            "tag": "SPAN",
+            "text": "客户管理",
+            "cls": ""
+          },
+          {
+            "tag": "LI",
+            "text": "客户信息",
+            "cls": "el-menu-item is-active"
+          },
+          {
+            "tag": "SPAN",
+            "text": "客户信息",
+            "cls": ""
+          },
+          {
+            "tag": "LI",
+            "text": "会员等级",
+            "cls": "el-menu-item"
+          },
+          {
+            "tag": "SPAN",
+            "text": "会员等级",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "营销管理",
+            "cls": "el-sub-menu__title"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "flex justify-center"
+          },
+          {
+            "tag": "SPAN",
+            "text": "",
+            "cls": "inline-block w-28 flex justify-start"
+          },
+          {
+            "tag": "SPAN",
+            "text": "营销管理",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "附加项",
+            "cls": "el-sub-menu__title"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "flex justify-center"
+          },
+          {
+            "tag": "SPAN",
+            "text": "",
+            "cls": "inline-block w-28 flex justify-start"
+          },
+          {
+            "tag": "SPAN",
+            "text": "附加项",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "系统设置",
+            "cls": "el-sub-menu__title"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "flex justify-center"
+          },
+          {
+            "tag": "SPAN",
+            "text": "",
+            "cls": "inline-block w-28 flex justify-start"
+          },
+          {
+            "tag": "SPAN",
+            "text": "系统设置",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "h-40 flex items-end w-full justify-start"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "p-4 box-border inline-block bg-#F3F4F6 rd-4 h-26 arrow"
+          },
+          {
+            "tag": "DIV",
+            "text": "客户ID 客户姓名 所属国家 请选择所属国家 联系电话",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "客户ID 客户姓名 所属国家 请选择所属国家 联系电话",
+            "cls": "grid-cols-4 grid"
+          },
+          {
+            "tag": "DIV",
+            "text": "客户ID",
+            "cls": "el-form-item asterisk-left el-form-item--label-right"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "el-form-item__content"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "el-input el-input--suffix"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "el-input__wrapper"
+          },
+          {
+            "tag": "DIV",
+            "text": "客户姓名",
+            "cls": "el-form-item asterisk-left el-form-item--label-right"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "el-form-item__content"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "el-input el-input--suffix"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "el-input__wrapper"
+          },
+          {
+            "tag": "DIV",
+            "text": "所属国家 请选择所属国家",
+            "cls": "el-form-item asterisk-left el-form-item--label-right"
+          },
+          {
+            "tag": "DIV",
+            "text": "请选择所属国家",
+            "cls": "el-form-item__content"
+          },
+          {
+            "tag": "DIV",
+            "text": "请选择所属国家",
+            "cls": "fs-0 w-full"
+          },
+          {
+            "tag": "DIV",
+            "text": "请选择所属国家",
+            "cls": "el-select w-full"
+          },
+          {
+            "tag": "DIV",
+            "text": "请选择所属国家",
+            "cls": "el-select__wrapper is-filterable el-tooltip__trigger el-tooltip__trigger"
+          },
+          {
+            "tag": "DIV",
+            "text": "请选择所属国家",
+            "cls": "el-select__selection"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "el-select__selected-item el-select__input-wrapper"
+          },
+          {
+            "tag": "SPAN",
+            "text": "",
+            "cls": "el-select__input-calculator"
+          },
+          {
+            "tag": "DIV",
+            "text": "请选择所属国家",
+            "cls": "el-select__selected-item el-select__placeholder is-transparent"
+          },
+          {
+            "tag": "SPAN",
+            "text": "请选择所属国家",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "el-select__suffix"
+          },
+          {
+            "tag": "DIV",
+            "text": "联系电话",
+            "cls": "el-form-item asterisk-left el-form-item--label-right"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "el-form-item__content"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "el-input el-input--suffix"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "el-input__wrapper"
+          },
+          {
+            "tag": "DIV",
+            "text": "查询 重置 展开 批量导出",
+            "cls": "flex justify-between mb-15"
+          },
+          {
+            "tag": "DIV",
+            "text": "查询 重置 展开",
+            "cls": ""
+          },
+          {
+            "tag": "BUTTON",
+            "text": "查询",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "SPAN",
+            "text": "查询",
+            "cls": ""
+          },
+          {
+            "tag": "BUTTON",
+            "text": "重置",
+            "cls": "el-button is-plain"
+          },
+          {
+            "tag": "SPAN",
+            "text": "重置",
+            "cls": ""
+          },
+          {
+            "tag": "BUTTON",
+            "text": "展开",
+            "cls": "el-button el-button--info is-text"
+          },
+          {
+            "tag": "SPAN",
+            "text": "展开",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "批量导出",
+            "cls": ""
+          },
+          {
+            "tag": "BUTTON",
+            "text": "批量导出",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "SPAN",
+            "text": "批量导出",
+            "cls": ""
+          },
+          {
+            "tag": "SPAN",
+            "text": "全部（102）",
+            "cls": "el-radio-button__inner"
+          },
+          {
+            "tag": "SPAN",
+            "text": "S级客户（38）",
+            "cls": "el-radio-button__inner"
+          },
+          {
+            "tag": "SPAN",
+            "text": "A级客户（2）",
+            "cls": "el-radio-button__inner"
+          },
+          {
+            "tag": "SPAN",
+            "text": "B级客户（11）",
+            "cls": "el-radio-button__inner"
+          },
+          {
+            "tag": "SPAN",
+            "text": "C级客户（5）",
+            "cls": "el-radio-button__inner"
+          },
+          {
+            "tag": "SPAN",
+            "text": "D级客户（46）",
+            "cls": "el-radio-button__inner"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": "hidden-columns"
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": ""
+          },
+          {
+            "tag": "DIV",
+            "text": "",
+            "cls": ""
+          }
+        ]
+      }
+    },
+    {
+      "batch_tab_state": {
+        "contains_batch_import": false,
+        "contains_upload": false
+      }
+    },
+    {
+      "click_right_batch_import_button": {
+        "clicked": false,
+        "buttonTexts": [
+          "",
+          "",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "详情",
+          "待沟通",
+          "批量导出",
+          "展开",
+          "重置",
+          "查询"
+        ]
+      }
+    }
+  ],
+  "risk_guardrails": [
+    "no_8160",
+    "no_order_generation",
+    "no_confirm_import_clicked"
+  ],
+  "upload_popup": {
+    "visible": false,
+    "contains_excel": false,
+    "contains_xlsx": false,
+    "file_inputs": [],
+    "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n查询\n重置\n展开\n批量导出\n全部（102）\nS级客户（38）\nA级客户（2）\nB级客户（11）\nC级客户（5）\nD级客户（46）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nC-CHN19-测试1米\n\t\nCHN19\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n金月明\n\t\n张佳唯\n\t\n陈牧鹏\n\t\nyangweibin@sakuradk.com\n\t\n12541526325\n\t\n3\n\t\n暂无\n\t\n45063.82\n\t\n/B2B\n\t\nYouTube\n\t\n2026-05-13 08:12\n\t\n2026-05-08 15:43\n\t\n详情\n\n\n\t\nD-POL1-senaelorhan\n\t\nPOL1\n\t\nPoland\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nelorhanlindo@gmail.com\n\t\n692956183\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-05-07 19:04\n\t\n2026-05-07 19:02\n\t\n详情\n\n\n\t\nD-TUR2-YILDIRIMALİ\n\t\nTUR2\n\t\nTurkey\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nhingo2566@gmail.com\n\t\n5459653288\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n\t\n2026-04-29 20:31\n\t\n2026-04-29 20:30\n\t\n详情\n\n\n\t\nS-USA10-111\n\t\nUSA10\n\t\nAmerica\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nlihaokanya@gmail.com\n\t\n1234567890\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n熟人介绍\n\t\n2026-04-29 12:01\n\t\n2026-04-29 12:00\n\t\n详情\n\n\n\t\nD-IDN1-ImanAaron\n\t\nIDN1\n\t\nIndonesia\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099"
+  },
+  "xlsx_upload_precheck": {
+    "status": "NOT_RUN",
+    "reason": "???????? Excel(.xlsx) ??????????????/???????????????????"
+  }
+}

@@ -1,0 +1,1777 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>我的仓库页面示例</title>
+  <style>
+    :root {
+      --primary: #022559;
+      --primary-soft: #e8eef8;
+      --accent: #b4272b;
+      --text: #1f2937;
+      --text-2: #344054;
+      --muted: #667085;
+      --weak: #98a2b3;
+      --line: #cfd8e6;
+      --line-2: #e3e8f0;
+      --bg: #f4f6f8;
+      --panel: #ffffff;
+      --table-head: #e5ebf3;
+      --field-bg: #f3f6fa;
+      --ok: #37b24d;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      min-width: 1366px;
+      margin: 0;
+      overflow: hidden;
+      color: var(--text);
+      background: var(--bg);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .warehouse-page {
+      height: 100vh;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 66px;
+      padding: 0 28px;
+      border-bottom: 1px solid #e5e9f0;
+      background: #fff;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--primary);
+      font-size: 20px;
+      font-weight: 850;
+    }
+
+    .sakura {
+      position: relative;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 17px 8px, #c4292d 0 6px, transparent 7px),
+        radial-gradient(circle at 26px 17px, #c4292d 0 6px, transparent 7px),
+        radial-gradient(circle at 17px 26px, #c4292d 0 6px, transparent 7px),
+        radial-gradient(circle at 8px 17px, #c4292d 0 6px, transparent 7px),
+        radial-gradient(circle at 17px 17px, #c4292d 0 6px, transparent 7px);
+    }
+
+    .brand-name { font-weight: 850; }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      height: 20px;
+      padding: 0 8px;
+      border-radius: 4px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .tools {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      color: var(--primary);
+      font-size: 14px;
+    }
+
+    .tool {
+      display: inline-flex;
+      align-items: center;
+      height: 30px;
+      padding: 0 14px;
+      border: 1px solid var(--primary);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d7dce5, #eef2f7);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      height: calc(100vh - 66px);
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .side {
+      overflow: auto;
+      padding: 18px 4px 18px 0;
+      border-right: 1px solid #e3e8f0;
+      background: #fff;
+    }
+
+    .menu-item,
+    .sub-item {
+      height: 42px;
+      padding: 0 20px;
+      color: #17345f;
+      line-height: 42px;
+      white-space: nowrap;
+    }
+
+    .menu-item { font-weight: 650; }
+
+    .sub-item {
+      margin-left: 4px;
+      border-radius: 0 6px 6px 0;
+      color: #344054;
+    }
+
+    .sub-item.active {
+      background: #e7ecf3;
+      color: var(--primary);
+      font-weight: 750;
+    }
+
+    .chev { float: right; color: var(--muted); }
+
+    .main {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 0;
+      overflow: hidden;
+      padding: 0 12px 0;
+      background: var(--bg);
+    }
+
+    .crumb {
+      flex: 0 0 auto;
+      height: 38px;
+      color: var(--muted);
+      line-height: 38px;
+    }
+
+    .filter {
+      flex: 0 0 auto;
+      display: grid;
+      grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr) minmax(180px, 1fr) minmax(180px, 1fr) auto auto;
+      gap: 14px;
+      align-items: end;
+      margin-bottom: 14px;
+      padding: 20px;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .input {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 32px;
+      padding: 0 10px;
+      border: 1px solid #d6dde8;
+      border-radius: 4px;
+      background: #fff;
+      color: var(--weak);
+      white-space: nowrap;
+    }
+
+    .input.select::after {
+      content: "⌄";
+      color: var(--weak);
+      font-size: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 32px;
+      min-width: 78px;
+      padding: 0 16px;
+      border-radius: 4px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .btn.primary { background: var(--primary); color: #fff; }
+    .btn.reset { background: #b8b8b8; color: #fff; }
+
+    .hosting-bar {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      height: 50px;
+      margin-bottom: 14px;
+      padding: 0 10px;
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .radio {
+      width: 14px;
+      height: 14px;
+      border: 1px solid #cfd8e6;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .help-link {
+      color: var(--primary);
+      font-weight: 750;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+    }
+
+    .table-wrap {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: auto;
+      border: 1px solid #cbd4e1;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      height: 40px;
+      padding: 0 8px;
+      border-right: 1px solid #cbd4e1;
+      border-bottom: 1px solid #cbd4e1;
+      background: var(--table-head);
+      color: var(--text);
+      font-weight: 800;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    td {
+      height: 112px;
+      padding: 10px 10px;
+      border-right: 1px solid #d8e0eb;
+      border-bottom: 1px solid #d8e0eb;
+      vertical-align: middle;
+    }
+
+    th:last-child,
+    td:last-child { border-right: 0; }
+
+    .group-row td {
+      height: 34px;
+      padding: 0 10px;
+      background: #fff;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 700;
+      vertical-align: middle;
+    }
+
+    .group-title {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .group-title::after {
+      content: "";
+      flex: 1;
+      border-top: 1px dashed var(--primary);
+    }
+
+    th:first-child,
+    td.check-cell {
+      width: 2%;
+      min-width: 28px;
+      max-width: 34px;
+      padding-right: 0;
+      padding-left: 0;
+      text-align: center;
+    }
+
+    .check-box {
+      position: relative;
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 1px solid #cfd8e6;
+      border-radius: 2px;
+      background: #fff;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+
+    .check-box.is-checked {
+      border-color: var(--primary);
+      background: var(--primary);
+    }
+
+    .check-box.is-checked::after {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 2px;
+      width: 4px;
+      height: 8px;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(45deg);
+    }
+
+    .check-box.is-partial {
+      border-color: var(--primary);
+      background: var(--primary);
+    }
+
+    .check-box.is-partial::after {
+      content: "";
+      position: absolute;
+      left: 3px;
+      top: 6px;
+      width: 8px;
+      height: 2px;
+      border-radius: 999px;
+      background: #fff;
+    }
+
+    tbody tr.is-selected > td {
+      background: #eef6ff;
+    }
+
+    .package-parent-row > td {
+      height: 112px;
+      padding: 10px 10px;
+      border-bottom: 1px solid #cbd4e1;
+      background: #eef4fb;
+      box-shadow: inset 0 1px 0 #bfd0e8, inset 0 -1px 0 #bfd0e8;
+    }
+
+    .package-parent-row.is-open > td {
+      background: #e8f0fb;
+    }
+
+    .package-parent-row.is-selected > td {
+      background: #e3f1ff;
+    }
+
+    .package-parent-row.is-open.is-selected > td {
+      background: #dcecff;
+    }
+
+    .package-select-control {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .package-parent-row .photo-cell,
+    .package-parent-row .action-cell {
+      text-align: center;
+    }
+
+    .package-parent-row .fee-grid {
+      max-width: 180px;
+      margin: 0 auto;
+    }
+
+    .package-all-label {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      height: 20px;
+      padding: 0 7px;
+      border-radius: 3px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .package-thumb {
+      position: relative;
+      z-index: 1;
+      width: 72px;
+      height: 72px;
+      margin: 0 auto;
+      border: 1px solid #dbe3ee;
+      border-radius: 6px;
+      background-color: #f8fafc;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      cursor: zoom-in;
+      outline: none;
+    }
+
+    .package-info {
+      display: grid;
+      gap: 4px;
+      color: var(--text);
+    }
+
+    .package-name {
+      font-size: 16px;
+      font-weight: 850;
+    }
+
+    .package-code {
+      color: var(--text-2);
+      font-size: 14px;
+    }
+
+    .package-child-panel-row > td {
+      height: auto;
+      padding: 0;
+      border-right: 0;
+      border-bottom: 1px solid #d8e0eb;
+      background: #fff;
+    }
+
+    .package-child-table-wrap {
+      width: 100%;
+      margin: 0;
+      border: 0;
+      border-top: 1px solid #d4deea;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .package-child-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .package-child-table .package-child-header-row > td {
+      height: 32px;
+      padding: 0 10px;
+      border-right: 1px solid #d8e0eb;
+      border-bottom: 1px solid #d8e0eb;
+      background: #f5f8fc;
+      color: var(--text-2);
+      font-size: 13px;
+      font-weight: 650;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .package-child-table .package-child-row > td {
+      height: 94px;
+      padding: 8px 10px;
+      border-right: 1px solid #d8e0eb;
+      border-bottom: 1px solid #e7edf5;
+      background: #fcfdff;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    .package-child-table .package-child-header-row > td:last-child,
+    .package-child-table .package-child-row > td:last-child {
+      border-right: 0;
+    }
+
+    .package-child-table .package-child-row > td:nth-child(2) {
+      background: #f7fafc;
+    }
+
+    .package-child-table .package-child-row:nth-child(odd) > td {
+      background: #f9fbfe;
+    }
+
+    .package-child-table .package-child-row.package-child-last > td {
+      border-bottom: 0;
+    }
+
+    .package-child-table {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .package-child-table .product-title {
+      color: var(--text-2);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .package-child-table .order-line,
+    .package-child-table .spec-lines,
+    .package-child-table .code-lines,
+    .package-child-table .fee-line,
+    .package-child-table .qty-line {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    .package-child-table .id-chip {
+      font-size: 13px;
+    }
+
+    .package-child-table .product-photo {
+      width: 64px;
+      height: 64px;
+    }
+
+    .package-child-table .inbound-time-cell,
+    .package-child-table .remark-cell {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .package-child-table .package-child-row.is-selected > td {
+      background: #f6faff;
+    }
+
+    .package-child-table .fee-line b,
+    .package-child-table .qty-line b {
+      color: var(--text-2);
+      font-weight: 600;
+    }
+
+    .package-child-panel-row.is-hidden {
+      display: none;
+    }
+
+    .package-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      min-width: 76px;
+      height: 32px;
+      padding: 0 12px;
+      border: 1px solid #f1a8a8;
+      border-radius: 999px;
+      background: #fff3f3;
+      color: #d34a4a;
+      font-size: 14px;
+      font-weight: 750;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .package-toggle::after {
+      content: "⌃";
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .package-parent-row:not(.is-open) .package-toggle::after {
+      content: "⌄";
+    }
+
+    .photo-cell {
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .product-info-cell {
+      display: grid;
+      gap: 5px;
+      min-width: 0;
+    }
+
+    .product-photo {
+      position: relative;
+      z-index: 1;
+      width: 72px;
+      height: 72px;
+      border: 1px solid #dbe3ee;
+      border-radius: 6px;
+      background-color: #f8fafc;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      margin: 0 auto;
+      cursor: zoom-in;
+      outline: none;
+    }
+
+    .product-photo:hover,
+    .product-photo:focus,
+    .package-thumb:hover,
+    .package-thumb:focus {
+      z-index: 40;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(2, 37, 89, 0.12);
+    }
+
+    .product-photo::after,
+    .package-thumb::after {
+      content: "";
+      position: absolute;
+      left: calc(100% + 12px);
+      top: 0;
+      z-index: 60;
+      display: none;
+      width: 180px;
+      height: 180px;
+      border: 2px solid var(--primary);
+      border-radius: 6px;
+      background: inherit;
+      background-color: #f8fafc;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      box-shadow: 0 0 0 2px rgba(2, 37, 89, 0.12), 0 12px 28px rgba(15, 23, 42, 0.18);
+      pointer-events: none;
+    }
+
+    .product-photo:hover::after,
+    .product-photo:focus::after,
+    .package-thumb:hover::after,
+    .package-thumb:focus::after { display: block; }
+
+    .product-title {
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
+      color: var(--text);
+      font-weight: 650;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      outline: none;
+      cursor: text;
+      user-select: text;
+    }
+
+    .product-title:hover,
+    .product-title:focus {
+      z-index: 80;
+      overflow: visible;
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .product-title:hover::after,
+    .product-title:focus::after {
+      content: attr(title);
+      position: absolute;
+      left: 0;
+      top: calc(100% + 6px);
+      z-index: 90;
+      width: max-content;
+      max-width: 520px;
+      padding: 8px 10px;
+      border: 1px solid #cbd4e1;
+      border-radius: 4px;
+      background: #fff;
+      color: var(--text);
+      font-weight: 500;
+      line-height: 20px;
+      white-space: normal;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.16);
+    }
+
+    .muted-line {
+      color: var(--muted);
+      line-height: 20px;
+      white-space: nowrap;
+    }
+
+    .id-chip {
+      display: inline-flex;
+      width: fit-content;
+      height: 22px;
+      align-items: center;
+      padding: 0 8px;
+      border-radius: 4px;
+      background: #eef1f5;
+      color: #8a94a6;
+      line-height: 22px;
+      white-space: nowrap;
+    }
+
+    .spec-lines,
+    .code-lines {
+      color: var(--text-2);
+      line-height: 22px;
+    }
+
+    .code-cell {
+      vertical-align: top;
+    }
+
+    .spec-lines span,
+    .time-label,
+    .code-lines { color: var(--muted); }
+
+    .order-line {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      min-width: 0;
+      line-height: 22px;
+      white-space: nowrap;
+      font-size: 14px;
+    }
+
+    .copy-text {
+      cursor: pointer;
+      word-break: break-all;
+    }
+
+    .copy-icon {
+      position: relative;
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      margin-left: 6px;
+      color: #8a8f99;
+      vertical-align: -2px;
+      cursor: pointer;
+    }
+
+    .copy-icon::before,
+    .copy-icon::after {
+      content: "";
+      position: absolute;
+      box-sizing: border-box;
+      width: 9px;
+      height: 10px;
+      border: 1.5px solid currentColor;
+      border-radius: 1.5px;
+      background: #fff;
+    }
+
+    .copy-icon::before { left: 2px; top: 3px; }
+    .copy-icon::after { left: 4px; top: 1px; background: transparent; }
+
+    .fee-cell {
+      vertical-align: top;
+    }
+
+    .fee-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 6px;
+    }
+
+    .fee-line,
+    .qty-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 22px;
+      padding: 0 8px;
+      border-radius: 4px;
+      background: var(--field-bg);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .inbound-time-cell {
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 650;
+      line-height: 20px;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .fee-line b,
+    .qty-line b {
+      color: var(--text);
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .stepper {
+      display: inline-grid;
+      grid-template-columns: 24px 38px 24px;
+      height: 20px;
+      align-items: center;
+      border: 1px solid #d8e0eb;
+      border-radius: 4px;
+      background: #fff;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .stepper button {
+      height: 20px;
+      border: 0;
+      border-right: 1px solid #d8e0eb;
+      background: #f5f7fb;
+      color: #9aa5b5;
+    }
+
+    .stepper button:last-child {
+      border-right: 0;
+      border-left: 1px solid #d8e0eb;
+    }
+
+    .remark-cell,
+    .action-cell {
+      color: var(--text);
+      font-weight: 650;
+      text-align: center;
+    }
+
+    .right-handle {
+      position: absolute;
+      right: 0;
+      top: 360px;
+      width: 24px;
+      height: 54px;
+      border-radius: 6px 0 0 6px;
+      background: var(--primary);
+    }
+
+    .right-handle::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 20px;
+      width: 12px;
+      height: 12px;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(45deg);
+    }
+
+    .bottom-bar {
+      flex: 0 0 auto;
+      display: grid;
+      grid-template-columns: 220px 1fr 220px 260px 190px;
+      gap: 16px;
+      align-items: center;
+      height: 64px;
+      margin: 0 -12px;
+      padding: 0 28px 0 20px;
+      background: #fff;
+      box-shadow: 0 -8px 22px rgba(15, 23, 42, 0.12);
+    }
+
+    .select-all {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .summary {
+      color: var(--muted);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .amount {
+      color: #d70000;
+      font-weight: 850;
+    }
+
+    .currency {
+      margin-left: 4px;
+      color: #d70000;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .submit-btn {
+      justify-self: end;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 112px;
+      height: 40px;
+      border-radius: 4px;
+      background: #8493ad;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .project-copy-code,
+    .copy-text,
+    .order-code,
+    [data-copy-text],
+    [data-copy] { cursor: pointer; }
+
+    .project-copy-code:hover,
+    .project-copy-code:focus,
+    .copy-text:hover,
+    .copy-text:focus,
+    .order-code:hover,
+    .order-code:focus {
+      color: #155bd4;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      outline: none;
+    }
+
+    .project-copy-toast {
+      position: fixed;
+      left: 50%;
+      top: 310px;
+      z-index: 999999;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: 110px;
+      height: 38px;
+      padding: 0 16px;
+      border-radius: 4px;
+      background: #ecfde5;
+      color: #52b33f;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(-50%, -8px);
+      transition: opacity 160ms ease, transform 160ms ease;
+      box-shadow: 0 8px 20px rgba(82, 179, 63, 0.14);
+    }
+
+    .project-copy-toast::before {
+      content: "✓";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #57c146;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 850;
+      line-height: 1;
+    }
+
+    .project-copy-toast.is-visible {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    /* 搜索/重置按钮统一规范：以设计截图为准，禁止页面内单独改色 */
+    .quote-filter .quote-btn.primary,
+    .order-filter .order-btn.primary,
+    .goods-filter .goods-btn.primary,
+    .filter .btn.primary,
+    .shipping-filter .shipping-btn.primary,
+    .measure-filter .measure-btn.primary,
+    .search button {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: auto !important;
+      min-width: 88px !important;
+      height: 32px !important;
+      min-height: 32px !important;
+      margin: 0 !important;
+      padding: 0 24px !important;
+      border: 1px solid #022559 !important;
+      border-radius: 4px !important;
+      background: #022559 !important;
+      color: #fff !important;
+      font-size: 14px !important;
+      font-weight: 700 !important;
+      line-height: 32px !important;
+      white-space: nowrap !important;
+      box-shadow: none !important;
+    }
+
+    .quote-filter .quote-btn.reset,
+    .order-filter .order-btn.reset,
+    .goods-filter .goods-btn.reset,
+    .filter .btn.reset,
+    .shipping-filter .shipping-btn.reset,
+    .measure-filter .measure-btn.reset {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: auto !important;
+      min-width: 76px !important;
+      height: 32px !important;
+      min-height: 32px !important;
+      padding: 0 24px !important;
+      border: 1px solid #d6dde8 !important;
+      border-radius: 4px !important;
+      background: #f3f6fa !important;
+      color: #344054 !important;
+      font-size: 14px !important;
+      font-weight: 700 !important;
+      line-height: 32px !important;
+      white-space: nowrap !important;
+      box-shadow: none !important;
+    }
+</style>
+<style id="global-copy-success-toast-style">
+  .ui-spec-copy-toast,
+  .project-copy-toast,
+  .copy-toast,
+  .measure-toast,
+  .copy-success-tip,
+  #toast.toast {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    z-index: 99999 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    min-width: auto !important;
+    min-height: auto !important;
+    padding: 8px 14px !important;
+    border: 1px solid #cdeec7 !important;
+    border-radius: 4px !important;
+    background: #effbea !important;
+    color: #53bd45 !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    transform: translate(-50%, -50%) !important;
+    box-shadow: 0 8px 22px rgba(83, 189, 69, 0.14) !important;
+    transition: opacity 0.18s ease, transform 0.18s ease !important;
+  }
+
+  .ui-spec-copy-toast::before,
+  .project-copy-toast::before,
+  .copy-toast::before,
+  .measure-toast::before,
+  .copy-success-tip::before,
+  #toast.toast::before {
+    content: "✓" !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 14px !important;
+    height: 14px !important;
+    border-radius: 50% !important;
+    background: #53bd45 !important;
+    color: #fff !important;
+    font-size: 10px !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+  }
+
+  .ui-spec-copy-toast::after,
+  .project-copy-toast::after,
+  .copy-toast::after,
+  .measure-toast::after,
+  .copy-success-tip::after,
+  #toast.toast::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .ui-spec-copy-toast.is-visible,
+  .ui-spec-copy-toast.show,
+  .project-copy-toast.is-visible,
+  .project-copy-toast.show,
+  .copy-toast.is-visible,
+  .copy-toast.show,
+  .measure-toast.is-visible,
+  .measure-toast.show,
+  .copy-success-tip,
+  #toast.toast.show,
+  #toast.toast.is-visible {
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) !important;
+  }
+</style>
+
+<style id="order-copy-no-underline">
+  .product-cell .copy-text,
+  .product-cell .copy-text:hover,
+  .product-cell .copy-text:focus,
+  .product-cell .copy-text:active,
+  .product-cell .order-code,
+  .product-cell .order-code:hover,
+  .product-cell .order-code:focus,
+  .product-cell .order-code:active,
+  .product-cell [data-copy-text],
+  .product-cell [data-copy-text]:hover,
+  .product-cell [data-copy-text]:focus,
+  .product-cell [data-copy-text]:active,
+  .product-cell [data-copy],
+  .product-cell [data-copy]:hover,
+  .product-cell [data-copy]:focus,
+  .product-cell [data-copy]:active,
+  .product-order,
+  .product-order:hover,
+  .product-order:focus,
+  .product-order *,
+  .product-order *:hover,
+  .order-line.copyable,
+  .order-line.copyable:hover,
+  .order-line.copyable:focus,
+  .order-line.copyable *,
+  .order-line.copyable *:hover,
+  .info-line .order-code,
+  .info-line .order-code:hover,
+  .info-line [data-copy],
+  .info-line [data-copy]:hover {
+    text-decoration: none !important;
+  }
+</style>
+</head>
+<body>
+  <div class="warehouse-page">
+    <header class="topbar">
+      <div class="brand"><span class="sakura" aria-hidden="true"></span><span>さくら代行</span><span>&amp;</span><span class="brand-name">Hubbuyer</span><span class="tag">B2B</span></div>
+      <div class="tools">
+        <span class="tool">⌘ 营业日</span>
+        <span class="tool">◎ 简体中文⌄</span>
+        <span class="tool">🇨🇳 1 CNY ≈ 🇺🇸 0.16 USD</span>
+        <span class="avatar" aria-hidden="true"></span>
+        <strong>CHN20</strong>
+        <span class="tool">退出登录</span>
+      </div>
+    </header>
+    <div class="layout">
+      <aside class="side">
+        <div class="menu-item">♙ 个人中心</div>
+        <div class="menu-item">☑ 重要待办 <span class="chev">⌄</span></div>
+        <div class="menu-item">⌁ 购物车 <span class="chev">⌄</span></div>
+        <div class="menu-item">▤ B2B代行... <span class="chev">⌄</span></div>
+        <div class="menu-item">▤ 发货配送 <span class="chev">⌃</span></div>
+        <div class="sub-item active">我的仓库</div>
+        <div class="sub-item">国际配送</div>
+        <div class="menu-item">▣ 资金管理</div>
+        <div class="menu-item">✥ 推荐商品 <span class="chev">⌄</span></div>
+        <div class="menu-item">☆ 我的收藏 <span class="chev">⌄</span></div>
+        <div class="menu-item">▣ 我的足迹</div>
+        <div class="menu-item">⚙ 账户设置 <span class="chev">⌄</span></div>
+      </aside>
+      <main class="main">
+        <div class="crumb">发货配送 <span>›</span> 我的仓库</div>
+        <section class="filter">
+          <div class="field"><label>MySKU：</label><div class="input">请输入MySKU</div></div>
+          <div class="field"><label>ID：</label><div class="input">请输入ID</div></div>
+          <div class="field"><label>订单编号：</label><div class="input">请输入订单编号</div></div>
+          <div class="field"><label>分类选择：</label><div class="input select">全部</div></div>
+          <div class="btn primary">搜索</div>
+          <div class="btn reset">重置</div>
+        </section>
+        <section class="hosting-bar">
+          <span class="radio" aria-hidden="true"></span>
+          <span>打开托管</span>
+          <span class="help-link">使用说明</span>
+        </section>
+        <section class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:2%"></th>
+                <th style="width:7%">图片</th>
+                <th style="width:25%">商品信息</th>
+                <th style="width:16%">编号管理</th>
+                <th style="width:12%">价格(CNY)</th>
+                <th style="width:11%">入库时间</th>
+                <th style="width:15%">备注</th>
+                <th style="width:12%">操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="group-row"><td colspan="8"><div class="group-title">未打包</div></td></tr>
+            <tr class="package-parent-row" data-package="pack-260627-001">
+              <td class="check-cell"><span class="package-select-control"><span class="check-box package-check-box" data-package-select="pack-260627-001" aria-label="选择小包裹下全部商品"></span></span></td>
+              <td class="photo-cell">
+                <div class="package-thumb" style="background-image:url('assets/product-images/small-package.png')" tabindex="0" aria-label="小包裹图片，悬停显示放大预览"></div>
+              </td>
+              <td>
+                <div class="package-info">
+                  <span class="package-name">小包裹</span>
+                  <span class="package-code">BG-CHN20-260627-001</span>
+                </div>
+              </td>
+              <td class="code-cell">
+                <div class="code-lines">--</div>
+              </td>
+              <td class="fee-cell">
+                <div class="fee-grid">
+                  <div class="fee-line"><span>在库数:</span><b>1</b></div>
+                  <div class="fee-line"><span>单价:</span><b>--</b></div>
+                  <div class="fee-line"><span>小计:</span><b>2560.00</b></div>
+                </div>
+              </td>
+              <td class="inbound-time-cell">2026-06-27 15:28</td>
+              <td class="remark-cell">--</td>
+              <td class="action-cell"><button class="package-toggle" type="button" data-package-toggle="pack-260627-001" aria-expanded="false">展开</button></td>
+            </tr>
+            <tr class="package-child-panel-row is-hidden" data-package-child="pack-260627-001">
+              <td colspan="8">
+                <div class="package-child-table-wrap">
+                  <table class="package-child-table">
+                    <colgroup>
+                      <col style="width:4%">
+                      <col style="width:10%">
+                      <col style="width:26%">
+                      <col style="width:18%">
+                      <col style="width:17%">
+                      <col style="width:12%">
+                      <col style="width:13%">
+                    </colgroup>
+                    <tbody>
+                      <tr class="package-child-header-row">
+                        <td class="check-cell"></td>
+                        <td>图片</td>
+                        <td>商品信息</td>
+                        <td>编号管理</td>
+                        <td>价格(CNY)</td>
+                        <td>入库时间</td>
+                        <td>备注</td>
+                      </tr>
+                      <tr class="package-child-row">
+                        <td class="check-cell"><span class="check-box"></span></td>
+                        <td class="photo-cell">
+                          <div class="product-photo" style="background-image:url('assets/product-images/0011_753323090400_36d7eb2e3a.jpg')" tabindex="0" aria-label="商品图片，悬停显示放大预览"></div>
+                        </td>
+                        <td>
+                          <div class="product-info-cell">
+                            <div class="order-line"><span class="muted-line">订单编号：</span><span class="copy-text" data-copy-text="B2B-DD-CHN20-260618-047">B2B-DD-CHN20-260618-047</span><span class="copy-icon" data-copy-text="B2B-DD-CHN20-260618-047" aria-label="复制订单编号" title="复制订单编号"></span></div>
+                            <div class="product-title" title="3-30mm仿珍珠abs直孔散珠手工串珠材料包米白色圆珠配件" tabindex="0">3-30mm仿珍珠abs直孔散珠手工串珠材料包米白色圆珠配件</div>
+                            <span class="id-chip">ID: D000007692</span>
+                            <div class="spec-lines"><span>颜色：</span>高亮水磨米白（直孔穿线）<br><span>型号：</span>18mm（约150颗/斤）</div>
+                          </div>
+                        </td>
+                        <td class="code-cell">
+                          <div class="code-lines">MySKU: --<br>ASIN: --<br>FNSKU: --</div>
+                        </td>
+                        <td class="fee-cell">
+                          <div class="fee-grid">
+                            <div class="qty-line"><span>出货数:</span><span class="stepper"><button>-</button><b>20</b><button>+</button></span></div>
+                            <div class="fee-line"><span>在库数:</span><b>20</b></div>
+                            <div class="fee-line"><span>单价:</span><b>16.80</b></div>
+                            <div class="fee-line"><span>小计:</span><b>336.00</b></div>
+                          </div>
+                        </td>
+                        <td class="inbound-time-cell">2026-06-18 08:04</td>
+                        <td class="remark-cell">--</td>
+                      </tr>
+                      <tr class="package-child-row">
+                        <td class="check-cell"><span class="check-box"></span></td>
+                        <td class="photo-cell">
+                          <div class="product-photo" style="background-image:url('assets/product-images/0011_753323090400_36d7eb2e3a.jpg')" tabindex="0" aria-label="商品图片，悬停显示放大预览"></div>
+                        </td>
+                        <td>
+                          <div class="product-info-cell">
+                            <div class="order-line"><span class="muted-line">订单编号：</span><span class="copy-text" data-copy-text="B2B-DD-CHN20-260618-047">B2B-DD-CHN20-260618-047</span><span class="copy-icon" data-copy-text="B2B-DD-CHN20-260618-047" aria-label="复制订单编号" title="复制订单编号"></span></div>
+                            <div class="product-title" title="3-30mm仿珍珠abs直孔散珠手工珠光米白色圆珠配件" tabindex="0">3-30mm仿珍珠abs直孔散珠手工珠光米白色圆珠配件</div>
+                            <span class="id-chip">ID: D000007691</span>
+                            <div class="spec-lines"><span>颜色：</span>高亮水磨米白（直孔穿线）<br><span>型号：</span>20mm（约120颗/斤）</div>
+                          </div>
+                        </td>
+                        <td class="code-cell">
+                          <div class="code-lines">MySKU: --<br>ASIN: --<br>FNSKU: --</div>
+                        </td>
+                        <td class="fee-cell">
+                          <div class="fee-grid">
+                            <div class="qty-line"><span>出货数:</span><span class="stepper"><button>-</button><b>20</b><button>+</button></span></div>
+                            <div class="fee-line"><span>在库数:</span><b>20</b></div>
+                            <div class="fee-line"><span>单价:</span><b>16.80</b></div>
+                            <div class="fee-line"><span>小计:</span><b>336.00</b></div>
+                          </div>
+                        </td>
+                        <td class="inbound-time-cell">2026-06-18 08:03</td>
+                        <td class="remark-cell">--</td>
+                      </tr>
+                      <tr class="package-child-row package-child-last">
+                        <td class="check-cell"><span class="check-box"></span></td>
+                        <td class="photo-cell">
+                          <div class="product-photo" style="background-image:url('assets/product-images/0011_753323090400_36d7eb2e3a.jpg')" tabindex="0" aria-label="商品图片，悬停显示放大预览"></div>
+                        </td>
+                        <td>
+                          <div class="product-info-cell">
+                            <div class="order-line"><span class="muted-line">订单编号：</span><span class="copy-text" data-copy-text="B2B-DD-CHN20-260618-047">B2B-DD-CHN20-260618-047</span><span class="copy-icon" data-copy-text="B2B-DD-CHN20-260618-047" aria-label="复制订单编号" title="复制订单编号"></span></div>
+                            <div class="product-title" title="3-30mm仿珍珠abs直孔散珠高亮米白色圆珠配件" tabindex="0">3-30mm仿珍珠abs直孔散珠高亮米白色圆珠配件</div>
+                            <span class="id-chip">ID: D000007690</span>
+                            <div class="spec-lines"><span>颜色：</span>高亮水磨米白（直孔穿线）<br><span>型号：</span>3mm（约3500颗/斤）</div>
+                          </div>
+                        </td>
+                        <td class="code-cell">
+                          <div class="code-lines">MySKU: --<br>ASIN: --<br>FNSKU: --</div>
+                        </td>
+                        <td class="fee-cell">
+                          <div class="fee-grid">
+                            <div class="qty-line"><span>出货数:</span><span class="stepper"><button>-</button><b>20</b><button>+</button></span></div>
+                            <div class="fee-line"><span>在库数:</span><b>20</b></div>
+                            <div class="fee-line"><span>单价:</span><b>37.50</b></div>
+                            <div class="fee-line"><span>小计:</span><b>750.00</b></div>
+                          </div>
+                        </td>
+                        <td class="inbound-time-cell">2026-06-18 08:03</td>
+                        <td class="remark-cell">--</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="check-cell"><span class="check-box"></span></td>
+              <td class="photo-cell">
+                <div class="product-photo" style="background-image:url('personal-center-assets/images/0004_587394448252_6ea3415013.jpg')" tabindex="0" aria-label="商品图片，悬停显示放大预览"></div>
+              </td>
+              <td>
+                <div class="product-info-cell">
+                  
+                  <div class="order-line"><span class="muted-line">订单编号：</span><span class="copy-text" data-copy-text="B2B-DD-CHN20-260604-050">B2B-DD-CHN20-260604-050</span><span class="copy-icon" data-copy-text="B2B-DD-CHN20-260604-050" aria-label="复制订单编号" title="复制订单编号"></span></div>
+                  
+                  <div class="product-title" title="小众休闲宽松外搭衬衣女春夏薄款防晒衬衫" tabindex="0">小众休闲宽松外搭衬衣女春夏薄款防晒衬衫</div>
+                  <span class="id-chip">ID: D000007227</span>
+                  <div class="spec-lines"><span>颜色：</span>白色<br><span>型号：</span>均码</div>
+                </div>
+              </td>
+              <td class="code-cell">
+                <div class="code-lines">MySKU: --<br>ASIN: --<br>FNSKU: --</div>
+              </td>
+              <td class="fee-cell">
+                <div class="fee-grid">
+                  <div class="qty-line"><span>出货数:</span><span class="stepper"><button>-</button><b>10</b><button>+</button></span></div>
+                  <div class="fee-line"><span>在库数:</span><b>10</b></div>
+                  <div class="fee-line"><span>单价:</span><b>12.00</b></div>
+                  <div class="fee-line"><span>小计:</span><b>120.00</b></div>
+                </div>
+              </td>
+              <td class="inbound-time-cell">2026-06-09 12:51</td>
+              <td class="remark-cell">--</td>
+              <td class="action-cell">--</td>
+            </tr>
+            <tr>
+              <td class="check-cell"><span class="check-box"></span></td>
+              <td class="photo-cell">
+                <div class="product-photo" style="background-image:url('personal-center-assets/images/0005_718601275463_eebab103a8.jpg')" tabindex="0" aria-label="商品图片，悬停显示放大预览"></div>
+              </td>
+              <td>
+                <div class="product-info-cell">
+                  
+                  <div class="order-line"><span class="muted-line">订单编号：</span><span class="copy-text" data-copy-text="B2B-DD-CHN20-260604-034">B2B-DD-CHN20-260604-034</span><span class="copy-icon" data-copy-text="B2B-DD-CHN20-260604-034" aria-label="复制订单编号" title="复制订单编号"></span></div>
+                  
+                  <div class="product-title" title="DIY首饰饰品配件材料手作黑色串珠配件" tabindex="0">DIY首饰饰品配件材料手作黑色串珠配件</div>
+                  <span class="id-chip">ID: D000007206</span>
+                  <div class="spec-lines"><span>颜色：</span>黑色<br><span>型号：</span>1mm【5米装/5g】</div>
+                </div>
+              </td>
+              <td class="code-cell">
+                <div class="code-lines">MySKU: --<br>ASIN: --<br>FNSKU: --</div>
+              </td>
+              <td class="fee-cell">
+                <div class="fee-grid">
+                  <div class="qty-line"><span>出货数:</span><span class="stepper"><button>-</button><b>20</b><button>+</button></span></div>
+                  <div class="fee-line"><span>在库数:</span><b>20</b></div>
+                  <div class="fee-line"><span>单价:</span><b>20.00</b></div>
+                  <div class="fee-line"><span>小计:</span><b>400.00</b></div>
+                </div>
+              </td>
+              <td class="inbound-time-cell">2026-06-04 14:35</td>
+              <td class="remark-cell">--</td>
+              <td class="action-cell">--</td>
+            </tr>
+            <tr>
+              <td class="check-cell"><span class="check-box"></span></td>
+              <td class="photo-cell">
+                <div class="product-photo" style="background-image:url('personal-center-assets/images/0002_612575121554_adceef2c64.jpg')" tabindex="0" aria-label="商品图片，悬停显示放大预览"></div>
+              </td>
+              <td>
+                <div class="product-info-cell">
+                  
+                  <div class="order-line"><span class="muted-line">订单编号：</span><span class="copy-text" data-copy-text="B2B-DD-CHN20-260604-035">B2B-DD-CHN20-260604-035</span><span class="copy-icon" data-copy-text="B2B-DD-CHN20-260604-035" aria-label="复制订单编号" title="复制订单编号"></span></div>
+                  
+                  <div class="product-title" title="跨境复古美人头像金币十字架花纹爱心法蒂玛之手掌指环" tabindex="0">跨境复古美人头像金币十字架花纹爱心法蒂玛之手掌指环</div>
+                  <span class="id-chip">ID: D000006193</span>
+                  <div class="spec-lines"><span>颜色：</span>sku3595<br><span>型号：</span>开口可调节</div>
+                </div>
+              </td>
+              <td class="code-cell">
+                <div class="code-lines">MySKU: sku3595<br>ASIN: --<br>FNSKU: --</div>
+              </td>
+              <td class="fee-cell">
+                <div class="fee-grid">
+                  <div class="qty-line"><span>出货数:</span><span class="stepper"><button>-</button><b>20</b><button>+</button></span></div>
+                  <div class="fee-line"><span>在库数:</span><b>20</b></div>
+                  <div class="fee-line"><span>单价:</span><b>20.00</b></div>
+                  <div class="fee-line"><span>小计:</span><b>400.00</b></div>
+                </div>
+              </td>
+              <td class="inbound-time-cell">2026-06-04 14:32</td>
+              <td class="remark-cell">--</td>
+              <td class="action-cell">--</td>
+            </tr>
+            <tr>
+              <td class="check-cell"><span class="check-box"></span></td>
+              <td class="photo-cell">
+                <div class="product-photo" style="background-image:url('personal-center-assets/images/0003_651901354875_a6aa381c1c.jpg')" tabindex="0" aria-label="商品图片，悬停显示放大预览"></div>
+              </td>
+              <td>
+                <div class="product-info-cell">
+                  
+                  <div class="order-line"><span class="muted-line">订单编号：</span><span class="copy-text" data-copy-text="B2B-DD-CHN20-260604-036">B2B-DD-CHN20-260604-036</span><span class="copy-icon" data-copy-text="B2B-DD-CHN20-260604-036" aria-label="复制订单编号" title="复制订单编号"></span></div>
+                  
+                  <div class="product-title" title="时尚中古满钻双十字架项链配饰复古金色吊坠" tabindex="0">时尚中古满钻双十字架项链配饰复古金色吊坠</div>
+                  <span class="id-chip">ID: D000006518</span>
+                  <div class="spec-lines"><span>颜色：</span>十字架项链黄金色<br><span>型号：</span>45cm链长</div>
+                </div>
+              </td>
+              <td class="code-cell">
+                <div class="code-lines">MySKU: --<br>ASIN: --<br>FNSKU: --</div>
+              </td>
+              <td class="fee-cell">
+                <div class="fee-grid">
+                  <div class="qty-line"><span>出货数:</span><span class="stepper"><button>-</button><b>20</b><button>+</button></span></div>
+                  <div class="fee-line"><span>在库数:</span><b>20</b></div>
+                  <div class="fee-line"><span>单价:</span><b>20.00</b></div>
+                  <div class="fee-line"><span>小计:</span><b>400.00</b></div>
+                </div>
+              </td>
+              <td class="inbound-time-cell">2026-06-04 14:29</td>
+              <td class="remark-cell">--</td>
+              <td class="action-cell">--</td>
+            </tr>
+            <tr>
+              <td class="check-cell"><span class="check-box"></span></td>
+              <td class="photo-cell">
+                <div class="product-photo" style="background-image:url('personal-center-assets/images/0006_1049119261500_dd61d7a24f.jpg')" tabindex="0" aria-label="商品图片，悬停显示放大预览"></div>
+              </td>
+              <td>
+                <div class="product-info-cell">
+                  
+                  <div class="order-line"><span class="muted-line">订单编号：</span><span class="copy-text" data-copy-text="B2B-DD-CHN20-260604-037">B2B-DD-CHN20-260604-037</span><span class="copy-icon" data-copy-text="B2B-DD-CHN20-260604-037" aria-label="复制订单编号" title="复制订单编号"></span></div>
+                  
+                  <div class="product-title" title="透明亚克力桌面收纳化妆品展示架" tabindex="0">透明亚克力桌面收纳化妆品展示架</div>
+                  <span class="id-chip">ID: D000006721</span>
+                  <div class="spec-lines"><span>颜色：</span>透明色<br><span>型号：</span>小号</div>
+                </div>
+              </td>
+              <td class="code-cell">
+                <div class="code-lines">MySKU: --<br>ASIN: --<br>FNSKU: --</div>
+              </td>
+              <td class="fee-cell">
+                <div class="fee-grid">
+                  <div class="qty-line"><span>出货数:</span><span class="stepper"><button>-</button><b>20</b><button>+</button></span></div>
+                  <div class="fee-line"><span>在库数:</span><b>20</b></div>
+                  <div class="fee-line"><span>单价:</span><b>20.00</b></div>
+                  <div class="fee-line"><span>小计:</span><b>400.00</b></div>
+                </div>
+              </td>
+              <td class="inbound-time-cell">2026-06-04 14:20</td>
+              <td class="remark-cell">--</td>
+              <td class="action-cell">--</td>
+            </tr>
+            </tbody>
+          </table>
+        </section>
+        <div class="right-handle" aria-hidden="true"></div>
+        <div class="bottom-bar">
+          <div class="select-all"><span class="check-box"></span><span>选择全部</span></div>
+          <div></div>
+          <div class="summary">商品数: <b>0</b>/2170</div>
+          <div class="summary">已选商品总金额: <span class="amount">0.00</span><span class="currency">CNY</span></div>
+          <div class="submit-btn">提交发货单</div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script>
+    (function () {
+      if (window.__projectCopyUnifyReady) return;
+      window.__projectCopyUnifyReady = true;
+      var codePattern = /\b(?:B2B|WL)-[A-Z0-9]+(?:-[A-Z0-9]+)*\b|\bD\d{6,}\b/g;
+      var copySelector = [".project-copy-code", ".copy-text", ".order-code", ".copy-icon", "[data-copy]", "[data-copy-text]"].join(",");
+      var toastTimer = 0;
+      function copyTitle(value) {
+        if (/^B2B-DD-/i.test(value)) return "复制订单编号";
+        if (/^B2B-BJ-/i.test(value)) return "复制报价单编号";
+        if (/^WL-/i.test(value)) return "复制物流编号";
+        if (/^D\d{6,}$/i.test(value)) return "复制ID";
+        return "复制编号";
+      }
+      function normalizeCopyText(text) {
+        var value = (text || "").replace(/\s+/g, " ").trim();
+        var match = value.match(codePattern);
+        if (match) return match[0];
+        return value.replace(/^[^:：]{1,24}[:：]\s*/, "").trim();
+      }
+      function getNearbyText(target) {
+        var pieces = [];
+        var node = target.previousSibling;
+        while (node) {
+          if (node.nodeType === Node.TEXT_NODE) pieces.unshift(node.textContent || "");
+          else if (node.nodeType === Node.ELEMENT_NODE && !node.matches(copySelector)) pieces.unshift(node.textContent || "");
+          if (normalizeCopyText(pieces.join(""))) break;
+          node = node.previousSibling;
+        }
+        var nearby = normalizeCopyText(pieces.join(""));
+        if (nearby) return nearby;
+        var scope = target.closest("td,li,div,p,span,tr,section,header");
+        if (!scope) return "";
+        var clone = scope.cloneNode(true);
+        clone.querySelectorAll(copySelector + ",script,style").forEach(function (item) { item.remove(); });
+        return normalizeCopyText(clone.textContent || "");
+      }
+      function getCopyValue(target) {
+        var explicit = target.getAttribute("data-copy-text") || target.getAttribute("data-copy");
+        if (explicit) return normalizeCopyText(explicit);
+        var ownText = normalizeCopyText(target.textContent || "");
+        if (ownText) return ownText;
+        return getNearbyText(target);
+      }
+      function ensureToast() {
+        var toast = document.querySelector(".project-copy-toast");
+        if (toast) return toast;
+        toast = document.createElement("div");
+        toast.className = "project-copy-toast";
+        toast.setAttribute("role", "status");
+        toast.setAttribute("aria-live", "polite");
+        toast.textContent = "复制成功";
+        document.body.appendChild(toast);
+        return toast;
+      }
+      function placeToast(toast) {
+        var top = Math.min(310, Math.max(96, window.innerHeight - 56));
+        toast.style.left = "50%";
+        toast.style.top = top + "px";
+        toast.classList.add("is-visible");
+      }
+      function showToast() {
+        var toast = ensureToast();
+        toast.textContent = "复制成功";
+        placeToast(toast);
+        window.clearTimeout(toastTimer);
+        toastTimer = window.setTimeout(function () { toast.classList.remove("is-visible"); }, 1400);
+      }
+      function writeClipboard(text) {
+        if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+        var input = document.createElement("textarea");
+        input.value = text;
+        input.setAttribute("readonly", "");
+        input.style.position = "fixed";
+        input.style.left = "-9999px";
+        input.style.top = "0";
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        input.remove();
+        return Promise.resolve();
+      }
+      function copyFromTarget(target) {
+        var value = getCopyValue(target);
+        if (!value) return;
+        writeClipboard(value).then(showToast).catch(showToast);
+      }
+      function prepareCopyTarget(target, value) {
+        if (!target || target.dataset.projectCopyReady === "1") return;
+        target.dataset.projectCopyReady = "1";
+        target.setAttribute("role", "button");
+        target.setAttribute("tabindex", target.getAttribute("tabindex") || "0");
+        var title = copyTitle(value || getCopyValue(target));
+        target.setAttribute("title", title);
+        target.setAttribute("aria-label", title);
+      }
+      function wrapCodes(root) {
+        if (!root) return;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+          acceptNode: function (node) {
+            var parent = node.parentElement;
+            if (!parent) return NodeFilter.FILTER_REJECT;
+            if (parent.closest("script,style,textarea,input,select,button,a,.project-copy-code," + copySelector)) return NodeFilter.FILTER_REJECT;
+            if (!codePattern.test(node.nodeValue || "")) return NodeFilter.FILTER_REJECT;
+            codePattern.lastIndex = 0;
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        });
+        var nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach(function (node) {
+          var text = node.nodeValue || "";
+          var fragment = document.createDocumentFragment();
+          var last = 0;
+          var match;
+          codePattern.lastIndex = 0;
+          while ((match = codePattern.exec(text))) {
+            if (match.index > last) fragment.appendChild(document.createTextNode(text.slice(last, match.index)));
+            var code = match[0];
+            var span = document.createElement("span");
+            span.className = "project-copy-code";
+            span.setAttribute("data-copy-text", code);
+            span.textContent = code;
+            prepareCopyTarget(span, code);
+            fragment.appendChild(span);
+            last = match.index + code.length;
+          }
+          if (last < text.length) fragment.appendChild(document.createTextNode(text.slice(last)));
+          node.parentNode.replaceChild(fragment, node);
+        });
+      }
+      function init() {
+        wrapCodes(document.body);
+        document.querySelectorAll(copySelector).forEach(function (target) { prepareCopyTarget(target); });
+      }
+      if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+      else init();
+      document.addEventListener("click", function (event) {
+        var target = event.target.closest(copySelector);
+        if (!target) return;
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+        copyFromTarget(target);
+      }, true);
+
+      function updateWarehouseSelection() {
+        document.querySelectorAll(".check-cell .check-box:not([data-package-select])").forEach(function (box) {
+          var row = box.closest("tr");
+          if (row) row.classList.toggle("is-selected", box.classList.contains("is-checked"));
+        });
+        document.querySelectorAll("[data-package-select]").forEach(function (box) {
+          var packageId = box.getAttribute("data-package-select");
+          var childBoxes = Array.prototype.slice.call(document.querySelectorAll('[data-package-child="' + packageId + '"] .check-cell .check-box'));
+          var checkedCount = childBoxes.filter(function (childBox) { return childBox.classList.contains("is-checked"); }).length;
+          var isAllChecked = childBoxes.length > 0 && checkedCount === childBoxes.length;
+          var isPartial = checkedCount > 0 && checkedCount < childBoxes.length;
+          var parentRow = box.closest(".package-parent-row");
+          box.classList.toggle("is-checked", isAllChecked);
+          box.classList.toggle("is-partial", isPartial);
+          box.setAttribute("aria-checked", isPartial ? "mixed" : (isAllChecked ? "true" : "false"));
+          if (parentRow) parentRow.classList.toggle("is-selected", isAllChecked || isPartial);
+        });
+        var rowBoxes = Array.prototype.slice.call(document.querySelectorAll(".check-cell .check-box:not([data-package-select])"));
+        var allBox = document.querySelector(".select-all .check-box");
+        if (allBox) {
+          allBox.classList.toggle("is-checked", rowBoxes.length > 0 && rowBoxes.every(function (box) { return box.classList.contains("is-checked"); }));
+          allBox.setAttribute("aria-checked", allBox.classList.contains("is-checked") ? "true" : "false");
+        }
+      }
+      document.querySelectorAll(".check-cell .check-box:not([data-package-select])").forEach(function (box) {
+        box.setAttribute("role", "checkbox");
+        box.setAttribute("tabindex", "0");
+        box.setAttribute("aria-checked", "false");
+        box.addEventListener("click", function () {
+          box.classList.toggle("is-checked");
+          box.setAttribute("aria-checked", box.classList.contains("is-checked") ? "true" : "false");
+          updateWarehouseSelection();
+        });
+        box.addEventListener("keydown", function (event) {
+          if (event.key !== " " && event.key !== "Enter") return;
+          event.preventDefault();
+          box.click();
+        });
+      });
+      var selectAllBox = document.querySelector(".select-all .check-box");
+      if (selectAllBox) {
+        selectAllBox.setAttribute("role", "checkbox");
+        selectAllBox.setAttribute("tabindex", "0");
+        selectAllBox.setAttribute("aria-checked", "false");
+        selectAllBox.addEventListener("click", function () {
+          var shouldCheck = !selectAllBox.classList.contains("is-checked");
+          document.querySelectorAll(".check-cell .check-box:not([data-package-select])").forEach(function (box) {
+            box.classList.toggle("is-checked", shouldCheck);
+            box.setAttribute("aria-checked", shouldCheck ? "true" : "false");
+          });
+          selectAllBox.setAttribute("aria-checked", shouldCheck ? "true" : "false");
+          updateWarehouseSelection();
+        });
+        selectAllBox.addEventListener("keydown", function (event) {
+          if (event.key !== " " && event.key !== "Enter") return;
+          event.preventDefault();
+          selectAllBox.click();
+        });
+      }
+
+      document.querySelectorAll("[data-package-select]").forEach(function (box) {
+        box.setAttribute("role", "checkbox");
+        box.setAttribute("tabindex", "0");
+        box.setAttribute("aria-checked", "false");
+        box.addEventListener("click", function () {
+          var packageId = box.getAttribute("data-package-select");
+          var childBoxes = document.querySelectorAll('[data-package-child="' + packageId + '"] .check-cell .check-box');
+          var shouldCheck = !box.classList.contains("is-checked") || box.classList.contains("is-partial");
+          childBoxes.forEach(function (childBox) {
+            childBox.classList.toggle("is-checked", shouldCheck);
+            childBox.setAttribute("aria-checked", shouldCheck ? "true" : "false");
+          });
+          updateWarehouseSelection();
+        });
+        box.addEventListener("keydown", function (event) {
+          if (event.key !== " " && event.key !== "Enter") return;
+          event.preventDefault();
+          box.click();
+        });
+      });
+
+      document.querySelectorAll("[data-package-toggle]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          var packageId = button.getAttribute("data-package-toggle");
+          var parentRow = document.querySelector('[data-package="' + packageId + '"]');
+          var childRows = document.querySelectorAll('[data-package-child="' + packageId + '"]');
+          var willOpen = button.getAttribute("aria-expanded") !== "true";
+          childRows.forEach(function (row) {
+            row.classList.toggle("is-hidden", !willOpen);
+          });
+          if (parentRow) parentRow.classList.toggle("is-open", willOpen);
+          button.setAttribute("aria-expanded", willOpen ? "true" : "false");
+          button.textContent = willOpen ? "收起" : "展开";
+        });
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        var target = event.target.closest(copySelector);
+        if (!target) return;
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+        copyFromTarget(target);
+      }, true);
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad:true, theme:'base', flowchart:{htmlLabels:true} });
+  </script>
+  <style>body{font-family:Microsoft YaHei;padding:20px}.mermaid{padding:10px;border-radius:6px}</style>
+</head>
+<body>
+  <div class="mermaid">flowchart LR
+  A[Run 完成]
+  B[写 reflections]
+  C{是可复用经验?
+  yes/no}
+  D[写入 memory (shared/agent1/agent2)]
+  E{重复且稳定?}
+  F[写入 evolution/promotion_candidates]
+  G[结束]
+
+  A --> B --> C
+  C -- 否 --> G
+  C -- 是 --> D --> E
+  E -- 否 --> G
+  E -- 是 --> F --> G
+</div>
+</body>
+</html>

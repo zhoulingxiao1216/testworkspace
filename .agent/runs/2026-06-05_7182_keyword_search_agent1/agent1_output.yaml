@@ -1,0 +1,34 @@
+agent: "agent1_test_design"
+project: "7.7182词搜接口"
+status: "DESIGN_READY_WITH_CONFIRMATION_ITEMS"
+summary:
+  total_cases: 49
+  critical_cases: 18
+  high_cases: 23
+  medium_cases: 8
+  low_cases: 0
+outputs:
+  - type: "requirement_summary"
+    path: "7.7182词搜接口/测试文档/架构级需求摘要.md"
+  - type: "audit_questions"
+    path: "7.7182词搜接口/测试文档/审计待确认问题单.md"
+  - type: "superpowers"
+    path: "7.7182词搜接口/测试文档/superpowers.md"
+  - type: "test_outline"
+    path: "7.7182词搜接口/测试文档/测试点大纲.md"
+  - type: "test_cases"
+    path: "7.7182词搜接口/测试文档/7182词搜接口测试用例.md"
+  - type: "rule_mapping_review"
+    path: "7.7182词搜接口/测试文档/第六阶段_用例反射评审报告.md"
+  - type: "effort_estimate"
+    path: "7.7182词搜接口/测试文档/工期评估.md"
+  - type: "execution_handoff"
+    path: "7.7182词搜接口/测试文档/执行交接清单.yaml"
+needs_confirmation:
+  - "1688 实际字段和筛选排序能力"
+  - "JAN 来源表、索引和匹配规则"
+  - "6 个对外日文状态与全球站状态码映射"
+  - "生成新 Token 后旧 Token 失效策略"
+  - "Client Secret 后台展示与复制审计口径"
+handoff_ready_for_agent2: true
+

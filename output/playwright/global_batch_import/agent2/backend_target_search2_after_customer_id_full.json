@@ -1,0 +1,1902 @@
+{
+  "url": "https://wlz-admin-all-view.hubbuyer.com/b2b/user/list",
+  "title": "客户信息",
+  "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（0）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（0）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n暂无数据\n30条/页\n共 0 条\n1\n前往\n页",
+  "contains": {
+    "target_email": false,
+    "target_name": false,
+    "target_id_full": false,
+    "target_phone_display": false,
+    "batch_import": false,
+    "detail": false,
+    "excel": false,
+    "xlsx": false,
+    "confirm_import": false
+  },
+  "search_label": "customer_id_full",
+  "search_value": "D-0/311.40-EC-TEST-1010",
+  "fill": {
+    "filled": true,
+    "label": "客户ID",
+    "placeholder": "请输入客户ID",
+    "value": "D-0/311.40-EC-TEST-1010"
+  },
+  "query": {
+    "clicked": true,
+    "text": "查询"
+  },
+  "inputs": [
+    {
+      "i": 0,
+      "visible": true,
+      "type": "text",
+      "placeholder": "请输入客户ID",
+      "value": "D-0/311.40-EC-TEST-1010",
+      "accept": null,
+      "cls": "el-input__inner",
+      "label": "客户ID"
+    },
+    {
+      "i": 1,
+      "visible": true,
+      "type": "text",
+      "placeholder": "请输入客户名字",
+      "value": "",
+      "accept": null,
+      "cls": "el-input__inner",
+      "label": "客户姓名"
+    },
+    {
+      "i": 2,
+      "visible": true,
+      "type": "text",
+      "placeholder": null,
+      "value": "",
+      "accept": null,
+      "cls": "el-select__input",
+      "label": "所属国家 请选择所属国家"
+    },
+    {
+      "i": 3,
+      "visible": true,
+      "type": "text",
+      "placeholder": "请输入联系电话",
+      "value": "",
+      "accept": null,
+      "cls": "el-input__inner",
+      "label": "联系电话"
+    },
+    {
+      "i": 4,
+      "visible": true,
+      "type": "text",
+      "placeholder": "请输入邮箱",
+      "value": "",
+      "accept": null,
+      "cls": "el-input__inner",
+      "label": "邮箱"
+    },
+    {
+      "i": 5,
+      "visible": true,
+      "type": "text",
+      "placeholder": null,
+      "value": "",
+      "accept": null,
+      "cls": "el-select__input",
+      "label": "账号状态 请选择账号状态"
+    },
+    {
+      "i": 6,
+      "visible": true,
+      "type": "text",
+      "placeholder": null,
+      "value": "",
+      "accept": null,
+      "cls": "el-select__input",
+      "label": "注册来源 请选择注册来源"
+    },
+    {
+      "i": 7,
+      "visible": true,
+      "type": "text",
+      "placeholder": null,
+      "value": "",
+      "accept": null,
+      "cls": "el-select__input",
+      "label": "会员等级 请选择会员等级"
+    },
+    {
+      "i": 8,
+      "visible": true,
+      "type": "text",
+      "placeholder": null,
+      "value": "",
+      "accept": null,
+      "cls": "el-select__input",
+      "label": "业务 请选择业务"
+    },
+    {
+      "i": 9,
+      "visible": true,
+      "type": "text",
+      "placeholder": null,
+      "value": "",
+      "accept": null,
+      "cls": "el-select__input",
+      "label": "采购 请选择采购"
+    },
+    {
+      "i": 10,
+      "visible": true,
+      "type": "text",
+      "placeholder": null,
+      "value": "",
+      "accept": null,
+      "cls": "el-select__input",
+      "label": "客户经理 请选择客户经理"
+    },
+    {
+      "i": 11,
+      "visible": true,
+      "type": null,
+      "placeholder": "开始日期",
+      "value": "",
+      "accept": null,
+      "cls": "el-range-input",
+      "label": "注册日期 至"
+    },
+    {
+      "i": 12,
+      "visible": true,
+      "type": null,
+      "placeholder": "结束日期",
+      "value": "",
+      "accept": null,
+      "cls": "el-range-input",
+      "label": "注册日期 至"
+    },
+    {
+      "i": 13,
+      "visible": true,
+      "type": "radio",
+      "placeholder": null,
+      "value": "",
+      "accept": null,
+      "cls": "el-radio-button__original-radio",
+      "label": ""
+    },
+    {
+      "i": 14,
+      "visible": true,
+      "type": "radio",
+      "placeholder": null,
+      "value": "S",
+      "accept": null,
+      "cls": "el-radio-button__original-radio",
+      "label": ""
+    },
+    {
+      "i": 15,
+      "visible": true,
+      "type": "radio",
+      "placeholder": null,
+      "value": "A",
+      "accept": null,
+      "cls": "el-radio-button__original-radio",
+      "label": ""
+    },
+    {
+      "i": 16,
+      "visible": true,
+      "type": "radio",
+      "placeholder": null,
+      "value": "B",
+      "accept": null,
+      "cls": "el-radio-button__original-radio",
+      "label": ""
+    },
+    {
+      "i": 17,
+      "visible": true,
+      "type": "radio",
+      "placeholder": null,
+      "value": "C",
+      "accept": null,
+      "cls": "el-radio-button__original-radio",
+      "label": ""
+    },
+    {
+      "i": 18,
+      "visible": true,
+      "type": "radio",
+      "placeholder": null,
+      "value": "D",
+      "accept": null,
+      "cls": "el-radio-button__original-radio",
+      "label": ""
+    },
+    {
+      "i": 19,
+      "visible": true,
+      "type": "checkbox",
+      "placeholder": null,
+      "value": "on",
+      "accept": null,
+      "cls": "el-checkbox__original",
+      "label": ""
+    },
+    {
+      "i": 20,
+      "visible": true,
+      "type": "text",
+      "placeholder": null,
+      "value": "",
+      "accept": null,
+      "cls": "el-select__input",
+      "label": ""
+    },
+    {
+      "i": 21,
+      "visible": true,
+      "type": "number",
+      "placeholder": null,
+      "value": "1",
+      "accept": null,
+      "cls": "el-input__inner",
+      "label": ""
+    }
+  ],
+  "controls": [
+    {
+      "i": 0,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统 你好， admin 工作台 订单管理 仓库管理 发货配送 客户管理 客户信息 会员等级 营销管理 附加项 系统设置 客户ID 客户姓名 所属国家 请选择所属国家 联系电话 邮箱 账号状态 请选择账号状态 注册来源 请选择注册来源 会员等级 请选择会员等级 业务 请选择业务 采购 请选择采购 客户经理 请选择客户经理 注册日期 至 查询 重置 收起 批量导出 全部（0） S级客户（0） A级客户",
+      "cls": ""
+    },
+    {
+      "i": 1,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统 你好， admin 工作台 订单管理 仓库管理 发货配送 客户管理 客户信息 会员等级 营销管理 附加项 系统设置 客户ID 客户姓名 所属国家 请选择所属国家 联系电话 邮箱 账号状态 请选择账号状态 注册来源 请选择注册来源 会员等级 请选择会员等级 业务 请选择业务 采购 请选择采购 客户经理 请选择客户经理 注册日期 至 查询 重置 收起 批量导出 全部（0） S级客户（0） A级客户",
+      "cls": "home h-full"
+    },
+    {
+      "i": 2,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统 你好， admin",
+      "cls": "headers pt-11 box-border color-#333"
+    },
+    {
+      "i": 3,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统 你好， admin",
+      "cls": "px-20 box-border flex justify-between"
+    },
+    {
+      "i": 4,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统",
+      "cls": ""
+    },
+    {
+      "i": 5,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统",
+      "cls": "top-menus"
+    },
+    {
+      "i": 6,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统",
+      "cls": "el-scrollbar"
+    },
+    {
+      "i": 7,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统",
+      "cls": "el-scrollbar__wrap el-scrollbar__wrap--hidden-default"
+    },
+    {
+      "i": 8,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统",
+      "cls": "el-scrollbar__view"
+    },
+    {
+      "i": 9,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统 B2B系统 D2C系统 介绍中心 云仓系统 物流系统 财务系统 日志系统",
+      "cls": "w-full flex"
+    },
+    {
+      "i": 10,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统",
+      "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 flex items-center h-36 box-border"
+    },
+    {
+      "i": 11,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "管理系统",
+      "cls": "ml-5 flex-1 inline-block"
+    },
+    {
+      "i": 12,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "B2B系统",
+      "cls": "menu-check menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 flex items-center h-36 box-border"
+    },
+    {
+      "i": 13,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "B2B系统",
+      "cls": "ml-5 flex-1 inline-block"
+    },
+    {
+      "i": 14,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "D2C系统",
+      "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 flex items-center h-36 box-border"
+    },
+    {
+      "i": 15,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "D2C系统",
+      "cls": "ml-5 flex-1 inline-block"
+    },
+    {
+      "i": 16,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "介绍中心",
+      "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 flex items-center h-36 box-border"
+    },
+    {
+      "i": 17,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "介绍中心",
+      "cls": "ml-5 flex-1 inline-block"
+    },
+    {
+      "i": 18,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "云仓系统",
+      "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 flex items-center h-36 box-border"
+    },
+    {
+      "i": 19,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "云仓系统",
+      "cls": "ml-5 flex-1 inline-block"
+    },
+    {
+      "i": 20,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "物流系统",
+      "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 flex items-center h-36 box-border"
+    },
+    {
+      "i": 21,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "物流系统",
+      "cls": "ml-5 flex-1 inline-block"
+    },
+    {
+      "i": 22,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "财务系统",
+      "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 flex items-center h-36 box-border"
+    },
+    {
+      "i": 23,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "财务系统",
+      "cls": "ml-5 flex-1 inline-block"
+    },
+    {
+      "i": 24,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "日志系统",
+      "cls": "menu-item flex-shrink-0 menu-default cursor-pointer px-11 color-#222222 fs-14 flex items-center h-36 box-border"
+    },
+    {
+      "i": 25,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "日志系统",
+      "cls": "ml-5 flex-1 inline-block"
+    },
+    {
+      "i": 30,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "你好， admin",
+      "cls": "flex items-center justify-end fs-14 w-300 h-30 pr-20 box-border"
+    },
+    {
+      "i": 31,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "0",
+      "cls": "el-badge mr-30"
+    },
+    {
+      "i": 32,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "你好， admin",
+      "cls": "flex items-center"
+    },
+    {
+      "i": 33,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "你好， admin",
+      "cls": "el-dropdown"
+    },
+    {
+      "i": 34,
+      "tag": "DIV",
+      "role": "button",
+      "visible": true,
+      "text": "你好， admin",
+      "cls": "cursor-pointer el-tooltip__trigger el-tooltip__trigger"
+    },
+    {
+      "i": 35,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "admin",
+      "cls": "color-primary"
+    },
+    {
+      "i": 36,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "偏好设置恢复默认",
+      "cls": ""
+    },
+    {
+      "i": 44,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "工作台 订单管理 仓库管理 发货配送 客户管理 客户信息 会员等级 营销管理 附加项 系统设置 客户ID 客户姓名 所属国家 请选择所属国家 联系电话 邮箱 账号状态 请选择账号状态 注册来源 请选择注册来源 会员等级 请选择会员等级 业务 请选择业务 采购 请选择采购 客户经理 请选择客户经理 注册日期 至 查询 重置 收起 批量导出 全部（0） S级客户（0） A级客户（0） B级客户（0） C级客户（0） D级客户（0） 姓名 客户ID 所属国家 账号状态 会员等级 会",
+      "cls": "container-box pl-10 pr-10 pt-10 box-border gl-bd-top-transparent"
+    },
+    {
+      "i": 45,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "工作台 订单管理 仓库管理 发货配送 客户管理 客户信息 会员等级 营销管理 附加项 系统设置",
+      "cls": "inner"
+    },
+    {
+      "i": 46,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "工作台 订单管理 仓库管理 发货配送 客户管理 客户信息 会员等级 营销管理 附加项 系统设置",
+      "cls": "h-100% menu-box"
+    },
+    {
+      "i": 47,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "工作台 订单管理 仓库管理 发货配送 客户管理 客户信息 会员等级 营销管理 附加项 系统设置",
+      "cls": "el-scrollbar h-100%"
+    },
+    {
+      "i": 48,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "工作台 订单管理 仓库管理 发货配送 客户管理 客户信息 会员等级 营销管理 附加项 系统设置",
+      "cls": "el-scrollbar__wrap el-scrollbar__wrap--hidden-default"
+    },
+    {
+      "i": 49,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "工作台 订单管理 仓库管理 发货配送 客户管理 客户信息 会员等级 营销管理 附加项 系统设置",
+      "cls": "el-scrollbar__view"
+    },
+    {
+      "i": 50,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "工作台",
+      "cls": "el-sub-menu"
+    },
+    {
+      "i": 51,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "工作台",
+      "cls": "el-sub-menu__title"
+    },
+    {
+      "i": 54,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "工作台",
+      "cls": ""
+    },
+    {
+      "i": 59,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "订单管理",
+      "cls": "el-sub-menu"
+    },
+    {
+      "i": 60,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "订单管理",
+      "cls": "el-sub-menu__title"
+    },
+    {
+      "i": 63,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "订单管理",
+      "cls": ""
+    },
+    {
+      "i": 74,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "仓库管理",
+      "cls": "el-sub-menu"
+    },
+    {
+      "i": 75,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "仓库管理",
+      "cls": "el-sub-menu__title"
+    },
+    {
+      "i": 78,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "仓库管理",
+      "cls": ""
+    },
+    {
+      "i": 91,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "发货配送",
+      "cls": "el-sub-menu"
+    },
+    {
+      "i": 92,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "发货配送",
+      "cls": "el-sub-menu__title"
+    },
+    {
+      "i": 95,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "发货配送",
+      "cls": ""
+    },
+    {
+      "i": 104,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "客户管理 客户信息 会员等级",
+      "cls": "el-sub-menu is-active is-opened"
+    },
+    {
+      "i": 105,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "客户管理",
+      "cls": "el-sub-menu__title"
+    },
+    {
+      "i": 108,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "客户管理",
+      "cls": ""
+    },
+    {
+      "i": 109,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "客户信息",
+      "cls": "el-menu-item is-active"
+    },
+    {
+      "i": 110,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "客户信息",
+      "cls": ""
+    },
+    {
+      "i": 111,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "会员等级",
+      "cls": "el-menu-item"
+    },
+    {
+      "i": 112,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "会员等级",
+      "cls": ""
+    },
+    {
+      "i": 113,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "营销管理",
+      "cls": "el-sub-menu"
+    },
+    {
+      "i": 114,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "营销管理",
+      "cls": "el-sub-menu__title"
+    },
+    {
+      "i": 117,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "营销管理",
+      "cls": ""
+    },
+    {
+      "i": 122,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "附加项",
+      "cls": "el-sub-menu"
+    },
+    {
+      "i": 123,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "附加项",
+      "cls": "el-sub-menu__title"
+    },
+    {
+      "i": 126,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "附加项",
+      "cls": ""
+    },
+    {
+      "i": 143,
+      "tag": "LI",
+      "role": "menuitem",
+      "visible": true,
+      "text": "系统设置",
+      "cls": "el-sub-menu"
+    },
+    {
+      "i": 144,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "系统设置",
+      "cls": "el-sub-menu__title"
+    },
+    {
+      "i": 147,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "系统设置",
+      "cls": ""
+    },
+    {
+      "i": 185,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "客户ID 客户姓名 所属国家 请选择所属国家 联系电话 邮箱 账号状态 请选择账号状态 注册来源 请选择注册来源 会员等级 请选择会员等级 业务 请选择业务 采购 请选择采购 客户经理 请选择客户经理 注册日期 至 查询 重置 收起 批量导出 全部（0） S级客户（0） A级客户（0） B级客户（0） C级客户（0） D级客户（0） 姓名 客户ID 所属国家 账号状态 会员等级 会员剩余天数 会员到期日期 下单前沟通 客户经理 业务 采购 邮箱 电话号码 正式订单数 订单状态",
+      "cls": "el-scrollbar"
+    },
+    {
+      "i": 186,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "客户ID 客户姓名 所属国家 请选择所属国家 联系电话 邮箱 账号状态 请选择账号状态 注册来源 请选择注册来源 会员等级 请选择会员等级 业务 请选择业务 采购 请选择采购 客户经理 请选择客户经理 注册日期 至 查询 重置 收起 批量导出 全部（0） S级客户（0） A级客户（0） B级客户（0） C级客户（0） D级客户（0） 姓名 客户ID 所属国家 账号状态 会员等级 会员剩余天数 会员到期日期 下单前沟通 客户经理 业务 采购 邮箱 电话号码 正式订单数 订单状态",
+      "cls": "el-scrollbar__wrap el-scrollbar__wrap--hidden-default"
+    },
+    {
+      "i": 187,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "客户ID 客户姓名 所属国家 请选择所属国家 联系电话 邮箱 账号状态 请选择账号状态 注册来源 请选择注册来源 会员等级 请选择会员等级 业务 请选择业务 采购 请选择采购 客户经理 请选择客户经理 注册日期 至 查询 重置 收起 批量导出 全部（0） S级客户（0） A级客户（0） B级客户（0） C级客户（0） D级客户（0） 姓名 客户ID 所属国家 账号状态 会员等级 会员剩余天数 会员到期日期 下单前沟通 客户经理 业务 采购 邮箱 电话号码 正式订单数 订单状态",
+      "cls": "el-scrollbar__view"
+    },
+    {
+      "i": 188,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "客户ID 客户姓名 所属国家 请选择所属国家 联系电话 邮箱 账号状态 请选择账号状态 注册来源 请选择注册来源 会员等级 请选择会员等级 业务 请选择业务 采购 请选择采购 客户经理 请选择客户经理 注册日期 至 查询 重置 收起 批量导出 全部（0） S级客户（0） A级客户（0） B级客户（0） C级客户（0） D级客户（0） 姓名 客户ID 所属国家 账号状态 会员等级 会员剩余天数 会员到期日期 下单前沟通 客户经理 业务 采购 邮箱 电话号码 正式订单数 订单状态",
+      "cls": "w-full h-full p-15 box-border"
+    },
+    {
+      "i": 189,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "客户ID 客户姓名 所属国家 请选择所属国家 联系电话 邮箱 账号状态 请选择账号状态 注册来源 请选择注册来源 会员等级 请选择会员等级 业务 请选择业务 采购 请选择采购 客户经理 请选择客户经理 注册日期 至 查询 重置 收起 批量导出 全部（0） S级客户（0） A级客户（0） B级客户（0） C级客户（0） D级客户（0） 姓名 客户ID 所属国家 账号状态 会员等级 会员剩余天数 会员到期日期 下单前沟通 客户经理 业务 采购 邮箱 电话号码 正式订单数 订单状态",
+      "cls": "w-full h-full overflow-x-hidden"
+    },
+    {
+      "i": 190,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "客户ID 客户姓名 所属国家 请选择所属国家 联系电话 邮箱 账号状态 请选择账号状态 注册来源 请选择注册来源 会员等级 请选择会员等级 业务 请选择业务 采购 请选择采购 客户经理 请选择客户经理 注册日期 至 查询 重置 收起 批量导出 全部（0） S级客户（0） A级客户（0） B级客户（0） C级客户（0） D级客户（0） 姓名 客户ID 所属国家 账号状态 会员等级 会员剩余天数 会员到期日期 下单前沟通 客户经理 业务 采购 邮箱 电话号码 正式订单数 订单状态",
+      "cls": "pr-5 pos-relative"
+    },
+    {
+      "i": 191,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "客户ID 客户姓名 所属国家 请选择所属国家 联系电话 邮箱 账号状态 请选择账号状态 注册来源 请选择注册来源 会员等级 请选择会员等级 业务 请选择业务 采购 请选择采购 客户经理 请选择客户经理 注册日期 至",
+      "cls": ""
+    },
+    {
+      "i": 192,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "客户ID 客户姓名 所属国家 请选择所属国家 联系电话 邮箱 账号状态 请选择账号状态 注册来源 请选择注册来源 会员等级 请选择会员等级 业务 请选择业务 采购 请选择采购 客户经理 请选择客户经理 注册日期 至",
+      "cls": "grid-cols-4 grid"
+    },
+    {
+      "i": 193,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "客户ID",
+      "cls": "el-form-item asterisk-left el-form-item--label-right"
+    },
+    {
+      "i": 197,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "客户姓名",
+      "cls": "el-form-item asterisk-left el-form-item--label-right"
+    },
+    {
+      "i": 201,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "所属国家 请选择所属国家",
+      "cls": "el-form-item asterisk-left el-form-item--label-right"
+    },
+    {
+      "i": 202,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择所属国家",
+      "cls": "el-form-item__content"
+    },
+    {
+      "i": 203,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择所属国家",
+      "cls": "fs-0 w-full"
+    },
+    {
+      "i": 204,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择所属国家",
+      "cls": "el-select w-full"
+    },
+    {
+      "i": 205,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择所属国家",
+      "cls": "el-select__wrapper is-filterable el-tooltip__trigger el-tooltip__trigger"
+    },
+    {
+      "i": 206,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择所属国家",
+      "cls": "el-select__selection"
+    },
+    {
+      "i": 209,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择所属国家",
+      "cls": "el-select__selected-item el-select__placeholder is-transparent"
+    },
+    {
+      "i": 210,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "请选择所属国家",
+      "cls": ""
+    },
+    {
+      "i": 212,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "联系电话",
+      "cls": "el-form-item asterisk-left el-form-item--label-right"
+    },
+    {
+      "i": 216,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "邮箱",
+      "cls": "el-form-item asterisk-left el-form-item--label-right"
+    },
+    {
+      "i": 220,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "账号状态 请选择账号状态",
+      "cls": "el-form-item asterisk-left el-form-item--label-right"
+    },
+    {
+      "i": 221,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择账号状态",
+      "cls": "el-form-item__content"
+    },
+    {
+      "i": 222,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择账号状态",
+      "cls": "el-select"
+    },
+    {
+      "i": 223,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择账号状态",
+      "cls": "el-select__wrapper el-tooltip__trigger el-tooltip__trigger"
+    },
+    {
+      "i": 224,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择账号状态",
+      "cls": "el-select__selection"
+    },
+    {
+      "i": 226,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择账号状态",
+      "cls": "el-select__selected-item el-select__placeholder is-transparent"
+    },
+    {
+      "i": 227,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "请选择账号状态",
+      "cls": ""
+    },
+    {
+      "i": 229,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "注册来源 请选择注册来源",
+      "cls": "el-form-item asterisk-left el-form-item--label-right"
+    },
+    {
+      "i": 230,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择注册来源",
+      "cls": "el-form-item__content"
+    },
+    {
+      "i": 231,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择注册来源",
+      "cls": "el-select"
+    },
+    {
+      "i": 232,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择注册来源",
+      "cls": "el-select__wrapper el-tooltip__trigger el-tooltip__trigger"
+    },
+    {
+      "i": 233,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择注册来源",
+      "cls": "el-select__selection"
+    },
+    {
+      "i": 235,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择注册来源",
+      "cls": "el-select__selected-item el-select__placeholder is-transparent"
+    },
+    {
+      "i": 236,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "请选择注册来源",
+      "cls": ""
+    },
+    {
+      "i": 238,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "会员等级 请选择会员等级",
+      "cls": "el-form-item asterisk-left el-form-item--label-right"
+    },
+    {
+      "i": 239,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择会员等级",
+      "cls": "el-form-item__content"
+    },
+    {
+      "i": 240,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择会员等级",
+      "cls": "el-select"
+    },
+    {
+      "i": 241,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择会员等级",
+      "cls": "el-select__wrapper el-tooltip__trigger el-tooltip__trigger"
+    },
+    {
+      "i": 242,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择会员等级",
+      "cls": "el-select__selection"
+    },
+    {
+      "i": 244,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择会员等级",
+      "cls": "el-select__selected-item el-select__placeholder is-transparent"
+    },
+    {
+      "i": 245,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "请选择会员等级",
+      "cls": ""
+    },
+    {
+      "i": 247,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "业务 请选择业务",
+      "cls": "el-form-item asterisk-left el-form-item--label-right"
+    },
+    {
+      "i": 248,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择业务",
+      "cls": "el-form-item__content"
+    },
+    {
+      "i": 249,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择业务",
+      "cls": "el-select"
+    },
+    {
+      "i": 250,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择业务",
+      "cls": "el-select__wrapper el-tooltip__trigger el-tooltip__trigger"
+    },
+    {
+      "i": 251,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择业务",
+      "cls": "el-select__selection"
+    },
+    {
+      "i": 253,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择业务",
+      "cls": "el-select__selected-item el-select__placeholder is-transparent"
+    },
+    {
+      "i": 254,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "请选择业务",
+      "cls": ""
+    },
+    {
+      "i": 256,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "采购 请选择采购",
+      "cls": "el-form-item asterisk-left el-form-item--label-right"
+    },
+    {
+      "i": 257,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择采购",
+      "cls": "el-form-item__content"
+    },
+    {
+      "i": 258,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择采购",
+      "cls": "el-select"
+    },
+    {
+      "i": 259,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择采购",
+      "cls": "el-select__wrapper el-tooltip__trigger el-tooltip__trigger"
+    },
+    {
+      "i": 260,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择采购",
+      "cls": "el-select__selection"
+    },
+    {
+      "i": 262,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择采购",
+      "cls": "el-select__selected-item el-select__placeholder is-transparent"
+    },
+    {
+      "i": 263,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "请选择采购",
+      "cls": ""
+    },
+    {
+      "i": 265,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "客户经理 请选择客户经理",
+      "cls": "el-form-item asterisk-left el-form-item--label-right"
+    },
+    {
+      "i": 266,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择客户经理",
+      "cls": "el-form-item__content"
+    },
+    {
+      "i": 267,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择客户经理",
+      "cls": "el-select"
+    },
+    {
+      "i": 268,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择客户经理",
+      "cls": "el-select__wrapper el-tooltip__trigger el-tooltip__trigger"
+    },
+    {
+      "i": 269,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择客户经理",
+      "cls": "el-select__selection"
+    },
+    {
+      "i": 271,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "请选择客户经理",
+      "cls": "el-select__selected-item el-select__placeholder is-transparent"
+    },
+    {
+      "i": 272,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "请选择客户经理",
+      "cls": ""
+    },
+    {
+      "i": 274,
+      "tag": "DIV",
+      "role": "group",
+      "visible": true,
+      "text": "注册日期 至",
+      "cls": "el-form-item asterisk-left el-form-item--label-right"
+    },
+    {
+      "i": 275,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "注册日期",
+      "cls": "el-form-item__label"
+    },
+    {
+      "i": 276,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "至",
+      "cls": "el-form-item__content"
+    },
+    {
+      "i": 277,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "至",
+      "cls": "el-date-editor el-date-editor--daterange el-input__wrapper el-range-editor el-tooltip__trigger el-tooltip__trigger"
+    },
+    {
+      "i": 278,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "至",
+      "cls": "el-range-separator"
+    },
+    {
+      "i": 279,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "查询 重置 收起 批量导出",
+      "cls": "flex justify-between mb-15"
+    },
+    {
+      "i": 280,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "查询 重置 收起",
+      "cls": ""
+    },
+    {
+      "i": 281,
+      "tag": "BUTTON",
+      "role": null,
+      "visible": true,
+      "text": "查询",
+      "cls": "el-button el-button--primary"
+    },
+    {
+      "i": 282,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "查询",
+      "cls": ""
+    },
+    {
+      "i": 283,
+      "tag": "BUTTON",
+      "role": null,
+      "visible": true,
+      "text": "重置",
+      "cls": "el-button is-plain"
+    },
+    {
+      "i": 284,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "重置",
+      "cls": ""
+    },
+    {
+      "i": 285,
+      "tag": "BUTTON",
+      "role": null,
+      "visible": true,
+      "text": "收起",
+      "cls": "el-button el-button--info is-text"
+    },
+    {
+      "i": 286,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "收起",
+      "cls": ""
+    },
+    {
+      "i": 287,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "批量导出",
+      "cls": ""
+    },
+    {
+      "i": 288,
+      "tag": "BUTTON",
+      "role": null,
+      "visible": true,
+      "text": "批量导出",
+      "cls": "el-button el-button--primary"
+    },
+    {
+      "i": 289,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "批量导出",
+      "cls": ""
+    },
+    {
+      "i": 290,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "全部（0） S级客户（0） A级客户（0） B级客户（0） C级客户（0） D级客户（0） 姓名 客户ID 所属国家 账号状态 会员等级 会员剩余天数 会员到期日期 下单前沟通 客户经理 业务 采购 邮箱 电话号码 正式订单数 订单状态 账户余额 开通的业务 注册来源 最后登录日期 注册日期 操作 暂无数据",
+      "cls": "mt-5"
+    },
+    {
+      "i": 291,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "全部（0） S级客户（0） A级客户（0） B级客户（0） C级客户（0） D级客户（0）",
+      "cls": "mb-5"
+    },
+    {
+      "i": 292,
+      "tag": "DIV",
+      "role": "radiogroup",
+      "visible": true,
+      "text": "全部（0） S级客户（0） A级客户（0） B级客户（0） C级客户（0） D级客户（0）",
+      "cls": "el-radio-group"
+    },
+    {
+      "i": 293,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "全部（0）",
+      "cls": "el-radio-button__inner"
+    },
+    {
+      "i": 294,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "S级客户（0）",
+      "cls": "el-radio-button__inner"
+    },
+    {
+      "i": 295,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "A级客户（0）",
+      "cls": "el-radio-button__inner"
+    },
+    {
+      "i": 296,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "B级客户（0）",
+      "cls": "el-radio-button__inner"
+    },
+    {
+      "i": 297,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "C级客户（0）",
+      "cls": "el-radio-button__inner"
+    },
+    {
+      "i": 298,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "D级客户（0）",
+      "cls": "el-radio-button__inner"
+    },
+    {
+      "i": 299,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "姓名 客户ID 所属国家 账号状态 会员等级 会员剩余天数 会员到期日期 下单前沟通 客户经理 业务 采购 邮箱 电话号码 正式订单数 订单状态 账户余额 开通的业务 注册来源 最后登录日期 注册日期 操作 暂无数据",
+      "cls": "el-table--fit el-table--border el-table--scrollable-x el-table el-table--layout-fixed custom-table is-scrolling-left"
+    },
+    {
+      "i": 300,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "姓名 客户ID 所属国家 账号状态 会员等级 会员剩余天数 会员到期日期 下单前沟通 客户经理 业务 采购 邮箱 电话号码 正式订单数 订单状态 账户余额 开通的业务 注册来源 最后登录日期 注册日期 操作 暂无数据",
+      "cls": "el-table__inner-wrapper"
+    },
+    {
+      "i": 324,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "姓名 客户ID 所属国家 账号状态 会员等级 会员剩余天数 会员到期日期 下单前沟通 客户经理 业务 采购 邮箱 电话号码 正式订单数 订单状态 账户余额 开通的业务 注册来源 最后登录日期 注册日期 操作",
+      "cls": "el-table__header-wrapper"
+    },
+    {
+      "i": 328,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "姓名",
+      "cls": "cell"
+    },
+    {
+      "i": 329,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "客户ID",
+      "cls": "cell"
+    },
+    {
+      "i": 330,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "所属国家",
+      "cls": "cell"
+    },
+    {
+      "i": 331,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "账号状态",
+      "cls": "cell"
+    },
+    {
+      "i": 332,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "会员等级",
+      "cls": "cell"
+    },
+    {
+      "i": 333,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "会员剩余天数",
+      "cls": "cell"
+    },
+    {
+      "i": 334,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "会员到期日期",
+      "cls": "cell"
+    },
+    {
+      "i": 335,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "下单前沟通",
+      "cls": "cell"
+    },
+    {
+      "i": 336,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "客户经理",
+      "cls": "cell"
+    },
+    {
+      "i": 337,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "业务",
+      "cls": "cell"
+    },
+    {
+      "i": 338,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "采购",
+      "cls": "cell"
+    },
+    {
+      "i": 339,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "邮箱",
+      "cls": "cell"
+    },
+    {
+      "i": 340,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "电话号码",
+      "cls": "cell"
+    },
+    {
+      "i": 341,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "正式订单数",
+      "cls": "cell"
+    },
+    {
+      "i": 342,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "订单状态",
+      "cls": "cell"
+    },
+    {
+      "i": 343,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "账户余额",
+      "cls": "cell"
+    },
+    {
+      "i": 344,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "开通的业务",
+      "cls": "cell"
+    },
+    {
+      "i": 345,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "注册来源",
+      "cls": "cell"
+    },
+    {
+      "i": 346,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "最后登录日期",
+      "cls": "cell"
+    },
+    {
+      "i": 347,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "注册日期",
+      "cls": "cell"
+    },
+    {
+      "i": 348,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "操作",
+      "cls": "cell"
+    },
+    {
+      "i": 349,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "暂无数据",
+      "cls": "el-table__body-wrapper"
+    },
+    {
+      "i": 350,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "暂无数据",
+      "cls": "el-scrollbar"
+    },
+    {
+      "i": 351,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "暂无数据",
+      "cls": "el-scrollbar__wrap el-scrollbar__wrap--hidden-default"
+    },
+    {
+      "i": 352,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "暂无数据",
+      "cls": "el-scrollbar__view"
+    },
+    {
+      "i": 353,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "暂无数据",
+      "cls": "el-table__empty-block"
+    },
+    {
+      "i": 354,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "暂无数据",
+      "cls": "el-table__empty-text"
+    },
+    {
+      "i": 361,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "30条/页 共 0 条 1 前往 页",
+      "cls": "w-full"
+    },
+    {
+      "i": 362,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "30条/页 共 0 条 1 前往 页",
+      "cls": "el-pagination is-background"
+    },
+    {
+      "i": 363,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "30条/页",
+      "cls": "el-pagination__sizes is-first"
+    },
+    {
+      "i": 364,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "30条/页",
+      "cls": "el-select"
+    },
+    {
+      "i": 365,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "30条/页",
+      "cls": "el-select__wrapper el-tooltip__trigger el-tooltip__trigger"
+    },
+    {
+      "i": 366,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "30条/页",
+      "cls": "el-select__selection"
+    },
+    {
+      "i": 368,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "30条/页",
+      "cls": "el-select__selected-item el-select__placeholder"
+    },
+    {
+      "i": 369,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "30条/页",
+      "cls": ""
+    },
+    {
+      "i": 371,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "共 0 条",
+      "cls": "el-pagination__total is-last"
+    },
+    {
+      "i": 372,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "1 前往 页",
+      "cls": "el-pagination__rightwrapper"
+    },
+    {
+      "i": 374,
+      "tag": "LI",
+      "role": null,
+      "visible": true,
+      "text": "1",
+      "cls": "is-active number"
+    },
+    {
+      "i": 376,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "前往 页",
+      "cls": "el-pagination__jump is-last"
+    },
+    {
+      "i": 377,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "前往",
+      "cls": "el-pagination__goto"
+    },
+    {
+      "i": 380,
+      "tag": "SPAN",
+      "role": null,
+      "visible": true,
+      "text": "页",
+      "cls": "el-pagination__classifier"
+    },
+    {
+      "i": 399,
+      "tag": "DIV",
+      "role": null,
+      "visible": true,
+      "text": "偏好设置退出登录PopularJapanAmericaChinaKoreaAAfghanistanAlbaniaAlgeriaAmericaAngola10条/页20条/页30条/页50条/页100条/页已禁用待审核已审核已驳回626160展示会FacebookInstagramYouTubetiktok群发邮件熟人介绍google搜索INV_1778484271AG_INV_1778484130AG2_1778483351AG2_1778483311X企业会员超级会员A1c",
+      "cls": ""
+    }
+  ],
+  "rows": [
+    {
+      "i": 0,
+      "text": "一二三四五六日"
+    },
+    {
+      "i": 1,
+      "text": "27282930123"
+    },
+    {
+      "i": 2,
+      "text": "45678910"
+    },
+    {
+      "i": 3,
+      "text": "11121314151617"
+    },
+    {
+      "i": 4,
+      "text": "18192021222324"
+    },
+    {
+      "i": 5,
+      "text": "25262728293031"
+    },
+    {
+      "i": 6,
+      "text": "1234567"
+    },
+    {
+      "i": 7,
+      "text": "一二三四五六日"
+    },
+    {
+      "i": 8,
+      "text": "1234567"
+    },
+    {
+      "i": 9,
+      "text": "891011121314"
+    },
+    {
+      "i": 10,
+      "text": "15161718192021"
+    },
+    {
+      "i": 11,
+      "text": "22232425262728"
+    },
+    {
+      "i": 12,
+      "text": "293012345"
+    },
+    {
+      "i": 13,
+      "text": "6789101112"
+    }
+  ]
+}

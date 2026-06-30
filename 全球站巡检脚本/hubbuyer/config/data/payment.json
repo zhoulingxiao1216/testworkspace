@@ -1,0 +1,16 @@
+{
+  "B2B_list": {
+    "quote_no": "",
+    "pay_status_id": 0,
+    "logistics_config_id": 0,
+    "status": 2000,
+    "date": "",
+    "page": 1,
+    "limit": 20
+  },
+  "B2B_pay": {
+    "quote_no_arr": ""
+  },
+  "D2C_list": {},
+  "D2C_pay": {}
+}

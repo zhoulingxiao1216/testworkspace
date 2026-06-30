@@ -1,0 +1,815 @@
+app:
+  description: 批量加购工作流（比价增强版）：上传Excel自动解析，通过1688获取现价，若价格上涨则拦截，否则自动加购。
+  icon: 🛒
+  icon_background: '#4080FF'
+  icon_type: emoji
+  mode: workflow
+  name: 全球站批量加购工作流(比价版)
+  use_icon_as_answer_icon: false
+dependencies: []
+kind: app
+version: 0.6.0
+workflow:
+  features:
+    file_upload:
+      allowed_file_extensions:
+        - .xlsx
+        - .xls
+        - .csv
+      allowed_file_types:
+        - document
+      allowed_file_upload_methods:
+        - local_file
+        - remote_url
+      enabled: true
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        document_file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+          - local_file
+          - remote_url
+    retriever_resource:
+      enabled: true
+  graph:
+    edges:
+      - id: 8002-source-8003-target
+        source: '8002'
+        target: '8003'
+        sourceHandle: source
+        targetHandle: target
+        type: custom
+        data:
+          sourceType: custom
+          targetType: custom
+        zIndex: 1002
+      - id: 8003-source-8010-target
+        source: '8003'
+        target: '8010'
+        sourceHandle: source
+        targetHandle: target
+        type: custom
+        data:
+          sourceType: custom
+          targetType: custom
+        zIndex: 1002
+      - id: 8010-source-8030-target
+        source: '8010'
+        target: '8030'
+        sourceHandle: source
+        targetHandle: target
+        type: custom
+        data:
+          sourceType: custom
+          targetType: custom
+        zIndex: 1002
+      - id: 8030-source-8099-target
+        source: '8030'
+        target: '8099'
+        sourceHandle: source
+        targetHandle: target
+        type: custom
+        data:
+          sourceType: custom
+          targetType: custom
+        zIndex: 1002
+      - id: 8010start-source-8011-target
+        source: 8010start
+        target: '8011'
+        sourceHandle: source
+        targetHandle: target
+        type: custom
+        data:
+          isInIteration: true
+          iteration_id: '8010'
+        zIndex: 1002
+      - id: 8011-source-8012-target
+        source: '8011'
+        target: '8012'
+        sourceHandle: source
+        targetHandle: target
+        type: custom
+        data:
+          isInIteration: true
+          iteration_id: '8010'
+        zIndex: 1002
+      - id: 8012-source-8013-target
+        source: '8012'
+        target: '8013'
+        sourceHandle: source
+        targetHandle: target
+        type: custom
+        data:
+          isInIteration: true
+          iteration_id: '8010'
+        zIndex: 1002
+      - id: 8013-source-8013_1-target
+        source: '8013'
+        target: '8013_1'
+        sourceHandle: source
+        targetHandle: target
+        type: custom
+        data:
+          isInIteration: true
+          iteration_id: '8010'
+        zIndex: 1002
+      - id: 8013_1-source-8013_2-target
+        source: '8013_1'
+        target: '8013_2'
+        sourceHandle: source
+        targetHandle: target
+        type: custom
+        data:
+          isInIteration: true
+          iteration_id: '8010'
+        zIndex: 1002
+      - id: 8013_2-source-8014-target
+        source: '8013_2'
+        target: '8014'
+        sourceHandle: source
+        targetHandle: target
+        type: custom
+        data:
+          isInIteration: true
+          iteration_id: '8010'
+        zIndex: 1002
+      - id: 8001-login_api
+        source: '8001'
+        target: login_api
+        sourceHandle: source
+        targetHandle: target
+        type: custom
+        data:
+          sourceType: custom
+      - id: login_api-extract_token
+        source: login_api
+        target: extract_token
+        sourceHandle: source
+        targetHandle: target
+        type: custom
+        data:
+          sourceType: custom
+      - id: extract_token-8002
+        source: extract_token
+        target: '8002'
+        sourceHandle: source
+        targetHandle: target
+        type: custom
+        data:
+          sourceType: custom
+    nodes:
+      - id: '8001'
+        type: custom
+        data:
+          type: start
+          title: 上传Excel
+          variables:
+            - variable: input_file
+              type: file
+              required: true
+              allowed_file_extensions: []
+              allowed_file_types:
+                - document
+              allowed_file_upload_methods:
+                - local_file
+              default: ''
+              hint: ''
+              label: 上传excel文件
+              options: []
+              placeholder: ''
+            - max_length: 48
+              options: []
+              required: true
+              type: text-input
+              variable: login_email
+              label: 登录邮箱
+            - max_length: 48
+              options: []
+              required: true
+              type: text-input
+              variable: login_password
+              label: 登录密码
+        position:
+          x: 80
+          y: 282
+        positionAbsolute:
+          x: 80
+          y: 282
+        width: 242
+        height: 100
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+      - id: '8002'
+        type: custom
+        data:
+          type: document-extractor
+          title: 提取文本
+          variable_selector:
+            - '8001'
+            - input_file
+        position:
+          x: 430
+          y: 282
+        positionAbsolute:
+          x: 430
+          y: 282
+        width: 242
+        height: 100
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+      - id: '8003'
+        type: custom
+        data:
+          type: code
+          title: 解析Excel
+          variables:
+            - variable: text
+              value_selector:
+                - '8002'
+                - text
+          outputs:
+            order_list:
+              type: array[object]
+            message:
+              type: string
+            total:
+              type: number
+          code_language: python3
+          code: "import re, datetime, random\ndef main(text: str):\n    now = datetime.datetime.now()\n\
+            \    dynamic_uuid = now.strftime(\"%Y%m%d%H%M%S\") + str(random.randint(10,\
+            \ 99))\n    lines = text.strip().split('\\n')\n    if len(lines) < 3:\
+            \ return {\"order_list\": [], \"message\": \"数据不足\", \"total\": 0}\n \
+            \   order_list = []\n    for idx, line in enumerate(lines[2:], 3):\n \
+            \       cols = [c.strip() for c in line.split('|')]\n        if len(cols)\
+            \ < 6: continue\n        it_m = re.search(r'offer/(\\d+)', cols[1])\n\
+            \        if not it_m: continue\n        \n        mysku = cols[7] if len(cols)\
+            \ > 7 else ''\n        if mysku == 'nan': mysku = ''\n        num_str\
+            \ = cols[5] if len(cols) > 5 else '1'\n        \n        order_list.append({\n\
+            \            \"item_id\": it_m.group(1), \n            \"size\": cols[2]\
+            \ if len(cols) > 2 else '',\n            \"color\": cols[3] if len(cols)\
+            \ > 3 else '',\n            \"price\": cols[4] if len(cols) > 4 else '0',\n\
+            \            \"quantity\": int(float(num_str)) if num_str.replace('.','').isdigit()\
+            \ else 1,\n            \"mysku\": mysku,\n            \"row\": idx\n \
+            \       })\n    return {\"order_list\": order_list, \"message\": f\"解析成功:\
+            \ {len(order_list)}条\", \"total\": len(order_list)}"
+        position:
+          x: 780
+          y: 282
+        positionAbsolute:
+          x: 780
+          y: 282
+        width: 242
+        height: 100
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+      - id: '8010'
+        type: custom
+        data:
+          type: iteration
+          title: 循环加购与比价
+          iterator_selector:
+            - '8003'
+            - order_list
+          output_selector:
+            - '8014'
+            - result
+          start_node_id: 8010start
+        position:
+          x: 1130
+          y: 282
+        positionAbsolute:
+          x: 1130
+          y: 282
+        width: 1800
+        height: 400
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+      - id: 8010start
+        type: custom-iteration-start
+        parentId: '8010'
+        data:
+          type: iteration-start
+        position:
+          x: 50
+          y: 100
+        positionAbsolute:
+          x: 1050
+          y: 382
+        width: 242
+        height: 100
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+      - id: '8011'
+        type: custom
+        parentId: '8010'
+        data:
+          type: http-request
+          title: 获取1688现价
+          method: post
+          url: https://api.hubbuyer.com/api_ali/product/detail
+          authorization:
+            config: null
+            type: no-auth
+          params: ''
+          retry_config:
+            max_retries: 3
+            retry_enabled: true
+            retry_interval: 100
+          ssl_verify: true
+          timeout:
+            max_connect_timeout: 0
+            max_read_timeout: 0
+            max_write_timeout: 0
+          headers: 'authorization:{{#extract_token.token#}}
+
+            language:korean
+
+            nation:Korea
+
+            content-type:application/json'
+          body:
+            type: json
+            data:
+              - id: key1
+                key: ''
+                type: text
+                value: '{ "item_id": "{{#8010.item.item_id#}}", "site": "B2B", "cache":
+                  "0", "repurchase_rate": "0" }'
+        position:
+          x: 350
+          y: 100
+        positionAbsolute:
+          x: 1350
+          y: 382
+        width: 242
+        height: 100
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+      - id: '8012'
+        type: custom
+        parentId: '8010'
+        data:
+          type: code
+          title: 匹配SKU与比价
+          variables:
+            - variable: detail_body
+              value_selector:
+                - '8011'
+                - body
+            - variable: excel_item
+              value_selector:
+                - '8010'
+                - item
+          outputs:
+            final_sku_id:
+              type: number
+            final_spec_id:
+              type: string
+            product_index_uuid:
+              type: string
+            status:
+              type: string
+            api_price:
+              type: number
+            excel_price:
+              type: number
+          code_language: python3
+          code: "import json\ndef main(detail_body, excel_item):\n    if isinstance(excel_item,\
+            \ list) and len(excel_item) > 0: excel_item = excel_item[0]\n    if isinstance(excel_item,\
+            \ dict):\n        color_input = str(excel_item.get(\"color\", \"\")).strip()\n\
+            \        size_input = str(excel_item.get(\"size\", \"\")).strip()\n  \
+            \      excel_price = 0.0\n        try: excel_price = float(str(excel_item.get(\"\
+            price\", \"0\")).replace(',', ''))\n        except: pass\n    else:\n\
+            \        color_input, size_input, excel_price = \"\", \"\", 0.0\n    \
+            \    \n    try:\n        if isinstance(detail_body, str): db = json.loads(detail_body)\n\
+            \        elif isinstance(detail_body, list) and len(detail_body) > 0:\
+            \ db = detail_body[0]\n        else: db = detail_body\n    except: return\
+            \ {\"final_sku_id\": 0, \"final_spec_id\": \"\", \"product_index_uuid\"\
+            : \"\", \"status\": \"JSON_PARSE_ERROR\", \"api_price\": 0.0, \"excel_price\"\
+            : excel_price}\n    \n    if not isinstance(db, dict): db = {}\n    db_data\
+            \ = db.get(\"data\", {})\n    if not isinstance(db_data, dict): db_data\
+            \ = {}\n    inner = db_data.get(\"data\", {})\n    if not isinstance(inner,\
+            \ dict): inner = {}\n    \n    moq = int(inner.get(\"minOrderQuantity\"\
+            , 1))\n    excel_qty = int(excel_item.get(\"quantity\", 1)) if isinstance(excel_item,\
+            \ dict) else 1\n    uuid = str(inner.get(\"product_index_uuid\", \"\"\
+            ))\n    sku_list = inner.get(\"productSkuInfos\", [])\n    if not isinstance(sku_list,\
+            \ list): sku_list = []\n    \n    if not sku_list:\n        return {\"\
+            final_sku_id\": 0, \"final_spec_id\": \"\", \"product_index_uuid\": uuid,\
+            \ \"status\": \"NO_SKU_DATA\", \"api_price\": 0.0, \"excel_price\": excel_price}\n\
+            \        \n    best_match = None\n    best_score = 0\n    for s in sku_list:\n\
+            \        attrs_raw = s.get(\"skuAttributes\", [])\n        attrs_text\
+            \ = \" \".join([str(a.get(\"value\", \"\")) for a in attrs_raw]) if isinstance(attrs_raw,\
+            \ list) else str(attrs_raw)\n        \n        score = 0\n        if color_input\
+            \ and color_input in attrs_text: score += 2\n        if size_input and\
+            \ size_input in attrs_text: score += 2\n        if not size_input and\
+            \ color_input and color_input in attrs_text: score += 1\n        if not\
+            \ color_input and size_input and size_input in attrs_text: score += 1\n\
+            \        \n        if score > best_score:\n            best_score = score\n\
+            \            best_match = s\n            \n    if best_match and best_score\
+            \ >= 2:\n        api_price = 0.0\n        try: api_price = float(best_match.get(\"\
+            price\") or best_match.get(\"consignPrice\") or 0)\n        except: pass\n\
+            \        \n        # MOQ拦截逻辑\n        if excel_qty < moq:\n          \
+            \  return {\n                \"final_sku_id\": -1,\n                \"\
+            final_spec_id\": str(best_match.get(\"specId\") or \"\"),\n          \
+            \      \"product_index_uuid\": uuid,\n                \"status\": f\"\
+            低于起批量 (需求:{excel_qty} MOQ:{moq})\",\n                \"api_price\": api_price,\n\
+            \                \"excel_price\": excel_price\n            }\n       \
+            \ \n        # 比价拦截逻辑\n        if api_price > excel_price + 0.01:\n   \
+            \         return {\n                \"final_sku_id\": -1, # 故意填错让HTTP加购失败\n\
+            \                \"final_spec_id\": str(best_match.get(\"specId\") or\
+            \ \"\"),\n                \"product_index_uuid\": uuid,\n            \
+            \    \"status\": \"PRICE_CHANGED\",\n                \"api_price\": api_price,\n\
+            \                \"excel_price\": excel_price\n            }\n       \
+            \ else:\n            return {\n                \"final_sku_id\": int(best_match.get(\"\
+            skuId\") or 0),\n                \"final_spec_id\": str(best_match.get(\"\
+            specId\") or \"\"),\n                \"product_index_uuid\": uuid,\n \
+            \               \"status\": \"MATCHED\",\n                \"api_price\"\
+            : api_price,\n                \"excel_price\": excel_price\n         \
+            \   }\n    \n    return {\"final_sku_id\": 0, \"final_spec_id\": \"\"\
+            , \"product_index_uuid\": uuid, \"status\": \"FALLBACK\", \"api_price\"\
+            : 0.0, \"excel_price\": excel_price}"
+        position:
+          x: 650
+          y: 100
+        positionAbsolute:
+          x: 1650
+          y: 382
+        width: 242
+        height: 100
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+      - id: '8013'
+        type: custom
+        parentId: '8010'
+        data:
+          type: http-request
+          title: API自动加购
+          method: post
+          url: https://api.hubbuyer.com/api_b2b/cart/add1688
+          authorization:
+            config: null
+            type: no-auth
+          params: ''
+          retry_config:
+            max_retries: 3
+            retry_enabled: true
+            retry_interval: 100
+          ssl_verify: true
+          timeout:
+            max_connect_timeout: 0
+            max_read_timeout: 0
+            max_write_timeout: 0
+          headers: 'authorization:{{#extract_token.token#}}
+
+            userlogintoken:{{#extract_token.token#}}
+
+            language:korean
+
+            nation:Korea
+
+            content-type:application/json'
+          body:
+            type: json
+            data:
+              - id: key2
+                key: ''
+                type: text
+                value: '{"product_index_uuid": "{{#8012.product_index_uuid#}}", "item_id":
+                  "{{#8010.item.item_id#}}", "platform": "pc", "goods_info": [{"spec_id":
+                  "{{#8012.final_spec_id#}}", "sku_id": {{#8012.final_sku_id#}}, "quantity":
+                  {{#8010.item.quantity#}}}]}'
+        position:
+          x: 950
+          y: 100
+        positionAbsolute:
+          x: 1950
+          y: 382
+        width: 242
+        height: 100
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+      - id: '8013_1'
+        type: custom
+        parentId: '8010'
+        data:
+          type: code
+          title: 提取加购ID
+          variables:
+            - variable: cart_body
+              value_selector:
+                - '8013'
+                - body
+            - variable: status
+              value_selector:
+                - '8012'
+                - status
+          outputs:
+            cart_detail_id:
+              type: number
+          code_language: python3
+          code: "import json\ndef main(cart_body, status):\n    if status == 'PRICE_CHANGED':\n\
+            \        return {\"cart_detail_id\": 0}\n    try:\n        if isinstance(cart_body,\
+            \ str):\n            db = json.loads(cart_body)\n        else:\n     \
+            \       db = cart_body\n        if not isinstance(db, dict): db = {}\n\
+            \        inner = db.get(\"data\", {})\n        if not isinstance(inner,\
+            \ dict): inner = {}\n        \n        ids = inner.get(\"cart_detail_ids\"\
+            , [])\n        if isinstance(ids, list) and len(ids) > 0:\n          \
+            \  return {\"cart_detail_id\": int(ids[0])}\n        \n        cart_id\
+            \ = inner.get(\"cart_detail_id\", 0)\n        return {\"cart_detail_id\"\
+            : int(cart_id) if cart_id else 0}\n    except:\n        return {\"cart_detail_id\"\
+            : 0}\n"
+        position:
+          x: 1250
+          y: 100
+        positionAbsolute:
+          x: 2250
+          y: 382
+        width: 242
+        height: 100
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+      - id: '8013_2'
+        type: custom
+        parentId: '8010'
+        data:
+          type: code
+          title: 更新SKU及附加项
+          variables:
+            - variable: mysku
+              value_selector:
+                - '8010'
+                - item
+            - variable: final_spec_id
+              value_selector:
+                - '8012'
+                - final_spec_id
+            - variable: auth_token
+              value_selector:
+                - extract_token
+                - token
+          outputs:
+            result:
+              type: string
+          code_language: python3
+          code: "import json, requests\ndef main(mysku, final_spec_id, auth_token):\n\
+            \    if isinstance(mysku, list) and len(mysku) > 0: mysku = mysku[0]\n\
+            \    if isinstance(mysku, dict): \n        sku_str = mysku.get('mysku',\
+            \ '')\n        item_id_to_find = str(mysku.get('item_id', ''))\n    else:\
+            \ \n        sku_str = ''\n        item_id_to_find = ''\n    \n    spec_id_to_find\
+            \ = str(final_spec_id) if final_spec_id else ''\n    \n    if not sku_str\
+            \ or not item_id_to_find or not spec_id_to_find:\n        return {\"result\"\
+            : \"skipped (missing info)\"}\n        \n    headers = {\n        \"authorization\"\
+            : auth_token,\n        \"userlogintoken\": auth_token,\n        \"content-type\"\
+            : \"application/json\",\n        \"language\": \"korean\",\n        \"\
+            nation\": \"Korea\"\n    }\n    \n    try:\n        resp = requests.post(\"\
+            https://api.hubbuyer.com/api_b2b/cart/list\", json={}, headers=headers,\
+            \ timeout=10)\n        cart_data = resp.json()\n        \n        found_cart_detail_id\
+            \ = 0\n        seller_data_list = cart_data.get('data', {}).get('seller_data',\
+            \ [])\n        for seller in seller_data_list:\n            for item in\
+            \ seller.get('data', []):\n                item_match = str(item.get('item_id'))\
+            \ == item_id_to_find\n                spec_match = str(item.get('attribute',\
+            \ {}).get('specId')) == spec_id_to_find\n                \n          \
+            \      if item_match and spec_match:\n                    found_cart_detail_id\
+            \ = int(item.get('id', 0))\n                    break\n            if\
+            \ found_cart_detail_id:\n                break\n                \n   \
+            \     if not found_cart_detail_id:\n            return {\"result\": \"\
+            skipped (cart_detail_id not found)\"}\n            \n        payload =\
+            \ {\n            \"cart_detail_id\": found_cart_detail_id,\n         \
+            \   \"custom_sku\": {\"sku\": sku_str},\n            \"amazon_sku\": {\n\
+            \                \"sku\": sku_str,\n                \"url\": \"\",\n \
+            \               \"asin\": \"\",\n                \"fnsku\": \"\",\n  \
+            \              \"child_id\": \"\"\n            },\n            \"self_sku\"\
+            : []\n        }\n        \n        update_resp = requests.post(\"https://api.hubbuyer.com/api_b2b/cartQuoteStep1/updateSkuNumberData\"\
+            , json=payload, headers=headers, timeout=10)\n        fjx_payload = {\n\
+            \            \"cart_detail_id_arr\": [found_cart_detail_id],\n       \
+            \     \"check_config_uuid\": \"C25-0617-8133\",\n            \"fjx_config_uuid_arr\"\
+            : [\"F25-0821-5931\"],\n            \"user_fjx_config_uuid_arr\": []\n\
+            \        }\n        fjx_resp = requests.post(\"https://api.hubbuyer.com/api_b2b/cartQuoteStep1/updateCheckFjx\"\
+            , json=fjx_payload, headers=headers, timeout=10)\n        return {\"result\"\
+            : f\"SKU: {update_resp.text} | FJX: {fjx_resp.text}\"}\n    except Exception\
+            \ as e:\n        return {\"result\": str(e)}\n"
+        position:
+          x: 1550
+          y: 100
+        positionAbsolute:
+          x: 2550
+          y: 382
+        width: 242
+        height: 100
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+      - id: '8014'
+        type: custom
+        parentId: '8010'
+        data:
+          type: code
+          title: 行结果汇总
+          variables:
+            - variable: status
+              value_selector:
+                - '8012'
+                - status
+            - variable: api_price
+              value_selector:
+                - '8012'
+                - api_price
+            - variable: excel_price
+              value_selector:
+                - '8012'
+                - excel_price
+            - variable: cart_body
+              value_selector:
+                - '8013'
+                - body
+            - variable: excel_item
+              value_selector:
+                - '8010'
+                - item
+          outputs:
+            result:
+              type: string
+          code_language: python3
+          code: "import json\ndef main(status, api_price, excel_price, cart_body,\
+            \ excel_item):\n    if isinstance(excel_item, list) and len(excel_item)\
+            \ > 0: excel_item = excel_item[0]\n    row_idx = excel_item.get(\"row\"\
+            , 0) if isinstance(excel_item, dict) else 0\n    url = f\"https://detail.1688.com/offer/{excel_item.get('item_id',\
+            \ '')}.html\" if isinstance(excel_item, dict) else \"\"\n    \n    if\
+            \ status == 'PRICE_CHANGED':\n        msg = f\"比价拦截 (Excel价:{excel_price}\
+            \ 现价:{api_price})\"\n        success = False\n    elif status == 'MATCHED':\n\
+            \        try:\n            resp = json.loads(cart_body) if isinstance(cart_body,\
+            \ str) else cart_body\n            if resp and isinstance(resp, dict)\
+            \ and resp.get('code') in [0, 200, '0', '200']:\n                msg =\
+            \ f\"加购成功 (原价:{excel_price} 现价:{api_price})\"\n                success\
+            \ = True\n            else:\n                msg = f\"加购API失败: {resp.get('message',\
+            \ '') if isinstance(resp, dict) else ''}\"\n                success =\
+            \ False\n        except:\n            msg = \"加购无响应/异常\"\n           \
+            \ success = False\n    else:\n        msg = f\"无法加购: {status}\"\n    \
+            \    success = False\n        \n    res = {\n        \"row\": row_idx,\n\
+            \        \"url\": url,\n        \"success\": success,\n        \"msg\"\
+            : msg\n    }\n    return {\"result\": json.dumps(res, ensure_ascii=False)}"
+        position:
+          x: 1850
+          y: 100
+        positionAbsolute:
+          x: 2850
+          y: 382
+        width: 242
+        height: 100
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+      - id: '8030'
+        type: custom
+        data:
+          type: code
+          title: 生成比价与执行报告
+          variables:
+            - variable: results_array
+              value_selector:
+                - '8010'
+                - output
+            - variable: total
+              value_selector:
+                - '8003'
+                - total
+            - variable: parse_msg
+              value_selector:
+                - '8003'
+                - message
+          outputs:
+            report:
+              type: string
+          code_language: python3
+          code: "import json\ndef main(results_array, total, parse_msg):\n    success\
+            \ = 0\n    fail = 0\n    intercepted = 0\n    \n    rows_detail = []\n\
+            \    \n    for r in (results_array or []):\n        try:\n           \
+            \ if isinstance(r, str): item = json.loads(r)\n            else: item\
+            \ = r\n            if not isinstance(item, dict): continue\n         \
+            \   \n            row_idx = item.get(\"row\", \"-\")\n            url\
+            \ = item.get(\"url\", \"\")\n            msg = item.get(\"msg\", \"\"\
+            )\n            \n            url_md = f\"[1688商品]({url})\" if url else\
+            \ \"-\"\n            \n            if item.get(\"success\"):\n       \
+            \         success += 1\n                rows_detail.append(f\"| {row_idx}\
+            \ | {url_md} | ✅ 成功 | {msg} |\")\n            else:\n                if\
+            \ \"拦截\" in msg:\n                    intercepted += 1\n             \
+            \       rows_detail.append(f\"| {row_idx} | {url_md} | ⚠️ 拦截 | {msg} |\"\
+            )\n                else:\n                    fail += 1\n            \
+            \        rows_detail.append(f\"| {row_idx} | {url_md} | ❌ 失败 | {msg} |\"\
+            )\n        except:\n            fail += 1\n            \n    rate = round(success\
+            \ / max(total, 1) * 100, 1) if total > 0 else 0\n    \n    report = f\"\
+            \"\"## 批量加购执行报告\n\n| 指标 | 数值 |\n|:--|:--|\n| 解析结果 | {parse_msg} |\n| 总行数\
+            \ | {total} |\n| 成功加购 | {success} ✅ |\n| **比价拦截** | **{intercepted} ⚠️**\
+            \ |\n| 异常失败 | {fail} ❌ |\n| 加购成功率 | {rate}% |\n\n### 执行明细\n\n| 行号 | 商品链接\
+            \ | 状态 | 说明 |\n|:--|:--|:--|:--|\n\"\"\"\n    report += \"\\n\".join(rows_detail)\n\
+            \    \n    return {\"report\": report}"
+        position:
+          x: 2080
+          y: 282
+        positionAbsolute:
+          x: 2080
+          y: 282
+        width: 242
+        height: 100
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+      - id: '8099'
+        type: custom
+        data:
+          type: end
+          title: 结束
+          outputs:
+            - variable: report
+              value_selector:
+                - '8030'
+                - report
+        position:
+          x: 2430
+          y: 282
+        positionAbsolute:
+          x: 2430
+          y: 282
+        width: 242
+        height: 100
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+      - id: login_api
+        type: custom
+        data:
+          type: http-request
+          title: API自动登录
+          method: post
+          url: https://api.hubbuyer.com/api/login/login
+          authorization:
+            config: null
+            type: no-auth
+          params: ''
+          headers: 'content-type:application/json
+
+            language:korean
+
+            nation:Korea
+
+            logintype:user'
+          body:
+            type: json
+            data:
+              - id: b1
+                key: ''
+                type: text
+                value: '{"email":"{{#8001.login_email#}}","password":"{{#8001.login_password#}}","code":"","jump_url":""}'
+        position:
+          x: 300
+          y: 382
+        positionAbsolute:
+          x: 300
+          y: 382
+        width: 242
+        height: 100
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+      - id: extract_token
+        type: custom
+        data:
+          type: code
+          title: 提取Token
+          variables:
+            - variable: login_body
+              value_selector:
+                - login_api
+                - body
+          outputs:
+            token:
+              type: string
+          code_language: python3
+          code: "import json\ndef main(login_body):\n    try:\n        data = json.loads(login_body)\n\
+            \        token = data.get('data', {}).get('login_token', '')\n       \
+            \ return {'token': token}\n    except:\n        return {'token': ''}"
+        position:
+          x: 550
+          y: 382
+        positionAbsolute:
+          x: 550
+          y: 382
+        width: 242
+        height: 100
+        selected: false
+        sourcePosition: right
+        targetPosition: left

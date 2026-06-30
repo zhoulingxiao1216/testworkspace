@@ -1,0 +1,48 @@
+{
+  "url_B2B_h5": {
+    "key": "check_web_url_B2B_h5",
+    "_comment注": "备注：用于校验web端请求",
+    "desc": "B2B H5站点巡检",
+    "script": "checker/web/url_B2B_h5.py",
+    "rules": {
+      "status_code": 200,
+      "title_contains": ""
+    }
+  },
+  "url_B2B_pc": {
+    "key": "check_web_url_B2B_pc",
+    "desc": "B2B PC站点巡检",
+    "script": "checker/web/url_B2B_pc.py",
+    "rules": {
+      "status_code": 200,
+      "title_contains": "Hubbuyer | B2B Sourcing Platform"
+    }
+  },
+  "url_D2C_pc": {
+    "key": "check_web_url_D2C_pc",
+    "desc": "D2C pc站点巡检",
+    "script": "checker/web/url_D2C_pc.py",
+    "rules": {
+      "status_code": 200,
+      "title_contains": ""
+    }
+  },
+  "url_AboutUs_pc": {
+    "key": "check_web_url_AboutUs_pc",
+    "desc": "介绍中心 pc站点巡检",
+    "script": "checker/web/url_AboutUs_pc.py",
+    "rules": {
+      "status_code": 200,
+      "title_contains": "HubBuyer | 中国产品采购代理服务平台"
+    }
+  },
+  "url_AboutUs_h5": {
+    "key": "check_web_url_AboutUs_h5",
+    "desc": "介绍中心 H5站点巡检",
+    "script": "checker/web/url_AboutUs_h5.py",
+    "rules": {
+      "status_code": 200,
+      "title_contains": "HubBuyer | 仕入れ 卸 サイト・中国仕入れ・中国輸入代行 サービス"
+    }
+  }
+}

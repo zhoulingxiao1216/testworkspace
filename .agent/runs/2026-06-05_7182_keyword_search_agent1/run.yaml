@@ -1,0 +1,23 @@
+run_id: "2026-06-05_7182_keyword_search_agent1"
+project: "7.7182词搜接口"
+project_path: "D:/test_workspace/7.7182词搜接口"
+mode: "agent1_test_design"
+status: "DESIGN_READY_WITH_CONFIRMATION_ITEMS"
+started_at: "2026-06-05"
+updated_at: "2026-06-05"
+agents:
+  agent1:
+    role: "agent1_test_design"
+    status: "completed"
+    output: ".agent/runs/2026-06-05_7182_keyword_search_agent1/agent1_output.yaml"
+    handoff_manifest: "7.7182词搜接口/测试文档/执行交接清单.yaml"
+  agent2:
+    role: "agent2_test_execution"
+    status: "not_started"
+next_agent: "agent2_test_execution"
+required_before_execution:
+  - "确认 1688 搜索和详情联调字段样例"
+  - "确认 JAN 来源和索引"
+  - "确认 6 个对外日文状态的代码级映射表"
+  - "准备安全凭据引用，不在文档中写入 Secret 或 Token"
+

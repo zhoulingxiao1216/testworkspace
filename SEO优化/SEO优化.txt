@@ -1,0 +1,23 @@
+B2B平台
+
+1、  https://b2b.hubbuyer.com/  首页，产品分类页， 产品页  改成代码可读，可读取到<title>，description  产品详细。越详细越好。
+
+2、把产品分类页和产品页的url 优化一下  改成如 改成  https://b2b.hubbuyer.com/Menswear  
+
+ URL 结构和 WordPress 固定链接保持一致：
+
+文章 / 详情页：域名/分类别名/文章别名
+
+列表 / 分类页：域名/分类别名
+
+页面：域名/页面别名
+
+全部使用伪静态，不带 .html、.php、?id= 这类后缀和参数
+
+URL 只包含英文 / 拼音，不出现中文、ID 数字
+
+产品分类页：https://xxx.com/shuma
+
+产品页：https://xxx.com/shuma/iphone-16
+
+3、做好多语言和Schema.org 结构化数据 优化：https://b2b.hubbuyer.com/

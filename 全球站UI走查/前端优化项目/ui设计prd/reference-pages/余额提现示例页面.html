@@ -1,0 +1,1306 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>余额提现示例页面</title>
+  <style>
+    :root {
+      --primary: #022559;
+      --accent: #b4272b;
+      --text: #1f2937;
+      --muted: #667085;
+      --weak: #98a2b3;
+      --line: #cbd4e1;
+      --soft-line: #dfe6f0;
+      --bg: #f4f6f8;
+      --panel: #ffffff;
+      --table-head: #e5ebf3;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-width: 1280px;
+      height: 100%;
+      overflow: hidden;
+      color: var(--text);
+      background: var(--bg);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .transfer-page {
+      height: 100vh;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 66px;
+      padding: 0 28px;
+      border-bottom: 1px solid #e5e9f0;
+      background: #fff;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--primary);
+      font-size: 20px;
+      font-weight: 850;
+    }
+
+    .logo {
+      width: 44px;
+      height: 34px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 18px 17px, #fff 0 9px, transparent 10px),
+        radial-gradient(circle at 18px 17px, #b4272b 0 15px, transparent 16px);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      height: 20px;
+      padding: 0 8px;
+      border-radius: 4px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .tools {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--primary);
+      font-size: 14px;
+    }
+
+    .tool {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 32px;
+      padding: 0 14px;
+      border: 1px solid var(--primary);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      height: calc(100vh - 66px);
+      min-height: 0;
+    }
+
+    .side {
+      overflow-y: auto;
+      padding: 18px 4px 18px 0;
+      border-right: 1px solid #e3e8f0;
+      background: #fff;
+    }
+
+    .menu-item {
+      height: 42px;
+      padding: 0 20px;
+      color: #17345f;
+      font-size: 15px;
+      font-weight: 650;
+      line-height: 42px;
+    }
+
+    .menu-item.active {
+      border-radius: 0 6px 6px 0;
+      background: #e7ecf3;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .main {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 0;
+      padding: 0 12px;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .crumb {
+      height: 38px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 38px;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      min-height: 0;
+      padding: 16px 20px 18px;
+      overflow: auto;
+      border-radius: 4px;
+      background: #f4f6f9;
+    }
+
+    .page-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .page-title {
+      margin: 0;
+      color: var(--text);
+      font-size: 22px;
+      font-weight: 850;
+      line-height: 1.35;
+    }
+
+    .balance-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 84px;
+      margin-bottom: 10px;
+      padding: 14px 34px;
+      border: 1px solid #f2e1d8;
+      border-radius: 8px;
+      background:
+        radial-gradient(circle at 90% 44%, rgba(255, 226, 204, .82) 0 42px, transparent 43px),
+        linear-gradient(90deg, #fff9f6, #fff4ed);
+      box-shadow: 0 10px 26px rgba(121, 55, 16, 0.06);
+    }
+
+    .withdraw-tips {
+      position: relative;
+      display: grid;
+      grid-template-columns: 18px minmax(0, 1fr);
+      align-items: start;
+      gap: 8px;
+      width: 100%;
+      min-height: 0;
+      margin: 0 0 14px;
+      padding: 12px 14px 14px 12px;
+      overflow: visible;
+      box-sizing: border-box;
+      border: 1px solid #ffd6c8;
+      border-radius: 4px;
+      background: #fff0ec;
+      color: #ff4d1a;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .tips-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 14px;
+      height: 14px;
+      margin-top: 3px;
+      border-radius: 50%;
+      background: #ff5a1f;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 850;
+      line-height: 1;
+    }
+
+    .tips-list {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 4px;
+      min-width: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tips-list li {
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      white-space: normal;
+    }
+
+    .balance-left {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      min-width: 0;
+    }
+
+    .balance-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .balance-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #c9313a;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 850;
+    }
+
+    .balance-amount {
+      color: var(--text);
+      font-size: 32px;
+      font-weight: 850;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .balance-amount span {
+      margin-left: 8px;
+      font-size: 20px;
+      font-weight: 750;
+    }
+
+    .record-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 128px;
+      min-height: 40px;
+      padding: 0 20px;
+      border: 1px solid #9fb1cc;
+      border-radius: 4px;
+      background: #fff;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .all-withdraw-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 86px;
+      min-height: 32px;
+      padding: 0 16px;
+      border: 1px solid #9fb1cc;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+
+    .section-title {
+      margin: 0 0 4px;
+      color: var(--text);
+      font-size: 18px;
+      font-weight: 850;
+    }
+
+    .section-subtitle {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .bank-list {
+      display: grid;
+      grid-template-columns: 480px 476px;
+      gap: 46px;
+      margin-bottom: 18px;
+    }
+
+    .bank-card {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      height: 92px;
+      padding: 0 26px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .bank-card.active {
+      border: 3px solid var(--accent);
+      padding: 0 24px;
+    }
+
+    .bank-card.active::after {
+      content: "";
+      position: absolute;
+      right: -3px;
+      bottom: -3px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 46px 46px;
+      border-color: transparent transparent var(--accent) transparent;
+    }
+
+    .bank-card.active::before {
+      content: "";
+      position: absolute;
+      right: 6px;
+      bottom: 8px;
+      z-index: 1;
+      width: 16px;
+      height: 8px;
+      border-left: 3px solid #fff;
+      border-bottom: 3px solid #fff;
+      transform: rotate(-45deg);
+    }
+
+    .bank-logo {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      width: 52px;
+      height: 52px;
+      font-weight: 850;
+    }
+
+    .bank-logo.citi {
+      color: #29377f;
+      font-size: 22px;
+      letter-spacing: -1px;
+    }
+
+    .bank-logo.citi::after {
+      content: "";
+      position: absolute;
+      width: 31px;
+      height: 15px;
+      margin-top: -20px;
+      border-top: 4px solid #d82f3b;
+      border-radius: 50% 50% 0 0;
+    }
+
+    .bank-logo.deutsche {
+      border-radius: 50%;
+      background:
+        linear-gradient(135deg, transparent 0 42%, #fff 43% 57%, transparent 58%),
+        #ff7417;
+    }
+
+    .bank-name {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(460px, 720px);
+      gap: 82px;
+      padding: 26px 20px 30px;
+      background: #f3f6fa;
+    }
+
+    .panel h3 {
+      margin: 0 0 12px;
+      color: var(--primary);
+      font-size: 16px;
+      font-weight: 850;
+    }
+
+    .form-row {
+      margin-bottom: 16px;
+    }
+
+    .form-row label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .required {
+      color: #c7252f;
+    }
+
+    .amount-line {
+      display: grid;
+      grid-template-columns: minmax(280px, 1fr) 70px 32px 130px 70px;
+      gap: 0;
+      align-items: center;
+      max-width: 660px;
+    }
+
+    .input,
+    .currency-box {
+      display: flex;
+      align-items: center;
+      height: 32px;
+      min-height: 32px;
+      padding: 0 10px;
+      border: 1px solid #d8dfeb;
+      background: #fff;
+      color: var(--weak);
+      font-size: 14px;
+    }
+
+    .input {
+      width: 100%;
+      border-radius: 3px;
+    }
+
+    .amount-line .input {
+      border-radius: 3px 0 0 3px;
+    }
+
+    .currency-box {
+      justify-content: center;
+      min-width: 70px;
+      border-left: 0;
+      border-radius: 0 3px 3px 0;
+      color: #333;
+      background: #f4f4f4;
+    }
+
+    .equal {
+      color: #333;
+      text-align: center;
+    }
+
+    .currency-select {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 62px;
+      height: 32px;
+      border-radius: 4px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    .wide-input {
+      max-width: 660px;
+    }
+
+    .withdraw-form {
+      display: grid;
+      grid-template-columns: minmax(0, 1.85fr) minmax(360px, .95fr);
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      align-items: stretch;
+      gap: 16px;
+      padding-bottom: 0;
+      clear: both;
+    }
+
+    .withdraw-form .form-row {
+      margin-bottom: 16px;
+    }
+
+    .withdraw-form .input,
+    .withdraw-form .currency-box {
+      border-color: #d8dfeb;
+    }
+
+    .withdraw-amount-line {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 116px;
+      max-width: 660px;
+    }
+
+    .withdraw-amount-line .input {
+      border-radius: 3px 0 0 3px;
+    }
+
+    .select-input {
+      position: relative;
+      justify-content: space-between;
+      color: #667085;
+    }
+
+    .select-input::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      margin-left: 10px;
+      border-right: 1px solid #9aa4b2;
+      border-bottom: 1px solid #9aa4b2;
+      transform: rotate(45deg) translateY(-2px);
+    }
+
+    .filled-input {
+      color: var(--text);
+      background: #e9f1fc;
+    }
+
+    .textarea-input {
+      align-items: flex-start;
+      height: 68px;
+      min-height: 68px;
+      padding-top: 10px;
+      resize: none;
+    }
+
+    .withdraw-card {
+      padding: 18px 22px 20px;
+      border: 1px solid #dde6f2;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 10px 26px rgba(15, 35, 68, 0.06);
+    }
+
+    .withdraw-card-title {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin: 0 0 16px;
+      padding-left: 12px;
+      color: var(--primary);
+      font-size: 16px;
+      font-weight: 850;
+      line-height: 1.2;
+    }
+
+    .withdraw-card-title::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 4px;
+      height: 16px;
+      border-radius: 999px;
+      background: var(--primary);
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 24px;
+      max-width: none;
+    }
+
+    .field {
+      min-width: 0;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .field .input,
+    .field .password-line,
+    .field .withdraw-amount-line {
+      max-width: none;
+    }
+
+    .field-help {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .currency-select-box {
+      border-left: 0;
+      border-radius: 0 3px 3px 0;
+      color: var(--text);
+      background: #fff;
+      font-weight: 650;
+    }
+
+    .security-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .audit-note {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: right;
+    }
+
+    .bottom-submit-bar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex: 0 0 auto;
+      min-height: 72px;
+      margin-top: 12px;
+      padding: 16px 28px;
+      border: 1px solid #dde6f2;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 -8px 18px rgba(15, 35, 68, 0.04);
+    }
+
+    .bottom-submit-bar .audit-note {
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .form-left {
+      display: grid;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .form-right {
+      min-width: 0;
+    }
+
+    .form-right .withdraw-card {
+      position: static;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 348px;
+    }
+
+    .form-right .field-grid {
+      grid-template-columns: minmax(0, 1fr);
+      align-content: start;
+      flex: 1 1 auto;
+    }
+
+    .form-right .textarea-input {
+      height: 174px;
+      min-height: 174px;
+    }
+
+    .password-line {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 34px;
+      max-width: 660px;
+    }
+
+    .password-line .input {
+      border-radius: 3px 0 0 3px;
+      color: var(--text);
+      background: #e9f1fc;
+    }
+
+    .eye-button {
+      position: relative;
+      height: 32px;
+      border: 1px solid #d8dfeb;
+      border-left: 0;
+      border-radius: 0 3px 3px 0;
+      background: #fff;
+    }
+
+    .eye-button::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 16px;
+      height: 10px;
+      border: 1.6px solid #8b98aa;
+      border-radius: 999px / 720px;
+      background:
+        radial-gradient(circle at center, #8b98aa 0 2px, transparent 2.5px);
+      transform: translate(-50%, -50%) rotate(-12deg);
+    }
+
+    .eye-button::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 19px;
+      height: 1.5px;
+      border-radius: 999px;
+      background: #8b98aa;
+      transform: translate(-50%, -50%) rotate(-35deg);
+    }
+
+    .upload-line {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .upload-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 76px;
+      height: 76px;
+      border: 1px solid #d6dde8;
+      border-radius: 4px;
+      background: #f8fafc;
+      color: #a4adba;
+      cursor: pointer;
+    }
+
+    .upload-box::before {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 19px;
+      border: 2px solid #b8bec8;
+      border-radius: 2px;
+      background:
+        linear-gradient(135deg, transparent 0 48%, #b8bec8 49% 54%, transparent 55%),
+        linear-gradient(45deg, transparent 0 42%, #b8bec8 43% 49%, transparent 50%);
+    }
+
+    .upload-box::after {
+      content: "+";
+      position: absolute;
+      right: 23px;
+      bottom: 25px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #b8bec8;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 850;
+      line-height: 1;
+    }
+
+    .upload-help {
+      color: #333;
+      font-size: 14px;
+    }
+
+    .submit-row {
+      display: flex;
+      justify-content: flex-end;
+      max-width: none;
+      padding-top: 14px;
+    }
+
+    .primary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 128px;
+      min-height: 40px;
+      padding: 0 22px;
+      border: 0;
+      border-radius: 4px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .receive-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .copy-bank {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 32px;
+      padding: 0 14px;
+      border: 1px solid #d6dde8;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 750;
+      cursor: pointer;
+      white-space: nowrap;
+      box-shadow: 0 0 0 4px rgba(214, 221, 232, 0.3);
+    }
+
+    .receive-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      border: 1px solid var(--line);
+      background: #fff;
+      font-size: 14px;
+    }
+
+    .receive-table th,
+    .receive-table td {
+      height: 44px;
+      padding: 0 14px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      color: #333;
+      text-align: left;
+      vertical-align: middle;
+      white-space: normal;
+    }
+
+    .receive-table th {
+      width: 35%;
+      background: #dfe5ee;
+      font-weight: 500;
+    }
+
+    .receive-table tr:last-child th,
+    .receive-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .receive-notes {
+      margin: 12px 0 0;
+      padding: 0;
+      color: #595f69;
+      font-size: 14px;
+      line-height: 1.6;
+      list-style: none;
+    }
+
+    .copy-icon {
+      position: relative;
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      margin-left: 4px;
+      color: #8a8f99;
+      vertical-align: -2px;
+      cursor: pointer;
+    }
+
+    .copy-icon::before,
+    .copy-icon::after {
+      content: "";
+      position: absolute;
+      box-sizing: border-box;
+      width: 9px;
+      height: 10px;
+      border: 1.5px solid currentColor;
+      border-radius: 1.5px;
+      background: #fff;
+    }
+
+    .copy-icon::before {
+      left: 2px;
+      top: 3px;
+    }
+
+    .copy-icon::after {
+      left: 4px;
+      top: 1px;
+      background: transparent;
+    }
+
+    .side-handle {
+      position: absolute;
+      right: 0;
+      top: 288px;
+      width: 24px;
+      height: 54px;
+      border-radius: 6px 0 0 6px;
+      background: var(--primary);
+    }
+
+    .side-handle::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 20px;
+      width: 12px;
+      height: 12px;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(45deg);
+    }
+
+    .copy-toast {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      z-index: 9999;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 4px;
+      border: 1px solid #cdeec7;
+      background: #effbea;
+      color: #53bd45;
+      font-size: 14px;
+      font-weight: 700;
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: opacity .18s ease, transform .18s ease;
+      box-shadow: 0 8px 22px rgba(83, 189, 69, .14);
+    }
+
+    .copy-toast::before {
+      content: "✓";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #53bd45;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .copy-toast.show {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: 1280px) {
+      html,
+      body {
+        min-width: 0;
+      }
+
+      .tools,
+      .content {
+        min-width: 1120px;
+      }
+    }
+  </style>
+<style id="global-copy-success-toast-style">
+  .ui-spec-copy-toast,
+  .project-copy-toast,
+  .copy-toast,
+  .measure-toast,
+  .copy-success-tip,
+  #toast.toast {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    z-index: 99999 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    min-width: auto !important;
+    min-height: auto !important;
+    padding: 8px 14px !important;
+    border: 1px solid #cdeec7 !important;
+    border-radius: 4px !important;
+    background: #effbea !important;
+    color: #53bd45 !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    transform: translate(-50%, -50%) !important;
+    box-shadow: 0 8px 22px rgba(83, 189, 69, 0.14) !important;
+    transition: opacity 0.18s ease, transform 0.18s ease !important;
+  }
+
+  .ui-spec-copy-toast::before,
+  .project-copy-toast::before,
+  .copy-toast::before,
+  .measure-toast::before,
+  .copy-success-tip::before,
+  #toast.toast::before {
+    content: "✓" !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 14px !important;
+    height: 14px !important;
+    border-radius: 50% !important;
+    background: #53bd45 !important;
+    color: #fff !important;
+    font-size: 10px !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+  }
+
+  .ui-spec-copy-toast::after,
+  .project-copy-toast::after,
+  .copy-toast::after,
+  .measure-toast::after,
+  .copy-success-tip::after,
+  #toast.toast::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .ui-spec-copy-toast.is-visible,
+  .ui-spec-copy-toast.show,
+  .project-copy-toast.is-visible,
+  .project-copy-toast.show,
+  .copy-toast.is-visible,
+  .copy-toast.show,
+  .measure-toast.is-visible,
+  .measure-toast.show,
+  .copy-success-tip,
+  #toast.toast.show,
+  #toast.toast.is-visible {
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) !important;
+  }
+</style>
+<style id="withdraw-tips-final-overflow-fix">
+  .withdraw-tips {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    height: auto !important;
+    min-height: 128px !important;
+    margin-bottom: 16px !important;
+    padding: 12px 14px 18px 12px !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  .withdraw-tips .tips-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .withdraw-tips .tips-list li {
+    display: block !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    line-height: 18px !important;
+    overflow-wrap: anywhere !important;
+    white-space: normal !important;
+  }
+</style>
+</head>
+<body>
+  <div class="transfer-page">
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo" aria-hidden="true"></span>
+        <span>Hubbuyer</span>
+        <span class="tag">B2B</span>
+      </div>
+      <div class="tools">
+        <span class="tool">营业日</span>
+        <span class="tool">简体中文⌄</span>
+        <span class="tool">🇨🇳 1 CNY ≈ 🇺🇸 0.16 USD</span>
+        <span>CHN20</span>
+        <span class="tool">退出登录</span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="side">
+        <div class="menu-item">个人中心</div>
+        <div class="menu-item">重要待办</div>
+        <div class="menu-item">购物车</div>
+        <div class="menu-item">B2B代行...</div>
+        <div class="menu-item">发货配送</div>
+        <div class="menu-item active">资金管理</div>
+        <div class="menu-item">推荐商品</div>
+        <div class="menu-item">我的收藏</div>
+        <div class="menu-item">我的足迹</div>
+        <div class="menu-item">账户设置</div>
+      </aside>
+
+      <main class="main">
+        <div class="crumb">个人中心 <span>›</span> 资金管理 <span>›</span> 余额提现</div>
+        <section class="content">
+          <div class="balance-card">
+            <div class="balance-left">
+              <div class="balance-label"><span class="balance-icon">¥</span>账户余额</div>
+              <div class="balance-amount">94287.74<span>CNY</span></div>
+              <span class="all-withdraw-button">全部提现</span>
+            </div>
+            <span class="record-button">提现记录</span>
+          </div>
+
+          <div class="withdraw-tips" role="note" aria-label="余额提现提示">
+            <span class="tips-icon">!</span>
+            <ol class="tips-list">
+              <li>1. 提现利率将为您最近一次汇款时的利率，您不会因利率变动而需要支付任何损失。</li>
+              <li>2. 客户将负责收取提现对应产生的任何银行汇款费用。请注意这一点。</li>
+              <li>3. 提现最早将在当天或下一个工作日处理。</li>
+              <li>4. 提现进度可在“资金管理”中查询。</li>
+              <li>5. 请确保该收款账户支持所选择的提现币种！</li>
+            </ol>
+          </div>
+
+          <section class="withdraw-form" aria-label="余额提现信息">
+            <div class="form-left">
+              <div class="withdraw-card">
+                <h2 class="withdraw-card-title">提现金额</h2>
+                <div class="field-grid">
+                  <div class="field full">
+                    <label><span class="required">*</span> 提现金额：</label>
+                    <div class="withdraw-amount-line">
+                      <div class="input">请输入提现金额</div>
+                      <div class="input currency-select-box">CNY</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="withdraw-card">
+                <h2 class="withdraw-card-title">跨境电汇收款账户</h2>
+                <div class="field-grid">
+                  <div class="field">
+                    <label><span class="required">*</span> 收款银行：</label>
+                    <div class="input">请输入收款银行</div>
+                  </div>
+                  <div class="field">
+                    <label><span class="required">*</span> 分行名称：</label>
+                    <div class="input">请输入分行名称</div>
+                  </div>
+                  <div class="field">
+                    <label><span class="required">*</span> 分行SWIFT编号：</label>
+                    <div class="input">请输入分行SWIFT编号</div>
+                  </div>
+                  <div class="field">
+                    <label><span class="required">*</span> 收款账户：</label>
+                    <div class="input">请输入收款账户</div>
+                  </div>
+                  <div class="field">
+                    <label><span class="required">*</span> 账户名称：</label>
+                    <div class="input">请输入账户名称</div>
+                  </div>
+                  <div class="field full">
+                    <label><span class="required">*</span> 详细地址信息：</label>
+                    <div class="input textarea-input">国家、城市、街道、邮编</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-right">
+              <div class="withdraw-card">
+                <h2 class="withdraw-card-title">安全提交</h2>
+                <div class="field-grid">
+                  <div class="field">
+                    <label><span class="required">*</span> 提现密码：</label>
+                    <div class="password-line">
+                      <div class="input">••••••••••</div>
+                      <div class="eye-button" aria-label="显示或隐藏提现密码"></div>
+                    </div>
+                  </div>
+                  <div class="field full">
+                    <label>提现原因（选填）：</label>
+                    <div class="input textarea-input">个人资金周转、贸易回款</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="bottom-submit-bar">
+            <button class="primary-btn" type="button">提交审核</button>
+          </div>
+        </section>
+        <div class="side-handle" aria-hidden="true"></div>
+      </main>
+    </div>
+  </div>
+  <div class="copy-toast" role="status" aria-live="polite">复制成功</div>
+
+  <script>
+    (function () {
+      var timer = 0;
+      var toast = document.querySelector(".copy-toast");
+
+      function showToast(message) {
+        toast.textContent = message || "复制成功";
+        toast.classList.add("show");
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          toast.classList.remove("show");
+        }, 1400);
+      }
+
+      function copyText(text) {
+        if (!text) return;
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(function () {
+            showToast("复制成功");
+          }).catch(function () {
+            showToast("复制成功");
+          });
+          return;
+        }
+        var input = document.createElement("textarea");
+        input.value = text;
+        input.setAttribute("readonly", "");
+        input.style.position = "fixed";
+        input.style.left = "-9999px";
+        document.body.appendChild(input);
+        input.select();
+        try {
+          document.execCommand("copy");
+        } catch (e) {}
+        document.body.removeChild(input);
+        showToast("复制成功");
+      }
+
+      document.addEventListener("click", function (event) {
+        var copyTarget = event.target.closest("[data-copy-text]");
+        if (copyTarget) {
+          copyText(copyTarget.getAttribute("data-copy-text"));
+          return;
+        }
+        var bank = event.target.closest(".bank-card");
+        if (bank) {
+          document.querySelectorAll(".bank-card").forEach(function (item) {
+            item.classList.remove("active");
+          });
+          bank.classList.add("active");
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

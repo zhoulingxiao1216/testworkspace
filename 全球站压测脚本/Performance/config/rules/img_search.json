@@ -1,0 +1,17 @@
+{
+    "stress_img_search": {
+        "key": "stress_img_search",
+        "desc": "B2B 商品图搜接口压测",
+        "login_account": "",
+        "rules": {
+            "status_code": 200,
+            "json_match": {
+                "code": 200
+            }
+        },
+        "performance": {
+            "threshold_ms": 5000,
+            "description": "图搜接口响应时间阈值"
+        }
+    }
+}

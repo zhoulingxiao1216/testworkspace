@@ -1,0 +1,8 @@
+{
+  "backend_admin_task": {
+    "key": "check_api_backend_admin",
+    "desc": "后台管理检查点",
+    "script": "checker/api/backend_admin_checkpoint.py",
+    "runner_timeout": 180
+  }
+}

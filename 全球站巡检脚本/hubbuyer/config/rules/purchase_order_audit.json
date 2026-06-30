@@ -1,0 +1,12 @@
+{
+  "purchase_order_audit_task": {
+    "key": "check_api_purchase_order_audit",
+    "desc": "后台代购订单审核",
+    "script": "checker/api/purchase_order_audit.py"
+  },
+  "audit_api": {
+    "status_code": 200,
+    "json_path": "code",
+    "expected": 200
+  }
+}

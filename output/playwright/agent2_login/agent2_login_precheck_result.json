@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-05-25T13:54:14",
+  "project": "message reminder and important todo",
+  "step": "login precheck",
+  "results": [
+    {
+      "name": "admin",
+      "target": "https://hlc-admin.hubbuyer.com/",
+      "account": "admin",
+      "success": true,
+      "final_url": "https://hlc-admin.hubbuyer.com/admin/user/list",
+      "title": "客户信息",
+      "cookies": [],
+      "localStorage": [
+        "store_config",
+        "user_info",
+        "REMEMBER_ME_hlc-admin.hubbuyer.com",
+        "theme_setting"
+      ],
+      "sessionStorage": [],
+      "evidence_text": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n客户管理\n43\n客户信息\n43\n客户等级\n客户咨询\n管理员管理\n国际物流\n黑名单\n邮件管理\n产品管理\n意见反馈\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n查询\n重置\n展开\n批量禁用\n批量导出\n全部（102）\nS级客户（38）\nA级客户（2）\nB级客户（11）\nC级客户（5）\nD级客户（46）\n\t\n姓名\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n业务\n\t\n采购\n\t\n客户经理\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nC-CHN19-测试1米\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n金月明\n\t\nyangweibin@sakuradk.com\n\t\n12541526325\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.0",
+      "artifacts": {
+        "screenshot": "D:\\test_workspace\\output\\playwright\\agent2_login\\admin_post.png",
+        "html": "D:\\test_workspace\\output\\playwright\\agent2_login\\admin_after_login.html",
+        "storage_state": "D:\\test_workspace\\output\\playwright\\agent2_login\\admin_storage_state.json"
+      }
+    },
+    {
+      "name": "front",
+      "target": "https://hlc-b2b.hubbuyer.com/",
+      "account": "17706793737@163.com",
+      "success": true,
+      "final_url": "https://hlc-b2b.hubbuyer.com/",
+      "title": "Hubbuyer | B2B Sourcing Platform",
+      "cookies": [
+        "_ga",
+        "test_site",
+        "test_auth_token",
+        "_ga_VHHB26V82L"
+      ],
+      "localStorage": [
+        "login",
+        "site",
+        "info"
+      ],
+      "sessionStorage": [],
+      "evidence_text": "Japan\nJPN12TEST-朴 ，ようこそ\nログアウト\n営業日\n日本語\n1 JPY ≈  \n0.006383 USD\nクリスマス\nハロウィン\nペット餌入れ器\n検索\n画像検索\nカート\nカテゴリー\n(B2B)ご利用ガイド\n(B2B)サービス/料金\n(B2B)国際送料\nBlog\nよくある質問\nこんにちは！ご用件をお伺いしましょうか？\n2\n10\nAmazon売れ筋\n楽天売れ筋\nAmazon新品\nAmazon人気\n1688売れ筋\n1688手作り diy ブローチアクセサリーコサージュホルダーピンバックルブローチバックル衣類アクセサリー 15-45 ミリメートル\n0.02\n CNY\n1688穴なしABSイミテーションパールジュエリー、米白、純白、装飾品、衣料品アクセサリー、直穴パーツ、19色選択可能\n1.00\n CNY\n1688爆発的な輝きの平底イミテーションオパールラインストーン、衣類用アクセサリー、電気メッキガラスラインストーン、大型装飾品、DIYジュエリーアクセサリー材料\n1.90\n CNY\n1688フリンジチェーンdiy部品手縫いドリル爪チェーン飾りドリルチェーン装飾フリンジチェーン服",
+      "artifacts": {
+        "screenshot": "D:\\test_workspace\\output\\playwright\\agent2_login\\front_post.png",
+        "html": "D:\\test_workspace\\output\\playwright\\agent2_login\\front_after_login.html",
+        "storage_state": "D:\\test_workspace\\output\\playwright\\agent2_login\\front_storage_state.json"
+      }
+    }
+  ],
+  "all_success": true
+}

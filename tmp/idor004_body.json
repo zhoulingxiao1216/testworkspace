@@ -1,0 +1,9 @@
+{
+  "code": 200,
+  "app": "api_b2b",
+  "field": "quote_back_no_access",
+  "message": "견적서가 존재하지 않거나 조회 권한이 없습니다",
+  "data": {
+    "quote_seller_data": []
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "url": "https://wlz-admin-all-view.hubbuyer.com/login",
+  "title": "",
+  "text": "ee-supply\n\n欢迎回来 👋🏻\n\n请输入您的帐户信息登录系统\n\n账号\n密码\n记住账号\n登录",
+  "forms": [
+    {
+      "i": 0,
+      "tag": "INPUT",
+      "type": "text",
+      "text": "",
+      "id": "el-id-154-2",
+      "name": null,
+      "placeholder": "请输入账号",
+      "aria": null,
+      "title": null,
+      "href": null,
+      "cls": "el-input__inner",
+      "visible": true
+    },
+    {
+      "i": 1,
+      "tag": "INPUT",
+      "type": "password",
+      "text": "",
+      "id": "el-id-154-3",
+      "name": null,
+      "placeholder": "请输入密码",
+      "aria": null,
+      "title": null,
+      "href": null,
+      "cls": "el-input__inner",
+      "visible": true
+    },
+    {
+      "i": 2,
+      "tag": "INPUT",
+      "type": "checkbox",
+      "text": "记住账号",
+      "id": null,
+      "name": null,
+      "placeholder": null,
+      "aria": null,
+      "title": null,
+      "href": null,
+      "cls": "el-checkbox__original",
+      "visible": true
+    },
+    {
+      "i": 3,
+      "tag": "BUTTON",
+      "type": "button",
+      "text": "登录",
+      "id": null,
+      "name": null,
+      "placeholder": null,
+      "aria": null,
+      "title": null,
+      "href": null,
+      "cls": "el-button el-button--primary el-button--large w-full",
+      "visible": true
+    }
+  ],
+  "probe_words": {
+    "????": false,
+    "B2B": false,
+    "??": false,
+    "???": false,
+    "7182": false,
+    "7561": false
+  }
+}

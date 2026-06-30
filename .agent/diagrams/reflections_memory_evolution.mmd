@@ -1,0 +1,27 @@
+flowchart TD
+  Start([Start])
+  RunDone[/"Run 完成\n(任务关闭)"/] 
+  Reflection["写入 .agent/reflections\n(运行总结)"]
+  Identify{"是否为可复用\nMemory Candidate?"}
+  NoCandidate(["结束\n(不入库)"])
+  WriteMemory["将候选写入\n.agent/memory/\n(shared / agent1 / agent2)"]
+  Sanitize["脱敏 & 标注来源\n(不得含密码/Token)"]
+  Stored["Memory：长期存储\n(可被读取)"]
+  Repeat{"是否重复且稳定？"}
+  NotRepeat(["保留为 Memory\n无需晋升"])
+  Evolution["写入 .agent/evolution/\n(promotion_candidates)"]
+  Orchestrator["Orchestrator 审核\n(人工或半自动)"]
+  Approve["批准 → 将经验转入\nskill/workflow 或 shared memory"]
+  Reject["拒绝/需补充 → 标记 stale\n写回 reflections/exchange"]
+  End([结束])
+
+  Start --> RunDone --> Reflection --> Identify
+  Identify -- 否 --> NoCandidate --> End
+  Identify -- 是 --> WriteMemory --> Sanitize --> Stored --> Repeat
+  Repeat -- 否 --> NotRepeat --> End
+  Repeat -- 是 --> Evolution --> Orchestrator
+  Orchestrator -- 批准 --> Approve --> End
+  Orchestrator -- 拒绝/补充 --> Reject --> End
+
+  classDef warning fill:#fff4e5,stroke:#ffb86b;
+  Sanitize:::warning

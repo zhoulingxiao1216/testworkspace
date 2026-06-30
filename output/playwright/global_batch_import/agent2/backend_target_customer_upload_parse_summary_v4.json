@@ -1,0 +1,513 @@
+{
+  "started_at": "2026-05-13 13:01:28",
+  "guardrails": [
+    "no_8160",
+    "no_final_confirm_import",
+    "no_cart_write",
+    "no_order_generation"
+  ],
+  "encoding_note": "v4 script uses unicode escapes for Chinese UI selectors to avoid PowerShell stdin mojibake.",
+  "target_customer": {
+    "email": "mxnrq@airsworld.net",
+    "actual_search_result": {
+      "found_email": true,
+      "row_excerpt": [
+        "最后登录日期",
+        "注册日期",
+        "操作",
+        "D-KOR8-TEST-1010",
+        "KOR8",
+        "Korea",
+        "已审核",
+        "一般会员",
+        "永久",
+        "2099-12-31 23:59",
+        "无需沟通",
+        "金月明",
+        "唐芬芬",
+        "包瑞楠",
+        "mxnrq@airsworld.net",
+        "101010",
+        "38",
+        "暂无",
+        "994205.08",
+        "B2B",
+        "Instagram",
+        "2026-05-12 08:03",
+        "2025-12-20 21:38",
+        "详情",
+        "30条/页",
+        "共 1 条",
+        "1",
+        "前往"
+      ],
+      "contains_D_KOR8_TEST_1010": true,
+      "contains_KOR8": true,
+      "contains_Korea": true,
+      "contains_101010": true,
+      "result_count_text": false
+    }
+  },
+  "templates": [
+    {
+      "key": "7182",
+      "token": "4700",
+      "display": "7182 replenish 4700 xlsx",
+      "path": "D:\\test_workspace\\全球站批量导入功能\\测试文档\\模板文件\\7182导入模板\\补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx"
+    },
+    {
+      "key": "7561_self",
+      "token": "1104",
+      "display": "7561 self warehouse xlsx",
+      "path": "D:\\test_workspace\\全球站批量导入功能\\测试文档\\模板文件\\7561批量导入\\1104発注書_自社倉庫.xlsx"
+    },
+    {
+      "key": "7561_zozo",
+      "token": "1110",
+      "display": "7561 ZOZO xlsx",
+      "path": "D:\\test_workspace\\全球站批量导入功能\\测试文档\\模板文件\\7561批量导入\\1110発注書_zozo.xlsx"
+    }
+  ],
+  "steps": [
+    {
+      "name": "backend login",
+      "status": "PASS",
+      "detail": {
+        "logged_in": true,
+        "attempted": true,
+        "click": {
+          "clicked": true,
+          "label": "登录",
+          "index": 0,
+          "text": "登录",
+          "class": "el-button el-button--primary el-button--large w-full"
+        }
+      },
+      "evidence": {
+        "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_v4_01_after_login.png",
+        "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_v4_01_after_login.json",
+        "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n客户管理\n客户信息\n客户等级\n客户咨询\n管理员管理\n国际物流\n黑名单\n邮件管理\n产品管理\n意见反馈\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n查询\n重置\n展开\n批量禁用\n批量导出\n全部（102）\nS级客户（38）\nA级客户（2）\nB级客户（11）\nC级客户（5）\nD级客户（46）\n\t\n姓名\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n业务\n\t\n采购\n\t\n客户经理\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nC-CHN19-测试1米\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n张佳唯\n\t\n陈牧鹏\n\t\n金月明\n\t\nyangweibin@sakuradk.com\n\t\n12541526325\n\t\nB2B:3\n\t\nB2B:进行中\n\t\nB2B:45063.82\n\t\n/B2B\n\t\nYouTube\n\t\n2026-05-13 08:12\n\t\n2026-05-08 15:43\n\t\n详情\n\n\t\nD-POL1-senaelorhan\n\t\nPoland\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nelorhanlindo@gmail.com\n\t\n692956183\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-05-07 19:04\n\t\n2026-05-07 19:02\n\t\n详情\n\n\t\nD-TUR2-YILDIRIMALİ\n\t\nTurkey\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nhingo2566@gmail.com\n\t\n5459653288\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n\t\n2026-04-29 20:31\n\t\n2026-04-29 20:30\n\t\n详情\n\n\t\nS-USA10-111\n\t\nAmerica\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nlihaokanya@gmail.com\n\t\n1234567890\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n熟人介绍\n\t\n2026-04-29 12:01\n\t\n2026-04-29 12:00\n\t\n详情\n\n\t\nD-IDN1-ImanAaron\n\t\nIndonesia\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nimansie@gmail.com\n\t\n081389895300\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n\t\n2026-04-28 15:40\n\t\n2026-04-28 15:40\n\t\n详情\n\n\t\nD-CHN18-户连超测试\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nzrkjhlc@gmail.com\n\t\n15268453999\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n熟人介绍\n\t\n2026-04-27 14:34\n\t\n2026-04-23 14:23\n\t\n详情\n\n\t\nD-JPN43-小林莉乃\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nrii20040728@icloud.com\n\t\n07021540728\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n\t\n2026-04-22 03:42\n\t\n2026-04-22 03:25\n\t\n详情\n\n\t\nD-TUR1-RahhalBasel\n\t\nTurkey\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\neng.import3@gmail.com\n\t\n5510320210\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-04-17 21:23\n\t\n2026-04-17 21:21\n\t\n详情\n\n\t\nS-JPN42-小林滉平\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nkoheiyan.326@gmail.com\n\t\n08045698858\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n\t\n2026-04-17 15:51\n\t\n2026-04-17 15:51\n\t\n详情\n\n\t\nS-JPN41-島袋匠\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nt1k3m2@icloud.com\n\t\n09068646076\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n\t\n2026-04-20 13:20\n\t\n2026-04-17 03:31\n\t\n详情\n\n\t\nD-JPN40-徐太郎\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n徐榕\n\t\n包佳民\n\t\n崔红梅\n\t\n289079627@qq.com\n\t\n08043630315\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:99999999.99\n\t\n/B2B\n\t\n\t\n2026-04-16 14:05\n\t\n2026-04-15 17:19\n\t\n详情\n\n\t\nD-JPN39-崔紅梅\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n崔红梅\n\t\n571635879@qq.com\n\t\n09012345678\n\t\nB2B:4\n\t\nB2B:进行中\n\t\nB2B:84734.10\n\t\n/B2B\n\t\n\t\n2026-04-15 13:40\n\t\n2026-04-15 13:37\n\t\n详情\n\n\t\nD-JPN38-tangfenfen\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n唐芬芬\n\t\n朱迎港\n\t\n金月明\n\t\n2853586374@qq.com\n\t\n13048957476\n\t\nB2B:3\n\t\nB2B:进行中\n\t\nB2B:99998904.89\n\t\nB2B\n\t\nYouTube\n\t\n2026-04-15 13:17\n\t\n2026-04-15 11:17\n\t\n详情\n\n\t\nD-BRB1-Test-朴国哲\n\t\nBarbados\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nadmin@sakuradk2.com\n\t\n17706793737\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n\t\n2026-04-15 08:21\n\t\n2026-04-14 16:25\n\t\n详情\n\n\t\nD-KOR14-TEST-周凌晓\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n吴四佳\n\t\n包佳民\n\t\n金月明\n\t\nzhoulingxiao@sakuradk.com\n\t\n22232\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\nB2B\n\t\nYouTube\n\t\n2026-04-27 14:35\n\t\n2026-04-14 16:24\n\t\n详情\n\n\t\nS-USA9-test_sjason\n\t\nAmerica\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nzhoulingxiao1216@gmail.com\n\t\n1225544\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\nB2B\n\t\nYouTube\n\t\n2026-04-14 15:40\n\t\n2026-04-14 15:38\n\t\n详情\n\n\t\nD-NGA1-UsulorMaduabuchi\n\t\nNigeria\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nusulorobed@gmail.com\n\t\n8167073823\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-05-02 20:25\n\t\n2026-04-14 10:09\n\t\n详情\n\n\t\nD-CHN17-Test-JamesTom\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\n45172781@qq.com\n\t\n13676826154\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\nB2B\n\t\nYouTube\n\t\n2026-04-14 09:49\n\t\n2026-04-14 06:27\n\t\n详情\n\n\t\nD-KOR13-TEST-박국철\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n金月明\n\t\nlonglong_7799@163.com\n\t\n17706793737\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\nB2B\n\t\nYouTube\n\t\n2026-04-25 15:02\n\t\n2026-04-08 08:18\n\t\n详情\n\n\t\nD-KOR12-정국희\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n金月明\n\t\nkuki770508@naver.com\n\t\n01077683008\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\nYouTube\n\t\n2026-04-18 19:56\n\t\n2026-04-06 14:26\n\t\n详情\n\n\t\nD-KOR11-KIMMINHO\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nmeron3521@gmail.com\n\t\n01090733521\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\nYouTube\n\t\n2026-04-07 12:16\n\t\n2026-04-04 11:12\n\t\n详情\n\n\t\nS-JPN37-勝井亮佑\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n吴四佳（正式账号）\n\t\n陈牧鹏（正式账号）\n\t\n崔红梅（正式账号）\n\t\nsurreal7295@gmail.com\n\t\n9084670467\n\t\nB2B:1\n\t\nB2B:不活跃\n\t\nB2B:0.00\n\t\nB2B\n\t\n\t\n2026-04-15 13:09\n\t\n2026-04-03 17:42\n\t\n详情\n\n\t\nS-CHN16-TEST-chengzhuanwei\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n张佳唯\n\t\n陈牧鹏\n\t\n金月明\n\t\n501814@qq.com\n\t\n17716626097\n\t\nB2B:1\n\t\nB2B:进行中\n\t\nB2B:9356.38\n\t\nB2B\n\t\ngoogle搜索\n\t\n2026-05-12 09:04\n\t\n2026-03-31 13:44\n\t\n详情\n\n\t\nS-CHN15-测试123\n\t\nChina\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nleisanagarajan69@gmail.com\n\t\n19926558695\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\nB2B\n\t\ngoogle搜索\n\t\n2026-03-27 08:26\n\t\n2026-03-27 08:26\n\t\n详情\n\n\t\nS-CHN14-测试\n\t\nChina\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nvbac2092@gmail.com\n\t\n19559776869\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\nInstagram\n\t\n2026-03-26 09:22\n\t\n2026-03-26 09:22\n\t\n详情\n\n\t\nS-USA8-jsjjh\n\t\nAmerica\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\n369901314@qq.com\n\t\n15533221147\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\nB2B\n\t\nYouTube\n\t\n\t\n2026-03-26 09:10\n\t\n详情\n\n\t\nS-CHN13-CAILIANNA\n\t\nChina\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nlying.cai@qq.com\n\t\n15555555555\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n\t\n\t\n2026-03-26 09:02\n\t\n详情\n\n\t\nS-JPN36-金子東\n\t\nJapan\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nkoko.daiko@gmail.com\n\t\n08038178889\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-02-27 09:39\n\t\n2026-02-27 09:39\n\t\n详情\n\n\t\nD-JPN35-262.27\n\t\nJapan\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nuuuu@qq.com\n\t\n5855252222\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n\t\n\t\n2026-02-27 08:03\n\t\n详情\n\n\t\nD-KOR10-test张帅康-2\n\t\nKorea\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nshuaikangzhang62@gmail.com\n\t\n17634589156\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n\t\n2026-03-24 10:35\n\t\n2026-02-27 08:03\n\t\n详情\n30条/页\n共 102 条\n1\n2\n3\n4\n前往\n页"
+      }
+    },
+    {
+      "name": "direct navigate /b2b/user/list",
+      "status": "PASS",
+      "detail": {
+        "url": "https://wlz-admin-all-view.hubbuyer.com/b2b/user/list"
+      },
+      "evidence": {
+        "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_v4_02_b2b_user_list.png",
+        "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_v4_02_b2b_user_list.json",
+        "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n查询\n重置\n展开\n批量导出\n全部（102）\nS级客户（38）\nA级客户（2）\nB级客户（11）\nC级客户（5）\nD级客户（46）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nC-CHN19-测试1米\n\t\nCHN19\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n金月明\n\t\n张佳唯\n\t\n陈牧鹏\n\t\nyangweibin@sakuradk.com\n\t\n12541526325\n\t\n3\n\t\n暂无\n\t\n45063.82\n\t\n/B2B\n\t\nYouTube\n\t\n2026-05-13 08:12\n\t\n2026-05-08 15:43\n\t\n详情\n\n\t\nD-POL1-senaelorhan\n\t\nPOL1\n\t\nPoland\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nelorhanlindo@gmail.com\n\t\n692956183\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-05-07 19:04\n\t\n2026-05-07 19:02\n\t\n详情\n\n\t\nD-TUR2-YILDIRIMALİ\n\t\nTUR2\n\t\nTurkey\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nhingo2566@gmail.com\n\t\n5459653288\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n\t\n2026-04-29 20:31\n\t\n2026-04-29 20:30\n\t\n详情\n\n\t\nS-USA10-111\n\t\nUSA10\n\t\nAmerica\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nlihaokanya@gmail.com\n\t\n1234567890\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n熟人介绍\n\t\n2026-04-29 12:01\n\t\n2026-04-29 12:00\n\t\n详情\n\n\t\nD-IDN1-ImanAaron\n\t\nIDN1\n\t\nIndonesia\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nimansie@gmail.com\n\t\n081389895300\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n\t\n2026-04-28 15:40\n\t\n2026-04-28 15:40\n\t\n详情\n\n\t\nD-CHN18-户连超测试\n\t\nCHN18\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nzrkjhlc@gmail.com\n\t\n15268453999\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n熟人介绍\n\t\n2026-04-27 14:34\n\t\n2026-04-23 14:23\n\t\n详情\n\n\t\nD-JPN43-小林莉乃\n\t\nJPN43\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nrii20040728@icloud.com\n\t\n07021540728\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n\t\n2026-04-22 03:42\n\t\n2026-04-22 03:25\n\t\n详情\n\n\t\nD-TUR1-RahhalBasel\n\t\nTUR1\n\t\nTurkey\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\neng.import3@gmail.com\n\t\n5510320210\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-04-17 21:23\n\t\n2026-04-17 21:21\n\t\n详情\n\n\t\nS-JPN42-小林滉平\n\t\nJPN42\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nkoheiyan.326@gmail.com\n\t\n08045698858\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n\t\n2026-04-17 15:51\n\t\n2026-04-17 15:51\n\t\n详情\n\n\t\nS-JPN41-島袋匠\n\t\nJPN41\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nt1k3m2@icloud.com\n\t\n09068646076\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n\t\n2026-04-20 13:20\n\t\n2026-04-17 03:31\n\t\n详情\n\n\t\nD-JPN40-徐太郎\n\t\nJPN40\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n崔红梅\n\t\n徐榕\n\t\n包佳民\n\t\n289079627@qq.com\n\t\n08043630315\n\t\n0\n\t\n暂无\n\t\n99999999.99\n\t\n/B2B\n\t\n\t\n2026-04-16 14:05\n\t\n2026-04-15 17:19\n\t\n详情\n\n\t\nD-JPN39-崔紅梅\n\t\nJPN39\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n崔红梅\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n571635879@qq.com\n\t\n09012345678\n\t\n4\n\t\n暂无\n\t\n84734.10\n\t\n/B2B\n\t\n\t\n2026-04-15 13:40\n\t\n2026-04-15 13:37\n\t\n详情\n\n\t\nD-JPN38-tangfenfen\n\t\nJPN38\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n朱迎港\n\t\n2853586374@qq.com\n\t\n13048957476\n\t\n3\n\t\n暂无\n\t\n99998904.89\n\t\nB2B\n\t\nYouTube\n\t\n2026-04-15 13:17\n\t\n2026-04-15 11:17\n\t\n详情\n\n\t\nD-BRB1-Test-朴国哲\n\t\nBRB1\n\t\nBarbados\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nadmin@sakuradk2.com\n\t\n17706793737\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n\t\n2026-04-15 08:21\n\t\n2026-04-14 16:25\n\t\n详情\n\n\t\nD-KOR14-TEST-周凌晓\n\t\nKOR14\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n金月明\n\t\n吴四佳\n\t\n包佳民\n\t\nzhoulingxiao@sakuradk.com\n\t\n22232\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\nB2B\n\t\nYouTube\n\t\n2026-04-27 14:35\n\t\n2026-04-14 16:24\n\t\n详情\n\n\t\nS-USA9-test_sjason\n\t\nUSA9\n\t\nAmerica\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nzhoulingxiao1216@gmail.com\n\t\n1225544\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\nB2B\n\t\nYouTube\n\t\n2026-04-14 15:40\n\t\n2026-04-14 15:38\n\t\n详情\n\n\t\nD-NGA1-UsulorMaduabuchi\n\t\nNGA1\n\t\nNigeria\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nusulorobed@gmail.com\n\t\n8167073823\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-05-02 20:25\n\t\n2026-04-14 10:09\n\t\n详情\n\n\t\nD-CHN17-Test-JamesTom\n\t\nCHN17\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\n45172781@qq.com\n\t\n13676826154\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\nB2B\n\t\nYouTube\n\t\n2026-04-14 09:49\n\t\n2026-04-14 06:27\n\t\n详情\n\n\t\nD-KOR13-TEST-박국철\n\t\nKOR13\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\nlonglong_7799@163.com\n\t\n17706793737\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\nB2B\n\t\nYouTube\n\t\n2026-04-25 15:02\n\t\n2026-04-08 08:18\n\t\n详情\n\n\t\nD-KOR12-정국희\n\t\nKOR12\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\nkuki770508@naver.com\n\t\n01077683008\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\nYouTube\n\t\n2026-04-18 19:56\n\t\n2026-04-06 14:26\n\t\n详情\n\n\t\nD-KOR11-KIMMINHO\n\t\nKOR11\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nmeron3521@gmail.com\n\t\n01090733521\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\nYouTube\n\t\n2026-04-07 12:16\n\t\n2026-04-04 11:12\n\t\n详情\n\n\t\nS-JPN37-勝井亮佑\n\t\nJPN37\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n崔红梅（正式账号）\n\t\n吴四佳（正式账号）\n\t\n陈牧鹏（正式账号）\n\t\nsurreal7295@gmail.com\n\t\n9084670467\n\t\n1\n\t\n暂无\n\t\n0.00\n\t\nB2B\n\t\n\t\n2026-04-15 13:09\n\t\n2026-04-03 17:42\n\t\n详情\n\n\t\nS-CHN16-TEST-chengzhuanwei\n\t\nCHN16\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n金月明\n\t\n张佳唯\n\t\n陈牧鹏\n\t\n501814@qq.com\n\t\n17716626097\n\t\n1\n\t\n暂无\n\t\n9356.38\n\t\nB2B\n\t\ngoogle搜索\n\t\n2026-05-12 09:04\n\t\n2026-03-31 13:44\n\t\n详情\n\n\t\nS-CHN15-测试123\n\t\nCHN15\n\t\nChina\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nleisanagarajan69@gmail.com\n\t\n19926558695\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\nB2B\n\t\ngoogle搜索\n\t\n2026-03-27 08:26\n\t\n2026-03-27 08:26\n\t\n详情\n\n\t\nS-CHN14-测试\n\t\nCHN14\n\t\nChina\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nvbac2092@gmail.com\n\t\n19559776869\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\nInstagram\n\t\n2026-03-26 09:22\n\t\n2026-03-26 09:22\n\t\n详情\n\n\t\nS-USA8-jsjjh\n\t\nUSA8\n\t\nAmerica\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\n369901314@qq.com\n\t\n15533221147\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\nB2B\n\t\nYouTube\n\t\n\t\n2026-03-26 09:10\n\t\n详情\n\n\t\nS-CHN13-CAILIANNA\n\t\nCHN13\n\t\nChina\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nlying.cai@qq.com\n\t\n15555555555\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n\t\n\t\n2026-03-26 09:02\n\t\n详情\n\n\t\nS-JPN36-金子東\n\t\nJPN36\n\t\nJapan\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nkoko.daiko@gmail.com\n\t\n08038178889\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-02-27 09:39\n\t\n2026-02-27 09:39\n\t\n详情\n\n\t\nD-JPN35-262.27\n\t\nJPN35\n\t\nJapan\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nuuuu@qq.com\n\t\n5855252222\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n\t\n\t\n2026-02-27 08:03\n\t\n详情\n\n\t\nD-KOR10-test张帅康-2\n\t\nKOR10\n\t\nKorea\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nshuaikangzhang62@gmail.com\n\t\n17634589156\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n\t\n2026-03-24 10:35\n\t\n2026-02-27 08:03\n\t\n详情\n30条/页\n共 102 条\n1\n2\n3\n4\n前往\n页"
+      }
+    },
+    {
+      "name": "target customer email search",
+      "status": "PASS",
+      "detail": {
+        "fill": {
+          "filled": true,
+          "strategy": "form-item",
+          "index": 0,
+          "placeholder": "请输入邮箱",
+          "value": "mxnrq@airsworld.net"
+        },
+        "query": {
+          "clicked": true,
+          "label": "查询",
+          "index": 0,
+          "text": "查询",
+          "class": "el-button el-button--primary"
+        },
+        "actual": {
+          "found_email": true,
+          "row_excerpt": [
+            "最后登录日期",
+            "注册日期",
+            "操作",
+            "D-KOR8-TEST-1010",
+            "KOR8",
+            "Korea",
+            "已审核",
+            "一般会员",
+            "永久",
+            "2099-12-31 23:59",
+            "无需沟通",
+            "金月明",
+            "唐芬芬",
+            "包瑞楠",
+            "mxnrq@airsworld.net",
+            "101010",
+            "38",
+            "暂无",
+            "994205.08",
+            "B2B",
+            "Instagram",
+            "2026-05-12 08:03",
+            "2025-12-20 21:38",
+            "详情",
+            "30条/页",
+            "共 1 条",
+            "1",
+            "前往"
+          ],
+          "contains_D_KOR8_TEST_1010": true,
+          "contains_KOR8": true,
+          "contains_Korea": true,
+          "contains_101010": true,
+          "result_count_text": false
+        }
+      },
+      "evidence": {
+        "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_v4_05_after_email_query.png",
+        "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_v4_05_after_email_query.json",
+        "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页"
+      }
+    },
+    {
+      "name": "target row detail opened",
+      "status": "PASS",
+      "detail": {
+        "detail_click": {
+          "clicked": true,
+          "label": "详情",
+          "index": 0,
+          "text": "详情",
+          "class": "el-button el-button--primary"
+        },
+        "has_detail": true
+      },
+      "evidence": {
+        "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_v4_06_customer_detail_opened.png",
+        "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_v4_06_customer_detail_opened.json",
+        "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页\n客户详情\nD-0/311.40-EC-TEST-1010\n\n开通的业务：B2B\n\n发货托管： \n已关闭\n会员等级： D\n\n预期月采购额:0元\n\n实际月采购额:311.40元\n\n正式订单\n查看\n消息互动\n账户余额\n账户管理\n模块\n\t\n余额\n\t\n会员身份\n\t\n会员到期时间\n\t\n累计充值金额\n\t\n首次入金金额\n\t\n首次入金时间\nB2B\n\t\n994205.08\n\t\n\t\n2099-12-31 23:59:59\n\t\n0\n\t\n\t\n01基本情報記入\n\n注册时间：2025-12-20\n\n02資料审核\n\n联系电话：101010 \n\n接收电话沟通时间：10\n\n03发送审查结果\n当前状态： 已审核\n04下单前相谈\n当前状态：无需沟通\n模块\n\t\n客户经理\n\t\n业务\n\t\n采购\nB2B\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n注册信息\n推荐商品\n客户收藏\n客户足迹\n子账号信息\n批量导入\n\n基础信息\n\n所属国家:\n韩国\n姓名:\nTEST-1010\n业务员:\n唐芬芬\n采购员:\n包瑞楠\n电话号码:\n+82 101010\n邮箱:\nmxnrq@airsworld.net\n\n企业信息\n\n法人事业者:\n法人\n公司名称:\n10\n公司官网:\n10\n法人姓名:\n年采购额:\n10元/年\n电话号码:\n+82 101010\n注册来源:\nInstagram\n介绍人名称或ID:\n10\n采购形式:\nB2B为主\n采购频率:\n1个月\n采购次数:\n10\n单次采购金额:\n10元\n中国进口经验:\n有经验\n合作过的进出口公司:\n10\n停止使用的原因:\n10\n销售形式:\n实体店\n楽天市場:\n10\n\n会员沟通备注\n\n测试巡检账号,用于每日巡检脚本执行"
+      }
+    },
+    {
+      "name": "batch import tab clicked",
+      "status": "PASS",
+      "detail": {
+        "tab_click": {
+          "clicked": true,
+          "label": "批量导入",
+          "index": 0,
+          "text": "批量导入",
+          "class": "el-tabs__item is-top"
+        }
+      },
+      "evidence": {
+        "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_v4_07_batch_import_tab.png",
+        "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_v4_07_batch_import_tab.json",
+        "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页\n客户详情\nD-0/311.40-EC-TEST-1010\n\n开通的业务：B2B\n\n发货托管： \n已关闭\n会员等级： D\n\n预期月采购额:0元\n\n实际月采购额:311.40元\n\n正式订单\n查看\n消息互动\n账户余额\n账户管理\n模块\n\t\n余额\n\t\n会员身份\n\t\n会员到期时间\n\t\n累计充值金额\n\t\n首次入金金额\n\t\n首次入金时间\nB2B\n\t\n994205.08\n\t\n\t\n2099-12-31 23:59:59\n\t\n0\n\t\n\t\n01基本情報記入\n\n注册时间：2025-12-20\n\n02資料审核\n\n联系电话：101010 \n\n接收电话沟通时间：10\n\n03发送审查结果\n当前状态： 已审核\n04下单前相谈\n当前状态：无需沟通\n模块\n\t\n客户经理\n\t\n业务\n\t\n采购\nB2B\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n注册信息\n推荐商品\n客户收藏\n客户足迹\n子账号信息\n批量导入\n导入记录\n最近批次与审计日志\n批量导入\n批次号\n\t\n模板类型\n\t\n状态\n\t\n总条数\n\t\n成功\n\t\n失败\n\t\n文件名\n\t\n最近审计\n\t\n导入时间\n\t\n操作\nBI202605131301438594\n\t\n7561 ZOZO\n\t\n失败\n\t\n227\n\t\n138\n\t\n89\n\t\n1110発注書_zozo.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1110発注書_zozo.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301435223\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n共 2 条\n10条/页\n1"
+      }
+    },
+    {
+      "name": "batch import upload popup opened",
+      "status": "PASS",
+      "detail": {
+        "upload_button_click": {
+          "clicked": true,
+          "label": "批量导入",
+          "index": 0,
+          "text": "批量导入",
+          "class": "el-button el-button--primary"
+        },
+        "supports_xlsx": true
+      },
+      "evidence": {
+        "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_v4_08_upload_popup_empty.png",
+        "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_v4_08_upload_popup_empty.json",
+        "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页\n客户详情\nD-0/311.40-EC-TEST-1010\n\n开通的业务：B2B\n\n发货托管： \n已关闭\n会员等级： D\n\n预期月采购额:0元\n\n实际月采购额:311.40元\n\n正式订单\n查看\n消息互动\n账户余额\n账户管理\n模块\n\t\n余额\n\t\n会员身份\n\t\n会员到期时间\n\t\n累计充值金额\n\t\n首次入金金额\n\t\n首次入金时间\nB2B\n\t\n994205.08\n\t\n\t\n2099-12-31 23:59:59\n\t\n0\n\t\n\t\n01基本情報記入\n\n注册时间：2025-12-20\n\n02資料审核\n\n联系电话：101010 \n\n接收电话沟通时间：10\n\n03发送审查结果\n当前状态： 已审核\n04下单前相谈\n当前状态：无需沟通\n模块\n\t\n客户经理\n\t\n业务\n\t\n采购\nB2B\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n注册信息\n推荐商品\n客户收藏\n客户足迹\n子账号信息\n批量导入\n导入记录\n最近批次与审计日志\n批量导入\n批次号\n\t\n模板类型\n\t\n状态\n\t\n总条数\n\t\n成功\n\t\n失败\n\t\n文件名\n\t\n最近审计\n\t\n导入时间\n\t\n操作\nBI202605131301438594\n\t\n7561 ZOZO\n\t\n失败\n\t\n227\n\t\n138\n\t\n89\n\t\n1110発注書_zozo.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1110発注書_zozo.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301435223\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n共 2 条\n10条/页\n1\n批量导入\n将 Excel 文件拖到此处，或 点击选择\n支持 Excel(.xlsx) 格式\n导入文件列表\n\t\n文档名称\n\t\n文档大小\n\t\n导入进度\n\t\n导入结果\n\t\n操作\n暂无数据\n本次已上传0个文件，0个 报错\n分批导入\n确定导入"
+      }
+    },
+    {
+      "name": "reopen upload popup 1",
+      "status": "PASS",
+      "detail": {
+        "close_previous": {
+          "closed": true,
+          "strategy": "header_close",
+          "index": 0
+        },
+        "reopen_click": {
+          "clicked": true,
+          "label": "批量导入",
+          "index": 0,
+          "text": "批量导入",
+          "class": "el-button el-button--primary"
+        }
+      },
+      "evidence": {
+        "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_v4_reopen_popup_1.png",
+        "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_v4_reopen_popup_1.json",
+        "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页\n客户详情\nD-0/311.40-EC-TEST-1010\n\n开通的业务：B2B\n\n发货托管： \n已关闭\n会员等级： D\n\n预期月采购额:0元\n\n实际月采购额:311.40元\n\n正式订单\n查看\n消息互动\n账户余额\n账户管理\n模块\n\t\n余额\n\t\n会员身份\n\t\n会员到期时间\n\t\n累计充值金额\n\t\n首次入金金额\n\t\n首次入金时间\nB2B\n\t\n994205.08\n\t\n\t\n2099-12-31 23:59:59\n\t\n0\n\t\n\t\n01基本情報記入\n\n注册时间：2025-12-20\n\n02資料审核\n\n联系电话：101010 \n\n接收电话沟通时间：10\n\n03发送审查结果\n当前状态： 已审核\n04下单前相谈\n当前状态：无需沟通\n模块\n\t\n客户经理\n\t\n业务\n\t\n采购\nB2B\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n注册信息\n推荐商品\n客户收藏\n客户足迹\n子账号信息\n批量导入\n导入记录\n最近批次与审计日志\n批量导入\n批次号\n\t\n模板类型\n\t\n状态\n\t\n总条数\n\t\n成功\n\t\n失败\n\t\n文件名\n\t\n最近审计\n\t\n导入时间\n\t\n操作\nBI202605131301572316\n\t\n7182\n\t\n校验中\n\t\n4765\n\t\n0\n\t\n0\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:57\n\t\n失败明细\n审计\n\nBI202605131301479198\n\t\n7182\n\t\n校验中\n\t\n4765\n\t\n0\n\t\n0\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:47\n\t\n失败明细\n审计\n\nBI202605131301438594\n\t\n7561 ZOZO\n\t\n失败\n\t\n227\n\t\n138\n\t\n89\n\t\n1110発注書_zozo.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1110発注書_zozo.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301435223\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n共 4 条\n10条/页\n1\n批量导入\n将 Excel 文件拖到此处，或 点击选择\n支持 Excel(.xlsx) 格式\n导入文件列表\n\t\n文档名称\n\t\n文档大小\n\t\n导入进度\n\t\n导入结果\n\t\n操作\n暂无数据\n本次已上传0个文件，0个 报错\n分批导入\n确定导入"
+      }
+    },
+    {
+      "name": "reopen upload popup 2",
+      "status": "PASS",
+      "detail": {
+        "close_previous": {
+          "closed": true,
+          "strategy": "header_close",
+          "index": 0
+        },
+        "reopen_click": {
+          "clicked": true,
+          "label": "批量导入",
+          "index": 0,
+          "text": "批量导入",
+          "class": "el-button el-button--primary"
+        }
+      },
+      "evidence": {
+        "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_v4_reopen_popup_2.png",
+        "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_v4_reopen_popup_2.json",
+        "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页\n客户详情\nD-0/311.40-EC-TEST-1010\n\n开通的业务：B2B\n\n发货托管： \n已关闭\n会员等级： D\n\n预期月采购额:0元\n\n实际月采购额:311.40元\n\n正式订单\n查看\n消息互动\n账户余额\n账户管理\n模块\n\t\n余额\n\t\n会员身份\n\t\n会员到期时间\n\t\n累计充值金额\n\t\n首次入金金额\n\t\n首次入金时间\nB2B\n\t\n994205.08\n\t\n\t\n2099-12-31 23:59:59\n\t\n0\n\t\n\t\n01基本情報記入\n\n注册时间：2025-12-20\n\n02資料审核\n\n联系电话：101010 \n\n接收电话沟通时间：10\n\n03发送审查结果\n当前状态： 已审核\n04下单前相谈\n当前状态：无需沟通\n模块\n\t\n客户经理\n\t\n业务\n\t\n采购\nB2B\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n注册信息\n推荐商品\n客户收藏\n客户足迹\n子账号信息\n批量导入\n导入记录\n最近批次与审计日志\n批量导入\n批次号\n\t\n模板类型\n\t\n状态\n\t\n总条数\n\t\n成功\n\t\n失败\n\t\n文件名\n\t\n最近审计\n\t\n导入时间\n\t\n操作\nBI202605131302055151\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:02:05\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301572316\n\t\n7182\n\t\n校验中\n\t\n4765\n\t\n0\n\t\n0\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:57\n\t\n失败明细\n审计\n\nBI202605131301479198\n\t\n7182\n\t\n失败\n\t\n4765\n\t\n1528\n\t\n3237\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:47\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301438594\n\t\n7561 ZOZO\n\t\n失败\n\t\n227\n\t\n138\n\t\n89\n\t\n1110発注書_zozo.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1110発注書_zozo.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301435223\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n共 5 条\n10条/页\n1\n批量导入\n将 Excel 文件拖到此处，或 点击选择\n支持 Excel(.xlsx) 格式\n导入文件列表\n\t\n文档名称\n\t\n文档大小\n\t\n导入进度\n\t\n导入结果\n\t\n操作\n暂无数据\n本次已上传0个文件，0个 报错\n分批导入\n确定导入"
+      }
+    }
+  ],
+  "upload_results": [
+    {
+      "key": "7182",
+      "display": "7182 replenish 4700 xlsx",
+      "path": "D:\\test_workspace\\全球站批量导入功能\\测试文档\\模板文件\\7182导入模板\\补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx",
+      "exists": true,
+      "status": "VALIDATION_OR_UI_ERROR_OBSERVED",
+      "evidence": {
+        "before_upload": {
+          "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_template_upload_v4_7182_01_before_upload.png",
+          "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_template_upload_v4_7182_01_before_upload.json",
+          "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页\n客户详情\nD-0/311.40-EC-TEST-1010\n\n开通的业务：B2B\n\n发货托管： \n已关闭\n会员等级： D\n\n预期月采购额:0元\n\n实际月采购额:311.40元\n\n正式订单\n查看\n消息互动\n账户余额\n账户管理\n模块\n\t\n余额\n\t\n会员身份\n\t\n会员到期时间\n\t\n累计充值金额\n\t\n首次入金金额\n\t\n首次入金时间\nB2B\n\t\n994205.08\n\t\n\t\n2099-12-31 23:59:59\n\t\n0\n\t\n\t\n01基本情報記入\n\n注册时间：2025-12-20\n\n02資料审核\n\n联系电话：101010 \n\n接收电话沟通时间：10\n\n03发送审查结果\n当前状态： 已审核\n04下单前相谈\n当前状态：无需沟通\n模块\n\t\n客户经理\n\t\n业务\n\t\n采购\nB2B\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n注册信息\n推荐商品\n客户收藏\n客户足迹\n子账号信息\n批量导入\n导入记录\n最近批次与审计日志\n批量导入\n批次号\n\t\n模板类型\n\t\n状态\n\t\n总条数\n\t\n成功\n\t\n失败\n\t\n文件名\n\t\n最近审计\n\t\n导入时间\n\t\n操作\nBI202605131301438594\n\t\n7561 ZOZO\n\t\n失败\n\t\n227\n\t\n138\n\t\n89\n\t\n1110発注書_zozo.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1110発注書_zozo.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301435223\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n共 2 条\n10条/页\n1\n批量导入\n将 Excel 文件拖到此处，或 点击选择\n支持 Excel(.xlsx) 格式\n导入文件列表\n\t\n文档名称\n\t\n文档大小\n\t\n导入进度\n\t\n导入结果\n\t\n操作\n暂无数据\n本次已上传0个文件，0个 报错\n分批导入\n确定导入"
+        },
+        "after_file_selected": {
+          "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_template_upload_v4_7182_02_after_file_selected.png",
+          "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_template_upload_v4_7182_02_after_file_selected.json",
+          "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页\n客户详情\nD-0/311.40-EC-TEST-1010\n\n开通的业务：B2B\n\n发货托管： \n已关闭\n会员等级： D\n\n预期月采购额:0元\n\n实际月采购额:311.40元\n\n正式订单\n查看\n消息互动\n账户余额\n账户管理\n模块\n\t\n余额\n\t\n会员身份\n\t\n会员到期时间\n\t\n累计充值金额\n\t\n首次入金金额\n\t\n首次入金时间\nB2B\n\t\n994205.08\n\t\n\t\n2099-12-31 23:59:59\n\t\n0\n\t\n\t\n01基本情報記入\n\n注册时间：2025-12-20\n\n02資料审核\n\n联系电话：101010 \n\n接收电话沟通时间：10\n\n03发送审查结果\n当前状态： 已审核\n04下单前相谈\n当前状态：无需沟通\n模块\n\t\n客户经理\n\t\n业务\n\t\n采购\nB2B\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n注册信息\n推荐商品\n客户收藏\n客户足迹\n子账号信息\n批量导入\n导入记录\n最近批次与审计日志\n批量导入\n批次号\n\t\n模板类型\n\t\n状态\n\t\n总条数\n\t\n成功\n\t\n失败\n\t\n文件名\n\t\n最近审计\n\t\n导入时间\n\t\n操作\nBI202605131301438594\n\t\n7561 ZOZO\n\t\n失败\n\t\n227\n\t\n138\n\t\n89\n\t\n1110発注書_zozo.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1110発注書_zozo.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301435223\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n共 2 条\n10条/页\n1\n批量导入\n将 Excel 文件拖到此处，或 点击选择\n支持 Excel(.xlsx) 格式\n导入文件列表\n\t\n文档名称\n\t\n文档大小\n\t\n导入进度\n\t\n导入结果\n\t\n操作\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2M\n\t\n100%\n\t\n上传中\n\t\n删除\n报错\n比价\n本次已上传1个文件，0个 报错\n分批导入\n确定导入"
+        },
+        "parse_result": {
+          "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_template_upload_v4_7182_03_parse_result.png",
+          "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_template_upload_v4_7182_03_parse_result.json",
+          "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页\n客户详情\nD-0/311.40-EC-TEST-1010\n\n开通的业务：B2B\n\n发货托管： \n已关闭\n会员等级： D\n\n预期月采购额:0元\n\n实际月采购额:311.40元\n\n正式订单\n查看\n消息互动\n账户余额\n账户管理\n模块\n\t\n余额\n\t\n会员身份\n\t\n会员到期时间\n\t\n累计充值金额\n\t\n首次入金金额\n\t\n首次入金时间\nB2B\n\t\n994205.08\n\t\n\t\n2099-12-31 23:59:59\n\t\n0\n\t\n\t\n01基本情報記入\n\n注册时间：2025-12-20\n\n02資料审核\n\n联系电话：101010 \n\n接收电话沟通时间：10\n\n03发送审查结果\n当前状态： 已审核\n04下单前相谈\n当前状态：无需沟通\n模块\n\t\n客户经理\n\t\n业务\n\t\n采购\nB2B\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n注册信息\n推荐商品\n客户收藏\n客户足迹\n子账号信息\n批量导入\n导入记录\n最近批次与审计日志\n批量导入\n批次号\n\t\n模板类型\n\t\n状态\n\t\n总条数\n\t\n成功\n\t\n失败\n\t\n文件名\n\t\n最近审计\n\t\n导入时间\n\t\n操作\nBI202605131301438594\n\t\n7561 ZOZO\n\t\n失败\n\t\n227\n\t\n138\n\t\n89\n\t\n1110発注書_zozo.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1110発注書_zozo.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301435223\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n共 2 条\n10条/页\n1\n批量导入\n将 Excel 文件拖到此处，或 点击选择\n支持 Excel(.xlsx) 格式\n导入文件列表\n\t\n文档名称\n\t\n文档大小\n\t\n导入进度\n\t\n导入结果\n\t\n操作\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2M\n\t\n100%\n\t\n校验中\n\t\n删除\n报错\n比价\n本次已上传1个文件，0个 报错\n分批导入\n确定导入"
+        }
+      },
+      "responses": [
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/batchImport/preview",
+          "status": 200,
+          "method": "POST",
+          "post_data": null
+        }
+      ],
+      "danger_seen": [
+        "确定导入"
+      ],
+      "ui_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页\n客户详情\nD-0/311.40-EC-TEST-1010\n\n开通的业务：B2B\n\n发货托管： \n已关闭\n会员等级： D\n\n预期月采购额:0元\n\n实际月采购额:311.40元\n\n正式订单\n查看\n消息互动\n账户余额\n账户管理\n模块\n\t\n余额\n\t\n会员身份\n\t\n会员到期时间\n\t\n累计充值金额\n\t\n首次入金金额\n\t\n首次入金时间\nB2B\n\t\n994205.08\n\t\n\t\n2099-12-31 23:59:59\n\t\n0\n\t\n\t\n01基本情報記入\n\n注册时间：2025-12-20\n\n02資料审核\n\n联系电话：101010 \n\n接收电话沟通时间：10\n\n03发送审查结果\n当前状态： 已审核\n04下单前相谈\n当前状态：无需沟通\n模块\n\t\n客户经理\n\t\n业务\n\t\n采购\nB2B\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n注册信息\n推荐商品\n客户收藏\n客户足迹\n子账号信息\n批量导入\n导入记录\n最近批次与审计日志\n批量导入\n批次号\n\t\n模板类型\n\t\n状态\n\t\n总条数\n\t\n成功\n\t\n失败\n\t\n文件名\n\t\n最近审计\n\t\n导入时间\n\t\n操作\nBI202605131301438594\n\t\n7561 ZOZO\n\t\n失败\n\t\n227\n\t\n138\n\t\n89\n\t\n1110発注書_zozo.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1110発注書_zozo.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301435223\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n共 2 条\n10条/页\n1\n批量导入\n将 Excel 文件拖到此处，或 点击选择\n支持 Excel(.xlsx) 格式\n导入文件列表\n\t\n文档名称\n\t\n文档大小\n\t\n导入进度\n\t\n导入结果\n\t\n操作\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2M\n\t\n100%\n\t\n校验中\n\t\n删除\n报错\n比价\n本次已上传1个文件，0个 报错\n分批导入\n确定导入",
+      "note": "No final import/cart/order confirmation clicked."
+    },
+    {
+      "key": "7561_self",
+      "display": "7561 self warehouse xlsx",
+      "path": "D:\\test_workspace\\全球站批量导入功能\\测试文档\\模板文件\\7561批量导入\\1104発注書_自社倉庫.xlsx",
+      "exists": true,
+      "status": "VALIDATION_OR_UI_ERROR_OBSERVED",
+      "evidence": {
+        "before_upload": {
+          "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_template_upload_v4_7561_self_01_before_upload.png",
+          "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_template_upload_v4_7561_self_01_before_upload.json",
+          "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页\n客户详情\nD-0/311.40-EC-TEST-1010\n\n开通的业务：B2B\n\n发货托管： \n已关闭\n会员等级： D\n\n预期月采购额:0元\n\n实际月采购额:311.40元\n\n正式订单\n查看\n消息互动\n账户余额\n账户管理\n模块\n\t\n余额\n\t\n会员身份\n\t\n会员到期时间\n\t\n累计充值金额\n\t\n首次入金金额\n\t\n首次入金时间\nB2B\n\t\n994205.08\n\t\n\t\n2099-12-31 23:59:59\n\t\n0\n\t\n\t\n01基本情報記入\n\n注册时间：2025-12-20\n\n02資料审核\n\n联系电话：101010 \n\n接收电话沟通时间：10\n\n03发送审查结果\n当前状态： 已审核\n04下单前相谈\n当前状态：无需沟通\n模块\n\t\n客户经理\n\t\n业务\n\t\n采购\nB2B\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n注册信息\n推荐商品\n客户收藏\n客户足迹\n子账号信息\n批量导入\n导入记录\n最近批次与审计日志\n批量导入\n批次号\n\t\n模板类型\n\t\n状态\n\t\n总条数\n\t\n成功\n\t\n失败\n\t\n文件名\n\t\n最近审计\n\t\n导入时间\n\t\n操作\nBI202605131301572316\n\t\n7182\n\t\n校验中\n\t\n4765\n\t\n0\n\t\n0\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:57\n\t\n失败明细\n审计\n\nBI202605131301479198\n\t\n7182\n\t\n校验中\n\t\n4765\n\t\n0\n\t\n0\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:47\n\t\n失败明细\n审计\n\nBI202605131301438594\n\t\n7561 ZOZO\n\t\n失败\n\t\n227\n\t\n138\n\t\n89\n\t\n1110発注書_zozo.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1110発注書_zozo.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301435223\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n共 4 条\n10条/页\n1\n批量导入\n将 Excel 文件拖到此处，或 点击选择\n支持 Excel(.xlsx) 格式\n导入文件列表\n\t\n文档名称\n\t\n文档大小\n\t\n导入进度\n\t\n导入结果\n\t\n操作\n暂无数据\n本次已上传0个文件，0个 报错\n分批导入\n确定导入"
+        },
+        "after_file_selected": {
+          "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_template_upload_v4_7561_self_02_after_file_selected.png",
+          "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_template_upload_v4_7561_self_02_after_file_selected.json",
+          "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页\n客户详情\nD-0/311.40-EC-TEST-1010\n\n开通的业务：B2B\n\n发货托管： \n已关闭\n会员等级： D\n\n预期月采购额:0元\n\n实际月采购额:311.40元\n\n正式订单\n查看\n消息互动\n账户余额\n账户管理\n模块\n\t\n余额\n\t\n会员身份\n\t\n会员到期时间\n\t\n累计充值金额\n\t\n首次入金金额\n\t\n首次入金时间\nB2B\n\t\n994205.08\n\t\n\t\n2099-12-31 23:59:59\n\t\n0\n\t\n\t\n01基本情報記入\n\n注册时间：2025-12-20\n\n02資料审核\n\n联系电话：101010 \n\n接收电话沟通时间：10\n\n03发送审查结果\n当前状态： 已审核\n04下单前相谈\n当前状态：无需沟通\n模块\n\t\n客户经理\n\t\n业务\n\t\n采购\nB2B\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n注册信息\n推荐商品\n客户收藏\n客户足迹\n子账号信息\n批量导入\n导入记录\n最近批次与审计日志\n批量导入\n批次号\n\t\n模板类型\n\t\n状态\n\t\n总条数\n\t\n成功\n\t\n失败\n\t\n文件名\n\t\n最近审计\n\t\n导入时间\n\t\n操作\nBI202605131301572316\n\t\n7182\n\t\n校验中\n\t\n4765\n\t\n0\n\t\n0\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:57\n\t\n失败明细\n审计\n\nBI202605131301479198\n\t\n7182\n\t\n校验中\n\t\n4765\n\t\n0\n\t\n0\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:47\n\t\n失败明细\n审计\n\nBI202605131301438594\n\t\n7561 ZOZO\n\t\n失败\n\t\n227\n\t\n138\n\t\n89\n\t\n1110発注書_zozo.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1110発注書_zozo.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301435223\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n共 4 条\n10条/页\n1\n批量导入\n将 Excel 文件拖到此处，或 点击选择\n支持 Excel(.xlsx) 格式\n导入文件列表\n\t\n文档名称\n\t\n文档大小\n\t\n导入进度\n\t\n导入结果\n\t\n操作\n\t\n1104発注書_自社倉庫.xlsx\n\t\n< 1M\n\t\n100%\n\t\n待导入\n\t\n删除\n报错\n比价\n本次已上传1个文件，1个 报错\n分批导入\n确定导入"
+        },
+        "parse_result": {
+          "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_template_upload_v4_7561_self_03_parse_result.png",
+          "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_template_upload_v4_7561_self_03_parse_result.json",
+          "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页\n客户详情\nD-0/311.40-EC-TEST-1010\n\n开通的业务：B2B\n\n发货托管： \n已关闭\n会员等级： D\n\n预期月采购额:0元\n\n实际月采购额:311.40元\n\n正式订单\n查看\n消息互动\n账户余额\n账户管理\n模块\n\t\n余额\n\t\n会员身份\n\t\n会员到期时间\n\t\n累计充值金额\n\t\n首次入金金额\n\t\n首次入金时间\nB2B\n\t\n994205.08\n\t\n\t\n2099-12-31 23:59:59\n\t\n0\n\t\n\t\n01基本情報記入\n\n注册时间：2025-12-20\n\n02資料审核\n\n联系电话：101010 \n\n接收电话沟通时间：10\n\n03发送审查结果\n当前状态： 已审核\n04下单前相谈\n当前状态：无需沟通\n模块\n\t\n客户经理\n\t\n业务\n\t\n采购\nB2B\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n注册信息\n推荐商品\n客户收藏\n客户足迹\n子账号信息\n批量导入\n导入记录\n最近批次与审计日志\n批量导入\n批次号\n\t\n模板类型\n\t\n状态\n\t\n总条数\n\t\n成功\n\t\n失败\n\t\n文件名\n\t\n最近审计\n\t\n导入时间\n\t\n操作\nBI202605131301572316\n\t\n7182\n\t\n校验中\n\t\n4765\n\t\n0\n\t\n0\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:57\n\t\n失败明细\n审计\n\nBI202605131301479198\n\t\n7182\n\t\n校验中\n\t\n4765\n\t\n0\n\t\n0\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:47\n\t\n失败明细\n审计\n\nBI202605131301438594\n\t\n7561 ZOZO\n\t\n失败\n\t\n227\n\t\n138\n\t\n89\n\t\n1110発注書_zozo.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1110発注書_zozo.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301435223\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n共 4 条\n10条/页\n1\n批量导入\n将 Excel 文件拖到此处，或 点击选择\n支持 Excel(.xlsx) 格式\n导入文件列表\n\t\n文档名称\n\t\n文档大小\n\t\n导入进度\n\t\n导入结果\n\t\n操作\n\t\n1104発注書_自社倉庫.xlsx\n\t\n< 1M\n\t\n100%\n\t\n待导入\n\t\n删除\n报错\n比价\n本次已上传1个文件，1个 报错\n分批导入\n确定导入"
+        }
+      },
+      "responses": [
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/batchImport/preview",
+          "status": 200,
+          "method": "POST",
+          "post_data": null
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/batchImport/detail",
+          "status": 200,
+          "method": "POST",
+          "post_data": "{\"batch_no\":\"BI202605131302055151\",\"page\":1,\"limit\":1}"
+        }
+      ],
+      "danger_seen": [
+        "确定导入"
+      ],
+      "ui_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页\n客户详情\nD-0/311.40-EC-TEST-1010\n\n开通的业务：B2B\n\n发货托管： \n已关闭\n会员等级： D\n\n预期月采购额:0元\n\n实际月采购额:311.40元\n\n正式订单\n查看\n消息互动\n账户余额\n账户管理\n模块\n\t\n余额\n\t\n会员身份\n\t\n会员到期时间\n\t\n累计充值金额\n\t\n首次入金金额\n\t\n首次入金时间\nB2B\n\t\n994205.08\n\t\n\t\n2099-12-31 23:59:59\n\t\n0\n\t\n\t\n01基本情報記入\n\n注册时间：2025-12-20\n\n02資料审核\n\n联系电话：101010 \n\n接收电话沟通时间：10\n\n03发送审查结果\n当前状态： 已审核\n04下单前相谈\n当前状态：无需沟通\n模块\n\t\n客户经理\n\t\n业务\n\t\n采购\nB2B\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n注册信息\n推荐商品\n客户收藏\n客户足迹\n子账号信息\n批量导入\n导入记录\n最近批次与审计日志\n批量导入\n批次号\n\t\n模板类型\n\t\n状态\n\t\n总条数\n\t\n成功\n\t\n失败\n\t\n文件名\n\t\n最近审计\n\t\n导入时间\n\t\n操作\nBI202605131301572316\n\t\n7182\n\t\n校验中\n\t\n4765\n\t\n0\n\t\n0\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:57\n\t\n失败明细\n审计\n\nBI202605131301479198\n\t\n7182\n\t\n校验中\n\t\n4765\n\t\n0\n\t\n0\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:47\n\t\n失败明细\n审计\n\nBI202605131301438594\n\t\n7561 ZOZO\n\t\n失败\n\t\n227\n\t\n138\n\t\n89\n\t\n1110発注書_zozo.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1110発注書_zozo.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301435223\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n共 4 条\n10条/页\n1\n批量导入\n将 Excel 文件拖到此处，或 点击选择\n支持 Excel(.xlsx) 格式\n导入文件列表\n\t\n文档名称\n\t\n文档大小\n\t\n导入进度\n\t\n导入结果\n\t\n操作\n\t\n1104発注書_自社倉庫.xlsx\n\t\n< 1M\n\t\n100%\n\t\n待导入\n\t\n删除\n报错\n比价\n本次已上传1个文件，1个 报错\n分批导入\n确定导入",
+      "note": "No final import/cart/order confirmation clicked."
+    },
+    {
+      "key": "7561_zozo",
+      "display": "7561 ZOZO xlsx",
+      "path": "D:\\test_workspace\\全球站批量导入功能\\测试文档\\模板文件\\7561批量导入\\1110発注書_zozo.xlsx",
+      "exists": true,
+      "status": "VALIDATION_OR_UI_ERROR_OBSERVED",
+      "evidence": {
+        "before_upload": {
+          "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_template_upload_v4_7561_zozo_01_before_upload.png",
+          "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_template_upload_v4_7561_zozo_01_before_upload.json",
+          "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页\n客户详情\nD-0/311.40-EC-TEST-1010\n\n开通的业务：B2B\n\n发货托管： \n已关闭\n会员等级： D\n\n预期月采购额:0元\n\n实际月采购额:311.40元\n\n正式订单\n查看\n消息互动\n账户余额\n账户管理\n模块\n\t\n余额\n\t\n会员身份\n\t\n会员到期时间\n\t\n累计充值金额\n\t\n首次入金金额\n\t\n首次入金时间\nB2B\n\t\n994205.08\n\t\n\t\n2099-12-31 23:59:59\n\t\n0\n\t\n\t\n01基本情報記入\n\n注册时间：2025-12-20\n\n02資料审核\n\n联系电话：101010 \n\n接收电话沟通时间：10\n\n03发送审查结果\n当前状态： 已审核\n04下单前相谈\n当前状态：无需沟通\n模块\n\t\n客户经理\n\t\n业务\n\t\n采购\nB2B\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n注册信息\n推荐商品\n客户收藏\n客户足迹\n子账号信息\n批量导入\n导入记录\n最近批次与审计日志\n批量导入\n批次号\n\t\n模板类型\n\t\n状态\n\t\n总条数\n\t\n成功\n\t\n失败\n\t\n文件名\n\t\n最近审计\n\t\n导入时间\n\t\n操作\nBI202605131302055151\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:02:05\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301572316\n\t\n7182\n\t\n校验中\n\t\n4765\n\t\n0\n\t\n0\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:57\n\t\n失败明细\n审计\n\nBI202605131301479198\n\t\n7182\n\t\n失败\n\t\n4765\n\t\n1528\n\t\n3237\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:47\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301438594\n\t\n7561 ZOZO\n\t\n失败\n\t\n227\n\t\n138\n\t\n89\n\t\n1110発注書_zozo.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1110発注書_zozo.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301435223\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n共 5 条\n10条/页\n1\n批量导入\n将 Excel 文件拖到此处，或 点击选择\n支持 Excel(.xlsx) 格式\n导入文件列表\n\t\n文档名称\n\t\n文档大小\n\t\n导入进度\n\t\n导入结果\n\t\n操作\n暂无数据\n本次已上传0个文件，0个 报错\n分批导入\n确定导入"
+        },
+        "after_file_selected": {
+          "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_template_upload_v4_7561_zozo_02_after_file_selected.png",
+          "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_template_upload_v4_7561_zozo_02_after_file_selected.json",
+          "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页\n客户详情\nD-0/311.40-EC-TEST-1010\n\n开通的业务：B2B\n\n发货托管： \n已关闭\n会员等级： D\n\n预期月采购额:0元\n\n实际月采购额:311.40元\n\n正式订单\n查看\n消息互动\n账户余额\n账户管理\n模块\n\t\n余额\n\t\n会员身份\n\t\n会员到期时间\n\t\n累计充值金额\n\t\n首次入金金额\n\t\n首次入金时间\nB2B\n\t\n994205.08\n\t\n\t\n2099-12-31 23:59:59\n\t\n0\n\t\n\t\n01基本情報記入\n\n注册时间：2025-12-20\n\n02資料审核\n\n联系电话：101010 \n\n接收电话沟通时间：10\n\n03发送审查结果\n当前状态： 已审核\n04下单前相谈\n当前状态：无需沟通\n模块\n\t\n客户经理\n\t\n业务\n\t\n采购\nB2B\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n注册信息\n推荐商品\n客户收藏\n客户足迹\n子账号信息\n批量导入\n导入记录\n最近批次与审计日志\n批量导入\n批次号\n\t\n模板类型\n\t\n状态\n\t\n总条数\n\t\n成功\n\t\n失败\n\t\n文件名\n\t\n最近审计\n\t\n导入时间\n\t\n操作\nBI202605131302055151\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:02:05\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301572316\n\t\n7182\n\t\n校验中\n\t\n4765\n\t\n0\n\t\n0\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:57\n\t\n失败明细\n审计\n\nBI202605131301479198\n\t\n7182\n\t\n失败\n\t\n4765\n\t\n1528\n\t\n3237\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:47\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301438594\n\t\n7561 ZOZO\n\t\n失败\n\t\n227\n\t\n138\n\t\n89\n\t\n1110発注書_zozo.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1110発注書_zozo.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301435223\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n共 5 条\n10条/页\n1\n批量导入\n将 Excel 文件拖到此处，或 点击选择\n支持 Excel(.xlsx) 格式\n导入文件列表\n\t\n文档名称\n\t\n文档大小\n\t\n导入进度\n\t\n导入结果\n\t\n操作\n\t\n1110発注書_zozo.xlsx\n\t\n< 1M\n\t\n100%\n\t\n校验中\n\t\n删除\n报错\n比价\n本次已上传1个文件，0个 报错\n分批导入\n确定导入"
+        },
+        "parse_result": {
+          "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_template_upload_v4_7561_zozo_03_parse_result.png",
+          "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_template_upload_v4_7561_zozo_03_parse_result.json",
+          "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页\n客户详情\nD-0/311.40-EC-TEST-1010\n\n开通的业务：B2B\n\n发货托管： \n已关闭\n会员等级： D\n\n预期月采购额:0元\n\n实际月采购额:311.40元\n\n正式订单\n查看\n消息互动\n账户余额\n账户管理\n模块\n\t\n余额\n\t\n会员身份\n\t\n会员到期时间\n\t\n累计充值金额\n\t\n首次入金金额\n\t\n首次入金时间\nB2B\n\t\n994205.08\n\t\n\t\n2099-12-31 23:59:59\n\t\n0\n\t\n\t\n01基本情報記入\n\n注册时间：2025-12-20\n\n02資料审核\n\n联系电话：101010 \n\n接收电话沟通时间：10\n\n03发送审查结果\n当前状态： 已审核\n04下单前相谈\n当前状态：无需沟通\n模块\n\t\n客户经理\n\t\n业务\n\t\n采购\nB2B\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n注册信息\n推荐商品\n客户收藏\n客户足迹\n子账号信息\n批量导入\n导入记录\n最近批次与审计日志\n批量导入\n批次号\n\t\n模板类型\n\t\n状态\n\t\n总条数\n\t\n成功\n\t\n失败\n\t\n文件名\n\t\n最近审计\n\t\n导入时间\n\t\n操作\nBI202605131302055151\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:02:05\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301572316\n\t\n7182\n\t\n校验中\n\t\n4765\n\t\n0\n\t\n0\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:57\n\t\n失败明细\n审计\n\nBI202605131301479198\n\t\n7182\n\t\n失败\n\t\n4765\n\t\n1528\n\t\n3237\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:47\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301438594\n\t\n7561 ZOZO\n\t\n失败\n\t\n227\n\t\n138\n\t\n89\n\t\n1110発注書_zozo.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1110発注書_zozo.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301435223\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n共 5 条\n10条/页\n1\n批量导入\n将 Excel 文件拖到此处，或 点击选择\n支持 Excel(.xlsx) 格式\n导入文件列表\n\t\n文档名称\n\t\n文档大小\n\t\n导入进度\n\t\n导入结果\n\t\n操作\n\t\n1110発注書_zozo.xlsx\n\t\n< 1M\n\t\n100%\n\t\n待导入\n\t\n删除\n报错\n比价\n本次已上传1个文件，1个 报错\n分批导入\n确定导入"
+        }
+      },
+      "responses": [
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/batchImport/preview",
+          "status": 200,
+          "method": "POST",
+          "post_data": null
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/batchImport/detail",
+          "status": 200,
+          "method": "POST",
+          "post_data": "{\"batch_no\":\"BI202605131302186290\",\"page\":1,\"limit\":1}"
+        }
+      ],
+      "danger_seen": [
+        "确定导入"
+      ],
+      "ui_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页\n客户详情\nD-0/311.40-EC-TEST-1010\n\n开通的业务：B2B\n\n发货托管： \n已关闭\n会员等级： D\n\n预期月采购额:0元\n\n实际月采购额:311.40元\n\n正式订单\n查看\n消息互动\n账户余额\n账户管理\n模块\n\t\n余额\n\t\n会员身份\n\t\n会员到期时间\n\t\n累计充值金额\n\t\n首次入金金额\n\t\n首次入金时间\nB2B\n\t\n994205.08\n\t\n\t\n2099-12-31 23:59:59\n\t\n0\n\t\n\t\n01基本情報記入\n\n注册时间：2025-12-20\n\n02資料审核\n\n联系电话：101010 \n\n接收电话沟通时间：10\n\n03发送审查结果\n当前状态： 已审核\n04下单前相谈\n当前状态：无需沟通\n模块\n\t\n客户经理\n\t\n业务\n\t\n采购\nB2B\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n注册信息\n推荐商品\n客户收藏\n客户足迹\n子账号信息\n批量导入\n导入记录\n最近批次与审计日志\n批量导入\n批次号\n\t\n模板类型\n\t\n状态\n\t\n总条数\n\t\n成功\n\t\n失败\n\t\n文件名\n\t\n最近审计\n\t\n导入时间\n\t\n操作\nBI202605131302055151\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:02:05\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301572316\n\t\n7182\n\t\n校验中\n\t\n4765\n\t\n0\n\t\n0\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:57\n\t\n失败明细\n审计\n\nBI202605131301479198\n\t\n7182\n\t\n失败\n\t\n4765\n\t\n1528\n\t\n3237\n\t\n补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx\n\t\n2026-05-13 13:01:47\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301438594\n\t\n7561 ZOZO\n\t\n失败\n\t\n227\n\t\n138\n\t\n89\n\t\n1110発注書_zozo.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1110発注書_zozo.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n\nBI202605131301435223\n\t\n7561 自用仓库\n\t\n失败\n\t\n252\n\t\n154\n\t\n98\n\t\n1104発注書_自社倉庫.xlsx\n\t\n预览批次创建 ：创建预览批次，文件：1104発注書_自社倉庫.xlsx\n\t\n2026-05-13 13:01:43\n\t\n失败明细\n审计\n重新导入\n共 5 条\n10条/页\n1\n批量导入\n将 Excel 文件拖到此处，或 点击选择\n支持 Excel(.xlsx) 格式\n导入文件列表\n\t\n文档名称\n\t\n文档大小\n\t\n导入进度\n\t\n导入结果\n\t\n操作\n\t\n1110発注書_zozo.xlsx\n\t\n< 1M\n\t\n100%\n\t\n待导入\n\t\n删除\n报错\n比价\n本次已上传1个文件，1个 报错\n分批导入\n确定导入",
+      "note": "No final import/cart/order confirmation clicked."
+    }
+  ],
+  "responses": [
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/js/validate.5STkGzy2.js",
+      "status": 200,
+      "method": "GET",
+      "post_data": null
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/css/FormalOrder%E2%80%8C.CJnvGvVs.css",
+      "status": 200,
+      "method": "GET",
+      "post_data": null
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/js/FormalOrder%E2%80%8C.Do7dQ2XK.js",
+      "status": 200,
+      "method": "GET",
+      "post_data": null
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/js/FormalOrder%E2%80%8C.Do7dQ2XK.js",
+      "status": 200,
+      "method": "GET",
+      "post_data": null
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/css/FormalOrder%E2%80%8C.CJnvGvVs.css",
+      "status": 200,
+      "method": "GET",
+      "post_data": null
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/js/validate.5STkGzy2.js",
+      "status": 200,
+      "method": "GET",
+      "post_data": null
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"\",\"name\":\"\",\"user_id\":\"\",\"email\":\"\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"\",\"name\":\"\",\"user_id\":\"\",\"email\":\"mxnrq@airsworld.net\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/detail",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"user_uuid\":\"KOR8\"}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/batchImport/record",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"user_uuid\":\"KOR8\",\"user_main_uuid\":\"KOR8\",\"page\":1,\"limit\":10}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/batchImport/preview",
+      "status": 200,
+      "method": "POST",
+      "post_data": null
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/batchImport/record",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"user_uuid\":\"KOR8\",\"user_main_uuid\":\"KOR8\",\"page\":1,\"limit\":10}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/batchImport/preview",
+      "status": 200,
+      "method": "POST",
+      "post_data": null
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/batchImport/detail",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"batch_no\":\"BI202605131302055151\",\"page\":1,\"limit\":1}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/batchImport/record",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"user_uuid\":\"KOR8\",\"user_main_uuid\":\"KOR8\",\"page\":1,\"limit\":10}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/batchImport/preview",
+      "status": 200,
+      "method": "POST",
+      "post_data": null
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/batchImport/detail",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"batch_no\":\"BI202605131302186290\",\"page\":1,\"limit\":1}"
+    }
+  ],
+  "console": [],
+  "errors": [],
+  "mispath_to_record": [
+    {
+      "path": "/b2b/dashboard/complain",
+      "note": "previous wrong menu path entered complaint records"
+    },
+    {
+      "path": "/b2b/user/list random detail",
+      "note": "previous random details raised Detail.CJe9Pxqh.js Cannot read properties of undefined (reading 'China/Poland/Turkey/...') and no batch import tab"
+    }
+  ],
+  "status": "COMPLETED_UPLOAD_PARSE_OBSERVATION",
+  "ended_at": "2026-05-13 13:02:24"
+}

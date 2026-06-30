@@ -1,0 +1,102 @@
+{
+  "started_at": "2026-05-13 12:59:32",
+  "guardrails": [
+    "no_8160",
+    "no_final_confirm_import",
+    "no_cart_write",
+    "no_order_generation"
+  ],
+  "target_customer": {
+    "email": "mxnrq@airsworld.net",
+    "expected_from_user": {
+      "name": "TEST-1010",
+      "display": "D-0/311.40-EC-TEST-1010",
+      "phone": "+82 101010",
+      "country": "??"
+    },
+    "actual_search_result": {
+      "found": false,
+      "excerpt": "ee-supply\n\n欢迎回来 👋🏻\n\n请输入您的帐户信息登录系统\n\n账号\n密码\n记住账号\n登录"
+    }
+  },
+  "steps": [
+    {
+      "name": "????",
+      "status": "PASS",
+      "detail": {
+        "note": "?????????"
+      },
+      "evidence": {
+        "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_00_login_page.png",
+        "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_00_login_page.json",
+        "text_excerpt": "ee-supply\n\n欢迎回来 👋🏻\n\n请输入您的帐户信息登录系统\n\n账号\n密码\n记住账号\n登录"
+      }
+    },
+    {
+      "name": "backend_target_upload ?? /b2b/user/list",
+      "status": "PASS",
+      "detail": {
+        "url": "https://wlz-admin-all-view.hubbuyer.com/login"
+      },
+      "evidence": {
+        "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_01_b2b_user_list.png",
+        "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_01_b2b_user_list.json",
+        "text_excerpt": "ee-supply\n\n欢迎回来 👋🏻\n\n请输入您的帐户信息登录系统\n\n账号\n密码\n记住账号\n登录"
+      }
+    },
+    {
+      "name": "backend_target_upload ????????",
+      "status": "BLOCKED",
+      "detail": {
+        "fill": {
+          "filled": false,
+          "label": "??",
+          "value": "mxnrq@airsworld.net"
+        },
+        "query_click": {
+          "clicked": false,
+          "label": "??",
+          "error": null
+        },
+        "found_email": false,
+        "actual": {}
+      },
+      "evidence": {
+        "png": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_04_after_email_query.png",
+        "json": "D:\\test_workspace\\output\\playwright\\global_batch_import\\agent2\\backend_target_upload_04_after_email_query.json",
+        "text_excerpt": "ee-supply\n\n欢迎回来 👋🏻\n\n请输入您的帐户信息登录系统\n\n账号\n密码\n记住账号\n登录"
+      }
+    }
+  ],
+  "upload_results": [],
+  "responses": [
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/js/validate.5STkGzy2.js",
+      "status": 200,
+      "method": "GET",
+      "post_data": null
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/js/validate.5STkGzy2.js",
+      "status": 200,
+      "method": "GET",
+      "post_data": null
+    }
+  ],
+  "console": [],
+  "errors": [],
+  "mispath_to_record": [
+    {
+      "path": "/b2b/dashboard/complain",
+      "note": "???? B2B ??????????????????"
+    },
+    {
+      "path": "/b2b/user/list random detail",
+      "note": "?????????????Detail.CJe9Pxqh.js ? Cannot read properties of undefined (reading 'China/Poland/Turkey/...')???????? tab"
+    }
+  ],
+  "status": "BLOCKED",
+  "fatal_error": "RuntimeError('target email not found after query')",
+  "fatal_traceback": "Traceback (most recent call last):\n  File \"<stdin>\", line 486, in <module>\n  File \"<stdin>\", line 258, in go_search_target\nRuntimeError: target email not found after query\n",
+  "ended_at": "2026-05-13 12:59:44"
+}

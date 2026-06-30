@@ -1,0 +1,1062 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>购物车-附加项管理示例页面</title>
+  <style>
+    :root {
+      --primary: #022559;
+      --accent: #b4272b;
+      --text: #1f2937;
+      --muted: #667085;
+      --weak: #98a2b3;
+      --line: #cbd4e1;
+      --line-soft: #dbe3ee;
+      --bg: #f4f6f8;
+      --panel: #fff;
+      --head: #e5ebf3;
+      --row: #f6f8fb;
+      --chip: #eef3f9;
+      --warn: #ff4d00;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      margin: 0;
+      min-width: 1280px;
+      height: 100%;
+      overflow: hidden;
+      color: var(--text);
+      background: var(--bg);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .page {
+      height: 100vh;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 66px;
+      padding: 0 28px;
+      border-bottom: 1px solid #e5e9f0;
+      background: #fff;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--primary);
+      font-size: 20px;
+      font-weight: 850;
+    }
+
+    .logo {
+      width: 44px;
+      height: 34px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 18px 17px, #fff 0 9px, transparent 10px),
+        radial-gradient(circle at 18px 17px, var(--accent) 0 15px, transparent 16px);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      height: 20px;
+      padding: 0 8px;
+      border-radius: 4px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .tools {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--primary);
+    }
+
+    .tool {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 32px;
+      padding: 0 14px;
+      border: 1px solid var(--primary);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      height: calc(100vh - 66px);
+      min-height: 0;
+    }
+
+    .side {
+      overflow: hidden;
+      padding: 18px 4px 18px 0;
+      border-right: 1px solid #e3e8f0;
+      background: #fff;
+    }
+
+    .menu-item,
+    .sub-item {
+      height: 42px;
+      padding: 0 20px;
+      color: #17345f;
+      font-size: 15px;
+      line-height: 42px;
+      white-space: nowrap;
+    }
+
+    .menu-item { font-weight: 650; }
+
+    .sub-item {
+      margin-left: 12px;
+      border-radius: 0 6px 6px 0;
+      color: #344054;
+    }
+
+    .sub-item.active {
+      background: #e7ecf3;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .main {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 0;
+      padding: 0 12px;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .crumb {
+      height: 38px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 38px;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(128px, 172px)) minmax(0, 1fr);
+      gap: 8px;
+      height: 44px;
+      padding: 4px 8px 0;
+      background: var(--bg);
+    }
+
+    .tab {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      height: 40px;
+      border-radius: 4px 4px 0 0;
+      background: #dce3ec;
+      color: #344054;
+      font-weight: 800;
+    }
+
+    .tab.active {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: 338px minmax(0, 1fr);
+      flex: 1 1 auto;
+      min-height: 0;
+      padding: 8px;
+      gap: 8px;
+      background: #fff;
+    }
+
+    .product-pane,
+    .service-pane {
+      min-height: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .product-pane {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .seller-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 38px;
+      padding: 0 10px;
+      border-bottom: 1px solid var(--line);
+      background: var(--head);
+      font-weight: 850;
+    }
+
+    .check {
+      position: relative;
+      width: 14px;
+      height: 14px;
+      border: 1px solid #cbd4e1;
+      border-radius: 2px;
+      background: #fff;
+      flex: 0 0 auto;
+      cursor: pointer;
+    }
+
+    .check.checked {
+      border-color: var(--primary);
+      background: var(--primary);
+    }
+
+    .check.checked::after {
+      content: "";
+      position: absolute;
+      left: 3px;
+      top: 1px;
+      width: 5px;
+      height: 8px;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(45deg);
+    }
+
+    .seller-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 5px;
+      background: var(--warn);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 850;
+    }
+
+    .product-list {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: auto;
+      scrollbar-width: thin;
+    }
+
+    .product-row {
+      display: grid;
+      grid-template-columns: 24px 64px minmax(0, 1fr);
+      gap: 10px;
+      min-height: 104px;
+      padding: 10px;
+      border-bottom: 1px solid var(--line-soft);
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .product-row.is-selected {
+      background: #f7faff;
+    }
+
+    .photo,
+    .service-img {
+      position: relative;
+      border: 1px solid var(--line-soft);
+      border-radius: 5px;
+      background-color: #f8fafc;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      flex: 0 0 auto;
+    }
+
+    .photo {
+      width: 64px;
+      height: 64px;
+      margin-top: 4px;
+    }
+
+    .photo::after,
+    .service-img::after {
+      content: "+";
+      position: absolute;
+      right: -7px;
+      bottom: -6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 17px;
+      height: 17px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      background: #52606f;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, .18);
+    }
+
+    .product-info {
+      min-width: 0;
+      color: var(--muted);
+      line-height: 20px;
+    }
+
+    .product-title {
+      display: block;
+      overflow: hidden;
+      max-width: 205px;
+      color: var(--text);
+      font-weight: 750;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .product-meta {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+      margin-top: 3px;
+    }
+
+    .product-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 7px;
+      color: var(--text);
+      font-size: 12px;
+    }
+
+    .count {
+      color: var(--text);
+      font-weight: 750;
+    }
+
+    .mini-icons {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      flex-shrink: 0;
+    }
+
+    .mini-icons img {
+      display: block;
+      width: 15px;
+      height: 15px;
+      object-fit: contain;
+      cursor: pointer;
+    }
+
+    .mini-icons .mini-icon-list {
+      width: 14px;
+      height: 16px;
+    }
+
+    .mini-icons .mini-icon-fba {
+      width: 18px;
+      height: 14px;
+    }
+
+    .service-pane {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 40px;
+      padding: 0 14px;
+      border-bottom: 1px solid var(--line);
+      background: #f2f4f7;
+    }
+
+    .fee-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+    }
+
+    .fee-summary {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 78px;
+      line-height: 1.12;
+    }
+
+    .fee-count {
+      color: var(--text);
+      font-weight: 850;
+    }
+
+    .fee-amount {
+      color: #c40000;
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .info-dot {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #b6beca;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 850;
+    }
+
+    .outline-btn,
+    .primary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 94px;
+      height: 32px;
+      padding: 0 18px;
+      border: 1px solid var(--primary);
+      border-radius: 4px;
+      background: #fff;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .primary-btn {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .guide-btn {
+      min-width: auto;
+      height: 28px;
+      padding: 0 12px;
+      border-radius: 999px;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      gap: 14px;
+    }
+
+    .service-scroll {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow-y: auto;
+      padding: 0 0 10px;
+      scrollbar-width: thin;
+      background: #fff;
+    }
+
+    .service-block {
+      margin: 10px 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .block-title {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      padding: 0 14px;
+      border-bottom: 1px solid var(--line);
+      background: var(--head);
+      color: var(--primary);
+      font-weight: 850;
+    }
+
+    .block-title::before {
+      content: "";
+      width: 4px;
+      height: 16px;
+      margin-right: 8px;
+      border-radius: 99px;
+      background: var(--primary);
+    }
+
+    .select-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 410px;
+      height: 34px;
+      margin: 8px 12px 10px;
+      padding: 0 12px;
+      border: 1px solid #d8dfeb;
+      border-radius: 4px;
+      background: #f7f7f8;
+      color: #c0c4cc;
+    }
+
+    .select-placeholder::after {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-right: 1px solid #a8b0bb;
+      border-bottom: 1px solid #a8b0bb;
+      transform: rotate(45deg);
+    }
+
+    .service-group {
+      padding: 8px 10px 4px;
+    }
+
+    .group-title {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 8px;
+      margin: 4px 0 8px;
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .group-title::after {
+      content: "";
+      border-top: 1px dashed var(--primary);
+    }
+
+    .option-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px 10px;
+    }
+
+    .service-option {
+      position: relative;
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr) 18px;
+      gap: 10px;
+      align-items: center;
+      min-height: 64px;
+      padding: 8px 8px 8px 10px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      background: #f2f5f9;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .service-option > span:not(.service-img):not(.help) {
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .service-option:hover {
+      z-index: 1;
+      background: #fffafa;
+      box-shadow: inset 0 0 0 1px #f1c9cc;
+    }
+
+    .service-option.is-selected {
+      z-index: 1;
+      background: #fff8f8;
+      box-shadow: inset 0 0 0 1px #e16a70;
+    }
+
+    .service-option.is-selected::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-right: 30px solid #c92a32;
+      border-top: 30px solid transparent;
+    }
+
+    .service-option.is-selected::before {
+      content: "✓";
+      position: absolute;
+      right: 3px;
+      bottom: 0;
+      z-index: 2;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .service-option.is-selected .service-name,
+    .service-option.is-selected .service-price strong {
+      color: #1f2937;
+      font-weight: 700;
+    }
+
+    .service-img {
+      width: 42px;
+      height: 42px;
+      background-size: contain;
+    }
+
+    .placeholder-img {
+      background: url('assets/placeholder-image.png') center / contain no-repeat;
+    }
+
+    .service-name {
+      display: block;
+      overflow: hidden;
+      max-width: 100%;
+      color: var(--text);
+      font-weight: 650;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .service-price {
+      margin-top: 2px;
+      color: #777;
+      font-size: 14px;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
+    .service-price strong {
+      display: block;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 850;
+      line-height: 18px;
+    }
+
+    .service-price span {
+      display: block;
+      color: #777;
+      font-size: 13px;
+      line-height: 18px;
+    }
+
+    .help {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #b8bec6;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 850;
+    }
+
+    .name-tooltip {
+      position: fixed;
+      z-index: 50;
+      display: none;
+      max-width: min(480px, calc(100vw - 32px));
+      padding: 7px 10px;
+      border: 1px solid #b8c6d9;
+      border-radius: 4px;
+      background: #fff;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 650;
+      line-height: 20px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, .16);
+      pointer-events: none;
+      word-break: break-all;
+    }
+
+    .bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      padding: 0 32px 0 12px;
+      border-top: 1px solid var(--line);
+      background: #fff;
+      box-shadow: 0 -8px 18px rgba(15, 23, 42, .08);
+    }
+
+    .bottom-left {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bottom-actions {
+      display: flex;
+      gap: 26px;
+    }
+
+    .bottom-actions .outline-btn,
+    .bottom-actions .primary-btn {
+      min-width: 122px;
+    }
+
+    .side-handle {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 54px;
+      border-radius: 6px 0 0 6px;
+      background: var(--primary);
+      transform: translateY(-50%);
+    }
+
+    .side-handle::before {
+      content: "";
+      width: 13px;
+      height: 13px;
+      border-left: 3px solid #fff;
+      border-bottom: 3px solid #fff;
+      transform: rotate(45deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand"><span class="logo"></span><span>さくら代行 &amp; Hubbuyer</span><span class="tag">B2B</span></div>
+      <div class="tools">
+        <span class="tool">营业日</span>
+        <span class="tool">简体中文</span>
+        <span class="tool">🇨🇳 1 CNY ≈ 🇺🇸 0.16 USD</span>
+        <span>CHN20</span>
+        <span class="tool">退出登录</span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="side">
+        <div class="menu-item">个人中心</div>
+        <div class="menu-item">重要待办</div>
+        <div class="menu-item">购物车</div>
+        <div class="sub-item active">购物车</div>
+        <div class="sub-item">预设附加项</div>
+        <div class="menu-item">B2B代行...</div>
+        <div class="menu-item">发货配送</div>
+        <div class="menu-item">资金管理</div>
+        <div class="menu-item">推荐商品</div>
+        <div class="menu-item">我的收藏</div>
+        <div class="menu-item">我的足迹</div>
+        <div class="menu-item">账户设置</div>
+      </aside>
+
+      <main class="main">
+        <div class="crumb">购物车 <span>›</span> 购物车</div>
+        <section class="content">
+          <nav class="tabs" aria-label="附加项类型">
+            <span class="tab active">▣ 附加项管理</span>
+            <span class="tab">▣ 番号管理</span>
+            <span class="tab">● 贴纸制作</span>
+            <span class="tab">▰ 吊牌制作</span>
+            <span class="tab">▤ 洗标制作</span>
+            <span class="tab">FBA FBA制作</span>
+          </nav>
+
+          <div class="workspace">
+            <aside class="product-pane" aria-label="购物车商品">
+              <div class="seller-row"><span class="check"></span><span class="seller-icon">花</span><span>林迪福顿</span></div>
+              <div class="product-list">
+                <div class="product-row is-selected">
+                  <span class="check"></span>
+                  <span class="photo" style="background-image:url('assets/product-images/0004_587394448252_6ea3415013.jpg')"></span>
+                  <div class="product-info">
+                    <span class="product-title" title="2026石墨稀小蛮腰卫衣女秋冬内搭">2026石墨稀小蛮腰卫衣女秋冬内搭</span>
+                    <div>颜色：可可卡-立领　尺码：3XL</div>
+                    <div class="product-meta"><span>MySKU：--</span><span class="count">x 2</span></div>
+                    <div class="product-actions"><span>共 <b style="color:#c40000">1</b> 种附加项⌄</span><span class="mini-icons"><img src="assets/addon-icons/addon-dot.png" alt="贴纸" title="贴纸"><img src="assets/addon-icons/addon-tag.png" alt="吊牌" title="吊牌"><img class="mini-icon-list" src="assets/addon-icons/addon-list.png" alt="洗标" title="洗标"><img class="mini-icon-fba" src="assets/addon-icons/addon-fba.png" alt="FBA" title="FBA"></span></div>
+                  </div>
+                </div>
+                <div class="product-row">
+                  <span class="check"></span>
+                  <span class="photo" style="background-image:url('assets/product-images/0004_587394448252_6ea3415013.jpg')"></span>
+                  <div class="product-info">
+                    <span class="product-title" title="2026石墨稀小蛮腰卫衣女秋冬内搭">2026石墨稀小蛮腰卫衣女秋冬内搭</span>
+                    <div>颜色：可可卡-立领　尺码：2XL</div>
+                    <div class="product-meta"><span>MySKU：--</span><span class="count">x 2</span></div>
+                    <div class="product-actions"><span>共 <b style="color:#c40000">1</b> 种附加项⌄</span><span class="mini-icons"><img src="assets/addon-icons/addon-dot.png" alt="贴纸" title="贴纸"><img src="assets/addon-icons/addon-tag.png" alt="吊牌" title="吊牌"><img class="mini-icon-list" src="assets/addon-icons/addon-list.png" alt="洗标" title="洗标"><img class="mini-icon-fba" src="assets/addon-icons/addon-fba.png" alt="FBA" title="FBA"></span></div>
+                  </div>
+                </div>
+                <div class="product-row">
+                  <span class="check"></span>
+                  <span class="photo" style="background-image:url('assets/product-images/0004_587394448252_6ea3415013.jpg')"></span>
+                  <div class="product-info">
+                    <span class="product-title" title="2026石墨稀小蛮腰卫衣女秋冬内搭">2026石墨稀小蛮腰卫衣女秋冬内搭</span>
+                    <div>颜色：可可卡-立领　尺码：XL</div>
+                    <div class="product-meta"><span>MySKU：--</span><span class="count">x 2</span></div>
+                    <div class="product-actions"><span>共 <b style="color:#c40000">1</b> 种附加项⌄</span><span class="mini-icons"><img src="assets/addon-icons/addon-dot.png" alt="贴纸" title="贴纸"><img src="assets/addon-icons/addon-tag.png" alt="吊牌" title="吊牌"><img class="mini-icon-list" src="assets/addon-icons/addon-list.png" alt="洗标" title="洗标"><img class="mini-icon-fba" src="assets/addon-icons/addon-fba.png" alt="FBA" title="FBA"></span></div>
+                  </div>
+                </div>
+                <div class="product-row">
+                  <span class="check"></span>
+                  <span class="photo" style="background-image:url('assets/product-images/0004_587394448252_6ea3415013.jpg')"></span>
+                  <div class="product-info">
+                    <span class="product-title" title="2026石墨稀小蛮腰卫衣女秋冬内搭">2026石墨稀小蛮腰卫衣女秋冬内搭</span>
+                    <div>颜色：可可卡-立领　尺码：L</div>
+                    <div class="product-meta"><span>MySKU：--</span><span class="count">x 2</span></div>
+                    <div class="product-actions"><span>共 <b style="color:#c40000">1</b> 种附加项⌄</span><span class="mini-icons"><img src="assets/addon-icons/addon-dot.png" alt="贴纸" title="贴纸"><img src="assets/addon-icons/addon-tag.png" alt="吊牌" title="吊牌"><img class="mini-icon-list" src="assets/addon-icons/addon-list.png" alt="洗标" title="洗标"><img class="mini-icon-fba" src="assets/addon-icons/addon-fba.png" alt="FBA" title="FBA"></span></div>
+                  </div>
+                </div>
+                <div class="product-row">
+                  <span class="check"></span>
+                  <span class="photo" style="background-image:url('assets/product-images/0004_587394448252_6ea3415013.jpg')"></span>
+                  <div class="product-info">
+                    <span class="product-title" title="2026石墨稀小蛮腰卫衣女秋冬内搭">2026石墨稀小蛮腰卫衣女秋冬内搭</span>
+                    <div>颜色：可可卡-立领　尺码：M</div>
+                    <div class="product-meta"><span>MySKU：--</span><span class="count">x 2</span></div>
+                    <div class="product-actions"><span>共 <b style="color:#c40000">1</b> 种附加项⌄</span><span class="mini-icons"><img src="assets/addon-icons/addon-dot.png" alt="贴纸" title="贴纸"><img src="assets/addon-icons/addon-tag.png" alt="吊牌" title="吊牌"><img class="mini-icon-list" src="assets/addon-icons/addon-list.png" alt="洗标" title="洗标"><img class="mini-icon-fba" src="assets/addon-icons/addon-fba.png" alt="FBA" title="FBA"></span></div>
+                  </div>
+                </div>
+                <div class="product-row">
+                  <span class="check"></span>
+                  <span class="photo" style="background-image:url('assets/product-images/0003_651901354875_a6aa381c1c.jpg')"></span>
+                  <div class="product-info">
+                    <span class="product-title" title="2026石墨稀小蛮腰卫衣女秋冬内搭">2026石墨稀小蛮腰卫衣女秋冬内搭</span>
+                    <div>颜色：粉色-立领　尺码：3XL</div>
+                    <div class="product-meta"><span>MySKU：--</span><span class="count">x 2</span></div>
+                    <div class="product-actions"><span>共 <b style="color:#c40000">1</b> 种附加项⌄</span><span class="mini-icons"><img src="assets/addon-icons/addon-dot.png" alt="贴纸" title="贴纸"><img src="assets/addon-icons/addon-tag.png" alt="吊牌" title="吊牌"><img class="mini-icon-list" src="assets/addon-icons/addon-list.png" alt="洗标" title="洗标"><img class="mini-icon-fba" src="assets/addon-icons/addon-fba.png" alt="FBA" title="FBA"></span></div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+
+            <section class="service-pane" aria-label="附加项管理">
+              <div class="service-toolbar">
+                <div class="fee-line">预估附加项费用：<span class="fee-summary"><span class="fee-count" id="selectedServiceCount">0项</span><span class="fee-amount" id="estimatedServiceFee">0.00 CNY</span></span><span class="info-dot">!</span><span class="outline-btn guide-btn">操作指南</span></div>
+                <div class="toolbar-actions"><span class="outline-btn">重置</span><span class="primary-btn">保存</span></div>
+              </div>
+              <div class="service-scroll">
+                <section class="service-block">
+                  <div class="block-title">预设附加项选择</div>
+                  <div class="select-placeholder">预设附加项选择</div>
+                </section>
+
+                <section class="service-block">
+                  <div class="block-title">*检品方式(单选) <span class="outline-btn guide-btn" style="margin-left:10px">质检标准?</span></div>
+                  <div class="service-group">
+                    <div class="option-grid">
+                      <div class="service-option is-selected"><span class="service-img" style="background-image:url('assets/product-images/0001_617991002984_5dcf73bbe1.jpg')"></span><span><span class="service-name" title="抽样详细">抽样详细</span><span class="service-price"><strong>免费</strong><span>0.00 CNY</span></span></span><span class="help">?</span></div>
+                      <div class="service-option"><span class="service-img" style="background-image:url('assets/product-images/0002_612575121554_adceef2c64.jpg')"></span><span><span class="service-name" title="全数宽松">全数宽松</span><span class="service-price"><strong>2.00</strong><span>CNY / 件</span></span></span><span class="help">?</span></div>
+                      <div class="service-option"><span class="service-img" style="background-image:url('assets/product-images/0003_651901354875_a6aa381c1c.jpg')"></span><span><span class="service-name" title="全数详细">全数详细</span><span class="service-price"><strong>2.50</strong><span>CNY / 件</span></span></span><span class="help">?</span></div>
+                      <div class="service-option"><span class="service-img" style="background-image:url('assets/product-images/0004_587394448252_6ea3415013.jpg')"></span><span><span class="service-name" title="计时检品">计时检品</span><span class="service-price"><strong>15.00</strong><span>CNY / 0.5H</span></span></span><span class="help">?</span></div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="service-block">
+                  <div class="block-title">附加项(多选)</div>
+                  <div class="service-group">
+                    <div class="group-title">剪标作业费</div>
+                    <div class="option-grid">
+                      <div class="service-option"><span class="service-img placeholder-img"></span><span><span class="service-name" title="（吊牌，领标，洗标）剪除">（吊牌，领标，洗标）剪除</span><span class="service-price"><strong>2.00</strong><span>CNY / 件</span></span></span><span class="help">?</span></div>
+                      <div class="service-option"><span class="service-img placeholder-img"></span><span><span class="service-name" title="吊牌去除（去除）">吊牌去除（去除）</span><span class="service-price"><strong>免费</strong><span>0.00 CNY</span></span></span><span class="help">?</span></div>
+                      <div class="service-option"><span class="service-img placeholder-img"></span><span><span class="service-name" title="领标去除（去除）">领标去除（去除）</span><span class="service-price"><strong>1.00</strong><span>CNY / 件</span></span></span><span class="help">?</span></div>
+                      <div class="service-option"><span class="service-img placeholder-img"></span><span><span class="service-name" title="洗标去除（去除）">洗标去除（去除）</span><span class="service-price"><strong>1.00</strong><span>CNY / 件</span></span></span><span class="help">?</span></div>
+                    </div>
+                  </div>
+                  <div class="service-group">
+                    <div class="group-title">各标替换作业费</div>
+                    <div class="option-grid">
+                      <div class="service-option"><span class="service-img" style="background-image:url('assets/product-images/0001_617991002984_5dcf73bbe1.jpg')"></span><span><span class="service-name" title="另购领标替换">另购领标替换</span><span class="service-price"><strong>2.00</strong><span>CNY / 件</span></span></span><span class="help">?</span></div>
+                    </div>
+                  </div>
+                  <div class="service-group">
+                    <div class="group-title">商品包装更换费</div>
+                    <div class="option-grid">
+                      <div class="service-option"><span class="service-img" style="background-image:url('assets/product-images/0002_612575121554_adceef2c64.jpg')"></span><span><span class="service-name" title="通常OPP袋更换">通常OPP袋更换</span><span class="service-price"><strong>0.50</strong><span>CNY / 件</span></span></span><span class="help">?</span></div>
+                      <div class="service-option"><span class="service-img placeholder-img"></span><span><span class="service-name" title="（另购）OPP袋/パック更换">（另购）OPP袋/パック更换</span><span class="service-price"><strong>0.50</strong><span>CNY / 件</span></span></span><span class="help">?</span></div>
+                      <div class="service-option"><span class="service-img placeholder-img"></span><span><span class="service-name" title="去掉商品箱--更换成OPP袋">去掉商品箱--更换成OPP袋</span><span class="service-price"><strong>0.50</strong><span>CNY / 件</span></span></span><span class="help">?</span></div>
+                      <div class="service-option"><span class="service-img placeholder-img"></span><span><span class="service-name" title="（另购）需折叠商品箱--更换成OPP袋">（另购）需折叠商品箱--更换成OPP袋</span><span class="service-price"><strong>1.50</strong><span>CNY / 件</span></span></span><span class="help">?</span></div>
+                    </div>
+                  </div>
+                  <div class="service-group">
+                    <div class="group-title">贴纸作业费</div>
+                    <div class="option-grid">
+                      <div class="service-option"><span class="service-img" style="background-image:url('assets/product-images/0003_651901354875_a6aa381c1c.jpg')"></span><span><span class="service-name" title="另购水晶贴">另购水晶贴</span><span class="service-price"><strong>1.00</strong><span>CNY / 件</span></span></span><span class="help">?</span></div>
+                      <div class="service-option"><span class="service-img placeholder-img"></span><span><span class="service-name" title="贴--尺寸标（有必要的-客户指定位置）">贴--尺寸标（有必要的-客户指定位置）</span><span class="service-price"><strong>0.30</strong><span>CNY / 件</span></span></span><span class="help">?</span></div>
+                      <div class="service-option"><span class="service-img" style="background-image:url('assets/product-images/0004_587394448252_6ea3415013.jpg')"></span><span><span class="service-name" title="中国制造贴">中国制造贴</span><span class="service-price"><strong>0.30</strong><span>CNY / 件</span></span></span><span class="help">?</span></div>
+                      <div class="service-option"><span class="service-img" style="background-image:url('assets/product-images/0001_617991002984_5dcf73bbe1.jpg')"></span><span><span class="service-name" title="年龄贴">年龄贴</span><span class="service-price"><strong>0.30</strong><span>CNY / 件</span></span></span><span class="help">?</span></div>
+                    </div>
+                  </div>
+                  <div class="service-group">
+                    <div class="group-title">商品包装作业费</div>
+                    <div class="option-grid">
+                      <div class="service-option"><span class="service-img" style="background-image:url('assets/product-images/0002_612575121554_adceef2c64.jpg')"></span><span><span class="service-name" title="垫薄油纸">垫薄油纸</span><span class="service-price"><strong>0.50</strong><span>CNY / 件</span></span></span><span class="help">?</span></div>
+                      <div class="service-option"><span class="service-img" style="background-image:url('assets/product-images/0003_651901354875_a6aa381c1c.jpg')"></span><span><span class="service-name" title="垫衬板">垫衬板</span><span class="service-price"><strong>1.00</strong><span>CNY / 件</span></span></span><span class="help">?</span></div>
+                      <div class="service-option"><span class="service-img" style="background-image:url('assets/product-images/0004_587394448252_6ea3415013.jpg')"></span><span><span class="service-name" title="开扣眼">开扣眼</span><span class="service-price"><strong>0.50</strong><span>CNY / 件</span></span></span><span class="help">?</span></div>
+                      <div class="service-option"><span class="service-img placeholder-img"></span><span><span class="service-name" title="熨烫">熨烫</span><span class="service-price"><strong>3.00</strong><span>CNY / 件</span></span></span><span class="help">?</span></div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </section>
+          </div>
+
+          <div class="bottom-bar">
+            <div class="bottom-left"><span class="check"></span><span>全选</span></div>
+            <div class="bottom-actions"><span class="outline-btn">上一步</span><span class="primary-btn">下一步</span></div>
+          </div>
+        </section>
+        <div class="side-handle" aria-hidden="true"></div>
+      </main>
+    </div>
+  </div>
+  <script>
+    const nameTooltip = document.createElement("div");
+    nameTooltip.className = "name-tooltip";
+    document.body.appendChild(nameTooltip);
+
+    function showNameTooltip(node) {
+      const text = node.dataset.fullText || node.textContent.trim();
+      if (!text) return;
+      const rect = node.getBoundingClientRect();
+      nameTooltip.textContent = text;
+      nameTooltip.style.display = "block";
+
+      const tooltipRect = nameTooltip.getBoundingClientRect();
+      const left = Math.min(
+        Math.max(16, rect.left),
+        window.innerWidth - tooltipRect.width - 16
+      );
+      const top = rect.bottom + tooltipRect.height + 10 > window.innerHeight
+        ? rect.top - tooltipRect.height - 8
+        : rect.bottom + 8;
+
+      nameTooltip.style.left = `${left}px`;
+      nameTooltip.style.top = `${Math.max(16, top)}px`;
+    }
+
+    function hideNameTooltip() {
+      nameTooltip.style.display = "none";
+    }
+
+    document.querySelectorAll(".product-title, .service-name").forEach(node => {
+      const fullText = node.getAttribute("title") || node.textContent.trim();
+      node.dataset.fullText = fullText;
+      node.removeAttribute("title");
+      node.addEventListener("mouseenter", () => showNameTooltip(node));
+      node.addEventListener("mouseleave", hideNameTooltip);
+    });
+
+    document.querySelectorAll(".mini-icons img").forEach(icon => {
+      const fullText = icon.getAttribute("title") || icon.getAttribute("alt") || "";
+      icon.dataset.fullText = fullText;
+      icon.removeAttribute("title");
+      icon.tabIndex = 0;
+      icon.addEventListener("mouseenter", () => showNameTooltip(icon));
+      icon.addEventListener("mouseleave", hideNameTooltip);
+      icon.addEventListener("focus", () => showNameTooltip(icon));
+      icon.addEventListener("blur", hideNameTooltip);
+      icon.addEventListener("click", event => {
+        event.stopPropagation();
+        showNameTooltip(icon);
+      });
+    });
+
+    const productRows = Array.from(document.querySelectorAll(".product-row"));
+    const masterChecks = Array.from(document.querySelectorAll(".seller-row .check, .bottom-left .check"));
+    const serviceOptions = Array.from(document.querySelectorAll(".service-option"));
+    const selectedServiceCount = document.getElementById("selectedServiceCount");
+    const estimatedServiceFee = document.getElementById("estimatedServiceFee");
+
+    function setProductRow(row, selected) {
+      row.classList.toggle("is-selected", selected);
+      const check = row.querySelector(".check");
+      if (check) check.classList.toggle("checked", selected);
+    }
+
+    function updateMasterChecks() {
+      const allSelected = productRows.length > 0 && productRows.every(row => row.classList.contains("is-selected"));
+      masterChecks.forEach(check => check.classList.toggle("checked", allSelected));
+    }
+
+    productRows.forEach(row => {
+      setProductRow(row, row.classList.contains("is-selected"));
+      row.addEventListener("click", event => {
+        event.stopPropagation();
+        setProductRow(row, !row.classList.contains("is-selected"));
+        updateMasterChecks();
+      });
+    });
+
+    masterChecks.forEach(check => {
+      check.addEventListener("click", event => {
+        event.stopPropagation();
+        const nextSelected = !check.classList.contains("checked");
+        productRows.forEach(row => setProductRow(row, nextSelected));
+        updateMasterChecks();
+      });
+    });
+
+    function readOptionPrice(option) {
+      const priceNode = option.querySelector(".service-price strong");
+      if (!priceNode) return 0;
+      const value = parseFloat(priceNode.textContent.replace(/[^\d.]/g, ""));
+      return Number.isFinite(value) ? value : 0;
+    }
+
+    function updateServiceSummary() {
+      const selected = serviceOptions.filter(option => option.classList.contains("is-selected"));
+      const total = selected.reduce((sum, option) => sum + readOptionPrice(option), 0);
+      selectedServiceCount.textContent = `${selected.length}项`;
+      estimatedServiceFee.textContent = `${total.toFixed(2)} CNY`;
+    }
+
+    serviceOptions.forEach(option => {
+      option.addEventListener("click", () => {
+        const block = option.closest(".service-block");
+        const blockTitle = block ? block.querySelector(".block-title") : null;
+        const isSingleChoice = blockTitle && blockTitle.textContent.includes("单选");
+
+        if (isSingleChoice) {
+          block.querySelectorAll(".service-option").forEach(item => item.classList.remove("is-selected"));
+          option.classList.add("is-selected");
+        } else {
+          option.classList.toggle("is-selected");
+        }
+
+        updateServiceSummary();
+      });
+    });
+
+    updateMasterChecks();
+    updateServiceSummary();
+  </script>
+</body>
+</html>

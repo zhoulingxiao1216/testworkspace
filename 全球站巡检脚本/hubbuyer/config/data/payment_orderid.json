@@ -1,0 +1,40 @@
+{
+  "qa1tr@2200freefonts.com": {
+    "B2B": [],
+    "D2C": [],
+    "last_pay_time_B2B": "2026-01-27 08:01:46",
+    "last_pay_time_D2C": "2026-01-27 08:01:46"
+  },
+  "mxnrq@airsworld.net": {
+    "B2B": [
+      "B2B-DD-KOR8-260625-464",
+      "B2B-BJ-KOR8-260625-463",
+      "B2B-BJ-KOR8-260624-462",
+      "B2B-BJ-KOR8-260624-461",
+      "B2B-BJ-KOR8-260623-460",
+      "B2B-BJ-KOR8-260622-459",
+      "B2B-BJ-KOR8-260617-458",
+      "B2B-BJ-KOR8-260617-457",
+      "B2B-BJ-KOR8-260617-456",
+      "B2B-BJ-KOR8-260617-455",
+      "B2B-BJ-KOR8-260617-452",
+      "B2B-BJ-KOR8-260616-402",
+      "B2B-BJ-KOR8-260616-401",
+      "B2B-BJ-KOR8-260616-400",
+      "B2B-BJ-KOR8-260616-399",
+      "B2B-BJ-KOR8-260616-398",
+      "B2B-BJ-KOR8-260616-397",
+      "B2B-BJ-KOR8-260616-396",
+      "B2B-BJ-KOR8-260616-395",
+      "B2B-BJ-KOR8-260616-394"
+    ],
+    "D2C": [],
+    "last_pay_time_B2B": "2026-06-25 18:21:13",
+    "B2B_quote_latest": "B2B-BJ-KOR8-260625-464",
+    "B2B_order_latest": "B2B-DD-KOR8-260625-464",
+    "B2B_quote_pending_pay": "",
+    "B2B_quote_audited": "B2B-BJ-KOR8-260625-464",
+    "B2B_round_order": "B2B-DD-KOR8-260625-464",
+    "B2B_round_quote": "B2B-BJ-KOR8-260625-464"
+  }
+}

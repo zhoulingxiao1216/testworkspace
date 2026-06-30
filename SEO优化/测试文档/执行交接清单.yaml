@@ -1,0 +1,187 @@
+project: SEO优化
+artifact_type: execution_handoff
+owner_agent: Agent1 / Test Architect
+generated_at: 2026-06-12
+execute_cases: false
+
+case_design:
+  source_baseline: SEO优化.txt
+  case_file: SEO优化/测试文档/SEO优化测试用例.md
+  id_rule: TC-<模块缩写>-<三位序号>
+  module_prefix_source: SEO优化/测试文档/superpowers.md
+  total_cases: 40
+  smoke_cases: 13
+  conditional_case_count: 15
+
+priority_distribution:
+  Critical: 16
+  High: 18
+  Medium: 6
+  Low: 0
+  P0: 16
+  P1: 18
+  P2: 6
+  P3: 0
+
+module_distribution:
+  SEO-META: 8
+  SEO-URL: 8
+  SEO-CAT: 6
+  SEO-PDP: 6
+  SEO-I18N: 6
+  SEO-SEC: 6
+
+source_files:
+  requirement: SEO优化/SEO优化.txt
+  requirement_summary: SEO优化/测试文档/架构级需求摘要.md
+  superpowers: SEO优化/测试文档/superpowers.md
+  outline: SEO优化/测试文档/测试点大纲.md
+  cases: SEO优化/测试文档/SEO优化测试用例.md
+  questions: SEO优化/测试文档/审计待确认问题单.md
+  effort_estimate: SEO优化/测试文档/工期评估.md
+
+execution_rounds:
+  - round: R0
+    name: 设计评审
+    scope:
+      - 校验需求范围是否只覆盖首页、产品分类页、产品详情页
+      - 校验模块缩写和用例锚点格式
+      - 确认 URL 生成规则、多语言范围、Schema 字段来源
+    execute_cases: false
+  - round: R1
+    name: Smoke 冒烟候选
+    scope:
+      - 首页 title 和 description 可读取
+      - 分类页和产品页规范 URL
+      - 产品页 Product Schema
+      - hreflang 多语言互链
+      - robots 和 sitemap 核心入口
+    candidate_cases: 13
+    execute_cases: false
+  - round: R2
+    name: 全量功能候选
+    scope:
+      - 元信息可爬取
+      - URL 伪静态
+      - 产品分类页 SEO
+      - 产品详情页 SEO
+      - 多语言与 Schema.org
+      - 安全回归与爬虫入口
+    candidate_cases: 40
+    execute_cases: false
+  - round: R3
+    name: 条件项专项候选
+    scope:
+      - 旧 URL 301 跳转
+      - 分页、筛选、排序 canonical 或 noindex
+      - Product Schema 价格、币种、库存字段
+      - 下架或禁用产品 SEO 策略
+      - 多语言范围和 x-default
+      - sitemap 纳入范围
+    candidate_cases: 15
+    execute_cases: false
+  - round: R4
+    name: 缺陷回归候选
+    scope:
+      - 缺陷关联用例
+      - Smoke 用例
+      - URL、canonical、sitemap 联动复核
+    candidate_cases: dynamic
+    execute_cases: false
+
+conditional_cases:
+  - id: TC-SEO-META-005
+    reason: SEO 后台配置入口和缓存 SLA 需确认
+    suggested_status: Conditional
+  - id: TC-SEO-URL-004
+    reason: 旧 URL 和不规范 URL 的兼容策略需确认
+    suggested_status: Conditional
+  - id: TC-SEO-URL-005
+    reason: 是否要求 301 永久跳转需确认
+    suggested_status: Conditional
+  - id: TC-SEO-URL-007
+    reason: URL 大小写和尾斜杠统一规则需确认
+    suggested_status: Conditional
+  - id: TC-SEO-CAT-005
+    reason: 分类分页、筛选、排序页 canonical/noindex 策略需确认
+    suggested_status: Conditional
+  - id: TC-SEO-PDP-003
+    reason: Product Schema 价格、币种、库存字段来源需确认
+    suggested_status: Conditional
+  - id: TC-SEO-PDP-006
+    reason: 下架或禁用商品的访问和 noindex 策略需确认
+    suggested_status: Conditional
+  - id: TC-SEO-I18N-001
+    reason: 多语言范围需确认
+    suggested_status: Conditional
+  - id: TC-SEO-I18N-002
+    reason: hreflang 覆盖语言集合需确认
+    suggested_status: Conditional
+  - id: TC-SEO-I18N-003
+    reason: 是否输出 x-default 及默认入口需确认
+    suggested_status: Conditional
+  - id: TC-SEO-I18N-004
+    reason: 多语言资料来源和缓存隔离策略需确认
+    suggested_status: Conditional
+  - id: TC-SEO-I18N-005
+    reason: 首页 Schema 类型组合需确认
+    suggested_status: Conditional
+  - id: TC-SEO-I18N-006
+    reason: 分类页和产品页 Schema 类型与字段范围需确认
+    suggested_status: Conditional
+  - id: TC-SEO-SEC-002
+    reason: sitemap 是否纳入本次范围需确认
+    suggested_status: Conditional
+  - id: TC-SEO-SEC-006
+    reason: 缓存刷新方式和 SLA 需确认
+    suggested_status: Conditional
+
+blocking_risks:
+  - id: RISK-001
+    level: High
+    description: Agent2 暂未获得执行授权，本交接清单明确 execute_cases=false
+    affected_cases: all
+  - id: RISK-002
+    level: High
+    description: 分类、产品、旧 URL、多语言和下架商品样本尚未提供
+    affected_cases:
+      - TC-SEO-URL-001
+      - TC-SEO-URL-002
+      - TC-SEO-PDP-006
+      - TC-SEO-I18N-002
+  - id: RISK-003
+    level: High
+    description: URL slug 生成、冲突、大小写和旧链接迁移策略未确认
+    affected_cases:
+      - TC-SEO-URL-004
+      - TC-SEO-URL-005
+      - TC-SEO-URL-006
+      - TC-SEO-URL-007
+  - id: RISK-004
+    level: Medium
+    description: Schema.org 输出类型和字段来源未确认
+    affected_cases:
+      - TC-SEO-CAT-003
+      - TC-SEO-CAT-004
+      - TC-SEO-PDP-002
+      - TC-SEO-PDP-003
+      - TC-SEO-I18N-006
+  - id: RISK-005
+    level: Medium
+    description: robots.txt、sitemap.xml、缓存刷新是否纳入本次范围未确认
+    affected_cases:
+      - TC-SEO-SEC-001
+      - TC-SEO-SEC-002
+      - TC-SEO-SEC-006
+
+agent2_instruction:
+  role: Agent2 / Execution Reviewer
+  execute_cases: false
+  instruction:
+    - 不执行真实测试用例，不修改生产或测试环境 SEO 配置，除非后续用户明确授权
+    - 先做可执行性评审，核对环境、后台账号、分类样本、产品样本、旧 URL 样本、多语言样本
+    - 执行时优先使用 curl、查看源代码、结构化数据解析和 HTTP 状态码验证，不只依据浏览器 DOM
+    - 对 conditional_cases 标记 Conditional 或 Blocked，不作为阻断缺陷直接提交
+    - 若需要修改 slug、title、description，仅在测试环境和获得配置写入授权后执行
+    - 输出评审或执行结果时保留用例锚点 ID，便于回链到测试用例文档
+

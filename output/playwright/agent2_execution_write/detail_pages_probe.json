@@ -1,0 +1,998 @@
+{
+  "quote_detail": {
+    "url": "https://hlc-admin.hubbuyer.com/b2b/order/quote/detail?quote_no=B2B-BJ-JPN34-260423-083",
+    "title": "报价单详情",
+    "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n报价单\n35\n代购订单\n98\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家：Japan\n报价单类型：手动\n报价单编号：B2B-BJ-JPN34-260423-083\n提交日期：2026-04-23 08:30\n支付状态：---\n客户经理：崔红梅\n业务：FRU CHASLEY\n采购：陈牧鹏\n修改负责人\n待审核\n通过\n驳回\n客户信息：S-JPN34-TEST-柴思丽\n一般会员\n报价单提交金额\n\t\n报价单金额\n\t\n禁用金额\n\t\n店铺数\n\t\nSKU数\n\t\n订购数\n\t\n商品金额\n\t\n预估附加项费用\n\t\n代采手续费\n6090.00元\n\t\n6090.00元\n\t\n0.00元\n\t\n1\n\t\n1\n\t\n1000\n\t\n5800.00元\n\t\n0.00元\n\t\n290.00元\n国际物流：\nTW--船运\n预估商品重量：\nKG\n预估国际运费：\n0.00\n商品信息\n\t\n商品属性\n\t\n重量（KG）\n\t\n质检/附加项\n\t\n备注\n\t\n备注图片\n\t\n操作\n深圳市炳晨服饰有限公司\n联系商家\n店铺订单金额：5800.00元\n国内预估运费：\n元\n\n辣妹别致显瘦短袖白色t恤女美式气质小众灰色上衣百搭黑色打底衫\n\nID:B000003858\n\nMySKU:---\nASIN:---\n颜色:黑色;\n尺码:M;\n\n\t\n\n单价:￥5.80\n\n下单数量:1000\n\n小计: 5800.00\n\t\n总重:\n\t\n抽样详细\n查看\n修改\n\t\n备注：---\n回复\n\t\n\t",
+    "dialogs": [],
+    "buttons": [
+      {
+        "idx": 0,
+        "text": "你好， admin",
+        "x": 1312,
+        "y": 19,
+        "w": 88,
+        "h": 14,
+        "cls": "cursor-pointer el-tooltip__trigger el-tooltip__trigger"
+      },
+      {
+        "idx": 1,
+        "text": "通过",
+        "x": 265,
+        "y": 184,
+        "w": 48,
+        "h": 24,
+        "cls": "el-button el-button--primary el-button--small el-tooltip__trigger"
+      },
+      {
+        "idx": 2,
+        "text": "驳回",
+        "x": 271,
+        "y": 208,
+        "w": 48,
+        "h": 24,
+        "cls": "el-button el-button--danger el-button--small el-tooltip__trigger"
+      },
+      {
+        "idx": 3,
+        "text": "查看",
+        "x": 1027,
+        "y": 425,
+        "w": 132,
+        "h": 24,
+        "cls": "el-button el-button--primary el-button--small is-plain w-49% cursor-pointer el-t"
+      },
+      {
+        "idx": 4,
+        "text": "修改",
+        "x": 1171,
+        "y": 425,
+        "w": 132,
+        "h": 24,
+        "cls": "el-button el-button--warning el-button--small is-plain w-49% cursor-pointer"
+      }
+    ],
+    "inputs": [
+      {
+        "idx": 0,
+        "tag": "INPUT",
+        "type": "text",
+        "placeholder": "",
+        "value": "",
+        "x": 450,
+        "y": 245,
+        "w": 106,
+        "h": 20
+      },
+      {
+        "idx": 1,
+        "tag": "INPUT",
+        "type": "number",
+        "placeholder": "请输入商品重量",
+        "value": "0",
+        "x": 717,
+        "y": 244,
+        "w": 102,
+        "h": 22
+      },
+      {
+        "idx": 2,
+        "tag": "INPUT",
+        "type": "text",
+        "placeholder": "请输入预估运费",
+        "value": "0.00",
+        "x": 873,
+        "y": 354,
+        "w": 106,
+        "h": 22
+      },
+      {
+        "idx": 3,
+        "tag": "INPUT",
+        "type": "number",
+        "placeholder": "变化单价",
+        "value": "5.80",
+        "x": 694,
+        "y": 420,
+        "w": 131,
+        "h": 22
+      },
+      {
+        "idx": 4,
+        "tag": "INPUT",
+        "type": "number",
+        "placeholder": "修改数量",
+        "value": "1000",
+        "x": 694,
+        "y": 473,
+        "w": 131,
+        "h": 22
+      },
+      {
+        "idx": 5,
+        "tag": "INPUT",
+        "type": "number",
+        "placeholder": "",
+        "value": "",
+        "x": 901,
+        "y": 396,
+        "w": 94,
+        "h": 22
+      }
+    ],
+    "selects": [
+      {
+        "idx": 0,
+        "text": "TW--船运",
+        "x": 442,
+        "y": 243,
+        "w": 140,
+        "h": 24
+      },
+      {
+        "idx": 1,
+        "text": "TW--船运",
+        "x": 442,
+        "y": 243,
+        "w": 140,
+        "h": 24
+      }
+    ]
+  },
+  "agent_detail": {
+    "url": "https://hlc-admin.hubbuyer.com/b2b/order/agentBuy/detail?order_no=B2B-DD-JPN12-260525-009",
+    "title": "代购订单详情",
+    "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n报价单\n35\n代购订单\n98\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n订单编号：B2B-DD-JPN12-260525-009\n支付日期：2026-05-25 09:40\n客户经理：金月明\n业务：吴四佳\n采购：周凌虓\n修改负责人\n导出excel\n联系客户\n待审核\n允许采购\n客户信息：\nB-JPN12-TEST-朴国哲\n一般会员\n国家：Japan\n订单清算\n店铺数\n\t\nSKU数\n\t\n下单数\n\t\n购入数\n\t\n到货数\n\t\n正品数\n\t\n待检数\n\t\n不良数\n\t\n待定数\n\t\n退货数\n\t\n换货数\n\t\n入库数\n\t\n已发货数\n\t\n可发货数\n1\n\t\n1\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n商品信息\n\t\n商品属性\n\t\n采购\n\t\n到货\n\t\n待检\n\t\n不良\n\t\n待定\n\t\n退/换\n\t\n正品\n\t\n入库\n\t\n已发\n\t\n质检/附加项\n\t\n订单备注\n\t\n操作\nwank666\n联系商家\n一键下单\n一键采购\n一键到货\n一键没货\n国内运单\n\t\n待审核\n\n爆闪平底仿奥钻烫钻服装辅料 电镀玻璃水钻大配饰DIY饰品配件材料\n\nID:D000005011\n\nMySKU:---\nASIN:---\n颜色:P01白色;\n型号:SS6 1.9-2.0mm 1440颗/包;\n\n\t\n\n单价:\n\n￥1.90\n\n下单数量:\n2\n小计: 3.80\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n计时检品\n去全标\n去吊牌\n去洗标\n另购洗标替换\n另购领标替换\n共...10种\n查看\n修改\n\t\n12345678910123456789101234567891011\n12345678910123456789101234567891011\n12345678910123456789101234567891011\n12345678910123456789101234567891011\n12345678910123456789101234567891011\n12345678910123456789101234567891011\n\n备注翻译\n\t\n工单处理\n内部备注\n原商品金额\n￥3.80\n变化金额\n---\n实际支出\n---\n正品金额\n---\n国内运费\n---\n到付运费\n---\n退换货运费\n￥0.00\n没货退款金额\n---\n不良退款金额\n---\n其他费用\n---\n店铺返现\n---\n采购差价\n---\n采购确认\n优惠金额\n---\n全选\n已选：0\n1688一键下单（0）\n淘宝一键下单（0）\n批量确认金额\n批量解锁金额\n暂不购买\n可购买\n免费初检打印\n收费初检打印\n捆绑打印",
+    "dialogs": [],
+    "buttons": [
+      {
+        "idx": 0,
+        "text": "你好， admin",
+        "x": 1312,
+        "y": 19,
+        "w": 88,
+        "h": 14,
+        "cls": "cursor-pointer el-tooltip__trigger el-tooltip__trigger"
+      },
+      {
+        "idx": 1,
+        "text": "允许采购",
+        "x": 243,
+        "y": 165,
+        "w": 72,
+        "h": 24,
+        "cls": "el-button el-button--primary el-button--small el-tooltip__trigger"
+      },
+      {
+        "idx": 2,
+        "text": "订单清算",
+        "x": 1327,
+        "y": 113,
+        "w": 72,
+        "h": 24,
+        "cls": "el-button el-button--primary el-button--small"
+      },
+      {
+        "idx": 3,
+        "text": "一键下单",
+        "x": 533,
+        "y": 313,
+        "w": 72,
+        "h": 24,
+        "cls": "el-button el-button--success el-button--small is-disabled"
+      },
+      {
+        "idx": 4,
+        "text": "一键采购",
+        "x": 617,
+        "y": 313,
+        "w": 72,
+        "h": 24,
+        "cls": "el-button el-button--warning el-button--small is-disabled is-plain"
+      },
+      {
+        "idx": 5,
+        "text": "一键到货",
+        "x": 701,
+        "y": 313,
+        "w": 72,
+        "h": 24,
+        "cls": "el-button el-button--primary el-button--small is-disabled is-plain"
+      },
+      {
+        "idx": 6,
+        "text": "一键没货",
+        "x": 785,
+        "y": 313,
+        "w": 72,
+        "h": 24,
+        "cls": "el-button el-button--danger el-button--small is-disabled is-plain"
+      },
+      {
+        "idx": 7,
+        "text": "查看",
+        "x": 1339,
+        "y": 449,
+        "w": 102,
+        "h": 24,
+        "cls": "el-button el-button--primary el-button--small is-plain w-49% cursor-pointer el-t"
+      },
+      {
+        "idx": 8,
+        "text": "修改",
+        "x": 1453,
+        "y": 449,
+        "w": 102,
+        "h": 24,
+        "cls": "el-button el-button--warning el-button--small is-disabled is-plain w-49% cursor-"
+      },
+      {
+        "idx": 9,
+        "text": "工单处理",
+        "x": 1790,
+        "y": 362,
+        "w": 72,
+        "h": 24,
+        "cls": "el-button el-button--primary el-button--small"
+      },
+      {
+        "idx": 10,
+        "text": "内部备注",
+        "x": 1790,
+        "y": 393,
+        "w": 72,
+        "h": 24,
+        "cls": "el-button el-button--primary el-button--small"
+      },
+      {
+        "idx": 11,
+        "text": "采购确认",
+        "x": 1224,
+        "y": 529,
+        "w": 88,
+        "h": 32,
+        "cls": "el-button el-button--primary is-disabled"
+      },
+      {
+        "idx": 12,
+        "text": "1688一键下单（0）",
+        "x": 397,
+        "y": 853,
+        "w": 129,
+        "h": 24,
+        "cls": "el-button el-button--warning el-button--small is-disabled"
+      },
+      {
+        "idx": 13,
+        "text": "淘宝一键下单（0）",
+        "x": 539,
+        "y": 853,
+        "w": 127,
+        "h": 24,
+        "cls": "el-button el-button--success el-button--small is-disabled"
+      },
+      {
+        "idx": 14,
+        "text": "批量确认金额",
+        "x": 677,
+        "y": 853,
+        "w": 96,
+        "h": 24,
+        "cls": "el-button el-button--primary el-button--small"
+      },
+      {
+        "idx": 15,
+        "text": "批量解锁金额",
+        "x": 785,
+        "y": 853,
+        "w": 96,
+        "h": 24,
+        "cls": "el-button el-button--success el-button--small"
+      },
+      {
+        "idx": 16,
+        "text": "暂不购买",
+        "x": 893,
+        "y": 853,
+        "w": 72,
+        "h": 24,
+        "cls": "el-button el-button--danger el-button--small"
+      },
+      {
+        "idx": 17,
+        "text": "可购买",
+        "x": 977,
+        "y": 853,
+        "w": 60,
+        "h": 24,
+        "cls": "el-button el-button--primary el-button--small"
+      },
+      {
+        "idx": 18,
+        "text": "免费初检打印",
+        "x": 1112,
+        "y": 853,
+        "w": 96,
+        "h": 24,
+        "cls": "el-button el-button--success el-button--small"
+      },
+      {
+        "idx": 19,
+        "text": "收费初检打印",
+        "x": 1220,
+        "y": 853,
+        "w": 96,
+        "h": 24,
+        "cls": "el-button el-button--primary el-button--small"
+      },
+      {
+        "idx": 20,
+        "text": "捆绑打印",
+        "x": 1328,
+        "y": 853,
+        "w": 72,
+        "h": 24,
+        "cls": "el-button el-button--warning el-button--small"
+      }
+    ],
+    "inputs": [
+      {
+        "idx": 0,
+        "tag": "INPUT",
+        "type": "text",
+        "placeholder": "",
+        "value": "",
+        "x": 1002,
+        "y": 314,
+        "w": 146,
+        "h": 22
+      },
+      {
+        "idx": 1,
+        "tag": "INPUT",
+        "type": "number",
+        "placeholder": "变化单价",
+        "value": "1.90",
+        "x": 747,
+        "y": 366,
+        "w": 69,
+        "h": 22
+      },
+      {
+        "idx": 2,
+        "tag": "INPUT",
+        "type": "number",
+        "placeholder": "修改数量",
+        "value": "2",
+        "x": 747,
+        "y": 416,
+        "w": 69,
+        "h": 22
+      }
+    ],
+    "selects": []
+  },
+  "ship_detail": {
+    "url": "https://hlc-admin.hubbuyer.com/b2b/logistics/billOfParcels/detail?ship_order_no=WL-CHN6-251222-003&type=examine",
+    "title": "发货单详情",
+    "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n仓库管理\n发货配送\n10\n发货单列表\n10\n破箱审核\n售后服务\n物流清算记录\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家: China\n客户信息: C-CHN6-wh\n发货单编号: WL-CHN6-251222-003\n下单时间: 2025-12-22 15:49\n待审核\n开始审核\n客户指示备注：\n仓库指示备注：\n驳回原因备注：\n纳品书\n纳品书\nOCS发票\n不合并\n商业发票\nOCS面单\n面单打印\n发货单\n配货单导出\n包裹明细\n修改品名/材质\n吐槽\n费用明细\n合计总金额: 0.00 元\n物流公司:\nLDX--快速船便\n偏远地区:\n请选择\n其他费用总额(元):\n重量(KG):\n0.00\n国际运费(元):\n0.00\n附加项(元):\n0.00\n其他费用\n收货地址\n包含送货单\n收货地址\n1111,2222,2222\n姓名(英文): 测试\n邮政编码: 1111\n电话号码: +86 11111\n收货地址(英文): 1111,2222,2222\n进口商地址\n11111 1111 1111\n姓名(英文): 1111111\n邮政编码: 111111\n电话号码: +86 111111\n收货地址(英文): 11111,1111,1111\n关税缴纳方式\n物流公司代付\n进口商关税账号\n发货附加项\n合计: 0.00 元\n\t\n附加项名称\n\t\n数量\n\t\n单价(元)\n\t\n小计(元)\n\t\n+添加其他附加项\n\t\n\t\n\t\n\n\n\t\n外箱贴二维码\n\t\n\t\n0.00\n\t\n0.00\n\n\n\t\nHubbuyer专业发货箱\n\t\n\t\n13.00\n\t\n0.00\n\n\n\t\n放入纳品书(纸质)\n\t\n\t\n0.00\n\t\n0.00\n\n\n\t\n外箱FBA贴\n\t\n\t\n0.00\n\t\n0.00\n\n\n\t\n外箱贴---出货明细表(纸质)\n\t\n\t\n0.00\n\t\n0.00\n\n\n\t\n外箱裹气泡模(2重)\n\t\n\t\n请选择\n\t\n0.00\n\n\n\t\n外箱加护边条(12边)\n\t\n\t\n18.00\n\t\n0.00\n\n\n\t\n打木架\n\t\n\t\n请选择\n\t\n0.00\n\n\n\t\n托盘发送\n\t\n\t\n100.00\n\t\n0.00\n\n\n\t\n不良退换货手续费\n\t\n\t\n0.00\n\t\n0.00\n发货单商品\n商品总金额: 0.00\n商品总数: 0\n商品ID：\n箱子/包裹编号：\n查询\n重置\n\t\n商品信息\n\t\n库位\n\t\n待配数/已配数\n\t\n发货数\n\t\n库存\n\t\n单价\n\t\n客户备注翻译\n\t\n驳回原因\n\t\n特殊备注\n\t\n操作\n暂无数据\n添加商品\n取消发货",
+    "dialogs": [],
+    "buttons": [
+      {
+        "idx": 0,
+        "text": "你好， admin",
+        "x": 1312,
+        "y": 19,
+        "w": 88,
+        "h": 14,
+        "cls": "cursor-pointer el-tooltip__trigger el-tooltip__trigger"
+      },
+      {
+        "idx": 1,
+        "text": "开始审核",
+        "x": 237,
+        "y": 202,
+        "w": 88,
+        "h": 32,
+        "cls": "el-button el-button--primary mt-10"
+      },
+      {
+        "idx": 2,
+        "text": "纳品书",
+        "x": 1092,
+        "y": 162,
+        "w": 80,
+        "h": 32,
+        "cls": "el-button el-button--primary"
+      },
+      {
+        "idx": 3,
+        "text": "商业发票",
+        "x": 1433,
+        "y": 162,
+        "w": 88,
+        "h": 32,
+        "cls": "el-button el-button--primary"
+      },
+      {
+        "idx": 4,
+        "text": "面单打印",
+        "x": 1677,
+        "y": 162,
+        "w": 88,
+        "h": 32,
+        "cls": "el-button el-button--primary"
+      },
+      {
+        "idx": 5,
+        "text": "发货单",
+        "x": 976,
+        "y": 210,
+        "w": 80,
+        "h": 32,
+        "cls": "el-button el-button--primary"
+      },
+      {
+        "idx": 6,
+        "text": "配货单导出",
+        "x": 1066,
+        "y": 210,
+        "w": 102,
+        "h": 32,
+        "cls": "el-button el-button--primary"
+      },
+      {
+        "idx": 7,
+        "text": "包裹明细",
+        "x": 1178,
+        "y": 210,
+        "w": 88,
+        "h": 32,
+        "cls": "el-button el-button--primary"
+      },
+      {
+        "idx": 8,
+        "text": "修改品名/材质",
+        "x": 1555,
+        "y": 210,
+        "w": 120,
+        "h": 32,
+        "cls": "el-button el-button--warning material-button"
+      },
+      {
+        "idx": 9,
+        "text": "吐槽",
+        "x": 1685,
+        "y": 210,
+        "w": 80,
+        "h": 32,
+        "cls": "el-button el-button--primary"
+      },
+      {
+        "idx": 10,
+        "text": "其他费用",
+        "x": 487,
+        "y": 454,
+        "w": 88,
+        "h": 32,
+        "cls": "el-button el-button--primary"
+      },
+      {
+        "idx": 11,
+        "text": "+添加其他附加项",
+        "x": 657,
+        "y": 408,
+        "w": 138,
+        "h": 32,
+        "cls": "el-button el-button--primary"
+      },
+      {
+        "idx": 32,
+        "text": "查询",
+        "x": 225,
+        "y": 1105,
+        "w": 80,
+        "h": 32,
+        "cls": "el-button el-button--primary"
+      },
+      {
+        "idx": 33,
+        "text": "重置",
+        "x": 317,
+        "y": 1105,
+        "w": 80,
+        "h": 32,
+        "cls": "el-button is-plain"
+      },
+      {
+        "idx": 34,
+        "text": "添加商品",
+        "x": 1227,
+        "y": 1277,
+        "w": 88,
+        "h": 32,
+        "cls": "el-button el-button--primary"
+      },
+      {
+        "idx": 35,
+        "text": "取消发货",
+        "x": 1327,
+        "y": 1277,
+        "w": 88,
+        "h": 32,
+        "cls": "el-button"
+      }
+    ],
+    "inputs": [
+      {
+        "idx": 0,
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "placeholder": "",
+        "value": "",
+        "x": 368,
+        "y": 134,
+        "w": 281,
+        "h": 62
+      },
+      {
+        "idx": 1,
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "placeholder": "",
+        "value": "",
+        "x": 661,
+        "y": 134,
+        "w": 281,
+        "h": 62
+      },
+      {
+        "idx": 2,
+        "tag": "TEXTAREA",
+        "type": "textarea",
+        "placeholder": "",
+        "value": "",
+        "x": 368,
+        "y": 230,
+        "w": 281,
+        "h": 62
+      },
+      {
+        "idx": 3,
+        "tag": "INPUT",
+        "type": "text",
+        "placeholder": "",
+        "value": "",
+        "x": 988,
+        "y": 166,
+        "w": 72,
+        "h": 24
+      },
+      {
+        "idx": 4,
+        "tag": "INPUT",
+        "type": "text",
+        "placeholder": "",
+        "value": "",
+        "x": 1225,
+        "y": 166,
+        "w": 72,
+        "h": 24
+      },
+      {
+        "idx": 5,
+        "tag": "INPUT",
+        "type": "text",
+        "placeholder": "",
+        "value": "",
+        "x": 1341,
+        "y": 166,
+        "w": 60,
+        "h": 24
+      },
+      {
+        "idx": 6,
+        "tag": "INPUT",
+        "type": "text",
+        "placeholder": "",
+        "value": "",
+        "x": 1573,
+        "y": 166,
+        "w": 72,
+        "h": 24
+      },
+      {
+        "idx": 7,
+        "tag": "INPUT",
+        "type": "text",
+        "placeholder": "",
+        "value": "",
+        "x": 237,
+        "y": 403,
+        "w": 59,
+        "h": 24
+      },
+      {
+        "idx": 8,
+        "tag": "INPUT",
+        "type": "text",
+        "placeholder": "",
+        "value": "",
+        "x": 360,
+        "y": 403,
+        "w": 59,
+        "h": 24
+      },
+      {
+        "idx": 9,
+        "tag": "INPUT",
+        "type": "text",
+        "placeholder": "",
+        "value": "0.00",
+        "x": 483,
+        "y": 409,
+        "w": 81,
+        "h": 30
+      },
+      {
+        "idx": 10,
+        "tag": "INPUT",
+        "type": "text",
+        "placeholder": "",
+        "value": "",
+        "x": 237,
+        "y": 569,
+        "w": 155,
+        "h": 24
+      },
+      {
+        "idx": 11,
+        "tag": "INPUT",
+        "type": "text",
+        "placeholder": "",
+        "value": "",
+        "x": 237,
+        "y": 683,
+        "w": 155,
+        "h": 24
+      },
+      {
+        "idx": 12,
+        "tag": "INPUT",
+        "type": "radio",
+        "placeholder": "",
+        "value": "1",
+        "x": 235,
+        "y": 826,
+        "w": 14,
+        "h": 14
+      },
+      {
+        "idx": 13,
+        "tag": "INPUT",
+        "type": "radio",
+        "placeholder": "",
+        "value": "2",
+        "x": 397,
+        "y": 826,
+        "w": 14,
+        "h": 14
+      },
+      {
+        "idx": 14,
+        "tag": "INPUT",
+        "type": "number",
+        "placeholder": "",
+        "value": "0",
+        "x": 979,
+        "y": 458,
+        "w": 66,
+        "h": 30
+      },
+      {
+        "idx": 15,
+        "tag": "INPUT",
+        "type": "number",
+        "placeholder": "",
+        "value": "0",
+        "x": 979,
+        "y": 507,
+        "w": 66,
+        "h": 30
+      },
+      {
+        "idx": 16,
+        "tag": "INPUT",
+        "type": "number",
+        "placeholder": "",
+        "value": "0",
+        "x": 979,
+        "y": 556,
+        "w": 66,
+        "h": 30
+      },
+      {
+        "idx": 17,
+        "tag": "INPUT",
+        "type": "number",
+        "placeholder": "",
+        "value": "0",
+        "x": 979,
+        "y": 605,
+        "w": 66,
+        "h": 30
+      },
+      {
+        "idx": 18,
+        "tag": "INPUT",
+        "type": "number",
+        "placeholder": "",
+        "value": "0",
+        "x": 979,
+        "y": 654,
+        "w": 66,
+        "h": 30
+      },
+      {
+        "idx": 19,
+        "tag": "INPUT",
+        "type": "number",
+        "placeholder": "",
+        "value": "0",
+        "x": 979,
+        "y": 703,
+        "w": 66,
+        "h": 30
+      },
+      {
+        "idx": 20,
+        "tag": "INPUT",
+        "type": "text",
+        "placeholder": "",
+        "value": "",
+        "x": 1129,
+        "y": 706,
+        "w": 155,
+        "h": 24
+      },
+      {
+        "idx": 21,
+        "tag": "INPUT",
+        "type": "number",
+        "placeholder": "",
+        "value": "0",
+        "x": 979,
+        "y": 752,
+        "w": 66,
+        "h": 30
+      },
+      {
+        "idx": 22,
+        "tag": "INPUT",
+        "type": "number",
+        "placeholder": "",
+        "value": "0",
+        "x": 979,
+        "y": 801,
+        "w": 66,
+        "h": 30
+      },
+      {
+        "idx": 23,
+        "tag": "INPUT",
+        "type": "text",
+        "placeholder": "",
+        "value": "",
+        "x": 1129,
+        "y": 804,
+        "w": 155,
+        "h": 24
+      },
+      {
+        "idx": 24,
+        "tag": "INPUT",
+        "type": "number",
+        "placeholder": "",
+        "value": "0",
+        "x": 979,
+        "y": 850,
+        "w": 66,
+        "h": 30
+      },
+      {
+        "idx": 25,
+        "tag": "INPUT",
+        "type": "number",
+        "placeholder": "",
+        "value": "0",
+        "x": 979,
+        "y": 899,
+        "w": 66,
+        "h": 30
+      },
+      {
+        "idx": 26,
+        "tag": "INPUT",
+        "type": "text",
+        "placeholder": "请输入商品ID",
+        "value": "",
+        "x": 313,
+        "y": 1054,
+        "w": 170,
+        "h": 30
+      },
+      {
+        "idx": 27,
+        "tag": "INPUT",
+        "type": "text",
+        "placeholder": "请输入箱子/包裹编号",
+        "value": "",
+        "x": 669,
+        "y": 1054,
+        "w": 170,
+        "h": 30
+      }
+    ],
+    "selects": [
+      {
+        "idx": 0,
+        "text": "纳品书",
+        "x": 976,
+        "y": 162,
+        "w": 116,
+        "h": 32
+      },
+      {
+        "idx": 1,
+        "text": "纳品书",
+        "x": 976,
+        "y": 162,
+        "w": 116,
+        "h": 32
+      },
+      {
+        "idx": 2,
+        "text": "OCS发票",
+        "x": 1213,
+        "y": 162,
+        "w": 116,
+        "h": 32
+      },
+      {
+        "idx": 3,
+        "text": "OCS发票",
+        "x": 1213,
+        "y": 162,
+        "w": 116,
+        "h": 32
+      },
+      {
+        "idx": 4,
+        "text": "不合并",
+        "x": 1329,
+        "y": 162,
+        "w": 104,
+        "h": 32
+      },
+      {
+        "idx": 5,
+        "text": "不合并",
+        "x": 1329,
+        "y": 162,
+        "w": 104,
+        "h": 32
+      },
+      {
+        "idx": 6,
+        "text": "OCS面单",
+        "x": 1561,
+        "y": 162,
+        "w": 116,
+        "h": 32
+      },
+      {
+        "idx": 7,
+        "text": "OCS面单",
+        "x": 1561,
+        "y": 162,
+        "w": 116,
+        "h": 32
+      },
+      {
+        "idx": 8,
+        "text": "LDX--快速船便",
+        "x": 225,
+        "y": 399,
+        "w": 103,
+        "h": 32
+      },
+      {
+        "idx": 9,
+        "text": "LDX--快速船便",
+        "x": 225,
+        "y": 399,
+        "w": 103,
+        "h": 32
+      },
+      {
+        "idx": 10,
+        "text": "请选择",
+        "x": 348,
+        "y": 399,
+        "w": 103,
+        "h": 32
+      },
+      {
+        "idx": 11,
+        "text": "请选择",
+        "x": 348,
+        "y": 399,
+        "w": 103,
+        "h": 32
+      },
+      {
+        "idx": 12,
+        "text": "1111,2222,2222",
+        "x": 225,
+        "y": 565,
+        "w": 350,
+        "h": 32
+      },
+      {
+        "idx": 13,
+        "text": "1111,2222,2222",
+        "x": 225,
+        "y": 565,
+        "w": 350,
+        "h": 32
+      },
+      {
+        "idx": 14,
+        "text": "11111 1111 1111",
+        "x": 225,
+        "y": 679,
+        "w": 350,
+        "h": 32
+      },
+      {
+        "idx": 15,
+        "text": "11111 1111 1111",
+        "x": 225,
+        "y": 679,
+        "w": 350,
+        "h": 32
+      },
+      {
+        "idx": 16,
+        "text": "请选择",
+        "x": 1117,
+        "y": 702,
+        "w": 205,
+        "h": 32
+      },
+      {
+        "idx": 17,
+        "text": "请选择",
+        "x": 1117,
+        "y": 702,
+        "w": 205,
+        "h": 32
+      },
+      {
+        "idx": 18,
+        "text": "请选择",
+        "x": 1117,
+        "y": 800,
+        "w": 205,
+        "h": 32
+      },
+      {
+        "idx": 19,
+        "text": "请选择",
+        "x": 1117,
+        "y": 800,
+        "w": 205,
+        "h": 32
+      }
+    ]
+  }
+}

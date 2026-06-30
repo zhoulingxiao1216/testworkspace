@@ -1,0 +1,54 @@
+agent: Agent1 / Test Architect
+project: 消息提醒功能以及重要待办
+generated_at: 2026-05-22
+design_ready: true
+execute_cases: false
+
+artifacts:
+  - path: 消息提醒功能以及重要待办/测试文档/消息提醒功能以及重要待办测试用例.md
+    type: test_cases
+    status: created
+    description: 基于旧版 62 条用例重编为模块前缀锚点格式，统一测试字段并标记 P0 Smoke
+  - path: 消息提醒功能以及重要待办/测试文档/执行交接清单.yaml
+    type: execution_handoff
+    status: created
+    description: 提供用例统计、执行轮次、条件用例、阻塞风险和 Agent2 指令
+
+summary:
+  total_cases: 62
+  smoke_cases: 40
+  conditional_cases: 5
+  priority_distribution:
+    P0: 40
+    P1: 21
+    P2: 1
+  module_distribution:
+    BUB: 10
+    CM: 7
+    ORD: 8
+    SHIP: 5
+    INT: 3
+    TODO: 16
+    SMS: 4
+    NAV: 5
+    STB: 4
+  id_prefix_source: 消息提醒功能以及重要待办/测试文档/superpowers.md
+
+known_uncertainties:
+  - 负数待办数量修正为 0 后，气泡展示 0 还是隐藏待产品确认
+  - B2B 订单和发货“实时”更新 SLA 及计时点待确认
+  - 客户待匹配统计范围、有效客户口径和跨组织权限口径待确认
+  - 重要待办三个子模块的待办定义、完成条件和权限过滤规则待确认
+  - 右侧导航订单、待办、消息统计范围待确认
+  - 短信相关人员角色范围、配置维度、测试通道或发送记录查询方式待确认
+  - Agent2 是否允许 API 或受控 DB mock seed 造数待授权
+
+next_agent:
+  name: Agent2 / Execution Reviewer
+  design_ready: true
+  execute_cases: false
+  expected_action:
+    - 只做可执行性评审和执行计划拆解
+    - 不执行真实测试，不写入业务数据
+    - 复核 Smoke 优先级和条件用例阻塞项
+    - 向主 Agent 回传环境、账号、造数、短信通道、Mock 权限缺口

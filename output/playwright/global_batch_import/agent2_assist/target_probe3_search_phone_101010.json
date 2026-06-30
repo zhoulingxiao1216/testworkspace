@@ -1,0 +1,251 @@
+{
+  "url": "https://wlz-admin-all-view.hubbuyer.com/b2b/user/list",
+  "title": "客户信息",
+  "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（0）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（0）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n暂无数据\n30条/页\n共 0 条\n1\n前往\n页",
+  "inputs": [
+    {
+      "i": 0,
+      "type": "text",
+      "placeholder": "请输入客户ID",
+      "value": "",
+      "visible": true,
+      "cls": "el-input__inner"
+    },
+    {
+      "i": 1,
+      "type": "text",
+      "placeholder": "请输入客户名字",
+      "value": "",
+      "visible": true,
+      "cls": "el-input__inner"
+    },
+    {
+      "i": 2,
+      "type": "text",
+      "placeholder": null,
+      "value": "",
+      "visible": true,
+      "cls": "el-select__input"
+    },
+    {
+      "i": 3,
+      "type": "text",
+      "placeholder": "请输入联系电话",
+      "value": "",
+      "visible": true,
+      "cls": "el-input__inner"
+    },
+    {
+      "i": 4,
+      "type": "text",
+      "placeholder": "请输入邮箱",
+      "value": "101010",
+      "visible": true,
+      "cls": "el-input__inner"
+    },
+    {
+      "i": 5,
+      "type": "text",
+      "placeholder": null,
+      "value": "",
+      "visible": true,
+      "cls": "el-select__input"
+    },
+    {
+      "i": 6,
+      "type": "text",
+      "placeholder": null,
+      "value": "",
+      "visible": true,
+      "cls": "el-select__input"
+    },
+    {
+      "i": 7,
+      "type": "text",
+      "placeholder": null,
+      "value": "",
+      "visible": true,
+      "cls": "el-select__input"
+    },
+    {
+      "i": 8,
+      "type": "text",
+      "placeholder": null,
+      "value": "",
+      "visible": true,
+      "cls": "el-select__input"
+    },
+    {
+      "i": 9,
+      "type": "text",
+      "placeholder": null,
+      "value": "",
+      "visible": true,
+      "cls": "el-select__input"
+    },
+    {
+      "i": 10,
+      "type": "text",
+      "placeholder": null,
+      "value": "",
+      "visible": true,
+      "cls": "el-select__input"
+    },
+    {
+      "i": 11,
+      "type": "text",
+      "placeholder": "开始日期",
+      "value": "",
+      "visible": true,
+      "cls": "el-range-input"
+    },
+    {
+      "i": 12,
+      "type": "text",
+      "placeholder": "结束日期",
+      "value": "",
+      "visible": true,
+      "cls": "el-range-input"
+    },
+    {
+      "i": 13,
+      "type": "radio",
+      "placeholder": null,
+      "value": "",
+      "visible": true,
+      "cls": "el-radio-button__original-radio"
+    },
+    {
+      "i": 14,
+      "type": "radio",
+      "placeholder": null,
+      "value": "S",
+      "visible": true,
+      "cls": "el-radio-button__original-radio"
+    },
+    {
+      "i": 15,
+      "type": "radio",
+      "placeholder": null,
+      "value": "A",
+      "visible": true,
+      "cls": "el-radio-button__original-radio"
+    },
+    {
+      "i": 16,
+      "type": "radio",
+      "placeholder": null,
+      "value": "B",
+      "visible": true,
+      "cls": "el-radio-button__original-radio"
+    },
+    {
+      "i": 17,
+      "type": "radio",
+      "placeholder": null,
+      "value": "C",
+      "visible": true,
+      "cls": "el-radio-button__original-radio"
+    },
+    {
+      "i": 18,
+      "type": "radio",
+      "placeholder": null,
+      "value": "D",
+      "visible": true,
+      "cls": "el-radio-button__original-radio"
+    },
+    {
+      "i": 19,
+      "type": "checkbox",
+      "placeholder": null,
+      "value": "on",
+      "visible": true,
+      "cls": "el-checkbox__original"
+    },
+    {
+      "i": 20,
+      "type": "text",
+      "placeholder": null,
+      "value": "",
+      "visible": true,
+      "cls": "el-select__input"
+    },
+    {
+      "i": 21,
+      "type": "number",
+      "placeholder": null,
+      "value": "1",
+      "visible": true,
+      "cls": "el-input__inner"
+    }
+  ],
+  "buttons": [
+    {
+      "i": 0,
+      "text": "恢复默认",
+      "visible": false,
+      "cls": "el-button color-#333"
+    },
+    {
+      "i": 1,
+      "text": "查询",
+      "visible": true,
+      "cls": "el-button el-button--primary"
+    },
+    {
+      "i": 2,
+      "text": "重置",
+      "visible": true,
+      "cls": "el-button is-plain"
+    },
+    {
+      "i": 3,
+      "text": "收起",
+      "visible": true,
+      "cls": "el-button el-button--info is-text"
+    },
+    {
+      "i": 4,
+      "text": "批量导出",
+      "visible": true,
+      "cls": "el-button el-button--primary"
+    },
+    {
+      "i": 5,
+      "text": "",
+      "visible": true,
+      "cls": "btn-prev is-first"
+    },
+    {
+      "i": 6,
+      "text": "",
+      "visible": true,
+      "cls": "btn-next"
+    },
+    {
+      "i": 7,
+      "text": "",
+      "visible": false,
+      "cls": "el-picker-panel__icon-btn d-arrow-left"
+    },
+    {
+      "i": 8,
+      "text": "",
+      "visible": false,
+      "cls": "el-picker-panel__icon-btn arrow-left"
+    },
+    {
+      "i": 9,
+      "text": "",
+      "visible": false,
+      "cls": "el-picker-panel__icon-btn d-arrow-right"
+    },
+    {
+      "i": 10,
+      "text": "",
+      "visible": false,
+      "cls": "el-picker-panel__icon-btn arrow-right"
+    }
+  ]
+}

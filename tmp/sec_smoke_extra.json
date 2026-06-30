@@ -1,0 +1,50 @@
+[
+  {
+    "path": "/api_b2b/userDeliveryAddress/update",
+    "code": 40000,
+    "msg": "국가를 선택하세요"
+  },
+  {
+    "path": "/api_b2b/userDeliveryAddress/updateData",
+    "code": 404,
+    "msg": "404 not found"
+  },
+  {
+    "path": "/api_b2b/userDeliveryAddress/updateDefault",
+    "code": 40000,
+    "msg": "수정 실패"
+  },
+  {
+    "verify_id": 101,
+    "name_before": "12",
+    "name_after": "12",
+    "unchanged": true
+  },
+  {
+    "rt_payload": {},
+    "code": 40000,
+    "msg": "site_empty"
+  },
+  {
+    "rt_payload": {
+      "site": "B2B"
+    },
+    "code": 300,
+    "msg": "请先登录"
+  },
+  {
+    "auth_try": 1,
+    "code": 401,
+    "msg": "Client KeyまたはClient Secretが正しくありません"
+  },
+  {
+    "auth_try": 2,
+    "code": 401,
+    "msg": "Client KeyまたはClient Secretが正しくありません"
+  },
+  {
+    "auth_try": 3,
+    "code": 401,
+    "msg": "Client KeyまたはClient Secretが正しくありません"
+  }
+]

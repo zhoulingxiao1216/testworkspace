@@ -1,0 +1,38 @@
+﻿INVOICE,,,,,,,,,,,,,
+1) Seller/Exporter 发件人信息,,,,,,3) IMPORTER 进口商和收件人不是同一家时，请在这里填写进口商信息,,,,,,,
+"Company：
+公司：",YIWU XIERUN IMPORT&EXPORT CO.LTD,,,,,"Company：
+公司：","Everglow Trading Co., Ltd",,法人番号：,ss的,,,
+"Address：
+地址：","502, Floor 5, Building 1, No. 633, Airport Road, Beiyuan Street, Yiwu City, Zhejiang Province",,,,,"Address：
+地址：",東京新宿区東京都清瀬市中里1丁目1739番地8,,,,,,
+"Contact：
+联系人：",Zhao ZheLong,,,,,"Contact：
+联系人：",セツキ 様,,,,,,
+Zip Code：,322000,Tel 电话：,186-6173-9360,,,Zip Code：,204-0003,Tel 电话：,+81 04-2945-9175,,,,
+2) DELIVER TO 收件人信息,,,,,,4) L/C lssuing Bank,,,,,,,
+"Company：
+公司：",,,,,,"会社名：エバーグロー貿易株式会社
+代表取締役：ss的
+輸出入者コード：P0017652-0000
+金融機関コード：1341
+支店コード：001 
+口座番号：3445581",,,,,,,
+"Address：
+地址：","Tokyo-to, Patio Harajuku 103,3-15-22,JINGUMAE,SIBUYA-KU パティオ原宿 103",,,,,,,,,,,,
+"Contact：
+联系人：",セツキ 様,,,,,,,,,,,,
+Zip Code：,359-0023,Tel 电话：,,,,5) Remarks,,,,,,,
+,,,,,,,,,,,,,
+CIF,,,,,,,,,,,,,
+10) Name of Commodity,,,11) Description of Goods,,12) Quantity,,13)Unit Price,14)TOTAL Price,ASIN,FNSKU,装箱明細,商品ID,SKU
+写真,具体中文品名,品名（英文/日文）,材质（英文/日文）,用途,箱数,PCS,单价 (CNY),总价 (CNY),,,,,
+https://cbu01.alicdn.com/img/ibank/O1CN01NOtXyb20rd5tuXRR9_!!2207745696903-0-cib.jpg,春夏薄款袜子女镂空网眼四叶草无骨堆堆袜女士纯色百搭中长筒女袜,春夏の薄いタイプの靴下の女性の透かし彫りの目の四つ葉のクローバーの骨なしの積み重ねの靴下の女性の純色の百合の中で長い筒の女性の靴下,PU,,1,4,3.3,13.2,ASIN-2223011,FNSKU-19902039,1,D000004986,SKU-12888389
+https://cbu01.alicdn.com/img/ibank/O1CN01Zgffuv1u7vtROc8fx_!!2217623415991-0-cib.jpg,袜子纯棉女短袜春夏季薄款日系镂空网眼中筒袜百搭芭蕾风诸暨袜业,靴下純綿レディースソックス春夏薄手日本製中空メッシュソックス多用途バレエスタイルZhuji Socks,Plastic,,1,5,2.3,11.5,ASIN-2223010,FNSKU-19992038,2,D000004987,SKU-12888389
+运费Freight,,,,,,,,,,,,,
+MADE IN CHINA,,,,TOTAL,2,9,,(CNY)24.70,,,,,
+,,,,,,,,,,,,,
+箱号,件数,长,宽,高,单件重量,体积,重量,,,,,,
+1,4,12,12,12,12,0.29,12,,,,,,
+2,5,12,12,12,12,0.29,12,,,,,,
+总计,,,,,,0.58,24,,,,,,

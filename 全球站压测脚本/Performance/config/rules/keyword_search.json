@@ -1,0 +1,45 @@
+{
+    "stress_keyword_search": {
+        "key": "stress_keyword_search",
+        "desc": "B2B 1688&淘宝 关键词搜索接口压测",
+        "login_account": ""
+    },
+    "B2B_1688_keyword": {
+        "rules": {
+            "status_code": 200,
+            "json_match": {
+                "code": 200
+            }
+        },
+        "headers_config": {
+            "currency": "KRW",
+            "language": "korean",
+            "nation": "Korea",
+            "rate": "220.68",
+            "logintype": "user"
+        },
+        "performance": {
+            "threshold_ms": 8000,
+            "description": "1688关键词搜索响应时间阈值"
+        }
+    },
+    "B2B_taobao_keyword": {
+        "rules": {
+            "status_code": 200,
+            "json_match": {
+                "code": 200
+            }
+        },
+        "headers_config": {
+            "currency": "KRW",
+            "language": "korean",
+            "nation": "Korea",
+            "rate": "220.68",
+            "logintype": "user"
+        },
+        "performance": {
+            "threshold_ms": 8000,
+            "description": "淘宝关键词搜索响应时间阈值"
+        }
+    }
+}

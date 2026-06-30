@@ -1,0 +1,10 @@
+{
+  "D2C_Addon_task": {
+    "key": "check_api_d2c_addon",
+    "desc": "D2C 选择商品附加项",
+    "script": "checker/api/D2C_Addon.py",
+    "rules": {
+      "status_code": 200
+    }
+  }
+}

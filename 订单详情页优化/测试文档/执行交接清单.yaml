@@ -1,0 +1,135 @@
+project: "订单详情页优化"
+generated_at: "2026-05-22"
+role: "agent1-test-design"
+source:
+  prd: "订单详情页优化/订单详情优化.docx"
+  test_docs_dir: "订单详情页优化/测试文档"
+total_cases: 39
+priority_distribution:
+  Critical: 20
+  High: 15
+  Medium: 4
+  Low: 0
+smoke_cases:
+  - "TC-OD-FLT-001"
+  - "TC-OD-FLT-003"
+  - "TC-OD-FLT-005"
+  - "TC-OD-FLT-006"
+  - "TC-OD-FLT-007"
+  - "TC-OD-FLT-010"
+  - "TC-OD-AMT-001"
+  - "TC-OD-AMT-005"
+  - "TC-OD-AMT-007"
+  - "TC-OD-AMT-008"
+  - "TC-OD-CB-002"
+  - "TC-OD-CB-003"
+  - "TC-OD-LST-003"
+  - "TC-OD-SEC-001"
+env_requirements:
+  accounts:
+    - "采购员账号"
+    - "主管或管理员账号"
+    - "无权限账号"
+  data:
+    - "至少 1 笔多商品订单，包含 5 个以上商品"
+    - "至少 1 笔多店铺订单，包含 2 个以上店铺"
+    - "待入库、部分入库、已入库商品各至少 1 条"
+    - "待采购、部分到货、暂不购买商品各至少 1 条"
+    - "有不良、有待定、有退货、有换货、待检品商品各至少 1 条"
+    - "全部已确认、部分未确认、全部未确认订单各至少 1 笔"
+    - "采购数=不良数+正品数、不满足公式订单各至少 1 笔"
+    - "购入数为空、0、正整数订单各至少 1 笔"
+  confirmations_required:
+    - "采购差价负数拦截是否进入本次版本"
+    - "店铺返现二次确认是否进入本次版本"
+    - "购入数排序是否进入本次版本"
+    - "多商品未确认数量公式口径"
+    - "购入数 0 与空值是否等同"
+estimated_time:
+  total_person_days: 6.6
+  first_round_person_days: 3.0
+  conditional_round_person_days: 1.5
+execution_queue:
+  - module: "订单详情页筛选"
+    prefix: "OD-FLT"
+    cases:
+      - "TC-OD-FLT-001"
+      - "TC-OD-FLT-002"
+      - "TC-OD-FLT-003"
+      - "TC-OD-FLT-004"
+      - "TC-OD-FLT-005"
+      - "TC-OD-FLT-006"
+      - "TC-OD-FLT-007"
+      - "TC-OD-FLT-008"
+      - "TC-OD-FLT-009"
+      - "TC-OD-FLT-010"
+      - "TC-OD-FLT-011"
+      - "TC-OD-FLT-012"
+  - module: "金额确认与采购差价"
+    prefix: "OD-AMT"
+    cases:
+      - "TC-OD-AMT-001"
+      - "TC-OD-AMT-002"
+      - "TC-OD-AMT-003"
+      - "TC-OD-AMT-004"
+      - "TC-OD-AMT-005"
+      - "TC-OD-AMT-006"
+      - "TC-OD-AMT-007"
+      - "TC-OD-AMT-008"
+      - "TC-OD-AMT-009"
+      - "TC-OD-AMT-010"
+  - module: "店铺返现确认"
+    prefix: "OD-CB"
+    cases:
+      - "TC-OD-CB-001"
+      - "TC-OD-CB-002"
+      - "TC-OD-CB-003"
+      - "TC-OD-CB-004"
+      - "TC-OD-CB-005"
+  - module: "进行中列表筛选排序"
+    prefix: "OD-LST"
+    cases:
+      - "TC-OD-LST-001"
+      - "TC-OD-LST-002"
+      - "TC-OD-LST-003"
+      - "TC-OD-LST-004"
+      - "TC-OD-LST-005"
+      - "TC-OD-LST-006"
+      - "TC-OD-LST-007"
+  - module: "权限安全与回归"
+    prefix: "OD-SEC"
+    cases:
+      - "TC-OD-SEC-001"
+      - "TC-OD-SEC-002"
+      - "TC-OD-SEC-003"
+      - "TC-OD-SEC-004"
+      - "TC-OD-SEC-005"
+conditional_cases:
+  purchase_diff_negative:
+    confirmation: "采购差价负数拦截是否进入本次版本"
+    cases:
+      - "TC-OD-AMT-001"
+      - "TC-OD-AMT-002"
+      - "TC-OD-AMT-003"
+      - "TC-OD-AMT-004"
+  cashback_confirm:
+    confirmation: "店铺返现二次确认是否进入本次版本"
+    cases:
+      - "TC-OD-CB-001"
+      - "TC-OD-CB-002"
+      - "TC-OD-CB-003"
+      - "TC-OD-CB-004"
+      - "TC-OD-CB-005"
+  purchase_count_sort:
+    confirmation: "购入数排序是否进入本次版本"
+    cases:
+      - "TC-OD-LST-002"
+      - "TC-OD-LST-003"
+      - "TC-OD-LST-004"
+      - "TC-OD-LST-005"
+      - "TC-OD-LST-006"
+      - "TC-OD-LST-007"
+agent2_notes:
+  - "执行前先读取审计待确认问题单，确认条件用例 Execute/Skip 范围"
+  - "测试数据优先通过业务 API 准备；DB Mock Seed 仅限测试环境且需写审计日志"
+  - "金额链路用例需关注接口防绕过和状态不误更新"

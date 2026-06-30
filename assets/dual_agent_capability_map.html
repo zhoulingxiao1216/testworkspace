@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #e8edf4;
+      font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+      color: #172033;
+    }
+    .canvas {
+      position: relative;
+      width: 1800px;
+      height: 1080px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.96), rgba(247,250,252,.96)),
+        radial-gradient(circle at 18% 12%, rgba(37, 99, 235, .12), transparent 26%),
+        radial-gradient(circle at 84% 18%, rgba(13, 148, 136, .12), transparent 26%);
+      border: 1px solid #d9e2ef;
+    }
+    .header {
+      position: absolute;
+      left: 44px;
+      right: 44px;
+      top: 32px;
+      height: 118px;
+      padding: 24px 32px;
+      border-bottom: 1px solid #dbe4f0;
+    }
+    .title {
+      margin: 0;
+      font-size: 44px;
+      line-height: 1;
+      letter-spacing: 0;
+      color: #111827;
+      font-weight: 800;
+    }
+    .subtitle {
+      margin-top: 14px;
+      font-size: 20px;
+      color: #526176;
+    }
+    .source {
+      position: absolute;
+      right: 34px;
+      top: 28px;
+      padding: 10px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: #ffffff;
+      font-size: 16px;
+      color: #475569;
+    }
+    .panel {
+      position: absolute;
+      border: 1px solid #d5deeb;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .92);
+      box-shadow: 0 18px 42px rgba(31, 41, 55, .08);
+      overflow: hidden;
+    }
+    .panel-head {
+      padding: 18px 22px 14px;
+      border-bottom: 1px solid #e4ebf5;
+      font-size: 25px;
+      line-height: 1.1;
+      font-weight: 800;
+    }
+    .panel-sub {
+      margin-top: 8px;
+      font-size: 15px;
+      line-height: 1.35;
+      color: #65748a;
+      font-weight: 400;
+    }
+    .input { left: 48px; top: 182px; width: 268px; height: 694px; }
+    .agent1 { left: 356px; top: 182px; width: 500px; height: 694px; }
+    .gate { left: 902px; top: 236px; width: 284px; height: 586px; }
+    .agent2 { left: 1228px; top: 182px; width: 524px; height: 694px; }
+    .platform { left: 356px; top: 918px; width: 1396px; height: 120px; }
+    .input .panel-head { color: #334155; background: #f8fafc; }
+    .agent1 .panel-head { color: #174a9c; background: #eef6ff; }
+    .gate .panel-head { color: #8a4b00; background: #fff6e7; }
+    .agent2 .panel-head { color: #075c55; background: #eafaf7; }
+    .platform .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      color: #334155;
+      background: #ffffff;
+      border-bottom: 0;
+      padding: 18px 26px;
+    }
+    .cards {
+      display: grid;
+      gap: 12px;
+      padding: 18px;
+    }
+    .card {
+      min-height: 72px;
+      border: 1px solid #dfe7f2;
+      border-radius: 9px;
+      background: #ffffff;
+      padding: 14px 14px 12px;
+    }
+    .card strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 18px;
+      line-height: 1.15;
+      color: #172033;
+      font-weight: 800;
+    }
+    .card span {
+      display: block;
+      font-size: 14.5px;
+      line-height: 1.45;
+      color: #5f6e83;
+    }
+    .stage {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 12px;
+      align-items: start;
+      min-height: 76px;
+      padding: 13px;
+    }
+    .badge {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #ffffff;
+      font-size: 15px;
+      line-height: 1;
+      font-weight: 800;
+    }
+    .blue { background: #2563eb; }
+    .amber { background: #d97706; }
+    .teal { background: #0f766e; }
+    .agent1 .stage { border-color: #cfe4ff; }
+    .agent2 .stage { border-color: #caece7; }
+    .gate .stage { border-color: #fde5bd; }
+    .mini-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .mini {
+      padding: 8px;
+      border-radius: 7px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      font-size: 13px;
+      line-height: 1.25;
+      color: #475569;
+      text-align: center;
+    }
+    .boundary {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .rule {
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 14px;
+      line-height: 1.35;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #9a3412;
+      font-weight: 700;
+    }
+    .agent2 .rule {
+      background: #f0fdfa;
+      border-color: #99f6e4;
+      color: #115e59;
+    }
+    .platform-title {
+      font-size: 25px;
+      font-weight: 800;
+      color: #111827;
+    }
+    .platform-copy {
+      margin-top: 7px;
+      font-size: 15px;
+      color: #65748a;
+      font-weight: 400;
+    }
+    .platform-items {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      width: 880px;
+    }
+    .platform-item {
+      padding: 12px 14px;
+      border-radius: 9px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      font-size: 15px;
+      line-height: 1.25;
+      color: #475569;
+      font-weight: 700;
+      text-align: center;
+    }
+    .wires {
+      position: absolute;
+      inset: 0;
+      width: 1800px;
+      height: 1080px;
+      pointer-events: none;
+    }
+    .wire {
+      fill: none;
+      stroke: #64748b;
+      stroke-width: 4;
+      stroke-linecap: round;
+    }
+    .wire-blue { stroke: #2563eb; }
+    .wire-amber { stroke: #d97706; }
+    .wire-teal { stroke: #0f766e; }
+    .wire-dash {
+      stroke-dasharray: 12 10;
+      stroke-width: 3.5;
+    }
+    .edge-label {
+      position: absolute;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid #d5deeb;
+      color: #475569;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 8px 20px rgba(31, 41, 55, .08);
+      white-space: nowrap;
+    }
+    .l1 { left: 300px; top: 398px; }
+    .l2 { left: 820px; top: 435px; }
+    .l3 { left: 1160px; top: 435px; }
+    .l4 { left: 1062px; top: 850px; }
+    .l5 { left: 670px; top: 862px; }
+  </style>
+</head>
+<body>
+  <main class="canvas">
+    <svg class="wires" viewBox="0 0 1800 1080" aria-hidden="true">
+      <defs>
+        <marker id="arrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto">
+          <path d="M 0 0 L 14 7 L 0 14 z" fill="#64748b"></path>
+        </marker>
+        <marker id="arrowBlue" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto">
+          <path d="M 0 0 L 14 7 L 0 14 z" fill="#2563eb"></path>
+        </marker>
+        <marker id="arrowAmber" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto">
+          <path d="M 0 0 L 14 7 L 0 14 z" fill="#d97706"></path>
+        </marker>
+        <marker id="arrowTeal" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto">
+          <path d="M 0 0 L 14 7 L 0 14 z" fill="#0f766e"></path>
+        </marker>
+      </defs>
+      <path class="wire" d="M316 425 C335 425 337 425 356 425" marker-end="url(#arrow)"></path>
+      <path class="wire wire-blue" d="M856 455 C876 455 882 455 902 455" marker-end="url(#arrowBlue)"></path>
+      <path class="wire wire-teal" d="M1186 455 C1206 455 1208 455 1228 455" marker-end="url(#arrowTeal)"></path>
+      <path class="wire wire-amber wire-dash" d="M902 610 C884 610 874 610 856 610" marker-end="url(#arrowAmber)"></path>
+      <path class="wire wire-teal" d="M1490 876 C1490 897 1490 897 1490 918" marker-end="url(#arrowTeal)"></path>
+      <path class="wire wire-blue wire-dash" d="M708 918 C708 892 708 884 708 858" marker-end="url(#arrowBlue)"></path>
+    </svg>
+
+    <section class="header">
+      <h1 class="title">双 Agent 测试工程能力全景图</h1>
+      <div class="subtitle">需求解析 → 测试资产生产 → R0 可执行性评审 → 静默执行 → 证据回流与验收闭环</div>
+      <div class="source">依据 .agent/skills 与 .agent/workflows 重构</div>
+    </section>
+
+    <section class="panel input">
+      <div class="panel-head">
+        输入基座
+        <div class="panel-sub">Agent 体系的知识与任务入口</div>
+      </div>
+      <div class="cards">
+        <div class="card"><strong>业务需求源</strong><span>PRD、原型、会议纪要、变更摘要，作为一级信源进入需求审计。</span></div>
+        <div class="card"><strong>全局测试规约</strong><span>superpowers-base、设计规范、测试用例结构规范，约束资产格式。</span></div>
+        <div class="card"><strong>项目上下文</strong><span>项目测试文档、历史用例、工期评估、缺陷记录，支持断点与增量更新。</span></div>
+        <div class="card"><strong>环境与账号</strong><span>测试环境 URL、账号凭据、数据画像，进入执行前置检查。</span></div>
+      </div>
+    </section>
+
+    <section class="panel agent1">
+      <div class="panel-head">
+        Agent 1 · 测试设计师
+        <div class="panel-sub">从静态需求中提炼规则、设计覆盖面、生产可交接测试资产</div>
+      </div>
+      <div class="cards">
+        <div class="card stage"><div class="badge blue">P1</div><div><strong>需求解析与 7 维审计</strong><span>全量扫描 PRD/原型，检查数据精度、权限边界、状态一致性、国际化、作用域、异常降级、模板一致性。</span></div></div>
+        <div class="card stage"><div class="badge blue">P3</div><div><strong>Superpowers 规约演化</strong><span>沉淀项目高危规则、模块缩写字典、测试数据画像，并用规则依赖图固定审计顺序。</span></div></div>
+        <div class="card stage"><div class="badge blue">P4-5</div><div><strong>大纲与用例实例化</strong><span>三级测试点大纲、TC 锚点、优先级决策、SmokeTest 打标，输出可执行用例集。</span></div></div>
+        <div class="card stage"><div class="badge blue">P6-7.5</div><div><strong>自审、工期与交接清单</strong><span>完成规则映射自审，量化工期，并生成执行交接清单 YAML 供 Agent2 稳定解析。</span></div></div>
+      </div>
+      <div class="boundary">
+        <div class="rule">边界：不登录活体系统</div>
+        <div class="rule">产出：MD / YAML / 验收报告</div>
+      </div>
+    </section>
+
+    <section class="panel gate">
+      <div class="panel-head">
+        R0 质量闸口
+        <div class="panel-sub">cross_agent_review 闭环</div>
+      </div>
+      <div class="cards">
+        <div class="card stage"><div class="badge amber">A</div><div><strong>Agent2 评审</strong><span>按六维度审计用例可执行性：步骤精细度、中文输入、环境可达、数据自愈、SmokeTest 队列、YAML 完整性。</span></div></div>
+        <div class="card stage"><div class="badge amber">B</div><div><strong>Agent1 修补</strong><span>根据 F-N 反馈修补用例步骤、导航路径、API 参数、数据依赖与凭据引用。</span></div></div>
+        <div class="card stage"><div class="badge amber">C</div><div><strong>复审通过</strong><span>全部反馈项解决后，才允许进入 E1 环境预检与正式执行。</span></div></div>
+      </div>
+    </section>
+
+    <section class="panel agent2">
+      <div class="panel-head">
+        Agent 2 · 测试执行官
+        <div class="panel-sub">在真实环境中后台执行、客观取证、生成执行报告与缺陷清单</div>
+      </div>
+      <div class="cards">
+        <div class="card stage"><div class="badge teal">E1</div><div><strong>环境预检 Gate</strong><span>校验 URL、登录态、测试数据画像与环境截图；失败则输出阻塞报告。</span></div></div>
+        <div class="card stage"><div class="badge teal">E2</div><div><strong>队列编排</strong><span>优先级顺序：Critical SmokeTest → Critical → High → Medium → Low，并等待人工确认执行范围。</span></div></div>
+        <div class="card stage"><div class="badge teal">E3</div><div><strong>三层混合静默执行</strong><span>根据用例路由选择最稳执行层，避免抢占键鼠焦点。</span><div class="mini-grid"><div class="mini">API Direct<br>数据层</div><div class="mini">Playwright<br>无头 UI</div><div class="mini">Browser<br>只读探索</div></div></div></div>
+        <div class="card stage"><div class="badge teal">E4-5</div><div><strong>判定、取证与报告</strong><span>逐步记录实际结果，Fail 即时截图并生成 BUG；最终汇总执行报告、缺陷清单、截图与脚本。</span></div></div>
+      </div>
+      <div class="boundary">
+        <div class="rule">边界：不修改用例与规约</div>
+        <div class="rule">数据库：严格只读 SELECT</div>
+      </div>
+    </section>
+
+    <section class="panel platform">
+      <div class="panel-head">
+        <div>
+          <div class="platform-title">测试平台与资产沉淀闭环</div>
+          <div class="platform-copy">执行结果、缺陷、截图与补充用例标签回流，支撑后续自动入库、动态调度和验收决策。</div>
+        </div>
+        <div class="platform-items">
+          <div class="platform-item">测试用例库</div>
+          <div class="platform-item">执行报告</div>
+          <div class="platform-item">缺陷清单</div>
+          <div class="platform-item">验收报告</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="edge-label l1">需求与规范输入</div>
+    <div class="edge-label l2">交接清单 / 用例集</div>
+    <div class="edge-label l3">执行就绪</div>
+    <div class="edge-label l4">实测证据沉淀</div>
+    <div class="edge-label l5">[需补充用例] 回流</div>
+  </main>
+</body>
+</html>

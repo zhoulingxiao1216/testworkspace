@@ -1,0 +1,1118 @@
+{
+  "responses": [
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/css/FormalOrder%E2%80%8C.CJnvGvVs.css",
+      "status": 200,
+      "method": "GET",
+      "duration_ms": 160.05
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/js/FormalOrder%E2%80%8C.Do7dQ2XK.js",
+      "status": 200,
+      "method": "GET",
+      "duration_ms": 149.89
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/b2b/user/list",
+      "status": 200,
+      "method": "GET",
+      "duration_ms": 137.49
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin/user/list",
+      "status": 200,
+      "method": "POST",
+      "duration_ms": 171.74
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/js/FormalOrder%E2%80%8C.Do7dQ2XK.js",
+      "status": 200,
+      "method": "GET",
+      "duration_ms": null
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/css/FormalOrder%E2%80%8C.CJnvGvVs.css",
+      "status": 200,
+      "method": "GET",
+      "duration_ms": null
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "duration_ms": 122.99
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/detail",
+      "status": 200,
+      "method": "POST",
+      "duration_ms": 138.03
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/detail",
+      "status": 200,
+      "method": "POST",
+      "duration_ms": 131.22
+    }
+  ],
+  "steps": [
+    {
+      "b2b_user_list": {
+        "url": "https://wlz-admin-all-view.hubbuyer.com/b2b/user/list",
+        "detail_present": true
+      }
+    },
+    {
+      "click_detail_button": {
+        "clicked": true,
+        "method": "playwright button has_text",
+        "rowText": "C-CHN19-测试1米 CHN19 China 已审核 一般会员 永久 2099-12-31 23:59 待沟通 金月明 张佳唯 陈牧鹏 yangweibin@sakuradk.com 12541526325 3 暂无 45063.82 /B2B YouTube 2026-05-13 08:12 2026-05-08 15:43 详情"
+      }
+    },
+    {
+      "after_detail_click": {
+        "url": "https://wlz-admin-all-view.hubbuyer.com/b2b/user/list",
+        "batch_import_present": false,
+        "text_has_customer_detail": false
+      }
+    },
+    {
+      "fallback_click_detail_button": {
+        "clicked": true,
+        "count": 30,
+        "text": "详情",
+        "cls": "el-button el-button--primary"
+      }
+    },
+    {
+      "click_batch_import_tab": {
+        "clicked": false,
+        "candidates": [
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "查询",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "重置",
+            "cls": "el-button is-plain"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "展开",
+            "cls": "el-button el-button--info is-text"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "批量导出",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "",
+            "cls": "btn-prev is-first"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "",
+            "cls": "btn-next"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "",
+            "cls": "el-dialog__headerbtn"
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "admin",
+            "cls": "color-primary"
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "",
+            "cls": "inline-block w-28 flex justify-start"
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "工作台",
+            "cls": ""
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "",
+            "cls": "inline-block w-28 flex justify-start"
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "订单管理",
+            "cls": ""
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "",
+            "cls": "inline-block w-28 flex justify-start"
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "仓库管理",
+            "cls": ""
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "",
+            "cls": "inline-block w-28 flex justify-start"
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "发货配送",
+            "cls": ""
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "",
+            "cls": "inline-block w-28 flex justify-start"
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "客户管理",
+            "cls": ""
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "客户信息",
+            "cls": ""
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "会员等级",
+            "cls": ""
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "",
+            "cls": "inline-block w-28 flex justify-start"
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "营销管理",
+            "cls": ""
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "",
+            "cls": "inline-block w-28 flex justify-start"
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "附加项",
+            "cls": ""
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "",
+            "cls": "inline-block w-28 flex justify-start"
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "系统设置",
+            "cls": ""
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "",
+            "cls": "el-select__input-calculator"
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "请选择所属国家",
+            "cls": ""
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "查询",
+            "cls": ""
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "重置",
+            "cls": ""
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "展开",
+            "cls": ""
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "批量导出",
+            "cls": ""
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "全部（102）",
+            "cls": "el-radio-button__inner"
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "S级客户（38）",
+            "cls": "el-radio-button__inner"
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "A级客户（2）",
+            "cls": "el-radio-button__inner"
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "B级客户（11）",
+            "cls": "el-radio-button__inner"
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "C级客户（5）",
+            "cls": "el-radio-button__inner"
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "D级客户（46）",
+            "cls": "el-radio-button__inner"
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "",
+            "cls": "el-checkbox__input"
+          },
+          {
+            "tag": "SPAN",
+            "role": null,
+            "text": "",
+            "cls": "el-checkbox__inner"
+          }
+        ]
+      }
+    },
+    {
+      "click_batch_import_button": {
+        "clicked": false,
+        "candidates": [
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "查询",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "重置",
+            "cls": "el-button is-plain"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "展开",
+            "cls": "el-button el-button--info is-text"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "批量导出",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "待沟通",
+            "cls": "el-button el-button--danger is-link"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "详情",
+            "cls": "el-button el-button--primary"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "",
+            "cls": "btn-prev is-first"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "",
+            "cls": "btn-next"
+          },
+          {
+            "tag": "BUTTON",
+            "role": null,
+            "text": "",
+            "cls": "el-dialog__headerbtn"
+          }
+        ]
+      }
+    }
+  ],
+  "guardrail": "?????????????????????",
+  "result": {
+    "b2b_list_reached": true,
+    "detail_opened_inferred": false,
+    "batch_tab_clicked": false,
+    "upload_popup_visible_inferred": false,
+    "upload_popup_contains_excel": false,
+    "upload_popup_contains_xlsx": false,
+    "file_inputs": [],
+    "xlsx_upload_precheck": {
+      "status": "NOT_RUN",
+      "reason": "???????????????/?????????????"
+    }
+  }
+}

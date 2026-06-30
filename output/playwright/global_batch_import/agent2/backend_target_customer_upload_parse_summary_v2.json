@@ -1,0 +1,198 @@
+{
+  "search_attempts": [
+    {
+      "label": "email",
+      "value": "mxnrq@airsworld.net",
+      "fill": {
+        "filled": true,
+        "label": "邮箱",
+        "placeholder": "请输入邮箱",
+        "value": "mxnrq@airsworld.net"
+      },
+      "query": {
+        "clicked": true,
+        "text": "查询"
+      },
+      "target_rows": [],
+      "found": false,
+      "excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页"
+    },
+    {
+      "label": "name_TEST_1010",
+      "value": "TEST-1010",
+      "fill": {
+        "filled": true,
+        "label": "客户姓名",
+        "placeholder": "请输入客户名字",
+        "value": "TEST-1010"
+      },
+      "query": {
+        "clicked": true,
+        "text": "查询"
+      },
+      "target_rows": [],
+      "found": false,
+      "excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页"
+    },
+    {
+      "label": "customer_id_1010",
+      "value": "1010",
+      "fill": {
+        "filled": true,
+        "label": "客户ID",
+        "placeholder": "请输入客户ID",
+        "value": "1010"
+      },
+      "query": {
+        "clicked": true,
+        "text": "查询"
+      },
+      "target_rows": [],
+      "found": false,
+      "excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（0）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（0）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n暂无数据\n30条/页\n共 0 条\n1\n前往\n页"
+    },
+    {
+      "label": "customer_id_full",
+      "value": "D-0/311.40-EC-TEST-1010",
+      "fill": {
+        "filled": true,
+        "label": "客户ID",
+        "placeholder": "请输入客户ID",
+        "value": "D-0/311.40-EC-TEST-1010"
+      },
+      "query": {
+        "clicked": true,
+        "text": "查询"
+      },
+      "target_rows": [],
+      "found": false,
+      "excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（0）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（0）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n暂无数据\n30条/页\n共 0 条\n1\n前往\n页"
+    },
+    {
+      "label": "phone_101010",
+      "value": "101010",
+      "fill": {
+        "filled": true,
+        "label": "联系电话",
+        "placeholder": "请输入联系电话",
+        "value": "101010"
+      },
+      "query": {
+        "clicked": true,
+        "text": "查询"
+      },
+      "target_rows": [],
+      "found": false,
+      "excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（7）\nS级客户（1）\nA级客户（0）\nB级客户（2）\nC级客户（0）\nD级客户（4）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nS-ARE1-199910\n\t\nARE1\n\t\nUnited Arab Emirates\n\t\n已禁用\n\t\nVIP会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n崔红梅\n\t\n吴四佳\n\t\n包瑞楠\n\t\n96666333t@qq.com\n\t\n1010101010\n\t\n1\n\t\n暂无\n\t\n0.00\n\t\nB2B\n\t\n熟人介绍\n\t\n2025-12-22 18:39\n\t\n2025-12-22 18:39\n\t\n详情\n\n\n\t\nD-TLS1-10101010\n\t\nTLS1\n\t\nTimor-Leste\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\ngrf0e@airsworld.net\n\t\n10101010\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2025-12-22 17:46\n\t\n2025-12-22 17:45\n\t\n详情\n\n\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n\n\n\t\nB-USA5-1010\n\t\nUSA5\n\t\nAmerica\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n陈牧鹏\n\t\na28ft@airsworld.net\n\t\n10101010\n\t\n0\n\t\n暂无\n\t\n21.35\n\t\n/B2B\n\t\nInstagram\n\t\n2026-03-26 08:32\n\t\n2025-12-20 21:08\n\t\n详情\n\n\n\t\nD-KOR7-1010\n\t\nKOR7\n\t\nKorea\n\t\n已禁用\n\t\nVIP会员\n\t\n永久\n\t\n2099-12-30 00:00\n\t\n待沟通\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\nvy67j@airsworld.net\n\t\n10101010\n\t\n7\n\t\n暂无\n\t\n99406.88\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-04-07 17:28\n\t\n2025-12-20 13:34\n\t\n详情\n\n\n\t\nD-AFG1-测试12.19\n\t\nAFG1\n\t\nAfghanistan\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\n1219@qq.com\n\t\n10101010\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n熟人介绍\n\t\n2025-12-19 08:53\n\t\n2025-12-19 08:24\n\t\n详情\n\n\n\t\nB-JPN18-1010\n\t\nJPN18\n\t\nJapan\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\n1333@qq.com\n\t\n10101010101010\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n展示会\n\t\n2025-12-17 16:15\n\t"
+    }
+  ],
+  "steps": [
+    {
+      "expand_filters": {
+        "clicked": true,
+        "text": "展开"
+      }
+    }
+  ],
+  "upload_results": [],
+  "responses": [
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/css/FormalOrder%E2%80%8C.CJnvGvVs.css",
+      "status": 200,
+      "method": "GET",
+      "post_data": null
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/js/FormalOrder%E2%80%8C.Do7dQ2XK.js",
+      "status": 200,
+      "method": "GET",
+      "post_data": null
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/js/FormalOrder%E2%80%8C.Do7dQ2XK.js",
+      "status": 200,
+      "method": "GET",
+      "post_data": null
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/css/FormalOrder%E2%80%8C.CJnvGvVs.css",
+      "status": 200,
+      "method": "GET",
+      "post_data": null
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"\",\"name\":\"\",\"user_id\":\"\",\"email\":\"\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"\",\"name\":\"\",\"user_id\":\"\",\"email\":\"\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"\",\"name\":\"\",\"user_id\":\"\",\"email\":\"mxnrq@airsworld.net\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"\",\"name\":\"\",\"user_id\":\"\",\"email\":\"\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"\",\"name\":\"TEST-1010\",\"user_id\":\"\",\"email\":\"\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"\",\"name\":\"\",\"user_id\":\"\",\"email\":\"\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"\",\"name\":\"\",\"user_id\":\"1010\",\"email\":\"\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"\",\"name\":\"\",\"user_id\":\"\",\"email\":\"\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"\",\"name\":\"\",\"user_id\":\"D-0/311.40-EC-TEST-1010\",\"email\":\"\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"\",\"name\":\"\",\"user_id\":\"\",\"email\":\"\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"\",\"name\":\"\",\"user_id\":\"\",\"email\":\"\",\"mobile\":\"101010\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    }
+  ],
+  "console": [],
+  "guardrails": [
+    "no_8160",
+    "no_final_confirm_import",
+    "no_cart_write",
+    "no_order_generation"
+  ],
+  "status": "BLOCKED_TARGET_NOT_FOUND"
+}

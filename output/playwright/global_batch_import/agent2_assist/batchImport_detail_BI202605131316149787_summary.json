@@ -1,0 +1,2073 @@
+{
+  "api_code": 200,
+  "message": "success",
+  "batch": {
+    "batch_no": "BI202605131316149787",
+    "uuid": "BI20260513131614aadcc732674a",
+    "user_uuid": "KOR8",
+    "template_type": "7182",
+    "template_name": "7182 选品模板",
+    "original_file_name": "20260430発注書_1637.xlsx",
+    "total_rows": 96,
+    "success_rows": 34,
+    "failed_rows": 62,
+    "status": 400,
+    "created_at": "2026-05-13 13:16:14",
+    "updated_at": "2026-05-13 13:16:16",
+    "preview_summary": {
+      "total_rows": 96,
+      "failed_rows": 62,
+      "pending_rows": 0,
+      "success_rows": 34,
+      "conflict_rows": 0,
+      "template_name": "7182 选品模板",
+      "template_type": "7182",
+      "price_compare_rows": 96
+    },
+    "header_json": {
+      "original_headers": {
+        "1": "index",
+        "2": "url",
+        "3": "name",
+        "4": "SKU",
+        "5": "size",
+        "6": "color",
+        "7": "price",
+        "8": "JANCODE",
+        "9": "user_order_no",
+        "10": "num",
+        "11": "size_remark",
+        "12": "color_remark",
+        "13": "else_remark",
+        "14": "spec_id",
+        "15": "sku_id",
+        "16": "ItemURL",
+        "17": "SkuURL"
+      },
+      "canonical_headers": {
+        "1": "",
+        "2": "url",
+        "3": "name",
+        "4": "sku",
+        "5": "size",
+        "6": "color",
+        "7": "price",
+        "8": "jancode",
+        "9": "user_order_no",
+        "10": "num",
+        "11": "size_remark",
+        "12": "color_remark",
+        "13": "else_remark",
+        "14": "spec_id",
+        "15": "sku_id",
+        "16": "item_url",
+        "17": "sku_url"
+      }
+    },
+    "template_snapshot": {
+      "detected_fields": [
+        "url",
+        "name",
+        "sku",
+        "size",
+        "color",
+        "price",
+        "jancode",
+        "user_order_no",
+        "num",
+        "size_remark",
+        "color_remark",
+        "else_remark",
+        "spec_id",
+        "sku_id",
+        "item_url",
+        "sku_url"
+      ],
+      "accepted_missing_optional_fields": []
+    }
+  },
+  "returned_rows": 96,
+  "total": 96,
+  "status_counts": {
+    "400": 62,
+    "200": 34
+  },
+  "error_counts": [
+    [
+      "价格错误",
+      42
+    ],
+    [
+      "尺寸错误",
+      9
+    ],
+    [
+      "颜色错误",
+      3
+    ],
+    [
+      "颜色错误；价格错误",
+      3
+    ],
+    [
+      "尺寸错误；价格错误",
+      2
+    ],
+    [
+      "价格错误；数量超过可售库存",
+      1
+    ],
+    [
+      "颜色错误；尺寸错误；价格错误",
+      1
+    ],
+    [
+      "数量超过可售库存",
+      1
+    ]
+  ],
+  "first_failed_rows": [
+    {
+      "row_index": 2,
+      "row_status": 400,
+      "error_message": "价格错误；数量超过可售库存",
+      "raw_data": {
+        "SKU": "facsmk23-zai-black",
+        "num": "2",
+        "url": "https://detail.1688.com/offer/619749401154.html",
+        "name": "facsmk23",
+        "size": "均码 男女通用",
+        "color": "XTJ30-02",
+        "index": "1",
+        "price": "6",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/facsmk23-zai-black.jpg",
+        "sku_id": "4380891784388",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/facsmk23",
+        "JANCODE": "4294591956471",
+        "spec_id": "2b6eecdeb180d26befc1a16dd46d091a",
+        "else_remark": "1",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10369619"
+      },
+      "normalized_data": {
+        "num": "2",
+        "sku": "facsmk23-zai-black",
+        "url": "https://detail.1688.com/offer/619749401154.html",
+        "name": "facsmk23",
+        "size": "均码 男女通用",
+        "color": "XTJ30-02",
+        "price": "6",
+        "sku_id": "4380891784388",
+        "jancode": "4294591956471",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/facsmk23-zai-black.jpg",
+        "spec_id": "2b6eecdeb180d26befc1a16dd46d091a",
+        "item_url": "https://item.rakuten.co.jp/backyard/facsmk23",
+        "else_remark": "1",
+        "matched_sku": {
+          "price": "5.5",
+          "sku_id": "4380891784388",
+          "spec_id": "2b6eecdeb180d26befc1a16dd46d091a"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "6",
+          "link_price": "5.5",
+          "price_diff": "-0.50"
+        },
+        "user_order_no": "10369619"
+      }
+    },
+    {
+      "row_index": 3,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "facsmk23-zai-xtj3010",
+        "num": "2",
+        "url": "https://detail.1688.com/offer/619749401154.html",
+        "name": "facsmk23",
+        "size": "均码 男女通用",
+        "color": "XTJ30-10",
+        "index": "2",
+        "price": "6",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/facsmk23-zai-xtj3010.jpg",
+        "sku_id": "4380891784401",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/facsmk23",
+        "JANCODE": "4294593253318",
+        "spec_id": "fc2c8b8060401753a8c0f0025785c355",
+        "else_remark": "1",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10369619"
+      },
+      "normalized_data": {
+        "num": "2",
+        "sku": "facsmk23-zai-xtj3010",
+        "url": "https://detail.1688.com/offer/619749401154.html",
+        "name": "facsmk23",
+        "size": "均码 男女通用",
+        "color": "XTJ30-10",
+        "price": "6",
+        "sku_id": "4380891784401",
+        "jancode": "4294593253318",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/facsmk23-zai-xtj3010.jpg",
+        "spec_id": "fc2c8b8060401753a8c0f0025785c355",
+        "item_url": "https://item.rakuten.co.jp/backyard/facsmk23",
+        "else_remark": "1",
+        "matched_sku": {
+          "price": "5.5",
+          "sku_id": "4380891784401",
+          "spec_id": "fc2c8b8060401753a8c0f0025785c355"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "6",
+          "link_price": "5.5",
+          "price_diff": "-0.50"
+        },
+        "user_order_no": "10369619"
+      }
+    },
+    {
+      "row_index": 4,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "fwberet08-zai-navy",
+        "num": "2",
+        "url": "https://detail.1688.com/offer/600727070225.html",
+        "name": "fwberet08",
+        "size": "M（56-58cm）",
+        "color": "蓝色",
+        "index": "3",
+        "price": "16",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/fwberet08-zai-navy.jpg",
+        "sku_id": "4366958622788",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/fwberet08",
+        "JANCODE": "4294592466412",
+        "spec_id": "8c4c42fa014d6bb368e3e769c8384e3d",
+        "else_remark": "1",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10361981"
+      },
+      "normalized_data": {
+        "num": "2",
+        "sku": "fwberet08-zai-navy",
+        "url": "https://detail.1688.com/offer/600727070225.html",
+        "name": "fwberet08",
+        "size": "M（56-58cm）",
+        "color": "蓝色",
+        "price": "16",
+        "sku_id": "4366958622788",
+        "jancode": "4294592466412",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/fwberet08-zai-navy.jpg",
+        "spec_id": "8c4c42fa014d6bb368e3e769c8384e3d",
+        "item_url": "https://item.rakuten.co.jp/backyard/fwberet08",
+        "else_remark": "1",
+        "matched_sku": {
+          "price": "15",
+          "sku_id": "4366958622788",
+          "spec_id": "8c4c42fa014d6bb368e3e769c8384e3d"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "16",
+          "link_price": "15",
+          "price_diff": "-1.00"
+        },
+        "user_order_no": "10361981"
+      }
+    },
+    {
+      "row_index": 6,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "g6146-zai-beige",
+        "num": "2",
+        "url": "https://detail.1688.com/offer/764348813572.html",
+        "name": "g6146",
+        "size": "",
+        "color": "米色",
+        "index": "5",
+        "price": "12",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/g6146-zai-beige.jpg",
+        "sku_id": "5258475440739",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/g6146",
+        "JANCODE": "4294593149307",
+        "spec_id": "552a096fbad69427b9c9698fb8bd1482",
+        "else_remark": "1",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10365983"
+      },
+      "normalized_data": {
+        "num": "2",
+        "sku": "g6146-zai-beige",
+        "url": "https://detail.1688.com/offer/764348813572.html",
+        "name": "g6146",
+        "size": "",
+        "color": "米色",
+        "price": "12",
+        "sku_id": "5258475440739",
+        "jancode": "4294593149307",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/g6146-zai-beige.jpg",
+        "spec_id": "552a096fbad69427b9c9698fb8bd1482",
+        "item_url": "https://item.rakuten.co.jp/backyard/g6146",
+        "else_remark": "1",
+        "matched_sku": {
+          "price": "10.97",
+          "sku_id": "5258475440739",
+          "spec_id": "552a096fbad69427b9c9698fb8bd1482"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "12",
+          "link_price": "10.97",
+          "price_diff": "-1.03"
+        },
+        "user_order_no": "10365983"
+      }
+    },
+    {
+      "row_index": 8,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "g6265-zai-blue",
+        "num": "2",
+        "url": "https://detail.1688.com/offer/710729432579.html",
+        "name": "g6265",
+        "size": "",
+        "color": "蓝五扣护脊浴网带枕头",
+        "index": "7",
+        "price": "7.5",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/g6265-zai-blue.jpg",
+        "sku_id": "5158167263056",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/g6265",
+        "JANCODE": "4294593261436",
+        "spec_id": "5ac68fa2f90421552414fd24b0dace2b",
+        "else_remark": "1",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10356952"
+      },
+      "normalized_data": {
+        "num": "2",
+        "sku": "g6265-zai-blue",
+        "url": "https://detail.1688.com/offer/710729432579.html",
+        "name": "g6265",
+        "size": "",
+        "color": "蓝五扣护脊浴网带枕头",
+        "price": "7.5",
+        "sku_id": "5158167263056",
+        "jancode": "4294593261436",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/g6265-zai-blue.jpg",
+        "spec_id": "5ac68fa2f90421552414fd24b0dace2b",
+        "item_url": "https://item.rakuten.co.jp/backyard/g6265",
+        "else_remark": "1",
+        "matched_sku": {
+          "price": "7.2",
+          "sku_id": "5158167263056",
+          "spec_id": "5ac68fa2f90421552414fd24b0dace2b"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "7.5",
+          "link_price": "7.2",
+          "price_diff": "-0.30"
+        },
+        "user_order_no": "10356952"
+      }
+    },
+    {
+      "row_index": 9,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "g6265-zai-pink",
+        "num": "2",
+        "url": "https://detail.1688.com/offer/710729432579.html",
+        "name": "g6265",
+        "size": "",
+        "color": "粉五扣护脊浴网带枕头",
+        "index": "8",
+        "price": "7.5",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/g6265-zai-pink.jpg",
+        "sku_id": "5158167263057",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/g6265",
+        "JANCODE": "4294593261443",
+        "spec_id": "a493a8a4691356bf762ef125c8cc9af9",
+        "else_remark": "1",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10356952"
+      },
+      "normalized_data": {
+        "num": "2",
+        "sku": "g6265-zai-pink",
+        "url": "https://detail.1688.com/offer/710729432579.html",
+        "name": "g6265",
+        "size": "",
+        "color": "粉五扣护脊浴网带枕头",
+        "price": "7.5",
+        "sku_id": "5158167263057",
+        "jancode": "4294593261443",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/g6265-zai-pink.jpg",
+        "spec_id": "a493a8a4691356bf762ef125c8cc9af9",
+        "item_url": "https://item.rakuten.co.jp/backyard/g6265",
+        "else_remark": "1",
+        "matched_sku": {
+          "price": "7.2",
+          "sku_id": "5158167263057",
+          "spec_id": "a493a8a4691356bf762ef125c8cc9af9"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "7.5",
+          "link_price": "7.2",
+          "price_diff": "-0.30"
+        },
+        "user_order_no": "10356952"
+      }
+    },
+    {
+      "row_index": 10,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "g6265-zai-crown",
+        "num": "2",
+        "url": "https://detail.1688.com/offer/710729432579.html",
+        "name": "g6265",
+        "size": "",
+        "color": "皇冠五扣浴网带枕头",
+        "index": "9",
+        "price": "7.5",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/g6265-zai-crown.jpg",
+        "sku_id": "5605335610688",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/g6265",
+        "JANCODE": "4294593261467",
+        "spec_id": "6f7fd6794719eda44a38c44d244ae2c8",
+        "else_remark": "1",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10356952"
+      },
+      "normalized_data": {
+        "num": "2",
+        "sku": "g6265-zai-crown",
+        "url": "https://detail.1688.com/offer/710729432579.html",
+        "name": "g6265",
+        "size": "",
+        "color": "皇冠五扣浴网带枕头",
+        "price": "7.5",
+        "sku_id": "5605335610688",
+        "jancode": "4294593261467",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/g6265-zai-crown.jpg",
+        "spec_id": "6f7fd6794719eda44a38c44d244ae2c8",
+        "item_url": "https://item.rakuten.co.jp/backyard/g6265",
+        "else_remark": "1",
+        "matched_sku": {
+          "price": "7.2",
+          "sku_id": "5605335610688",
+          "spec_id": "6f7fd6794719eda44a38c44d244ae2c8"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "7.5",
+          "link_price": "7.2",
+          "price_diff": "-0.30"
+        },
+        "user_order_no": "10356952"
+      }
+    },
+    {
+      "row_index": 12,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "g7099-38to39size-black1601",
+        "num": "2",
+        "url": "https://detail.1688.com/offer/774864831793.html",
+        "name": "g7099",
+        "size": "38-39适合37-38的脚",
+        "color": "1601蝴蝶结拖鞋-黑色",
+        "index": "11",
+        "price": "6",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/g7099-38to39size-black1601.jpg",
+        "sku_id": "5302593481804",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/g7099",
+        "JANCODE": "4294593479633",
+        "spec_id": "319ca9bf26e784b7587581406eb9b73f",
+        "else_remark": "1",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10370475"
+      },
+      "normalized_data": {
+        "num": "2",
+        "sku": "g7099-38to39size-black1601",
+        "url": "https://detail.1688.com/offer/774864831793.html",
+        "name": "g7099",
+        "size": "38-39适合37-38的脚",
+        "color": "1601蝴蝶结拖鞋-黑色",
+        "price": "6",
+        "sku_id": "5302593481804",
+        "jancode": "4294593479633",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/g7099-38to39size-black1601.jpg",
+        "spec_id": "319ca9bf26e784b7587581406eb9b73f",
+        "item_url": "https://item.rakuten.co.jp/backyard/g7099",
+        "else_remark": "1",
+        "matched_sku": {
+          "price": "5.5",
+          "sku_id": "5302593481804",
+          "spec_id": "319ca9bf26e784b7587581406eb9b73f"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "6",
+          "link_price": "5.5",
+          "price_diff": "-0.50"
+        },
+        "user_order_no": "10370475"
+      }
+    },
+    {
+      "row_index": 14,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "gtops6031-zai-white",
+        "num": "2",
+        "url": "https://detail.1688.com/offer/668402960181.html",
+        "name": "gtops6031",
+        "size": "均码",
+        "color": "白色",
+        "index": "13",
+        "price": "60",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/gtops6031-zai-white.jpg",
+        "sku_id": "4811765688274",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/gtops6031",
+        "JANCODE": "4294593018030",
+        "spec_id": "9ce76d4e383faffd7829838ec03ad7c7",
+        "else_remark": "1",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10366298"
+      },
+      "normalized_data": {
+        "num": "2",
+        "sku": "gtops6031-zai-white",
+        "url": "https://detail.1688.com/offer/668402960181.html",
+        "name": "gtops6031",
+        "size": "均码",
+        "color": "白色",
+        "price": "60",
+        "sku_id": "4811765688274",
+        "jancode": "4294593018030",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/gtops6031-zai-white.jpg",
+        "spec_id": "9ce76d4e383faffd7829838ec03ad7c7",
+        "item_url": "https://item.rakuten.co.jp/backyard/gtops6031",
+        "else_remark": "1",
+        "matched_sku": {
+          "price": "58",
+          "sku_id": "4811765688274",
+          "spec_id": "9ce76d4e383faffd7829838ec03ad7c7"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "60",
+          "link_price": "58",
+          "price_diff": "-2.00"
+        },
+        "user_order_no": "10366298"
+      }
+    },
+    {
+      "row_index": 15,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "incense09-zai-atype",
+        "num": "2",
+        "url": "https://detail.1688.com/offer/617903841209.html",
+        "name": "incense09",
+        "size": "",
+        "color": "小水滴香插",
+        "index": "14",
+        "price": "1.7",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/incense09-zai-atype.jpg",
+        "sku_id": "4927969167712",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/incense09",
+        "JANCODE": "4294593115678",
+        "spec_id": "44f31a44fc6150d4097f71b334863455",
+        "else_remark": "1",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10369602"
+      },
+      "normalized_data": {
+        "num": "2",
+        "sku": "incense09-zai-atype",
+        "url": "https://detail.1688.com/offer/617903841209.html",
+        "name": "incense09",
+        "size": "",
+        "color": "小水滴香插",
+        "price": "1.7",
+        "sku_id": "4927969167712",
+        "jancode": "4294593115678",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/incense09-zai-atype.jpg",
+        "spec_id": "44f31a44fc6150d4097f71b334863455",
+        "item_url": "https://item.rakuten.co.jp/backyard/incense09",
+        "else_remark": "1",
+        "matched_sku": {
+          "price": "0.99",
+          "sku_id": "4927969167712",
+          "spec_id": "44f31a44fc6150d4097f71b334863455"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "1.7",
+          "link_price": "0.99",
+          "price_diff": "-0.71"
+        },
+        "user_order_no": "10369602"
+      }
+    },
+    {
+      "row_index": 16,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "kbag76-zai-pink",
+        "num": "2",
+        "url": "https://detail.1688.com/offer/623152018230.html",
+        "name": "kbag76",
+        "size": "",
+        "color": "粉色",
+        "index": "15",
+        "price": "49",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/kbag76-zai-pink.jpg",
+        "sku_id": "4752330913419",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/kbag76",
+        "JANCODE": "4294593171940",
+        "spec_id": "b1a1765aa55aec4e02d84ce81ac546d2",
+        "else_remark": "1",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10366987"
+      },
+      "normalized_data": {
+        "num": "2",
+        "sku": "kbag76-zai-pink",
+        "url": "https://detail.1688.com/offer/623152018230.html",
+        "name": "kbag76",
+        "size": "",
+        "color": "粉色",
+        "price": "49",
+        "sku_id": "4752330913419",
+        "jancode": "4294593171940",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/kbag76-zai-pink.jpg",
+        "spec_id": "b1a1765aa55aec4e02d84ce81ac546d2",
+        "item_url": "https://item.rakuten.co.jp/backyard/kbag76",
+        "else_remark": "1",
+        "matched_sku": {
+          "price": "47",
+          "sku_id": "4752330913419",
+          "spec_id": "b1a1765aa55aec4e02d84ce81ac546d2"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "49",
+          "link_price": "47",
+          "price_diff": "-2.00"
+        },
+        "user_order_no": "10366987"
+      }
+    },
+    {
+      "row_index": 17,
+      "row_status": 400,
+      "error_message": "颜色错误",
+      "raw_data": {
+        "SKU": "kgoods66-zai-brown",
+        "num": "2",
+        "url": "https://detail.1688.com/offer/715489951255.html",
+        "name": "kgoods66",
+        "size": "",
+        "color": "蛙眼款小号棕色-100cm",
+        "index": "16",
+        "price": "9",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/kgoods66-zai-brown.jpg",
+        "sku_id": "5061930952790",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/kgoods66",
+        "JANCODE": "4294592990955",
+        "spec_id": "fc36ccc7b3c7829c2966b76a0f0097e6",
+        "else_remark": "1",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10369049"
+      },
+      "normalized_data": {
+        "num": "2",
+        "sku": "kgoods66-zai-brown",
+        "url": "https://detail.1688.com/offer/715489951255.html",
+        "name": "kgoods66",
+        "size": "",
+        "color": "蛙眼款小号棕色-100cm",
+        "price": "9",
+        "sku_id": "5061930952790",
+        "jancode": "4294592990955",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/kgoods66-zai-brown.jpg",
+        "spec_id": "fc36ccc7b3c7829c2966b76a0f0097e6",
+        "item_url": "https://item.rakuten.co.jp/backyard/kgoods66",
+        "else_remark": "1",
+        "matched_sku": {
+          "price": "9",
+          "sku_id": "5061930952790",
+          "spec_id": "fc36ccc7b3c7829c2966b76a0f0097e6"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "9",
+          "link_price": "9",
+          "price_diff": "0.00"
+        },
+        "user_order_no": "10369049"
+      }
+    },
+    {
+      "row_index": 18,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "kj66-zai-yellow",
+        "num": "2",
+        "url": "https://detail.1688.com/offer/634760382775.html",
+        "name": "kj66",
+        "size": "",
+        "color": "黄色",
+        "index": "17",
+        "price": "15",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/kj66-zai-yellow.jpg",
+        "sku_id": "4539167889532",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/kj66",
+        "JANCODE": "4294591938583",
+        "spec_id": "36c58a69219820709b9475e70bd789d4",
+        "else_remark": "1",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10369589"
+      },
+      "normalized_data": {
+        "num": "2",
+        "sku": "kj66-zai-yellow",
+        "url": "https://detail.1688.com/offer/634760382775.html",
+        "name": "kj66",
+        "size": "",
+        "color": "黄色",
+        "price": "15",
+        "sku_id": "4539167889532",
+        "jancode": "4294591938583",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/kj66-zai-yellow.jpg",
+        "spec_id": "36c58a69219820709b9475e70bd789d4",
+        "item_url": "https://item.rakuten.co.jp/backyard/kj66",
+        "else_remark": "1",
+        "matched_sku": {
+          "price": "16",
+          "sku_id": "4539167889532",
+          "spec_id": "36c58a69219820709b9475e70bd789d4"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "15",
+          "link_price": "16",
+          "price_diff": "1.00"
+        },
+        "user_order_no": "10369589"
+      }
+    },
+    {
+      "row_index": 25,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "lycl102-zai-blue",
+        "num": "2",
+        "url": "https://detail.1688.com/offer/679830213775.html",
+        "name": "lycl102",
+        "size": "",
+        "color": "深蓝色",
+        "index": "24",
+        "price": "12",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/lycl102-zai-blue.jpg",
+        "sku_id": "5046072618311",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/lycl102",
+        "JANCODE": "4294592444854",
+        "spec_id": "07b8af6269ef1a3ecd80b132b49c320a",
+        "else_remark": "1",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10369248"
+      },
+      "normalized_data": {
+        "num": "2",
+        "sku": "lycl102-zai-blue",
+        "url": "https://detail.1688.com/offer/679830213775.html",
+        "name": "lycl102",
+        "size": "",
+        "color": "深蓝色",
+        "price": "12",
+        "sku_id": "5046072618311",
+        "jancode": "4294592444854",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/lycl102-zai-blue.jpg",
+        "spec_id": "07b8af6269ef1a3ecd80b132b49c320a",
+        "item_url": "https://item.rakuten.co.jp/backyard/lycl102",
+        "else_remark": "1",
+        "matched_sku": {
+          "price": "13.3",
+          "sku_id": "5046072618311",
+          "spec_id": "07b8af6269ef1a3ecd80b132b49c320a"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "12",
+          "link_price": "13.3",
+          "price_diff": "1.30"
+        },
+        "user_order_no": "10369248"
+      }
+    },
+    {
+      "row_index": 26,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "lysh241-lsize-black",
+        "num": "2",
+        "url": "https://detail.1688.com/offer/601774039606.html",
+        "name": "lysh241",
+        "size": "L",
+        "color": "黑色",
+        "index": "25",
+        "price": "11.5",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/lysh241-lsize-black.jpg",
+        "sku_id": "4379140667254",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/lysh241",
+        "JANCODE": "4294593153878",
+        "spec_id": "b99ece08861a79e13a4dba90e97ebff8",
+        "else_remark": "1",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10366653"
+      },
+      "normalized_data": {
+        "num": "2",
+        "sku": "lysh241-lsize-black",
+        "url": "https://detail.1688.com/offer/601774039606.html",
+        "name": "lysh241",
+        "size": "L",
+        "color": "黑色",
+        "price": "11.5",
+        "sku_id": "4379140667254",
+        "jancode": "4294593153878",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/lysh241-lsize-black.jpg",
+        "spec_id": "b99ece08861a79e13a4dba90e97ebff8",
+        "item_url": "https://item.rakuten.co.jp/backyard/lysh241",
+        "else_remark": "1",
+        "matched_sku": {
+          "price": "11",
+          "sku_id": "4379140667254",
+          "spec_id": "b99ece08861a79e13a4dba90e97ebff8"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "11.5",
+          "link_price": "11",
+          "price_diff": "-0.50"
+        },
+        "user_order_no": "10366653"
+      }
+    },
+    {
+      "row_index": 27,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "mmbrace118e-zai-silver",
+        "num": "2",
+        "url": "https://detail.1688.com/offer/693444190464.html",
+        "name": "mmbrace118e",
+        "size": "",
+        "color": "【1288】钢手链 钢色",
+        "index": "26",
+        "price": "9.8",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/mmbrace118e-zai-silver.jpg",
+        "sku_id": "4919571312275",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/mmbrace118e",
+        "JANCODE": "4294592997305",
+        "spec_id": "5066ac6004906099733d90069ef32acd",
+        "else_remark": "1",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10358227"
+      },
+      "normalized_data": {
+        "num": "2",
+        "sku": "mmbrace118e-zai-silver",
+        "url": "https://detail.1688.com/offer/693444190464.html",
+        "name": "mmbrace118e",
+        "size": "",
+        "color": "【1288】钢手链 钢色",
+        "price": "9.8",
+        "sku_id": "4919571312275",
+        "jancode": "4294592997305",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/mmbrace118e-zai-silver.jpg",
+        "spec_id": "5066ac6004906099733d90069ef32acd",
+        "item_url": "https://item.rakuten.co.jp/backyard/mmbrace118e",
+        "else_remark": "1",
+        "matched_sku": {
+          "price": "7.8",
+          "sku_id": "4919571312275",
+          "spec_id": "5066ac6004906099733d90069ef32acd"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "9.8",
+          "link_price": "7.8",
+          "price_diff": "-2.00"
+        },
+        "user_order_no": "10358227"
+      }
+    },
+    {
+      "row_index": 28,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "mmbrs117g-70c32c-black",
+        "num": "3",
+        "url": "https://detail.1688.com/offer/709032159160.html",
+        "name": "mmbrs117g",
+        "size": "70C/32C",
+        "color": "黑色",
+        "index": "27",
+        "price": "30",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/mmbrs117g-70c32c-black.jpg",
+        "sku_id": "5144211118879",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/mmbrs117g",
+        "JANCODE": "4294592806959",
+        "spec_id": "a3a67dc1bd299f15332b425f5c85bda5",
+        "else_remark": "2",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10368193"
+      },
+      "normalized_data": {
+        "num": "3",
+        "sku": "mmbrs117g-70c32c-black",
+        "url": "https://detail.1688.com/offer/709032159160.html",
+        "name": "mmbrs117g",
+        "size": "70C/32C",
+        "color": "黑色",
+        "price": "30",
+        "sku_id": "5144211118879",
+        "jancode": "4294592806959",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/mmbrs117g-70c32c-black.jpg",
+        "spec_id": "a3a67dc1bd299f15332b425f5c85bda5",
+        "item_url": "https://item.rakuten.co.jp/backyard/mmbrs117g",
+        "else_remark": "2",
+        "matched_sku": {
+          "price": "32",
+          "sku_id": "5144211118879",
+          "spec_id": "a3a67dc1bd299f15332b425f5c85bda5"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "30",
+          "link_price": "32",
+          "price_diff": "2.00"
+        },
+        "user_order_no": "10368193"
+      }
+    },
+    {
+      "row_index": 30,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "mmkbr9h-msize-apink",
+        "num": "2",
+        "url": "https://detail.1688.com/offer/710522447519.html",
+        "name": "mmkbr9h",
+        "size": "M/75A【60-70斤】",
+        "color": "粉红色【宽带】",
+        "index": "29",
+        "price": "11",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/mmkbr9h-msize-apink.jpg",
+        "sku_id": "5070607928499",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/mmkbr9h",
+        "JANCODE": "4294593142940",
+        "spec_id": "c372984a3d62a2de697a8bf7f9971673",
+        "else_remark": "1",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10368765"
+      },
+      "normalized_data": {
+        "num": "2",
+        "sku": "mmkbr9h-msize-apink",
+        "url": "https://detail.1688.com/offer/710522447519.html",
+        "name": "mmkbr9h",
+        "size": "M/75A【60-70斤】",
+        "color": "粉红色【宽带】",
+        "price": "11",
+        "sku_id": "5070607928499",
+        "jancode": "4294593142940",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/mmkbr9h-msize-apink.jpg",
+        "spec_id": "c372984a3d62a2de697a8bf7f9971673",
+        "item_url": "https://item.rakuten.co.jp/backyard/mmkbr9h",
+        "else_remark": "1",
+        "matched_sku": {
+          "price": "12",
+          "sku_id": "5070607928499",
+          "spec_id": "c372984a3d62a2de697a8bf7f9971673"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "11",
+          "link_price": "12",
+          "price_diff": "1.00"
+        },
+        "user_order_no": "10368765"
+      }
+    },
+    {
+      "row_index": 31,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "mmkbr9h-msize-awhite",
+        "num": "2",
+        "url": "https://detail.1688.com/offer/710522447519.html",
+        "name": "mmkbr9h",
+        "size": "M/75A【60-70斤】",
+        "color": "白色【宽带】",
+        "index": "30",
+        "price": "11",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/mmkbr9h-msize-awhite.jpg",
+        "sku_id": "5070607928503",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/mmkbr9h",
+        "JANCODE": "4294593142902",
+        "spec_id": "db75f03d114fc38115317dfc8e978452",
+        "else_remark": "1",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10368765"
+      },
+      "normalized_data": {
+        "num": "2",
+        "sku": "mmkbr9h-msize-awhite",
+        "url": "https://detail.1688.com/offer/710522447519.html",
+        "name": "mmkbr9h",
+        "size": "M/75A【60-70斤】",
+        "color": "白色【宽带】",
+        "price": "11",
+        "sku_id": "5070607928503",
+        "jancode": "4294593142902",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/mmkbr9h-msize-awhite.jpg",
+        "spec_id": "db75f03d114fc38115317dfc8e978452",
+        "item_url": "https://item.rakuten.co.jp/backyard/mmkbr9h",
+        "else_remark": "1",
+        "matched_sku": {
+          "price": "12",
+          "sku_id": "5070607928503",
+          "spec_id": "db75f03d114fc38115317dfc8e978452"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "11",
+          "link_price": "12",
+          "price_diff": "1.00"
+        },
+        "user_order_no": "10368765"
+      }
+    },
+    {
+      "row_index": 32,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "mmpo426e-msize-black",
+        "num": "2",
+        "url": "https://detail.1688.com/offer/666763942738.html",
+        "name": "mmpo426e",
+        "size": "M",
+        "color": "黑色",
+        "index": "31",
+        "price": "43",
+        "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/mmpo426e-msize-black.jpg",
+        "sku_id": "4801164800331",
+        "ItemURL": "https://item.rakuten.co.jp/backyard/mmpo426e",
+        "JANCODE": "4294593131876",
+        "spec_id": "4b2120e532948daa11e58e09bb260801",
+        "else_remark": "1",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": "10369129"
+      },
+      "normalized_data": {
+        "num": "2",
+        "sku": "mmpo426e-msize-black",
+        "url": "https://detail.1688.com/offer/666763942738.html",
+        "name": "mmpo426e",
+        "size": "M",
+        "color": "黑色",
+        "price": "43",
+        "sku_id": "4801164800331",
+        "jancode": "4294593131876",
+        "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/mmpo426e-msize-black.jpg",
+        "spec_id": "4b2120e532948daa11e58e09bb260801",
+        "item_url": "https://item.rakuten.co.jp/backyard/mmpo426e",
+        "else_remark": "1",
+        "matched_sku": {
+          "price": "40",
+          "sku_id": "4801164800331",
+          "spec_id": "4b2120e532948daa11e58e09bb260801"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "43",
+          "link_price": "40",
+          "price_diff": "-3.00"
+        },
+        "user_order_no": "10369129"
+      }
+    }
+  ],
+  "error_samples": {
+    "价格错误；数量超过可售库存": [
+      {
+        "row_index": 2,
+        "row_status": 400,
+        "error_message": "价格错误；数量超过可售库存",
+        "raw_data": {
+          "SKU": "facsmk23-zai-black",
+          "num": "2",
+          "url": "https://detail.1688.com/offer/619749401154.html",
+          "name": "facsmk23",
+          "size": "均码 男女通用",
+          "color": "XTJ30-02",
+          "index": "1",
+          "price": "6",
+          "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/facsmk23-zai-black.jpg",
+          "sku_id": "4380891784388",
+          "ItemURL": "https://item.rakuten.co.jp/backyard/facsmk23",
+          "JANCODE": "4294591956471",
+          "spec_id": "2b6eecdeb180d26befc1a16dd46d091a",
+          "else_remark": "1",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": "10369619"
+        },
+        "normalized_data": {
+          "num": "2",
+          "sku": "facsmk23-zai-black",
+          "url": "https://detail.1688.com/offer/619749401154.html",
+          "name": "facsmk23",
+          "size": "均码 男女通用",
+          "color": "XTJ30-02",
+          "price": "6",
+          "sku_id": "4380891784388",
+          "jancode": "4294591956471",
+          "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/facsmk23-zai-black.jpg",
+          "spec_id": "2b6eecdeb180d26befc1a16dd46d091a",
+          "item_url": "https://item.rakuten.co.jp/backyard/facsmk23",
+          "else_remark": "1",
+          "matched_sku": {
+            "price": "5.5",
+            "sku_id": "4380891784388",
+            "spec_id": "2b6eecdeb180d26befc1a16dd46d091a"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "6",
+            "link_price": "5.5",
+            "price_diff": "-0.50"
+          },
+          "user_order_no": "10369619"
+        }
+      }
+    ],
+    "价格错误": [
+      {
+        "row_index": 3,
+        "row_status": 400,
+        "error_message": "价格错误",
+        "raw_data": {
+          "SKU": "facsmk23-zai-xtj3010",
+          "num": "2",
+          "url": "https://detail.1688.com/offer/619749401154.html",
+          "name": "facsmk23",
+          "size": "均码 男女通用",
+          "color": "XTJ30-10",
+          "index": "2",
+          "price": "6",
+          "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/facsmk23-zai-xtj3010.jpg",
+          "sku_id": "4380891784401",
+          "ItemURL": "https://item.rakuten.co.jp/backyard/facsmk23",
+          "JANCODE": "4294593253318",
+          "spec_id": "fc2c8b8060401753a8c0f0025785c355",
+          "else_remark": "1",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": "10369619"
+        },
+        "normalized_data": {
+          "num": "2",
+          "sku": "facsmk23-zai-xtj3010",
+          "url": "https://detail.1688.com/offer/619749401154.html",
+          "name": "facsmk23",
+          "size": "均码 男女通用",
+          "color": "XTJ30-10",
+          "price": "6",
+          "sku_id": "4380891784401",
+          "jancode": "4294593253318",
+          "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/facsmk23-zai-xtj3010.jpg",
+          "spec_id": "fc2c8b8060401753a8c0f0025785c355",
+          "item_url": "https://item.rakuten.co.jp/backyard/facsmk23",
+          "else_remark": "1",
+          "matched_sku": {
+            "price": "5.5",
+            "sku_id": "4380891784401",
+            "spec_id": "fc2c8b8060401753a8c0f0025785c355"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "6",
+            "link_price": "5.5",
+            "price_diff": "-0.50"
+          },
+          "user_order_no": "10369619"
+        }
+      },
+      {
+        "row_index": 4,
+        "row_status": 400,
+        "error_message": "价格错误",
+        "raw_data": {
+          "SKU": "fwberet08-zai-navy",
+          "num": "2",
+          "url": "https://detail.1688.com/offer/600727070225.html",
+          "name": "fwberet08",
+          "size": "M（56-58cm）",
+          "color": "蓝色",
+          "index": "3",
+          "price": "16",
+          "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/fwberet08-zai-navy.jpg",
+          "sku_id": "4366958622788",
+          "ItemURL": "https://item.rakuten.co.jp/backyard/fwberet08",
+          "JANCODE": "4294592466412",
+          "spec_id": "8c4c42fa014d6bb368e3e769c8384e3d",
+          "else_remark": "1",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": "10361981"
+        },
+        "normalized_data": {
+          "num": "2",
+          "sku": "fwberet08-zai-navy",
+          "url": "https://detail.1688.com/offer/600727070225.html",
+          "name": "fwberet08",
+          "size": "M（56-58cm）",
+          "color": "蓝色",
+          "price": "16",
+          "sku_id": "4366958622788",
+          "jancode": "4294592466412",
+          "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/fwberet08-zai-navy.jpg",
+          "spec_id": "8c4c42fa014d6bb368e3e769c8384e3d",
+          "item_url": "https://item.rakuten.co.jp/backyard/fwberet08",
+          "else_remark": "1",
+          "matched_sku": {
+            "price": "15",
+            "sku_id": "4366958622788",
+            "spec_id": "8c4c42fa014d6bb368e3e769c8384e3d"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "16",
+            "link_price": "15",
+            "price_diff": "-1.00"
+          },
+          "user_order_no": "10361981"
+        }
+      },
+      {
+        "row_index": 6,
+        "row_status": 400,
+        "error_message": "价格错误",
+        "raw_data": {
+          "SKU": "g6146-zai-beige",
+          "num": "2",
+          "url": "https://detail.1688.com/offer/764348813572.html",
+          "name": "g6146",
+          "size": "",
+          "color": "米色",
+          "index": "5",
+          "price": "12",
+          "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/g6146-zai-beige.jpg",
+          "sku_id": "5258475440739",
+          "ItemURL": "https://item.rakuten.co.jp/backyard/g6146",
+          "JANCODE": "4294593149307",
+          "spec_id": "552a096fbad69427b9c9698fb8bd1482",
+          "else_remark": "1",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": "10365983"
+        },
+        "normalized_data": {
+          "num": "2",
+          "sku": "g6146-zai-beige",
+          "url": "https://detail.1688.com/offer/764348813572.html",
+          "name": "g6146",
+          "size": "",
+          "color": "米色",
+          "price": "12",
+          "sku_id": "5258475440739",
+          "jancode": "4294593149307",
+          "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/g6146-zai-beige.jpg",
+          "spec_id": "552a096fbad69427b9c9698fb8bd1482",
+          "item_url": "https://item.rakuten.co.jp/backyard/g6146",
+          "else_remark": "1",
+          "matched_sku": {
+            "price": "10.97",
+            "sku_id": "5258475440739",
+            "spec_id": "552a096fbad69427b9c9698fb8bd1482"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "12",
+            "link_price": "10.97",
+            "price_diff": "-1.03"
+          },
+          "user_order_no": "10365983"
+        }
+      }
+    ],
+    "颜色错误": [
+      {
+        "row_index": 17,
+        "row_status": 400,
+        "error_message": "颜色错误",
+        "raw_data": {
+          "SKU": "kgoods66-zai-brown",
+          "num": "2",
+          "url": "https://detail.1688.com/offer/715489951255.html",
+          "name": "kgoods66",
+          "size": "",
+          "color": "蛙眼款小号棕色-100cm",
+          "index": "16",
+          "price": "9",
+          "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/kgoods66-zai-brown.jpg",
+          "sku_id": "5061930952790",
+          "ItemURL": "https://item.rakuten.co.jp/backyard/kgoods66",
+          "JANCODE": "4294592990955",
+          "spec_id": "fc36ccc7b3c7829c2966b76a0f0097e6",
+          "else_remark": "1",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": "10369049"
+        },
+        "normalized_data": {
+          "num": "2",
+          "sku": "kgoods66-zai-brown",
+          "url": "https://detail.1688.com/offer/715489951255.html",
+          "name": "kgoods66",
+          "size": "",
+          "color": "蛙眼款小号棕色-100cm",
+          "price": "9",
+          "sku_id": "5061930952790",
+          "jancode": "4294592990955",
+          "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/kgoods66-zai-brown.jpg",
+          "spec_id": "fc36ccc7b3c7829c2966b76a0f0097e6",
+          "item_url": "https://item.rakuten.co.jp/backyard/kgoods66",
+          "else_remark": "1",
+          "matched_sku": {
+            "price": "9",
+            "sku_id": "5061930952790",
+            "spec_id": "fc36ccc7b3c7829c2966b76a0f0097e6"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "9",
+            "link_price": "9",
+            "price_diff": "0.00"
+          },
+          "user_order_no": "10369049"
+        }
+      },
+      {
+        "row_index": 37,
+        "row_status": 400,
+        "error_message": "颜色错误",
+        "raw_data": {
+          "SKU": "nacbt480-zai-pyellowxatype",
+          "num": "3",
+          "url": "https://detail.1688.com/offer/745748097129.html",
+          "name": "nacbt480",
+          "size": "",
+          "color": "粉+黄（双拼色豆豆绒一条）",
+          "index": "36",
+          "price": "4.8",
+          "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/nacbt480-zai-pyellowxatype.jpg",
+          "sku_id": "5316219647199",
+          "ItemURL": "https://item.rakuten.co.jp/backyard/nacbt480",
+          "JANCODE": "4294593337247",
+          "spec_id": "9fd1963cf6b313162bb2371aa8dcda69",
+          "else_remark": "2",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": "10369457"
+        },
+        "normalized_data": {
+          "num": "3",
+          "sku": "nacbt480-zai-pyellowxatype",
+          "url": "https://detail.1688.com/offer/745748097129.html",
+          "name": "nacbt480",
+          "size": "",
+          "color": "粉+黄（双拼色豆豆绒一条）",
+          "price": "4.8",
+          "sku_id": "5316219647199",
+          "jancode": "4294593337247",
+          "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/nacbt480-zai-pyellowxatype.jpg",
+          "spec_id": "9fd1963cf6b313162bb2371aa8dcda69",
+          "item_url": "https://item.rakuten.co.jp/backyard/nacbt480",
+          "else_remark": "2",
+          "matched_sku": {
+            "price": "4.8",
+            "sku_id": "5316219647199",
+            "spec_id": "9fd1963cf6b313162bb2371aa8dcda69"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "4.8",
+            "link_price": "4.8",
+            "price_diff": "0.00"
+          },
+          "user_order_no": "10369457"
+        }
+      },
+      {
+        "row_index": 38,
+        "row_status": 400,
+        "error_message": "颜色错误",
+        "raw_data": {
+          "SKU": "nacbt480-zai-bpinkxatype",
+          "num": "3",
+          "url": "https://detail.1688.com/offer/745748097129.html",
+          "name": "nacbt480",
+          "size": "",
+          "color": "蓝+粉（双拼色豆豆绒一条）",
+          "index": "37",
+          "price": "4.8",
+          "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/nacbt480-zai-bpinkxatype.jpg",
+          "sku_id": "5316219647201",
+          "ItemURL": "https://item.rakuten.co.jp/backyard/nacbt480",
+          "JANCODE": "4294593337254",
+          "spec_id": "7b8eeed3b98c63710e71fbb92cb9c434",
+          "else_remark": "2",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": "10369457"
+        },
+        "normalized_data": {
+          "num": "3",
+          "sku": "nacbt480-zai-bpinkxatype",
+          "url": "https://detail.1688.com/offer/745748097129.html",
+          "name": "nacbt480",
+          "size": "",
+          "color": "蓝+粉（双拼色豆豆绒一条）",
+          "price": "4.8",
+          "sku_id": "5316219647201",
+          "jancode": "4294593337254",
+          "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/nacbt480-zai-bpinkxatype.jpg",
+          "spec_id": "7b8eeed3b98c63710e71fbb92cb9c434",
+          "item_url": "https://item.rakuten.co.jp/backyard/nacbt480",
+          "else_remark": "2",
+          "matched_sku": {
+            "price": "4.8",
+            "sku_id": "5316219647201",
+            "spec_id": "7b8eeed3b98c63710e71fbb92cb9c434"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "4.8",
+            "link_price": "4.8",
+            "price_diff": "0.00"
+          },
+          "user_order_no": "10369457"
+        }
+      }
+    ],
+    "颜色错误；价格错误": [
+      {
+        "row_index": 39,
+        "row_status": 400,
+        "error_message": "颜色错误；价格错误",
+        "raw_data": {
+          "SKU": "nacbt480-zai-gdarkpinkxbtype",
+          "num": "5",
+          "url": "https://detail.1688.com/offer/745748097129.html",
+          "name": "nacbt480",
+          "size": "",
+          "color": "绿+玫红（双色防赖兔毛一条）",
+          "index": "38",
+          "price": "4.8",
+          "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/nacbt480-zai-gdarkpinkxbtype.jpg",
+          "sku_id": "5237838072130",
+          "ItemURL": "https://item.rakuten.co.jp/backyard/nacbt480",
+          "JANCODE": "4294593337261",
+          "spec_id": "170313d04e9656e61e90150591d89046",
+          "else_remark": "4",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": "10369455"
+        },
+        "normalized_data": {
+          "num": "5",
+          "sku": "nacbt480-zai-gdarkpinkxbtype",
+          "url": "https://detail.1688.com/offer/745748097129.html",
+          "name": "nacbt480",
+          "size": "",
+          "color": "绿+玫红（双色防赖兔毛一条）",
+          "price": "4.8",
+          "sku_id": "5237838072130",
+          "jancode": "4294593337261",
+          "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/nacbt480-zai-gdarkpinkxbtype.jpg",
+          "spec_id": "170313d04e9656e61e90150591d89046",
+          "item_url": "https://item.rakuten.co.jp/backyard/nacbt480",
+          "else_remark": "4",
+          "matched_sku": {
+            "price": "5.8",
+            "sku_id": "5237838072130",
+            "spec_id": "170313d04e9656e61e90150591d89046"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "4.8",
+            "link_price": "5.8",
+            "price_diff": "1.00"
+          },
+          "user_order_no": "10369455"
+        }
+      },
+      {
+        "row_index": 65,
+        "row_status": 400,
+        "error_message": "颜色错误；价格错误",
+        "raw_data": {
+          "SKU": "pmyhd02-zai-turquoise",
+          "num": "2",
+          "url": "https://detail.1688.com/offer/719129090866.html",
+          "name": "pmyhd02",
+          "size": "",
+          "color": "青绿色",
+          "index": "64",
+          "price": "12",
+          "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/pmyhd02-zai-turquoise.jpg",
+          "sku_id": "5011328272693",
+          "ItemURL": "https://item.rakuten.co.jp/backyard/pmyhd02",
+          "JANCODE": "4294593135041",
+          "spec_id": "f86fa267d326d12f0b025c2ec8cfc7fa",
+          "else_remark": "1",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": "10369701"
+        },
+        "normalized_data": {
+          "num": "2",
+          "sku": "pmyhd02-zai-turquoise",
+          "url": "https://detail.1688.com/offer/719129090866.html",
+          "name": "pmyhd02",
+          "size": "",
+          "color": "青绿色",
+          "price": "12",
+          "sku_id": "5011328272693",
+          "jancode": "4294593135041",
+          "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/pmyhd02-zai-turquoise.jpg",
+          "spec_id": "f86fa267d326d12f0b025c2ec8cfc7fa",
+          "item_url": "https://item.rakuten.co.jp/backyard/pmyhd02",
+          "else_remark": "1",
+          "matched_sku": {
+            "price": "16.8",
+            "sku_id": "5011328272693",
+            "spec_id": "f86fa267d326d12f0b025c2ec8cfc7fa"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "12",
+            "link_price": "16.8",
+            "price_diff": "4.80"
+          },
+          "user_order_no": "10369701"
+        }
+      },
+      {
+        "row_index": 97,
+        "row_status": 400,
+        "error_message": "颜色错误；价格错误",
+        "raw_data": {
+          "SKU": "yulight001-zai-baiguang",
+          "num": "2",
+          "url": "https://detail.1688.com/offer/618176779046.html",
+          "name": "yulight001",
+          "size": "",
+          "color": "白光黑色夹子灯（45LED玻璃板）",
+          "index": "96",
+          "price": "20",
+          "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/yulight001-zai-baiguang.jpg",
+          "sku_id": "5945180346451",
+          "ItemURL": "https://item.rakuten.co.jp/backyard/yulight001",
+          "JANCODE": "4294593372262",
+          "spec_id": "93402f58877a07d405946990fffc7ef5",
+          "else_remark": "1",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": "10369326"
+        },
+        "normalized_data": {
+          "num": "2",
+          "sku": "yulight001-zai-baiguang",
+          "url": "https://detail.1688.com/offer/618176779046.html",
+          "name": "yulight001",
+          "size": "",
+          "color": "白光黑色夹子灯（45LED玻璃板）",
+          "price": "20",
+          "sku_id": "5945180346451",
+          "jancode": "4294593372262",
+          "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/yulight001-zai-baiguang.jpg",
+          "spec_id": "93402f58877a07d405946990fffc7ef5",
+          "item_url": "https://item.rakuten.co.jp/backyard/yulight001",
+          "else_remark": "1",
+          "matched_sku": {
+            "price": "19",
+            "sku_id": "5945180346451",
+            "spec_id": "93402f58877a07d405946990fffc7ef5"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "20",
+            "link_price": "19",
+            "price_diff": "-1.00"
+          },
+          "user_order_no": "10369326"
+        }
+      }
+    ],
+    "尺寸错误": [
+      {
+        "row_index": 41,
+        "row_status": 400,
+        "error_message": "尺寸错误",
+        "raw_data": {
+          "SKU": "pk0055-120cm-yellow",
+          "num": "2",
+          "url": "https://detail.1688.com/offer/618630940637.html",
+          "name": "pk0055",
+          "size": "120cm",
+          "color": "黄色",
+          "index": "40",
+          "price": "21.9",
+          "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/pk0055-120cm-yellow.jpg",
+          "sku_id": "4544267455383",
+          "ItemURL": "https://item.rakuten.co.jp/backyard/pk0055",
+          "JANCODE": "4294593189686",
+          "spec_id": "63cda44346dd873ee9d84fbb49f0cdc2",
+          "else_remark": "1",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": "10356764"
+        },
+        "normalized_data": {
+          "num": "2",
+          "sku": "pk0055-120cm-yellow",
+          "url": "https://detail.1688.com/offer/618630940637.html",
+          "name": "pk0055",
+          "size": "120cm",
+          "color": "黄色",
+          "price": "21.9",
+          "sku_id": "4544267455383",
+          "jancode": "4294593189686",
+          "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/pk0055-120cm-yellow.jpg",
+          "spec_id": "63cda44346dd873ee9d84fbb49f0cdc2",
+          "item_url": "https://item.rakuten.co.jp/backyard/pk0055",
+          "else_remark": "1",
+          "matched_sku": {
+            "price": "21.9",
+            "sku_id": "4544267455383",
+            "spec_id": "63cda44346dd873ee9d84fbb49f0cdc2"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "21.9",
+            "link_price": "21.9",
+            "price_diff": "0.00"
+          },
+          "user_order_no": "10356764"
+        }
+      },
+      {
+        "row_index": 76,
+        "row_status": 400,
+        "error_message": "尺寸错误",
+        "raw_data": {
+          "SKU": "spjhzrt23-zai-blue",
+          "num": "2",
+          "url": "https://detail.1688.com/offer/611351946433.html",
+          "name": "spjhzrt23",
+          "size": "通用6.0寸（9*16.5*3.0CM）",
+          "color": "天蓝色",
+          "index": "75",
+          "price": "17",
+          "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/spjhzrt23-zai-blue.jpg",
+          "sku_id": "4475471355646",
+          "ItemURL": "https://item.rakuten.co.jp/backyard/spjhzrt23",
+          "JANCODE": "4294591971351",
+          "spec_id": "5c69ba494df18fa0f32c29195900ce95",
+          "else_remark": "1",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": "10361030"
+        },
+        "normalized_data": {
+          "num": "2",
+          "sku": "spjhzrt23-zai-blue",
+          "url": "https://detail.1688.com/offer/611351946433.html",
+          "name": "spjhzrt23",
+          "size": "通用6.0寸（9*16.5*3.0CM）",
+          "color": "天蓝色",
+          "price": "17",
+          "sku_id": "4475471355646",
+          "jancode": "4294591971351",
+          "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/spjhzrt23-zai-blue.jpg",
+          "spec_id": "5c69ba494df18fa0f32c29195900ce95",
+          "item_url": "https://item.rakuten.co.jp/backyard/spjhzrt23",
+          "else_remark": "1",
+          "matched_sku": {
+            "price": "16",
+            "sku_id": "4475471355646",
+            "spec_id": "5c69ba494df18fa0f32c29195900ce95"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "17",
+            "link_price": "16",
+            "price_diff": "-1.00"
+          },
+          "user_order_no": "10361030"
+        }
+      },
+      {
+        "row_index": 77,
+        "row_status": 400,
+        "error_message": "尺寸错误",
+        "raw_data": {
+          "SKU": "spjhzrt23-zai-green",
+          "num": "2",
+          "url": "https://detail.1688.com/offer/611351946433.html",
+          "name": "spjhzrt23",
+          "size": "通用6.0寸（9*16.5*3.0CM）",
+          "color": "绿色",
+          "index": "76",
+          "price": "17",
+          "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/spjhzrt23-zai-green.jpg",
+          "sku_id": "4475471355648",
+          "ItemURL": "https://item.rakuten.co.jp/backyard/spjhzrt23",
+          "JANCODE": "4294591971368",
+          "spec_id": "a628d88b4097a89c1c7ca20ecb4746e5",
+          "else_remark": "1",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": "10361030"
+        },
+        "normalized_data": {
+          "num": "2",
+          "sku": "spjhzrt23-zai-green",
+          "url": "https://detail.1688.com/offer/611351946433.html",
+          "name": "spjhzrt23",
+          "size": "通用6.0寸（9*16.5*3.0CM）",
+          "color": "绿色",
+          "price": "17",
+          "sku_id": "4475471355648",
+          "jancode": "4294591971368",
+          "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/spjhzrt23-zai-green.jpg",
+          "spec_id": "a628d88b4097a89c1c7ca20ecb4746e5",
+          "item_url": "https://item.rakuten.co.jp/backyard/spjhzrt23",
+          "else_remark": "1",
+          "matched_sku": {
+            "price": "16",
+            "sku_id": "4475471355648",
+            "spec_id": "a628d88b4097a89c1c7ca20ecb4746e5"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "17",
+            "link_price": "16",
+            "price_diff": "-1.00"
+          },
+          "user_order_no": "10361030"
+        }
+      }
+    ],
+    "尺寸错误；价格错误": [
+      {
+        "row_index": 43,
+        "row_status": 400,
+        "error_message": "尺寸错误；价格错误",
+        "raw_data": {
+          "SKU": "pk1391-zai-black",
+          "num": "2",
+          "url": "https://detail.1688.com/offer/573782486467.html",
+          "name": "pk1391",
+          "size": "16-34L",
+          "color": "大码条纹黑色",
+          "index": "42",
+          "price": "40",
+          "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/pk1391-zai-black.jpg",
+          "sku_id": "5423652282164",
+          "ItemURL": "https://item.rakuten.co.jp/backyard/pk1391",
+          "JANCODE": "4294592819591",
+          "spec_id": "027df95b8b1d364df31ccdeaf869d1db",
+          "else_remark": "1",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": "10368163"
+        },
+        "normalized_data": {
+          "num": "2",
+          "sku": "pk1391-zai-black",
+          "url": "https://detail.1688.com/offer/573782486467.html",
+          "name": "pk1391",
+          "size": "16-34L",
+          "color": "大码条纹黑色",
+          "price": "40",
+          "sku_id": "5423652282164",
+          "jancode": "4294592819591",
+          "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/pk1391-zai-black.jpg",
+          "spec_id": "027df95b8b1d364df31ccdeaf869d1db",
+          "item_url": "https://item.rakuten.co.jp/backyard/pk1391",
+          "else_remark": "1",
+          "matched_sku": {
+            "price": "41",
+            "sku_id": "5423652282164",
+            "spec_id": "027df95b8b1d364df31ccdeaf869d1db"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "40",
+            "link_price": "41",
+            "price_diff": "1.00"
+          },
+          "user_order_no": "10368163"
+        }
+      },
+      {
+        "row_index": 55,
+        "row_status": 400,
+        "error_message": "尺寸错误；价格错误",
+        "raw_data": {
+          "SKU": "pmy0516-zai-white",
+          "num": "2",
+          "url": "https://detail.1688.com/offer/609610009323.html",
+          "name": "pmy0516",
+          "size": "3.2型*2.2型",
+          "color": "白色.",
+          "index": "54",
+          "price": "1.42",
+          "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/pmy0516-zai-white.jpg",
+          "sku_id": "5495968145095",
+          "ItemURL": "https://item.rakuten.co.jp/backyard/pmy0516",
+          "JANCODE": "4294592058860",
+          "spec_id": "3b647cc013443779ec1ab1758229f3bb",
+          "else_remark": "1",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": "10359062"
+        },
+        "normalized_data": {
+          "num": "2",
+          "sku": "pmy0516-zai-white",
+          "url": "https://detail.1688.com/offer/609610009323.html",
+          "name": "pmy0516",
+          "size": "3.2型*2.2型",
+          "color": "白色.",
+          "price": "1.42",
+          "sku_id": "5495968145095",
+          "jancode": "4294592058860",
+          "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/pmy0516-zai-white.jpg",
+          "spec_id": "3b647cc013443779ec1ab1758229f3bb",
+          "item_url": "https://item.rakuten.co.jp/backyard/pmy0516",
+          "else_remark": "1",
+          "matched_sku": {
+            "price": "0.99",
+            "sku_id": "5495968145095",
+            "spec_id": "3b647cc013443779ec1ab1758229f3bb"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "1.42",
+            "link_price": "0.99",
+            "price_diff": "-0.43"
+          },
+          "user_order_no": "10359062"
+        }
+      }
+    ],
+    "颜色错误；尺寸错误；价格错误": [
+      {
+        "row_index": 62,
+        "row_status": 400,
+        "error_message": "颜色错误；尺寸错误；价格错误",
+        "raw_data": {
+          "SKU": "pmy668-zai-color1",
+          "num": "2",
+          "url": "https://detail.1688.com/offer/719833676879.html",
+          "name": "pmy668",
+          "size": "245mm*90mm",
+          "color": "668-宇航员",
+          "index": "61",
+          "price": "13",
+          "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/pmy668-zai-color1.jpg",
+          "sku_id": "5034250581801",
+          "ItemURL": "https://item.rakuten.co.jp/backyard/pmy668",
+          "JANCODE": "4294593376345",
+          "spec_id": "35fe28a696609a81c9d8ce852429aef0",
+          "else_remark": "1",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": "10368463"
+        },
+        "normalized_data": {
+          "num": "2",
+          "sku": "pmy668-zai-color1",
+          "url": "https://detail.1688.com/offer/719833676879.html",
+          "name": "pmy668",
+          "size": "245mm*90mm",
+          "color": "668-宇航员",
+          "price": "13",
+          "sku_id": "5034250581801",
+          "jancode": "4294593376345",
+          "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/pmy668-zai-color1.jpg",
+          "spec_id": "35fe28a696609a81c9d8ce852429aef0",
+          "item_url": "https://item.rakuten.co.jp/backyard/pmy668",
+          "else_remark": "1",
+          "matched_sku": {
+            "price": "12.4",
+            "sku_id": "5034250581801",
+            "spec_id": "35fe28a696609a81c9d8ce852429aef0"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "13",
+            "link_price": "12.4",
+            "price_diff": "-0.60"
+          },
+          "user_order_no": "10368463"
+        }
+      }
+    ],
+    "数量超过可售库存": [
+      {
+        "row_index": 75,
+        "row_status": 400,
+        "error_message": "数量超过可售库存",
+        "raw_data": {
+          "SKU": "sofacover02-zai-darkgreen",
+          "num": "2",
+          "url": "https://detail.1688.com/offer/596434897776.html",
+          "name": "sofacover02",
+          "size": "二人位（140-185cm）",
+          "color": "磨毛茶绿",
+          "index": "74",
+          "price": "28",
+          "SkuURL": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/sofacover02-zai-darkgreen.jpg",
+          "sku_id": "4690532846367",
+          "ItemURL": "https://item.rakuten.co.jp/backyard/sofacover02",
+          "JANCODE": "4294591840596",
+          "spec_id": "71b09be513db8630801f0cfd38dc2e09",
+          "else_remark": "1",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": "10369521"
+        },
+        "normalized_data": {
+          "num": "2",
+          "sku": "sofacover02-zai-darkgreen",
+          "url": "https://detail.1688.com/offer/596434897776.html",
+          "name": "sofacover02",
+          "size": "二人位（140-185cm）",
+          "color": "磨毛茶绿",
+          "price": "28",
+          "sku_id": "4690532846367",
+          "jancode": "4294591840596",
+          "sku_url": "https://asia-northeast1-everflow-268007.cloudfunctions.net/skuimg/original/sofacover02-zai-darkgreen.jpg",
+          "spec_id": "71b09be513db8630801f0cfd38dc2e09",
+          "item_url": "https://item.rakuten.co.jp/backyard/sofacover02",
+          "else_remark": "1",
+          "matched_sku": {
+            "price": "29",
+            "sku_id": "4690532846367",
+            "spec_id": "71b09be513db8630801f0cfd38dc2e09"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "28",
+            "link_price": "29",
+            "price_diff": "1.00"
+          },
+          "user_order_no": "10369521"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - button "Deploy" [ref=e6] [cursor=pointer]:
+        - generic [ref=e8]: Deploy
+      - button [ref=e10] [cursor=pointer]:
+        - img [ref=e11]
+  - generic [ref=e14]:
+    - button [ref=e17] [cursor=pointer]:
+      - img [ref=e18]
+    - list [ref=e25]:
+      - listitem [ref=e26]:
+        - link "app" [ref=e28] [cursor=pointer]:
+          - /url: http://localhost:8501/app
+          - generic [ref=e29]: app
+      - listitem [ref=e30]:
+        - link "测试执行" [ref=e32] [cursor=pointer]:
+          - /url: http://localhost:8501/测试执行
+          - generic [ref=e34]: 🧪
+          - generic [ref=e35]: 测试执行
+      - listitem [ref=e36]:
+        - link "sku verify" [ref=e38] [cursor=pointer]:
+          - /url: http://localhost:8501/sku_verify
+          - generic [ref=e39]: sku verify
+      - listitem [ref=e40]:
+        - link "性能压测" [ref=e42] [cursor=pointer]:
+          - /url: http://localhost:8501/性能压测
+          - generic [ref=e43]: 性能压测

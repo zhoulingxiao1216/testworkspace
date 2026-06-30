@@ -1,0 +1,148 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e231]:
+      - button "Deploy" [ref=e233] [cursor=pointer]:
+        - generic [ref=e235]: Deploy
+      - button [ref=e237] [cursor=pointer]:
+        - img [ref=e238]
+  - generic [ref=e4]:
+    - button [ref=e9] [cursor=pointer]:
+      - img [ref=e10]
+    - list [ref=e17]:
+      - listitem [ref=e18]:
+        - link "app" [ref=e20] [cursor=pointer]:
+          - /url: http://localhost:8501/app
+          - generic [ref=e21]: app
+      - listitem [ref=e22]:
+        - link "测试执行" [ref=e24] [cursor=pointer]:
+          - /url: http://localhost:8501/测试执行
+          - generic [ref=e26]: 🧪
+          - generic [ref=e27]: 测试执行
+      - listitem [ref=e28]:
+        - link "sku verify" [ref=e30] [cursor=pointer]:
+          - /url: http://localhost:8501/sku_verify
+          - generic [ref=e31]: sku verify
+      - listitem [ref=e32]:
+        - link "性能压测" [ref=e34] [cursor=pointer]:
+          - /url: http://localhost:8501/性能压测
+          - generic [ref=e35]: 性能压测
+    - generic [ref=e139]:
+      - heading "🚦 性能压测" [level=1] [ref=e245]: 🚦 性能压测
+      - button "⬅️ 返回项目首页" [ref=e249] [cursor=pointer]:
+        - paragraph [ref=e251]: ⬅️ 返回项目首页
+      - alert [ref=e259]:
+        - paragraph [ref=e264]: 当前没有由测试平台启动的压测任务。
+      - separator [ref=e269]
+      - generic [ref=e270]:
+        - generic [ref=e274]:
+          - heading "启动配置" [level=3] [ref=e279]: 启动配置
+          - generic [ref=e282]:
+            - paragraph [ref=e285]: 压测环境
+            - generic [ref=e287]:
+              - generic [ref=e288]:
+                - generic [ref=e289]: test
+                - combobox "Selected test. 压测环境" [ref=e291]
+              - img "open" [ref=e293]
+          - paragraph [ref=e298]:
+            - text: 当前
+            - code [ref=e299]: test
+            - text: 环境账号池：1 个真实注册账号
+          - generic [ref=e303]:
+            - generic [ref=e305]:
+              - generic [ref=e306]:
+                - paragraph [ref=e308]: 真实注册账号（从当前环境账号池选择）
+                - img [ref=e312]
+              - generic [ref=e317]:
+                - generic [ref=e318]:
+                  - button "369901314@qq.com, close by backspace" [ref=e319] [cursor=pointer]:
+                    - generic "369901314@qq.com" [ref=e320]
+                    - img [ref=e322]
+                  - combobox "Selected 369901314@qq.com. 真实注册账号（从当前环境账号池选择）" [ref=e325]
+                - generic [ref=e326]:
+                  - button "Clear all" [ref=e327] [cursor=pointer]
+                  - img "open" [ref=e329]
+            - generic [ref=e332]:
+              - generic [ref=e333]:
+                - paragraph [ref=e335]: 真实账号并发数
+                - img [ref=e339]
+              - generic [ref=e342]:
+                - spinbutton "真实账号并发数" [ref=e345]: "1"
+                - generic [ref=e346]:
+                  - button [ref=e347] [cursor=pointer]:
+                    - img [ref=e348]
+                  - button [ref=e350] [cursor=pointer]:
+                    - img [ref=e351]
+            - generic [ref=e354]:
+              - paragraph [ref=e357]: 虚拟账号数量
+              - generic [ref=e358]:
+                - spinbutton "虚拟账号数量" [ref=e361]: "20"
+                - generic [ref=e362]:
+                  - button [ref=e363] [cursor=pointer]:
+                    - img [ref=e364]
+                  - button [ref=e366] [cursor=pointer]:
+                    - img [ref=e367]
+            - generic [ref=e369]:
+              - generic [ref=e375]:
+                - paragraph [ref=e378]: 真实账号加载速率 / 秒
+                - generic [ref=e379]:
+                  - spinbutton "真实账号加载速率 / 秒" [ref=e382]: "1.00"
+                  - generic [ref=e383]:
+                    - button [ref=e384] [cursor=pointer]:
+                      - img [ref=e385]
+                    - button [ref=e387] [cursor=pointer]:
+                      - img [ref=e388]
+              - generic [ref=e395]:
+                - paragraph [ref=e398]: 虚拟账号加载速率 / 秒
+                - generic [ref=e399]:
+                  - spinbutton "虚拟账号加载速率 / 秒" [ref=e402]: "10.00"
+                  - generic [ref=e403]:
+                    - button [ref=e404] [cursor=pointer]:
+                      - img [ref=e405]
+                    - button [ref=e407] [cursor=pointer]:
+                      - img [ref=e408]
+            - generic [ref=e411]:
+              - generic [ref=e412]:
+                - paragraph [ref=e414]: 压测时间
+                - img [ref=e418]
+              - textbox "压测时间" [ref=e423]:
+                - /placeholder: ""
+                - text: 10m
+            - paragraph [ref=e427]:
+              - strong [ref=e428]: 压测策略
+            - generic [ref=e430]:
+              - paragraph [ref=e433]: 每个真实链路浏览步数
+              - generic [ref=e434]:
+                - spinbutton "每个真实链路浏览步数" [ref=e437]: "2"
+                - generic [ref=e438]:
+                  - button [ref=e439] [cursor=pointer]:
+                    - img [ref=e440]
+                  - button [ref=e442] [cursor=pointer]:
+                    - img [ref=e443]
+            - generic [ref=e447] [cursor=pointer]:
+              - checkbox "启用浏览 + 加购链路" [checked]
+              - paragraph [ref=e452]: 启用浏览 + 加购链路
+            - generic [ref=e455] [cursor=pointer]:
+              - checkbox "启用浏览 + 加购 + 提交报价单链路"
+              - paragraph [ref=e460]: 启用浏览 + 加购 + 提交报价单链路
+            - generic [ref=e462]:
+              - paragraph [ref=e465]: 每次提交报价单最多购物车明细数
+              - generic [ref=e466]:
+                - spinbutton "每次提交报价单最多购物车明细数" [disabled] [ref=e469]: "1"
+                - generic [ref=e470]:
+                  - button [disabled] [ref=e471]:
+                    - img [ref=e472]
+                  - button [disabled] [ref=e474]:
+                    - img [ref=e475]
+            - button "确认配置" [ref=e480] [cursor=pointer]:
+              - paragraph [ref=e482]: 确认配置
+        - generic [ref=e486]:
+          - heading "执行预览" [level=3] [ref=e491]: 执行预览
+          - alert [ref=e495]:
+            - paragraph [ref=e500]: 请先在左侧完成配置并点击「确认配置」，这里会展示即将执行的压测参数。
+      - separator [ref=e504]
+      - heading "日志与报告" [level=3] [ref=e509]: 日志与报告
+      - paragraph [ref=e514]: 启动一次压测后，这里会显示日志和报告下载入口。
+      - group [ref=e516]:
+        - generic "历史 HTML 报告" [ref=e517] [cursor=pointer]:
+          - paragraph [ref=e520]: 历史 HTML 报告
+          - img [ref=e521]

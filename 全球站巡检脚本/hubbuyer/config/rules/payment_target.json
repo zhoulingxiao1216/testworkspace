@@ -1,0 +1,12 @@
+{
+  "payment_target_task": {
+    "key": "check_api_payment_target",
+    "desc": "B2B指定报价单支付",
+    "script": "checker/api/payment_target.py"
+  },
+  "B2B_pay": {
+    "status_code": 200,
+    "json_path": "code",
+    "expected": 200
+  }
+}

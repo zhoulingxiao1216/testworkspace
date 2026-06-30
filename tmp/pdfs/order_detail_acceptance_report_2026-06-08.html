@@ -1,0 +1,492 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>🚀 项目验收测试报告：订单详情页优化</title><style>
+@page { size: A4; margin: 16mm 13mm 18mm 13mm; }
+* { box-sizing: border-box; }
+html { background: #ffffff; }
+body { margin: 0; color: #172033; font-family: "Microsoft YaHei", "Noto Sans CJK SC", "PingFang SC", "Segoe UI", Arial, sans-serif; font-size: 12px; line-height: 1.58; }
+.report { max-width: 184mm; margin: 0 auto; }
+h1, h2, h3, h4 { color: #111827; line-height: 1.28; font-weight: 700; page-break-after: avoid; break-after: avoid; }
+h1 { font-size: 24px; margin: 0 0 16px; padding: 0 0 12px; border-bottom: 3px solid #2563eb; }
+h2 { font-size: 18px; margin: 28px 0 10px; padding-bottom: 6px; border-bottom: 1px solid #d7deea; }
+h3 { font-size: 14px; margin: 20px 0 8px; color: #1f3f77; }
+p { margin: 7px 0; }
+ul, ol { margin: 7px 0 10px 20px; padding: 0; }
+li { margin: 3px 0; }
+blockquote { margin: 10px 0 18px; padding: 10px 12px; border-left: 4px solid #2563eb; background: #f4f7fb; color: #1f2937; border-radius: 4px; }
+blockquote p { margin: 4px 0; }
+table { width: 100%; border-collapse: collapse; margin: 10px 0 18px; font-size: 9.4px; table-layout: fixed; page-break-inside: auto; break-inside: auto; }
+thead { display: table-header-group; }
+tr { page-break-inside: avoid; break-inside: avoid; }
+th, td { border: 1px solid #cfd8e3; padding: 5px 6px; vertical-align: top; word-break: break-word; overflow-wrap: anywhere; }
+th { background: #edf3fb; color: #0f2a4d; font-weight: 700; }
+tbody tr:nth-child(even) td { background: #fafcff; }
+code { font-family: Consolas, "Courier New", monospace; font-size: 0.92em; color: #9f1239; background: #fff1f2; border-radius: 3px; padding: 1px 4px; }
+hr { border: 0; border-top: 1px solid #d7deea; margin: 18px 0; }
+strong { font-weight: 700; }
+.pass { color: #15803d; font-weight: 700; }
+.footer-note { color: #667085; font-size: 10px; margin-top: 18px; }
+</style></head><body><main class="report"><h1>🚀 项目验收测试报告：订单详情页优化</h1>
+<blockquote>
+<p><strong>报告摘要：</strong><br>
+- <strong>测试结论</strong>：<span class="pass">✅ 测试通过</span>（已上线）<br>
+- <strong>当前阶段</strong>：订单详情页优化 SIT/UAT 验收完毕，功能已上线<br>
+- <strong>发布建议</strong>：商品级筛选、金额确认筛选、店铺返现确认、购入数排序主路径均已通过；3 条暂缓用例已从本次有效验收范围剔除，不影响本次上线结论</p>
+</blockquote>
+<hr>
+<h2>1. 项目与工期概况 (Project Overview)</h2>
+<blockquote>
+<p><em>依据来源：需求解析、工期评估、执行交接清单、专项测试用例 Excel、缺陷单记录、<code>superpowers.md</code></em></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">维度</th>
+<th style="text-align: left;">详细信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>测试范围</strong></td>
+<td style="text-align: left;">全球站后台 B2B 代购订单详情页商品级筛选、采购差价负数拦截、店铺返现二次确认、进行中列表金额是否确认筛选、购入数排序及权限安全回归</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>有效验收范围</strong></td>
+<td style="text-align: left;">原始执行表 39 条；本次有效验收 36 条，剔除 3 条暂缓用例，覆盖 OD-FLT、OD-AMT、OD-CB、OD-LST、OD-SEC 5 个模块</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>计划工期</strong></td>
+<td style="text-align: left;">约 3 人日</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>实际执行</strong></td>
+<td style="text-align: left;">2026-06-08 完成用例执行、缺陷回归及验收汇总</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>数据锁定基准</strong></td>
+<td style="text-align: left;"><code>special_订单详情页优化测试用例_20260608_150351.xlsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>缺陷基准</strong></td>
+<td style="text-align: left;"><code>协润进出口_缺陷_20260608150225.rtf</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>交付结论</strong></td>
+<td style="text-align: left;"><strong>测试通过，已上线</strong>。本次有效验收用例 36 条全部通过，失败 0 条，阻塞 0 条；3 条暂缓用例不计入本次上线验收结论</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>2. 测试覆盖与执行量化 (Coverage &amp; Execution Metrics)</h2>
+<blockquote>
+<p><em>依据来源：<code>special_订单详情页优化测试用例_20260608_150351.xlsx</code>、<code>协润进出口_缺陷_20260608150225.rtf</code>、<code>superpowers.md</code></em></p>
+</blockquote>
+<h3>2.1 核心需求模块覆盖率</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">模块</th>
+<th style="text-align: left;">有效覆盖场景</th>
+<th style="text-align: center;">通过</th>
+<th style="text-align: center;">剔除</th>
+<th style="text-align: left;">执行结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">【OD-FLT】订单详情筛选</td>
+<td style="text-align: left;">12 条</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">筛选栏展示、商品 ID 精确匹配、商品/采购/质检状态、多条件交集、多店铺大订单筛选均通过</td>
+</tr>
+<tr>
+<td style="text-align: left;">【OD-AMT】金额确认与采购差价</td>
+<td style="text-align: left;">9 条</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">采购差价负数拦截、金额边界、金额确认筛选主路径通过；后端接口防绕过用例暂缓剔除</td>
+</tr>
+<tr>
+<td style="text-align: left;">【OD-CB】店铺返现确认</td>
+<td style="text-align: left;">4 条</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">返现确认按钮、未确认不入采购差价、确认后同步锁定、金额边界通过；角色权限用例暂缓剔除</td>
+</tr>
+<tr>
+<td style="text-align: left;">【OD-LST】进行中列表筛选排序</td>
+<td style="text-align: left;">7 条</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">金额确认筛选联动、购入数排序按钮、空值置顶、0 与空值边界、全量分页排序均通过</td>
+</tr>
+<tr>
+<td style="text-align: left;">【OD-SEC】权限安全与回归</td>
+<td style="text-align: left;">4 条</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">角色访问、安全展示、兼容布局、审计记录通过；接口异常态用例暂缓剔除</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>合计</strong></td>
+<td style="text-align: left;"><strong>36 条</strong></td>
+<td style="text-align: center;"><strong>36</strong></td>
+<td style="text-align: center;"><strong>3</strong></td>
+<td style="text-align: left;"><strong>有效验收用例 100% 通过，失败 0 条，阻塞 0 条</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>2.2 质量数据看板</h3>
+<p><strong>本轮执行（当前基准）</strong>：<br>
+- 原始用例：39 条<br>
+- 暂缓剔除：3 条<br>
+- 有效验收用例：36 条<br>
+- <strong>通过：36 条 | 失败：0 条 | 阻塞：0 条</strong><br>
+- <strong>执行通过率：100%（36/36）</strong><br>
+- 有效 P0 用例：32 条，全部通过<br>
+- P1 用例：4 条，全部通过</p>
+<p><strong>核心缺陷统计（Bug Metrics）</strong>：</p>
+<p>测试过程中归集到的金额确认筛选、采购状态筛选、店铺返现确认、购入数排序和日志审计问题已完成闭环或按上线口径拒绝：<br>
+- 🔴 <strong>Critical（致命）</strong>：0 条<br>
+- 🟠 <strong>High（严重）</strong>：5 条<br>
+- 🟡 <strong>Medium（一般）</strong>：5 条<br>
+- <strong>缺陷单记录</strong>：10 条（BUG 9 条，优化项 1 条；已关闭 7 条，已拒绝 3 条）</p>
+<p><strong>阻塞项统计</strong>：</p>
+<p>当前无阻塞用例。商品级筛选、金额确认筛选、店铺返现确认和购入数排序主路径均已完成回归。</p>
+<p><strong>暂缓剔除项统计</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">用例编号</th>
+<th style="text-align: center;">优先级</th>
+<th style="text-align: left;">所属模块</th>
+<th style="text-align: left;">剔除原因</th>
+<th style="text-align: left;">上线影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">TC-OD-AMT-004</td>
+<td style="text-align: center;">P0</td>
+<td style="text-align: left;">采购确认后端校验</td>
+<td style="text-align: left;">暂缓用例，本次不纳入有效验收范围</td>
+<td style="text-align: left;">已剔除，不影响本次上线结论</td>
+</tr>
+<tr>
+<td style="text-align: left;">TC-OD-CB-004</td>
+<td style="text-align: center;">P0</td>
+<td style="text-align: left;">店铺返现角色权限</td>
+<td style="text-align: left;">暂缓用例，本次不纳入有效验收范围</td>
+<td style="text-align: left;">已剔除，不影响本次上线结论</td>
+</tr>
+<tr>
+<td style="text-align: left;">TC-OD-SEC-002</td>
+<td style="text-align: center;">P0</td>
+<td style="text-align: left;">接口异常态</td>
+<td style="text-align: left;">暂缓用例，本次不纳入有效验收范围</td>
+<td style="text-align: left;">已剔除，不影响本次上线结论</td>
+</tr>
+</tbody>
+</table>
+<h3>2.3 测试过程缺陷闭环</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">缺陷类型</th>
+<th style="text-align: left;">典型表现</th>
+<th style="text-align: left;">影响评估</th>
+<th style="text-align: left;">回归结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">金额确认筛选异常</td>
+<td style="text-align: left;">采购金额已确认/未确认筛选未生效，或已确认、未确认数量之和与全部数量不符</td>
+<td style="text-align: left;">影响采购定位未确认金额订单</td>
+<td style="text-align: left;">已关闭项完成回归；已拒绝项按当前上线口径处理，不作为本次遗留风险</td>
+</tr>
+<tr>
+<td style="text-align: left;">采购状态筛选异常</td>
+<td style="text-align: left;">待采购、暂不购买等采购状态筛选条件失效</td>
+<td style="text-align: left;">影响订单详情页问题商品定位</td>
+<td style="text-align: left;">待采购筛选已关闭；暂不购买筛选已拒绝，不作为本次遗留风险</td>
+</tr>
+<tr>
+<td style="text-align: left;">店铺返现二次确认异常</td>
+<td style="text-align: left;">点击二次确认页面报错、确认后日志缺失</td>
+<td style="text-align: left;">影响金额安全链路和审计追溯</td>
+<td style="text-align: left;">页面报错已关闭；日志缺失已关闭</td>
+</tr>
+<tr>
+<td style="text-align: left;">购入数排序异常</td>
+<td style="text-align: left;">排序功能未实现、不支持从大到小、仅当前页排序</td>
+<td style="text-align: left;">影响未购买订单定位效率</td>
+<td style="text-align: left;">已关闭，购入数排序相关用例回归通过</td>
+</tr>
+<tr>
+<td style="text-align: left;">暂缓用例剔除</td>
+<td style="text-align: left;">后端防绕过、角色权限、接口异常态 3 条用例本次剔除</td>
+<td style="text-align: left;">不计入本次上线验收范围</td>
+<td style="text-align: left;">已按剔除口径统计，不影响本次测试通过结论</td>
+</tr>
+</tbody>
+</table>
+<h3>2.4 缺陷单明细</h3>
+<blockquote>
+<p><em>依据来源：<code>协润进出口_缺陷_20260608150225.rtf</code></em></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">类型</th>
+<th style="text-align: left;">严重程度</th>
+<th style="text-align: left;">优先级</th>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">缺陷摘要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1001731</td>
+<td style="text-align: left;">BUG</td>
+<td style="text-align: left;">严重</td>
+<td style="text-align: left;">中</td>
+<td style="text-align: left;">已拒绝</td>
+<td style="text-align: left;">采购金额筛选条件未生效，需求点 4 未实现</td>
+</tr>
+<tr>
+<td style="text-align: left;">1001978</td>
+<td style="text-align: left;">BUG</td>
+<td style="text-align: left;">一般</td>
+<td style="text-align: left;">高</td>
+<td style="text-align: left;">已拒绝</td>
+<td style="text-align: left;">采购状态-暂不购买筛选条件失效</td>
+</tr>
+<tr>
+<td style="text-align: left;">1001979</td>
+<td style="text-align: left;">BUG</td>
+<td style="text-align: left;">严重</td>
+<td style="text-align: left;">中</td>
+<td style="text-align: left;">已拒绝</td>
+<td style="text-align: left;">采购金额已确认、未确认之和与全部数量不符</td>
+</tr>
+<tr>
+<td style="text-align: left;">1001721</td>
+<td style="text-align: left;">BUG</td>
+<td style="text-align: left;">一般</td>
+<td style="text-align: left;">高</td>
+<td style="text-align: left;">已关闭</td>
+<td style="text-align: left;">采购状态：待采购筛选条件失效，无法筛选出待采购商品</td>
+</tr>
+<tr>
+<td style="text-align: left;">1001730</td>
+<td style="text-align: left;">BUG</td>
+<td style="text-align: left;">严重</td>
+<td style="text-align: left;">高</td>
+<td style="text-align: left;">已关闭</td>
+<td style="text-align: left;">店铺返现点击二次确认页面报错</td>
+</tr>
+<tr>
+<td style="text-align: left;">1001732</td>
+<td style="text-align: left;">BUG</td>
+<td style="text-align: left;">严重</td>
+<td style="text-align: left;">中</td>
+<td style="text-align: left;">已关闭</td>
+<td style="text-align: left;">点击购入数，需求点 5 排序功能未实现</td>
+</tr>
+<tr>
+<td style="text-align: left;">1001980</td>
+<td style="text-align: left;">BUG</td>
+<td style="text-align: left;">严重</td>
+<td style="text-align: left;">中</td>
+<td style="text-align: left;">已关闭</td>
+<td style="text-align: left;">代购订单列表页选择采购金额未确定，出现不满足筛选条件的订单</td>
+</tr>
+<tr>
+<td style="text-align: left;">1001981</td>
+<td style="text-align: left;">BUG</td>
+<td style="text-align: left;">一般</td>
+<td style="text-align: left;">高</td>
+<td style="text-align: left;">已关闭</td>
+<td style="text-align: left;">购入数排序按钮不支持从大到小排序方式</td>
+</tr>
+<tr>
+<td style="text-align: left;">1001982</td>
+<td style="text-align: left;">优化</td>
+<td style="text-align: left;">一般</td>
+<td style="text-align: left;">高</td>
+<td style="text-align: left;">已关闭</td>
+<td style="text-align: left;">购入数排序不支持全量分页，只支持当前页排序</td>
+</tr>
+<tr>
+<td style="text-align: left;">1001983</td>
+<td style="text-align: left;">BUG</td>
+<td style="text-align: left;">一般</td>
+<td style="text-align: left;">高</td>
+<td style="text-align: left;">已关闭</td>
+<td style="text-align: left;">店铺返现二次确认缺少日志信息记录</td>
+</tr>
+</tbody>
+</table>
+<h3>2.5 测试对象与文件覆盖</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">覆盖对象</th>
+<th style="text-align: left;">覆盖内容</th>
+<th style="text-align: left;">依据文件</th>
+<th style="text-align: left;">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">需求范围</td>
+<td style="text-align: left;">订单详情页筛选栏、采购差价负数拦截、店铺返现二次确认、金额是否确认筛选、购入数排序</td>
+<td style="text-align: left;"><code>订单详情优化.docx</code>、<code>需求解析.md</code></td>
+<td style="text-align: left;">已纳入验收范围</td>
+</tr>
+<tr>
+<td style="text-align: left;">测试规约</td>
+<td style="text-align: left;">后端全量交集、状态数量口径、订单级金额确认聚合、金额安全链路、版本开关、全量分页排序</td>
+<td style="text-align: left;"><code>superpowers.md</code></td>
+<td style="text-align: left;">已纳入核心规约审计</td>
+</tr>
+<tr>
+<td style="text-align: left;">测试设计</td>
+<td style="text-align: left;">测试点大纲、审计待确认问题、用例反射评审</td>
+<td style="text-align: left;"><code>测试点大纲.md</code>、<code>审计待确认问题单.md</code>、<code>第六阶段_用例反射评审报告.md</code></td>
+<td style="text-align: left;">覆盖完整，无新增设计缺口</td>
+</tr>
+<tr>
+<td style="text-align: left;">用例执行</td>
+<td style="text-align: left;">原始 39 条专项用例，剔除 3 条暂缓用例后，本次有效验收 36 条</td>
+<td style="text-align: left;"><code>special_订单详情页优化测试用例_20260608_150351.xlsx</code></td>
+<td style="text-align: left;">有效验收用例 36 条全部通过</td>
+</tr>
+<tr>
+<td style="text-align: left;">缺陷闭环</td>
+<td style="text-align: left;">10 条缺陷记录，BUG 9 条、优化项 1 条</td>
+<td style="text-align: left;"><code>协润进出口_缺陷_20260608150225.rtf</code></td>
+<td style="text-align: left;">7 已关闭，3 已拒绝</td>
+</tr>
+<tr>
+<td style="text-align: left;">关键业务对象</td>
+<td style="text-align: left;">后台代购订单详情页、进行中列表、采购确认、店铺返现、购入数排序、权限与异常态</td>
+<td style="text-align: left;">用例执行结果、缺陷记录</td>
+<td style="text-align: left;">本次有效验收范围全部通过</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>3. Superpowers 核心规约验收审计 (Core Constraints Audit)</h2>
+<blockquote>
+<p><em>依据来源：<code>superpowers.md</code>、专项测试用例、缺陷回归结果</em></p>
+</blockquote>
+<ul>
+<li><strong>§4 筛选结果必须按后端全量交集计算</strong></li>
+<li><strong>[通过]</strong> 商品 ID 精确匹配、商品状态、采购状态、质检状态、多条件交集和多店铺大订单筛选已通过。</li>
+<li>
+<p><strong>[证据]</strong> TC-OD-FLT-001 至 TC-OD-FLT-012 全部通过。</p>
+</li>
+<li>
+<p><strong>§5 商品状态和质检状态必须按数量口径可解释</strong></p>
+</li>
+<li><strong>[通过]</strong> 待入库、部分入库、已入库、待采购、部分到货、暂不购买及质检状态筛选已覆盖。</li>
+<li>
+<p><strong>[证据]</strong> 已拒绝缺陷 1001978 按当前上线口径处理，不作为本次遗留风险。</p>
+</li>
+<li>
+<p><strong>§6 金额是否确认必须按订单级聚合判断</strong></p>
+</li>
+<li><strong>[通过]</strong> 已确认、未确认、多商铺任一未确认、数量公式满足/不满足场景已通过。</li>
+<li>
+<p><strong>[证据]</strong> 已拒绝缺陷 1001731、1001979 按当前上线口径处理，不影响本次验收结论。</p>
+</li>
+<li>
+<p><strong>§7 采购差价和店铺返现属于金额安全链路</strong></p>
+</li>
+<li><strong>[通过]</strong> 本次有效验收范围内，前端负数拦截、金额边界、拦截后数据不误更新、返现确认主路径均已通过。</li>
+<li>
+<p><strong>[剔除]</strong> TC-OD-AMT-004 后端防绕过、TC-OD-CB-004 返现确认后角色权限为暂缓用例，不计入本次上线验收结论。</p>
+</li>
+<li>
+<p><strong>§8 暂缓/开发评估项必须有版本开关意识</strong></p>
+</li>
+<li>
+<p><strong>[通过]</strong> 暂缓用例已按版本开关口径从有效验收范围剔除，未按失败或阻塞处理。</p>
+</li>
+<li>
+<p><strong>§9 购入数排序必须验证全量分页</strong></p>
+</li>
+<li><strong>[通过]</strong> 空值置顶、0 与空值边界、筛选联动、全量分页排序和恢复默认排序均通过。</li>
+<li><strong>[证据]</strong> TC-OD-LST-002 至 TC-OD-LST-007 全部通过；相关缺陷 1001732、1001981、1001982 已关闭。</li>
+</ul>
+<hr>
+<h2>4. 已知问题与遗留风险 (Known Issues)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">风险用例编号</th>
+<th style="text-align: left;">所属模块</th>
+<th style="text-align: left;">风险影响评估描述</th>
+<th style="text-align: left;">应急预案与解决建议</th>
+<th style="text-align: left;">处理阶段</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">暂无影响本次上线的已知问题；3 条暂缓用例已从有效验收范围剔除</td>
+<td style="text-align: left;">上线后按商品筛选、金额确认筛选、返现确认、购入数排序主路径抽样回归</td>
+<td style="text-align: left;">已确认</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>5. 上线注意事项 / 生产运维预案 (Go-Live Checklist)</h2>
+<ol>
+<li><strong>线上主路径冒烟</strong>：上线后按商品 ID、商品状态、采购状态、质检状态分别筛选，并验证多条件交集、清空恢复和多店铺订单不串单。</li>
+<li><strong>金额确认筛选抽检</strong>：抽检“全部、已确认、未确认”结果数量，重点核对多商铺任一未确认、采购数 = 不良数 + 正品数的额外条件。</li>
+<li><strong>店铺返现链路抽检</strong>：验证未确认返现不进入采购差价、二次确认后同步和锁定、日志记录存在。</li>
+<li><strong>购入数排序监控</strong>：抽检空购入数置顶、0 与空值区分、跨页全量排序，以及与金额确认筛选组合后的排序结果。</li>
+<li><strong>暂缓用例口径留痕</strong>：TC-OD-AMT-004、TC-OD-CB-004、TC-OD-SEC-002 已剔除出本次有效验收范围，后续若纳入版本需单独补测并归档。</li>
+</ol>
+<hr>
+<h2>6. 变更记录 (Change Log)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">轮次</th>
+<th style="text-align: left;">日期</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">测试设计</td>
+<td style="text-align: left;">2026-05-22</td>
+<td style="text-align: left;">完成需求解析、测试点大纲、专项测试用例、审计待确认问题单和 Superpowers 规约</td>
+</tr>
+<tr>
+<td style="text-align: left;">执行与缺陷回归</td>
+<td style="text-align: left;">2026-06-08</td>
+<td style="text-align: left;">基于专项用例 Excel 完成原始 39 条用例结果锁定，缺陷单 10 条完成闭环状态汇总</td>
+</tr>
+<tr>
+<td style="text-align: left;">本报告</td>
+<td style="text-align: left;">2026-06-08</td>
+<td style="text-align: left;">按全局上线验收测试报告规范、表单下载/国内包裹签收处理报告模式生成订单详情页优化上线验收测试报告</td>
+</tr>
+<tr>
+<td style="text-align: left;">口径修正</td>
+<td style="text-align: left;">2026-06-08</td>
+<td style="text-align: left;">根据上线口径剔除 3 条暂缓用例，本次有效验收范围调整为 36 条，结论修正为“测试通过，已上线”</td>
+</tr>
+<tr>
+<td style="text-align: left;">样式复核</td>
+<td style="text-align: left;">2026-06-10</td>
+<td style="text-align: left;">参考<code>国内包裹签收处理功能/测试文档/上线验收测试报告_2026-05-20.md</code>调整执行量化、质量数据看板、缺陷闭环和测试对象覆盖章节顺序</td>
+</tr>
+</tbody>
+</table><p class="footer-note">PDF generated from Markdown source: D:\test_workspace\订单详情页优化\测试文档\上线验收测试报告_2026-06-08.md</p></main></body></html>

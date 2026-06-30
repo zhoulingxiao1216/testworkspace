@@ -1,0 +1,27 @@
+version: 1
+updated_at: "2026-05-22"
+credential_policy:
+  store_secrets_here: false
+  allowed: "Only store credential document references and environment names."
+  forbidden:
+    - "passwords"
+    - "tokens"
+    - "cookies"
+    - "private keys"
+    - "raw customer data"
+credential_references:
+  test_accounts_doc:
+    path: "测试环境使用账号.md"
+    note: "Use as a reference only. Do not duplicate secrets into memory."
+environments:
+  test_platform_local:
+    project: "test_platform"
+    url: "http://localhost:8501"
+    launch_dir: "测试平台自建"
+    launch_command: "streamlit run app.py"
+    status: "known_local_entry"
+  hubbuyer_inspection:
+    project: "hubbuyer_inspection"
+    config_file: "全球站巡检脚本/hubbuyer/config/settings.py"
+    env_switch: "ENV_TYPE"
+    status: "configured_by_settings"

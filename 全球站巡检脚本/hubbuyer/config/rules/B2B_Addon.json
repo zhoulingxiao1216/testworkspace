@@ -1,0 +1,9 @@
+{
+  "B2B_Addon_task": {
+    "key": "check_api_b2b_addon",
+    "desc": "B2B 选择商品附加项",
+    "script": "checker/api/B2B_Addon.py",
+    "runner_timeout": 90,
+    "login_account": ""
+  }
+}

@@ -1,0 +1,112 @@
+version: 1
+updated_at: "2026-05-23"
+projects:
+  hubbuyer_inspection:
+    name: "全球站巡检脚本 / hubbuyer"
+    path: "全球站巡检脚本/hubbuyer"
+    type: "python_inspection_system"
+    primary_entry: "main.py"
+    important_dirs:
+      - "config"
+      - "checker"
+      - "core"
+      - "reports"
+      - "logs"
+    notes:
+      - "面向全球站 B2B/D2C 的接口与页面自动化巡检系统。"
+      - "规则配置位于 config/rules，巡检开关位于 config/settings.py。"
+  test_platform:
+    name: "测试平台自建"
+    path: "测试平台自建"
+    type: "streamlit_test_platform"
+    primary_entry: "app.py"
+    launch_command: "streamlit run app.py"
+    default_url: "http://localhost:8501"
+    important_dirs:
+      - "modules"
+      - "pages"
+      - "mock_cases"
+      - "测试用例归档"
+      - "测试用例导入记录"
+    notes:
+      - "当用户说“启动测试平台”时，在该目录执行 streamlit run app.py。"
+  global_specs:
+    name: "全局测试规约库"
+    path: "00_全局测试规约库"
+    type: "test_governance_library"
+    important_dirs:
+      - "设计规范"
+      - "执行规范"
+      - "工具脚本"
+      - "用户行为规律库"
+    notes:
+      - "Agent 1/Agent 2 的规范与报告格式基座。"
+  order_detail_optimization:
+    name: "订单详情页优化"
+    path: "订单详情页优化"
+    type: "test_design_project"
+    primary_entry: "测试文档/订单详情页优化测试用例.md"
+    important_dirs:
+      - "测试文档"
+    notes:
+      - "Agent 1 已按标准目录输出订单详情页筛选、金额确认、店铺返现、购入数排序测试文档。"
+      - "采购差价负数、店铺返现二次确认、购入数排序含版本确认开关。"
+  message_reminder_important_todo:
+    name: "消息提醒功能以及重要待办"
+    path: "消息提醒功能以及重要待办"
+    type: "multi_agent_test_design_project"
+    primary_entry: "测试文档/消息提醒功能以及重要待办测试用例.md"
+    important_dirs:
+      - "测试文档"
+    notes:
+      - "已按 multi-agent 模式并行处理：agent1-test-design 生成标准用例与交接清单，agent2-test-execution 做只读可执行性评审。"
+      - "Agent2 本轮暂不执行真实测试；环境、账号、测试数据、短信通道和 Mock/DB seed 授权仍为外部执行前置条件。"
+  domestic_package_receipt_processing:
+    name: "国内包裹签收处理功能"
+    path: "国内包裹签收处理功能"
+    type: "historical_test_project"
+    primary_entry: "测试文档/国内包裹签收处理功能测试用例.md"
+    important_dirs:
+      - "测试文档"
+    notes:
+      - "历史学习样本：覆盖扫码签收、手工录入、超时判定、私人包裹隔离、统计联动、分页筛选。"
+      - "可复用到状态机、时间规则、统计口径一致性和 Mock SQL 准备模式。"
+      - "学习导入时只抽象规则，不搬运原始业务数据。"
+  blacklist_whitelist_procurement_accounts:
+    name: "黑白名单及采购账号"
+    path: "黑白名单及采购账号"
+    type: "historical_test_project"
+    primary_entry: "测试文档/黑白名单及采购账号测试用例.md"
+    important_dirs:
+      - "测试文档"
+      - "黑白名单及采购账号原型"
+    notes:
+      - "历史学习样本：覆盖 IP 准入、授信豁免、中间件拦截、采购账号授权、Token 有效性、账号互斥和并发风险。"
+      - "可复用到权限安全、三方一致性、账号单点生效和脏数据自救测试设计。"
+      - "采购账号和 Token 相关内容只沉淀风险模型，不沉淀密钥或真实凭据。"
+  global_batch_import:
+    name: "全球站批量导入功能"
+    path: "全球站批量导入功能"
+    type: "historical_test_project"
+    primary_entry: "测试文档/全球站批量导入功能测试用例.md"
+    important_dirs:
+      - "测试文档"
+      - "测试文档/模板文件"
+      - "测试文档/执行报告"
+    notes:
+      - "历史学习样本：覆盖模板路由、Excel 行级校验、1688 校验链路、部分成功部分失败、购物车写入和订单追溯。"
+      - "可复用到导入类需求的字段映射、行级错误、外部接口降级、写入原子性和执行证据保存。"
+      - "历史执行交接资料中存在测试账号痕迹；导入 memory 时必须脱敏，只保留账号角色和阻塞类型。"
+  form_download:
+    name: "表单下载"
+    path: "表单下载"
+    type: "historical_test_project"
+    primary_entry: "测试文档/表单下载测试用例.md"
+    important_dirs:
+      - "测试文档"
+      - "表单下载模板"
+      - "表单下载原型"
+    notes:
+      - "历史学习样本：覆盖 19 个表单文件、7 个面单、模板字段、图片嵌入、合并单元格、多语言标签和导出结构比对。"
+      - "可复用到导出类需求的模板-字段矩阵、固定结构基准、动态字段容忍规则和批量比对脚本方法。"
+      - "Agent2 评审中暴露账号、二维码、模板资产、字段获取文件等执行前置条件，应进入环境阻塞 memory。"

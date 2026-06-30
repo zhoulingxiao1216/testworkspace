@@ -1,0 +1,83 @@
+{
+  "url": "https://wlz-admin-all-view.hubbuyer.com/b2b/user/list",
+  "title": "客户信息",
+  "timestamp": "2026-05-13 13:01:46",
+  "text_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n邮箱\n账号状态\n请选择账号状态\n注册来源\n请选择注册来源\n会员等级\n请选择会员等级\n业务\n请选择业务\n采购\n请选择采购\n客户经理\n请选择客户经理\n注册日期\n至\n查询\n重置\n收起\n批量导出\n全部（1）\nS级客户（0）\nA级客户（0）\nB级客户（0）\nC级客户（0）\nD级客户（1）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-KOR8-TEST-1010\n\t\nKOR8\n\t\nKorea\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n无需沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\nmxnrq@airsworld.net\n\t\n101010\n\t\n38\n\t\n暂无\n\t\n994205.08\n\t\nB2B\n\t\nInstagram\n\t\n2026-05-12 08:03\n\t\n2025-12-20 21:38\n\t\n详情\n30条/页\n共 1 条\n1\n前往\n页\n客户详情\nD-0/311.40-EC-TEST-1010\n\n开通的业务：B2B\n\n发货托管： \n已关闭\n会员等级： D\n\n预期月采购额:0元\n\n实际月采购额:311.40元\n\n正式订单\n查看\n消息互动\n账户余额\n账户管理\n模块\n\t\n余额\n\t\n会员身份\n\t\n会员到期时间\n\t\n累计充值金额\n\t\n首次入金金额\n\t\n首次入金时间\nB2B\n\t\n994205.08\n\t\n\t\n2099-12-31 23:59:59\n\t\n0\n\t\n\t\n01基本情報記入\n\n注册时间：2025-12-20\n\n02資料审核\n\n联系电话：101010 \n\n接收电话沟通时间：10\n\n03发送审查结果\n当前状态： 已审核\n04下单前相谈\n当前状态：无需沟通\n模块\n\t\n客户经理\n\t\n业务\n\t\n采购\nB2B\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n注册信息\n推荐商品\n客户收藏\n客户足迹\n子账号信息\n批量导入\n\n基础信息\n\n所属国家:\n韩国\n姓名:\nTEST-1010\n业务员:\n唐芬芬\n采购员:\n包瑞楠\n电话号码:\n+82 101010\n邮箱:\nmxnrq@airsworld.net\n\n企业信息\n\n法人事业者:\n法人\n公司名称:\n10\n公司官网:\n10\n法人姓名:\n年采购额:\n10元/年\n电话号码:\n+82 101010\n注册来源:\nInstagram\n介绍人名称或ID:\n10\n采购形式:\nB2B为主\n采购频率:\n1个月\n采购次数:\n10\n单次采购金额:\n10元\n中国进口经验:\n有经验\n合作过的进出口公司:\n10\n停止使用的原因:\n10\n销售形式:\n实体店\n楽天市場:\n10\n\n会员沟通备注\n\n测试巡检账号,用于每日巡检脚本执行",
+  "buttons": [
+    {
+      "index": 1,
+      "text": "查询",
+      "class": "el-button el-button--primary"
+    },
+    {
+      "index": 2,
+      "text": "重置",
+      "class": "el-button is-plain"
+    },
+    {
+      "index": 3,
+      "text": "收起",
+      "class": "el-button el-button--info is-text"
+    },
+    {
+      "index": 4,
+      "text": "批量导出",
+      "class": "el-button el-button--primary"
+    },
+    {
+      "index": 5,
+      "text": "无需沟通",
+      "class": "el-button el-button--info is-link"
+    },
+    {
+      "index": 6,
+      "text": "详情",
+      "class": "el-button el-button--primary"
+    },
+    {
+      "index": 7,
+      "text": "",
+      "class": "btn-prev is-first"
+    },
+    {
+      "index": 8,
+      "text": "",
+      "class": "btn-next"
+    },
+    {
+      "index": 9,
+      "text": "",
+      "class": "el-dialog__headerbtn"
+    },
+    {
+      "index": 10,
+      "text": "查看",
+      "class": "el-button el-button--primary el-button--small"
+    },
+    {
+      "index": 11,
+      "text": "账户管理",
+      "class": "el-button el-button--primary el-button--small"
+    },
+    {
+      "index": 12,
+      "text": "10",
+      "class": "el-button el-button--primary is-link"
+    }
+  ],
+  "dialogs": [
+    {
+      "index": 0,
+      "text_excerpt": "客户详情\nD-0/311.40-EC-TEST-1010\n\n开通的业务：B2B\n\n发货托管： \n已关闭\n会员等级： D\n\n预期月采购额:0元\n\n实际月采购额:311.40元\n\n正式订单\n查看\n消息互动\n账户余额\n账户管理\n模块\n\t\n余额\n\t\n会员身份\n\t\n会员到期时间\n\t\n累计充值金额\n\t\n首次入金金额\n\t\n首次入金时间\nB2B\n\t\n994205.08\n\t\n\t\n2099-12-31 23:59:59\n\t\n0\n\t\n\t\n01基本情報記入\n\n注册时间：2025-12-20\n\n02資料审核\n\n联系电话：101010 \n\n接收电话沟通时间：10\n\n03发送审查结果\n当前状态： 已审核\n04下单前相谈\n当前状态：无需沟通\n模块\n\t\n客户经理\n\t\n业务\n\t\n采购\nB2B\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n注册信息\n推荐商品\n客户收藏\n客户足迹\n子账号信息\n批量导入\n\n基础信息\n\n所属国家:\n韩国\n姓名:\nTEST-1010\n业务员:\n唐芬芬\n采购员:\n包瑞楠\n电话号码:\n+82 101010\n邮箱:\nmxnrq@airsworld.net\n\n企业信息\n\n法人事业者:\n法人\n公司名称:\n10\n公司官网:\n10\n法人姓名:\n年采购额:\n10元/年\n电话号码:\n+82 101010\n注册来源:\nInstagram\n介绍人名称或ID:\n10\n采购形式:\nB2B为主\n采购频率:\n1个月\n采购次数:\n10\n单次采购金额:\n10元\n中国进口经验:\n有经验\n合作过的进出口公司:\n10\n停止使用的原因:\n10\n销售形式:\n实体店\n楽天市場:\n10\n\n会员沟通备注\n\n测试巡检账号,用于每日巡检脚本执行"
+    }
+  ],
+  "extra": {
+    "detail_click": {
+      "clicked": true,
+      "label": "详情",
+      "index": 0,
+      "text": "详情",
+      "class": "el-button el-button--primary"
+    }
+  }
+}

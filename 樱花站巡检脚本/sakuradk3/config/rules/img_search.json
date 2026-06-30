@@ -1,0 +1,22 @@
+{
+  "img_search_task": {
+    "key": "check_api_img_search",
+    "desc": "B2B&D2C 商品图搜接口校验",
+    "script": "checker/api/img_search.py",
+    "login_account": "qa1tr@2200freefonts.com",
+    "rules": {
+      "status_code": 200
+    }
+  },
+  "D2C_img": {
+    "must_contain": [
+      "image_url"
+    ],
+    "token": "329018f1e85b97a5d2eb1d879edc415f5602556f37b5027f73f55edd1f1e6a6e",
+    "sign": "5e55ded552957a2",
+    "cross_token": "a0a188a29b6bd5fd809a5055cfb459e6",
+    "imageUrl": "http://hk-sakuradk2.oss-cn-hongkong.aliyuncs.com/img/202601/20260106160236466_min.jpg",
+    "callback": "flightHandler1",
+    "_": 1767686557072
+  }
+}

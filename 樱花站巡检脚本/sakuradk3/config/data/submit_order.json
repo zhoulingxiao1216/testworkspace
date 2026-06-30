@@ -1,0 +1,27 @@
+{
+  "D2C_saveAddress": {
+    "address_id": "1",
+    "cart_id": ""
+  },
+  "D2C_submit": {
+    "quoteType": 1,
+    "ExpressID": 448,
+    "quoteFreight": "10",
+    "cartIds": []
+  },
+  "B2B_submit": {
+    "quoteType": 1,
+    "subQuoteType": 2,
+    "jpRadio": "41",
+    "paymoney": "",
+    "ExpressID": 4640,
+    "quoteFreight": "",
+    "userid": "",
+    "usedCoupon": "",
+    "orderId": "",
+    "weight": "",
+    "expressFee": "",
+    "expressTips": "",
+    "agree": true
+  }
+}

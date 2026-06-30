@@ -1,0 +1,21 @@
+{
+  "quote_no": "B2B-BJ-KOR8-260615-392",
+  "account_mail": "mxnrq@airsworld.net",
+  "force_pay": true,
+  "skip_three_day_check": true,
+  "pay_api": {
+    "url": "https://main-api.hubbuyer.com/api_b2b/quote/pay",
+    "method": "POST",
+    "b2b_site_origin": "https://main-b2b.hubbuyer.com",
+    "headers": {
+      "currency": "USD",
+      "language": "korean",
+      "nation": "Korea",
+      "rate": "0.16",
+      "logintype": "user"
+    },
+    "json": {
+      "quote_no_arr": "B2B-BJ-KOR8-260615-392"
+    }
+  }
+}

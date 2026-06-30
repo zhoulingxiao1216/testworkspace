@@ -1,0 +1,152 @@
+- generic [ref=e14]:
+  - button [ref=e17] [cursor=pointer]:
+    - img [ref=e18]
+  - list [ref=e25]:
+    - listitem [ref=e26]:
+      - link "app" [ref=e28] [cursor=pointer]:
+        - /url: http://localhost:8501/app
+        - generic [ref=e29]: app
+    - listitem [ref=e30]:
+      - link "测试执行" [ref=e32] [cursor=pointer]:
+        - /url: http://localhost:8501/测试执行
+        - generic [ref=e34]: 🧪
+        - generic [ref=e35]: 测试执行
+    - listitem [ref=e36]:
+      - link "sku verify" [ref=e38] [cursor=pointer]:
+        - /url: http://localhost:8501/sku_verify
+        - generic [ref=e39]: sku verify
+    - listitem [ref=e40]:
+      - link "性能压测" [ref=e42] [cursor=pointer]:
+        - /url: http://localhost:8501/性能压测
+        - generic [ref=e43]: 性能压测
+  - generic [ref=e149]:
+    - heading "🚦 性能压测" [level=1] [ref=e245]: 🚦 性能压测
+    - button "⬅️ 返回项目首页" [ref=e249] [cursor=pointer]:
+      - paragraph [ref=e251]: ⬅️ 返回项目首页
+    - alert [ref=e259]:
+      - paragraph [ref=e264]: 当前没有由测试平台启动的压测任务。
+    - separator [ref=e269]
+    - generic [ref=e270]:
+      - generic [ref=e278]:
+        - heading "启动配置" [level=3] [ref=e283]: 启动配置
+        - generic [ref=e286]:
+          - paragraph [ref=e289]: 压测环境
+          - generic [ref=e291]:
+            - generic [ref=e292]:
+              - generic [ref=e293]: test
+              - combobox "Selected test. 压测环境" [ref=e295]
+            - img "open" [ref=e297]
+        - generic [ref=e300]:
+          - generic [ref=e301]:
+            - paragraph [ref=e303]: 真实注册账号
+            - img [ref=e307]
+          - generic [ref=e312]:
+            - generic [ref=e313]:
+              - button "369901314@qq.com, close by backspace" [ref=e314] [cursor=pointer]:
+                - generic "369901314@qq.com" [ref=e315]
+                - img [ref=e317]
+              - combobox "Selected 369901314@qq.com. 真实注册账号" [ref=e320]
+            - generic [ref=e321]:
+              - button "Clear all" [ref=e322] [cursor=pointer]
+              - img "open" [ref=e324]
+        - generic [ref=e327]:
+          - generic [ref=e328]:
+            - paragraph [ref=e330]: 真实账号并发数
+            - img [ref=e334]
+          - generic [ref=e337]:
+            - spinbutton "真实账号并发数" [ref=e340]: "1"
+            - generic [ref=e341]:
+              - button [ref=e342] [cursor=pointer]:
+                - img [ref=e343]
+              - button [ref=e345] [cursor=pointer]:
+                - img [ref=e346]
+        - generic [ref=e349]:
+          - paragraph [ref=e352]: 虚拟账号数量
+          - generic [ref=e353]:
+            - spinbutton "虚拟账号数量" [ref=e356]: "20"
+            - generic [ref=e357]:
+              - button [ref=e358] [cursor=pointer]:
+                - img [ref=e359]
+              - button [ref=e361] [cursor=pointer]:
+                - img [ref=e362]
+        - generic [ref=e364]:
+          - generic [ref=e370]:
+            - paragraph [ref=e373]: 真实账号加载速率 / 秒
+            - generic [ref=e374]:
+              - spinbutton "真实账号加载速率 / 秒" [ref=e377]: "1.00"
+              - generic [ref=e378]:
+                - button [ref=e379] [cursor=pointer]:
+                  - img [ref=e380]
+                - button [ref=e382] [cursor=pointer]:
+                  - img [ref=e383]
+          - generic [ref=e390]:
+            - paragraph [ref=e393]: 虚拟账号加载速率 / 秒
+            - generic [ref=e394]:
+              - spinbutton "虚拟账号加载速率 / 秒" [ref=e397]: "10.00"
+              - generic [ref=e398]:
+                - button [ref=e399] [cursor=pointer]:
+                  - img [ref=e400]
+                - button [ref=e402] [cursor=pointer]:
+                  - img [ref=e403]
+        - generic [ref=e406]:
+          - generic [ref=e407]:
+            - paragraph [ref=e409]: 压测时间
+            - img [ref=e413]
+          - textbox "压测时间" [ref=e418]:
+            - /placeholder: ""
+            - text: 10m
+        - paragraph [ref=e422]:
+          - strong [ref=e423]: 压测策略
+        - generic [ref=e425]:
+          - paragraph [ref=e428]: 每个真实链路浏览步数
+          - generic [ref=e429]:
+            - spinbutton "每个真实链路浏览步数" [ref=e432]: "2"
+            - generic [ref=e433]:
+              - button [ref=e434] [cursor=pointer]:
+                - img [ref=e435]
+              - button [ref=e437] [cursor=pointer]:
+                - img [ref=e438]
+        - generic [ref=e442] [cursor=pointer]:
+          - checkbox "启用浏览 + 加购链路" [checked]
+          - paragraph [ref=e447]: 启用浏览 + 加购链路
+        - generic [ref=e450] [cursor=pointer]:
+          - checkbox "启用浏览 + 加购 + 提交报价单链路"
+          - paragraph [ref=e455]: 启用浏览 + 加购 + 提交报价单链路
+        - generic [ref=e457]:
+          - paragraph [ref=e460]: 每次提交报价单最多购物车明细数
+          - generic [ref=e461]:
+            - spinbutton "每次提交报价单最多购物车明细数" [disabled] [ref=e464]: "1"
+            - generic [ref=e465]:
+              - button [disabled] [ref=e466]:
+                - img [ref=e467]
+              - button [disabled] [ref=e469]:
+                - img [ref=e470]
+        - button "确认执行" [ref=e475] [cursor=pointer]:
+          - paragraph [ref=e477]: 确认执行
+      - generic [ref=e481]:
+        - heading "执行预览" [level=3] [ref=e486]: 执行预览
+        - generic [ref=e488]:
+          - generic [ref=e494]:
+            - paragraph [ref=e498]: 真实账号
+            - generic [ref=e500]: "1"
+          - generic [ref=e506]:
+            - paragraph [ref=e510]: 虚拟账号
+            - generic [ref=e512]: "20"
+          - generic [ref=e518]:
+            - paragraph [ref=e522]: 总用户
+            - generic [ref=e524]: "21"
+          - generic [ref=e530]:
+            - paragraph [ref=e534]: 时长
+            - generic [ref=e536]: 600s
+        - generic [ref=e538]:
+          - code [ref=e541]: locust -f locustfile.py --headless --html reports/<run_id>.html --csv reports/<run_id>
+          - generic:
+            - button "Copy to clipboard":
+              - img
+    - separator [ref=e545]
+    - heading "日志与报告" [level=3] [ref=e550]: 日志与报告
+    - paragraph [ref=e555]: 启动一次压测后，这里会显示日志和报告下载入口。
+    - group [ref=e557]:
+      - generic "历史 HTML 报告" [ref=e558] [cursor=pointer]:
+        - paragraph [ref=e561]: 历史 HTML 报告
+        - img [ref=e562]

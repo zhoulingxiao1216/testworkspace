@@ -1,0 +1,20 @@
+{
+    "stress_login": {
+        "key": "stress_login",
+        "desc": "登录接口压测",
+        "rules": {
+            "status_code": 200,
+            "json_match": {
+                "code": 200,
+                "msg": "success"
+            },
+            "extract_keys": [
+                "data.token"
+            ]
+        },
+        "performance": {
+            "threshold_ms": 5000,
+            "description": "登录接口响应时间阈值"
+        }
+    }
+}

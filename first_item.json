@@ -1,0 +1,72 @@
+{
+  "id": 6113,
+  "attribute": {
+    "price": "15.0",
+    "skuId": 5047092419860,
+    "specId": "6c1630e08093b1ca6cf91e0a56a83c7e",
+    "jxhyPrice": "15.0",
+    "cargoNumber": "",
+    "amountOnSale": 564,
+    "consignPrice": "15.0",
+    "skuAttributes": [
+      {
+        "value": "星光",
+        "valueTrans": "별빛",
+        "attributeId": 3216,
+        "skuImageUrl": "https://cbu01.alicdn.com/img/ibank/O1CN01xlLKk31GCQrZXvJcU_!!2212325340586-0-cib.jpg",
+        "attributeName": "颜色",
+        "attributeNameTrans": "색상"
+      },
+      {
+        "value": "38/40/41mm",
+        "valueTrans": "38/40/41mm",
+        "attributeId": 1234,
+        "attributeName": "规格",
+        "attributeNameTrans": "사양"
+      }
+    ],
+    "fenxiaoPriceInfo": {
+      "offerPrice": "15"
+    }
+  },
+  "item_id": "679121341102",
+  "quantity": 40,
+  "seller_open_id": "BBBl-XTTvYzBqM0hYk3pUMP1A",
+  "price": "15.00",
+  "attribute_cover": "https://cbu01.alicdn.com/img/ibank/O1CN01xlLKk31GCQrZXvJcU_!!2212325340586-0-cib.jpg",
+  "batch_number": 1,
+  "goods_uuid": "G26050714225528",
+  "name": {
+    "title": "适用apple watch 7苹果手表米兰表带不锈钢金属磁吸圆尾扣",
+    "title_trans": "애플 시계 7 애플 시계 밀라노 스트랩 스테인레스 스틸 금속 마그네틱 라운드 테일 버클"
+  },
+  "remark": {
+    "content": "",
+    "content_trans": ""
+  },
+  "remark_image": "",
+  "min_order_quantity": 2,
+  "sale_info": "{\"unitInfo\": {\"unit\": \"条\", \"transUnit\": \"기사\"}, \"jxhyPrice\": \"14\", \"quoteType\": 1, \"amountOnSale\": 41476, \"priceRangeList\": [{\"price\": \"10.0\", \"startQuantity\": 2}], \"fenxiaoSaleInfo\": {\"startQuantity\": 2, \"onePieceFreePostage\": false}}",
+  "range_price": [
+    {
+      "price": "10.0",
+      "startQuantity": 2
+    }
+  ],
+  "product_black": false,
+  "product_black_reason": "",
+  "sku_info": {
+    "cart_detail_id": 6113,
+    "custom_sku": {
+      "sku": "7j-sw-012d-strlgt-40"
+    },
+    "amazon_sku": {
+      "sku": "7j-sw-012d-strlgt-40",
+      "url": "",
+      "asin": "",
+      "fnsku": "",
+      "child_id": ""
+    },
+    "self_sku": []
+  }
+}

@@ -1,0 +1,1745 @@
+[
+  {
+    "index": 1,
+    "order_id": 1326746,
+    "sku": "sbg-brt-048other2",
+    "config_title": "sbg-brt-048other2",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025421200000000.png?time=1777085236",
+    "local_img": "d:\\test_workspace\\tag_images\\1326746_sbg-brt-048other2.png",
+    "img_size": 11094
+  },
+  {
+    "index": 2,
+    "order_id": 1326745,
+    "sku": "sbg-brt-048p",
+    "config_title": "sbg-brt-048p",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025464900000000.png?time=1777085237",
+    "local_img": "d:\\test_workspace\\tag_images\\1326745_sbg-brt-048p.png",
+    "img_size": 9906
+  },
+  {
+    "index": 3,
+    "order_id": 1326744,
+    "sku": "sbg-brt-048x",
+    "config_title": "sbg-brt-048x",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025422900000000.png?time=1777085238",
+    "local_img": "d:\\test_workspace\\tag_images\\1326744_sbg-brt-048x.png",
+    "img_size": 9961
+  },
+  {
+    "index": 4,
+    "order_id": 1326743,
+    "sku": "bdo-rg-085gld-brn-square-13",
+    "config_title": "bdo-rg-085gld-brn-square-13",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025110300000000.png?time=1777085239",
+    "local_img": "d:\\test_workspace\\tag_images\\1326743_bdo-rg-085gld-brn-square-13.png",
+    "img_size": 13049
+  },
+  {
+    "index": 5,
+    "order_id": 1326742,
+    "sku": "bdo-rg-085gld-brn-square-16",
+    "config_title": "bdo-rg-085gld-brn-square-16",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025189800000000.png?time=1777085241",
+    "local_img": "d:\\test_workspace\\tag_images\\1326742_bdo-rg-085gld-brn-square-16.png",
+    "img_size": 13216
+  },
+  {
+    "index": 6,
+    "order_id": 1326741,
+    "sku": "bdo-rg-085gld-cha-circle-16",
+    "config_title": "bdo-rg-085gld-cha-circle-16",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025149700000000.png?time=1777085242",
+    "local_img": "d:\\test_workspace\\tag_images\\1326741_bdo-rg-085gld-cha-circle-16.png",
+    "img_size": 11962
+  },
+  {
+    "index": 7,
+    "order_id": 1326740,
+    "sku": "bdo-rg-085gld-ctl-square-11",
+    "config_title": "bdo-rg-085gld-ctl-square-11",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025156000000000.png?time=1777085243",
+    "local_img": "d:\\test_workspace\\tag_images\\1326740_bdo-rg-085gld-ctl-square-11.png",
+    "img_size": 12625
+  },
+  {
+    "index": 8,
+    "order_id": 1326739,
+    "sku": "bdo-rg-085gld-ctl-square-13",
+    "config_title": "bdo-rg-085gld-ctl-square-13",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025184700000000.png?time=1777085244",
+    "local_img": "d:\\test_workspace\\tag_images\\1326739_bdo-rg-085gld-ctl-square-13.png",
+    "img_size": 12924
+  },
+  {
+    "index": 9,
+    "order_id": 1326738,
+    "sku": "bdo-rg-085gld-ganet-circle-13",
+    "config_title": "bdo-rg-085gld-ganet-circle-13",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025163600000000.png?time=1777085245",
+    "local_img": "d:\\test_workspace\\tag_images\\1326738_bdo-rg-085gld-ganet-circle-13.png",
+    "img_size": 11730
+  },
+  {
+    "index": 10,
+    "order_id": 1326737,
+    "sku": "bdo-rg-085gld-grn-circle-13",
+    "config_title": "bdo-rg-085gld-grn-circle-13",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025150900000000.png?time=1777085247",
+    "local_img": "d:\\test_workspace\\tag_images\\1326737_bdo-rg-085gld-grn-circle-13.png",
+    "img_size": 11928
+  },
+  {
+    "index": 11,
+    "order_id": 1326736,
+    "sku": "bdo-rg-085gld-red-square-11",
+    "config_title": "bdo-rg-085gld-red-square-11",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025125700000000.png?time=1777085248",
+    "local_img": "d:\\test_workspace\\tag_images\\1326736_bdo-rg-085gld-red-square-11.png",
+    "img_size": 12659
+  },
+  {
+    "index": 12,
+    "order_id": 1326735,
+    "sku": "sbg-brt-050b",
+    "config_title": "sbg-brt-050b",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025465600000000.png?time=1777085249",
+    "local_img": "d:\\test_workspace\\tag_images\\1326735_sbg-brt-050b.png",
+    "img_size": 9591
+  },
+  {
+    "index": 13,
+    "order_id": 1326734,
+    "sku": "sbg-brt-050c",
+    "config_title": "sbg-brt-050c",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025494100000000.png?time=1777085250",
+    "local_img": "d:\\test_workspace\\tag_images\\1326734_sbg-brt-050c.png",
+    "img_size": 9844
+  },
+  {
+    "index": 14,
+    "order_id": 1326733,
+    "sku": "sbg-brt-057siv-5-20",
+    "config_title": "sbg-brt-057siv-5-20",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025497000000000.png?time=1777085252",
+    "local_img": "d:\\test_workspace\\tag_images\\1326733_sbg-brt-057siv-5-20.png",
+    "img_size": 10722
+  },
+  {
+    "index": 15,
+    "order_id": 1326732,
+    "sku": "sbg-brt-057siv-6-20",
+    "config_title": "sbg-brt-057siv-6-20",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025476600000000.png?time=1777085253",
+    "local_img": "d:\\test_workspace\\tag_images\\1326732_sbg-brt-057siv-6-20.png",
+    "img_size": 12110
+  },
+  {
+    "index": 16,
+    "order_id": 1326731,
+    "sku": "sbg-brt-057siv-8-20",
+    "config_title": "sbg-brt-057siv-8-20",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025451700000000.png?time=1777085254",
+    "local_img": "d:\\test_workspace\\tag_images\\1326731_sbg-brt-057siv-8-20.png",
+    "img_size": 12212
+  },
+  {
+    "index": 17,
+    "order_id": 1326730,
+    "sku": "sbg-brt-064siv",
+    "config_title": "sbg-brt-064siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025460000000000.png?time=1777085255",
+    "local_img": "d:\\test_workspace\\tag_images\\1326730_sbg-brt-064siv.png",
+    "img_size": 9960
+  },
+  {
+    "index": 18,
+    "order_id": 1326729,
+    "sku": "sbg-brt-078siv",
+    "config_title": "sbg-brt-078siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025439000000000.png?time=1777085257",
+    "local_img": "d:\\test_workspace\\tag_images\\1326729_sbg-brt-078siv.png",
+    "img_size": 10220
+  },
+  {
+    "index": 19,
+    "order_id": 1326728,
+    "sku": "sbg-brt-081siv",
+    "config_title": "sbg-brt-081siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025423600000000.png?time=1777085258",
+    "local_img": "d:\\test_workspace\\tag_images\\1326728_sbg-brt-081siv.png",
+    "img_size": 10266
+  },
+  {
+    "index": 20,
+    "order_id": 1326727,
+    "sku": "sbg-ch-058siv-8-55",
+    "config_title": "sbg-ch-058siv-8-55",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025551400000000.png?time=1777085259",
+    "local_img": "d:\\test_workspace\\tag_images\\1326727_sbg-ch-058siv-8-55.png",
+    "img_size": 10413
+  },
+  {
+    "index": 21,
+    "order_id": 1326726,
+    "sku": "sbg-ch-116siv",
+    "config_title": "sbg-ch-116siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025537900000000.png?time=1777085260",
+    "local_img": "d:\\test_workspace\\tag_images\\1326726_sbg-ch-116siv.png",
+    "img_size": 10414
+  },
+  {
+    "index": 22,
+    "order_id": 1326725,
+    "sku": "sbg-ch-120gld",
+    "config_title": "sbg-ch-120gld",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025583000000000.png?time=1777085262",
+    "local_img": "d:\\test_workspace\\tag_images\\1326725_sbg-ch-120gld.png",
+    "img_size": 10051
+  },
+  {
+    "index": 23,
+    "order_id": 1326724,
+    "sku": "sbg-ch-120siv",
+    "config_title": "sbg-ch-120siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025532100000000.png?time=1777085263",
+    "local_img": "d:\\test_workspace\\tag_images\\1326724_sbg-ch-120siv.png",
+    "img_size": 10143
+  },
+  {
+    "index": 24,
+    "order_id": 1326723,
+    "sku": "sbg-ec-020siv",
+    "config_title": "sbg-ec-020siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025592400000000.png?time=1777085264",
+    "local_img": "d:\\test_workspace\\tag_images\\1326723_sbg-ec-020siv.png",
+    "img_size": 10263
+  },
+  {
+    "index": 25,
+    "order_id": 1326722,
+    "sku": "sbg-ec-025siv",
+    "config_title": "sbg-ec-025siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025530600000000.png?time=1777085266",
+    "local_img": "d:\\test_workspace\\tag_images\\1326722_sbg-ec-025siv.png",
+    "img_size": 10060
+  },
+  {
+    "index": 26,
+    "order_id": 1326721,
+    "sku": "bdo-rg-091gld-11",
+    "config_title": "bdo-rg-091gld-11",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025281300000000.png?time=1777085267",
+    "local_img": "d:\\test_workspace\\tag_images\\1326721_bdo-rg-091gld-11.png",
+    "img_size": 11447
+  },
+  {
+    "index": 27,
+    "order_id": 1326720,
+    "sku": "bdo-rg-091gld-14",
+    "config_title": "bdo-rg-091gld-14",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025226900000000.png?time=1777085268",
+    "local_img": "d:\\test_workspace\\tag_images\\1326720_bdo-rg-091gld-14.png",
+    "img_size": 11775
+  },
+  {
+    "index": 28,
+    "order_id": 1326719,
+    "sku": "bdo-rg-091gld-16",
+    "config_title": "bdo-rg-091gld-16",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025265000000000.png?time=1777085269",
+    "local_img": "d:\\test_workspace\\tag_images\\1326719_bdo-rg-091gld-16.png",
+    "img_size": 11896
+  },
+  {
+    "index": 29,
+    "order_id": 1326718,
+    "sku": "bdo-rg-091gld-18",
+    "config_title": "bdo-rg-091gld-18",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025225200000000.png?time=1777085271",
+    "local_img": "d:\\test_workspace\\tag_images\\1326718_bdo-rg-091gld-18.png",
+    "img_size": 11991
+  },
+  {
+    "index": 30,
+    "order_id": 1326717,
+    "sku": "sbg-nk-084gld-5-60",
+    "config_title": "sbg-nk-084gld-5-60",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025519600000000.png?time=1777085272",
+    "local_img": "d:\\test_workspace\\tag_images\\1326717_sbg-nk-084gld-5-60.png",
+    "img_size": 9899
+  },
+  {
+    "index": 31,
+    "order_id": 1326716,
+    "sku": "sbg-nk-084gld-7-55",
+    "config_title": "sbg-nk-084gld-7-55",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025570200000000.png?time=1777085273",
+    "local_img": "d:\\test_workspace\\tag_images\\1326716_sbg-nk-084gld-7-55.png",
+    "img_size": 10167
+  },
+  {
+    "index": 32,
+    "order_id": 1326715,
+    "sku": "sbg-nk-084siv-5-60",
+    "config_title": "sbg-nk-084siv-5-60",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025597900000000.png?time=1777085275",
+    "local_img": "d:\\test_workspace\\tag_images\\1326715_sbg-nk-084siv-5-60.png",
+    "img_size": 10126
+  },
+  {
+    "index": 33,
+    "order_id": 1326714,
+    "sku": "sbg-nk-124gld",
+    "config_title": "sbg-nk-124gld",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025513400000000.png?time=1777085276",
+    "local_img": "d:\\test_workspace\\tag_images\\1326714_sbg-nk-124gld.png",
+    "img_size": 10251
+  },
+  {
+    "index": 34,
+    "order_id": 1326713,
+    "sku": "sbg-nk-124siv",
+    "config_title": "sbg-nk-124siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025598600000000.png?time=1777085277",
+    "local_img": "d:\\test_workspace\\tag_images\\1326713_sbg-nk-124siv.png",
+    "img_size": 10385
+  },
+  {
+    "index": 35,
+    "order_id": 1326712,
+    "sku": "sbg-nk-143siv-blk",
+    "config_title": "sbg-nk-143siv-blk",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025534700000000.png?time=1777085278",
+    "local_img": "d:\\test_workspace\\tag_images\\1326712_sbg-nk-143siv-blk.png",
+    "img_size": 11100
+  },
+  {
+    "index": 36,
+    "order_id": 1326711,
+    "sku": "sbg-nk-143siv-blu",
+    "config_title": "sbg-nk-143siv-blu",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025656100000000.png?time=1777085280",
+    "local_img": "d:\\test_workspace\\tag_images\\1326711_sbg-nk-143siv-blu.png",
+    "img_size": 10841
+  },
+  {
+    "index": 37,
+    "order_id": 1326710,
+    "sku": "sbg-nk-143siv-gld",
+    "config_title": "sbg-nk-143siv-gld",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025629700000000.png?time=1777085281",
+    "local_img": "d:\\test_workspace\\tag_images\\1326710_sbg-nk-143siv-gld.png",
+    "img_size": 10899
+  },
+  {
+    "index": 38,
+    "order_id": 1326709,
+    "sku": "sbg-nk-156siv",
+    "config_title": "sbg-nk-156siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025612100000000.png?time=1777085282",
+    "local_img": "d:\\test_workspace\\tag_images\\1326709_sbg-nk-156siv.png",
+    "img_size": 10312
+  },
+  {
+    "index": 39,
+    "order_id": 1326708,
+    "sku": "sbg-nk-174siv",
+    "config_title": "sbg-nk-174siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025670800000000.png?time=1777085284",
+    "local_img": "d:\\test_workspace\\tag_images\\1326708_sbg-nk-174siv.png",
+    "img_size": 10111
+  },
+  {
+    "index": 40,
+    "order_id": 1326707,
+    "sku": "sbg-nk-177siv-c",
+    "config_title": "sbg-nk-177siv-c",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025685800000000.png?time=1777085285",
+    "local_img": "d:\\test_workspace\\tag_images\\1326707_sbg-nk-177siv-c.png",
+    "img_size": 11443
+  },
+  {
+    "index": 41,
+    "order_id": 1326706,
+    "sku": "sbg-nk-177siv-g",
+    "config_title": "sbg-nk-177siv-g",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025694700000000.png?time=1777085286",
+    "local_img": "d:\\test_workspace\\tag_images\\1326706_sbg-nk-177siv-g.png",
+    "img_size": 11222
+  },
+  {
+    "index": 42,
+    "order_id": 1326705,
+    "sku": "sbg-nk-212siv",
+    "config_title": "sbg-nk-212siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025680100000000.png?time=1777085287",
+    "local_img": "d:\\test_workspace\\tag_images\\1326705_sbg-nk-212siv.png",
+    "img_size": 10185
+  },
+  {
+    "index": 43,
+    "order_id": 1326704,
+    "sku": "sbg-nk-219siv",
+    "config_title": "sbg-nk-219siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025627300000000.png?time=1777085288",
+    "local_img": "d:\\test_workspace\\tag_images\\1326704_sbg-nk-219siv.png",
+    "img_size": 10337
+  },
+  {
+    "index": 44,
+    "order_id": 1326703,
+    "sku": "sbg-pnt-011blk-l",
+    "config_title": "sbg-pnt-011blk-l",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025673100000000.png?time=1777085290",
+    "local_img": "d:\\test_workspace\\tag_images\\1326703_sbg-pnt-011blk-l.png",
+    "img_size": 11954
+  },
+  {
+    "index": 45,
+    "order_id": 1326702,
+    "sku": "sbg-pnt-011blk-s",
+    "config_title": "sbg-pnt-011blk-s",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025673600000000.png?time=1777085291",
+    "local_img": "d:\\test_workspace\\tag_images\\1326702_sbg-pnt-011blk-s.png",
+    "img_size": 11924
+  },
+  {
+    "index": 46,
+    "order_id": 1326701,
+    "sku": "sbg-pnt-011blu-m",
+    "config_title": "sbg-pnt-011blu-m",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025667100000000.png?time=1777085292",
+    "local_img": "d:\\test_workspace\\tag_images\\1326701_sbg-pnt-011blu-m.png",
+    "img_size": 11766
+  },
+  {
+    "index": 47,
+    "order_id": 1326700,
+    "sku": "sbg-pnt-011blu-s",
+    "config_title": "sbg-pnt-011blu-s",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025664000000000.png?time=1777085294",
+    "local_img": "d:\\test_workspace\\tag_images\\1326700_sbg-pnt-011blu-s.png",
+    "img_size": 11258
+  },
+  {
+    "index": 48,
+    "order_id": 1326699,
+    "sku": "bdo-rg-182gld-12",
+    "config_title": "bdo-rg-182gld-12",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025262000000000.png?time=1777085295",
+    "local_img": "d:\\test_workspace\\tag_images\\1326699_bdo-rg-182gld-12.png",
+    "img_size": 11402
+  },
+  {
+    "index": 49,
+    "order_id": 1326698,
+    "sku": "bdo-rg-182gld-14",
+    "config_title": "bdo-rg-182gld-14",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025214500000000.png?time=1777085296",
+    "local_img": "d:\\test_workspace\\tag_images\\1326698_bdo-rg-182gld-14.png",
+    "img_size": 11215
+  },
+  {
+    "index": 50,
+    "order_id": 1326697,
+    "sku": "bdo-rg-182gld-16",
+    "config_title": "bdo-rg-182gld-16",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025266400000000.png?time=1777085297",
+    "local_img": "d:\\test_workspace\\tag_images\\1326697_bdo-rg-182gld-16.png",
+    "img_size": 11540
+  },
+  {
+    "index": 51,
+    "order_id": 1326696,
+    "sku": "bdo-rg-182gld-18",
+    "config_title": "bdo-rg-182gld-18",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025285500000000.png?time=1777085299",
+    "local_img": "d:\\test_workspace\\tag_images\\1326696_bdo-rg-182gld-18.png",
+    "img_size": 11423
+  },
+  {
+    "index": 52,
+    "order_id": 1326695,
+    "sku": "bdo-rg-182gld-9",
+    "config_title": "bdo-rg-182gld-9",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025251300000000.png?time=1777085300",
+    "local_img": "d:\\test_workspace\\tag_images\\1326695_bdo-rg-182gld-9.png",
+    "img_size": 11466
+  },
+  {
+    "index": 53,
+    "order_id": 1326694,
+    "sku": "bdo-rg-182pnk-12",
+    "config_title": "bdo-rg-182pnk-12",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025263200000000.png?time=1777085301",
+    "local_img": "d:\\test_workspace\\tag_images\\1326694_bdo-rg-182pnk-12.png",
+    "img_size": 11720
+  },
+  {
+    "index": 54,
+    "order_id": 1326693,
+    "sku": "bdo-rg-182pnk-14",
+    "config_title": "bdo-rg-182pnk-14",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025224300000000.png?time=1777085302",
+    "local_img": "d:\\test_workspace\\tag_images\\1326693_bdo-rg-182pnk-14.png",
+    "img_size": 11805
+  },
+  {
+    "index": 55,
+    "order_id": 1326692,
+    "sku": "bdo-rg-182pnk-16",
+    "config_title": "bdo-rg-182pnk-16",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025253200000000.png?time=1777085304",
+    "local_img": "d:\\test_workspace\\tag_images\\1326692_bdo-rg-182pnk-16.png",
+    "img_size": 11938
+  },
+  {
+    "index": 56,
+    "order_id": 1326691,
+    "sku": "bdo-rg-182pnk-18",
+    "config_title": "bdo-rg-182pnk-18",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025248700000000.png?time=1777085305",
+    "local_img": "d:\\test_workspace\\tag_images\\1326691_bdo-rg-182pnk-18.png",
+    "img_size": 12111
+  },
+  {
+    "index": 57,
+    "order_id": 1326690,
+    "sku": "bdo-rg-182pnk-9",
+    "config_title": "bdo-rg-182pnk-9",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025281200000000.png?time=1777085306",
+    "local_img": "d:\\test_workspace\\tag_images\\1326690_bdo-rg-182pnk-9.png",
+    "img_size": 11971
+  },
+  {
+    "index": 58,
+    "order_id": 1326689,
+    "sku": "sbg-pnt-013beg-l",
+    "config_title": "sbg-pnt-013beg-l",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025680600000000.png?time=1777085307",
+    "local_img": "d:\\test_workspace\\tag_images\\1326689_sbg-pnt-013beg-l.png",
+    "img_size": 10860
+  },
+  {
+    "index": 59,
+    "order_id": 1326688,
+    "sku": "sbg-pnt-013beg-m",
+    "config_title": "sbg-pnt-013beg-m",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025726500000000.png?time=1777085309",
+    "local_img": "d:\\test_workspace\\tag_images\\1326688_sbg-pnt-013beg-m.png",
+    "img_size": 11033
+  },
+  {
+    "index": 60,
+    "order_id": 1326687,
+    "sku": "sbg-pnt-013beg-xl",
+    "config_title": "sbg-pnt-013beg-xl",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025798700000000.png?time=1777085310",
+    "local_img": "d:\\test_workspace\\tag_images\\1326687_sbg-pnt-013beg-xl.png",
+    "img_size": 11073
+  },
+  {
+    "index": 61,
+    "order_id": 1326686,
+    "sku": "sbg-pnt-013blk-xl",
+    "config_title": "sbg-pnt-013blk-xl",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025788100000000.png?time=1777085311",
+    "local_img": "d:\\test_workspace\\tag_images\\1326686_sbg-pnt-013blk-xl.png",
+    "img_size": 11278
+  },
+  {
+    "index": 62,
+    "order_id": 1326685,
+    "sku": "sbg-pnt-013gry-l",
+    "config_title": "sbg-pnt-013gry-l",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025784300000000.png?time=1777085312",
+    "local_img": "d:\\test_workspace\\tag_images\\1326685_sbg-pnt-013gry-l.png",
+    "img_size": 10962
+  },
+  {
+    "index": 63,
+    "order_id": 1326684,
+    "sku": "sbg-pnt-013gry-xl",
+    "config_title": "sbg-pnt-013gry-xl",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025791900000000.png?time=1777085314",
+    "local_img": "d:\\test_workspace\\tag_images\\1326684_sbg-pnt-013gry-xl.png",
+    "img_size": 11089
+  },
+  {
+    "index": 64,
+    "order_id": 1326683,
+    "sku": "sbg-pnt-007gry-s",
+    "config_title": "sbg-pnt-007gry-s",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025686800000000.png?time=1777085315",
+    "local_img": "d:\\test_workspace\\tag_images\\1326683_sbg-pnt-007gry-s.png",
+    "img_size": 10876
+  },
+  {
+    "index": 65,
+    "order_id": 1326682,
+    "sku": "sbg-pnt-014lgry-l",
+    "config_title": "sbg-pnt-014lgry-l",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025761000000000.png?time=1777085316",
+    "local_img": "d:\\test_workspace\\tag_images\\1326682_sbg-pnt-014lgry-l.png",
+    "img_size": 11107
+  },
+  {
+    "index": 66,
+    "order_id": 1326681,
+    "sku": "sbg-pnt-014lgry-m",
+    "config_title": "sbg-pnt-014lgry-m",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025776500000000.png?time=1777085318",
+    "local_img": "d:\\test_workspace\\tag_images\\1326681_sbg-pnt-014lgry-m.png",
+    "img_size": 11156
+  },
+  {
+    "index": 67,
+    "order_id": 1326680,
+    "sku": "sbg-pnt-015wht-l",
+    "config_title": "sbg-pnt-015wht-l",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025752800000000.png?time=1777085319",
+    "local_img": "d:\\test_workspace\\tag_images\\1326680_sbg-pnt-015wht-l.png",
+    "img_size": 10711
+  },
+  {
+    "index": 68,
+    "order_id": 1326679,
+    "sku": "sbg-pnt-016blk-l",
+    "config_title": "sbg-pnt-016blk-l",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025749800000000.png?time=1777085320",
+    "local_img": "d:\\test_workspace\\tag_images\\1326679_sbg-pnt-016blk-l.png",
+    "img_size": 10832
+  },
+  {
+    "index": 69,
+    "order_id": 1326678,
+    "sku": "sbg-pnt-016blk-m",
+    "config_title": "sbg-pnt-016blk-m",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025719000000000.png?time=1777085322",
+    "local_img": "d:\\test_workspace\\tag_images\\1326678_sbg-pnt-016blk-m.png",
+    "img_size": 10686
+  },
+  {
+    "index": 70,
+    "order_id": 1326677,
+    "sku": "sbg-pnt-016brn-m",
+    "config_title": "sbg-pnt-016brn-m",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025712700000000.png?time=1777085323",
+    "local_img": "d:\\test_workspace\\tag_images\\1326677_sbg-pnt-016brn-m.png",
+    "img_size": 10904
+  },
+  {
+    "index": 71,
+    "order_id": 1326676,
+    "sku": "sbg-pnt-017blk-l",
+    "config_title": "sbg-pnt-017blk-l",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025770500000000.png?time=1777085324",
+    "local_img": "d:\\test_workspace\\tag_images\\1326676_sbg-pnt-017blk-l.png",
+    "img_size": 11926
+  },
+  {
+    "index": 72,
+    "order_id": 1326675,
+    "sku": "sbg-pnt-017blk-m",
+    "config_title": "sbg-pnt-017blk-m",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025757700000000.png?time=1777085325",
+    "local_img": "d:\\test_workspace\\tag_images\\1326675_sbg-pnt-017blk-m.png",
+    "img_size": 12145
+  },
+  {
+    "index": 73,
+    "order_id": 1326674,
+    "sku": "sbg-pnt-017blk-s",
+    "config_title": "sbg-pnt-017blk-s",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025718500000000.png?time=1777085327",
+    "local_img": "d:\\test_workspace\\tag_images\\1326674_sbg-pnt-017blk-s.png",
+    "img_size": 11820
+  },
+  {
+    "index": 74,
+    "order_id": 1326673,
+    "sku": "sbg-pnt-017gry-l",
+    "config_title": "sbg-pnt-017gry-l",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025897300000000.png?time=1777085328",
+    "local_img": "d:\\test_workspace\\tag_images\\1326673_sbg-pnt-017gry-l.png",
+    "img_size": 11647
+  },
+  {
+    "index": 75,
+    "order_id": 1326672,
+    "sku": "sbg-pnt-017gry-m",
+    "config_title": "sbg-pnt-017gry-m",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025861700000000.png?time=1777085329",
+    "local_img": "d:\\test_workspace\\tag_images\\1326672_sbg-pnt-017gry-m.png",
+    "img_size": 12099
+  },
+  {
+    "index": 76,
+    "order_id": 1326671,
+    "sku": "sbg-ps-230gld-siv",
+    "config_title": "sbg-ps-230gld-siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025870100000000.png?time=1777085330",
+    "local_img": "d:\\test_workspace\\tag_images\\1326671_sbg-ps-230gld-siv.png",
+    "img_size": 10639
+  },
+  {
+    "index": 77,
+    "order_id": 1326670,
+    "sku": "sbg-ec-007siv-m",
+    "config_title": "sbg-ec-007siv-m",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025587500000000.png?time=1777085332",
+    "local_img": "d:\\test_workspace\\tag_images\\1326670_sbg-ec-007siv-m.png",
+    "img_size": 10353
+  },
+  {
+    "index": 78,
+    "order_id": 1326669,
+    "sku": "sbg-ec-007siv-q",
+    "config_title": "sbg-ec-007siv-q",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025526600000000.png?time=1777085333",
+    "local_img": "d:\\test_workspace\\tag_images\\1326669_sbg-ec-007siv-q.png",
+    "img_size": 10100
+  },
+  {
+    "index": 79,
+    "order_id": 1326668,
+    "sku": "sbg-ps-236b",
+    "config_title": "sbg-ps-236b",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025817600000000.png?time=1777085334",
+    "local_img": "d:\\test_workspace\\tag_images\\1326668_sbg-ps-236b.png",
+    "img_size": 10105
+  },
+  {
+    "index": 80,
+    "order_id": 1326667,
+    "sku": "sbg-ps-236d",
+    "config_title": "sbg-ps-236d",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025857000000000.png?time=1777085335",
+    "local_img": "d:\\test_workspace\\tag_images\\1326667_sbg-ps-236d.png",
+    "img_size": 10213
+  },
+  {
+    "index": 81,
+    "order_id": 1326666,
+    "sku": "sbg-ps-238e",
+    "config_title": "sbg-ps-238e",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025814300000000.png?time=1777085337",
+    "local_img": "d:\\test_workspace\\tag_images\\1326666_sbg-ps-238e.png",
+    "img_size": 9580
+  },
+  {
+    "index": 82,
+    "order_id": 1326665,
+    "sku": "sbg-ps-238f",
+    "config_title": "sbg-ps-238f",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025824000000000.png?time=1777085338",
+    "local_img": "d:\\test_workspace\\tag_images\\1326665_sbg-ps-238f.png",
+    "img_size": 9816
+  },
+  {
+    "index": 83,
+    "order_id": 1326664,
+    "sku": "sbg-ps-238m",
+    "config_title": "sbg-ps-238m",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025814300000000.png?time=1777085339",
+    "local_img": "d:\\test_workspace\\tag_images\\1326664_sbg-ps-238m.png",
+    "img_size": 9580
+  },
+  {
+    "index": 84,
+    "order_id": 1326663,
+    "sku": "sbg-ps-238r",
+    "config_title": "sbg-ps-238r",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025825400000000.png?time=1777085340",
+    "local_img": "d:\\test_workspace\\tag_images\\1326663_sbg-ps-238r.png",
+    "img_size": 9876
+  },
+  {
+    "index": 85,
+    "order_id": 1326662,
+    "sku": "sbg-ps-245siv-blu",
+    "config_title": "sbg-ps-245siv-blu",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025930400000000.png?time=1777085342",
+    "local_img": "d:\\test_workspace\\tag_images\\1326662_sbg-ps-245siv-blu.png",
+    "img_size": 10346
+  },
+  {
+    "index": 86,
+    "order_id": 1326661,
+    "sku": "sbg-ps-245siv-siv",
+    "config_title": "sbg-ps-245siv-siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025926800000000.png?time=1777085343",
+    "local_img": "d:\\test_workspace\\tag_images\\1326661_sbg-ps-245siv-siv.png",
+    "img_size": 10055
+  },
+  {
+    "index": 87,
+    "order_id": 1326660,
+    "sku": "sbg-ps-251blk",
+    "config_title": "sbg-ps-251blk",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025963000000000.png?time=1777085344",
+    "local_img": "d:\\test_workspace\\tag_images\\1326660_sbg-ps-251blk.png",
+    "img_size": 10102
+  },
+  {
+    "index": 88,
+    "order_id": 1326659,
+    "sku": "sbg-ps-251siv",
+    "config_title": "sbg-ps-251siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025945300000000.png?time=1777085345",
+    "local_img": "d:\\test_workspace\\tag_images\\1326659_sbg-ps-251siv.png",
+    "img_size": 10346
+  },
+  {
+    "index": 89,
+    "order_id": 1326658,
+    "sku": "sbg-ps-254siv",
+    "config_title": "sbg-ps-254siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025955100000000.png?time=1777085347",
+    "local_img": "d:\\test_workspace\\tag_images\\1326658_sbg-ps-254siv.png",
+    "img_size": 10139
+  },
+  {
+    "index": 90,
+    "order_id": 1326657,
+    "sku": "sbg-ps-288blk-ps",
+    "config_title": "sbg-ps-288blk-ps",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025944600000000.png?time=1777085348",
+    "local_img": "d:\\test_workspace\\tag_images\\1326657_sbg-ps-288blk-ps.png",
+    "img_size": 10469
+  },
+  {
+    "index": 91,
+    "order_id": 1326656,
+    "sku": "bdo-shoe-006ivory-36",
+    "config_title": "bdo-shoe-006ivory-36",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025268800000000.png?time=1777085349",
+    "local_img": "d:\\test_workspace\\tag_images\\1326656_bdo-shoe-006ivory-36.png",
+    "img_size": 12503
+  },
+  {
+    "index": 92,
+    "order_id": 1326655,
+    "sku": "bdo-shoe-006ivory-37",
+    "config_title": "bdo-shoe-006ivory-37",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025315700000000.png?time=1777085350",
+    "local_img": "d:\\test_workspace\\tag_images\\1326655_bdo-shoe-006ivory-37.png",
+    "img_size": 12516
+  },
+  {
+    "index": 93,
+    "order_id": 1326654,
+    "sku": "sbg-ps-289blk-3",
+    "config_title": "sbg-ps-289blk-3",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025952800000000.png?time=1777085352",
+    "local_img": "d:\\test_workspace\\tag_images\\1326654_sbg-ps-289blk-3.png",
+    "img_size": 10521
+  },
+  {
+    "index": 94,
+    "order_id": 1326653,
+    "sku": "sbg-ps-259gld",
+    "config_title": "sbg-ps-259gld",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025961700000000.png?time=1777085353",
+    "local_img": "d:\\test_workspace\\tag_images\\1326653_sbg-ps-259gld.png",
+    "img_size": 10319
+  },
+  {
+    "index": 95,
+    "order_id": 1326652,
+    "sku": "sbg-ps-267blk",
+    "config_title": "sbg-ps-267blk",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025948100000000.png?time=1777085354",
+    "local_img": "d:\\test_workspace\\tag_images\\1326652_sbg-ps-267blk.png",
+    "img_size": 9924
+  },
+  {
+    "index": 96,
+    "order_id": 1326651,
+    "sku": "sbg-ps-293blk",
+    "config_title": "sbg-ps-293blk",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025949800000000.png?time=1777085355",
+    "local_img": "d:\\test_workspace\\tag_images\\1326651_sbg-ps-293blk.png",
+    "img_size": 10006
+  },
+  {
+    "index": 97,
+    "order_id": 1326650,
+    "sku": "sbg-ps-293siv",
+    "config_title": "sbg-ps-293siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025966800000000.png?time=1777085356",
+    "local_img": "d:\\test_workspace\\tag_images\\1326650_sbg-ps-293siv.png",
+    "img_size": 10318
+  },
+  {
+    "index": 98,
+    "order_id": 1326649,
+    "sku": "sbg-ps-297siv",
+    "config_title": "sbg-ps-297siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025990400000000.png?time=1777085358",
+    "local_img": "d:\\test_workspace\\tag_images\\1326649_sbg-ps-297siv.png",
+    "img_size": 10219
+  },
+  {
+    "index": 99,
+    "order_id": 1326648,
+    "sku": "sbg-rg-058siv-18",
+    "config_title": "sbg-rg-058siv-18",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509030154800000000.png?time=1777085359",
+    "local_img": "d:\\test_workspace\\tag_images\\1326648_sbg-rg-058siv-18.png",
+    "img_size": 10420
+  },
+  {
+    "index": 100,
+    "order_id": 1326647,
+    "sku": "sbg-rg-059siv",
+    "config_title": "sbg-rg-059siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509030176100000000.png?time=1777085360",
+    "local_img": "d:\\test_workspace\\tag_images\\1326647_sbg-rg-059siv.png",
+    "img_size": 9809
+  },
+  {
+    "index": 101,
+    "order_id": 1326646,
+    "sku": "sbg-rg-072b-16",
+    "config_title": "sbg-rg-072b-16",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509030146200000000.png?time=1777085361",
+    "local_img": "d:\\test_workspace\\tag_images\\1326646_sbg-rg-072b-16.png",
+    "img_size": 10285
+  },
+  {
+    "index": 102,
+    "order_id": 1326645,
+    "sku": "sbg-rg-072e-21",
+    "config_title": "sbg-rg-072e-21",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509030134000000000.png?time=1777085363",
+    "local_img": "d:\\test_workspace\\tag_images\\1326645_sbg-rg-072e-21.png",
+    "img_size": 10015
+  },
+  {
+    "index": 103,
+    "order_id": 1326644,
+    "sku": "sbg-rg-072l-16",
+    "config_title": "sbg-rg-072l-16",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509030144700000000.png?time=1777085364",
+    "local_img": "d:\\test_workspace\\tag_images\\1326644_sbg-rg-072l-16.png",
+    "img_size": 9817
+  },
+  {
+    "index": 104,
+    "order_id": 1326643,
+    "sku": "sbg-rg-074siv-14",
+    "config_title": "sbg-rg-074siv-14",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509030138200000000.png?time=1777085365",
+    "local_img": "d:\\test_workspace\\tag_images\\1326643_sbg-rg-074siv-14.png",
+    "img_size": 10558
+  },
+  {
+    "index": 105,
+    "order_id": 1326642,
+    "sku": "sbg-rg-074siv-21",
+    "config_title": "sbg-rg-074siv-21",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509030280300000000.png?time=1777085367",
+    "local_img": "d:\\test_workspace\\tag_images\\1326642_sbg-rg-074siv-21.png",
+    "img_size": 10593
+  },
+  {
+    "index": 106,
+    "order_id": 1326641,
+    "sku": "sbg-rg-089siv",
+    "config_title": "sbg-rg-089siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509021990700000000.png?time=1777085368",
+    "local_img": "d:\\test_workspace\\tag_images\\1326641_sbg-rg-089siv.png",
+    "img_size": 10239
+  },
+  {
+    "index": 107,
+    "order_id": 1326640,
+    "sku": "bdo-skt-021brn-l",
+    "config_title": "bdo-skt-021brn-l",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025337300000000.png?time=1777085369",
+    "local_img": "d:\\test_workspace\\tag_images\\1326640_bdo-skt-021brn-l.png",
+    "img_size": 12018
+  },
+  {
+    "index": 108,
+    "order_id": 1326639,
+    "sku": "bdo-skt-021drkgry-m",
+    "config_title": "bdo-skt-021drkgry-m",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025397500000000.png?time=1777085370",
+    "local_img": "d:\\test_workspace\\tag_images\\1326639_bdo-skt-021drkgry-m.png",
+    "img_size": 12539
+  },
+  {
+    "index": 109,
+    "order_id": 1326638,
+    "sku": "bdo-skt-021lgry-l",
+    "config_title": "bdo-skt-021lgry-l",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025399100000000.png?time=1777085371",
+    "local_img": "d:\\test_workspace\\tag_images\\1326638_bdo-skt-021lgry-l.png",
+    "img_size": 12489
+  },
+  {
+    "index": 110,
+    "order_id": 1326637,
+    "sku": "bdo-ps-352gld",
+    "config_title": "bdo-ps-352gld",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509021933400000000.png?time=1777085373",
+    "local_img": "d:\\test_workspace\\tag_images\\1326637_bdo-ps-352gld.png",
+    "img_size": 11483
+  },
+  {
+    "index": 111,
+    "order_id": 1326636,
+    "sku": "bdo-ps-352siv",
+    "config_title": "bdo-ps-352siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509021978000000000.png?time=1777085374",
+    "local_img": "d:\\test_workspace\\tag_images\\1326636_bdo-ps-352siv.png",
+    "img_size": 11606
+  },
+  {
+    "index": 112,
+    "order_id": 1326635,
+    "sku": "7j-sbnd-036beg-40",
+    "config_title": "7j-sbnd-036beg-40",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024482800000000.png?time=1777085375",
+    "local_img": "d:\\test_workspace\\tag_images\\1326635_7j-sbnd-036beg-40.png",
+    "img_size": 11309
+  },
+  {
+    "index": 113,
+    "order_id": 1326634,
+    "sku": "7j-sbnd-036drkolv-40",
+    "config_title": "7j-sbnd-036drkolv-40",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024471700000000.png?time=1777085377",
+    "local_img": "d:\\test_workspace\\tag_images\\1326634_7j-sbnd-036drkolv-40.png",
+    "img_size": 12057
+  },
+  {
+    "index": 114,
+    "order_id": 1326633,
+    "sku": "7j-sbnd-036elpgry-40",
+    "config_title": "7j-sbnd-036elpgry-40",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024487300000000.png?time=1777085378",
+    "local_img": "d:\\test_workspace\\tag_images\\1326633_7j-sbnd-036elpgry-40.png",
+    "img_size": 12802
+  },
+  {
+    "index": 115,
+    "order_id": 1326632,
+    "sku": "7j-sbnd-049blk-40",
+    "config_title": "7j-sbnd-049blk-40",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024441000000000.png?time=1777085379",
+    "local_img": "d:\\test_workspace\\tag_images\\1326632_7j-sbnd-049blk-40.png",
+    "img_size": 11037
+  },
+  {
+    "index": 116,
+    "order_id": 1326631,
+    "sku": "7j-sw-032brn-40",
+    "config_title": "7j-sw-032brn-40",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024497100000000.png?time=1777085380",
+    "local_img": "d:\\test_workspace\\tag_images\\1326631_7j-sw-032brn-40.png",
+    "img_size": 11397
+  },
+  {
+    "index": 117,
+    "order_id": 1326630,
+    "sku": "7j-sw-032gry-40",
+    "config_title": "7j-sw-032gry-40",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024455000000000.png?time=1777085382",
+    "local_img": "d:\\test_workspace\\tag_images\\1326630_7j-sw-032gry-40.png",
+    "img_size": 11101
+  },
+  {
+    "index": 118,
+    "order_id": 1326629,
+    "sku": "7j-swb-010blk-40",
+    "config_title": "7j-swb-010blk-40",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024419800000000.png?time=1777085383",
+    "local_img": "d:\\test_workspace\\tag_images\\1326629_7j-swb-010blk-40.png",
+    "img_size": 11632
+  },
+  {
+    "index": 119,
+    "order_id": 1326628,
+    "sku": "7j-swb-010pnkgld-40",
+    "config_title": "7j-swb-010pnkgld-40",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024416900000000.png?time=1777085384",
+    "local_img": "d:\\test_workspace\\tag_images\\1326628_7j-swb-010pnkgld-40.png",
+    "img_size": 12307
+  },
+  {
+    "index": 120,
+    "order_id": 1326627,
+    "sku": "7j-swb-010siv-40",
+    "config_title": "7j-swb-010siv-40",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024474700000000.png?time=1777085385",
+    "local_img": "d:\\test_workspace\\tag_images\\1326627_7j-swb-010siv-40.png",
+    "img_size": 11547
+  },
+  {
+    "index": 121,
+    "order_id": 1326626,
+    "sku": "ar-brt-009siv",
+    "config_title": "ar-brt-009siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024444100000000.png?time=1777085387",
+    "local_img": "d:\\test_workspace\\tag_images\\1326626_ar-brt-009siv.png",
+    "img_size": 10852
+  },
+  {
+    "index": 122,
+    "order_id": 1326625,
+    "sku": "ar-nk-001siv",
+    "config_title": "ar-nk-001siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024442300000000.png?time=1777085388",
+    "local_img": "d:\\test_workspace\\tag_images\\1326625_ar-nk-001siv.png",
+    "img_size": 11208
+  },
+  {
+    "index": 123,
+    "order_id": 1326624,
+    "sku": "ar-nk-015siv",
+    "config_title": "ar-nk-015siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024454700000000.png?time=1777085389",
+    "local_img": "d:\\test_workspace\\tag_images\\1326624_ar-nk-015siv.png",
+    "img_size": 11273
+  },
+  {
+    "index": 124,
+    "order_id": 1326623,
+    "sku": "ar-ps-002siv",
+    "config_title": "ar-ps-002siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024419700000000.png?time=1777085390",
+    "local_img": "d:\\test_workspace\\tag_images\\1326623_ar-ps-002siv.png",
+    "img_size": 11273
+  },
+  {
+    "index": 125,
+    "order_id": 1326622,
+    "sku": "ar-ps-006siv",
+    "config_title": "ar-ps-006siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024429000000000.png?time=1777085392",
+    "local_img": "d:\\test_workspace\\tag_images\\1326622_ar-ps-006siv.png",
+    "img_size": 11417
+  },
+  {
+    "index": 126,
+    "order_id": 1326621,
+    "sku": "sbg-acy-013siv",
+    "config_title": "sbg-acy-013siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025375600000000.png?time=1777085393",
+    "local_img": "d:\\test_workspace\\tag_images\\1326621_sbg-acy-013siv.png",
+    "img_size": 10318
+  },
+  {
+    "index": 127,
+    "order_id": 1326620,
+    "sku": "ar-ps-007siv-blk",
+    "config_title": "ar-ps-007siv-blk",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024550800000000.png?time=1777085394",
+    "local_img": "d:\\test_workspace\\tag_images\\1326620_ar-ps-007siv-blk.png",
+    "img_size": 12032
+  },
+  {
+    "index": 128,
+    "order_id": 1326619,
+    "sku": "ar-ps-009siv",
+    "config_title": "ar-ps-009siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024579800000000.png?time=1777085395",
+    "local_img": "d:\\test_workspace\\tag_images\\1326619_ar-ps-009siv.png",
+    "img_size": 10807
+  },
+  {
+    "index": 129,
+    "order_id": 1326618,
+    "sku": "ar-rg-008siv-14",
+    "config_title": "ar-rg-008siv-14",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024522700000000.png?time=1777085397",
+    "local_img": "d:\\test_workspace\\tag_images\\1326618_ar-rg-008siv-14.png",
+    "img_size": 11623
+  },
+  {
+    "index": 130,
+    "order_id": 1326617,
+    "sku": "ar-rg-008siv-17",
+    "config_title": "ar-rg-008siv-17",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024535700000000.png?time=1777085398",
+    "local_img": "d:\\test_workspace\\tag_images\\1326617_ar-rg-008siv-17.png",
+    "img_size": 11828
+  },
+  {
+    "index": 131,
+    "order_id": 1326616,
+    "sku": "ar-rg-008siv-19",
+    "config_title": "ar-rg-008siv-19",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024551000000000.png?time=1777085399",
+    "local_img": "d:\\test_workspace\\tag_images\\1326616_ar-rg-008siv-19.png",
+    "img_size": 11844
+  },
+  {
+    "index": 132,
+    "order_id": 1326615,
+    "sku": "ar-rg-008siv-22",
+    "config_title": "ar-rg-008siv-22",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024512900000000.png?time=1777085400",
+    "local_img": "d:\\test_workspace\\tag_images\\1326615_ar-rg-008siv-22.png",
+    "img_size": 11549
+  },
+  {
+    "index": 133,
+    "order_id": 1326614,
+    "sku": "ar-rg-009grn-21",
+    "config_title": "ar-rg-009grn-21",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024594400000000.png?time=1777085402",
+    "local_img": "d:\\test_workspace\\tag_images\\1326614_ar-rg-009grn-21.png",
+    "img_size": 11734
+  },
+  {
+    "index": 134,
+    "order_id": 1326613,
+    "sku": "ar-rg-011siv-21",
+    "config_title": "ar-rg-011siv-21",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024586600000000.png?time=1777085403",
+    "local_img": "d:\\test_workspace\\tag_images\\1326613_ar-rg-011siv-21.png",
+    "img_size": 11273
+  },
+  {
+    "index": 135,
+    "order_id": 1326612,
+    "sku": "ar-rg-013siv-21",
+    "config_title": "ar-rg-013siv-21",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024534000000000.png?time=1777085405",
+    "local_img": "d:\\test_workspace\\tag_images\\1326612_ar-rg-013siv-21.png",
+    "img_size": 11473
+  },
+  {
+    "index": 136,
+    "order_id": 1326611,
+    "sku": "ar-rg-017siv-18",
+    "config_title": "ar-rg-017siv-18",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024594300000000.png?time=1777085406",
+    "local_img": "d:\\test_workspace\\tag_images\\1326611_ar-rg-017siv-18.png",
+    "img_size": 11716
+  },
+  {
+    "index": 137,
+    "order_id": 1326610,
+    "sku": "bdo-ainner-002beg",
+    "config_title": "bdo-ainner-002beg",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024541300000000.png?time=1777085407",
+    "local_img": "d:\\test_workspace\\tag_images\\1326610_bdo-ainner-002beg.png",
+    "img_size": 11602
+  },
+  {
+    "index": 138,
+    "order_id": 1326609,
+    "sku": "bdo-ainner-002gry",
+    "config_title": "bdo-ainner-002gry",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024586000000000.png?time=1777085408",
+    "local_img": "d:\\test_workspace\\tag_images\\1326609_bdo-ainner-002gry.png",
+    "img_size": 11464
+  },
+  {
+    "index": 139,
+    "order_id": 1326608,
+    "sku": "bdo-ainner-002wht",
+    "config_title": "bdo-ainner-002wht",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024580000000000.png?time=1777085409",
+    "local_img": "d:\\test_workspace\\tag_images\\1326608_bdo-ainner-002wht.png",
+    "img_size": 11706
+  },
+  {
+    "index": 140,
+    "order_id": 1326607,
+    "sku": "bdo-bag-053blk",
+    "config_title": "bdo-bag-053blk",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024610500000000.png?time=1777085411",
+    "local_img": "d:\\test_workspace\\tag_images\\1326607_bdo-bag-053blk.png",
+    "img_size": 11436
+  },
+  {
+    "index": 141,
+    "order_id": 1326606,
+    "sku": "bdo-ch-004gld-45",
+    "config_title": "bdo-ch-004gld-45",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024674100000000.png?time=1777085412",
+    "local_img": "d:\\test_workspace\\tag_images\\1326606_bdo-ch-004gld-45.png",
+    "img_size": 11648
+  },
+  {
+    "index": 142,
+    "order_id": 1326605,
+    "sku": "bdo-ch-004siv-45",
+    "config_title": "bdo-ch-004siv-45",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024620300000000.png?time=1777085413",
+    "local_img": "d:\\test_workspace\\tag_images\\1326605_bdo-ch-004siv-45.png",
+    "img_size": 11712
+  },
+  {
+    "index": 143,
+    "order_id": 1326604,
+    "sku": "sbg-brt-030gld-3",
+    "config_title": "sbg-brt-030gld-3",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025368900000000.png?time=1777085414",
+    "local_img": "d:\\test_workspace\\tag_images\\1326604_sbg-brt-030gld-3.png",
+    "img_size": 11369
+  },
+  {
+    "index": 144,
+    "order_id": 1326603,
+    "sku": "bdo-ch-025gld-4-50",
+    "config_title": "bdo-ch-025gld-4-50",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024679200000000.png?time=1777085416",
+    "local_img": "d:\\test_workspace\\tag_images\\1326603_bdo-ch-025gld-4-50.png",
+    "img_size": 11650
+  },
+  {
+    "index": 145,
+    "order_id": 1326602,
+    "sku": "bdo-ch-027gld-7-50",
+    "config_title": "bdo-ch-027gld-7-50",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024673300000000.png?time=1777085417",
+    "local_img": "d:\\test_workspace\\tag_images\\1326602_bdo-ch-027gld-7-50.png",
+    "img_size": 11827
+  },
+  {
+    "index": 146,
+    "order_id": 1326601,
+    "sku": "bdo-ch-027siv-7-50",
+    "config_title": "bdo-ch-027siv-7-50",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024693900000000.png?time=1777085418",
+    "local_img": "d:\\test_workspace\\tag_images\\1326601_bdo-ch-027siv-7-50.png",
+    "img_size": 11965
+  },
+  {
+    "index": 147,
+    "order_id": 1326600,
+    "sku": "bdo-ch-035gld-12",
+    "config_title": "bdo-ch-035gld-12",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024688200000000.png?time=1777085420",
+    "local_img": "d:\\test_workspace\\tag_images\\1326600_bdo-ch-035gld-12.png",
+    "img_size": 12675
+  },
+  {
+    "index": 148,
+    "order_id": 1326599,
+    "sku": "bdo-ch-035siv-12",
+    "config_title": "bdo-ch-035siv-12",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024746300000000.png?time=1777085421",
+    "local_img": "d:\\test_workspace\\tag_images\\1326599_bdo-ch-035siv-12.png",
+    "img_size": 12712
+  },
+  {
+    "index": 149,
+    "order_id": 1326598,
+    "sku": "bdo-ch-038gld",
+    "config_title": "bdo-ch-038gld",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024782600000000.png?time=1777085422",
+    "local_img": "d:\\test_workspace\\tag_images\\1326598_bdo-ch-038gld.png",
+    "img_size": 11749
+  },
+  {
+    "index": 150,
+    "order_id": 1326597,
+    "sku": "bdo-ch-038siv",
+    "config_title": "bdo-ch-038siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024784700000000.png?time=1777085424",
+    "local_img": "d:\\test_workspace\\tag_images\\1326597_bdo-ch-038siv.png",
+    "img_size": 11624
+  },
+  {
+    "index": 151,
+    "order_id": 1326596,
+    "sku": "bdo-ch-038siv-1-45",
+    "config_title": "bdo-ch-038siv-1-45",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024756700000000.png?time=1777085425",
+    "local_img": "d:\\test_workspace\\tag_images\\1326596_bdo-ch-038siv-1-45.png",
+    "img_size": 13152
+  },
+  {
+    "index": 152,
+    "order_id": 1326595,
+    "sku": "sbg-ps-291siv-ps",
+    "config_title": "sbg-ps-291siv-ps",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025911900000000.png?time=1777085426",
+    "local_img": "d:\\test_workspace\\tag_images\\1326595_sbg-ps-291siv-ps.png",
+    "img_size": 10458
+  },
+  {
+    "index": 153,
+    "order_id": 1326594,
+    "sku": "bdo-ch-064siv",
+    "config_title": "bdo-ch-064siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024770100000000.png?time=1777085428",
+    "local_img": "d:\\test_workspace\\tag_images\\1326594_bdo-ch-064siv.png",
+    "img_size": 11591
+  },
+  {
+    "index": 154,
+    "order_id": 1326593,
+    "sku": "bdo-ch-089siv",
+    "config_title": "bdo-ch-089siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024752900000000.png?time=1777085429",
+    "local_img": "d:\\test_workspace\\tag_images\\1326593_bdo-ch-089siv.png",
+    "img_size": 11458
+  },
+  {
+    "index": 155,
+    "order_id": 1326592,
+    "sku": "bdo-ec-009gld",
+    "config_title": "bdo-ec-009gld",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024713700000000.png?time=1777085430",
+    "local_img": "d:\\test_workspace\\tag_images\\1326592_bdo-ec-009gld.png",
+    "img_size": 10944
+  },
+  {
+    "index": 156,
+    "order_id": 1326591,
+    "sku": "bdo-nk-055ch-031-gld",
+    "config_title": "bdo-nk-055ch-031-gld",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024756100000000.png?time=1777085432",
+    "local_img": "d:\\test_workspace\\tag_images\\1326591_bdo-nk-055ch-031-gld.png",
+    "img_size": 11968
+  },
+  {
+    "index": 157,
+    "order_id": 1326590,
+    "sku": "bdo-nk-083pnkgld",
+    "config_title": "bdo-nk-083pnkgld",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024820700000000.png?time=1777085433",
+    "local_img": "d:\\test_workspace\\tag_images\\1326590_bdo-nk-083pnkgld.png",
+    "img_size": 12466
+  },
+  {
+    "index": 158,
+    "order_id": 1326589,
+    "sku": "bdo-nk-118gld",
+    "config_title": "bdo-nk-118gld",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024887100000000.png?time=1777085434",
+    "local_img": "d:\\test_workspace\\tag_images\\1326589_bdo-nk-118gld.png",
+    "img_size": 11727
+  },
+  {
+    "index": 159,
+    "order_id": 1326588,
+    "sku": "bdo-nk-118siv",
+    "config_title": "bdo-nk-118siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024874300000000.png?time=1777085435",
+    "local_img": "d:\\test_workspace\\tag_images\\1326588_bdo-nk-118siv.png",
+    "img_size": 11771
+  },
+  {
+    "index": 160,
+    "order_id": 1326587,
+    "sku": "sbg-brt-032gld-6-165",
+    "config_title": "sbg-brt-032gld-6-165",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025338900000000.png?time=1777085437",
+    "local_img": "d:\\test_workspace\\tag_images\\1326587_sbg-brt-032gld-6-165.png",
+    "img_size": 11198
+  },
+  {
+    "index": 161,
+    "order_id": 1326586,
+    "sku": "sbg-brt-032siv-6-165",
+    "config_title": "sbg-brt-032siv-6-165",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025473000000000.png?time=1777085438",
+    "local_img": "d:\\test_workspace\\tag_images\\1326586_sbg-brt-032siv-6-165.png",
+    "img_size": 11328
+  },
+  {
+    "index": 162,
+    "order_id": 1326585,
+    "sku": "sbg-brt-032siv-8-18",
+    "config_title": "sbg-brt-032siv-8-18",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025470500000000.png?time=1777085439",
+    "local_img": "d:\\test_workspace\\tag_images\\1326585_sbg-brt-032siv-8-18.png",
+    "img_size": 12204
+  },
+  {
+    "index": 163,
+    "order_id": 1326584,
+    "sku": "bdo-ch-037siv-50",
+    "config_title": "bdo-ch-037siv-50",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024763400000000.png?time=1777085441",
+    "local_img": "d:\\test_workspace\\tag_images\\1326584_bdo-ch-037siv-50.png",
+    "img_size": 12160
+  },
+  {
+    "index": 164,
+    "order_id": 1326583,
+    "sku": "bdo-nk-121gld",
+    "config_title": "bdo-nk-121gld",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024826600000000.png?time=1777085442",
+    "local_img": "d:\\test_workspace\\tag_images\\1326583_bdo-nk-121gld.png",
+    "img_size": 11667
+  },
+  {
+    "index": 165,
+    "order_id": 1326582,
+    "sku": "bdo-nk-121pnkgld",
+    "config_title": "bdo-nk-121pnkgld",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024875400000000.png?time=1777085443",
+    "local_img": "d:\\test_workspace\\tag_images\\1326582_bdo-nk-121pnkgld.png",
+    "img_size": 12238
+  },
+  {
+    "index": 166,
+    "order_id": 1326581,
+    "sku": "bdo-nk-123siv",
+    "config_title": "bdo-nk-123siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024822900000000.png?time=1777085444",
+    "local_img": "d:\\test_workspace\\tag_images\\1326581_bdo-nk-123siv.png",
+    "img_size": 11387
+  },
+  {
+    "index": 167,
+    "order_id": 1326580,
+    "sku": "bdo-nk-288gld",
+    "config_title": "bdo-nk-288gld",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024889100000000.png?time=1777085446",
+    "local_img": "d:\\test_workspace\\tag_images\\1326580_bdo-nk-288gld.png",
+    "img_size": 11303
+  },
+  {
+    "index": 168,
+    "order_id": 1326579,
+    "sku": "bdo-pnt-022hgry-m",
+    "config_title": "bdo-pnt-022hgry-m",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024825300000000.png?time=1777085447",
+    "local_img": "d:\\test_workspace\\tag_images\\1326579_bdo-pnt-022hgry-m.png",
+    "img_size": 12593
+  },
+  {
+    "index": 169,
+    "order_id": 1326578,
+    "sku": "bdo-pnt-022hgry-s",
+    "config_title": "bdo-pnt-022hgry-s",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024850100000000.png?time=1777085448",
+    "local_img": "d:\\test_workspace\\tag_images\\1326578_bdo-pnt-022hgry-s.png",
+    "img_size": 12736
+  },
+  {
+    "index": 170,
+    "order_id": 1326577,
+    "sku": "bdo-ps-147ec-siv",
+    "config_title": "bdo-ps-147ec-siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024969900000000.png?time=1777085449",
+    "local_img": "d:\\test_workspace\\tag_images\\1326577_bdo-ps-147ec-siv.png",
+    "img_size": 11787
+  },
+  {
+    "index": 171,
+    "order_id": 1326576,
+    "sku": "bdo-ec-024siv",
+    "config_title": "bdo-ec-024siv",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024786100000000.png?time=1777085450",
+    "local_img": "d:\\test_workspace\\tag_images\\1326576_bdo-ec-024siv.png",
+    "img_size": 11597
+  },
+  {
+    "index": 172,
+    "order_id": 1326575,
+    "sku": "bdo-ps-227gld",
+    "config_title": "bdo-ps-227gld",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024954100000000.png?time=1777085452",
+    "local_img": "d:\\test_workspace\\tag_images\\1326575_bdo-ps-227gld.png",
+    "img_size": 11509
+  },
+  {
+    "index": 173,
+    "order_id": 1326574,
+    "sku": "bdo-ps-269ec-gld",
+    "config_title": "bdo-ps-269ec-gld",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509024991800000000.png?time=1777085453",
+    "local_img": "d:\\test_workspace\\tag_images\\1326574_bdo-ps-269ec-gld.png",
+    "img_size": 12824
+  },
+  {
+    "index": 174,
+    "order_id": 1326573,
+    "sku": "bdo-ps-375wht",
+    "config_title": "bdo-ps-375wht",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025078000000000.png?time=1777085454",
+    "local_img": "d:\\test_workspace\\tag_images\\1326573_bdo-ps-375wht.png",
+    "img_size": 11591
+  },
+  {
+    "index": 175,
+    "order_id": 1326572,
+    "sku": "bdo-rg-042multi-15",
+    "config_title": "bdo-rg-042multi-15",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025049100000000.png?time=1777085455",
+    "local_img": "d:\\test_workspace\\tag_images\\1326572_bdo-rg-042multi-15.png",
+    "img_size": 11549
+  },
+  {
+    "index": 176,
+    "order_id": 1326571,
+    "sku": "bdo-rg-042multi-18",
+    "config_title": "bdo-rg-042multi-18",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025016200000000.png?time=1777085457",
+    "local_img": "d:\\test_workspace\\tag_images\\1326571_bdo-rg-042multi-18.png",
+    "img_size": 11726
+  },
+  {
+    "index": 177,
+    "order_id": 1326570,
+    "sku": "bdo-rg-050gld-11",
+    "config_title": "bdo-rg-050gld-11",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025022800000000.png?time=1777085458",
+    "local_img": "d:\\test_workspace\\tag_images\\1326570_bdo-rg-050gld-11.png",
+    "img_size": 11285
+  },
+  {
+    "index": 178,
+    "order_id": 1326569,
+    "sku": "bdo-rg-050gld-16",
+    "config_title": "bdo-rg-050gld-16",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025064600000000.png?time=1777085459",
+    "local_img": "d:\\test_workspace\\tag_images\\1326569_bdo-rg-050gld-16.png",
+    "img_size": 11509
+  },
+  {
+    "index": 179,
+    "order_id": 1326568,
+    "sku": "bdo-rg-050siv-11",
+    "config_title": "bdo-rg-050siv-11",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025016800000000.png?time=1777085460",
+    "local_img": "d:\\test_workspace\\tag_images\\1326568_bdo-rg-050siv-11.png",
+    "img_size": 11226
+  },
+  {
+    "index": 180,
+    "order_id": 1326567,
+    "sku": "sbg-nk-134siv",
+    "status": "ERROR: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "index": 181,
+    "order_id": 1326566,
+    "sku": "sbg-nk-226siv-b",
+    "config_title": "sbg-nk-226siv-b",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025691200000000.png?time=1777085462",
+    "local_img": "d:\\test_workspace\\tag_images\\1326566_sbg-nk-226siv-b.png",
+    "img_size": 10182
+  },
+  {
+    "index": 182,
+    "order_id": 1326565,
+    "sku": "sbg-ps-236j",
+    "config_title": "sbg-ps-236j",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025879000000000.png?time=1777085464",
+    "local_img": "d:\\test_workspace\\tag_images\\1326565_sbg-ps-236j.png",
+    "img_size": 9844
+  },
+  {
+    "index": 183,
+    "order_id": 1326564,
+    "sku": "sbg-ps-236k",
+    "config_title": "sbg-ps-236k",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025811500000000.png?time=1777085465",
+    "local_img": "d:\\test_workspace\\tag_images\\1326564_sbg-ps-236k.png",
+    "img_size": 10180
+  },
+  {
+    "index": 184,
+    "order_id": 1326563,
+    "sku": "sbg-ps-236n",
+    "config_title": "sbg-ps-236n",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025833500000000.png?time=1777085466",
+    "local_img": "d:\\test_workspace\\tag_images\\1326563_sbg-ps-236n.png",
+    "img_size": 10008
+  },
+  {
+    "index": 185,
+    "order_id": 1326562,
+    "sku": "sbg-ps-236o",
+    "config_title": "sbg-ps-236o",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025813500000000.png?time=1777085468",
+    "local_img": "d:\\test_workspace\\tag_images\\1326562_sbg-ps-236o.png",
+    "img_size": 10026
+  },
+  {
+    "index": 186,
+    "order_id": 1326561,
+    "sku": "sbg-ps-236w",
+    "config_title": "sbg-ps-236w",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025823400000000.png?time=1777085469",
+    "local_img": "d:\\test_workspace\\tag_images\\1326561_sbg-ps-236w.png",
+    "img_size": 10299
+  },
+  {
+    "index": 187,
+    "order_id": 1326560,
+    "sku": "sbg-ps-236x",
+    "config_title": "sbg-ps-236x",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025861600000000.png?time=1777085470",
+    "local_img": "d:\\test_workspace\\tag_images\\1326560_sbg-ps-236x.png",
+    "img_size": 9880
+  },
+  {
+    "index": 188,
+    "order_id": 1326559,
+    "sku": "sbg-ps-243siv-ps",
+    "config_title": "sbg-ps-243siv-ps",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025924200000000.png?time=1777085471",
+    "local_img": "d:\\test_workspace\\tag_images\\1326559_sbg-ps-243siv-ps.png",
+    "img_size": 10219
+  },
+  {
+    "index": 189,
+    "order_id": 1326558,
+    "sku": "sbg-ps-244siv-ps",
+    "config_title": "sbg-ps-244siv-ps",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025944400000000.png?time=1777085473",
+    "local_img": "d:\\test_workspace\\tag_images\\1326558_sbg-ps-244siv-ps.png",
+    "img_size": 10190
+  },
+  {
+    "index": 190,
+    "order_id": 1326557,
+    "sku": "sbg-ps-285siv-ec",
+    "config_title": "sbg-ps-285siv-ec",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025942300000000.png?time=1777085474",
+    "local_img": "d:\\test_workspace\\tag_images\\1326557_sbg-ps-285siv-ec.png",
+    "img_size": 11571
+  },
+  {
+    "index": 191,
+    "order_id": 1326556,
+    "sku": "sbg-rg-053siv-4-13",
+    "config_title": "sbg-rg-053siv-4-13",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509030073900000000.png?time=1777085475",
+    "local_img": "d:\\test_workspace\\tag_images\\1326556_sbg-rg-053siv-4-13.png",
+    "img_size": 11836
+  },
+  {
+    "index": 192,
+    "order_id": 1326555,
+    "sku": "sbg-rg-053siv-55-16",
+    "config_title": "sbg-rg-053siv-55-16",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509030046700000000.png?time=1777085476",
+    "local_img": "d:\\test_workspace\\tag_images\\1326555_sbg-rg-053siv-55-16.png",
+    "img_size": 11619
+  },
+  {
+    "index": 193,
+    "order_id": 1326554,
+    "sku": "sbg-brt-039siv-rope-15",
+    "config_title": "sbg-brt-039siv-rope-15",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025471300000000.png?time=1777085478",
+    "local_img": "d:\\test_workspace\\tag_images\\1326554_sbg-brt-039siv-rope-15.png",
+    "img_size": 10694
+  },
+  {
+    "index": 194,
+    "order_id": 1326553,
+    "sku": "sbg-brt-048b",
+    "config_title": "sbg-brt-048b",
+    "pic_url": "https://oss.sakuradk2.com/all/pro/image/barcode/pic-brand-cart/202604/2026042509025477000000000.png?time=1777085479",
+    "local_img": "d:\\test_workspace\\tag_images\\1326553_sbg-brt-048b.png",
+    "img_size": 9375
+  }
+]

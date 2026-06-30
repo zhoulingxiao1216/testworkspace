@@ -1,0 +1,66 @@
+{
+  "generated_at": "2026-06-09 19:36:58",
+  "base_url": "https://main-api.hubbuyer.com",
+  "client_key": "hubbuyer-JPN62",
+  "client_secret": "06b2***bfa3",
+  "access_token": "",
+  "keyword": "バッグ",
+  "offer_id": "",
+  "results": [
+    {
+      "case_id": "TC-AUTH-001",
+      "path": "/open_api/v1/auth/token",
+      "passed": true,
+      "elapsed_ms": 431.87,
+      "http_status": 200,
+      "business_code": 200,
+      "trace_id": "",
+      "error": ""
+    },
+    {
+      "case_id": "TC-SRCH-001",
+      "path": "/open_api/v1/product/search",
+      "passed": true,
+      "elapsed_ms": 2344.01,
+      "http_status": 200,
+      "business_code": 200,
+      "trace_id": "op_20260609193655_d2c739cb",
+      "error": ""
+    },
+    {
+      "case_id": "TC-DET-001",
+      "path": "/open_api/v1/product/detail",
+      "passed": true,
+      "elapsed_ms": 1316.29,
+      "http_status": 200,
+      "business_code": 200,
+      "trace_id": "op_20260609193658_92dd5bdc",
+      "error": ""
+    },
+    {
+      "case_id": "TC-AUTH-005",
+      "path": "/open_api/v1/product/search",
+      "passed": true,
+      "elapsed_ms": 122.13,
+      "http_status": 200,
+      "business_code": 401,
+      "trace_id": "op_20260609193659_93075ccb",
+      "error": ""
+    },
+    {
+      "case_id": "TC-SRCH-003",
+      "path": "/open_api/v1/product/search",
+      "passed": true,
+      "elapsed_ms": 117.89,
+      "http_status": 200,
+      "business_code": 401,
+      "trace_id": "op_20260609193659_b4002f66",
+      "error": ""
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  }
+}

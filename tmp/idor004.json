@@ -1,0 +1,23 @@
+{
+  "quote_no": "B2B-BJ-JPN49-260616-105",
+  "probes": [
+    {
+      "path": "/api_b2b/quoteBack/list",
+      "code": 200,
+      "msg": "견적서가 존재하지 않거나 조회 권한이 없습니다",
+      "has_data": true
+    },
+    {
+      "path": "/api_b2b/quoteBack/listData",
+      "code": 404,
+      "msg": "404 not found",
+      "has_data": false
+    },
+    {
+      "path": "/api_b2b/quoteBack/index",
+      "code": 404,
+      "msg": "404 not found",
+      "has_data": false
+    }
+  ]
+}

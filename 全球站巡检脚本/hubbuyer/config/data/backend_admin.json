@@ -1,0 +1,10 @@
+{
+  "modules": {
+    "purchase_order_ops": {
+      "enabled": true
+    },
+    "exchange_rate": {
+      "enabled": true
+    }
+  }
+}

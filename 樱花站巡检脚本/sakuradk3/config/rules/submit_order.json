@@ -1,0 +1,10 @@
+{
+  "submit_order_task": {
+    "key": "check_api_submit_order",
+    "desc": "B2B&D2C 提交自助报价单",
+    "script": "checker/api/submit_order.py",
+    "rules": {
+      "status_code": 200
+    }
+  }
+}

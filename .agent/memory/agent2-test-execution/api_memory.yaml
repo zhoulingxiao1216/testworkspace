@@ -1,0 +1,17 @@
+version: 1
+updated_at: "2026-05-22"
+policy:
+  store_secrets_here: false
+  allowed:
+    - "endpoint path"
+    - "method"
+    - "required non-secret parameters"
+    - "response assertion notes"
+  forbidden:
+    - "tokens"
+    - "cookies"
+    - "passwords"
+projects:
+  hubbuyer_inspection:
+    note: "API checker scripts exist under 全球站巡检脚本/hubbuyer/checker/api. Extract stable endpoint lessons here after execution."
+    endpoints: []

@@ -1,0 +1,30 @@
+{
+  "B2B_list": {
+    "page": 1,
+    "limit": 15,
+    "orderIds": null,
+    "stat": -1
+  },
+  "B2B_pay": {
+    "usedPoint": 0,
+    "Sendername": "",
+    "Remitterbankname": "",
+    "IBeneficiaryBank": 0,
+    "orderIds": "",
+    "couponInfo": "{}"
+  },
+  "D2C_list": {
+    "page": 1,
+    "limit": 15,
+    "orderIds": null,
+    "stat": -1
+  },
+  "D2C_pay": {
+    "usedPoint": 0,
+    "Sendername": "",
+    "Remitterbankname": "",
+    "IBeneficiaryBank": 0,
+    "orderIds": "",
+    "couponInfo": "{}"
+  }
+}

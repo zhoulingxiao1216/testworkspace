@@ -1,0 +1,8 @@
+{
+  "onebound_daily_stats_task": {
+    "key": "check_api_onebound_daily_stats",
+    "desc": "万邦 API 前日调用统计",
+    "script": "checker/api/onebound_daily_stats.py",
+    "runner_timeout": 60
+  }
+}

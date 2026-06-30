@@ -1,0 +1,26 @@
+{
+    "B2B": {
+        "params": {
+            "site": "B2B",
+            "beginPage": 1,
+            "pageSize": 50,
+            "priceStart": "",
+            "priceEnd": "",
+            "priceSort": "",
+            "rePurchaseRateSort": "",
+            "monthSoldSort": "",
+            "snId": "",
+            "productCollectionId": 0,
+            "image_url": "",
+            "certifiedFactory": "",
+            "isOnePsale": "",
+            "new7": ""
+        },
+        "image_urls": [
+            "https://oss.hubbuyer.com/all/prod/image/searchImage/202601/2026013008462018600000000.png",
+            "https://oss.hubbuyer.com/all/prod/image/searchImage/202601/2026013008464737700000000.jpg",
+            "https://oss.hubbuyer.com/all/prod/image/searchImage/202601/2026013008522446500000000.jpg",
+            "https://oss.hubbuyer.com/all/prod/image/searchImage/202601/2026013008525349600000000.jpg"
+        ]
+    }
+}

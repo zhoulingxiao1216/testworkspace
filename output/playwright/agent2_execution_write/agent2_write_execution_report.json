@@ -1,0 +1,1069 @@
+{
+  "generated_at": "2026-05-25T14:36:10",
+  "mode": "write-enabled Playwright UI execution",
+  "results": [
+    {
+      "case_id": "TC-ORD-006",
+      "status": "BLOCKED",
+      "actual": "quote: pending 35 -> 35",
+      "record": "B2B-BJ-JPN34-260423-083",
+      "note": "Action executed or attempted, but the pending count did not show the expected decrement."
+    },
+    {
+      "case_id": "TC-ORD-008",
+      "status": "BLOCKED",
+      "actual": "agent_buy: pending 98 -> 98",
+      "record": "B2B-DD-JPN12-260525-009",
+      "note": "Action executed or attempted, but the pending count did not show the expected decrement."
+    },
+    {
+      "case_id": "TC-SHIP-004",
+      "status": "PASS",
+      "actual": "ship: pending 10 -> 9",
+      "record": "WL-CHN6-251222-003",
+      "note": ""
+    }
+  ],
+  "evidence": {
+    "quote": {
+      "before": {
+        "url": "https://hlc-admin.hubbuyer.com/b2b/order/quote",
+        "title": "报价单",
+        "pending_count": 35,
+        "in_review_count": null,
+        "menu_badges": [
+          {
+            "label": "订单管理",
+            "badge": "99+"
+          },
+          {
+            "label": "报价单",
+            "badge": "35"
+          },
+          {
+            "label": "代购订单",
+            "badge": "98"
+          },
+          {
+            "label": "发货配送",
+            "badge": "10"
+          },
+          {
+            "label": "客户管理",
+            "badge": "43"
+          }
+        ],
+        "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n报价单\n35\n代购订单\n98\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家\n请选择国家\n报价单类型\n请选择报价单类型\n报价单编号\n支付状态\n请选择支付状态\n查询\n重置\n展开\n待审核(35)\n无需审核(196)\n审核完成(174)\n已取消(257)\n已驳回(8)\n全部(670)\n国家\n\t\n类型\n\t\n报价单编号\n\t\n报价单状态\n\t\n支付状态\n\t\n客户信息\n\t\n会员等级\n\t\n报价单金额\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n提交日期\n\t\n操作\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260423-083\n\t\n待审核\n\t\n---\n\t\nS-JPN34-TEST-柴思丽\n\t\n一般会员\n\t\n6090.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-04-23 08:30\n\t\n审核\n\n\nKorea\n\t\n手动\n\t\nB2B-BJ-KOR8-260409-091\n\t\n待审核\n\t\n---\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n78.75\n\t\n金月明\n\t\n张佳唯\n\t\n包瑞楠\n\t\n2026-04-09 09:49\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260401-059\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n670.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-04-01 14:48\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260401-058\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n82900.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-04-01 13:29\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN15-260327-001\n\t\n待审核\n\t\n---\n\t\nS-CHN15-测试123\n\t\n一般会员\n\t\n312.90\n\t\n\t\n\t\n\t\n2026-03-27 08:29\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260323-044\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n362000.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-03-23 14:20\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260323-040\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n1280.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-03-23 09:17\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260317-039\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n61590.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-03-17 11:47\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN12-260313-002\n\t\n待审核\n\t\n---\n\t\nC-CHN12-10201220\n\t\n一般会员\n\t\n3066.65\n\t\n崔红梅\n\t\n张佳唯\n\t\n包佳民\n\t\n2026-03-13 16:58\n\t\n审核\n\n\nAmerica\n\t\n手动\n\t\nB2B-BJ-USA5-260228-004\n\t\n待审核\n\t\n---\n\t\nB-USA5-1010\n\t\n一般会员\n\t\n12924.02\n\t\n金月明\n\t\n唐芬芬\n\t\n陈牧鹏\n\t\n2026-02-28 15:45\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN2-260120-003\n\t\n待审核\n\t\n---\n\t\nS-JPN2-何鹏彪\n\t\n一般会员\n\t\n75875.00\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2026-01-20 13:25\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN8-260120-003\n\t\n待审核\n\t\n---\n\t\nS-CHN8-123213\n\t\n一般会员\n\t\n1401.60\n\t\n崔红梅\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2026-01-20 08:50\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN8-260119-002\n\t\n待审核\n\t\n---\n\t\nS-CHN8-123213\n\t\n一般会员\n\t\n171.20\n\t\n崔红梅\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2026-01-19 14:32\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN26-251230-006\n\t\n待审核\n\t\n---\n\t\nD-JPN26-金子東\n\t\n一般会员\n\t\n7724.00\n\t\n金月明\n\t\n张佳唯\n\t\n包瑞楠\n\t\n2025-12-30 19:41\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN26-251230-003\n\t\n待审核\n\t\n---\n\t\nD-JPN26-金子東\n\t\n一般会员\n\t\n230.00\n\t\n金月明\n\t\n张佳唯\n\t\n包瑞楠\n\t\n2025-12-30 18:57\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN30-251223-001\n\t\n待审核\n\t\n---\n\t\nS-JPN30-朴测试23\n\t\n一般会员\n\t\n20892.55\n\t\n崔红梅\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2025-12-23 15:17\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN6-251223-013\n\t\n待审核\n\t\n---\n\t\nC-CHN6-wh\n\t\n商务会员\n\t\n49.50\n\t\n崔红梅\n\t\n张佳唯\n\t\n包佳民\n\t\n2025-12-23 10:40\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN25-251220-004\n\t\n待审核\n\t\n---\n\t\nB-JPN25-12.20生产\n\t\n一般会员\n\t\n107.00\n\t\n崔红梅\n\t\n徐榕\n\t\n包佳民\n\t\n2025-12-20 18:54\n\t\n审核\n\n\nKorea\n\t\n手动\n\t\nB2B-BJ-KOR2-251220-004\n\t\n待审核\n\t\n---\n\t\nD-KOR2-21222\n\t\n一般会员\n\t\n76.00\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2025-12-20 15:10\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN11-251220-020\n\t\n待审核\n\t\n---\n\t\nB-JPN11-朴国哲\n\t\n一般会员\n\t\n18096.96\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2025-12-20 14:49\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN3-251220-010\n\t\n待审核\n\t\n---\n\t\nS-JPN3-胡兴华\n\t\n一般会员\n\t\n343.00\n\t\n崔红梅\n\t\n吴四佳\n\t\n包瑞楠\n\t\n2025-12-20 09:28\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN6-251218-006\n\t\n待审核\n\t\n---\n\t\nC-CHN6-wh\n\t\n一般会员\n\t\n315006.30\n\t\n崔红梅\n\t\n张佳唯\n\t\n包佳民\n\t\n2025-12-18 13:57\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN21-251218-001\n\t\n待审核\n\t\n---\n\t\nD-JPN21-test朴雪锦\n\t\n一般会员\n\t\n89.00\n\t\n崔红梅\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2025-12-18 13:56\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN15-251218-008\n\t\n待审核\n\t\n---\n\t\nS-JPN15-仓木麻衣\n\t\n一般会员\n\t\n1556.50\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2025-12-18 13:49\n\t\n审核\n\n\nAmerica\n\t\n手动\n\t\nB2B-BJ-USA4-251218-006\n\t\n待审核\n\t\n---\n\t\nS-USA4-PeterLee\n\t\n一般会员\n\t\n1556.50\n\t\n崔红梅\n\t\n金月明\n\t\n陈牧鹏\n\t\n2025-12-18 11:22\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN9-251218-012\n\t\n待审核\n\t\n---\n\t\nS-CHN9-李小龙\n\t\n一般会员\n\t\n1501.50\n\t\n崔红梅\n\t\n金月明\n\t\n陈牧鹏\n\t\n2025-12-18 11:00\n\t\n审核\n\n\nBelgium\n\t\n手动\n\t\nB2B-BJ-BEL1-251217-001\n\t\n待审核\n\t\n---\n\t\nD-BEL1-xiafei-belgium\n\t\n一般会员\n\t\n1175.00\n\t\n\t\n\t\n\t\n2025-12-17 19:55\n\t\n审核\n\n\nKorea\n\t\n手动\n\t\nB2B-BJ-KOR5-251217-001\n\t\n待审核\n\t\n---\n\t\nD-KOR5-weihaohan\n\t\n一般会员\n\t\n519.50\n\t\n金月明\n\t\n吴四佳\n\t\n包瑞楠\n\t\n2025-12-17 19:05\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN1-251217-079\n\t\n待审核\n\t\n---\n\t\nD-JPN1-12.1112.11\n\t\n商务会员\n\t\n148.00\n\t\n崔红梅\n\t\n张佳唯\n\t\n包佳民\n\t\n2025-12-17 19:03\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN15-251217-006\n\t\n待审核\n\t\n---\n\t\nS-JPN15-仓木麻衣\n\t\n一般会员\n\t\n1531.50\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2025-12-17 16:18\n\t\n审核\n30条/页\n共 35 条\n1\n2\n前往\n页"
+      },
+      "quote_no": "B2B-BJ-JPN34-260423-083",
+      "operation": {
+        "detail_url": "https://hlc-admin.hubbuyer.com/b2b/order/quote/detail?quote_no=B2B-BJ-JPN34-260423-083",
+        "before": {
+          "url": "https://hlc-admin.hubbuyer.com/b2b/order/quote/detail?quote_no=B2B-BJ-JPN34-260423-083",
+          "title": "报价单详情",
+          "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n报价单\n35\n代购订单\n98\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家：Japan\n报价单类型：手动\n报价单编号：B2B-BJ-JPN34-260423-083\n提交日期：2026-04-23 08:30\n支付状态：---\n客户经理：崔红梅\n业务：FRU CHASLEY\n采购：陈牧鹏\n修改负责人\n待审核\n通过\n驳回\n客户信息：S-JPN34-TEST-柴思丽\n一般会员\n报价单提交金额\n\t\n报价单金额\n\t\n禁用金额\n\t\n店铺数\n\t\nSKU数\n\t\n订购数\n\t\n商品金额\n\t\n预估附加项费用\n\t\n代采手续费\n6090.00元\n\t\n6090.00元\n\t\n0.00元\n\t\n1\n\t\n1\n\t\n1000\n\t\n5800.00元\n\t\n0.00元\n\t\n290.00元\n国际物流：\nTW--船运\n预估商品重量：\nKG\n预估国际运费：\n0.00\n商品信息\n\t\n商品属性\n\t\n重量（KG）\n\t\n质检/附加项\n\t\n备注\n\t\n备注图片\n\t\n操作\n深圳市炳晨服饰有限公司\n联系商家\n店铺订单金额：5800.00元\n国内预估运费：\n元\n\n辣妹别致显瘦短袖白色t恤女美式气质小众灰色上衣百搭黑色打底衫\n\nID:B000003858\n\nMySKU:---\nASIN:---\n颜色:黑色;\n尺码:M;\n\n\t\n\n单价:￥5.80\n\n下单数量:1000\n\n小计: 5800.00\n\t\n总重:\n\t\n抽样详细\n查看\n修改\n\t\n备注：---\n回复\n\t\n\t",
+          "dialogs": [],
+          "buttons": [
+            {
+              "idx": 0,
+              "text": "你好， admin",
+              "x": 1312,
+              "y": 19,
+              "w": 88,
+              "h": 14,
+              "disabled": false
+            },
+            {
+              "idx": 1,
+              "text": "通过",
+              "x": 265,
+              "y": 184,
+              "w": 48,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 2,
+              "text": "驳回",
+              "x": 271,
+              "y": 208,
+              "w": 48,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 3,
+              "text": "查看",
+              "x": 1027,
+              "y": 425,
+              "w": 132,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 4,
+              "text": "修改",
+              "x": 1171,
+              "y": 425,
+              "w": 132,
+              "h": 24,
+              "disabled": false
+            }
+          ]
+        },
+        "confirmed_button": null,
+        "after": {
+          "url": "https://hlc-admin.hubbuyer.com/b2b/order/quote/detail?quote_no=B2B-BJ-JPN34-260423-083",
+          "title": "报价单详情",
+          "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n报价单\n35\n代购订单\n98\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家：Japan\n报价单类型：手动\n报价单编号：B2B-BJ-JPN34-260423-083\n提交日期：2026-04-23 08:30\n支付状态：---\n客户经理：崔红梅\n业务：FRU CHASLEY\n采购：陈牧鹏\n修改负责人\n待审核\n通过\n驳回\n客户信息：S-JPN34-TEST-柴思丽\n一般会员\n报价单提交金额\n\t\n报价单金额\n\t\n禁用金额\n\t\n店铺数\n\t\nSKU数\n\t\n订购数\n\t\n商品金额\n\t\n预估附加项费用\n\t\n代采手续费\n6090.00元\n\t\n6090.00元\n\t\n0.00元\n\t\n1\n\t\n1\n\t\n1000\n\t\n5800.00元\n\t\n0.00元\n\t\n290.00元\n国际物流：\nTW--船运\n预估商品重量：\nKG\n预估国际运费：\n0.00\n商品信息\n\t\n商品属性\n\t\n重量（KG）\n\t\n质检/附加项\n\t\n备注\n\t\n备注图片\n\t\n操作\n深圳市炳晨服饰有限公司\n联系商家\n店铺订单金额：5800.00元\n国内预估运费：\n元\n\n辣妹别致显瘦短袖白色t恤女美式气质小众灰色上衣百搭黑色打底衫\n\nID:B000003858\n\nMySKU:---\nASIN:---\n颜色:黑色;\n尺码:M;\n\n\t\n\n单价:￥5.80\n\n下单数量:1000\n\n小计: 5800.00\n\t\n总重:\n\t\n抽样详细\n查看\n修改\n\t\n备注：---\n回复\n\t\n\t\n是否通过审核？\n取消\n确定",
+          "dialogs": [],
+          "buttons": [
+            {
+              "idx": 0,
+              "text": "你好， admin",
+              "x": 1312,
+              "y": 19,
+              "w": 88,
+              "h": 14,
+              "disabled": false
+            },
+            {
+              "idx": 1,
+              "text": "通过",
+              "x": 265,
+              "y": 184,
+              "w": 48,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 2,
+              "text": "驳回",
+              "x": 271,
+              "y": 208,
+              "w": 48,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 3,
+              "text": "查看",
+              "x": 1027,
+              "y": 425,
+              "w": 132,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 4,
+              "text": "修改",
+              "x": 1171,
+              "y": 425,
+              "w": 132,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 6,
+              "text": "取消",
+              "x": 244,
+              "y": 254,
+              "w": 48,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 7,
+              "text": "确定",
+              "x": 304,
+              "y": 254,
+              "w": 48,
+              "h": 24,
+              "disabled": false
+            }
+          ]
+        }
+      },
+      "after": {
+        "url": "https://hlc-admin.hubbuyer.com/b2b/order/quote",
+        "title": "报价单",
+        "pending_count": 35,
+        "in_review_count": null,
+        "menu_badges": [
+          {
+            "label": "订单管理",
+            "badge": "99+"
+          },
+          {
+            "label": "报价单",
+            "badge": "35"
+          },
+          {
+            "label": "代购订单",
+            "badge": "98"
+          },
+          {
+            "label": "发货配送",
+            "badge": "10"
+          },
+          {
+            "label": "客户管理",
+            "badge": "43"
+          }
+        ],
+        "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n报价单\n35\n代购订单\n98\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家\n请选择国家\n报价单类型\n请选择报价单类型\n报价单编号\n支付状态\n请选择支付状态\n查询\n重置\n展开\n待审核(35)\n无需审核(196)\n审核完成(174)\n已取消(257)\n已驳回(8)\n全部(670)\n国家\n\t\n类型\n\t\n报价单编号\n\t\n报价单状态\n\t\n支付状态\n\t\n客户信息\n\t\n会员等级\n\t\n报价单金额\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n提交日期\n\t\n操作\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260423-083\n\t\n待审核\n\t\n---\n\t\nS-JPN34-TEST-柴思丽\n\t\n一般会员\n\t\n6090.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-04-23 08:30\n\t\n审核\n\n\nKorea\n\t\n手动\n\t\nB2B-BJ-KOR8-260409-091\n\t\n待审核\n\t\n---\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n78.75\n\t\n金月明\n\t\n张佳唯\n\t\n包瑞楠\n\t\n2026-04-09 09:49\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260401-059\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n670.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-04-01 14:48\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260401-058\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n82900.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-04-01 13:29\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN15-260327-001\n\t\n待审核\n\t\n---\n\t\nS-CHN15-测试123\n\t\n一般会员\n\t\n312.90\n\t\n\t\n\t\n\t\n2026-03-27 08:29\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260323-044\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n362000.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-03-23 14:20\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260323-040\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n1280.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-03-23 09:17\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260317-039\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n61590.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-03-17 11:47\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN12-260313-002\n\t\n待审核\n\t\n---\n\t\nC-CHN12-10201220\n\t\n一般会员\n\t\n3066.65\n\t\n崔红梅\n\t\n张佳唯\n\t\n包佳民\n\t\n2026-03-13 16:58\n\t\n审核\n\n\nAmerica\n\t\n手动\n\t\nB2B-BJ-USA5-260228-004\n\t\n待审核\n\t\n---\n\t\nB-USA5-1010\n\t\n一般会员\n\t\n12924.02\n\t\n金月明\n\t\n唐芬芬\n\t\n陈牧鹏\n\t\n2026-02-28 15:45\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN2-260120-003\n\t\n待审核\n\t\n---\n\t\nS-JPN2-何鹏彪\n\t\n一般会员\n\t\n75875.00\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2026-01-20 13:25\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN8-260120-003\n\t\n待审核\n\t\n---\n\t\nS-CHN8-123213\n\t\n一般会员\n\t\n1401.60\n\t\n崔红梅\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2026-01-20 08:50\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN8-260119-002\n\t\n待审核\n\t\n---\n\t\nS-CHN8-123213\n\t\n一般会员\n\t\n171.20\n\t\n崔红梅\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2026-01-19 14:32\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN26-251230-006\n\t\n待审核\n\t\n---\n\t\nD-JPN26-金子東\n\t\n一般会员\n\t\n7724.00\n\t\n金月明\n\t\n张佳唯\n\t\n包瑞楠\n\t\n2025-12-30 19:41\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN26-251230-003\n\t\n待审核\n\t\n---\n\t\nD-JPN26-金子東\n\t\n一般会员\n\t\n230.00\n\t\n金月明\n\t\n张佳唯\n\t\n包瑞楠\n\t\n2025-12-30 18:57\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN30-251223-001\n\t\n待审核\n\t\n---\n\t\nS-JPN30-朴测试23\n\t\n一般会员\n\t\n20892.55\n\t\n崔红梅\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2025-12-23 15:17\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN6-251223-013\n\t\n待审核\n\t\n---\n\t\nC-CHN6-wh\n\t\n商务会员\n\t\n49.50\n\t\n崔红梅\n\t\n张佳唯\n\t\n包佳民\n\t\n2025-12-23 10:40\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN25-251220-004\n\t\n待审核\n\t\n---\n\t\nB-JPN25-12.20生产\n\t\n一般会员\n\t\n107.00\n\t\n崔红梅\n\t\n徐榕\n\t\n包佳民\n\t\n2025-12-20 18:54\n\t\n审核\n\n\nKorea\n\t\n手动\n\t\nB2B-BJ-KOR2-251220-004\n\t\n待审核\n\t\n---\n\t\nD-KOR2-21222\n\t\n一般会员\n\t\n76.00\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2025-12-20 15:10\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN11-251220-020\n\t\n待审核\n\t\n---\n\t\nB-JPN11-朴国哲\n\t\n一般会员\n\t\n18096.96\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2025-12-20 14:49\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN3-251220-010\n\t\n待审核\n\t\n---\n\t\nS-JPN3-胡兴华\n\t\n一般会员\n\t\n343.00\n\t\n崔红梅\n\t\n吴四佳\n\t\n包瑞楠\n\t\n2025-12-20 09:28\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN6-251218-006\n\t\n待审核\n\t\n---\n\t\nC-CHN6-wh\n\t\n一般会员\n\t\n315006.30\n\t\n崔红梅\n\t\n张佳唯\n\t\n包佳民\n\t\n2025-12-18 13:57\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN21-251218-001\n\t\n待审核\n\t\n---\n\t\nD-JPN21-test朴雪锦\n\t\n一般会员\n\t\n89.00\n\t\n崔红梅\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2025-12-18 13:56\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN15-251218-008\n\t\n待审核\n\t\n---\n\t\nS-JPN15-仓木麻衣\n\t\n一般会员\n\t\n1556.50\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2025-12-18 13:49\n\t\n审核\n\n\nAmerica\n\t\n手动\n\t\nB2B-BJ-USA4-251218-006\n\t\n待审核\n\t\n---\n\t\nS-USA4-PeterLee\n\t\n一般会员\n\t\n1556.50\n\t\n崔红梅\n\t\n金月明\n\t\n陈牧鹏\n\t\n2025-12-18 11:22\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN9-251218-012\n\t\n待审核\n\t\n---\n\t\nS-CHN9-李小龙\n\t\n一般会员\n\t\n1501.50\n\t\n崔红梅\n\t\n金月明\n\t\n陈牧鹏\n\t\n2025-12-18 11:00\n\t\n审核\n\n\nBelgium\n\t\n手动\n\t\nB2B-BJ-BEL1-251217-001\n\t\n待审核\n\t\n---\n\t\nD-BEL1-xiafei-belgium\n\t\n一般会员\n\t\n1175.00\n\t\n\t\n\t\n\t\n2025-12-17 19:55\n\t\n审核\n\n\nKorea\n\t\n手动\n\t\nB2B-BJ-KOR5-251217-001\n\t\n待审核\n\t\n---\n\t\nD-KOR5-weihaohan\n\t\n一般会员\n\t\n519.50\n\t\n金月明\n\t\n吴四佳\n\t\n包瑞楠\n\t\n2025-12-17 19:05\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN1-251217-079\n\t\n待审核\n\t\n---\n\t\nD-JPN1-12.1112.11\n\t\n商务会员\n\t\n148.00\n\t\n崔红梅\n\t\n张佳唯\n\t\n包佳民\n\t\n2025-12-17 19:03\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN15-251217-006\n\t\n待审核\n\t\n---\n\t\nS-JPN15-仓木麻衣\n\t\n一般会员\n\t\n1531.50\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2025-12-17 16:18\n\t\n审核\n30条/页\n共 35 条\n1\n2\n前往\n页"
+      }
+    },
+    "agent_buy": {
+      "before": {
+        "url": "https://hlc-admin.hubbuyer.com/b2b/order/agentBuy",
+        "title": "代购订单",
+        "pending_count": 98,
+        "in_review_count": null,
+        "menu_badges": [
+          {
+            "label": "订单管理",
+            "badge": "99+"
+          },
+          {
+            "label": "报价单",
+            "badge": "35"
+          },
+          {
+            "label": "代购订单",
+            "badge": "98"
+          },
+          {
+            "label": "发货配送",
+            "badge": "10"
+          },
+          {
+            "label": "客户管理",
+            "badge": "43"
+          }
+        ],
+        "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n报价单\n35\n代购订单\n98\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家\n请选择国家\n订单编号\n支付日期\n至\n客户姓名/ID\n客户等级\n请选择客户等级\n会员等级\n请选择会员等级\n客户经理\n请选择客户经理\n业务\n请选择业务\n用户注文\n查询\n重置\n展开\n待审核(98)\n进行中(114)\n待清算(25)\n已清算(122)\n已关闭(11)\n全部(370)\n国家\n\t\n编号\n\t\n订单状态\n\t\n客户信息\n\t\n会员等级\n\t\n订单金额\n\t\n下单数\n\t\n购入数\n\t\n到货数\n\t\n不良数\n\t\n正品数\n\t\n入库数\n\t\n发货数\n\t\n在库数\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n部门备注\n\t\n支付日期\n\t\n操作\nJapan\n\t\nB2B-DD-JPN12-260525-009\n\t\n待审核\n\t\nB-JPN12-TEST-朴国哲\n\t\n一般会员\n\t\n74.80\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n吴四佳\n\t\n周凌虓\n\t\n---\n\t\n2026-05-25 09:40\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN12-260525-008\n\t\n待审核\n\t\nB-JPN12-TEST-朴国哲\n\t\n一般会员\n\t\n531.60\n\t\n14\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n吴四佳\n\t\n周凌虓\n\t\n---\n\t\n2026-05-25 09:37\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260405-083\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n102.15\n\t\n4\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-04-05 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260401-079\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n113.02\n\t\n4\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-04-01 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260328-075\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n75.82\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-28 08:01\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN34-260325-049\n\t\n待审核\n\t\nS-JPN34-TEST-柴思丽\n\t\n一般会员\n\t\n100.00\n\t\n500\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n---\n\t\n2026-03-25 14:12\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260325-072\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n144.53\n\t\n7\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-25 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260321-068\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n102.75\n\t\n3\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-21 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260318-065\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n129.77\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-18 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260315-062\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n119.75\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-15 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260312-059\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n109.97\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-12 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260308-055\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n112.90\n\t\n4\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-08 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260304-051\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n134.07\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-04 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260301-048\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n99.40\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-01 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260225-044\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n105.75\n\t\n3\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-25 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260221-040\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n72.82\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-21 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260217-036\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n84.92\n\t\n3\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-17 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260213-032\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n88.62\n\t\n3\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-13 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260209-028\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n172.14\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-09 14:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260206-026\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n120.73\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-06 12:47\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260206-023\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n114.97\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-06 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260202-004\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n85.40\n\t\n4\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-02 16:44\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN25-260130-013\n\t\n待审核\n\t\nB-JPN25-12.20生产\n\t\n商务会员\n\t\n12.12\n\t\n1\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n崔红梅\n\t\n徐榕\n\t\n包佳民\n\t\n---\n\t\n2026-01-30 10:47\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN25-260130-014\n\t\n待审核\n\t\nB-JPN25-12.20生产\n\t\n商务会员\n\t\n12.12\n\t\n1\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n崔红梅\n\t\n徐榕\n\t\n包佳民\n\t\n---\n\t\n2026-01-30 10:46\n\t\n详情\n\n\nChina\n\t\nB2B-DD-CHN9-251219-014\n\t\n待审核\n\t\nS-CHN9-李小龙\n\t\n一般会员\n\t\n1501.50\n\t\n30\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n崔红梅\n\t\n金月明\n\t\n陈牧鹏\n\t\n---\n\t\n2025-12-20 14:50\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN11-251219-018\n\t\n待审核\n\t\nB-JPN11-TEST-朴国哲2\n\t\n一般会员\n\t\n227.50\n\t\n5\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n---\n\t\n2025-12-19 16:05\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN1-251219-096\n\t\n待审核\n\t\nD-JPN1-12.1112.11\n\t\n商务会员\n\t\n139.00\n\t\n1\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n崔红梅\n\t\n张佳唯\n\t\n包佳民\n\t\n---\n\t\n2025-12-19 16:00\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN4-251219-003\n\t\n待审核\n\t\nS-JPN4-weihao\n\t\n一般会员\n\t\n206.00\n\t\n6\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n崔红梅\n\t\n金月明\n\t\n陈牧鹏\n\t\n---\n\t\n2025-12-19 15:57\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN1-251219-095\n\t\n待审核\n\t\nD-JPN1-12.1112.11\n\t\n商务会员\n\t\n392.00\n\t\n13\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n崔红梅\n\t\n张佳唯\n\t\n包佳民\n\t\n---\n\t\n2025-12-19 15:51\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN1-251216-059\n\t\n待审核\n\t\nD-JPN1-12.1112.11\n\t\n商务会员\n\t\n148.50\n\t\n3\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n崔红梅\n\t\n张佳唯\n\t\n包佳民\n\t\n---\n\t\n2025-12-19 13:31\n\t\n详情\n30条/页\n共 98 条\n1\n2\n3\n4\n前往\n页"
+      },
+      "order_no": "B2B-DD-JPN12-260525-009",
+      "operation": {
+        "detail_url": "https://hlc-admin.hubbuyer.com/b2b/order/agentBuy/detail?order_no=B2B-DD-JPN12-260525-009",
+        "before": {
+          "url": "https://hlc-admin.hubbuyer.com/b2b/order/agentBuy/detail?order_no=B2B-DD-JPN12-260525-009",
+          "title": "代购订单详情",
+          "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n报价单\n35\n代购订单\n98\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n订单编号：B2B-DD-JPN12-260525-009\n支付日期：2026-05-25 09:40\n客户经理：金月明\n业务：吴四佳\n采购：周凌虓\n修改负责人\n导出excel\n联系客户\n待审核\n允许采购\n客户信息：\nB-JPN12-TEST-朴国哲\n一般会员\n国家：Japan\n订单清算\n店铺数\n\t\nSKU数\n\t\n下单数\n\t\n购入数\n\t\n到货数\n\t\n正品数\n\t\n待检数\n\t\n不良数\n\t\n待定数\n\t\n退货数\n\t\n换货数\n\t\n入库数\n\t\n已发货数\n\t\n可发货数\n1\n\t\n1\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n商品信息\n\t\n商品属性\n\t\n采购\n\t\n到货\n\t\n待检\n\t\n不良\n\t\n待定\n\t\n退/换\n\t\n正品\n\t\n入库\n\t\n已发\n\t\n质检/附加项\n\t\n订单备注\n\t\n操作\nwank666\n联系商家\n一键下单\n一键采购\n一键到货\n一键没货\n国内运单\n\t\n待审核\n\n爆闪平底仿奥钻烫钻服装辅料 电镀玻璃水钻大配饰DIY饰品配件材料\n\nID:D000005011\n\nMySKU:---\nASIN:---\n颜色:P01白色;\n型号:SS6 1.9-2.0mm 1440颗/包;\n\n\t\n\n单价:\n\n￥1.90\n\n下单数量:\n2\n小计: 3.80\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n计时检品\n去全标\n去吊牌\n去洗标\n另购洗标替换\n另购领标替换\n共...10种\n查看\n修改\n\t\n12345678910123456789101234567891011\n12345678910123456789101234567891011\n12345678910123456789101234567891011\n12345678910123456789101234567891011\n12345678910123456789101234567891011\n12345678910123456789101234567891011\n\n备注翻译\n\t\n工单处理\n内部备注\n原商品金额\n￥3.80\n变化金额\n---\n实际支出\n---\n正品金额\n---\n国内运费\n---\n到付运费\n---\n退换货运费\n￥0.00\n没货退款金额\n---\n不良退款金额\n---\n其他费用\n---\n店铺返现\n---\n采购差价\n---\n采购确认\n优惠金额\n---\n全选\n已选：0\n1688一键下单（0）\n淘宝一键下单（0）\n批量确认金额\n批量解锁金额\n暂不购买\n可购买\n免费初检打印\n收费初检打印\n捆绑打印",
+          "dialogs": [],
+          "buttons": [
+            {
+              "idx": 0,
+              "text": "你好， admin",
+              "x": 1312,
+              "y": 19,
+              "w": 88,
+              "h": 14,
+              "disabled": false
+            },
+            {
+              "idx": 1,
+              "text": "允许采购",
+              "x": 243,
+              "y": 165,
+              "w": 72,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 2,
+              "text": "订单清算",
+              "x": 1327,
+              "y": 113,
+              "w": 72,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 3,
+              "text": "一键下单",
+              "x": 533,
+              "y": 313,
+              "w": 72,
+              "h": 24,
+              "disabled": true
+            },
+            {
+              "idx": 4,
+              "text": "一键采购",
+              "x": 617,
+              "y": 313,
+              "w": 72,
+              "h": 24,
+              "disabled": true
+            },
+            {
+              "idx": 5,
+              "text": "一键到货",
+              "x": 701,
+              "y": 313,
+              "w": 72,
+              "h": 24,
+              "disabled": true
+            },
+            {
+              "idx": 6,
+              "text": "一键没货",
+              "x": 785,
+              "y": 313,
+              "w": 72,
+              "h": 24,
+              "disabled": true
+            },
+            {
+              "idx": 7,
+              "text": "查看",
+              "x": 1339,
+              "y": 449,
+              "w": 102,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 8,
+              "text": "修改",
+              "x": 1453,
+              "y": 449,
+              "w": 102,
+              "h": 24,
+              "disabled": true
+            },
+            {
+              "idx": 9,
+              "text": "工单处理",
+              "x": 1790,
+              "y": 362,
+              "w": 72,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 10,
+              "text": "内部备注",
+              "x": 1790,
+              "y": 393,
+              "w": 72,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 11,
+              "text": "采购确认",
+              "x": 1224,
+              "y": 529,
+              "w": 88,
+              "h": 32,
+              "disabled": true
+            },
+            {
+              "idx": 12,
+              "text": "1688一键下单（0）",
+              "x": 397,
+              "y": 853,
+              "w": 129,
+              "h": 24,
+              "disabled": true
+            },
+            {
+              "idx": 13,
+              "text": "淘宝一键下单（0）",
+              "x": 539,
+              "y": 853,
+              "w": 127,
+              "h": 24,
+              "disabled": true
+            },
+            {
+              "idx": 14,
+              "text": "批量确认金额",
+              "x": 677,
+              "y": 853,
+              "w": 96,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 15,
+              "text": "批量解锁金额",
+              "x": 785,
+              "y": 853,
+              "w": 96,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 16,
+              "text": "暂不购买",
+              "x": 893,
+              "y": 853,
+              "w": 72,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 17,
+              "text": "可购买",
+              "x": 977,
+              "y": 853,
+              "w": 60,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 18,
+              "text": "免费初检打印",
+              "x": 1112,
+              "y": 853,
+              "w": 96,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 19,
+              "text": "收费初检打印",
+              "x": 1220,
+              "y": 853,
+              "w": 96,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 20,
+              "text": "捆绑打印",
+              "x": 1328,
+              "y": 853,
+              "w": 72,
+              "h": 24,
+              "disabled": false
+            }
+          ]
+        },
+        "confirmed_button": null,
+        "after": {
+          "url": "https://hlc-admin.hubbuyer.com/b2b/order/agentBuy/detail?order_no=B2B-DD-JPN12-260525-009",
+          "title": "代购订单详情",
+          "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n报价单\n35\n代购订单\n98\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n订单编号：B2B-DD-JPN12-260525-009\n支付日期：2026-05-25 09:40\n客户经理：金月明\n业务：吴四佳\n采购：周凌虓\n修改负责人\n导出excel\n联系客户\n待审核\n允许采购\n客户信息：\nB-JPN12-TEST-朴国哲\n一般会员\n国家：Japan\n订单清算\n店铺数\n\t\nSKU数\n\t\n下单数\n\t\n购入数\n\t\n到货数\n\t\n正品数\n\t\n待检数\n\t\n不良数\n\t\n待定数\n\t\n退货数\n\t\n换货数\n\t\n入库数\n\t\n已发货数\n\t\n可发货数\n1\n\t\n1\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n商品信息\n\t\n商品属性\n\t\n采购\n\t\n到货\n\t\n待检\n\t\n不良\n\t\n待定\n\t\n退/换\n\t\n正品\n\t\n入库\n\t\n已发\n\t\n质检/附加项\n\t\n订单备注\n\t\n操作\nwank666\n联系商家\n一键下单\n一键采购\n一键到货\n一键没货\n国内运单\n\t\n待审核\n\n爆闪平底仿奥钻烫钻服装辅料 电镀玻璃水钻大配饰DIY饰品配件材料\n\nID:D000005011\n\nMySKU:---\nASIN:---\n颜色:P01白色;\n型号:SS6 1.9-2.0mm 1440颗/包;\n\n\t\n\n单价:\n\n￥1.90\n\n下单数量:\n2\n小计: 3.80\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n计时检品\n去全标\n去吊牌\n去洗标\n另购洗标替换\n另购领标替换\n共...10种\n查看\n修改\n\t\n12345678910123456789101234567891011\n12345678910123456789101234567891011\n12345678910123456789101234567891011\n12345678910123456789101234567891011\n12345678910123456789101234567891011\n12345678910123456789101234567891011\n\n备注翻译\n\t\n工单处理\n内部备注\n原商品金额\n￥3.80\n变化金额\n---\n实际支出\n---\n正品金额\n---\n国内运费\n---\n到付运费\n---\n退换货运费\n￥0.00\n没货退款金额\n---\n不良退款金额\n---\n其他费用\n---\n店铺返现\n---\n采购差价\n---\n采购确认\n优惠金额\n---\n全选\n已选：0\n1688一键下单（0）\n淘宝一键下单（0）\n批量确认金额\n批量解锁金额\n暂不购买\n可购买\n免费初检打印\n收费初检打印\n捆绑打印\n是否确定采购？\n取消\n确定",
+          "dialogs": [],
+          "buttons": [
+            {
+              "idx": 0,
+              "text": "你好， admin",
+              "x": 1312,
+              "y": 19,
+              "w": 88,
+              "h": 14,
+              "disabled": false
+            },
+            {
+              "idx": 1,
+              "text": "允许采购",
+              "x": 243,
+              "y": 165,
+              "w": 72,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 2,
+              "text": "订单清算",
+              "x": 1327,
+              "y": 113,
+              "w": 72,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 3,
+              "text": "一键下单",
+              "x": 533,
+              "y": 313,
+              "w": 72,
+              "h": 24,
+              "disabled": true
+            },
+            {
+              "idx": 4,
+              "text": "一键采购",
+              "x": 617,
+              "y": 313,
+              "w": 72,
+              "h": 24,
+              "disabled": true
+            },
+            {
+              "idx": 5,
+              "text": "一键到货",
+              "x": 701,
+              "y": 313,
+              "w": 72,
+              "h": 24,
+              "disabled": true
+            },
+            {
+              "idx": 6,
+              "text": "一键没货",
+              "x": 785,
+              "y": 313,
+              "w": 72,
+              "h": 24,
+              "disabled": true
+            },
+            {
+              "idx": 7,
+              "text": "查看",
+              "x": 1339,
+              "y": 449,
+              "w": 102,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 8,
+              "text": "修改",
+              "x": 1453,
+              "y": 449,
+              "w": 102,
+              "h": 24,
+              "disabled": true
+            },
+            {
+              "idx": 9,
+              "text": "工单处理",
+              "x": 1790,
+              "y": 362,
+              "w": 72,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 10,
+              "text": "内部备注",
+              "x": 1790,
+              "y": 393,
+              "w": 72,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 11,
+              "text": "采购确认",
+              "x": 1224,
+              "y": 529,
+              "w": 88,
+              "h": 32,
+              "disabled": true
+            },
+            {
+              "idx": 12,
+              "text": "1688一键下单（0）",
+              "x": 397,
+              "y": 853,
+              "w": 129,
+              "h": 24,
+              "disabled": true
+            },
+            {
+              "idx": 13,
+              "text": "淘宝一键下单（0）",
+              "x": 539,
+              "y": 853,
+              "w": 127,
+              "h": 24,
+              "disabled": true
+            },
+            {
+              "idx": 14,
+              "text": "批量确认金额",
+              "x": 677,
+              "y": 853,
+              "w": 96,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 15,
+              "text": "批量解锁金额",
+              "x": 785,
+              "y": 853,
+              "w": 96,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 16,
+              "text": "暂不购买",
+              "x": 893,
+              "y": 853,
+              "w": 72,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 17,
+              "text": "可购买",
+              "x": 977,
+              "y": 853,
+              "w": 60,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 18,
+              "text": "免费初检打印",
+              "x": 1112,
+              "y": 853,
+              "w": 96,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 19,
+              "text": "收费初检打印",
+              "x": 1220,
+              "y": 853,
+              "w": 96,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 20,
+              "text": "捆绑打印",
+              "x": 1328,
+              "y": 853,
+              "w": 72,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 21,
+              "text": "取消",
+              "x": 234,
+              "y": 235,
+              "w": 48,
+              "h": 24,
+              "disabled": false
+            },
+            {
+              "idx": 22,
+              "text": "确定",
+              "x": 294,
+              "y": 235,
+              "w": 48,
+              "h": 24,
+              "disabled": false
+            }
+          ]
+        }
+      },
+      "after": {
+        "url": "https://hlc-admin.hubbuyer.com/b2b/order/agentBuy",
+        "title": "代购订单",
+        "pending_count": 98,
+        "in_review_count": null,
+        "menu_badges": [
+          {
+            "label": "订单管理",
+            "badge": "99+"
+          },
+          {
+            "label": "报价单",
+            "badge": "35"
+          },
+          {
+            "label": "代购订单",
+            "badge": "98"
+          },
+          {
+            "label": "发货配送",
+            "badge": "10"
+          },
+          {
+            "label": "客户管理",
+            "badge": "43"
+          }
+        ],
+        "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n报价单\n35\n代购订单\n98\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家\n请选择国家\n订单编号\n支付日期\n至\n客户姓名/ID\n客户等级\n请选择客户等级\n会员等级\n请选择会员等级\n客户经理\n请选择客户经理\n业务\n请选择业务\n用户注文\n查询\n重置\n展开\n待审核(98)\n进行中(114)\n待清算(25)\n已清算(122)\n已关闭(11)\n全部(370)\n国家\n\t\n编号\n\t\n订单状态\n\t\n客户信息\n\t\n会员等级\n\t\n订单金额\n\t\n下单数\n\t\n购入数\n\t\n到货数\n\t\n不良数\n\t\n正品数\n\t\n入库数\n\t\n发货数\n\t\n在库数\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n部门备注\n\t\n支付日期\n\t\n操作\nJapan\n\t\nB2B-DD-JPN12-260525-009\n\t\n待审核\n\t\nB-JPN12-TEST-朴国哲\n\t\n一般会员\n\t\n74.80\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n吴四佳\n\t\n周凌虓\n\t\n---\n\t\n2026-05-25 09:40\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN12-260525-008\n\t\n待审核\n\t\nB-JPN12-TEST-朴国哲\n\t\n一般会员\n\t\n531.60\n\t\n14\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n吴四佳\n\t\n周凌虓\n\t\n---\n\t\n2026-05-25 09:37\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260405-083\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n102.15\n\t\n4\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-04-05 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260401-079\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n113.02\n\t\n4\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-04-01 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260328-075\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n75.82\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-28 08:01\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN34-260325-049\n\t\n待审核\n\t\nS-JPN34-TEST-柴思丽\n\t\n一般会员\n\t\n100.00\n\t\n500\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n---\n\t\n2026-03-25 14:12\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260325-072\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n144.53\n\t\n7\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-25 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260321-068\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n102.75\n\t\n3\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-21 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260318-065\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n129.77\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-18 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260315-062\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n119.75\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-15 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260312-059\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n109.97\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-12 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260308-055\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n112.90\n\t\n4\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-08 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260304-051\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n134.07\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-04 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260301-048\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n99.40\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-01 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260225-044\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n105.75\n\t\n3\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-25 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260221-040\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n72.82\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-21 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260217-036\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n84.92\n\t\n3\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-17 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260213-032\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n88.62\n\t\n3\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-13 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260209-028\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n172.14\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-09 14:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260206-026\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n120.73\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-06 12:47\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260206-023\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n114.97\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-06 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260202-004\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n85.40\n\t\n4\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-02-02 16:44\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN25-260130-013\n\t\n待审核\n\t\nB-JPN25-12.20生产\n\t\n商务会员\n\t\n12.12\n\t\n1\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n崔红梅\n\t\n徐榕\n\t\n包佳民\n\t\n---\n\t\n2026-01-30 10:47\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN25-260130-014\n\t\n待审核\n\t\nB-JPN25-12.20生产\n\t\n商务会员\n\t\n12.12\n\t\n1\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n崔红梅\n\t\n徐榕\n\t\n包佳民\n\t\n---\n\t\n2026-01-30 10:46\n\t\n详情\n\n\nChina\n\t\nB2B-DD-CHN9-251219-014\n\t\n待审核\n\t\nS-CHN9-李小龙\n\t\n一般会员\n\t\n1501.50\n\t\n30\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n崔红梅\n\t\n金月明\n\t\n陈牧鹏\n\t\n---\n\t\n2025-12-20 14:50\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN11-251219-018\n\t\n待审核\n\t\nB-JPN11-TEST-朴国哲2\n\t\n一般会员\n\t\n227.50\n\t\n5\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n---\n\t\n2025-12-19 16:05\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN1-251219-096\n\t\n待审核\n\t\nD-JPN1-12.1112.11\n\t\n商务会员\n\t\n139.00\n\t\n1\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n崔红梅\n\t\n张佳唯\n\t\n包佳民\n\t\n---\n\t\n2025-12-19 16:00\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN4-251219-003\n\t\n待审核\n\t\nS-JPN4-weihao\n\t\n一般会员\n\t\n206.00\n\t\n6\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n崔红梅\n\t\n金月明\n\t\n陈牧鹏\n\t\n---\n\t\n2025-12-19 15:57\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN1-251219-095\n\t\n待审核\n\t\nD-JPN1-12.1112.11\n\t\n商务会员\n\t\n392.00\n\t\n13\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n崔红梅\n\t\n张佳唯\n\t\n包佳民\n\t\n---\n\t\n2025-12-19 15:51\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN1-251216-059\n\t\n待审核\n\t\nD-JPN1-12.1112.11\n\t\n商务会员\n\t\n148.50\n\t\n3\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n崔红梅\n\t\n张佳唯\n\t\n包佳民\n\t\n---\n\t\n2025-12-19 13:31\n\t\n详情\n30条/页\n共 98 条\n1\n2\n3\n4\n前往\n页"
+      }
+    },
+    "ship": {
+      "before": {
+        "url": "https://hlc-admin.hubbuyer.com/b2b/logistics/billOfParcels",
+        "title": "发货单列表",
+        "pending_count": 10,
+        "in_review_count": 1,
+        "menu_badges": [
+          {
+            "label": "订单管理",
+            "badge": "99+"
+          },
+          {
+            "label": "发货配送",
+            "badge": "10"
+          },
+          {
+            "label": "发货单列表",
+            "badge": "10"
+          },
+          {
+            "label": "客户管理",
+            "badge": "43"
+          }
+        ],
+        "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n仓库管理\n发货配送\n10\n发货单列表\n10\n破箱审核\n售后服务\n物流清算记录\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家\n请选择\n发货单编号\n客户ID\n客户姓名\n查询\n重置\n展开\n导出发货记录\n待审核(10)\n审核中(1)\n待配货(2)\n待打包(32)\n待清算(3)\n待发货(3)\n已发货(5)\n已签收(123)\n已取消(32)\n已驳回(3)\n全部(214)\n客户信息\n\t\n物流信息\n\t\n客户备注\n\t\n状态\n\t\n合计总金额(元)\n\t\n业务员\n\t\n发货状态\n\t\n下单时间\n\t\n操作\n商务会员\nChina\nC-CHN6-wh\n\t\nLDX--快速船便\nWL-CHN6-251222-003\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n张佳唯\n\t\n--\n\t\n2025-12-22 15:49\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nS-JPN3-test-胡兴华\n\t\n海源--DG(電子特殊航空便)\nWL-JPN3-251220-015\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 21:19\n\t\n审核发货单\n取消\n查看日志\n\n\n商务会员\nChina\nC-CHN6-wh\n\t\nLDX--快速船便\nWL-CHN6-251220-013\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n张佳唯\n\t\n--\n\t\n2025-12-20 21:18\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nS-JPN2-何鹏彪\n\t\nFOB-高柜\nWL-JPN2-251220-012\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 21:15\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\n海源--DG(電子特殊航空便)\nWL-JPN11-251220-009\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:40\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\n邮政船运\nWL-JPN11-251220-008\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:40\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\nOCS\nWL-JPN11-251220-007\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:39\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\nEMS\nWL-JPN11-251220-006\n客户创建\n\t\n查看\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:37\n\t\n审核发货单\n未打印\n取消\n查看日志\n\n\n一般会员\nJapan\nS-JPN15-仓木麻衣\n\t\nLDX--快速船便\nWL-JPN15-251220-005\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 15:34\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nChina\nC-CHN6-wh\n\t\nLDX--快速船便\nWL-CHN6-251218-002\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n张佳唯\n\t\n--\n\t\n2025-12-18 14:23\n\t\n审核发货单\n取消\n查看日志\n30条/页\n共 10 条\n1\n前往\n页"
+      },
+      "ship_no": "WL-CHN6-251222-003",
+      "operation": {
+        "detail_url": "https://hlc-admin.hubbuyer.com/b2b/logistics/billOfParcels/detail?ship_order_no=WL-CHN6-251222-003&type=examine",
+        "before": {
+          "url": "https://hlc-admin.hubbuyer.com/b2b/logistics/billOfParcels/detail?ship_order_no=WL-CHN6-251222-003&type=examine",
+          "title": "发货单详情",
+          "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n仓库管理\n发货配送\n10\n发货单列表\n10\n破箱审核\n售后服务\n物流清算记录\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家: China\n客户信息: C-CHN6-wh\n发货单编号: WL-CHN6-251222-003\n下单时间: 2025-12-22 15:49\n待审核\n开始审核\n客户指示备注：\n仓库指示备注：\n驳回原因备注：\n纳品书\n纳品书\nOCS发票\n不合并\n商业发票\nOCS面单\n面单打印\n发货单\n配货单导出\n包裹明细\n修改品名/材质\n吐槽\n费用明细\n合计总金额: 0.00 元\n物流公司:\nLDX--快速船便\n偏远地区:\n请选择\n其他费用总额(元):\n重量(KG):\n0.00\n国际运费(元):\n0.00\n附加项(元):\n0.00\n其他费用\n收货地址\n包含送货单\n收货地址\n1111,2222,2222\n姓名(英文): 测试\n邮政编码: 1111\n电话号码: +86 11111\n收货地址(英文): 1111,2222,2222\n进口商地址\n11111 1111 1111\n姓名(英文): 1111111\n邮政编码: 111111\n电话号码: +86 111111\n收货地址(英文): 11111,1111,1111\n关税缴纳方式\n物流公司代付\n进口商关税账号\n发货附加项\n合计: 0.00 元\n\t\n附加项名称\n\t\n数量\n\t\n单价(元)\n\t\n小计(元)\n\t\n+添加其他附加项\n\t\n\t\n\t\n\n\n\t\n外箱贴二维码\n\t\n\t\n0.00\n\t\n0.00\n\n\n\t\nHubbuyer专业发货箱\n\t\n\t\n13.00\n\t\n0.00\n\n\n\t\n放入纳品书(纸质)\n\t\n\t\n0.00\n\t\n0.00\n\n\n\t\n外箱FBA贴\n\t\n\t\n0.00\n\t\n0.00\n\n\n\t\n外箱贴---出货明细表(纸质)\n\t\n\t\n0.00\n\t\n0.00\n\n\n\t\n外箱裹气泡模(2重)\n\t\n\t\n请选择\n\t\n0.00\n\n\n\t\n外箱加护边条(12边)\n\t\n\t\n18.00\n\t\n0.00\n\n\n\t\n打木架\n\t\n\t\n请选择\n\t\n0.00\n\n\n\t\n托盘发送\n\t\n\t\n100.00\n\t\n0.00\n\n\n\t\n不良退换货手续费\n\t\n\t\n0.00\n\t\n0.00\n发货单商品\n商品总金额: 0.00\n商品总数: 0\n商品ID：\n箱子/包裹编号：\n查询\n重置\n\t\n商品信息\n\t\n库位\n\t\n待配数/已配数\n\t\n发货数\n\t\n库存\n\t\n单价\n\t\n客户备注翻译\n\t\n驳回原因\n\t\n特殊备注\n\t\n操作\n暂无数据\n添加商品\n取消发货",
+          "dialogs": [],
+          "buttons": [
+            {
+              "idx": 0,
+              "text": "你好， admin",
+              "x": 1312,
+              "y": 19,
+              "w": 88,
+              "h": 14,
+              "disabled": false
+            },
+            {
+              "idx": 1,
+              "text": "开始审核",
+              "x": 237,
+              "y": 202,
+              "w": 88,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 2,
+              "text": "纳品书",
+              "x": 1092,
+              "y": 162,
+              "w": 80,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 3,
+              "text": "商业发票",
+              "x": 1433,
+              "y": 162,
+              "w": 88,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 4,
+              "text": "面单打印",
+              "x": 1677,
+              "y": 162,
+              "w": 88,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 5,
+              "text": "发货单",
+              "x": 976,
+              "y": 210,
+              "w": 80,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 6,
+              "text": "配货单导出",
+              "x": 1066,
+              "y": 210,
+              "w": 102,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 7,
+              "text": "包裹明细",
+              "x": 1178,
+              "y": 210,
+              "w": 88,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 8,
+              "text": "修改品名/材质",
+              "x": 1555,
+              "y": 210,
+              "w": 120,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 9,
+              "text": "吐槽",
+              "x": 1685,
+              "y": 210,
+              "w": 80,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 10,
+              "text": "其他费用",
+              "x": 487,
+              "y": 454,
+              "w": 88,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 11,
+              "text": "+添加其他附加项",
+              "x": 657,
+              "y": 408,
+              "w": 138,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 32,
+              "text": "查询",
+              "x": 225,
+              "y": 1105,
+              "w": 80,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 33,
+              "text": "重置",
+              "x": 317,
+              "y": 1105,
+              "w": 80,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 34,
+              "text": "添加商品",
+              "x": 1227,
+              "y": 1277,
+              "w": 88,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 35,
+              "text": "取消发货",
+              "x": 1327,
+              "y": 1277,
+              "w": 88,
+              "h": 32,
+              "disabled": false
+            }
+          ]
+        },
+        "confirmed_button": null,
+        "after": {
+          "url": "https://hlc-admin.hubbuyer.com/b2b/logistics/billOfParcels/detail?ship_order_no=WL-CHN6-251222-003&type=examine",
+          "title": "发货单详情",
+          "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n仓库管理\n发货配送\n10\n发货单列表\n10\n破箱审核\n售后服务\n物流清算记录\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家: China\n客户信息: C-CHN6-wh\n发货单编号: WL-CHN6-251222-003\n下单时间: 2025-12-22 15:49\n审核中\n客户指示备注：\n仓库指示备注：\n驳回原因备注：\n纳品书\n纳品书\nOCS发票\n不合并\n商业发票\nOCS面单\n面单打印\n发货单\n配货单导出\n包裹明细\n修改品名/材质\n吐槽\n费用明细\n合计总金额: 0.00 元\n物流公司:\nLDX--快速船便\n偏远地区:\n请选择\n其他费用总额(元):\n重量(KG):\n0.00\n国际运费(元):\n0.00\n附加项(元):\n0.00\n其他费用\n收货地址\n包含送货单\n收货地址\n1111,2222,2222\n姓名(英文): 测试\n邮政编码: 1111\n电话号码: +86 11111\n收货地址(英文): 1111,2222,2222\n进口商地址\n11111 1111 1111\n姓名(英文): 1111111\n邮政编码: 111111\n电话号码: +86 111111\n收货地址(英文): 11111,1111,1111\n关税缴纳方式\n物流公司代付\n进口商关税账号\n发货附加项\n合计: 0.00 元\n\t\n附加项名称\n\t\n数量\n\t\n单价(元)\n\t\n小计(元)\n\t\n+添加其他附加项\n\t\n\t\n\t\n\n\n\t\n外箱贴二维码\n\t\n\t\n0.00\n\t\n0.00\n\n\n\t\nHubbuyer专业发货箱\n\t\n\t\n13.00\n\t\n0.00\n\n\n\t\n放入纳品书(纸质)\n\t\n\t\n0.00\n\t\n0.00\n\n\n\t\n外箱FBA贴\n\t\n\t\n0.00\n\t\n0.00\n\n\n\t\n外箱贴---出货明细表(纸质)\n\t\n\t\n0.00\n\t\n0.00\n\n\n\t\n外箱裹气泡模(2重)\n\t\n\t\n请选择\n\t\n0.00\n\n\n\t\n外箱加护边条(12边)\n\t\n\t\n18.00\n\t\n0.00\n\n\n\t\n打木架\n\t\n\t\n请选择\n\t\n0.00\n\n\n\t\n托盘发送\n\t\n\t\n100.00\n\t\n0.00\n\n\n\t\n不良退换货手续费\n\t\n\t\n0.00\n\t\n0.00\n发货单商品\n商品总金额: 0.00\n商品总数: 0\n商品ID：\n箱子/包裹编号：\n查询\n重置\n\t\n商品信息\n\t\n库位\n\t\n待配数/已配数\n\t\n发货数\n\t\n库存\n\t\n单价\n\t\n客户备注翻译\n\t\n驳回原因\n\t\n特殊备注\n\t\n操作\n暂无数据\n添加商品\n通过审核\n驳回审核\n取消发货",
+          "dialogs": [],
+          "buttons": [
+            {
+              "idx": 0,
+              "text": "你好， admin",
+              "x": 1312,
+              "y": 19,
+              "w": 88,
+              "h": 14,
+              "disabled": false
+            },
+            {
+              "idx": 1,
+              "text": "纳品书",
+              "x": 1091,
+              "y": 162,
+              "w": 80,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 2,
+              "text": "商业发票",
+              "x": 1432,
+              "y": 162,
+              "w": 88,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 3,
+              "text": "面单打印",
+              "x": 1676,
+              "y": 162,
+              "w": 88,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 4,
+              "text": "发货单",
+              "x": 975,
+              "y": 210,
+              "w": 80,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 5,
+              "text": "配货单导出",
+              "x": 1065,
+              "y": 210,
+              "w": 102,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 6,
+              "text": "包裹明细",
+              "x": 1177,
+              "y": 210,
+              "w": 88,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 7,
+              "text": "修改品名/材质",
+              "x": 1554,
+              "y": 210,
+              "w": 120,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 8,
+              "text": "吐槽",
+              "x": 1684,
+              "y": 210,
+              "w": 80,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 9,
+              "text": "其他费用",
+              "x": 487,
+              "y": 454,
+              "w": 88,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 10,
+              "text": "+添加其他附加项",
+              "x": 657,
+              "y": 408,
+              "w": 138,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 31,
+              "text": "查询",
+              "x": 225,
+              "y": 1105,
+              "w": 80,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 32,
+              "text": "重置",
+              "x": 317,
+              "y": 1105,
+              "w": 80,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 33,
+              "text": "添加商品",
+              "x": 1027,
+              "y": 1277,
+              "w": 88,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 34,
+              "text": "通过审核",
+              "x": 1127,
+              "y": 1277,
+              "w": 88,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 35,
+              "text": "驳回审核",
+              "x": 1227,
+              "y": 1277,
+              "w": 88,
+              "h": 32,
+              "disabled": false
+            },
+            {
+              "idx": 36,
+              "text": "取消发货",
+              "x": 1327,
+              "y": 1277,
+              "w": 88,
+              "h": 32,
+              "disabled": false
+            }
+          ]
+        }
+      },
+      "after": {
+        "url": "https://hlc-admin.hubbuyer.com/b2b/logistics/billOfParcels",
+        "title": "发货单列表",
+        "pending_count": 9,
+        "in_review_count": 2,
+        "menu_badges": [
+          {
+            "label": "订单管理",
+            "badge": "99+"
+          },
+          {
+            "label": "发货配送",
+            "badge": "9"
+          },
+          {
+            "label": "发货单列表",
+            "badge": "9"
+          },
+          {
+            "label": "客户管理",
+            "badge": "43"
+          }
+        ],
+        "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n仓库管理\n发货配送\n9\n发货单列表\n9\n破箱审核\n售后服务\n物流清算记录\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家\n请选择\n发货单编号\n客户ID\n客户姓名\n查询\n重置\n展开\n导出发货记录\n待审核(9)\n审核中(2)\n待配货(2)\n待打包(32)\n待清算(3)\n待发货(3)\n已发货(5)\n已签收(123)\n已取消(32)\n已驳回(3)\n全部(214)\n客户信息\n\t\n物流信息\n\t\n客户备注\n\t\n状态\n\t\n合计总金额(元)\n\t\n业务员\n\t\n发货状态\n\t\n下单时间\n\t\n操作\n一般会员\nJapan\nS-JPN3-test-胡兴华\n\t\n海源--DG(電子特殊航空便)\nWL-JPN3-251220-015\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 21:19\n\t\n审核发货单\n取消\n查看日志\n\n\n商务会员\nChina\nC-CHN6-wh\n\t\nLDX--快速船便\nWL-CHN6-251220-013\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n张佳唯\n\t\n--\n\t\n2025-12-20 21:18\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nS-JPN2-何鹏彪\n\t\nFOB-高柜\nWL-JPN2-251220-012\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 21:15\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\n海源--DG(電子特殊航空便)\nWL-JPN11-251220-009\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:40\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\n邮政船运\nWL-JPN11-251220-008\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:40\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\nOCS\nWL-JPN11-251220-007\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:39\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\nEMS\nWL-JPN11-251220-006\n客户创建\n\t\n查看\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:37\n\t\n审核发货单\n未打印\n取消\n查看日志\n\n\n一般会员\nJapan\nS-JPN15-仓木麻衣\n\t\nLDX--快速船便\nWL-JPN15-251220-005\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 15:34\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nChina\nC-CHN6-wh\n\t\nLDX--快速船便\nWL-CHN6-251218-002\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n张佳唯\n\t\n--\n\t\n2025-12-18 14:23\n\t\n审核发货单\n取消\n查看日志\n30条/页\n共 9 条\n1\n前往\n页"
+      }
+    }
+  },
+  "summary": {
+    "BLOCKED": 2,
+    "PASS": 1
+  }
+}

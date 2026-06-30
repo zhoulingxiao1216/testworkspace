@@ -1,0 +1,8 @@
+{
+  "img_search_task": {
+    "key": "check_api_img_search",
+    "desc": "B2B 商品图搜接口校验",
+    "script": "checker/api/img_search.py",
+    "login_account": ""
+  }
+}

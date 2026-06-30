@@ -1,0 +1,9 @@
+{
+  "add_cart_task": {
+    "key": "check_api_add_cart",
+    "desc": "B2B&D2C 商品加购接口校验",
+    "script": "checker/api/add_cart.py",
+    "login_account": "",
+    "default_payloads_file": "add_cart_payloads.json"
+  }
+}

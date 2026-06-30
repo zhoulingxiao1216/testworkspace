@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamlit Custom Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-base: #0b0f19;
+            --bg-surface: #151a2a;
+            --bg-panel: #1e2436;
+            --bg-hover: #262d40;
+            --border: #333d54;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --brand: #3b82f6; 
+            --success: #10b981;
+            --danger: #ef4444;
+            --pending: #f59e0b;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            overflow: hidden; /* iframe native scroll handled by auto-height */
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 1.5rem;
+            padding: 0.5rem; /* For shadow clipping */
+        }
+
+        .task-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .task-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--text-secondary);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            word-break: break-all;
+        }
+
+        .card-timestamp {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            margin-top: 0.2rem;
+        }
+
+        .progress-stats {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.3rem;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 8px;
+            background: var(--bg-hover);
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .progress-segment.success { background: var(--success); }
+        .progress-segment.danger { background: var(--danger); }
+        .progress-segment.pending { background: var(--text-muted); }
+
+        .metric-badges {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .badge {
+            font-size: 0.8rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .badge.pass { color: var(--success); }
+        .badge.fail { color: var(--danger); }
+        
+        .card-footer {
+            margin-top: 0.5rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--border);
+        }
+
+        .run-btn {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            padding: 0.6rem;
+            border-radius: 8px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .run-btn:hover {
+            background: var(--brand);
+            border-color: var(--brand);
+            color: #fff;
+        }
+
+        .global-card .run-btn:hover {
+            background: var(--brand);
+            color: #fff;
+        }
+
+        /* Option 3: Delta Connections Styling */
+        .project-group {
+            grid-column: 1 / -1;
+            background: rgba(21, 26, 42, 0.4);
+            border: 1px dashed var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-group-title {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-chain {
+            display: flex;
+            align-items: center;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--bg-hover) transparent;
+        }
+        
+        .project-chain::-webkit-scrollbar { height: 6px; }
+        .project-chain::-webkit-scrollbar-thumb { background: var(--bg-hover); border-radius: 3px; }
+
+        .project-chain .task-card {
+            flex-shrink: 0;
+            min-width: 320px;
+        }
+
+        .delta-connector {
+            flex-shrink: 0;
+            width: 70px;
+            height: 2px;
+            background: repeating-linear-gradient(90deg, var(--brand) 0%, var(--brand) 50%, transparent 50%, transparent 100%);
+            background-size: 10px 2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .delta-badge {
+            position: absolute;
+            top: -26px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid var(--brand);
+            color: var(--brand);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            white-space: nowrap;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+        }
+
+        .delta-pos { color: var(--success); border-color: var(--success); background: rgba(16, 185, 129, 0.15); box-shadow: 0 0 10px rgba(16, 185, 129, 0.3); }
+        .delta-neg { color: var(--danger); border-color: var(--danger); background: rgba(239, 68, 68, 0.15); box-shadow: 0 0 10px rgba(239, 68, 68, 0.3); }
+        .delta-zero { color: var(--text-muted); border-color: var(--border); background: var(--bg-surface); box-shadow: none; }
+    </style>
+</head>
+<body>
+
+    <div id="cards-grid" class="cards-grid">
+        <!-- Rendered by JS -->
+    </div>
+
+    <!-- 引用 Streamlit Component 交互库 -->
+    <script>
+        // Minimal polyfill or local script if CDN fails. 
+        // We will inline the essential parts of Streamlit API because unpkg can be blocked.
+        function sendMessageToStreamlitClient(type, data) {
+            const outData = Object.assign({
+                isStreamlitMessage: true,
+                type: type,
+            }, data);
+            window.parent.postMessage(outData, "*");
+        }
+
+        const Streamlit = {
+            setComponentReady: function() {
+                sendMessageToStreamlitClient("streamlit:componentReady", {apiVersion: 1});
+            },
+            setFrameHeight: function(height) {
+                sendMessageToStreamlitClient("streamlit:setFrameHeight", {height: height || document.body.scrollHeight});
+            },
+            setComponentValue: function(value) {
+                sendMessageToStreamlitClient("streamlit:setComponentValue", {value: value});
+            }
+        };
+
+        window.addEventListener("message", function(event) {
+            if (event.data.type === "streamlit:render") {
+                onDataFromPython(event.data.args);
+            }
+        });
+        
+        function formatPct(val, total) {
+            if (total === 0) return "0";
+            return (val / total * 100).toFixed(1);
+        }
+
+        function createCardHTML(fileData, isGlobal) {
+            const total = fileData.total || 0;
+            const pass = fileData.pass || 0;
+            const fail = fileData.fail || 0;
+            const pending = fileData.pending || (total - pass - fail);
+            
+            const pctPass = formatPct(pass, total);
+            const pctFail = formatPct(fail, total);
+            const pctPending = formatPct(pending, total);
+            
+            const overallPct = formatPct(pass, total);
+
+            const titleIcon = isGlobal ? '<i class="fas fa-globe"></i>' : '<i class="fas fa-file-alt"></i>';
+            const cardClass = isGlobal ? 'task-card global-card' : 'task-card';
+            const btnIcon = isGlobal ? '<i class="fas fa-play"></i>' : '<i class="fas fa-filter"></i>';
+            const btnText = isGlobal ? '进入全局测试看板' : '仅查看本文档用例';
+            const subtitle = isGlobal ? `总体执行进度 (${overallPct}%)` : `文档内用例 (${overallPct}%)`;
+            
+            // 安全转义 filename 以免 onClick 报错
+            const safeName = fileData.filename ? fileData.filename.replace(/'/g, "\\'") : '';
+            const onClickMethod = isGlobal ? "Streamlit.setComponentValue('__GLOBAL__')" : `Streamlit.setComponentValue('${safeName}')`;
+
+            return `
+            <div class="${cardClass}">
+                <div class="card-header">
+                    <div class="card-title">
+                        ${titleIcon} ${fileData.filename || '全局所有测试用例'}
+                    </div>
+                    <div class="card-timestamp">${fileData.timestamp || ''}</div>
+                </div>
+                
+                <div>
+                    <div class="progress-stats">
+                        <span>${subtitle}</span>
+                        <span>${pass + fail + pending} 项目</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-segment success" style="width: ${pctPass}%" title="通过: ${pass}"></div>
+                        <div class="progress-segment danger" style="width: ${pctFail}%" title="失败: ${fail}"></div>
+                        <div class="progress-segment pending" style="width: ${pctPending}%" title="未执行: ${pending}"></div>
+                    </div>
+                    
+                    <div class="metric-badges">
+                        <div class="badge pass"><i class="fas fa-check"></i> ${pass}</div>
+                        <div class="badge fail"><i class="fas fa-times"></i> ${fail}</div>
+                        <div class="badge"><i class="far fa-clock"></i> ${pending}</div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <button class="run-btn" onclick="${onClickMethod}">${btnIcon} ${btnText}</button>
+                </div>
+            </div>
+            `;
+        }
+
+        function extractBaseName(name) {
+            let base = name.replace(/\.md$/i, "");
+            // 自动过滤 "（一期）", "(二期)", "-版本2" 等干扰项提取主项目名
+            base = base.replace(/[（(][\u4e00-\u9fa50-9]+期[）)]/g, "");
+            base = base.replace(/[-_\s]*v\d+/i, "");
+            return base.trim();
+        }
+
+        function onDataFromPython(data) {
+            let globalHtml = "";
+            let standaloneHtml = "";
+
+            if (data.total_stats) {
+                globalHtml = createCardHTML({
+                    filename: '全局全部测试用例',
+                    total: data.total_stats.total,
+                    pass: data.total_stats.pass,
+                    fail: data.total_stats.fail,
+                    pending: data.total_stats.pending,
+                    timestamp: ''
+                }, true);
+            }
+
+            if (data.files_data && data.files_data.length > 0) {
+                // Grouping Logic
+                const groups = {};
+                data.files_data.forEach(f => {
+                    const baseMatch = extractBaseName(f.filename || '');
+                    const groupKey = baseMatch.replace(/\s+/g, ""); // 核心修复：完全忽略空格进行合并
+                    if (!groups[groupKey]) groups[groupKey] = [];
+                    groups[groupKey].push(Object.assign({}, f, { __displayBase: baseMatch }));
+                });
+
+                Object.keys(groups).forEach(groupKey => {
+                    const files = groups[groupKey];
+                    if (files.length === 1) {
+                        // 独立的文件卡片
+                        standaloneHtml += createCardHTML(files[0], false);
+                    } else {
+                        // 触发 Option 3: Delta Connections
+                        const displayTitle = files[0].__displayBase || groupKey;
+                        standaloneHtml += `<div class="project-group">
+                            <div class="project-group-title"><i class="fas fa-layer-group"></i> ${displayTitle} 系列工作流</div>
+                            <div class="project-chain">`;
+                        
+                        // Sort files alphabetically to ensure "Phase 1" is before "Phase 2"
+                        files.sort((a, b) => (a.filename || "").localeCompare(b.filename || ""));
+
+                        files.forEach((f, idx) => {
+                            let cardStr = createCardHTML(f, false);
+                            if (idx > 0) {
+                                const prev = files[idx - 1];
+                                const delta = f.total - prev.total;
+                                const sign = delta > 0 ? '+' : '';
+                                const colorClass = delta > 0 ? 'delta-pos' : (delta < 0 ? 'delta-neg' : 'delta-zero');
+                                const textLabel = delta === 0 ? '无增量' : `${sign}${delta} 新增`;
+                                standaloneHtml += `
+                                <div class="delta-connector" title="较上一版本容量变化">
+                                    <div class="delta-badge ${colorClass}">${textLabel}</div>
+                                </div>
+                                `;
+                            }
+                            standaloneHtml += cardStr;
+                        });
+                        standaloneHtml += `</div></div>`;
+                    }
+                });
+            }
+
+            document.getElementById("cards-grid").innerHTML = globalHtml + standaloneHtml;
+            
+            // Tell streamlit to adjust height
+            setTimeout(() => {
+                Streamlit.setFrameHeight(document.getElementById("cards-grid").scrollHeight + 20);
+            }, 50);
+        }
+
+        // Initialize Native Component Handshake
+        Streamlit.setComponentReady();
+    </script>
+</body>
+</html>

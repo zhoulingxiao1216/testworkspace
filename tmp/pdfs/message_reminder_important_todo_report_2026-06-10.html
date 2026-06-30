@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>🚀 项目验收测试报告：消息提醒功能以及重要待办</title><style>
+@page { size: A4; margin: 16mm 13mm 18mm 13mm; }
+* { box-sizing: border-box; }
+html { background: #ffffff; }
+body { margin: 0; color: #172033; font-family: "Microsoft YaHei", "Noto Sans CJK SC", "PingFang SC", "Segoe UI", Arial, sans-serif; font-size: 12px; line-height: 1.58; }
+.report { max-width: 184mm; margin: 0 auto; }
+h1, h2, h3, h4 { color: #111827; line-height: 1.28; font-weight: 700; page-break-after: avoid; break-after: avoid; }
+h1 { font-size: 24px; margin: 0 0 16px; padding: 0 0 12px; border-bottom: 3px solid #2563eb; }
+h2 { font-size: 18px; margin: 28px 0 10px; padding-bottom: 6px; border-bottom: 1px solid #d7deea; }
+h3 { font-size: 14px; margin: 20px 0 8px; color: #1f3f77; }
+h4 { font-size: 12.5px; margin: 14px 0 6px; }
+p { margin: 7px 0; }
+ul, ol { margin: 7px 0 10px 20px; padding: 0; }
+li { margin: 3px 0; }
+blockquote { margin: 10px 0 18px; padding: 10px 12px; border-left: 4px solid #2563eb; background: #f4f7fb; color: #1f2937; border-radius: 4px; }
+blockquote p { margin: 4px 0; }
+table { width: 100%; border-collapse: collapse; margin: 10px 0 18px; font-size: 9.2px; table-layout: fixed; page-break-inside: auto; break-inside: auto; }
+thead { display: table-header-group; }
+tr { page-break-inside: avoid; break-inside: avoid; }
+th, td { border: 1px solid #cfd8e3; padding: 5px 6px; vertical-align: top; word-break: break-word; overflow-wrap: anywhere; }
+th { background: #edf3fb; color: #0f2a4d; font-weight: 700; }
+tbody tr:nth-child(even) td { background: #fafcff; }
+code { font-family: Consolas, "Courier New", monospace; font-size: 0.92em; color: #9f1239; background: #fff1f2; border-radius: 3px; padding: 1px 4px; }
+pre { background: #0f172a; color: #e5e7eb; padding: 10px; border-radius: 6px; overflow: hidden; white-space: pre-wrap; }
+pre code { color: inherit; background: transparent; padding: 0; }
+hr { border: 0; border-top: 1px solid #d7deea; margin: 18px 0; }
+strong { font-weight: 700; }
+.pass { color: #15803d; font-weight: 700; }
+.footer-note { color: #667085; font-size: 10px; margin-top: 18px; }
+</style></head>
+<body><main class="report"><h1>🚀 项目验收测试报告：消息提醒功能以及重要待办</h1>
+<blockquote>
+<p><strong>报告摘要：</strong><br>
+- <strong>测试结论</strong>：<span class="pass">✅ 测试通过</span>（具备上线条件）<br>
+- <strong>当前阶段</strong>：消息提醒功能以及重要待办 SIT/UAT 验收测试完毕<br>
+- <strong>发布建议</strong>：通用气泡计数、客户管理主链路、B2B 订单/发货提醒、重要待办基础汇总、短信注册触发、右侧导航基础数量及稳定性抽样均已通过；14 条阻塞用例已按本次口径从有效验收范围剔除，建议发布</p>
+</blockquote>
+<hr>
+<h2>1. 项目与工期概况 (Project Overview)</h2>
+<blockquote>
+<p><em>依据来源：需求解析、工期评估、执行交接清单、专项测试用例 Excel、<code>superpowers.md</code>、Agent2 用例评审报告</em></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">维度</th>
+<th style="text-align: left;">详细信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>测试范围</strong></td>
+<td style="text-align: left;">聚焦“通用气泡规则”、“管理系统客户管理”、“B2B 订单管理”、“B2B 发货配送”、“气泡点击交互”、“重要待办”、“短信提醒”、“右侧导航数量”及“稳定性与权限”</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>有效验收范围</strong></td>
+<td style="text-align: left;">原始执行表 62 条；本次有效验收 48 条，剔除 14 条阻塞用例，覆盖 BUB、CM、ORD、SHIP、INT、TODO、SMS、NAV、STB 9 个模块</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>计划工期</strong></td>
+<td style="text-align: left;">约 2 个工作日</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>实际执行</strong></td>
+<td style="text-align: left;">2026-06-09 至 2026-06-10（含执行结果锁定、阻塞项剔除与验收汇总）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>数据锁定基准</strong></td>
+<td style="text-align: left;"><code>special_消息提醒功能以及重要待办测试用例_20260610_180149.xlsx</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>缺陷基准</strong></td>
+<td style="text-align: left;">本次未提供缺陷 RTF；以专项用例 Excel 中“实际报错 / Bug链接”记录为空作为缺陷闭环口径</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>交付结论</strong></td>
+<td style="text-align: left;"><strong>测试通过，具备上线条件</strong>。本次有效验收用例 48 条全部通过，失败 0 条；14 条阻塞用例不计入本次上线验收结论，后续具备环境、短信通道、Mock 或产品口径后单独补测</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>2. 测试覆盖与执行量化 (Coverage &amp; Execution Metrics)</h2>
+<blockquote>
+<p><em>依据来源：<code>special_消息提醒功能以及重要待办测试用例_20260610_180149.xlsx</code>、<code>执行交接清单.yaml</code>、<code>superpowers.md</code></em></p>
+</blockquote>
+<h3>2.1 核心需求模块覆盖率</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">模块</th>
+<th style="text-align: left;">有效覆盖场景</th>
+<th style="text-align: center;">通过</th>
+<th style="text-align: center;">剔除</th>
+<th style="text-align: left;">执行结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">【BUB】通用气泡规则</td>
+<td style="text-align: left;">10 条</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">一级/二级气泡展示、汇总、折叠可见、加载补全、99/99+、页面切换和长标题适配均通过</td>
+</tr>
+<tr>
+<td style="text-align: left;">【CM】管理系统客户管理</td>
+<td style="text-align: left;">4 条</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">客户管理一级汇总、客户信息待匹配计数、新注册触发和匹配后消失主链路通过；轮询、自动刷新、接口失败降级剔除</td>
+</tr>
+<tr>
+<td style="text-align: left;">【ORD】B2B 订单管理</td>
+<td style="text-align: left;">8 条</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">报价单、代购订单待审核计数、0 值隐藏、新增递增、审核递减均通过</td>
+</tr>
+<tr>
+<td style="text-align: left;">【SHIP】B2B 发货配送</td>
+<td style="text-align: left;">5 条</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">发货配送一级汇总、发货单二级计数、新增递增、审核递减和归零隐藏均通过</td>
+</tr>
+<tr>
+<td style="text-align: left;">【INT】气泡点击交互</td>
+<td style="text-align: left;">2 条</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">一级气泡展开二级、二级气泡跳转待办列表通过；点击区域互不干扰用例剔除</td>
+</tr>
+<tr>
+<td style="text-align: left;">【TODO】重要待办</td>
+<td style="text-align: left;">11 条</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">重要待办展示、三项汇总、加载规则、增减、刷新/登录渲染、轮询、折叠态展示和多语言长标题主路径通过；大数边界、异常提示、多语言切换剔除</td>
+</tr>
+<tr>
+<td style="text-align: left;">【SMS】短信提醒</td>
+<td style="text-align: left;">1 条</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">用户注册成功触发短信提醒通过；通知人员配置、多人通知和未配置降级处理剔除</td>
+</tr>
+<tr>
+<td style="text-align: left;">【NAV】右侧导航</td>
+<td style="text-align: left;">4 条</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">消息、待办、订单数量展示及业务数据变化更新通过；权限范围统计剔除</td>
+</tr>
+<tr>
+<td style="text-align: left;">【STB】稳定性与权限</td>
+<td style="text-align: left;">3 条</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">多标签页一致、并发新增/审核、浏览器刷新恢复通过；弱网接口超时剔除</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>合计</strong></td>
+<td style="text-align: left;"><strong>48 条</strong></td>
+<td style="text-align: center;"><strong>48</strong></td>
+<td style="text-align: center;"><strong>14</strong></td>
+<td style="text-align: left;"><strong>有效验收用例 100% 通过，失败 0 条</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>2.2 质量数据看板</h3>
+<p><strong>本轮执行（当前基准）</strong>：<br>
+- 原始用例：62 条<br>
+- 阻塞剔除：14 条<br>
+- 有效验收用例：48 条<br>
+- <strong>通过：48 条 | 失败：0 条 | 阻塞剔除：14 条</strong><br>
+- <strong>有效执行通过率：100%（48/48）</strong><br>
+- 有效 P0 用例：37 条，全部通过<br>
+- 有效 P1 用例：10 条，全部通过<br>
+- 有效 P2 用例：1 条，已通过</p>
+<p><strong>核心缺陷统计（Bug Metrics）</strong>：</p>
+<p>本次未提供缺陷 RTF；专项用例 Excel 中“实际报错”和“Bug链接”均为空，未形成开放缺陷单。阻塞用例按用户确认口径从本次有效验收范围剔除，不按失败或缺陷统计：<br>
+- 🔴 <strong>Critical（致命）</strong>：0 条<br>
+- 🟠 <strong>High（严重）</strong>：0 条<br>
+- 🟡 <strong>Medium（一般）</strong>：0 条<br>
+- <strong>缺陷单记录</strong>：0 条</p>
+<p><strong>阻塞剔除项统计</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">模块</th>
+<th style="text-align: center;">剔除数量</th>
+<th style="text-align: left;">关联用例</th>
+<th style="text-align: left;">剔除原因</th>
+<th style="text-align: left;">上线影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CM</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">TC-CM-005、TC-CM-006、TC-CM-007</td>
+<td style="text-align: left;">依赖状态不同步、连续异常校验、接口失败等可控异常模拟条件</td>
+<td style="text-align: left;">已剔除，不影响本次有效验收结论</td>
+</tr>
+<tr>
+<td style="text-align: left;">INT</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">TC-INT-003</td>
+<td style="text-align: left;">点击区域精细交互验证条件不足</td>
+<td style="text-align: left;">已剔除，不影响一级展开和二级跳转主链路</td>
+</tr>
+<tr>
+<td style="text-align: left;">TODO</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">TC-TODO-004、TC-TODO-007、TC-TODO-010、TC-TODO-011、TC-TODO-016</td>
+<td style="text-align: left;">依赖重要待办大数造数、加载失败 Mock、异常提示和多语言切换条件</td>
+<td style="text-align: left;">已剔除，基础汇总、刷新、增减和折叠态主路径已通过</td>
+</tr>
+<tr>
+<td style="text-align: left;">SMS</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">TC-SMS-002、TC-SMS-003、TC-SMS-004</td>
+<td style="text-align: left;">依赖短信配置入口、多人通知通道和未配置降级口径</td>
+<td style="text-align: left;">已剔除，注册成功触发短信主路径已通过</td>
+</tr>
+<tr>
+<td style="text-align: left;">NAV</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">TC-NAV-005</td>
+<td style="text-align: left;">当前用户权限范围统计口径待确认</td>
+<td style="text-align: left;">已剔除，消息/待办/订单基础数量已通过</td>
+</tr>
+<tr>
+<td style="text-align: left;">STB</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">TC-STB-001</td>
+<td style="text-align: left;">弱网或接口超时模拟依赖环境与 Mock 能力</td>
+<td style="text-align: left;">已剔除，不影响已执行稳定性抽样结论</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>合计</strong></td>
+<td style="text-align: center;"><strong>14</strong></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><strong>全部按阻塞剔除口径处理</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>2.3 测试过程缺陷闭环</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">缺陷类型</th>
+<th style="text-align: left;">典型表现</th>
+<th style="text-align: left;">影响评估</th>
+<th style="text-align: left;">回归结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">计数展示主链路</td>
+<td style="text-align: left;">一级/二级气泡、待审核数量、重要待办基础汇总与右侧导航数量展示</td>
+<td style="text-align: left;">影响用户识别待办入口和待处理规模</td>
+<td style="text-align: left;">有效范围内全部通过，未记录缺陷单</td>
+</tr>
+<tr>
+<td style="text-align: left;">状态增减主链路</td>
+<td style="text-align: left;">新增报价单、代购订单、发货单后气泡递增，审核完成后递减或隐藏</td>
+<td style="text-align: left;">影响订单/发货待审核提醒准确性</td>
+<td style="text-align: left;">ORD、SHIP 有效用例全部通过</td>
+</tr>
+<tr>
+<td style="text-align: left;">客户管理主链路</td>
+<td style="text-align: left;">新注册未匹配客户进入提醒，匹配客户经理后气泡消失</td>
+<td style="text-align: left;">影响客户经理匹配待办提醒</td>
+<td style="text-align: left;">CM 主路径 4 条通过；异常轮询与接口失败用例剔除</td>
+</tr>
+<tr>
+<td style="text-align: left;">重要待办主链路</td>
+<td style="text-align: left;">重要待办展示、三项汇总、刷新/登录渲染、折叠态展示、轮询恢复</td>
+<td style="text-align: left;">影响重要待办统一入口可信度</td>
+<td style="text-align: left;">有效范围内 11 条通过；大数边界、异常提示和多语言切换用例剔除</td>
+</tr>
+<tr>
+<td style="text-align: left;">短信与导航主链路</td>
+<td style="text-align: left;">用户注册触发短信，右侧导航消息/待办/订单数量展示和更新</td>
+<td style="text-align: left;">影响通知触达和右侧导航提醒</td>
+<td style="text-align: left;">SMS 主路径、NAV 基础数量通过；短信配置、多人与权限范围用例剔除</td>
+</tr>
+<tr>
+<td style="text-align: left;">阻塞用例剔除</td>
+<td style="text-align: left;">14 条阻塞用例不计入有效验收范围</td>
+<td style="text-align: left;">不作为本次失败或开放缺陷</td>
+<td style="text-align: left;">已按剔除口径统计，后续具备条件后单独补测</td>
+</tr>
+</tbody>
+</table>
+<h3>2.4 缺陷单明细</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">类型</th>
+<th style="text-align: left;">严重程度</th>
+<th style="text-align: left;">优先级</th>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">缺陷摘要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">本次未提供缺陷 RTF；专项执行 Excel 中实际报错和 Bug 链接为空，未形成缺陷单明细</td>
+</tr>
+</tbody>
+</table>
+<h3>2.5 测试对象与文件覆盖</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">覆盖对象</th>
+<th style="text-align: left;">覆盖内容</th>
+<th style="text-align: left;">依据文件</th>
+<th style="text-align: left;">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">需求范围</td>
+<td style="text-align: left;">通用气泡、客户管理、B2B 订单、发货配送、重要待办、短信提醒、右侧导航</td>
+<td style="text-align: left;"><code>消息提醒功能以及重要待办.docx</code>、<code>需求解析.md</code>、<code>架构级需求摘要.md</code></td>
+<td style="text-align: left;">已纳入验收范围</td>
+</tr>
+<tr>
+<td style="text-align: left;">测试规约</td>
+<td style="text-align: left;">计数一致性、状态更新时效、显示布局、点击交互、异常恢复、权限隔离、短信与导航提醒</td>
+<td style="text-align: left;"><code>superpowers.md</code></td>
+<td style="text-align: left;">已纳入核心规约审计</td>
+</tr>
+<tr>
+<td style="text-align: left;">测试设计</td>
+<td style="text-align: left;">测试点大纲、审计待确认问题、Agent2 可执行性评审、用例格式诊断</td>
+<td style="text-align: left;"><code>测试点大纲.md</code>、<code>审计待确认问题单.md</code>、<code>Agent2_用例评审报告.md</code>、<code>Agent1_case_format_diagnosis.md</code></td>
+<td style="text-align: left;">覆盖完整，阻塞项已单独标注</td>
+</tr>
+<tr>
+<td style="text-align: left;">用例执行</td>
+<td style="text-align: left;">原始 62 条专项用例，剔除 14 条阻塞用例后，本次有效验收 48 条</td>
+<td style="text-align: left;"><code>special_消息提醒功能以及重要待办测试用例_20260610_180149.xlsx</code></td>
+<td style="text-align: left;">有效验收用例 48 条全部通过</td>
+</tr>
+<tr>
+<td style="text-align: left;">缺陷闭环</td>
+<td style="text-align: left;">本次无缺陷 RTF，Excel 未记录实际报错和 Bug 链接</td>
+<td style="text-align: left;">专项用例 Excel</td>
+<td style="text-align: left;">未形成开放缺陷</td>
+</tr>
+<tr>
+<td style="text-align: left;">关键业务对象</td>
+<td style="text-align: left;">管理系统菜单气泡、B2B 订单/发货待审核提醒、重要待办、短信提醒、右侧导航数量、稳定性抽样</td>
+<td style="text-align: left;">用例执行结果、测试规约</td>
+<td style="text-align: left;">本次有效验收范围全部通过</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>3. Superpowers 核心规约验收审计 (Core Constraints Audit)</h2>
+<blockquote>
+<p><em>依据来源：<code>superpowers.md</code>、专项测试用例 Excel、执行交接清单</em></p>
+</blockquote>
+<ul>
+<li><strong>§4 数据计数一致性</strong></li>
+<li><strong>[通过]</strong> 一级气泡汇总、二级气泡计数、订单/发货待审核数量、重要待办基础汇总、右侧导航基础数量在有效范围内均已通过。</li>
+<li>
+<p><strong>[证据]</strong> BUB 10 条、ORD 8 条、SHIP 5 条、NAV 4 条及 TODO 基础汇总用例通过。</p>
+</li>
+<li>
+<p><strong>§5 状态更新时效</strong></p>
+</li>
+<li><strong>[通过]</strong> 页面切换后气泡渲染、订单/发货新增递增、审核递减、重要待办刷新/重新登录后渲染等主路径通过。</li>
+<li>
+<p><strong>[剔除]</strong> 客户匹配后的异常轮询与连续异常刷新 TC-CM-005、TC-CM-006 按阻塞剔除处理。</p>
+</li>
+<li>
+<p><strong>§6 显示与布局</strong></p>
+</li>
+<li><strong>[通过]</strong> 折叠/展开状态气泡持续展示、99/99+ 基础规则、长标题不遮挡等有效范围通过。</li>
+<li>
+<p><strong>[剔除]</strong> 重要待办大数边界 TC-TODO-004、TC-TODO-007 和语言切换重定位 TC-TODO-016 按阻塞剔除处理。</p>
+</li>
+<li>
+<p><strong>§7 点击交互</strong></p>
+</li>
+<li><strong>[通过]</strong> 点击一级气泡展开二级分类、点击二级气泡跳转待办列表均通过。</li>
+<li>
+<p><strong>[剔除]</strong> 气泡点击区域与标题点击区域互不干扰 TC-INT-003 按阻塞剔除处理。</p>
+</li>
+<li>
+<p><strong>§8 异常恢复</strong></p>
+</li>
+<li><strong>[通过]</strong> 二级未加载暂不计入、加载完成后补全、负数修正用例在有效范围内通过。</li>
+<li>
+<p><strong>[剔除]</strong> 重要待办子模块加载失败提示、弱网接口超时等依赖 Mock 的用例按阻塞剔除处理。</p>
+</li>
+<li>
+<p><strong>§9 权限隔离</strong></p>
+</li>
+<li><strong>[通过]</strong> 右侧导航基础消息、待办、订单数量展示与更新通过。</li>
+<li>
+<p><strong>[剔除]</strong> 右侧导航按当前用户权限范围统计 TC-NAV-005 按阻塞剔除处理，后续需结合权限矩阵补测。</p>
+</li>
+<li>
+<p><strong>§10 短信与右侧导航提醒</strong></p>
+</li>
+<li><strong>[通过]</strong> 用户注册成功后触发短信提醒、右侧导航基础数量展示通过。</li>
+<li><strong>[剔除]</strong> 短信通知人员配置、多人通知、未配置接收人降级处理按阻塞剔除处理。</li>
+</ul>
+<hr>
+<h2>4. 已知问题与遗留风险 (Known Issues)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">风险用例编号</th>
+<th style="text-align: left;">所属模块</th>
+<th style="text-align: left;">风险影响评估描述</th>
+<th style="text-align: left;">应急预案与解决建议</th>
+<th style="text-align: left;">处理阶段</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">暂无影响本次有效验收范围上线的开放缺陷；14 条阻塞用例已从有效验收范围剔除</td>
+<td style="text-align: left;">上线后按气泡计数、订单/发货待审核增减、重要待办汇总、短信注册触发和右侧导航数量进行主路径抽样回归</td>
+<td style="text-align: left;">已确认</td>
+</tr>
+<tr>
+<td style="text-align: left;">TC-CM-005/006/007、TC-TODO-010/011、TC-STB-001</td>
+<td style="text-align: left;">异常恢复与稳定性</td>
+<td style="text-align: left;">依赖接口失败、状态不同步、弱网或超时模拟，当前未纳入有效验收</td>
+<td style="text-align: left;">后续提供 Mock 或测试环境异常注入能力后补测</td>
+<td style="text-align: left;">待后续补测</td>
+</tr>
+<tr>
+<td style="text-align: left;">TC-SMS-002/003/004、TC-NAV-005</td>
+<td style="text-align: left;">短信配置与权限范围</td>
+<td style="text-align: left;">依赖短信配置入口、多人通知通道和权限统计口径，当前未纳入有效验收</td>
+<td style="text-align: left;">后续确认短信通道、配置维度和权限矩阵后补测</td>
+<td style="text-align: left;">待后续补测</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>5. 上线注意事项 / 生产运维预案 (Go-Live Checklist)</h2>
+<ol>
+<li><strong>气泡计数冒烟</strong>：上线后抽检一级/二级气泡总和、0 值隐藏、99/99+ 展示、折叠/展开状态持续展示。</li>
+<li><strong>订单与发货提醒抽检</strong>：抽检报价单、代购订单、发货单待审核新增递增、审核完成递减和归零隐藏。</li>
+<li><strong>客户管理与重要待办抽检</strong>：抽检未匹配客户提醒、匹配后消失、重要待办三子模块汇总、刷新和重新登录后气泡恢复。</li>
+<li><strong>短信与右侧导航监控</strong>：关注用户注册短信触发记录，抽检右侧导航消息、待办、订单数量与当前用户可见数据一致。</li>
+<li><strong>阻塞剔除项补测留痕</strong>：14 条阻塞剔除用例不计入本次有效验收结论；后续具备短信通道、权限矩阵、多语言数据、大数造数和异常 Mock 能力后需单独补测并归档。</li>
+</ol>
+<hr>
+<h2>6. 变更记录 (Change Log)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">轮次</th>
+<th style="text-align: left;">日期</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">测试设计</td>
+<td style="text-align: left;">2026-05-22</td>
+<td style="text-align: left;">完成需求解析、架构级需求摘要、测试点大纲、专项测试用例、审计待确认问题单和 Superpowers 规约</td>
+</tr>
+<tr>
+<td style="text-align: left;">用例格式修正</td>
+<td style="text-align: left;">2026-05-25</td>
+<td style="text-align: left;">完成平台可导入用例格式诊断与用例文件格式修正</td>
+</tr>
+<tr>
+<td style="text-align: left;">执行结果锁定</td>
+<td style="text-align: left;">2026-06-10</td>
+<td style="text-align: left;">基于专项用例 Excel 完成 62 条执行结果统计，其中 48 条通过、14 条阻塞</td>
+</tr>
+<tr>
+<td style="text-align: left;">本报告</td>
+<td style="text-align: left;">2026-06-10</td>
+<td style="text-align: left;">按上线验收测试报告规范生成报告；测试天数按用户确认口径记为 2 天，阻塞用例按剔除口径不计入有效验收范围</td>
+</tr>
+</tbody>
+</table><p class="footer-note">PDF generated from Markdown source: D:\test_workspace\消息提醒功能以及重要待办\测试文档\上线验收测试报告_2026-06-10.md</p></main></body></html>

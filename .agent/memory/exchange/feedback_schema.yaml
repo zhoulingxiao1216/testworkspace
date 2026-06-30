@@ -1,0 +1,71 @@
+version: 1
+updated_at: "2026-05-22"
+
+purpose: >
+  Structured schema for Agent 2 feedback and Agent 1 remediation records.
+  Markdown exchange files remain human-readable; this schema defines the
+  machine-readable contract for future run artifacts.
+
+agent2_feedback_item:
+  id: "F-001"
+  run_id: "YYYY-MM-DD_project_slug"
+  project: "Project display name"
+  source_agent: "agent2_test_execution"
+  target_agent: "agent1_test_design"
+  status: "open"
+  severity: "high"
+  category: "data_precondition"
+  related_cases:
+    - "TC-XXX-001"
+  related_artifacts:
+    - "执行交接清单.yaml"
+    - "项目测试用例.md"
+  summary: "One-line feedback summary"
+  detail: "Specific reason why execution is blocked or risky"
+  expected_fix: "Concrete remediation expected from Agent 1"
+  created_at: "YYYY-MM-DD HH:mm:ss"
+  resolved_at: null
+
+allowed_values:
+  status:
+    - "open"
+    - "in_progress"
+    - "resolved"
+    - "partially_resolved"
+    - "rejected"
+  severity:
+    - "high"
+    - "medium"
+    - "low"
+  category:
+    - "step_detail"
+    - "data_precondition"
+    - "environment"
+    - "api_endpoint"
+    - "db_mock"
+    - "smoke_queue"
+    - "traceability"
+    - "scope_confirmation"
+    - "other"
+
+agent1_remediation_item:
+  feedback_id: "F-001"
+  run_id: "YYYY-MM-DD_project_slug"
+  source_agent: "agent1_test_design"
+  target_agent: "agent2_test_execution"
+  status: "resolved"
+  changed_artifacts:
+    - path: "项目/测试文档/执行交接清单.yaml"
+      change_summary: "Added missing mock data precondition"
+  response: "What was changed and why"
+  residual_risk: "Remaining uncertainty, or null"
+  updated_at: "YYYY-MM-DD HH:mm:ss"
+
+agent2_recheck_item:
+  feedback_id: "F-001"
+  run_id: "YYYY-MM-DD_project_slug"
+  source_agent: "agent2_test_execution"
+  verdict: "passed"
+  evidence: "Brief validation evidence"
+  next_action: "Move to EXECUTION_READY"
+  checked_at: "YYYY-MM-DD HH:mm:ss"

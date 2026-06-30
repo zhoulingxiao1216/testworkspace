@@ -1,0 +1,27 @@
+{
+  "detail_api": {
+    "status_code": 200,
+    "json_path": "code",
+    "expected": 200
+  },
+  "one_click_purchase_api": {
+    "status_code": 200,
+    "json_path": "code",
+    "expected": 200
+  },
+  "one_click_arrival_api": {
+    "status_code": 200,
+    "json_path": "code",
+    "expected": 200
+  },
+  "one_click_genuine_api": {
+    "status_code": 200,
+    "json_path": "code",
+    "expected": 200
+  },
+  "warehouse_in_api": {
+    "status_code": 200,
+    "json_path": "code",
+    "expected": 200
+  }
+}

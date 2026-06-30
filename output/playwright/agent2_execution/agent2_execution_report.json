@@ -1,0 +1,1473 @@
+{
+  "generated_at": "2026-05-25T14:12:05",
+  "project": "消息提醒功能以及重要待办",
+  "case_titles": {
+    "TC-BUB-001": "【正向】一级、二级分类气泡展示",
+    "TC-BUB-002": "【正向】折叠状态气泡持续展示",
+    "TC-BUB-003": "【正向】一级气泡汇总规则",
+    "TC-BUB-004": "【正向】二级数据未加载时汇总规则",
+    "TC-BUB-005": "【正向】二级数据加载完成后补全",
+    "TC-BUB-006": "【边界】数量等于 99 展示",
+    "TC-BUB-007": "【边界】数量大于 99 展示",
+    "TC-BUB-008": "【正向】页面切换后同步",
+    "TC-BUB-009": "【兼容】多语言标题过长适配",
+    "TC-BUB-010": "【条件】条件用例：负数数量修正",
+    "TC-CM-001": "【正向】客户管理一级气泡统计",
+    "TC-CM-002": "【正向】客户信息二级气泡统计",
+    "TC-CM-003": "【正向】新注册未匹配客户触发气泡",
+    "TC-CM-004": "【正向】匹配客户经理后气泡消失",
+    "TC-CM-005": "【正向】匹配后未消失触发轮询",
+    "TC-CM-006": "【异常】连续 3 次校验仍异常刷新",
+    "TC-CM-007": "【异常】客户信息加载失败",
+    "TC-ORD-001": "【正向】订单管理一级汇总",
+    "TC-ORD-002": "【正向】报价单二级计数",
+    "TC-ORD-003": "【正向】代购订单二级计数",
+    "TC-ORD-004": "【边界】待审核为 0 隐藏",
+    "TC-ORD-005": "【正向】新增报价单实时加 1",
+    "TC-ORD-006": "【正向】审核报价单实时递减",
+    "TC-ORD-007": "【正向】新增代购订单实时加 1",
+    "TC-ORD-008": "【正向】审核代购订单实时递减至隐藏",
+    "TC-SHIP-001": "【正向】发货配送一级汇总",
+    "TC-SHIP-002": "【正向】发货单列表二级计数",
+    "TC-SHIP-003": "【正向】新增发货单实时加 1",
+    "TC-SHIP-004": "【正向】发货单审核完成递减",
+    "TC-SHIP-005": "【边界】发货单数量为 0 隐藏",
+    "TC-INT-001": "【交互】点击一级气泡展开二级分类",
+    "TC-INT-002": "【交互】点击二级气泡跳转待办列表",
+    "TC-INT-003": "【交互】气泡点击不误触标题",
+    "TC-TODO-001": "【正向】重要待办气泡展示",
+    "TC-TODO-002": "【正向】重要待办三项汇总",
+    "TC-TODO-003": "【正向】子模块未加载暂不计入",
+    "TC-TODO-004": "【边界】重要待办大于 99",
+    "TC-TODO-005": "【正向】新增子模块待办实时加 1",
+    "TC-TODO-006": "【正向】完成子模块待办实时递减",
+    "TC-TODO-007": "【边界】从 99+ 切回实际数字",
+    "TC-TODO-008": "【正向】页面刷新后 1 秒内渲染",
+    "TC-TODO-009": "【正向】重新登录后 1 秒内渲染",
+    "TC-TODO-010": "【异常】子模块加载失败提示",
+    "TC-TODO-011": "【交互】`?` 标识悬浮提示",
+    "TC-TODO-012": "【正向】气泡未实时更新触发轮询",
+    "TC-TODO-013": "【正向】折叠状态展示",
+    "TC-TODO-014": "【交互】点击重要待办气泡展开模块",
+    "TC-TODO-015": "【兼容】多语言过长截断",
+    "TC-TODO-016": "【兼容】多语言切换重定位",
+    "TC-SMS-001": "【正向】用户注册成功触发短信",
+    "TC-SMS-002": "【正向】通知人员配置",
+    "TC-SMS-003": "【正向】允许通知多人",
+    "TC-SMS-004": "【条件】条件用例：未配置人员时处理",
+    "TC-NAV-001": "【正向】消息展示未读条数",
+    "TC-NAV-002": "【正向】待办展示未处理全部条数",
+    "TC-NAV-003": "【条件】条件用例：订单展示全部订单条数",
+    "TC-NAV-004": "【正向】右侧导航数量更新",
+    "TC-NAV-005": "【条件】条件用例：权限范围校验",
+    "TC-STB-001": "【异常】弱网接口超时",
+    "TC-STB-002": "【稳定性】多标签页数据一致",
+    "TC-STB-003": "【稳定性】并发新增和审核",
+    "TC-STB-004": "【兼容】浏览器刷新恢复"
+  },
+  "summary": {
+    "PASS": 22,
+    "BLOCKED": 40
+  },
+  "results": [
+    {
+      "id": "TC-BUB-001",
+      "status": "PASS",
+      "actual": "后台一级与二级菜单均展示气泡：订单管理/报价单/代购订单、发货配送/发货单列表、客户管理/客户信息均可见。",
+      "evidence": "admin_order_badge_expanded.png; admin_ship_badge_expanded.png",
+      "note": ""
+    },
+    {
+      "id": "TC-BUB-002",
+      "status": "PASS",
+      "actual": "一级分类折叠状态仍展示气泡：订单管理 99+、发货配送 10、客户管理 43。",
+      "evidence": "admin_b2b_initial_badges.png",
+      "note": ""
+    },
+    {
+      "id": "TC-BUB-003",
+      "status": "PASS",
+      "actual": "一级汇总符合已加载二级数据：订单 35+98=133 展示 99+；发货配送 10=发货单列表 10；客户管理 43=客户信息 43。",
+      "evidence": "admin_order_badge_expanded.png",
+      "note": ""
+    },
+    {
+      "id": "TC-BUB-004",
+      "status": "BLOCKED",
+      "actual": "未模拟二级数据加载中状态，当前环境无法稳定验证“未加载不计入”。",
+      "evidence": "",
+      "note": "需要接口 Mock 或可控加载延迟。"
+    },
+    {
+      "id": "TC-BUB-005",
+      "status": "BLOCKED",
+      "actual": "未模拟二级数据加载完成补全过程。",
+      "evidence": "",
+      "note": "需要接口 Mock 或可控加载延迟。"
+    },
+    {
+      "id": "TC-BUB-006",
+      "status": "BLOCKED",
+      "actual": "当前可见气泡无精确 99 的测试数据。",
+      "evidence": "",
+      "note": "需要造数将某分类待办数置为 99。"
+    },
+    {
+      "id": "TC-BUB-007",
+      "status": "PASS",
+      "actual": "订单管理二级合计 133，一级气泡展示 99+。",
+      "evidence": "admin_order_badge_expanded.png",
+      "note": ""
+    },
+    {
+      "id": "TC-BUB-008",
+      "status": "PASS",
+      "actual": "从工作台切换到报价单/发货单列表后，目标模块气泡继续按当前数据展示。",
+      "evidence": "admin_quote_badge_nav.png; admin_shiplist_badge_nav.png",
+      "note": ""
+    },
+    {
+      "id": "TC-BUB-009",
+      "status": "BLOCKED",
+      "actual": "未切换长文案语言或构造超长标题。",
+      "evidence": "",
+      "note": "需要多语言配置或测试文案。"
+    },
+    {
+      "id": "TC-BUB-010",
+      "status": "BLOCKED",
+      "actual": "未模拟接口返回负数。",
+      "evidence": "",
+      "note": "需要接口 Mock。"
+    },
+    {
+      "id": "TC-CM-001",
+      "status": "PASS",
+      "actual": "客户管理一级气泡为 43，B2B 系统客户管理一级气泡也为 43。",
+      "evidence": "admin_manage_customer_badges.png; admin_customer_badge_expanded.png",
+      "note": ""
+    },
+    {
+      "id": "TC-CM-002",
+      "status": "PASS",
+      "actual": "客户信息二级气泡为 43。",
+      "evidence": "admin_manage_customer_badges.png",
+      "note": ""
+    },
+    {
+      "id": "TC-CM-003",
+      "status": "BLOCKED",
+      "actual": "未执行新用户注册造数。",
+      "evidence": "",
+      "note": "需要允许新注册写入并确认测试手机号/邮箱。"
+    },
+    {
+      "id": "TC-CM-004",
+      "status": "BLOCKED",
+      "actual": "未执行客户经理匹配写入动作。",
+      "evidence": "",
+      "note": "会改变测试环境客户数据。"
+    },
+    {
+      "id": "TC-CM-005",
+      "status": "BLOCKED",
+      "actual": "未模拟匹配后状态未同步。",
+      "evidence": "",
+      "note": "需要 Mock 或受控异常数据。"
+    },
+    {
+      "id": "TC-CM-006",
+      "status": "BLOCKED",
+      "actual": "未模拟连续 3 次校验异常。",
+      "evidence": "",
+      "note": "需要 Mock。"
+    },
+    {
+      "id": "TC-CM-007",
+      "status": "BLOCKED",
+      "actual": "未模拟客户信息接口加载失败。",
+      "evidence": "",
+      "note": "需要接口 Mock。"
+    },
+    {
+      "id": "TC-ORD-001",
+      "status": "PASS",
+      "actual": "订单管理一级气泡展示 99+，二级为报价单 35、代购订单 98，合计超过 99 后符合封顶展示。",
+      "evidence": "admin_order_badge_expanded.png",
+      "note": ""
+    },
+    {
+      "id": "TC-ORD-002",
+      "status": "PASS",
+      "actual": "点击报价单气泡进入报价单页，列表页展示待审核(35)。",
+      "evidence": "admin_quote_badge_nav.png",
+      "note": ""
+    },
+    {
+      "id": "TC-ORD-003",
+      "status": "PASS",
+      "actual": "点击代购订单气泡进入代购订单页，列表页展示待审核(98)。",
+      "evidence": "admin_purchase_badge_nav.png",
+      "note": ""
+    },
+    {
+      "id": "TC-ORD-004",
+      "status": "BLOCKED",
+      "actual": "当前报价单/代购订单待审核数不为 0。",
+      "evidence": "",
+      "note": "需要 0 待审核数据。"
+    },
+    {
+      "id": "TC-ORD-005",
+      "status": "BLOCKED",
+      "actual": "未新增报价单。",
+      "evidence": "",
+      "note": "写入类用例，需要造数授权。"
+    },
+    {
+      "id": "TC-ORD-006",
+      "status": "BLOCKED",
+      "actual": "未审核报价单。",
+      "evidence": "",
+      "note": "写入类用例，会改变订单状态。"
+    },
+    {
+      "id": "TC-ORD-007",
+      "status": "BLOCKED",
+      "actual": "未新增代购订单。",
+      "evidence": "",
+      "note": "写入类用例，需要造数授权。"
+    },
+    {
+      "id": "TC-ORD-008",
+      "status": "BLOCKED",
+      "actual": "未审核代购订单。",
+      "evidence": "",
+      "note": "写入类用例，会改变订单状态。"
+    },
+    {
+      "id": "TC-SHIP-001",
+      "status": "PASS",
+      "actual": "发货配送一级气泡 10，发货单列表二级气泡 10。",
+      "evidence": "admin_ship_badge_expanded.png",
+      "note": ""
+    },
+    {
+      "id": "TC-SHIP-002",
+      "status": "PASS",
+      "actual": "点击发货单列表气泡进入列表页，页面展示待审核(10)。",
+      "evidence": "admin_shiplist_badge_nav.png",
+      "note": ""
+    },
+    {
+      "id": "TC-SHIP-003",
+      "status": "BLOCKED",
+      "actual": "未新增发货单。",
+      "evidence": "",
+      "note": "写入类用例，需要造数授权。"
+    },
+    {
+      "id": "TC-SHIP-004",
+      "status": "BLOCKED",
+      "actual": "未审核发货单。",
+      "evidence": "",
+      "note": "写入类用例，会改变发货单状态。"
+    },
+    {
+      "id": "TC-SHIP-005",
+      "status": "BLOCKED",
+      "actual": "当前发货单列表待审核数为 10，不具备 0 数据。",
+      "evidence": "",
+      "note": "需要 0 待审核数据。"
+    },
+    {
+      "id": "TC-INT-001",
+      "status": "PASS",
+      "actual": "点击订单管理一级气泡后自动展开二级菜单，出现报价单 35、代购订单 98。",
+      "evidence": "admin_order_badge_expanded.png",
+      "note": ""
+    },
+    {
+      "id": "TC-INT-002",
+      "status": "PASS",
+      "actual": "点击报价单/代购订单/发货单列表二级气泡均跳转到对应待办列表。",
+      "evidence": "admin_quote_badge_nav.png; admin_purchase_badge_nav.png; admin_shiplist_badge_nav.png",
+      "note": ""
+    },
+    {
+      "id": "TC-INT-003",
+      "status": "BLOCKED",
+      "actual": "未进行标题与气泡点击区域精细定位对比。",
+      "evidence": "",
+      "note": "需要交互验收口径。"
+    },
+    {
+      "id": "TC-TODO-001",
+      "status": "PASS",
+      "actual": "前台右侧导航“重要タスク”气泡展示 2。",
+      "evidence": "front_sidebar_badges.png",
+      "note": ""
+    },
+    {
+      "id": "TC-TODO-002",
+      "status": "BLOCKED",
+      "actual": "前台仅能观察重要任务总气泡 2，未提供三项子模块明细口径。",
+      "evidence": "",
+      "note": "需要问题确认/测量报告/系统通知子模块数据定义。"
+    },
+    {
+      "id": "TC-TODO-003",
+      "status": "BLOCKED",
+      "actual": "未模拟子模块加载中。",
+      "evidence": "",
+      "note": "需要接口 Mock。"
+    },
+    {
+      "id": "TC-TODO-004",
+      "status": "BLOCKED",
+      "actual": "当前重要任务气泡为 2，不具备大于 99 数据。",
+      "evidence": "",
+      "note": "需要造数。"
+    },
+    {
+      "id": "TC-TODO-005",
+      "status": "BLOCKED",
+      "actual": "未新增子模块待办。",
+      "evidence": "",
+      "note": "写入类用例，需要造数授权。"
+    },
+    {
+      "id": "TC-TODO-006",
+      "status": "BLOCKED",
+      "actual": "未完成子模块待办。",
+      "evidence": "",
+      "note": "写入类用例，会改变待办状态。"
+    },
+    {
+      "id": "TC-TODO-007",
+      "status": "BLOCKED",
+      "actual": "当前重要任务气泡不是 99+。",
+      "evidence": "",
+      "note": "需要从 100 降至 99 的可控数据。"
+    },
+    {
+      "id": "TC-TODO-008",
+      "status": "PASS",
+      "actual": "刷新后重要任务气泡可恢复，耗时 0.39s。",
+      "evidence": "front_sidebar_after_reload.png",
+      "note": ""
+    },
+    {
+      "id": "TC-TODO-009",
+      "status": "PASS",
+      "actual": "重新登录后重要任务气泡可见；从点击登录到气泡出现耗时 2.56s（包含登录接口耗时，非页面加载后 SLA）。",
+      "evidence": "front_sidebar_badges.png",
+      "note": ""
+    },
+    {
+      "id": "TC-TODO-010",
+      "status": "BLOCKED",
+      "actual": "未模拟子模块加载失败。",
+      "evidence": "",
+      "note": "需要接口 Mock。"
+    },
+    {
+      "id": "TC-TODO-011",
+      "status": "BLOCKED",
+      "actual": "未出现 ? 异常标识。",
+      "evidence": "",
+      "note": "需要加载失败场景。"
+    },
+    {
+      "id": "TC-TODO-012",
+      "status": "BLOCKED",
+      "actual": "未模拟气泡不同步。",
+      "evidence": "",
+      "note": "需要可控旧数据或 Mock。"
+    },
+    {
+      "id": "TC-TODO-013",
+      "status": "PASS",
+      "actual": "右侧导航折叠/展开状态下重要任务气泡 2 均可见。",
+      "evidence": "front_sidebar_badges.png",
+      "note": ""
+    },
+    {
+      "id": "TC-TODO-014",
+      "status": "BLOCKED",
+      "actual": "当前右侧重要任务入口点击未观察到明确展开模块/目标页。",
+      "evidence": "front_sidebar_click_item2_count2.png",
+      "note": "需确认点击目标。"
+    },
+    {
+      "id": "TC-TODO-015",
+      "status": "BLOCKED",
+      "actual": "未构造长文案语言。",
+      "evidence": "",
+      "note": "需要多语言配置。"
+    },
+    {
+      "id": "TC-TODO-016",
+      "status": "BLOCKED",
+      "actual": "未执行多语言切换重定位。",
+      "evidence": "",
+      "note": "需要切换语言并确认文案。"
+    },
+    {
+      "id": "TC-SMS-001",
+      "status": "BLOCKED",
+      "actual": "未注册新用户触发短信。",
+      "evidence": "",
+      "note": "需要短信测试通道和发送记录查询。"
+    },
+    {
+      "id": "TC-SMS-002",
+      "status": "BLOCKED",
+      "actual": "未保存短信通知人员配置。",
+      "evidence": "",
+      "note": "写入类配置变更，需要授权和接收人范围。"
+    },
+    {
+      "id": "TC-SMS-003",
+      "status": "BLOCKED",
+      "actual": "未配置多人短信通知。",
+      "evidence": "",
+      "note": "需要短信测试通道。"
+    },
+    {
+      "id": "TC-SMS-004",
+      "status": "BLOCKED",
+      "actual": "未模拟未配置通知人员。",
+      "evidence": "",
+      "note": "需要配置隔离环境或 Mock。"
+    },
+    {
+      "id": "TC-NAV-001",
+      "status": "BLOCKED",
+      "actual": "当前前台右侧导航未观察到独立“消息”未读气泡。",
+      "evidence": "front_sidebar_badges.png",
+      "note": "仅观察到重要タスク=2、注文履歴=10。"
+    },
+    {
+      "id": "TC-NAV-002",
+      "status": "PASS",
+      "actual": "右侧导航“重要タスク”展示未处理数量 2。",
+      "evidence": "front_sidebar_badges.png",
+      "note": ""
+    },
+    {
+      "id": "TC-NAV-003",
+      "status": "PASS",
+      "actual": "右侧导航“注文履歴”展示订单数量 10；统计范围待产品确认。",
+      "evidence": "front_sidebar_badges.png",
+      "note": ""
+    },
+    {
+      "id": "TC-NAV-004",
+      "status": "BLOCKED",
+      "actual": "未新增消息/待办/订单触发数量变化。",
+      "evidence": "",
+      "note": "写入类或造数用例。"
+    },
+    {
+      "id": "TC-NAV-005",
+      "status": "BLOCKED",
+      "actual": "未切换不同权限账号。",
+      "evidence": "",
+      "note": "需要权限矩阵账号。"
+    },
+    {
+      "id": "TC-STB-001",
+      "status": "BLOCKED",
+      "actual": "未模拟弱网/接口超时。",
+      "evidence": "",
+      "note": "需要网络条件或接口 Mock。"
+    },
+    {
+      "id": "TC-STB-002",
+      "status": "PASS",
+      "actual": "同账号双标签页右侧导航气泡一致：tab1=['2', '10']，tab2=['2', '10']。",
+      "evidence": "front_sidebar_badges.png",
+      "note": ""
+    },
+    {
+      "id": "TC-STB-003",
+      "status": "BLOCKED",
+      "actual": "未并发新增或审核。",
+      "evidence": "",
+      "note": "写入类并发用例。"
+    },
+    {
+      "id": "TC-STB-004",
+      "status": "PASS",
+      "actual": "浏览器刷新后右侧导航气泡恢复展示。",
+      "evidence": "front_sidebar_after_reload.png",
+      "note": ""
+    }
+  ],
+  "evidence": {
+    "manage": {
+      "url": "https://hlc-admin.hubbuyer.com/admin/user/list",
+      "title": "客户信息",
+      "menu": [
+        {
+          "label": "客户管理",
+          "text": "客户管理\n43",
+          "badge": "43",
+          "x": 20,
+          "y": 68,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "客户信息",
+          "text": "客户信息\n43",
+          "badge": "43",
+          "x": 20,
+          "y": 120,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "客户等级",
+          "text": "客户等级",
+          "badge": null,
+          "x": 20,
+          "y": 170,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "客户咨询",
+          "text": "客户咨询",
+          "badge": null,
+          "x": 20,
+          "y": 220,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "管理员管理",
+          "text": "管理员管理",
+          "badge": null,
+          "x": 20,
+          "y": 270,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "国际物流",
+          "text": "国际物流",
+          "badge": null,
+          "x": 20,
+          "y": 322,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "黑名单",
+          "text": "黑名单",
+          "badge": null,
+          "x": 20,
+          "y": 374,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "邮件管理",
+          "text": "邮件管理",
+          "badge": null,
+          "x": 20,
+          "y": 426,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "产品管理",
+          "text": "产品管理",
+          "badge": null,
+          "x": 20,
+          "y": 478,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "意见反馈",
+          "text": "意见反馈",
+          "badge": null,
+          "x": 20,
+          "y": 530,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "系统设置",
+          "text": "系统设置",
+          "badge": null,
+          "x": 20,
+          "y": 582,
+          "w": 170,
+          "h": 52
+        }
+      ],
+      "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n客户管理\n43\n客户信息\n43\n客户等级\n客户咨询\n管理员管理\n国际物流\n黑名单\n邮件管理\n产品管理\n意见反馈\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n查询\n重置\n展开\n批量禁用\n批量导出\n全部（102）\nS级客户（38）\nA级客户（2）\nB级客户（11）\nC级客户（5）\nD级客户（46）\n\t\n姓名\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n业务\n\t\n采购\n\t\n客户经理\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nC-CHN19-测试1米\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n金月明\n\t\nyangweibin@sakuradk.com\n\t\n12541526325\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\nYouTube\n\t\n2026-05-08 15:44\n\t\n2026-05-08 15:43\n\t\n详情\n登录\n\n\n\t\nD-POL1-senaelorhan\n\t\nPoland\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nelorhanlindo@gmail.com\n\t\n692956183\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-05-07 19:04\n\t\n2026-05-07 19:02\n\t\n详情\n登录\n\n\n\t\nD-TUR2-YILDIRIMALİ\n\t\nTurkey\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nhingo2566@gmail.com\n\t\n5459653288\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n\t\n2026-04-29 20:31\n\t\n2026-04-29 20:30\n\t\n详情\n登录\n\n\n\t\nS-USA10-111\n\t\nAmerica\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nlihaokanya@gmail.com\n\t\n1234567890\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n熟人介绍\n\t\n2026-04-29 12:01\n\t\n2026-04-29 12:00\n\t\n详情\n登录\n\n\n\t\nD-IDN1-ImanAaron\n\t\nIndonesia\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nimansie@gmail.com\n\t\n081389895300\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n\t\n2026-04-28 15:40\n\t\n2026-04-28 15:40\n\t\n详情\n登录\n\n\n\t\nD-CHN18-户连超测试\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nzrkjhlc@gmail.com\n\t\n15268453999\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n熟人介绍\n\t\n2026-05-15 11:54\n\t\n2026-04-23 14:23\n\t\n详情\n登录\n\n\n\t\nD-JPN43-小林莉乃\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nrii20040728@icloud.com\n\t\n07021540728\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n\t\n2026-04-22 03:42\n\t\n2026-04-22 03:25\n\t\n详情\n登录\n\n\n\t\nD-TUR1-RahhalBasel\n\t\nTurkey\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\neng.import3@gmail.com\n\t\n5510320210\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-04-17 21:23\n\t\n2026-04-17 21:21\n\t\n详情\n登录\n\n\n\t\nS-JPN42-小林滉平\n\t\nJapan"
+    },
+    "b2b_initial": {
+      "url": "https://hlc-admin.hubbuyer.com/b2b/dashboard/complain",
+      "title": "吐槽记录",
+      "menu": [
+        {
+          "label": "工作台",
+          "text": "工作台",
+          "badge": null,
+          "x": 20,
+          "y": 68,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "吐槽记录",
+          "text": "吐槽记录",
+          "badge": null,
+          "x": 20,
+          "y": 120,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "内部通知",
+          "text": "内部通知",
+          "badge": null,
+          "x": 20,
+          "y": 170,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "订单管理",
+          "text": "订单管理\n99+",
+          "badge": "99+",
+          "x": 20,
+          "y": 220,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "仓库管理",
+          "text": "仓库管理",
+          "badge": null,
+          "x": 20,
+          "y": 272,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "发货配送",
+          "text": "发货配送\n10",
+          "badge": "10",
+          "x": 20,
+          "y": 324,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "客户管理",
+          "text": "客户管理\n43",
+          "badge": "43",
+          "x": 20,
+          "y": 376,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "营销管理",
+          "text": "营销管理",
+          "badge": null,
+          "x": 20,
+          "y": 428,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "附加项",
+          "text": "附加项",
+          "badge": null,
+          "x": 20,
+          "y": 480,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "系统设置",
+          "text": "系统设置",
+          "badge": null,
+          "x": 20,
+          "y": 532,
+          "w": 170,
+          "h": 52
+        }
+      ],
+      "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n吐槽记录\n内部通知\n订单管理\n99+\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n吐槽部门\n请选择吐槽部门\n吐槽原因\n请选择吐槽原因\n吐槽人员\n请选择吐槽人员\n订单编号\n查询\n重置\n展开\n吐槽原因\n\t\n吐槽部门\n\t\n吐槽人员\n\t\n订单编号\n\t\n产品ID\n\t\n赔付金额\n\t\n客户信息\n\t\n提交人\n\t\n吐槽日期\n\t\n操作\n质检-问题报告没有及时处理\n\t\n质控\n\t\n订单\n\t\nWL-JPN12-260519-001\n\t\n\t\n123.00\n\t\nB-JPN12-TEST-朴国哲\n\t\nadmin\n\t\n2026-05-25 09:51\n\t\n详情\n\n\n业务部-附加项未选中\n\t\n业务\n\t\n吴四佳\n\t\nWL-JPN22-251223-007\n\t\n\t\n222.00\n\t\nB-JPN22-TEST-吴四佳\n\t\n周凌虓\n\t\n2026-05-25 09:50\n\t\n详情\n\n\n质控部-多配/少配/配错\n\t\n质控\n\t\n夏飞\n\t\nWL-NZL1-251223-009\n\t\n\t\n0.00\n\t\nD-NZL1-新西兰-夏飞\n\t\nadmin\n\t\n2025-12-23 17:07\n\t\n详情\n\n\n采购部-买错/多买/少买\n\t\n采购\n\t\n包瑞楠\n\t\nB2B-DD-JPN11-251217-005\n\t\nD000000332\n\t\n0.00\n\t\nB-JPN11-TEST-朴国哲2\n\t\n朴国哲\n\t\n2025-12-19 10:20\n\t\n详情\n30条/页\n共 4 条\n1\n前往\n页"
+    },
+    "order_expanded": {
+      "url": "https://hlc-admin.hubbuyer.com/b2b/dashboard/complain",
+      "title": "吐槽记录",
+      "menu": [
+        {
+          "label": "工作台",
+          "text": "工作台",
+          "badge": null,
+          "x": 20,
+          "y": 68,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "订单管理",
+          "text": "订单管理\n99+",
+          "badge": "99+",
+          "x": 20,
+          "y": 120,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "报价单",
+          "text": "报价单\n35",
+          "badge": "35",
+          "x": 20,
+          "y": 172,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "代购订单",
+          "text": "代购订单\n98",
+          "badge": "98",
+          "x": 20,
+          "y": 222,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "全商品",
+          "text": "全商品",
+          "badge": null,
+          "x": 20,
+          "y": 272,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "线下订单",
+          "text": "线下订单",
+          "badge": null,
+          "x": 20,
+          "y": 322,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "订单清算记录",
+          "text": "订单清算记录",
+          "badge": null,
+          "x": 20,
+          "y": 372,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "仓库管理",
+          "text": "仓库管理",
+          "badge": null,
+          "x": 20,
+          "y": 422,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "发货配送",
+          "text": "发货配送\n10",
+          "badge": "10",
+          "x": 20,
+          "y": 474,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "客户管理",
+          "text": "客户管理\n43",
+          "badge": "43",
+          "x": 20,
+          "y": 526,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "营销管理",
+          "text": "营销管理",
+          "badge": null,
+          "x": 20,
+          "y": 578,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "附加项",
+          "text": "附加项",
+          "badge": null,
+          "x": 20,
+          "y": 630,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "系统设置",
+          "text": "系统设置",
+          "badge": null,
+          "x": 20,
+          "y": 682,
+          "w": 170,
+          "h": 52
+        }
+      ],
+      "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n报价单\n35\n代购订单\n98\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n吐槽部门\n请选择吐槽部门\n吐槽原因\n请选择吐槽原因\n吐槽人员\n请选择吐槽人员\n订单编号\n查询\n重置\n展开\n吐槽原因\n\t\n吐槽部门\n\t\n吐槽人员\n\t\n订单编号\n\t\n产品ID\n\t\n赔付金额\n\t\n客户信息\n\t\n提交人\n\t\n吐槽日期\n\t\n操作\n质检-问题报告没有及时处理\n\t\n质控\n\t\n订单\n\t\nWL-JPN12-260519-001\n\t\n\t\n123.00\n\t\nB-JPN12-TEST-朴国哲\n\t\nadmin\n\t\n2026-05-25 09:51\n\t\n详情\n\n\n业务部-附加项未选中\n\t\n业务\n\t\n吴四佳\n\t\nWL-JPN22-251223-007\n\t\n\t\n222.00\n\t\nB-JPN22-TEST-吴四佳\n\t\n周凌虓\n\t\n2026-05-25 09:50\n\t\n详情\n\n\n质控部-多配/少配/配错\n\t\n质控\n\t\n夏飞\n\t\nWL-NZL1-251223-009\n\t\n\t\n0.00\n\t\nD-NZL1-新西兰-夏飞\n\t\nadmin\n\t\n2025-12-23 17:07\n\t\n详情\n\n\n采购部-买错/多买/少买\n\t\n采购\n\t\n包瑞楠\n\t\nB2B-DD-JPN11-251217-005\n\t\nD000000332\n\t\n0.00\n\t\nB-JPN11-TEST-朴国哲2\n\t\n朴国哲\n\t\n2025-12-19 10:20\n\t\n详情\n30条/页\n共 4 条\n1\n前往\n页"
+    },
+    "quote_page": {
+      "url": "https://hlc-admin.hubbuyer.com/b2b/order/quote",
+      "title": "报价单",
+      "menu": [
+        {
+          "label": "工作台",
+          "text": "工作台",
+          "badge": null,
+          "x": 20,
+          "y": 68,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "订单管理",
+          "text": "订单管理\n99+",
+          "badge": "99+",
+          "x": 20,
+          "y": 120,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "报价单",
+          "text": "报价单\n35",
+          "badge": "35",
+          "x": 20,
+          "y": 172,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "代购订单",
+          "text": "代购订单\n98",
+          "badge": "98",
+          "x": 20,
+          "y": 222,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "全商品",
+          "text": "全商品",
+          "badge": null,
+          "x": 20,
+          "y": 272,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "线下订单",
+          "text": "线下订单",
+          "badge": null,
+          "x": 20,
+          "y": 322,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "订单清算记录",
+          "text": "订单清算记录",
+          "badge": null,
+          "x": 20,
+          "y": 372,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "仓库管理",
+          "text": "仓库管理",
+          "badge": null,
+          "x": 20,
+          "y": 422,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "发货配送",
+          "text": "发货配送\n10",
+          "badge": "10",
+          "x": 20,
+          "y": 474,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "客户管理",
+          "text": "客户管理\n43",
+          "badge": "43",
+          "x": 20,
+          "y": 526,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "营销管理",
+          "text": "营销管理",
+          "badge": null,
+          "x": 20,
+          "y": 578,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "附加项",
+          "text": "附加项",
+          "badge": null,
+          "x": 20,
+          "y": 630,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "系统设置",
+          "text": "系统设置",
+          "badge": null,
+          "x": 20,
+          "y": 682,
+          "w": 170,
+          "h": 52
+        }
+      ],
+      "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n报价单\n35\n代购订单\n98\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家\n请选择国家\n报价单类型\n请选择报价单类型\n报价单编号\n支付状态\n请选择支付状态\n查询\n重置\n展开\n待审核(35)\n无需审核(196)\n审核完成(174)\n已取消(257)\n已驳回(8)\n全部(670)\n国家\n\t\n类型\n\t\n报价单编号\n\t\n报价单状态\n\t\n支付状态\n\t\n客户信息\n\t\n会员等级\n\t\n报价单金额\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n提交日期\n\t\n操作\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260423-083\n\t\n待审核\n\t\n---\n\t\nS-JPN34-TEST-柴思丽\n\t\n一般会员\n\t\n6090.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-04-23 08:30\n\t\n审核\n\n\nKorea\n\t\n手动\n\t\nB2B-BJ-KOR8-260409-091\n\t\n待审核\n\t\n---\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n78.75\n\t\n金月明\n\t\n张佳唯\n\t\n包瑞楠\n\t\n2026-04-09 09:49\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260401-059\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n670.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-04-01 14:48\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260401-058\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n82900.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-04-01 13:29\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN15-260327-001\n\t\n待审核\n\t\n---\n\t\nS-CHN15-测试123\n\t\n一般会员\n\t\n312.90\n\t\n\t\n\t\n\t\n2026-03-27 08:29\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260323-044\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n362000.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-03-23 14:20\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260323-040\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n1280.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-03-23 09:17\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN34-260317-039\n\t\n待审核\n\t\n---\n\t\nS-JPN34-柴思丽\n\t\n一般会员\n\t\n61590.00\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n2026-03-17 11:47\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN12-260313-002\n\t\n待审核\n\t\n---\n\t\nC-CHN12-10201220\n\t\n一般会员\n\t\n3066.65\n\t\n崔红梅\n\t\n张佳唯\n\t\n包佳民\n\t\n2026-03-13 16:58\n\t\n审核\n\n\nAmerica\n\t\n手动\n\t\nB2B-BJ-USA5-260228-004\n\t\n待审核\n\t\n---\n\t\nB-USA5-1010\n\t\n一般会员\n\t\n12924.02\n\t\n金月明\n\t\n唐芬芬\n\t\n陈牧鹏\n\t\n2026-02-28 15:45\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-BJ-JPN2-260120-003\n\t\n待审核\n\t\n---\n\t\nS-JPN2-何鹏彪\n\t\n一般会员\n\t\n75875.00\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2026-01-20 13:25\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN8-260120-003\n\t\n待审核\n\t\n---\n\t\nS-CHN8-123213\n\t\n一般会员\n\t\n1401.60\n\t\n崔红梅\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2026-01-20 08:50\n\t\n审核\n\n\nChina\n\t\n手动\n\t\nB2B-BJ-CHN8-260119-002\n\t\n待审核\n\t\n---\n\t\nS-CHN8-123213\n\t\n一般会员\n\t\n171.20\n\t\n崔红梅\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n2026-01-19 14:32\n\t\n审核\n\n\nJapan\n\t\n手动\n\t\nB2B-"
+    },
+    "purchase_page": {
+      "url": "https://hlc-admin.hubbuyer.com/b2b/order/agentBuy",
+      "title": "代购订单",
+      "menu": [
+        {
+          "label": "工作台",
+          "text": "工作台",
+          "badge": null,
+          "x": 20,
+          "y": 68,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "订单管理",
+          "text": "订单管理\n99+",
+          "badge": "99+",
+          "x": 20,
+          "y": 120,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "报价单",
+          "text": "报价单\n35",
+          "badge": "35",
+          "x": 20,
+          "y": 172,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "代购订单",
+          "text": "代购订单\n98",
+          "badge": "98",
+          "x": 20,
+          "y": 222,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "全商品",
+          "text": "全商品",
+          "badge": null,
+          "x": 20,
+          "y": 272,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "线下订单",
+          "text": "线下订单",
+          "badge": null,
+          "x": 20,
+          "y": 322,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "订单清算记录",
+          "text": "订单清算记录",
+          "badge": null,
+          "x": 20,
+          "y": 372,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "仓库管理",
+          "text": "仓库管理",
+          "badge": null,
+          "x": 20,
+          "y": 422,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "发货配送",
+          "text": "发货配送\n10",
+          "badge": "10",
+          "x": 20,
+          "y": 474,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "客户管理",
+          "text": "客户管理\n43",
+          "badge": "43",
+          "x": 20,
+          "y": 526,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "营销管理",
+          "text": "营销管理",
+          "badge": null,
+          "x": 20,
+          "y": 578,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "附加项",
+          "text": "附加项",
+          "badge": null,
+          "x": 20,
+          "y": 630,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "系统设置",
+          "text": "系统设置",
+          "badge": null,
+          "x": 20,
+          "y": 682,
+          "w": 170,
+          "h": 52
+        }
+      ],
+      "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n报价单\n35\n代购订单\n98\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家\n请选择国家\n订单编号\n支付日期\n至\n客户姓名/ID\n客户等级\n请选择客户等级\n会员等级\n请选择会员等级\n客户经理\n请选择客户经理\n业务\n请选择业务\n用户注文\n查询\n重置\n展开\n待审核(98)\n进行中(114)\n待清算(25)\n已清算(122)\n已关闭(11)\n全部(370)\n国家\n\t\n编号\n\t\n订单状态\n\t\n客户信息\n\t\n会员等级\n\t\n订单金额\n\t\n下单数\n\t\n购入数\n\t\n到货数\n\t\n不良数\n\t\n正品数\n\t\n入库数\n\t\n发货数\n\t\n在库数\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n部门备注\n\t\n支付日期\n\t\n操作\nJapan\n\t\nB2B-DD-JPN12-260525-009\n\t\n待审核\n\t\nB-JPN12-TEST-朴国哲\n\t\n一般会员\n\t\n74.80\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n吴四佳\n\t\n周凌虓\n\t\n---\n\t\n2026-05-25 09:40\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN12-260525-008\n\t\n待审核\n\t\nB-JPN12-TEST-朴国哲\n\t\n一般会员\n\t\n531.60\n\t\n14\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n吴四佳\n\t\n周凌虓\n\t\n---\n\t\n2026-05-25 09:37\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260405-083\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n102.15\n\t\n4\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-04-05 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260401-079\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n113.02\n\t\n4\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-04-01 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260328-075\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n75.82\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-28 08:01\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN34-260325-049\n\t\n待审核\n\t\nS-JPN34-TEST-柴思丽\n\t\n一般会员\n\t\n100.00\n\t\n500\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n---\n\t\n2026-03-25 14:12\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260325-072\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n144.53\n\t\n7\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-25 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260321-068\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n102.75\n\t\n3\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-21 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260318-065\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n129.77\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-18 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260315-062\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n119.75\n\t\n2\n\t\n---\n\t\n"
+    },
+    "ship_expanded": {
+      "url": "https://hlc-admin.hubbuyer.com/b2b/order/agentBuy",
+      "title": "代购订单",
+      "menu": [
+        {
+          "label": "工作台",
+          "text": "工作台",
+          "badge": null,
+          "x": 20,
+          "y": 68,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "订单管理",
+          "text": "订单管理\n99+",
+          "badge": "99+",
+          "x": 20,
+          "y": 120,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "仓库管理",
+          "text": "仓库管理",
+          "badge": null,
+          "x": 20,
+          "y": 172,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "发货配送",
+          "text": "发货配送\n10",
+          "badge": "10",
+          "x": 20,
+          "y": 224,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "发货单列表",
+          "text": "发货单列表\n10",
+          "badge": "10",
+          "x": 20,
+          "y": 276,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "破箱审核",
+          "text": "破箱审核",
+          "badge": null,
+          "x": 20,
+          "y": 326,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "售后服务",
+          "text": "售后服务",
+          "badge": null,
+          "x": 20,
+          "y": 376,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "物流清算记录",
+          "text": "物流清算记录",
+          "badge": null,
+          "x": 20,
+          "y": 426,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "客户管理",
+          "text": "客户管理\n43",
+          "badge": "43",
+          "x": 20,
+          "y": 476,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "营销管理",
+          "text": "营销管理",
+          "badge": null,
+          "x": 20,
+          "y": 528,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "附加项",
+          "text": "附加项",
+          "badge": null,
+          "x": 20,
+          "y": 580,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "系统设置",
+          "text": "系统设置",
+          "badge": null,
+          "x": 20,
+          "y": 632,
+          "w": 170,
+          "h": 52
+        }
+      ],
+      "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n仓库管理\n发货配送\n10\n发货单列表\n10\n破箱审核\n售后服务\n物流清算记录\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家\n请选择国家\n订单编号\n支付日期\n至\n客户姓名/ID\n客户等级\n请选择客户等级\n会员等级\n请选择会员等级\n客户经理\n请选择客户经理\n业务\n请选择业务\n用户注文\n查询\n重置\n展开\n待审核(98)\n进行中(114)\n待清算(25)\n已清算(122)\n已关闭(11)\n全部(370)\n国家\n\t\n编号\n\t\n订单状态\n\t\n客户信息\n\t\n会员等级\n\t\n订单金额\n\t\n下单数\n\t\n购入数\n\t\n到货数\n\t\n不良数\n\t\n正品数\n\t\n入库数\n\t\n发货数\n\t\n在库数\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n部门备注\n\t\n支付日期\n\t\n操作\nJapan\n\t\nB2B-DD-JPN12-260525-009\n\t\n待审核\n\t\nB-JPN12-TEST-朴国哲\n\t\n一般会员\n\t\n74.80\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n吴四佳\n\t\n周凌虓\n\t\n---\n\t\n2026-05-25 09:40\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN12-260525-008\n\t\n待审核\n\t\nB-JPN12-TEST-朴国哲\n\t\n一般会员\n\t\n531.60\n\t\n14\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n吴四佳\n\t\n周凌虓\n\t\n---\n\t\n2026-05-25 09:37\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260405-083\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n102.15\n\t\n4\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-04-05 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260401-079\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n113.02\n\t\n4\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-04-01 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260328-075\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n75.82\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-28 08:01\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN34-260325-049\n\t\n待审核\n\t\nS-JPN34-TEST-柴思丽\n\t\n一般会员\n\t\n100.00\n\t\n500\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n崔红梅\n\t\nFRU CHASLEY\n\t\n陈牧鹏\n\t\n---\n\t\n2026-03-25 14:12\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260325-072\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n144.53\n\t\n7\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-25 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260321-068\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n102.75\n\t\n3\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-21 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260318-065\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n129.77\n\t\n2\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n唐芬芬\n\t\n包瑞楠\n\t\n---\n\t\n2026-03-18 08:01\n\t\n详情\n\n\nKorea\n\t\nB2B-DD-KOR8-260315-062\n\t\n待审核\n\t\nD-KOR8-TEST-1010\n\t\n一般会员\n\t\n119.75\n\t\n2\n\t\n---\n\t\n---\n\t"
+    },
+    "ship_page": {
+      "url": "https://hlc-admin.hubbuyer.com/b2b/logistics/billOfParcels",
+      "title": "发货单列表",
+      "menu": [
+        {
+          "label": "工作台",
+          "text": "工作台",
+          "badge": null,
+          "x": 20,
+          "y": 68,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "订单管理",
+          "text": "订单管理\n99+",
+          "badge": "99+",
+          "x": 20,
+          "y": 120,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "仓库管理",
+          "text": "仓库管理",
+          "badge": null,
+          "x": 20,
+          "y": 172,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "发货配送",
+          "text": "发货配送\n10",
+          "badge": "10",
+          "x": 20,
+          "y": 224,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "发货单列表",
+          "text": "发货单列表\n10",
+          "badge": "10",
+          "x": 20,
+          "y": 276,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "破箱审核",
+          "text": "破箱审核",
+          "badge": null,
+          "x": 20,
+          "y": 326,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "售后服务",
+          "text": "售后服务",
+          "badge": null,
+          "x": 20,
+          "y": 376,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "物流清算记录",
+          "text": "物流清算记录",
+          "badge": null,
+          "x": 20,
+          "y": 426,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "客户管理",
+          "text": "客户管理\n43",
+          "badge": "43",
+          "x": 20,
+          "y": 476,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "营销管理",
+          "text": "营销管理",
+          "badge": null,
+          "x": 20,
+          "y": 528,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "附加项",
+          "text": "附加项",
+          "badge": null,
+          "x": 20,
+          "y": 580,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "系统设置",
+          "text": "系统设置",
+          "badge": null,
+          "x": 20,
+          "y": 632,
+          "w": 170,
+          "h": 52
+        }
+      ],
+      "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n仓库管理\n发货配送\n10\n发货单列表\n10\n破箱审核\n售后服务\n物流清算记录\n客户管理\n43\n营销管理\n附加项\n系统设置\n国家\n请选择\n发货单编号\n客户ID\n客户姓名\n查询\n重置\n展开\n导出发货记录\n待审核(10)\n审核中(1)\n待配货(2)\n待打包(32)\n待清算(3)\n待发货(3)\n已发货(5)\n已签收(123)\n已取消(32)\n已驳回(3)\n全部(214)\n客户信息\n\t\n物流信息\n\t\n客户备注\n\t\n状态\n\t\n合计总金额(元)\n\t\n业务员\n\t\n发货状态\n\t\n下单时间\n\t\n操作\n商务会员\nChina\nC-CHN6-wh\n\t\nLDX--快速船便\nWL-CHN6-251222-003\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n张佳唯\n\t\n--\n\t\n2025-12-22 15:49\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nS-JPN3-test-胡兴华\n\t\n海源--DG(電子特殊航空便)\nWL-JPN3-251220-015\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 21:19\n\t\n审核发货单\n取消\n查看日志\n\n\n商务会员\nChina\nC-CHN6-wh\n\t\nLDX--快速船便\nWL-CHN6-251220-013\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n张佳唯\n\t\n--\n\t\n2025-12-20 21:18\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nS-JPN2-何鹏彪\n\t\nFOB-高柜\nWL-JPN2-251220-012\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 21:15\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\n海源--DG(電子特殊航空便)\nWL-JPN11-251220-009\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:40\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\n邮政船运\nWL-JPN11-251220-008\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:40\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\nOCS\nWL-JPN11-251220-007\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:39\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\nEMS\nWL-JPN11-251220-006\n客户创建\n\t\n查看\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:37\n\t\n审核发货单\n未打印\n取消\n查看日志\n\n\n一般会员\nJapan\nS-JPN15-仓木麻衣\n\t\nLDX--快速船便\nWL-JPN15-251220-005\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 15:34\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nChina\nC-CHN6-wh\n\t\nLDX--快速船便\nWL-CHN6-251218-002\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n张佳唯\n\t\n--\n\t\n2025-12-18 14:23\n\t\n审核发货单\n取消\n查看日志\n30条/页\n共 10 条\n1\n前往\n页"
+    },
+    "customer_expanded": {
+      "url": "https://hlc-admin.hubbuyer.com/b2b/logistics/billOfParcels",
+      "title": "发货单列表",
+      "menu": [
+        {
+          "label": "工作台",
+          "text": "工作台",
+          "badge": null,
+          "x": 20,
+          "y": 68,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "订单管理",
+          "text": "订单管理\n99+",
+          "badge": "99+",
+          "x": 20,
+          "y": 120,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "仓库管理",
+          "text": "仓库管理",
+          "badge": null,
+          "x": 20,
+          "y": 172,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "发货配送",
+          "text": "发货配送\n10",
+          "badge": "10",
+          "x": 20,
+          "y": 224,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "客户管理",
+          "text": "客户管理\n43",
+          "badge": "43",
+          "x": 20,
+          "y": 276,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "客户信息",
+          "text": "客户信息\n43",
+          "badge": "43",
+          "x": 20,
+          "y": 328,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "会员等级",
+          "text": "会员等级",
+          "badge": null,
+          "x": 20,
+          "y": 378,
+          "w": 170,
+          "h": 50
+        },
+        {
+          "label": "营销管理",
+          "text": "营销管理",
+          "badge": null,
+          "x": 20,
+          "y": 428,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "附加项",
+          "text": "附加项",
+          "badge": null,
+          "x": 20,
+          "y": 480,
+          "w": 170,
+          "h": 52
+        },
+        {
+          "label": "系统设置",
+          "text": "系统设置",
+          "badge": null,
+          "x": 20,
+          "y": 532,
+          "w": 170,
+          "h": 52
+        }
+      ],
+      "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n仓库管理\n发货配送\n10\n客户管理\n43\n客户信息\n43\n会员等级\n营销管理\n附加项\n系统设置\n国家\n请选择\n发货单编号\n客户ID\n客户姓名\n查询\n重置\n展开\n导出发货记录\n待审核(10)\n审核中(1)\n待配货(2)\n待打包(32)\n待清算(3)\n待发货(3)\n已发货(5)\n已签收(123)\n已取消(32)\n已驳回(3)\n全部(214)\n客户信息\n\t\n物流信息\n\t\n客户备注\n\t\n状态\n\t\n合计总金额(元)\n\t\n业务员\n\t\n发货状态\n\t\n下单时间\n\t\n操作\n商务会员\nChina\nC-CHN6-wh\n\t\nLDX--快速船便\nWL-CHN6-251222-003\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n张佳唯\n\t\n--\n\t\n2025-12-22 15:49\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nS-JPN3-test-胡兴华\n\t\n海源--DG(電子特殊航空便)\nWL-JPN3-251220-015\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 21:19\n\t\n审核发货单\n取消\n查看日志\n\n\n商务会员\nChina\nC-CHN6-wh\n\t\nLDX--快速船便\nWL-CHN6-251220-013\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n张佳唯\n\t\n--\n\t\n2025-12-20 21:18\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nS-JPN2-何鹏彪\n\t\nFOB-高柜\nWL-JPN2-251220-012\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 21:15\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\n海源--DG(電子特殊航空便)\nWL-JPN11-251220-009\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:40\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\n邮政船运\nWL-JPN11-251220-008\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:40\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\nOCS\nWL-JPN11-251220-007\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:39\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nJapan\nB-JPN11-TEST-朴国哲2\n\t\nEMS\nWL-JPN11-251220-006\n客户创建\n\t\n查看\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 16:37\n\t\n审核发货单\n未打印\n取消\n查看日志\n\n\n一般会员\nJapan\nS-JPN15-仓木麻衣\n\t\nLDX--快速船便\nWL-JPN15-251220-005\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n吴四佳\n\t\n--\n\t\n2025-12-20 15:34\n\t\n审核发货单\n取消\n查看日志\n\n\n一般会员\nChina\nC-CHN6-wh\n\t\nLDX--快速船便\nWL-CHN6-251218-002\n客户创建\n\t\n\t\n待审核\n\t\n0.00\n\t\n张佳唯\n\t\n--\n\t\n2025-12-18 14:23\n\t\n审核发货单\n取消\n查看日志\n30条/页\n共 10 条\n1\n前往\n页"
+    },
+    "front_state": {
+      "url": "https://hlc-b2b.hubbuyer.com/",
+      "title": "Hubbuyer | B2B Sourcing Platform",
+      "body": "Japan\nJPN12TEST-朴 ，ようこそ\nログアウト\n営業日\n日本語\n1 JPY ≈  \n0.006383 USD\nクリスマス\nハロウィン\nペット餌入れ器\n検索\n画像検索\nカート\nカテゴリー\n(B2B)ご利用ガイド\n(B2B)サービス/料金\n(B2B)国際送料\nBlog\nよくある質問\nこんにちは！ご用件をお伺いしましょうか？\n2\n10\nAmazon売れ筋\n楽天売れ筋\nAmazon新品\nAmazon人気\n1688売れ筋\n1688手作り diy ブローチアクセサリーコサージュホルダーピンバックルブローチバックル衣類アクセサリー 15-45 ミリメートル\n0.02\n CNY\n1688穴なしABSイミテーションパールジュエリー、米白、純白、装飾品、衣料品アクセサリー、直穴パーツ、19色選択可能\n1.00\n CNY\n1688爆発的な輝きの平底イミテーションオパールラインストーン、衣類用アクセサリー、電気メッキガラスラインストーン、大型装飾品、DIYジュエリーアクセサリー材料\n1.90\n CNY\n1688フリンジチェーンdiy部品手縫いドリル爪チェーン飾りドリルチェーン装飾フリンジチェーン服装補助材料ドリルチェーン\n8.33\n CNY\n1688カラー毛玉子供クリエイティブクリスマス手作りdiyアクセサリーストラップ装飾服アクセサリー材料ボールバッチ\n2.50\n CNY\nさらに表示\n日本売れ筋\nレディースジーンズ\nホームシューズ\n母子用品加工\nレディースシャツ\nメンズカジュアルパンツ\n食器\nキッチンツール\nキッチン整理\nコスメ道具\nようこそHubbuyerB2B\nJPN12TEST-朴国哲\n一般会員\n有効期限： 永久\nアップグレード\n口座残高：126096.59 CNY\nあなたへのおすすめ\nお気に入り\n私の足跡\n受取住所\n人気サービス\n1688越境アシスタント\nOfficial\n拡張機能\nOEM\nD2C\nグローバル厳選\nさらに表示\nグローバル厳選、迅速な出荷、買い付けの心配なし\n爆売れチャンス\nさらに表示\n爆売れ傾向、ヒット商品\n春の新商品入荷\nさらに表示\n販売開始から7日以内の新プレミアム商品\n品質厳選\nさらに表示\n返金率3%以下の厳選商品、安心してお買い求めください。\nおすすめ\nさらに表示\n高品質\nメンズ大きいサイズ クロスボーダー スニーカー 春 カジュアル スポーツシューズ メンズシューズ 通気性 消臭 メッシュ ランニングシューズ\n16.60 CNY\n403 JPY\n高品質\n国境を越えて爆発した乳幼児綿の吸水通気性児童漫画バスローブ多角恐竜帽子マント付きバスタオル服\n27.00 CNY\n654 JPY\n高品質\n現物解放両手反射斜め肩掛け牽引ロープ多機能ランニング牽引ロープペット牽引ベルト\n12.00 CNY\n291 JPY\nおすすめ度\n1688公式APIとHubbuyerがディープ連携。\nAI搭載アルゴリズムが、仕入れ代行を別次元へ。\n勝つための仕入れは、もう始まっている。\n私たちはクッキーを使用して、ウェブサイトで最高の体験を提供します。このサイトを閲覧することにより、あなたは私たちのプライバシーポリシーに同意したことになります。\n同意する",
+      "badges": [
+        {
+          "text": "2",
+          "x": 1317,
+          "y": 363
+        },
+        {
+          "text": "10",
+          "x": 1317,
+          "y": 419
+        }
+      ]
+    },
+    "front_labels": {
+      "important_task": "重要タスク",
+      "order_history": "注文履歴",
+      "member_center": "会員センター",
+      "feedback": "フィードバック"
+    },
+    "front_reload_state": {
+      "url": "https://hlc-b2b.hubbuyer.com/",
+      "title": "Hubbuyer | B2B Sourcing Platform",
+      "body": "Japan\nJPN12TEST-朴 ，ようこそ\nログアウト\n営業日\n日本語\n1 JPY ≈  \n0.006383 USD\nクリスマス\nハロウィン\nペット餌入れ器\n検索\n画像検索\nカート\nカテゴリー\n(B2B)ご利用ガイド\n(B2B)サービス/料金\n(B2B)国際送料\nBlog\nよくある質問\nこんにちは！ご用件をお伺いしましょうか？\n2\n10\nAmazon売れ筋\n楽天売れ筋\nAmazon新品\nAmazon人気\n1688売れ筋\n1688手作り diy ブローチアクセサリーコサージュホルダーピンバックルブローチバックル衣類アクセサリー 15-45 ミリメートル\n0.02\n CNY\n1688穴なしABSイミテーションパールジュエリー、米白、純白、装飾品、衣料品アクセサリー、直穴パーツ、19色選択可能\n1.00\n CNY\n1688爆発的な輝きの平底イミテーションオパールラインストーン、衣類用アクセサリー、電気メッキガラスラインストーン、大型装飾品、DIYジュエリーアクセサリー材料\n1.90\n CNY\n1688フリンジチェーンdiy部品手縫いドリル爪チェーン飾りドリルチェーン装飾フリンジチェーン服装補助材料ドリルチェーン\n8.33\n CNY\n1688カラー毛玉子供クリエイティブクリスマス手作りdiyアクセサリーストラップ装飾服アクセサリー材料ボールバッチ\n2.50\n CNY\nさらに表示\n日本売れ筋\nレディースジーンズ\nホームシューズ\n母子用品加工\nレディースシャツ\nメンズカジュアルパンツ\n食器\nキッチンツール\nキッチン整理\nコスメ道具\nようこそHubbuyerB2B\nJPN12TEST-朴国哲\n一般会員\n有効期限： 永久\nアップグレード\n口座残高：126096.59 CNY\nあなたへのおすすめ\nお気に入り\n私の足跡\n受取住所\n人気サービス\n1688越境アシスタント\nOfficial\n拡張機能\nOEM\nD2C\nグローバル厳選\nさらに表示\nグローバル厳選、迅速な出荷、買い付けの心配なし\n爆売れチャンス\nさらに表示\n爆売れ傾向、ヒット商品\n春の新商品入荷\nさらに表示\n販売開始から7日以内の新プレミアム商品\n品質厳選\nさらに表示\n返金率3%以下の厳選商品、安心してお買い求めください。\nおすすめ\nさらに表示\n高品質\nメンズ大きいサイズ クロスボーダー スニーカー 春 カジュアル スポーツシューズ メンズシューズ 通気性 消臭 メッシュ ランニングシューズ\n16.60 CNY\n403 JPY\n高品質\n国境を越えて爆発した乳幼児綿の吸水通気性児童漫画バスローブ多角恐竜帽子マント付きバスタオル服\n27.00 CNY\n654 JPY\n高品質\n現物解放両手反射斜め肩掛け牽引ロープ多機能ランニング牽引ロープペット牽引ベルト\n12.00 CNY\n291 JPY\nおすすめ度\n1688公式APIとHubbuyerがディープ連携。\nAI搭載アルゴリズムが、仕入れ代行を別次元へ。\n勝つための仕入れは、もう始まっている。\n私たちはクッキーを使用して、ウェブサイトで最高の体験を提供します。このサイトを閲覧することにより、あなたは私たちのプライバシーポリシーに同意したことになります。\n同意する\nフィードバック",
+      "badges": [
+        {
+          "text": "2",
+          "x": 1294,
+          "y": 363
+        },
+        {
+          "text": "10",
+          "x": 1294,
+          "y": 419
+        }
+      ]
+    },
+    "front_tab2_state": {
+      "url": "https://hlc-b2b.hubbuyer.com/",
+      "title": "Hubbuyer | B2B Sourcing Platform",
+      "body": "Japan\nJPN12TEST-朴 ，ようこそ\nログアウト\n営業日\n日本語\n1 JPY ≈  \n0.006383 USD\nクリスマス\nハロウィン\nペット餌入れ器\n検索\n画像検索\nカート\nカテゴリー\n(B2B)ご利用ガイド\n(B2B)サービス/料金\n(B2B)国際送料\nBlog\nよくある質問\nこんにちは！ご用件をお伺いしましょうか？\n2\n10\nAmazon売れ筋\n楽天売れ筋\nAmazon新品\nAmazon人気\n1688売れ筋\n1688手作り diy ブローチアクセサリーコサージュホルダーピンバックルブローチバックル衣類アクセサリー 15-45 ミリメートル\n0.02\n CNY\n1688穴なしABSイミテーションパールジュエリー、米白、純白、装飾品、衣料品アクセサリー、直穴パーツ、19色選択可能\n1.00\n CNY\n1688爆発的な輝きの平底イミテーションオパールラインストーン、衣類用アクセサリー、電気メッキガラスラインストーン、大型装飾品、DIYジュエリーアクセサリー材料\n1.90\n CNY\n1688フリンジチェーンdiy部品手縫いドリル爪チェーン飾りドリルチェーン装飾フリンジチェーン服装補助材料ドリルチェーン\n8.33\n CNY\n1688カラー毛玉子供クリエイティブクリスマス手作りdiyアクセサリーストラップ装飾服アクセサリー材料ボールバッチ\n2.50\n CNY\nさらに表示\n日本売れ筋\nレディースジーンズ\nホームシューズ\n母子用品加工\nレディースシャツ\nメンズカジュアルパンツ\n食器\nキッチンツール\nキッチン整理\nコスメ道具\nようこそHubbuyerB2B\nJPN12TEST-朴国哲\n一般会員\n有効期限： 永久\nアップグレード\n口座残高：126096.59 CNY\nあなたへのおすすめ\nお気に入り\n私の足跡\n受取住所\n人気サービス\n1688越境アシスタント\nOfficial\n拡張機能\nOEM\nD2C\nグローバル厳選\nさらに表示\nグローバル厳選、迅速な出荷、買い付けの心配なし\n爆売れチャンス\nさらに表示\n爆売れ傾向、ヒット商品\n春の新商品入荷\nさらに表示\n販売開始から7日以内の新プレミアム商品\n品質厳選\nさらに表示\n返金率3%以下の厳選商品、安心してお買い求めください。\nおすすめ\nさらに表示\n高品質\nメンズ大きいサイズ クロスボーダー スニーカー 春 カジュアル スポーツシューズ メンズシューズ 通気性 消臭 メッシュ ランニングシューズ\n16.60 CNY\n403 JPY\n高品質\n国境を越えて爆発した乳幼児綿の吸水通気性児童漫画バスローブ多角恐竜帽子マント付きバスタオル服\n27.00 CNY\n654 JPY\n高品質\n現物解放両手反射斜め肩掛け牽引ロープ多機能ランニング牽引ロープペット牽引ベルト\n12.00 CNY\n291 JPY\nおすすめ度\n1688公式APIとHubbuyerがディープ連携。\nAI搭載アルゴリズムが、仕入れ代行を別次元へ。\n勝つための仕入れは、もう始まっている。\n私たちはクッキーを使用して、ウェブサイトで最高の体験を提供します。このサイトを閲覧することにより、あなたは私たちのプライバシーポリシーに同意したことになります。\n同意する",
+      "badges": [
+        {
+          "text": "2",
+          "x": 1317,
+          "y": 363
+        },
+        {
+          "text": "10",
+          "x": 1317,
+          "y": 419
+        }
+      ]
+    },
+    "timing": {
+      "relogin_visible_seconds": 2.5550707999973383,
+      "reload_badge_seconds": 0.3865235000012035
+    }
+  }
+}

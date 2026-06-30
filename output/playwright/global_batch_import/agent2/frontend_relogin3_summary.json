@@ -1,0 +1,329 @@
+{
+  "responses": [
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/api_b2b/index/moduleRanking",
+      "status": 200,
+      "method": "POST",
+      "timing": {
+        "startTime": 1778644648810.717,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 151.609,
+        "responseStart": 336.935,
+        "responseEnd": -1
+      }
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/api_b2b/languageConfig/index",
+      "status": 200,
+      "method": "POST",
+      "timing": {
+        "startTime": 1778644648761.517,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 201.103,
+        "responseStart": 387.001,
+        "responseEnd": -1
+      }
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/api_b2b/languageConfig/index",
+      "status": 200,
+      "method": "POST",
+      "timing": {
+        "startTime": 1778644648760.951,
+        "domainLookupStart": 0.151,
+        "domainLookupEnd": 0.154,
+        "connectStart": 0.154,
+        "secureConnectionStart": 2.229,
+        "connectEnd": 201.35,
+        "requestStart": 201.534,
+        "responseStart": 388.164,
+        "responseEnd": -1
+      }
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/api_b2b/index/moduleTop",
+      "status": 200,
+      "method": "POST",
+      "timing": {
+        "startTime": 1778644648811.037,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 151.327,
+        "responseStart": 353.113,
+        "responseEnd": -1
+      }
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/api_b2b/index/moduleMarketing",
+      "status": 200,
+      "method": "POST",
+      "timing": {
+        "startTime": 1778644648811.568,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 150.836,
+        "responseStart": 357.55,
+        "responseEnd": -1
+      }
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/api_b2b/languageConfig/index",
+      "status": 200,
+      "method": "POST",
+      "timing": {
+        "startTime": 1778644648761.826,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 200.849,
+        "responseStart": 413.017,
+        "responseEnd": -1
+      }
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/api_b2b/index/moduleHeader",
+      "status": 200,
+      "method": "POST",
+      "timing": {
+        "startTime": 1778644648762.676,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 199.776,
+        "responseStart": 436.21,
+        "responseEnd": -1
+      }
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/api_b2b/productCate/list",
+      "status": 200,
+      "method": "POST",
+      "timing": {
+        "startTime": 1778644648811.818,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 150.666,
+        "responseStart": 401.808,
+        "responseEnd": -1
+      }
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/api_b2b/index/moduleHotSale",
+      "status": 200,
+      "method": "POST",
+      "timing": {
+        "startTime": 1778644648811.3079,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 151.227,
+        "responseStart": 402.86,
+        "responseEnd": -1
+      }
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/api_b2b/languageConfig/index",
+      "status": 200,
+      "method": "POST",
+      "timing": {
+        "startTime": 1778644648761.221,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 201.55,
+        "responseStart": 453.245,
+        "responseEnd": -1
+      }
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/api_b2b/index/moduleRightNavigation",
+      "status": 200,
+      "method": "POST",
+      "timing": {
+        "startTime": 1778644648762.12,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 200.463,
+        "responseStart": 452.645,
+        "responseEnd": -1
+      }
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/api_b2b/languageConfig/index",
+      "status": 200,
+      "method": "POST",
+      "timing": {
+        "startTime": 1778644648762.392,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 200.322,
+        "responseStart": 452.586,
+        "responseEnd": -1
+      }
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/api_b2b/languageConfig/index",
+      "status": 200,
+      "method": "POST",
+      "timing": {
+        "startTime": 1778644651873.07,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 0.191,
+        "responseStart": 115.082,
+        "responseEnd": -1
+      }
+    },
+    {
+      "url": "https://wlz-b2b-test.hubbuyer.com/img/login-logo.BGXTrJtA.png",
+      "status": 200,
+      "method": "GET",
+      "timing": {
+        "startTime": 1778644652017.197,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 0.196,
+        "responseStart": 58.871,
+        "responseEnd": -1
+      }
+    }
+  ],
+  "login": {
+    "input_info": {
+      "inputs": [
+        {
+          "i": 0,
+          "type": "text",
+          "placeholder": null,
+          "value": "",
+          "cls": "el-select__input"
+        },
+        {
+          "i": 1,
+          "type": "text",
+          "placeholder": "Please enter email",
+          "value": "",
+          "cls": "el-input__inner"
+        },
+        {
+          "i": 2,
+          "type": "password",
+          "placeholder": "Please enter password",
+          "value": "",
+          "cls": "el-input__inner"
+        },
+        {
+          "i": 3,
+          "type": "text",
+          "placeholder": "キーワード、URL、商品名で検索",
+          "value": "",
+          "cls": "el-input__inner"
+        },
+        {
+          "i": 4,
+          "type": "text",
+          "placeholder": null,
+          "value": "",
+          "cls": "el-select__input"
+        },
+        {
+          "i": 5,
+          "type": "text",
+          "placeholder": null,
+          "value": "",
+          "cls": "el-select__input"
+        },
+        {
+          "i": 6,
+          "type": "text",
+          "placeholder": null,
+          "value": "",
+          "cls": "el-select__input"
+        },
+        {
+          "i": 7,
+          "type": "text",
+          "placeholder": null,
+          "value": "",
+          "cls": "el-select__input"
+        },
+        {
+          "i": 8,
+          "type": "text",
+          "placeholder": null,
+          "value": "",
+          "cls": "el-select__input"
+        },
+        {
+          "i": 9,
+          "type": "text",
+          "placeholder": null,
+          "value": "",
+          "cls": "el-select__input"
+        }
+      ],
+      "pwdIndex": 2
+    },
+    "click_modal_submit": {
+      "clicked": true,
+      "tag": "BUTTON",
+      "text": "Login",
+      "cls": "el-button el-button--primary el-button--large"
+    },
+    "success_inferred": false,
+    "password_visible": true,
+    "url": "https://wlz-b2b-test.hubbuyer.com/",
+    "contains": {
+      "email": false,
+      "top_login_jp": true,
+      "mypage": false,
+      "logout": false,
+      "b2b": true,
+      "daiko": true,
+      "order": false,
+      "estimate": false
+    }
+  },
+  "local_storage_keys": [
+    "site"
+  ],
+  "session_storage_keys": [],
+  "cookies": []
+}

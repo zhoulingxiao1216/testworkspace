@@ -1,0 +1,480 @@
+{
+  "initial": {
+    "url": "https://hlc-admin.hubbuyer.com/b2b/dashboard/complain",
+    "title": "吐槽记录",
+    "menu": [
+      {
+        "idx": 0,
+        "text": "工作台",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 68,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 1,
+        "text": "吐槽记录",
+        "badge": null,
+        "cls": "el-menu-item is-active",
+        "x": 20,
+        "y": 120,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "idx": 2,
+        "text": "内部通知",
+        "badge": null,
+        "cls": "el-menu-item",
+        "x": 20,
+        "y": 170,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "idx": 3,
+        "text": "订单管理\n99+",
+        "badge": "99+",
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 220,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 4,
+        "text": "仓库管理",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 272,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 5,
+        "text": "发货配送\n10",
+        "badge": "10",
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 324,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 6,
+        "text": "客户管理\n43",
+        "badge": "43",
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 376,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 7,
+        "text": "营销管理",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 428,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 8,
+        "text": "附加项",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 480,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 9,
+        "text": "系统设置",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 532,
+        "w": 170,
+        "h": 52
+      }
+    ],
+    "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n吐槽记录\n内部通知\n订单管理\n99+\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n吐槽部门\n请选择吐槽部门\n吐槽原因\n请选择吐槽原因\n吐槽人员\n请选择吐槽人员\n订单编号\n查询\n重置\n展开\n吐槽原因\n\t\n吐槽部门\n\t\n吐槽人员\n\t\n订单编号\n\t\n产品ID\n\t\n赔付金额\n\t\n客户信息\n\t\n提交人\n\t\n吐槽日期\n\t\n操作\n质检-问题报告没有及时处理\n\t\n质控\n\t\n订单\n\t\nWL-JPN12-260519-001\n\t\n\t\n123.00\n\t\nB-JPN12-TEST-朴国哲\n\t\nadmin\n\t\n2026-05-25 09:51\n\t\n详情\n\n\n业务部-附加项未选中\n\t\n业务\n\t\n吴四佳\n\t\nWL-JPN22-251223-007\n\t\n\t\n222.00\n\t\nB-JPN22-TEST-吴四佳\n\t\n周凌虓\n\t\n2026-05-25 09:50\n\t\n详情\n\n\n质控部-多配/少配/配错\n\t\n质控\n\t\n夏飞\n\t\nWL-NZL1-251223-009\n\t\n\t\n0.00\n\t\nD-NZL1-新西兰-夏飞\n\t\nadmin\n\t\n2025-12-23 17:07\n\t\n详情\n\n\n采购部-买错/多买/少买\n\t\n采购\n\t\n包瑞楠\n\t\nB2B-DD-JPN11-251217-005\n\t\nD000000332\n\t\n0.00\n\t\nB-JPN11-TEST-朴国哲2\n\t\n朴国哲\n\t\n2025-12-19 10:20\n\t\n详情\n30条/页\n共 4 条\n1\n前往\n页"
+  },
+  "order": {
+    "url": "https://hlc-admin.hubbuyer.com/b2b/dashboard/complain",
+    "title": "吐槽记录",
+    "menu": [
+      {
+        "idx": 0,
+        "text": "工作台",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 68,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 1,
+        "text": "订单管理\n99+",
+        "badge": "99+",
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 120,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 2,
+        "text": "报价单\n35",
+        "badge": "35",
+        "cls": "el-menu-item",
+        "x": 20,
+        "y": 172,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "idx": 3,
+        "text": "代购订单\n98",
+        "badge": "98",
+        "cls": "el-menu-item",
+        "x": 20,
+        "y": 222,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "idx": 4,
+        "text": "全商品",
+        "badge": null,
+        "cls": "el-menu-item",
+        "x": 20,
+        "y": 272,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "idx": 5,
+        "text": "线下订单",
+        "badge": null,
+        "cls": "el-menu-item",
+        "x": 20,
+        "y": 322,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "idx": 6,
+        "text": "订单清算记录",
+        "badge": null,
+        "cls": "el-menu-item",
+        "x": 20,
+        "y": 372,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "idx": 7,
+        "text": "仓库管理",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 422,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 8,
+        "text": "发货配送\n10",
+        "badge": "10",
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 474,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 9,
+        "text": "客户管理\n43",
+        "badge": "43",
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 526,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 10,
+        "text": "营销管理",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 578,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 11,
+        "text": "附加项",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 630,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 12,
+        "text": "系统设置",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 682,
+        "w": 170,
+        "h": 52
+      }
+    ],
+    "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n报价单\n35\n代购订单\n98\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n10\n客户管理\n43\n营销管理\n附加项\n系统设置\n吐槽部门\n请选择吐槽部门\n吐槽原因\n请选择吐槽原因\n吐槽人员\n请选择吐槽人员\n订单编号\n查询\n重置\n展开\n吐槽原因\n\t\n吐槽部门\n\t\n吐槽人员\n\t\n订单编号\n\t\n产品ID\n\t\n赔付金额\n\t\n客户信息\n\t\n提交人\n\t\n吐槽日期\n\t\n操作\n质检-问题报告没有及时处理\n\t\n质控\n\t\n订单\n\t\nWL-JPN12-260519-001\n\t\n\t\n123.00\n\t\nB-JPN12-TEST-朴国哲\n\t\nadmin\n\t\n2026-05-25 09:51\n\t\n详情\n\n\n业务部-附加项未选中\n\t\n业务\n\t\n吴四佳\n\t\nWL-JPN22-251223-007\n\t\n\t\n222.00\n\t\nB-JPN22-TEST-吴四佳\n\t\n周凌虓\n\t\n2026-05-25 09:50\n\t\n详情\n\n\n质控部-多配/少配/配错\n\t\n质控\n\t\n夏飞\n\t\nWL-NZL1-251223-009\n\t\n\t\n0.00\n\t\nD-NZL1-新西兰-夏飞\n\t\nadmin\n\t\n2025-12-23 17:07\n\t\n详情\n\n\n采购部-买错/多买/少买\n\t\n采购\n\t\n包瑞楠\n\t\nB2B-DD-JPN11-251217-005\n\t\nD000000332\n\t\n0.00\n\t\nB-JPN11-TEST-朴国哲2\n\t\n朴国哲\n\t\n2025-12-19 10:20\n\t\n详情\n30条/页\n共 4 条\n1\n前往\n页"
+  },
+  "ship": {
+    "url": "https://hlc-admin.hubbuyer.com/b2b/dashboard/complain",
+    "title": "吐槽记录",
+    "menu": [
+      {
+        "idx": 0,
+        "text": "工作台",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 68,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 1,
+        "text": "订单管理\n99+",
+        "badge": "99+",
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 120,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 2,
+        "text": "仓库管理",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 172,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 3,
+        "text": "发货配送\n10",
+        "badge": "10",
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 224,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 4,
+        "text": "发货单列表\n10",
+        "badge": "10",
+        "cls": "el-menu-item",
+        "x": 20,
+        "y": 276,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "idx": 5,
+        "text": "破箱审核",
+        "badge": null,
+        "cls": "el-menu-item",
+        "x": 20,
+        "y": 326,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "idx": 6,
+        "text": "售后服务",
+        "badge": null,
+        "cls": "el-menu-item",
+        "x": 20,
+        "y": 376,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "idx": 7,
+        "text": "物流清算记录",
+        "badge": null,
+        "cls": "el-menu-item",
+        "x": 20,
+        "y": 426,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "idx": 8,
+        "text": "客户管理\n43",
+        "badge": "43",
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 476,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 9,
+        "text": "营销管理",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 528,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 10,
+        "text": "附加项",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 580,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 11,
+        "text": "系统设置",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 632,
+        "w": 170,
+        "h": 52
+      }
+    ],
+    "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n仓库管理\n发货配送\n10\n发货单列表\n10\n破箱审核\n售后服务\n物流清算记录\n客户管理\n43\n营销管理\n附加项\n系统设置\n吐槽部门\n请选择吐槽部门\n吐槽原因\n请选择吐槽原因\n吐槽人员\n请选择吐槽人员\n订单编号\n查询\n重置\n展开\n吐槽原因\n\t\n吐槽部门\n\t\n吐槽人员\n\t\n订单编号\n\t\n产品ID\n\t\n赔付金额\n\t\n客户信息\n\t\n提交人\n\t\n吐槽日期\n\t\n操作\n质检-问题报告没有及时处理\n\t\n质控\n\t\n订单\n\t\nWL-JPN12-260519-001\n\t\n\t\n123.00\n\t\nB-JPN12-TEST-朴国哲\n\t\nadmin\n\t\n2026-05-25 09:51\n\t\n详情\n\n\n业务部-附加项未选中\n\t\n业务\n\t\n吴四佳\n\t\nWL-JPN22-251223-007\n\t\n\t\n222.00\n\t\nB-JPN22-TEST-吴四佳\n\t\n周凌虓\n\t\n2026-05-25 09:50\n\t\n详情\n\n\n质控部-多配/少配/配错\n\t\n质控\n\t\n夏飞\n\t\nWL-NZL1-251223-009\n\t\n\t\n0.00\n\t\nD-NZL1-新西兰-夏飞\n\t\nadmin\n\t\n2025-12-23 17:07\n\t\n详情\n\n\n采购部-买错/多买/少买\n\t\n采购\n\t\n包瑞楠\n\t\nB2B-DD-JPN11-251217-005\n\t\nD000000332\n\t\n0.00\n\t\nB-JPN11-TEST-朴国哲2\n\t\n朴国哲\n\t\n2025-12-19 10:20\n\t\n详情\n30条/页\n共 4 条\n1\n前往\n页"
+  },
+  "customer": {
+    "url": "https://hlc-admin.hubbuyer.com/b2b/dashboard/complain",
+    "title": "吐槽记录",
+    "menu": [
+      {
+        "idx": 0,
+        "text": "工作台",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 68,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 1,
+        "text": "订单管理\n99+",
+        "badge": "99+",
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 120,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 2,
+        "text": "仓库管理",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 172,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 3,
+        "text": "发货配送\n10",
+        "badge": "10",
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 224,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 4,
+        "text": "客户管理\n43",
+        "badge": "43",
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 276,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 5,
+        "text": "客户信息\n43",
+        "badge": "43",
+        "cls": "el-menu-item",
+        "x": 20,
+        "y": 328,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "idx": 6,
+        "text": "会员等级",
+        "badge": null,
+        "cls": "el-menu-item",
+        "x": 20,
+        "y": 378,
+        "w": 170,
+        "h": 50
+      },
+      {
+        "idx": 7,
+        "text": "营销管理",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 428,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 8,
+        "text": "附加项",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 480,
+        "w": 170,
+        "h": 52
+      },
+      {
+        "idx": 9,
+        "text": "系统设置",
+        "badge": null,
+        "cls": "el-sub-menu__title",
+        "x": 20,
+        "y": 532,
+        "w": 170,
+        "h": 52
+      }
+    ],
+    "body": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n99+\n仓库管理\n发货配送\n10\n客户管理\n43\n客户信息\n43\n会员等级\n营销管理\n附加项\n系统设置\n吐槽部门\n请选择吐槽部门\n吐槽原因\n请选择吐槽原因\n吐槽人员\n请选择吐槽人员\n订单编号\n查询\n重置\n展开\n吐槽原因\n\t\n吐槽部门\n\t\n吐槽人员\n\t\n订单编号\n\t\n产品ID\n\t\n赔付金额\n\t\n客户信息\n\t\n提交人\n\t\n吐槽日期\n\t\n操作\n质检-问题报告没有及时处理\n\t\n质控\n\t\n订单\n\t\nWL-JPN12-260519-001\n\t\n\t\n123.00\n\t\nB-JPN12-TEST-朴国哲\n\t\nadmin\n\t\n2026-05-25 09:51\n\t\n详情\n\n\n业务部-附加项未选中\n\t\n业务\n\t\n吴四佳\n\t\nWL-JPN22-251223-007\n\t\n\t\n222.00\n\t\nB-JPN22-TEST-吴四佳\n\t\n周凌虓\n\t\n2026-05-25 09:50\n\t\n详情\n\n\n质控部-多配/少配/配错\n\t\n质控\n\t\n夏飞\n\t\nWL-NZL1-251223-009\n\t\n\t\n0.00\n\t\nD-NZL1-新西兰-夏飞\n\t\nadmin\n\t\n2025-12-23 17:07\n\t\n详情\n\n\n采购部-买错/多买/少买\n\t\n采购\n\t\n包瑞楠\n\t\nB2B-DD-JPN11-251217-005\n\t\nD000000332\n\t\n0.00\n\t\nB-JPN11-TEST-朴国哲2\n\t\n朴国哲\n\t\n2025-12-19 10:20\n\t\n详情\n30条/页\n共 4 条\n1\n前往\n页"
+  }
+}

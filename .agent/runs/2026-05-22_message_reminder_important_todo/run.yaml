@@ -1,0 +1,83 @@
+run_id: "2026-05-22_message_reminder_important_todo"
+project:
+  name: "消息提醒功能以及重要待办"
+  slug: "message_reminder_important_todo"
+  root: "消息提醒功能以及重要待办"
+  requirement_path: "消息提醒功能以及重要待办/消息提醒功能以及重要待办.docx"
+mode:
+  design: true
+  executability_review: true
+  real_execution: false
+execution_confirmation:
+  required: true
+  asked_by: "agent2_test_execution"
+  question: "是否执行真实测试？请输入 Y/N。"
+  user_answer: "N"
+  reason: "用户在任务中明确要求 Agent2 暂不执行测试用例。"
+state: "CLOSED"
+current_owner: "orchestrator"
+next_agent: null
+artifacts:
+  agent1:
+    test_docs_dir: "消息提醒功能以及重要待办/测试文档"
+    requirement_summary: "消息提醒功能以及重要待办/测试文档/架构级需求摘要.md"
+    audit_questions: "消息提醒功能以及重要待办/测试文档/审计待确认问题单.md"
+    superpowers: "消息提醒功能以及重要待办/测试文档/superpowers.md"
+    outline: "消息提醒功能以及重要待办/测试文档/测试点大纲.md"
+    test_cases: "消息提醒功能以及重要待办/测试文档/消息提醒功能以及重要待办测试用例.md"
+    handoff_manifest: "消息提醒功能以及重要待办/测试文档/执行交接清单.yaml"
+  agent2:
+    review_report: "消息提醒功能以及重要待办/测试文档/Agent2_用例评审报告.md"
+    feedback_file: ".agent/runs/2026-05-22_message_reminder_important_todo/agent2_review.yaml"
+    orchestrator_decision: ".agent/runs/2026-05-22_message_reminder_important_todo/orchestrator_decision.yaml"
+    execution_report: null
+gates:
+  design_ready: true
+  executability_review_passed: true
+  execution_allowed_by_user: false
+reflection:
+  required: true
+  path: ".agent/reflections/2026-05-22_multi-agent_消息提醒功能以及重要待办.md"
+evolution:
+  promotion_candidate_required: false
+  path: ".agent/evolution/promotion_candidates.md"
+notes:
+  - "用户明确要求 Agent2 暂不执行测试用例，本 run 只做 Agent1 设计与 Agent2 可执行性评审。"
+parallel_agents:
+  agent1_test_design:
+    subagent_id: "019e4e99-d871-7553-a464-7a5628f156ec"
+    status: "completed"
+    runtime_type: "worker"
+    responsibility: "Generate standardized test cases, handoff manifest, and agent1 output artifact."
+  agent2_test_execution:
+    subagent_id: "019e4e99-f127-7b60-8e82-62aaf6a59bc0"
+    status: "completed"
+    runtime_type: "explorer"
+    responsibility: "Read-only executability pre-review; no real test execution."
+review_result:
+  verdict: "passed_with_external_blockers"
+  unresolved_external_feedback:
+    - "F-001"
+    - "F-002"
+    - "F-003"
+    - "F-004"
+    - "F-005"
+    - "F-006"
+  resolved_design_feedback:
+    - "F-007"
+    - "F-008"
+orchestrator_decision:
+  decision_file: ".agent/runs/2026-05-22_message_reminder_important_todo/orchestrator_decision.yaml"
+  assign_to_agent1: []
+  external_blockers:
+    - "F-001"
+    - "F-002"
+    - "F-003"
+    - "F-004"
+  human_confirmations:
+    - "F-005"
+    - "F-006"
+  no_action:
+    - "F-007"
+    - "F-008"
+final_summary: ".agent/runs/2026-05-22_message_reminder_important_todo/final_summary.md"

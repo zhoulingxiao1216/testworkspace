@@ -1,0 +1,20 @@
+{
+    "stress_submit_order": {
+        "key": "stress_submit_order",
+        "desc": "B2B 提交自助报价单接口压测",
+        "login_account": "",
+        "rules": {
+            "status_code": 200,
+            "json_match": {
+                "code": 200
+            },
+            "extract_keys": [
+                "data.quote_no"
+            ]
+        },
+        "performance": {
+            "threshold_ms": 10000,
+            "description": "报价单提交响应时间阈值（含后端处理）"
+        }
+    }
+}

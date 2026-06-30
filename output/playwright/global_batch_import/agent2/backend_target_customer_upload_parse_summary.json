@@ -1,0 +1,346 @@
+{
+  "search_attempts": [
+    {
+      "name": "email",
+      "value": "mxnrq@airsworld.net",
+      "field_needles": [
+        "??",
+        "email",
+        "Email",
+        "??"
+      ],
+      "fill": {
+        "filled": false,
+        "available": [
+          {
+            "label": "客户ID",
+            "placeholder": "请输入客户ID",
+            "value": ""
+          },
+          {
+            "label": "客户姓名",
+            "placeholder": "请输入客户名字",
+            "value": ""
+          },
+          {
+            "label": "所属国家 请选择所属国家",
+            "placeholder": null,
+            "value": ""
+          },
+          {
+            "label": "联系电话",
+            "placeholder": "请输入联系电话",
+            "value": ""
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": ""
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "S"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "A"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "B"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "C"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "D"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "on"
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": ""
+          },
+          {
+            "label": "",
+            "placeholder": null,
+            "value": "1"
+          }
+        ]
+      },
+      "query_click": {
+        "clicked": false,
+        "error": "not found",
+        "text": "??"
+      },
+      "target_rows": [
+        {
+          "i": 26,
+          "text": "D-TLS1-10101010 TLS1 Timor-Leste 已禁用 一般会员 永久 2099-12-31 23:59 待沟通 grf0e@airsworld.net 10101010 0 暂无 0.00 /B2B google搜索 2025-12-22 17:46 2025-12-22 17:45 详情"
+        }
+      ],
+      "contains_target": true,
+      "result_excerpt": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， admin\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n查询\n重置\n展开\n批量导出\n全部（102）\nS级客户（38）\nA级客户（2）\nB级客户（11）\nC级客户（5）\nD级客户（46）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nD-POL1-senaelorhan\n\t\nPOL1\n\t\nPoland\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nelorhanlindo@gmail.com\n\t\n692956183\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-05-07 19:04\n\t\n2026-05-07 19:02\n\t\n详情\n\n\n\t\nD-TUR2-YILDIRIMALİ\n\t\nTUR2\n\t\nTurkey\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nhingo2566@gmail.com\n\t\n5459653288\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n\t\n2026-04-29 20:31\n\t\n2026-04-29 20:30\n\t\n详情\n\n\n\t\nD-IDN1-ImanAaron\n\t\nIDN1\n\t\nIndonesia\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nimansie@gmail.com\n\t\n081389895300\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n\t\n2026-04-28 15:40\n\t\n2026-04-28 15:40\n\t\n详情\n\n\n\t\nD-CHN18-户连超测试\n\t\nCHN18\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nzrkjhlc@gmail.com\n\t\n15268453999\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n熟人介绍\n\t\n2026-04-27 14:34\n\t\n2026-04-23 14:23\n\t\n详情\n\n\n\t\nD-JPN43-小林莉乃\n\t\nJPN43\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nrii20040728@icloud.com\n\t\n07021540728\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n\t\n2026-04-22 03:42\n\t\n2026-04-22 03:25\n\t\n详情\n\n\n\t\nD-TUR1-RahhalBasel\n\t\nTUR1\n\t\nTurkey\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\neng.import3@gmail.com\n\t\n5510320210\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-04-17 21:23\n\t\n2026-04-17 21:21\n\t\n详情\n\n\n\t\nD-JPN40-徐太郎\n\t\nJPN40\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n崔红梅\n\t\n徐榕\n\t\n包佳民\n\t\n289079627@qq.com\n\t\n08043630315\n\t\n0\n\t\n暂无\n\t\n99999999.99\n\t\n/B2B\n\t\n\t\n2026-04-16 14:05\n\t\n2026-04-15 17:19\n\t\n详情\n\n\n\t\nD-JPN39-崔紅梅\n\t\nJPN39\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n崔红梅\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n571635879@qq.com\n\t\n09012345678\n\t\n4\n\t\n暂无\n\t\n84734.10\n\t\n/B2B\n\t\n\t\n2026-04-15 13:40\n\t\n2026-04-15 13:37\n\t\n详情\n\n\n\t\nD-JPN38-tangfenfen\n\t\nJPN38\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n金月明\n\t\n唐芬芬\n\t\n朱迎港"
+    }
+  ],
+  "steps": [
+    {
+      "click_target_detail": {
+        "clicked": false,
+        "error": "detail button not found in target row",
+        "rowText": "D-TLS1-10101010 TLS1 Timor-Leste 已禁用 一般会员 永久 2099-12-31 23:59 待沟通 grf0e@airsworld.net 10101010 0 暂无 0.00 /B2B google搜索 2025-12-22 17:46 2025-12-22 17:45 详情"
+      }
+    }
+  ],
+  "upload_results": [],
+  "responses": [
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/css/FormalOrder%E2%80%8C.CJnvGvVs.css",
+      "status": 200,
+      "method": "GET",
+      "post_data": null
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/js/FormalOrder%E2%80%8C.Do7dQ2XK.js",
+      "status": 200,
+      "method": "GET",
+      "post_data": null
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/js/FormalOrder%E2%80%8C.Do7dQ2XK.js",
+      "status": 200,
+      "method": "GET",
+      "post_data": null
+    },
+    {
+      "url": "https://wlz-admin-all-view.hubbuyer.com/css/FormalOrder%E2%80%8C.CJnvGvVs.css",
+      "status": 200,
+      "method": "GET",
+      "post_data": null
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"\",\"name\":\"\",\"user_id\":\"\",\"email\":\"\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"D\",\"name\":\"\",\"user_id\":\"\",\"email\":\"\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"D\",\"name\":\"\",\"user_id\":\"\",\"email\":\"\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"D\",\"name\":\"\",\"user_id\":\"\",\"email\":\"\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"D\",\"name\":\"\",\"user_id\":\"\",\"email\":\"\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"D\",\"name\":\"\",\"user_id\":\"\",\"email\":\"\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"D\",\"name\":\"\",\"user_id\":\"\",\"email\":\"\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    },
+    {
+      "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+      "status": 200,
+      "method": "POST",
+      "post_data": "{\"level\":\"D\",\"name\":\"\",\"user_id\":\"\",\"email\":\"\",\"mobile\":\"\",\"b2b_order_status\":\"\",\"nation\":\"\",\"register_source\":\"\",\"role\":\"\",\"sale_admin_id\":\"\",\"purchase_admin_id\":\"\",\"csp_manager_admin_id\":\"\",\"register_date\":[],\"status\":\"\",\"page\":1,\"limit\":30}"
+    }
+  ],
+  "console": [
+    {
+      "type": "log",
+      "text": " ---- "
+    }
+  ],
+  "guardrails": [
+    "no_8160",
+    "no_final_confirm_import",
+    "no_cart_write",
+    "no_order_generation"
+  ],
+  "target_found_after_search": true,
+  "detail_contains_batch_import": false,
+  "status": "BLOCKED_DETAIL_NO_BATCH_TAB"
+}

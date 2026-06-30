@@ -1,0 +1,109 @@
+{
+  "D2C_1688": {
+    "sku_id": "6082029598585",
+    "specId": "b556600accfd99ff5c2740514effd0b8",
+    "PropID": "カラー:8007【夹克】浅蓝色;サイズ:M",
+    "stock_num": "1000",
+    "cart_price": "48.00",
+    "quantity": "2",
+    "alibabaPrice": "[{\"price\":\"48.00\",\"range\":\"≥1\"}]",
+    "ItemPic": "https://cbu01.alicdn.com/img/ibank/O1CN01S7KGiW1r8tmXTPHXr_!!2216588385587-0-cib.jpg",
+    "judgeMiniNum": "0",
+    "sheetVal": "1",
+    "CeilingPrice": "",
+    "ExternalID": "",
+    "ItemID": "968555142329",
+    "ItemName": "2024新春秋冬メンズデニムジャケット日系カジュアル青春トレンド工服デニムコートメンズ",
+    "ItemNameCN": "2024新款春秋冬男士牛仔衫夹克日系休闲青春流行工装牛仔外套男装",
+    "ItemNick": "鑫运服装厂",
+    "ItemURL": "https://detail.1688.com/offer/968555142329.html",
+    "typeid": "4"
+  },
+  "D2C_taobao": {
+    "id": "989952235886",
+    "sku_id": "1627207:380670167,20509:28315",
+    "specId": "",
+    "ItemNameCN": "WASSUP美式復古雪花刺繡連帽衛衣女秋冬加絨加厚潮牌情侶重複外套",
+    "ItemName": "WASSUPアメリカンレトロ雪の刺繍連帽衛衣女秋冬加絨加厚潮牌カップル重ポンドコート",
+    "ItemID": "989952235886",
+    "ItemURL": "https://item.taobao.com/item.htm?id=989952235886",
+    "ItemNick": "WSP聯名商城",
+    "ItemPic": "https://img.alicdn.com/bao/uploaded/i2/2214726257423/O1CN01r9PsV424hn68DGFV6_!!2214726257423.jpg",
+    "PropID": "カラー:黒色（加絨）;サイズ:M",
+    "buytype": "0",
+    "typeid": "0",
+    "alibabaPrice": "",
+    "iswholesale": "",
+    "sheetVal": "1",
+    "stock_num": "200",
+    "cart_price": "102.04",
+    "quantity": "5",
+    "ExternalID": "",
+    "CeilingPrice": ""
+  },
+  "B2B_1688": {
+    "sku_id": 5522670816014,
+    "specId": "5db6a1dc2b56d0c8ac432ba448ecf436",
+    "PropID": "色:彫刻-ライオンキング-C カラフルレーザー [18x16cm]",
+    "PropIDCN": "颜色:雕刻-狮子王-C款七彩镭射【18x16cm】",
+    "stock_num": 9995,
+    "cart_price": "2.5",
+    "quantity": 1,
+    "ItemPic": "https://cbu01.alicdn.com/img/ibank/O1CN016ktBMs1I68rL9477H_!!2212288870843-0-cib.jpg",
+    "alibabaPrice": [
+      {
+        "price": "2.5",
+        "range": "≥2"
+      }
+    ],
+    "shop_info": {
+      "sendGoodsAddressText": "广东省广州市",
+      "weight": 0.0055,
+      "width": 0,
+      "height": 0,
+      "length": 0,
+      "skuShippingDetails": [],
+      "pkgSizeSource": "预测-同款放大"
+    },
+    "ItemID": 819258835635,
+    "ItemName": "クロスボーダーのライオンの車はライオンのバンパーの車を貼ります。",
+    "ItemNameCN": "跨境狮子车贴狮子保险杠车贴lion King动物贴纸汽车三角窗装饰贴",
+    "ItemNick": "广州腾亿轩1688",
+    "ItemURL": "https://detail.1688.com/offer/819258835635.html",
+    "judgeMiniNum": 2,
+    "typeid": "4",
+    "shopping_id": "",
+    "tempMap": [
+      {
+        "price": "2.5",
+        "range": "≥2"
+      }
+    ],
+    "response_id": "",
+    "goods_sum": 2,
+    "secondCategoryId": 3308,
+    "topCategoryId": 122916002
+  },
+  "B2B_taobao": {
+    "id": 1004127938417,
+    "sku_id": "1627207:677466047,20509:382392408",
+    "ItemNameCN": "皮尔卡丹棉衣男士外套中老年爸爸装冬季加厚商务行政夹克羊毛棉袄",
+    "ItemName": "皮尔卡丹棉衣男士外套中老年爸爸装冬季加厚商务行政夹克羊毛棉袄",
+    "ItemID": 1004127938417,
+    "ItemURL": "https://item.taobao.com/item.htm?id=1004127938417",
+    "ItemNick": "皮尔 卡丹精品男装店",
+    "ItemPic": "https://img.alicdn.com/bao/uploaded/i3/2597553500/O1CN01TO8l0M1bj3JdPsNps_!!2597553500.jpg",
+    "PropID": "颜色:黑色【扣子款】 （外口袋带拉链）;尺码:5XL/200 建议（195-209斤）",
+    "cart_price": 422.24,
+    "quantity": 1,
+    "stock_num": 90,
+    "buytype": "0",
+    "typeid": "0",
+    "sheetVal": "1",
+    "recommend": "0",
+    "mp_id": "4097000301096817",
+    "mp_skuId": 37712047680369,
+    "shopping_id": "",
+    "response_id": ""
+  }
+}

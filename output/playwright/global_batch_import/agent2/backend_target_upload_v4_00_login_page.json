@@ -1,0 +1,15 @@
+{
+  "url": "https://wlz-admin-all-view.hubbuyer.com/login",
+  "title": "",
+  "timestamp": "2026-05-13 13:01:30",
+  "text_excerpt": "ee-supply\n\n欢迎回来 👋🏻\n\n请输入您的帐户信息登录系统\n\n账号\n密码\n记住账号\n登录",
+  "buttons": [
+    {
+      "index": 0,
+      "text": "登录",
+      "class": "el-button el-button--primary el-button--large w-full"
+    }
+  ],
+  "dialogs": [],
+  "extra": {}
+}

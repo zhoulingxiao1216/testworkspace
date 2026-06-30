@@ -1,0 +1,388 @@
+- generic [ref=e4]:
+  - button [ref=e9] [cursor=pointer]:
+    - img [ref=e10]
+  - generic [ref=e14]:
+    - list [ref=e17]:
+      - listitem [ref=e18]:
+        - link "app" [ref=e20] [cursor=pointer]:
+          - /url: http://127.0.0.1:8501/app
+          - generic [ref=e21]: app
+      - listitem [ref=e22]:
+        - link "测试执行" [ref=e24] [cursor=pointer]:
+          - /url: http://127.0.0.1:8501/测试执行
+          - generic [ref=e26]: 🧪
+          - generic [ref=e27]: 测试执行
+      - listitem [ref=e28]:
+        - link "sku verify" [ref=e30] [cursor=pointer]:
+          - /url: http://127.0.0.1:8501/sku_verify
+          - generic [ref=e31]: sku verify
+      - listitem [ref=e32]:
+        - link "性能压测" [ref=e34] [cursor=pointer]:
+          - /url: http://127.0.0.1:8501/性能压测
+          - generic [ref=e35]: 性能压测
+    - generic [ref=e41]:
+      - heading " 测试工作台" [level=3] [ref=e45]:
+        - generic [ref=e46]: 
+        - text: 测试工作台
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - generic [ref=e51]: 
+          - text: 全局视图
+        - link "筛选用例总数用例" [ref=e52] [cursor=pointer]:
+          - /url: /测试执行?status=All&tc=614
+          - generic [ref=e53]:
+            - generic [ref=e54]:
+              - text: 
+              - generic [ref=e55]: 
+            - generic [ref=e56]:
+              - generic [ref=e57]: "619"
+              - generic [ref=e58]: 用例总数
+        - link "筛选已通过用例" [ref=e59] [cursor=pointer]:
+          - /url: /测试执行?status=Pass&tc=831
+          - generic [ref=e60]:
+            - generic [ref=e61]:
+              - text: 
+              - generic [ref=e62]: 
+            - generic [ref=e63]:
+              - generic [ref=e64]: "464"
+              - generic [ref=e65]: 已通过
+        - link "筛选已失败用例":
+          - /url: /测试执行?status=Fail&tc=614
+          - generic:
+            - generic:
+              - text: 
+              - generic: 
+            - generic:
+              - generic: "0"
+              - generic: 已失败
+        - link "筛选未执行用例" [ref=e66] [cursor=pointer]:
+          - /url: /测试执行?status=Untested&tc=614
+          - generic [ref=e67]:
+            - generic [ref=e68]:
+              - text: 
+              - generic [ref=e69]: 
+            - generic [ref=e70]:
+              - generic [ref=e71]: "94"
+              - generic [ref=e72]: 未执行
+        - link "筛选阻塞用例" [ref=e73] [cursor=pointer]:
+          - /url: /测试执行?status=Blocked&tc=1287
+          - generic [ref=e74]:
+            - generic [ref=e75]:
+              - text: 
+              - generic [ref=e76]: 
+            - generic [ref=e77]:
+              - generic [ref=e78]: "61"
+              - generic [ref=e79]: 阻塞
+        - generic [ref=e80]:
+          - generic [ref=e81]:
+            - generic [ref=e82]: 整体进度
+            - generic [ref=e83]: 84.8%
+          - 'generic "通过: 464, 失败: 0, 未执行: 94, 阻塞: 61" [ref=e284]'
+      - generic [ref=e87]:
+        - button "⏳ 未执行 (94)" [ref=e287] [cursor=pointer]:
+          - paragraph [ref=e289]: ⏳ 未执行 (94)
+        - button "🚫 阻塞 (61)" [ref=e103] [cursor=pointer]:
+          - paragraph [ref=e105]: 🚫 阻塞 (61)
+      - separator [ref=e109]
+      - heading "⚙️ 操作" [level=3] [ref=e113]
+      - button "📥 导出全局报告" [ref=e292] [cursor=pointer]:
+        - paragraph [ref=e294]: 📥 导出全局报告
+      - button "🗑️ 重置所有结果" [ref=e124] [cursor=pointer]:
+        - paragraph [ref=e126]: 🗑️ 重置所有结果
+  - generic [ref=e131]:
+    - button "⬅️ 返回项目首页" [ref=e134] [cursor=pointer]:
+      - paragraph [ref=e136]: ⬅️ 返回项目首页
+    - generic [ref=e137]:
+      - generic [ref=e141]:
+        - generic [ref=e145]:
+          - generic [ref=e146]: 
+          - text: 用例结构
+          - generic [ref=e147]: 619 条
+        - iframe [ref=e149]:
+          - generic [active] [ref=f1e1]:
+            - generic [ref=f1e2]:
+              - generic: 
+              - textbox "搜索用例 ID 或标题…" [ref=f1e3]
+            - generic [ref=f1e4]:
+              - generic [ref=f1e1274] [cursor=pointer]:
+                - generic [ref=f1e1275]: 
+                - generic [ref=f1e1276]: 
+                - generic [ref=f1e1277]: 未分类
+              - generic [ref=f1e1280]:
+                - generic [ref=f1e1281] [cursor=pointer]:
+                  - generic [ref=f1e1282]: 
+                  - generic [ref=f1e1283]: 
+                  - generic [ref=f1e1284]: 模块 [BW]
+                - text:                              
+                - generic [ref=f1e1285] [cursor=pointer]:
+                  - generic [ref=f1e1286]: 
+                  - generic [ref=f1e1287]: 
+                  - generic [ref=f1e1288]: 模块 [MV]
+                - text:                                         
+                - generic [ref=f1e1289] [cursor=pointer]:
+                  - generic [ref=f1e1290]: 
+                  - generic [ref=f1e1291]: 
+                  - generic [ref=f1e1292]: 模块 [FT]
+                - text:                         
+                - generic [ref=f1e1293] [cursor=pointer]:
+                  - generic [ref=f1e1294]: 
+                  - generic [ref=f1e1295]: 
+                  - generic [ref=f1e1296]: 模块 [BI]
+                - text:                                                                                   
+                - generic [ref=f1e1297] [cursor=pointer]:
+                  - generic [ref=f1e1298]: 
+                  - generic [ref=f1e1299]: 
+                  - generic [ref=f1e1300]: 模块 [OD]
+                - text:                                                                     
+                - generic [ref=f1e1301] [cursor=pointer]:
+                  - generic [ref=f1e1302]: 
+                  - generic [ref=f1e1303]: 
+                  - generic [ref=f1e1304]: 模块 [BUB]
+                - text:            
+                - generic [ref=f1e1305] [cursor=pointer]:
+                  - generic [ref=f1e1306]: 
+                  - generic [ref=f1e1307]: 
+                  - generic [ref=f1e1308]: 模块 [AUTH]
+                - generic [ref=f1e1309]:
+                  - generic [ref=f1e1310] [cursor=pointer]:
+                    - generic [ref=f1e1311]: 
+                    - generic [ref=f1e1312]: 
+                    - generic [ref=f1e1313]: 1.1 Token 获取
+                  - generic [ref=f1e1314]:
+                    - generic [ref=f1e1315] [cursor=pointer]:
+                      - generic [ref=f1e1316]: 
+                      - generic [ref=f1e1317]:
+                        - generic [ref=f1e1318]: TC-AUTH-001
+                        - generic [ref=f1e1319]: "[TC-AUTH-001] 【Critical·Security】正确凭据获取 Bearer Token [SmokeTest]"
+                    - generic [ref=f1e1321] [cursor=pointer]:
+                      - generic [ref=f1e1322]: 
+                      - generic [ref=f1e1323]:
+                        - generic [ref=f1e1324]: TC-AUTH-002
+                        - generic [ref=f1e1325]: "[TC-AUTH-002] 【异常】缺少 client_key 或 client_secret 返回日文错误"
+                    - generic [ref=f1e1327] [cursor=pointer]:
+                      - generic [ref=f1e1328]: 
+                      - generic [ref=f1e1329]:
+                        - generic [ref=f1e1330]: TC-AUTH-003
+                        - generic [ref=f1e1331]: "[TC-AUTH-003] 【Critical·Security】错误凭据不生成 Token [SmokeTest]"
+                    - generic [ref=f1e1333] [cursor=pointer]:
+                      - generic [ref=f1e1334]: 
+                      - generic [ref=f1e1335]:
+                        - generic [ref=f1e1336]: TC-AUTH-004
+                        - generic [ref=f1e1337]: "[TC-AUTH-004] 【Critical·Security】禁用客户无法获取 Token [SmokeTest]"
+                  - generic [ref=f1e1339] [cursor=pointer]:
+                    - generic [ref=f1e1340]: 
+                    - generic [ref=f1e1341]: 
+                    - generic [ref=f1e1342]: 1.2 Bearer Token 使用
+                  - text:   
+                - generic [ref=f1e1343] [cursor=pointer]:
+                  - generic [ref=f1e1344]: 
+                  - generic [ref=f1e1345]: 
+                  - generic [ref=f1e1346]: 模块 [SRCH]
+                - text:                  
+                - generic [ref=f1e1347] [cursor=pointer]:
+                  - generic [ref=f1e1348]: 
+                  - generic [ref=f1e1349]: 
+                  - generic [ref=f1e1350]: 模块 [CM]
+                - text:         
+                - generic [ref=f1e1351] [cursor=pointer]:
+                  - generic [ref=f1e1352]: 
+                  - generic [ref=f1e1353]: 
+                  - generic [ref=f1e1354]: 模块 [ST]
+                - text:        
+                - generic [ref=f1e1355] [cursor=pointer]:
+                  - generic [ref=f1e1356]: 
+                  - generic [ref=f1e1357]: 
+                  - generic [ref=f1e1358]: 模块 [ORD]
+                - text:          
+                - generic [ref=f1e1359] [cursor=pointer]:
+                  - generic [ref=f1e1360]: 
+                  - generic [ref=f1e1361]: 
+                  - generic [ref=f1e1362]: 模块 [AC]
+                - text:            
+                - generic [ref=f1e1363] [cursor=pointer]:
+                  - generic [ref=f1e1364]: 
+                  - generic [ref=f1e1365]: 
+                  - generic [ref=f1e1366]: 模块 [DT]
+                - text:              
+                - generic [ref=f1e1367] [cursor=pointer]:
+                  - generic [ref=f1e1368]: 
+                  - generic [ref=f1e1369]: 
+                  - generic [ref=f1e1370]: 模块 [DET]
+                - text:         
+                - generic [ref=f1e1371] [cursor=pointer]:
+                  - generic [ref=f1e1372]: 
+                  - generic [ref=f1e1373]: 
+                  - generic [ref=f1e1374]: 模块 [AD]
+                - text:              
+                - generic [ref=f1e1375] [cursor=pointer]:
+                  - generic [ref=f1e1376]: 
+                  - generic [ref=f1e1377]: 
+                  - generic [ref=f1e1378]: 模块 [SHIP]
+                - text:       
+                - generic [ref=f1e1379] [cursor=pointer]:
+                  - generic [ref=f1e1380]: 
+                  - generic [ref=f1e1381]: 
+                  - generic [ref=f1e1382]: 模块 [STAT]
+                - text:             
+                - generic [ref=f1e1383] [cursor=pointer]:
+                  - generic [ref=f1e1384]: 
+                  - generic [ref=f1e1385]: 
+                  - generic [ref=f1e1386]: 模块 [MI]
+                - text:            
+                - generic [ref=f1e1387] [cursor=pointer]:
+                  - generic [ref=f1e1388]: 
+                  - generic [ref=f1e1389]: 
+                  - generic [ref=f1e1390]: 模块 [PV]
+                - text:        
+                - generic [ref=f1e1391] [cursor=pointer]:
+                  - generic [ref=f1e1392]: 
+                  - generic [ref=f1e1393]: 
+                  - generic [ref=f1e1394]: 模块 [INT]
+                - text:     
+                - generic [ref=f1e1395] [cursor=pointer]:
+                  - generic [ref=f1e1396]: 
+                  - generic [ref=f1e1397]: 
+                  - generic [ref=f1e1398]: 模块 [AL]
+                - text:                               
+                - generic [ref=f1e1399] [cursor=pointer]:
+                  - generic [ref=f1e1400]: 
+                  - generic [ref=f1e1401]: 
+                  - generic [ref=f1e1402]: 模块 [TO]
+                - text:              
+                - generic [ref=f1e1403] [cursor=pointer]:
+                  - generic [ref=f1e1404]: 
+                  - generic [ref=f1e1405]: 
+                  - generic [ref=f1e1406]: 模块 [TODO]
+                - text:                  
+                - generic [ref=f1e1407] [cursor=pointer]:
+                  - generic [ref=f1e1408]: 
+                  - generic [ref=f1e1409]: 
+                  - generic [ref=f1e1410]: 模块 [FD]
+                - text:                                          
+                - generic [ref=f1e1411] [cursor=pointer]:
+                  - generic [ref=f1e1412]: 
+                  - generic [ref=f1e1413]: 
+                  - generic [ref=f1e1414]: 模块 [ADM]
+                - text:       
+                - generic [ref=f1e1415] [cursor=pointer]:
+                  - generic [ref=f1e1416]: 
+                  - generic [ref=f1e1417]: 
+                  - generic [ref=f1e1418]: 模块 [PP]
+                - text:       
+                - generic [ref=f1e1419] [cursor=pointer]:
+                  - generic [ref=f1e1420]: 
+                  - generic [ref=f1e1421]: 
+                  - generic [ref=f1e1422]: 模块 [LOG]
+                - text:     
+                - generic [ref=f1e1423] [cursor=pointer]:
+                  - generic [ref=f1e1424]: 
+                  - generic [ref=f1e1425]: 
+                  - generic [ref=f1e1426]: 模块 [PG]
+                - text:        
+                - generic [ref=f1e1427] [cursor=pointer]:
+                  - generic [ref=f1e1428]: 
+                  - generic [ref=f1e1429]: 
+                  - generic [ref=f1e1430]: 模块 [UI]
+                - text:        
+                - generic [ref=f1e1431] [cursor=pointer]:
+                  - generic [ref=f1e1432]: 
+                  - generic [ref=f1e1433]: 
+                  - generic [ref=f1e1434]: 模块 [TB]
+                - text:                                
+                - generic [ref=f1e1435] [cursor=pointer]:
+                  - generic [ref=f1e1436]: 
+                  - generic [ref=f1e1437]: 
+                  - generic [ref=f1e1438]: 模块 [NP]
+                - text:        
+                - generic [ref=f1e1439] [cursor=pointer]:
+                  - generic [ref=f1e1440]: 
+                  - generic [ref=f1e1441]: 
+                  - generic [ref=f1e1442]: 模块 [SMS]
+                - text:      
+                - generic [ref=f1e1443] [cursor=pointer]:
+                  - generic [ref=f1e1444]: 
+                  - generic [ref=f1e1445]: 
+                  - generic [ref=f1e1446]: 模块 [NAV]
+                - text:       
+                - generic [ref=f1e1447] [cursor=pointer]:
+                  - generic [ref=f1e1448]: 
+                  - generic [ref=f1e1449]: 
+                  - generic [ref=f1e1450]: 模块 [IV]
+                - text:            
+                - generic [ref=f1e1451] [cursor=pointer]:
+                  - generic [ref=f1e1452]: 
+                  - generic [ref=f1e1453]: 
+                  - generic [ref=f1e1454]: 模块 [STB]
+                - text:      
+                - generic [ref=f1e1455] [cursor=pointer]:
+                  - generic [ref=f1e1456]: 
+                  - generic [ref=f1e1457]: 
+                  - generic [ref=f1e1458]: 模块 [OP]
+                - text:               
+                - generic [ref=f1e1459] [cursor=pointer]:
+                  - generic [ref=f1e1460]: 
+                  - generic [ref=f1e1461]: 
+                  - generic [ref=f1e1462]: 模块 [WB]
+                - text:            
+                - generic [ref=f1e1463] [cursor=pointer]:
+                  - generic [ref=f1e1464]: 
+                  - generic [ref=f1e1465]: 
+                  - generic [ref=f1e1466]: 模块 [PM]
+                - text:          
+                - generic [ref=f1e1467] [cursor=pointer]:
+                  - generic [ref=f1e1468]: 
+                  - generic [ref=f1e1469]: 
+                  - generic [ref=f1e1470]: 模块 [SH]
+                - text:        
+              - generic [ref=f1e1471] [cursor=pointer]:
+                - generic [ref=f1e1472]: 
+                - generic [ref=f1e1473]: 
+                - generic [ref=f1e1474]: 管理端
+              - text:                                                                                                                                                                  
+              - generic [ref=f1e1477] [cursor=pointer]:
+                - generic [ref=f1e1478]: 
+                - generic [ref=f1e1479]: 
+                - generic [ref=f1e1480]: 全球站
+              - text:                                                  
+              - generic [ref=f1e1482] [cursor=pointer]:
+                - generic [ref=f1e1483]: 
+                - generic [ref=f1e1484]: 
+                - generic [ref=f1e1485]: 客户端
+              - text:                                                                                                                                         
+      - generic [ref=e153]:
+        - generic [ref=e157]: 未分类 › 模块 [AUTH] › 1.1 Token 获取
+        - generic [ref=e164]:
+          - generic [ref=e165]: TC-AUTH-003
+          - generic [ref=e166]: "[TC-AUTH-003] 【Critical·Security】错误凭据不生成 Token [SmokeTest]"
+          - generic [ref=e167]: 🔴 P0⬜ 未执行
+        - generic [ref=e168]:
+          - button "✅ 通过" [ref=e297] [cursor=pointer]:
+            - paragraph [ref=e299]: ✅ 通过
+          - button "❌ 失败" [ref=e302] [cursor=pointer]:
+            - paragraph [ref=e304]: ❌ 失败
+          - button "🚫 阻塞" [ref=e307] [cursor=pointer]:
+            - paragraph [ref=e309]: 🚫 阻塞
+          - button "⬅️ 上一条 (Prev)" [ref=e312] [cursor=pointer]:
+            - paragraph [ref=e314]: ⬅️ 上一条 (Prev)
+          - button "下一条 (Next) ➡️" [ref=e317] [cursor=pointer]:
+            - paragraph [ref=e319]: 下一条 (Next) ➡️
+        - generic [ref=e217]:
+          - generic [ref=e221]:
+            - heading " 操作步骤" [level=3] [ref=e226]:
+              - generic [ref=e227]: 
+              - text: 操作步骤
+            - generic [ref=e232]:
+              - text: 【前置条件】
+              - text: "存在启用客户 `SKR7182`"
+              - text: 【操作步骤】
+              - text: "1. 调用 Token 接口传入 `client_key=SKR7182` 和错误 Secret"
+              - text: 2. 查看响应
+              - text: 3. 查询调用日志记录
+          - generic [ref=e236]:
+            - heading " 预期结果" [level=3] [ref=e241]:
+              - generic [ref=e242]: 
+              - text: 预期结果
+            - generic [ref=e247]:
+              - text: 1. 返回 401
+              - text: "2. message 为 `認証情報が無効です` 或等价日文认证错误"
+              - text: 3. 不返回 access_token，日志记录失败分类但不记录错误 Secret 明文

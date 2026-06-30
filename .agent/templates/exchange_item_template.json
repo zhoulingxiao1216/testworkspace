@@ -1,0 +1,13 @@
+{
+  "id": "F-001",
+  "title": "简短标题",
+  "type": "external_blocker | human_confirmation | assign_to_agent1",
+  "severity": "low | medium | high",
+  "origin_run_id": "{run_id}",
+  "origin_reflection": ".agent/reflections/{run_id}_...md",
+  "evidence": [".agent/runs/{run_id}/screens/1.png"],
+  "description": "详细描述（脱敏）",
+  "suggested_action": "建议的解决措施或需要谁处理",
+  "created_by": "agent2|agent1",
+  "created_at": "2026-05-25T12:34:56Z"
+}

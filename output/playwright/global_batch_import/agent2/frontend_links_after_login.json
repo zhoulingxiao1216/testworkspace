@@ -1,0 +1,38 @@
+[
+  {
+    "i": 0,
+    "tag": "BUTTON",
+    "text": "検索",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 1,
+    "tag": "BUTTON",
+    "text": "確定",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 2,
+    "tag": "BUTTON",
+    "text": "画像をアップロード",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": false
+  },
+  {
+    "i": 3,
+    "tag": "BUTTON",
+    "text": "検索",
+    "href": null,
+    "title": null,
+    "cls": "el-button ml-20 imgTooltipBoxBtn",
+    "visible": false
+  }
+]

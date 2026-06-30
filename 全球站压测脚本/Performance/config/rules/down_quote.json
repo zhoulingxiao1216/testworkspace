@@ -1,0 +1,16 @@
+{
+    "stress_down_quote": {
+        "key": "stress_down_quote",
+        "desc": "B2B 报价单下载接口压测（下单成功后当轮 quote_no）",
+        "login_account": "",
+        "rules": {
+            "status_code": 200,
+            "min_response_bytes": 1024,
+            "content_disposition_contains": "attachment"
+        },
+        "performance": {
+            "threshold_ms": 15000,
+            "description": "报价单文件下载响应时间阈值"
+        }
+    }
+}

@@ -1,0 +1,38 @@
+{
+  "_note": "规则文件模板 - 复制后修改",
+  "_usage": "1. 复制本文件到 config/rules/ 目录, 2. 修改 key 和 desc, 3. 在 settings.py 中添加开关",
+  
+  "task_example_1": {
+    "key": "check_task_1",
+    "_comment": "必填字段: key(唯一标识), desc(描述), script(脚本路径)",
+    "desc": "示例检查 1 - 获取状态",
+    "script": "checker/example/check_1.py",
+    "rules": {
+      "status_code": 200,
+      "response_time_ms": 1000,
+      "custom_field": "custom_value"
+    }
+  },
+
+  "task_example_2": {
+    "key": "check_task_2",
+    "desc": "示例检查 2 - 数据库连接",
+    "script": "checker/example/check_2.py",
+    "rules": {
+      "connection_timeout_sec": 5,
+      "pool_size": 10,
+      "idle_timeout_sec": 300
+    }
+  },
+
+  "task_example_3": {
+    "key": "check_task_3",
+    "desc": "示例检查 3 - 缓存验证",
+    "script": "checker/example/check_3.py",
+    "rules": {
+      "cache_hit_rate_percent": 80,
+      "eviction_rate": 0.1,
+      "memory_limit_mb": 1024
+    }
+  }
+}

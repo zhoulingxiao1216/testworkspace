@@ -1,0 +1,32 @@
+{
+    "stress_add_cart": {
+        "key": "stress_add_cart",
+        "desc": "B2B 1688&淘宝 商品加购接口压测",
+        "login_account": "",
+        "default_payloads_file": "add_cart_payloads.json"
+    },
+    "B2B_1688": {
+        "rules": {
+            "status_code": 200,
+            "json_match": {
+                "code": 200
+            }
+        },
+        "performance": {
+            "threshold_ms": 5000,
+            "description": "1688加购响应时间阈值"
+        }
+    },
+    "B2B_taobao": {
+        "rules": {
+            "status_code": 200,
+            "json_match": {
+                "code": 200
+            }
+        },
+        "performance": {
+            "threshold_ms": 5000,
+            "description": "淘宝加购响应时间阈值"
+        }
+    }
+}

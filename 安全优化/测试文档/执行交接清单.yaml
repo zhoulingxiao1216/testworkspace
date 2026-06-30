@@ -1,0 +1,227 @@
+project: 安全优化
+artifact_type: execution_handoff
+owner_agent: Agent1 / Test Architect
+generated_at: 2026-06-12
+updated_at: 2026-06-16
+target_environment: main
+environment_handoff: 安全优化/测试文档/Agent2_环境交接_main.yaml
+execute_cases: true
+execute_environment_note: 用户确认使用 main 环境；破坏性资金/内网探测仍须样本与回滚方案
+
+case_design:
+  source_baseline: 安全优化/终版整理安全问题需求及解决方案.md
+  case_file: 安全优化/测试文档/安全优化测试用例.md
+  id_rule: TC-<模块缩写>-<三位序号>
+  module_prefix_source: 安全优化/测试文档/superpowers.md
+  total_cases: 52
+  smoke_cases: 23
+  conditional_case_count: 21
+
+priority_distribution:
+  Critical: 27
+  High: 22
+  Medium: 3
+  Low: 0
+  P0: 27
+  P1: 22
+  P2: 3
+  P3: 0
+
+module_distribution:
+  SEC-FIN: 11
+  SEC-AUTH: 8
+  SEC-IDOR: 5
+  SEC-IM: 7
+  SEC-XSS: 7
+  SEC-SECRET: 5
+  SEC-EXT: 5
+  SEC-AUD: 4
+
+source_files:
+  requirement: 安全优化/终版整理安全问题需求及解决方案.md
+  requirement_summary: 安全优化/测试文档/架构级需求摘要.md
+  superpowers: 安全优化/测试文档/superpowers.md
+  outline: 安全优化/测试文档/测试点大纲.md
+  cases: 安全优化/测试文档/安全优化测试用例.md
+  questions: 安全优化/测试文档/审计待确认问题单.md
+  effort_estimate: 安全优化/测试文档/工期评估.md
+
+execution_rounds:
+  - round: R0
+    name: 设计评审与授权确认
+    scope:
+      - 校验 P0/P1/P2/P3 范围
+      - 校验测试账号、资金样本、万里汇沙箱、IM 房间、扩展包、日志权限
+      - 确认哪些安全用例允许执行，哪些只做代码审计
+    execute_cases: false
+  - round: R1
+    name: P0/P1 Smoke 冒烟候选
+    scope:
+      - 越权退款
+      - 万里汇验签
+      - 提现支付密码
+      - 余额调整审批
+      - admin_index 鉴权
+      - SSO 白名单
+      - 凭证失败频控
+      - 地址和报价 IDOR
+      - WebSocket 身份
+      - IM XSS
+      - 私钥访问
+      - 扩展权限和内网 URL 拒绝
+      - 代客登录审计
+    candidate_cases: 23
+    execute_cases: false
+  - round: R2
+    name: 全量安全专项候选
+    scope:
+      - 资金与支付安全
+      - 鉴权与访问控制
+      - 资源归属与 IDOR
+      - IM 与消息安全
+      - XSS 与注入防护
+      - 密钥与敏感数据
+      - Chrome 扩展与本地组件
+      - 审计与纵深防御
+    candidate_cases: 52
+    execute_cases: false
+  - round: R3
+    name: 条件项专项候选
+    scope:
+      - 真实退款和支付沙箱回调
+      - WorldTrade 密钥轮换
+      - WebSocket 脚本构造
+      - Chrome 扩展打包验证
+      - 内网和 link-local URL 拒绝
+      - Lodop 本地打印消息模拟
+    candidate_cases: 21
+    execute_cases: false
+  - round: R4
+    name: 缺陷复测与上线门禁
+    scope:
+      - 缺陷关联用例
+      - P0 Smoke 全量复测
+      - Critical/High 遗留项归零审计
+    candidate_cases: dynamic
+    execute_cases: false
+
+conditional_cases:
+  - id: TC-SEC-FIN-001
+    reason: 涉及退款接口和资金状态，需安全测试环境和可回滚订单
+    suggested_status: Conditional
+  - id: TC-SEC-FIN-004
+    reason: 万里汇回调验签需沙箱回调样例
+    suggested_status: Conditional
+  - id: TC-SEC-FIN-006
+    reason: 合法回调建单需沙箱支付链路
+    suggested_status: Conditional
+  - id: TC-SEC-FIN-009
+    reason: 余额调整高额审批阈值和账号权限需确认
+    suggested_status: Conditional
+  - id: TC-SEC-FIN-011
+    reason: 充值金额一致性是否并入支付专项需确认
+    suggested_status: Conditional
+  - id: TC-SEC-AUTH-005
+    reason: SSO 白名单和一次性 code/state 方案需确认
+    suggested_status: Conditional
+  - id: TC-SEC-AUTH-007
+    reason: 凭证失败锁定阈值和锁定窗口需确认
+    suggested_status: Conditional
+  - id: TC-SEC-IDOR-004
+    reason: 需要跨用户 quote_no 和可观测远程详情写库证据
+    suggested_status: Conditional
+  - id: TC-SEC-IM-001
+    reason: WebSocket 测试端口和脚本构造权限需确认
+    suggested_status: Conditional
+  - id: TC-SEC-IM-002
+    reason: WebSocket sender/group 伪造需受控脚本执行
+    suggested_status: Conditional
+  - id: TC-SEC-IM-005
+    reason: XSS payload 执行验证需测试环境和浏览器隔离
+    suggested_status: Conditional
+  - id: TC-SEC-XSS-001
+    reason: Excel 公式注入需可写入测试字段并导出文件
+    suggested_status: Conditional
+  - id: TC-SEC-XSS-004
+    reason: 远程商品描述恶意 HTML 需 Mock 或测试商品
+    suggested_status: Conditional
+  - id: TC-SEC-XSS-006
+    reason: Chrome 扩展 DOM XSS 需测试扩展包和 Mock API
+    suggested_status: Conditional
+  - id: TC-SEC-SECRET-001
+    reason: public 敏感路径验证需部署环境确认
+    suggested_status: Conditional
+  - id: TC-SEC-SECRET-002
+    reason: 密钥轮换需第三方沙箱配合
+    suggested_status: Conditional
+  - id: TC-SEC-SECRET-004
+    reason: 邮件日志查询权限需确认
+    suggested_status: Conditional
+  - id: TC-SEC-EXT-001
+    reason: Chrome 扩展包和业务域清单需确认
+    suggested_status: Conditional
+  - id: TC-SEC-EXT-003
+    reason: 内网/元数据 URL 抓取验证需严格授权，禁止生产探测
+    suggested_status: Conditional
+  - id: TC-SEC-EXT-005
+    reason: Lodop 本地服务模拟依赖本机组件或 Mock
+    suggested_status: Conditional
+  - id: TC-SEC-AUD-004
+    reason: 依赖前序 P0 Smoke 结果汇总
+    suggested_status: Conditional
+
+blocking_risks:
+  - id: RISK-001
+    level: High
+    description: main 环境已授权 execute_cases=true，但用户 B/双管理员/WS/万里汇沙箱等待补齐
+    affected_cases:
+      - TC-SEC-FIN-001
+      - TC-SEC-FIN-004
+      - TC-SEC-FIN-009
+      - TC-SEC-IDOR-004
+      - TC-SEC-IM-001
+      - TC-SEC-IM-002
+  - id: RISK-002
+    level: Critical
+    description: 资金链路、退款、提现、万里汇回调不可在生产环境直接攻击验证
+    affected_cases:
+      - TC-SEC-FIN-001
+      - TC-SEC-FIN-004
+      - TC-SEC-FIN-006
+      - TC-SEC-FIN-009
+  - id: RISK-003
+    level: Critical
+    description: P0 任一用例失败或未授权执行时，不得给出测试通过结论
+    affected_cases:
+      - TC-SEC-AUD-004
+  - id: RISK-004
+    level: High
+    description: WebSocket、Chrome 扩展、XSS payload、内网 URL 验证需要隔离环境和明确授权
+    affected_cases:
+      - TC-SEC-IM-001
+      - TC-SEC-IM-005
+      - TC-SEC-XSS-006
+      - TC-SEC-EXT-003
+  - id: RISK-005
+    level: High
+    description: 账号矩阵、权限矩阵、跨用户样本不足会导致 IDOR 和 RBAC 用例阻塞
+    affected_cases:
+      - TC-SEC-AUTH-001
+      - TC-SEC-IDOR-001
+      - TC-SEC-IDOR-004
+      - TC-SEC-IM-003
+
+agent2_instruction:
+  role: Agent2 / Security Execution Reviewer
+  execute_cases: true
+  target_environment: main
+  environment_handoff: 安全优化/测试文档/Agent2_环境交接_main.yaml
+  instruction:
+    - 不执行真实安全攻击、不修改生产资金或敏感配置，除非后续用户明确授权
+    - 先做可执行性评审，核对环境、账号、权限、Mock、沙箱、日志、回滚方案
+    - P0 用例优先评审和执行，任一失败或未授权执行均标记安全阻塞
+    - 对 conditional_cases 标记 Conditional 或 Blocked，不作为普通功能缺陷混淆处理
+    - 执行安全用例时保留请求、响应、状态前后对比和日志证据，但必须脱敏 token、secret、验证码、私钥
+    - 禁止对生产执行凭证撞库、内网探测、XSS payload 执行、退款/提现/余额变更等破坏性动作
+    - 输出结果时保留用例锚点 ID，便于回链到测试用例文档
+

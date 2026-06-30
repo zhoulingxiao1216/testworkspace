@@ -1,0 +1,44 @@
+{
+  "auth003_anon": {
+    "path": "/api_tb/auth/refreshToken",
+    "code": 300,
+    "msg": "请先登录"
+  },
+  "idor_delete": [
+    {
+      "path": "/api_b2b/userDeliveryAddress/delete",
+      "code": 404,
+      "msg": "404 not found"
+    },
+    {
+      "path": "/api_b2b/userDeliveryAddress/del",
+      "code": 40000,
+      "msg": "작업 실패"
+    },
+    {
+      "path": "/api_b2b/userDeliveryAddress/remove",
+      "code": 404,
+      "msg": "404 not found"
+    }
+  ],
+  "quote_list": [
+    {
+      "path": "/api_b2b/quote/list",
+      "code": 200,
+      "msg": "success",
+      "data_preview": "{'data': {'data': [{'id': 6636, 'quote_no': 'B2B-BJ-JPN49-260616-105', 'user_main_uuid': 'JPN49', 'user_uuid': 'JPN49', 'type': 2, 'nation': 'Japan', "
+    },
+    {
+      "path": "/api_b2b/quote/listData",
+      "code": 404,
+      "msg": "404 not found",
+      "data_preview": "None"
+    },
+    {
+      "path": "/api_b2b/quote/getList",
+      "code": 404,
+      "msg": "404 not found",
+      "data_preview": "None"
+    }
+  ]
+}

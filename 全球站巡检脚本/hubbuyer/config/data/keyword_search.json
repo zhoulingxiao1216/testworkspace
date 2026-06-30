@@ -1,0 +1,29 @@
+{
+    "B2B_1688_keyword": {
+        "keyword": "크리스마스",
+        "site": "B2B",
+        "beginPage": 1,
+        "pageSize": 50,
+        "priceStart": "",
+        "priceEnd": "",
+        "priceSort": "",
+        "rePurchaseRateSort": "",
+        "monthSoldSort": "",
+        "snId": "",
+        "productCollectionId": 0,
+        "image_url": "",
+        "certifiedFactory": "",
+        "isOnePsale": "",
+        "new7": ""
+    },
+    "B2B_taobao_keyword": {
+        "keyword": "크리스마스",
+        "site": "B2B",
+        "page": 1,
+        "limit": 20,
+        "min_price": "",
+        "max_price": "",
+        "sort": "",
+        "pic_url": ""
+    }
+}

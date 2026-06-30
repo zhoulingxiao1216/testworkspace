@@ -1,0 +1,3663 @@
+{
+  "api_code": 200,
+  "message": "success",
+  "batch": {
+    "batch_no": "BI202605131312065956",
+    "uuid": "BI20260513131206c82a34f37346",
+    "user_uuid": "KOR8",
+    "template_type": "7182",
+    "template_name": "7182 选品模板",
+    "original_file_name": "补货-発注書1637_義烏市協潤進出口有限公司(Alibaba)様_20251010_4700多条.xlsx",
+    "total_rows": 4765,
+    "success_rows": 1528,
+    "failed_rows": 3237,
+    "status": 400,
+    "created_at": "2026-05-13 13:12:06",
+    "updated_at": "2026-05-13 13:12:30",
+    "preview_summary": {
+      "total_rows": 4765,
+      "failed_rows": 3237,
+      "pending_rows": 0,
+      "success_rows": 1528,
+      "conflict_rows": 0,
+      "template_name": "7182 选品模板",
+      "template_type": "7182",
+      "price_compare_rows": 4765
+    }
+  },
+  "returned_rows": 4765,
+  "total": 4765,
+  "status_counts": {
+    "200": 1528,
+    "400": 3237
+  },
+  "error_counts": [
+    [
+      "价格错误",
+      1817
+    ],
+    [
+      "商品详情接口获取失败",
+      297
+    ],
+    [
+      "尺寸错误；价格错误",
+      273
+    ],
+    [
+      "尺寸错误",
+      209
+    ],
+    [
+      "sku_id错误；spec_id错误；颜色错误；尺寸错误；价格错误",
+      168
+    ],
+    [
+      "数量超过可售库存",
+      122
+    ],
+    [
+      "价格错误；数量超过可售库存",
+      110
+    ],
+    [
+      "颜色错误；价格错误",
+      79
+    ],
+    [
+      "sku_id错误；spec_id错误；颜色错误；价格错误",
+      50
+    ],
+    [
+      "颜色错误",
+      33
+    ],
+    [
+      "颜色错误；尺寸错误",
+      29
+    ],
+    [
+      "尺寸错误；数量超过可售库存",
+      12
+    ],
+    [
+      "颜色错误；价格错误；数量超过可售库存",
+      12
+    ],
+    [
+      "颜色错误；尺寸错误；价格错误",
+      11
+    ],
+    [
+      "sku_id错误；尺寸错误；价格错误",
+      6
+    ],
+    [
+      "尺寸错误；价格错误；数量超过可售库存",
+      6
+    ],
+    [
+      "sku_id错误；颜色错误；价格错误",
+      2
+    ],
+    [
+      "sku_id错误；价格错误",
+      1
+    ]
+  ],
+  "first_failed_rows": [
+    {
+      "row_index": 4,
+      "row_status": 400,
+      "error_message": "sku_id错误；spec_id错误；颜色错误；价格错误",
+      "raw_data": {
+        "SKU": "a0447-zai-pink",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/643673885420.html",
+        "name": "a0447",
+        "size": "",
+        "color": "棉花粉",
+        "index": "3",
+        "price": "17.88",
+        "SkuURL": "",
+        "sku_id": "4809687723072",
+        "ItemURL": "",
+        "JANCODE": "4294592044429",
+        "spec_id": "c589311371784e9c960c5e699c9c9841",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "a0447-zai-pink",
+        "url": "https://detail.1688.com/offer/643673885420.html",
+        "name": "a0447",
+        "size": "",
+        "color": "棉花粉",
+        "price": "17.88",
+        "sku_id": "4809687723072",
+        "jancode": "4294592044429",
+        "sku_url": "",
+        "spec_id": "c589311371784e9c960c5e699c9c9841",
+        "item_url": "",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "17.88",
+          "link_price": "17.88",
+          "price_diff": "0.00"
+        },
+        "user_order_no": ""
+      }
+    },
+    {
+      "row_index": 9,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "ans1003-zai-black",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/1252091481.html",
+        "name": "ans1003",
+        "size": "",
+        "color": "黑色",
+        "index": "8",
+        "price": "10.2",
+        "SkuURL": "",
+        "sku_id": "36339589156",
+        "ItemURL": "",
+        "JANCODE": "4294592591367",
+        "spec_id": "f561c4f7cdb23de81fc2303ebf1e8f55",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "ans1003-zai-black",
+        "url": "https://detail.1688.com/offer/1252091481.html",
+        "name": "ans1003",
+        "size": "",
+        "color": "黑色",
+        "price": "10.2",
+        "sku_id": "36339589156",
+        "jancode": "4294592591367",
+        "sku_url": "",
+        "spec_id": "f561c4f7cdb23de81fc2303ebf1e8f55",
+        "item_url": "",
+        "else_remark": "",
+        "matched_sku": {
+          "price": "11.5",
+          "sku_id": "36339589156",
+          "spec_id": "f561c4f7cdb23de81fc2303ebf1e8f55"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "10.2",
+          "link_price": "11.5",
+          "price_diff": "1.30"
+        },
+        "user_order_no": ""
+      }
+    },
+    {
+      "row_index": 10,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "ans1003-zai-darkbrown",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/1252091481.html",
+        "name": "ans1003",
+        "size": "",
+        "color": "咖啡色",
+        "index": "9",
+        "price": "10.2",
+        "SkuURL": "",
+        "sku_id": "36339589154",
+        "ItemURL": "",
+        "JANCODE": "4294592591374",
+        "spec_id": "7b284edcb7275776d92416f1220d1000",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "ans1003-zai-darkbrown",
+        "url": "https://detail.1688.com/offer/1252091481.html",
+        "name": "ans1003",
+        "size": "",
+        "color": "咖啡色",
+        "price": "10.2",
+        "sku_id": "36339589154",
+        "jancode": "4294592591374",
+        "sku_url": "",
+        "spec_id": "7b284edcb7275776d92416f1220d1000",
+        "item_url": "",
+        "else_remark": "",
+        "matched_sku": {
+          "price": "11.5",
+          "sku_id": "36339589154",
+          "spec_id": "7b284edcb7275776d92416f1220d1000"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "10.2",
+          "link_price": "11.5",
+          "price_diff": "1.30"
+        },
+        "user_order_no": ""
+      }
+    },
+    {
+      "row_index": 11,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "ans1003-zai-rosered",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/1252091481.html",
+        "name": "ans1003",
+        "size": "",
+        "color": "玫红",
+        "index": "10",
+        "price": "10.2",
+        "SkuURL": "",
+        "sku_id": "36339589158",
+        "ItemURL": "",
+        "JANCODE": "4294592591398",
+        "spec_id": "ede04c6ffba4745d8030ac81d302263e",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "ans1003-zai-rosered",
+        "url": "https://detail.1688.com/offer/1252091481.html",
+        "name": "ans1003",
+        "size": "",
+        "color": "玫红",
+        "price": "10.2",
+        "sku_id": "36339589158",
+        "jancode": "4294592591398",
+        "sku_url": "",
+        "spec_id": "ede04c6ffba4745d8030ac81d302263e",
+        "item_url": "",
+        "else_remark": "",
+        "matched_sku": {
+          "price": "11.5",
+          "sku_id": "36339589158",
+          "spec_id": "ede04c6ffba4745d8030ac81d302263e"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "10.2",
+          "link_price": "11.5",
+          "price_diff": "1.30"
+        },
+        "user_order_no": ""
+      }
+    },
+    {
+      "row_index": 12,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "ans1003-zai-orange",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/1252091481.html",
+        "name": "ans1003",
+        "size": "",
+        "color": "橙色",
+        "index": "11",
+        "price": "10.2",
+        "SkuURL": "",
+        "sku_id": "36339589160",
+        "ItemURL": "",
+        "JANCODE": "4294592591404",
+        "spec_id": "ae4dae56a791fa98b1b572379d8e4204",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "ans1003-zai-orange",
+        "url": "https://detail.1688.com/offer/1252091481.html",
+        "name": "ans1003",
+        "size": "",
+        "color": "橙色",
+        "price": "10.2",
+        "sku_id": "36339589160",
+        "jancode": "4294592591404",
+        "sku_url": "",
+        "spec_id": "ae4dae56a791fa98b1b572379d8e4204",
+        "item_url": "",
+        "else_remark": "",
+        "matched_sku": {
+          "price": "11.5",
+          "sku_id": "36339589160",
+          "spec_id": "ae4dae56a791fa98b1b572379d8e4204"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "10.2",
+          "link_price": "11.5",
+          "price_diff": "1.30"
+        },
+        "user_order_no": ""
+      }
+    },
+    {
+      "row_index": 13,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "ans1003-zai-yellow",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/1252091481.html",
+        "name": "ans1003",
+        "size": "",
+        "color": "亮黄",
+        "index": "12",
+        "price": "10.2",
+        "SkuURL": "",
+        "sku_id": "36339589161",
+        "ItemURL": "",
+        "JANCODE": "4294592591411",
+        "spec_id": "62c5e5a033313348a32f883cfad167f3",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "ans1003-zai-yellow",
+        "url": "https://detail.1688.com/offer/1252091481.html",
+        "name": "ans1003",
+        "size": "",
+        "color": "亮黄",
+        "price": "10.2",
+        "sku_id": "36339589161",
+        "jancode": "4294592591411",
+        "sku_url": "",
+        "spec_id": "62c5e5a033313348a32f883cfad167f3",
+        "item_url": "",
+        "else_remark": "",
+        "matched_sku": {
+          "price": "11.5",
+          "sku_id": "36339589161",
+          "spec_id": "62c5e5a033313348a32f883cfad167f3"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "10.2",
+          "link_price": "11.5",
+          "price_diff": "1.30"
+        },
+        "user_order_no": ""
+      }
+    },
+    {
+      "row_index": 19,
+      "row_status": 400,
+      "error_message": "商品详情接口获取失败",
+      "raw_data": {
+        "SKU": "apronwzt-zai-wzt03khaki",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/736433459122.html",
+        "name": "apronwzt",
+        "size": "",
+        "color": "WZT-03-ML",
+        "index": "18",
+        "price": "23.9",
+        "SkuURL": "",
+        "sku_id": "5791489320098",
+        "ItemURL": "",
+        "JANCODE": "4294593385538",
+        "spec_id": "dbc831cf91c09a6bac06373579bb824f",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "apronwzt-zai-wzt03khaki",
+        "url": "https://detail.1688.com/offer/736433459122.html",
+        "name": "apronwzt",
+        "size": "",
+        "color": "WZT-03-ML",
+        "price": "23.9",
+        "sku_id": "5791489320098",
+        "jancode": "4294593385538",
+        "sku_url": "",
+        "spec_id": "dbc831cf91c09a6bac06373579bb824f",
+        "item_url": "",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "23.9",
+          "link_price": "",
+          "price_diff": ""
+        },
+        "user_order_no": ""
+      }
+    },
+    {
+      "row_index": 20,
+      "row_status": 400,
+      "error_message": "商品详情接口获取失败",
+      "raw_data": {
+        "SKU": "apronwzt-zai-wzt04brown",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/736433459122.html",
+        "name": "apronwzt",
+        "size": "",
+        "color": "WZT-04-MZ",
+        "index": "19",
+        "price": "23.9",
+        "SkuURL": "",
+        "sku_id": "5791489320099",
+        "ItemURL": "",
+        "JANCODE": "4294593385545",
+        "spec_id": "8cdb58a30c5e71da06ade73b097ad29a",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "apronwzt-zai-wzt04brown",
+        "url": "https://detail.1688.com/offer/736433459122.html",
+        "name": "apronwzt",
+        "size": "",
+        "color": "WZT-04-MZ",
+        "price": "23.9",
+        "sku_id": "5791489320099",
+        "jancode": "4294593385545",
+        "sku_url": "",
+        "spec_id": "8cdb58a30c5e71da06ade73b097ad29a",
+        "item_url": "",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "23.9",
+          "link_price": "",
+          "price_diff": ""
+        },
+        "user_order_no": ""
+      }
+    },
+    {
+      "row_index": 21,
+      "row_status": 400,
+      "error_message": "商品详情接口获取失败",
+      "raw_data": {
+        "SKU": "apronwzt-zai-wzt05black",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/736433459122.html",
+        "name": "apronwzt",
+        "size": "",
+        "color": "WZT-05-MH",
+        "index": "20",
+        "price": "23.9",
+        "SkuURL": "",
+        "sku_id": "5791489320100",
+        "ItemURL": "",
+        "JANCODE": "4294593385552",
+        "spec_id": "aea4f4d2912c1472f9876528d845e491",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "apronwzt-zai-wzt05black",
+        "url": "https://detail.1688.com/offer/736433459122.html",
+        "name": "apronwzt",
+        "size": "",
+        "color": "WZT-05-MH",
+        "price": "23.9",
+        "sku_id": "5791489320100",
+        "jancode": "4294593385552",
+        "sku_url": "",
+        "spec_id": "aea4f4d2912c1472f9876528d845e491",
+        "item_url": "",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "23.9",
+          "link_price": "",
+          "price_diff": ""
+        },
+        "user_order_no": ""
+      }
+    },
+    {
+      "row_index": 22,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "babybib482-zai-starxwhite",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/680464976228.html",
+        "name": "babybib482",
+        "size": "",
+        "color": "翅膀围-奶白翅膀",
+        "index": "21",
+        "price": "18",
+        "SkuURL": "",
+        "sku_id": "5054407147763",
+        "ItemURL": "",
+        "JANCODE": "4294592167661",
+        "spec_id": "5f7f1b1378403592302a2b054b4f46ea",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "babybib482-zai-starxwhite",
+        "url": "https://detail.1688.com/offer/680464976228.html",
+        "name": "babybib482",
+        "size": "",
+        "color": "翅膀围-奶白翅膀",
+        "price": "18",
+        "sku_id": "5054407147763",
+        "jancode": "4294592167661",
+        "sku_url": "",
+        "spec_id": "5f7f1b1378403592302a2b054b4f46ea",
+        "item_url": "",
+        "else_remark": "",
+        "matched_sku": {
+          "price": "23",
+          "sku_id": "5054407147763",
+          "spec_id": "5f7f1b1378403592302a2b054b4f46ea"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "18",
+          "link_price": "23",
+          "price_diff": "5.00"
+        },
+        "user_order_no": ""
+      }
+    },
+    {
+      "row_index": 23,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "babybib482-zai-starxpink",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/680464976228.html",
+        "name": "babybib482",
+        "size": "",
+        "color": "翅膀围-马卡粉",
+        "index": "22",
+        "price": "18",
+        "SkuURL": "",
+        "sku_id": "5115488263910",
+        "ItemURL": "",
+        "JANCODE": "4294592167678",
+        "spec_id": "04b376d49ecdd25ab786f495f20b666c",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "babybib482-zai-starxpink",
+        "url": "https://detail.1688.com/offer/680464976228.html",
+        "name": "babybib482",
+        "size": "",
+        "color": "翅膀围-马卡粉",
+        "price": "18",
+        "sku_id": "5115488263910",
+        "jancode": "4294592167678",
+        "sku_url": "",
+        "spec_id": "04b376d49ecdd25ab786f495f20b666c",
+        "item_url": "",
+        "else_remark": "",
+        "matched_sku": {
+          "price": "23",
+          "sku_id": "5115488263910",
+          "spec_id": "04b376d49ecdd25ab786f495f20b666c"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "18",
+          "link_price": "23",
+          "price_diff": "5.00"
+        },
+        "user_order_no": ""
+      }
+    },
+    {
+      "row_index": 26,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "bag6467-zai-beige",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/652702568681.html",
+        "name": "bag6467",
+        "size": "",
+        "color": "BE",
+        "index": "25",
+        "price": "43",
+        "SkuURL": "",
+        "sku_id": "4889446471229",
+        "ItemURL": "",
+        "JANCODE": "4294592455584",
+        "spec_id": "fb30ed55a57e0500e6116bcb7f2e74df",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "bag6467-zai-beige",
+        "url": "https://detail.1688.com/offer/652702568681.html",
+        "name": "bag6467",
+        "size": "",
+        "color": "BE",
+        "price": "43",
+        "sku_id": "4889446471229",
+        "jancode": "4294592455584",
+        "sku_url": "",
+        "spec_id": "fb30ed55a57e0500e6116bcb7f2e74df",
+        "item_url": "",
+        "else_remark": "",
+        "matched_sku": {
+          "price": "60",
+          "sku_id": "4889446471229",
+          "spec_id": "fb30ed55a57e0500e6116bcb7f2e74df"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "43",
+          "link_price": "60",
+          "price_diff": "17.00"
+        },
+        "user_order_no": ""
+      }
+    },
+    {
+      "row_index": 27,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "bag6467-zai-black",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/652702568681.html",
+        "name": "bag6467",
+        "size": "",
+        "color": "BK",
+        "index": "26",
+        "price": "43",
+        "SkuURL": "",
+        "sku_id": "4889446471230",
+        "ItemURL": "",
+        "JANCODE": "4294592455591",
+        "spec_id": "6612e0f35a30b0cfb576a64724a83668",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "bag6467-zai-black",
+        "url": "https://detail.1688.com/offer/652702568681.html",
+        "name": "bag6467",
+        "size": "",
+        "color": "BK",
+        "price": "43",
+        "sku_id": "4889446471230",
+        "jancode": "4294592455591",
+        "sku_url": "",
+        "spec_id": "6612e0f35a30b0cfb576a64724a83668",
+        "item_url": "",
+        "else_remark": "",
+        "matched_sku": {
+          "price": "60",
+          "sku_id": "4889446471230",
+          "spec_id": "6612e0f35a30b0cfb576a64724a83668"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "43",
+          "link_price": "60",
+          "price_diff": "17.00"
+        },
+        "user_order_no": ""
+      }
+    },
+    {
+      "row_index": 28,
+      "row_status": 400,
+      "error_message": "价格错误",
+      "raw_data": {
+        "SKU": "bag6467-zai-gray",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/652702568681.html",
+        "name": "bag6467",
+        "size": "",
+        "color": "GY",
+        "index": "27",
+        "price": "43",
+        "SkuURL": "",
+        "sku_id": "4884846850586",
+        "ItemURL": "",
+        "JANCODE": "4294592455607",
+        "spec_id": "2c8c19411c17485bbce8f8a47743e314",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "bag6467-zai-gray",
+        "url": "https://detail.1688.com/offer/652702568681.html",
+        "name": "bag6467",
+        "size": "",
+        "color": "GY",
+        "price": "43",
+        "sku_id": "4884846850586",
+        "jancode": "4294592455607",
+        "sku_url": "",
+        "spec_id": "2c8c19411c17485bbce8f8a47743e314",
+        "item_url": "",
+        "else_remark": "",
+        "matched_sku": {
+          "price": "60",
+          "sku_id": "4884846850586",
+          "spec_id": "2c8c19411c17485bbce8f8a47743e314"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "43",
+          "link_price": "60",
+          "price_diff": "17.00"
+        },
+        "user_order_no": ""
+      }
+    },
+    {
+      "row_index": 29,
+      "row_status": 400,
+      "error_message": "尺寸错误；价格错误",
+      "raw_data": {
+        "SKU": "bdf0039l-zai-btype",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/711515414889.html",
+        "name": "bdf0039l",
+        "size": "90*70*60",
+        "color": "粉红色",
+        "index": "28",
+        "price": "65",
+        "SkuURL": "",
+        "sku_id": "5159387807180",
+        "ItemURL": "",
+        "JANCODE": "4294592744701",
+        "spec_id": "e657fbf89628d70486a0f97d13f489ee",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "bdf0039l-zai-btype",
+        "url": "https://detail.1688.com/offer/711515414889.html",
+        "name": "bdf0039l",
+        "size": "90*70*60",
+        "color": "粉红色",
+        "price": "65",
+        "sku_id": "5159387807180",
+        "jancode": "4294592744701",
+        "sku_url": "",
+        "spec_id": "e657fbf89628d70486a0f97d13f489ee",
+        "item_url": "",
+        "else_remark": "",
+        "matched_sku": {
+          "price": "48",
+          "sku_id": "5159387807180",
+          "spec_id": "e657fbf89628d70486a0f97d13f489ee"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "65",
+          "link_price": "48",
+          "price_diff": "-17.00"
+        },
+        "user_order_no": ""
+      }
+    },
+    {
+      "row_index": 30,
+      "row_status": 400,
+      "error_message": "尺寸错误；价格错误",
+      "raw_data": {
+        "SKU": "bdf0039l-zai-dtype",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/711515414889.html",
+        "name": "bdf0039l",
+        "size": "90*70*60",
+        "color": "灰色",
+        "index": "29",
+        "price": "65",
+        "SkuURL": "",
+        "sku_id": "5056310464532",
+        "ItemURL": "",
+        "JANCODE": "4294593252908",
+        "spec_id": "7f087e10a75450818b13f7a63ac551d6",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "bdf0039l-zai-dtype",
+        "url": "https://detail.1688.com/offer/711515414889.html",
+        "name": "bdf0039l",
+        "size": "90*70*60",
+        "color": "灰色",
+        "price": "65",
+        "sku_id": "5056310464532",
+        "jancode": "4294593252908",
+        "sku_url": "",
+        "spec_id": "7f087e10a75450818b13f7a63ac551d6",
+        "item_url": "",
+        "else_remark": "",
+        "matched_sku": {
+          "price": "48",
+          "sku_id": "5056310464532",
+          "spec_id": "7f087e10a75450818b13f7a63ac551d6"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "65",
+          "link_price": "48",
+          "price_diff": "-17.00"
+        },
+        "user_order_no": ""
+      }
+    },
+    {
+      "row_index": 31,
+      "row_status": 400,
+      "error_message": "尺寸错误；价格错误",
+      "raw_data": {
+        "SKU": "bdf0039l-zai-gtype",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/711515414889.html",
+        "name": "bdf0039l",
+        "size": "90*70*60",
+        "color": "绿色",
+        "index": "30",
+        "price": "65",
+        "SkuURL": "",
+        "sku_id": "5608165939683",
+        "ItemURL": "",
+        "JANCODE": "4294593252939",
+        "spec_id": "43ff9c180cd4517180e4531c2bd5ac20",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "bdf0039l-zai-gtype",
+        "url": "https://detail.1688.com/offer/711515414889.html",
+        "name": "bdf0039l",
+        "size": "90*70*60",
+        "color": "绿色",
+        "price": "65",
+        "sku_id": "5608165939683",
+        "jancode": "4294593252939",
+        "sku_url": "",
+        "spec_id": "43ff9c180cd4517180e4531c2bd5ac20",
+        "item_url": "",
+        "else_remark": "",
+        "matched_sku": {
+          "price": "43.64",
+          "sku_id": "5608165939683",
+          "spec_id": "43ff9c180cd4517180e4531c2bd5ac20"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "65",
+          "link_price": "43.64",
+          "price_diff": "-21.36"
+        },
+        "user_order_no": ""
+      }
+    },
+    {
+      "row_index": 32,
+      "row_status": 400,
+      "error_message": "sku_id错误；尺寸错误；价格错误",
+      "raw_data": {
+        "SKU": "belt221-msize-221black",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/741438004088.html",
+        "name": "belt221",
+        "size": "M",
+        "color": "221款",
+        "index": "31",
+        "price": "19",
+        "SkuURL": "",
+        "sku_id": "5446209214330",
+        "ItemURL": "",
+        "JANCODE": "4294593302597",
+        "spec_id": "cc8a1bf314a6252e6cc03fe40bc2ff5b",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "belt221-msize-221black",
+        "url": "https://detail.1688.com/offer/741438004088.html",
+        "name": "belt221",
+        "size": "M",
+        "color": "221款",
+        "price": "19",
+        "sku_id": "5446209214330",
+        "jancode": "4294593302597",
+        "sku_url": "",
+        "spec_id": "cc8a1bf314a6252e6cc03fe40bc2ff5b",
+        "item_url": "",
+        "else_remark": "",
+        "matched_sku": {
+          "price": "15.5",
+          "sku_id": "6155304459844",
+          "spec_id": "cc8a1bf314a6252e6cc03fe40bc2ff5b"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "19",
+          "link_price": "15.5",
+          "price_diff": "-3.50"
+        },
+        "user_order_no": ""
+      }
+    },
+    {
+      "row_index": 33,
+      "row_status": 400,
+      "error_message": "sku_id错误；尺寸错误；价格错误",
+      "raw_data": {
+        "SKU": "belt221-xlsize-221black",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/741438004088.html",
+        "name": "belt221",
+        "size": "XL",
+        "color": "221款",
+        "index": "32",
+        "price": "19",
+        "SkuURL": "",
+        "sku_id": "5446209214334",
+        "ItemURL": "",
+        "JANCODE": "4294593302610",
+        "spec_id": "29e0b034fe447ce25566651c6fa33f78",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "belt221-xlsize-221black",
+        "url": "https://detail.1688.com/offer/741438004088.html",
+        "name": "belt221",
+        "size": "XL",
+        "color": "221款",
+        "price": "19",
+        "sku_id": "5446209214334",
+        "jancode": "4294593302610",
+        "sku_url": "",
+        "spec_id": "29e0b034fe447ce25566651c6fa33f78",
+        "item_url": "",
+        "else_remark": "",
+        "matched_sku": {
+          "price": "15.5",
+          "sku_id": "6155304459846",
+          "spec_id": "29e0b034fe447ce25566651c6fa33f78"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "19",
+          "link_price": "15.5",
+          "price_diff": "-3.50"
+        },
+        "user_order_no": ""
+      }
+    },
+    {
+      "row_index": 34,
+      "row_status": 400,
+      "error_message": "sku_id错误；尺寸错误；价格错误",
+      "raw_data": {
+        "SKU": "belt221-3xlsize-221black",
+        "num": "1",
+        "url": "https://detail.1688.com/offer/741438004088.html",
+        "name": "belt221",
+        "size": "3XL",
+        "color": "221款",
+        "index": "33",
+        "price": "19",
+        "SkuURL": "",
+        "sku_id": "5446209214326",
+        "ItemURL": "",
+        "JANCODE": "4294593302634",
+        "spec_id": "8fca88d4ef2ac507d6919460350bfb4a",
+        "else_remark": "",
+        "size_remark": "",
+        "color_remark": "",
+        "user_order_no": ""
+      },
+      "normalized_data": {
+        "num": "1",
+        "sku": "belt221-3xlsize-221black",
+        "url": "https://detail.1688.com/offer/741438004088.html",
+        "name": "belt221",
+        "size": "3XL",
+        "color": "221款",
+        "price": "19",
+        "sku_id": "5446209214326",
+        "jancode": "4294593302634",
+        "sku_url": "",
+        "spec_id": "8fca88d4ef2ac507d6919460350bfb4a",
+        "item_url": "",
+        "else_remark": "",
+        "matched_sku": {
+          "price": "15.5",
+          "sku_id": "6155304459842",
+          "spec_id": "8fca88d4ef2ac507d6919460350bfb4a"
+        },
+        "size_remark": "",
+        "color_remark": "",
+        "price_compare": {
+          "form_price": "19",
+          "link_price": "15.5",
+          "price_diff": "-3.50"
+        },
+        "user_order_no": ""
+      }
+    }
+  ],
+  "error_samples": {
+    "sku_id错误；spec_id错误；颜色错误；价格错误": [
+      {
+        "row_index": 4,
+        "raw_data": {
+          "SKU": "a0447-zai-pink",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/643673885420.html",
+          "name": "a0447",
+          "size": "",
+          "color": "棉花粉",
+          "index": "3",
+          "price": "17.88",
+          "SkuURL": "",
+          "sku_id": "4809687723072",
+          "ItemURL": "",
+          "JANCODE": "4294592044429",
+          "spec_id": "c589311371784e9c960c5e699c9c9841",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "a0447-zai-pink",
+          "url": "https://detail.1688.com/offer/643673885420.html",
+          "name": "a0447",
+          "size": "",
+          "color": "棉花粉",
+          "price": "17.88",
+          "sku_id": "4809687723072",
+          "jancode": "4294592044429",
+          "sku_url": "",
+          "spec_id": "c589311371784e9c960c5e699c9c9841",
+          "item_url": "",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "17.88",
+            "link_price": "17.88",
+            "price_diff": "0.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 730,
+        "raw_data": {
+          "SKU": "itbg67-zai-offwhite",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/676513685281.html",
+          "name": "itbg67",
+          "size": "",
+          "color": "红色PU",
+          "index": "729",
+          "price": "37",
+          "SkuURL": "",
+          "sku_id": "5673839667352",
+          "ItemURL": "",
+          "JANCODE": "4294592921478",
+          "spec_id": "8ccd3873a17a63525745ca5b2cf1b50c",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "itbg67-zai-offwhite",
+          "url": "https://detail.1688.com/offer/676513685281.html",
+          "name": "itbg67",
+          "size": "",
+          "color": "红色PU",
+          "price": "37",
+          "sku_id": "5673839667352",
+          "jancode": "4294592921478",
+          "sku_url": "",
+          "spec_id": "8ccd3873a17a63525745ca5b2cf1b50c",
+          "item_url": "",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "37",
+            "link_price": "35",
+            "price_diff": "-2.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 731,
+        "raw_data": {
+          "SKU": "itbg67-zai-red",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/676513685281.html",
+          "name": "itbg67",
+          "size": "",
+          "color": "红色PU",
+          "index": "730",
+          "price": "37",
+          "SkuURL": "",
+          "sku_id": "5673839667352",
+          "ItemURL": "",
+          "JANCODE": "4294592921485",
+          "spec_id": "8ccd3873a17a63525745ca5b2cf1b50c",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "itbg67-zai-red",
+          "url": "https://detail.1688.com/offer/676513685281.html",
+          "name": "itbg67",
+          "size": "",
+          "color": "红色PU",
+          "price": "37",
+          "sku_id": "5673839667352",
+          "jancode": "4294592921485",
+          "sku_url": "",
+          "spec_id": "8ccd3873a17a63525745ca5b2cf1b50c",
+          "item_url": "",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "37",
+            "link_price": "35",
+            "price_diff": "-2.00"
+          },
+          "user_order_no": ""
+        }
+      }
+    ],
+    "价格错误": [
+      {
+        "row_index": 9,
+        "raw_data": {
+          "SKU": "ans1003-zai-black",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/1252091481.html",
+          "name": "ans1003",
+          "size": "",
+          "color": "黑色",
+          "index": "8",
+          "price": "10.2",
+          "SkuURL": "",
+          "sku_id": "36339589156",
+          "ItemURL": "",
+          "JANCODE": "4294592591367",
+          "spec_id": "f561c4f7cdb23de81fc2303ebf1e8f55",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "ans1003-zai-black",
+          "url": "https://detail.1688.com/offer/1252091481.html",
+          "name": "ans1003",
+          "size": "",
+          "color": "黑色",
+          "price": "10.2",
+          "sku_id": "36339589156",
+          "jancode": "4294592591367",
+          "sku_url": "",
+          "spec_id": "f561c4f7cdb23de81fc2303ebf1e8f55",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "11.5",
+            "sku_id": "36339589156",
+            "spec_id": "f561c4f7cdb23de81fc2303ebf1e8f55"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "10.2",
+            "link_price": "11.5",
+            "price_diff": "1.30"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 10,
+        "raw_data": {
+          "SKU": "ans1003-zai-darkbrown",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/1252091481.html",
+          "name": "ans1003",
+          "size": "",
+          "color": "咖啡色",
+          "index": "9",
+          "price": "10.2",
+          "SkuURL": "",
+          "sku_id": "36339589154",
+          "ItemURL": "",
+          "JANCODE": "4294592591374",
+          "spec_id": "7b284edcb7275776d92416f1220d1000",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "ans1003-zai-darkbrown",
+          "url": "https://detail.1688.com/offer/1252091481.html",
+          "name": "ans1003",
+          "size": "",
+          "color": "咖啡色",
+          "price": "10.2",
+          "sku_id": "36339589154",
+          "jancode": "4294592591374",
+          "sku_url": "",
+          "spec_id": "7b284edcb7275776d92416f1220d1000",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "11.5",
+            "sku_id": "36339589154",
+            "spec_id": "7b284edcb7275776d92416f1220d1000"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "10.2",
+            "link_price": "11.5",
+            "price_diff": "1.30"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 11,
+        "raw_data": {
+          "SKU": "ans1003-zai-rosered",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/1252091481.html",
+          "name": "ans1003",
+          "size": "",
+          "color": "玫红",
+          "index": "10",
+          "price": "10.2",
+          "SkuURL": "",
+          "sku_id": "36339589158",
+          "ItemURL": "",
+          "JANCODE": "4294592591398",
+          "spec_id": "ede04c6ffba4745d8030ac81d302263e",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "ans1003-zai-rosered",
+          "url": "https://detail.1688.com/offer/1252091481.html",
+          "name": "ans1003",
+          "size": "",
+          "color": "玫红",
+          "price": "10.2",
+          "sku_id": "36339589158",
+          "jancode": "4294592591398",
+          "sku_url": "",
+          "spec_id": "ede04c6ffba4745d8030ac81d302263e",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "11.5",
+            "sku_id": "36339589158",
+            "spec_id": "ede04c6ffba4745d8030ac81d302263e"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "10.2",
+            "link_price": "11.5",
+            "price_diff": "1.30"
+          },
+          "user_order_no": ""
+        }
+      }
+    ],
+    "商品详情接口获取失败": [
+      {
+        "row_index": 19,
+        "raw_data": {
+          "SKU": "apronwzt-zai-wzt03khaki",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/736433459122.html",
+          "name": "apronwzt",
+          "size": "",
+          "color": "WZT-03-ML",
+          "index": "18",
+          "price": "23.9",
+          "SkuURL": "",
+          "sku_id": "5791489320098",
+          "ItemURL": "",
+          "JANCODE": "4294593385538",
+          "spec_id": "dbc831cf91c09a6bac06373579bb824f",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "apronwzt-zai-wzt03khaki",
+          "url": "https://detail.1688.com/offer/736433459122.html",
+          "name": "apronwzt",
+          "size": "",
+          "color": "WZT-03-ML",
+          "price": "23.9",
+          "sku_id": "5791489320098",
+          "jancode": "4294593385538",
+          "sku_url": "",
+          "spec_id": "dbc831cf91c09a6bac06373579bb824f",
+          "item_url": "",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "23.9",
+            "link_price": "",
+            "price_diff": ""
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 20,
+        "raw_data": {
+          "SKU": "apronwzt-zai-wzt04brown",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/736433459122.html",
+          "name": "apronwzt",
+          "size": "",
+          "color": "WZT-04-MZ",
+          "index": "19",
+          "price": "23.9",
+          "SkuURL": "",
+          "sku_id": "5791489320099",
+          "ItemURL": "",
+          "JANCODE": "4294593385545",
+          "spec_id": "8cdb58a30c5e71da06ade73b097ad29a",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "apronwzt-zai-wzt04brown",
+          "url": "https://detail.1688.com/offer/736433459122.html",
+          "name": "apronwzt",
+          "size": "",
+          "color": "WZT-04-MZ",
+          "price": "23.9",
+          "sku_id": "5791489320099",
+          "jancode": "4294593385545",
+          "sku_url": "",
+          "spec_id": "8cdb58a30c5e71da06ade73b097ad29a",
+          "item_url": "",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "23.9",
+            "link_price": "",
+            "price_diff": ""
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 21,
+        "raw_data": {
+          "SKU": "apronwzt-zai-wzt05black",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/736433459122.html",
+          "name": "apronwzt",
+          "size": "",
+          "color": "WZT-05-MH",
+          "index": "20",
+          "price": "23.9",
+          "SkuURL": "",
+          "sku_id": "5791489320100",
+          "ItemURL": "",
+          "JANCODE": "4294593385552",
+          "spec_id": "aea4f4d2912c1472f9876528d845e491",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "apronwzt-zai-wzt05black",
+          "url": "https://detail.1688.com/offer/736433459122.html",
+          "name": "apronwzt",
+          "size": "",
+          "color": "WZT-05-MH",
+          "price": "23.9",
+          "sku_id": "5791489320100",
+          "jancode": "4294593385552",
+          "sku_url": "",
+          "spec_id": "aea4f4d2912c1472f9876528d845e491",
+          "item_url": "",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "23.9",
+            "link_price": "",
+            "price_diff": ""
+          },
+          "user_order_no": ""
+        }
+      }
+    ],
+    "尺寸错误；价格错误": [
+      {
+        "row_index": 29,
+        "raw_data": {
+          "SKU": "bdf0039l-zai-btype",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/711515414889.html",
+          "name": "bdf0039l",
+          "size": "90*70*60",
+          "color": "粉红色",
+          "index": "28",
+          "price": "65",
+          "SkuURL": "",
+          "sku_id": "5159387807180",
+          "ItemURL": "",
+          "JANCODE": "4294592744701",
+          "spec_id": "e657fbf89628d70486a0f97d13f489ee",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "bdf0039l-zai-btype",
+          "url": "https://detail.1688.com/offer/711515414889.html",
+          "name": "bdf0039l",
+          "size": "90*70*60",
+          "color": "粉红色",
+          "price": "65",
+          "sku_id": "5159387807180",
+          "jancode": "4294592744701",
+          "sku_url": "",
+          "spec_id": "e657fbf89628d70486a0f97d13f489ee",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "48",
+            "sku_id": "5159387807180",
+            "spec_id": "e657fbf89628d70486a0f97d13f489ee"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "65",
+            "link_price": "48",
+            "price_diff": "-17.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 30,
+        "raw_data": {
+          "SKU": "bdf0039l-zai-dtype",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/711515414889.html",
+          "name": "bdf0039l",
+          "size": "90*70*60",
+          "color": "灰色",
+          "index": "29",
+          "price": "65",
+          "SkuURL": "",
+          "sku_id": "5056310464532",
+          "ItemURL": "",
+          "JANCODE": "4294593252908",
+          "spec_id": "7f087e10a75450818b13f7a63ac551d6",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "bdf0039l-zai-dtype",
+          "url": "https://detail.1688.com/offer/711515414889.html",
+          "name": "bdf0039l",
+          "size": "90*70*60",
+          "color": "灰色",
+          "price": "65",
+          "sku_id": "5056310464532",
+          "jancode": "4294593252908",
+          "sku_url": "",
+          "spec_id": "7f087e10a75450818b13f7a63ac551d6",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "48",
+            "sku_id": "5056310464532",
+            "spec_id": "7f087e10a75450818b13f7a63ac551d6"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "65",
+            "link_price": "48",
+            "price_diff": "-17.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 31,
+        "raw_data": {
+          "SKU": "bdf0039l-zai-gtype",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/711515414889.html",
+          "name": "bdf0039l",
+          "size": "90*70*60",
+          "color": "绿色",
+          "index": "30",
+          "price": "65",
+          "SkuURL": "",
+          "sku_id": "5608165939683",
+          "ItemURL": "",
+          "JANCODE": "4294593252939",
+          "spec_id": "43ff9c180cd4517180e4531c2bd5ac20",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "bdf0039l-zai-gtype",
+          "url": "https://detail.1688.com/offer/711515414889.html",
+          "name": "bdf0039l",
+          "size": "90*70*60",
+          "color": "绿色",
+          "price": "65",
+          "sku_id": "5608165939683",
+          "jancode": "4294593252939",
+          "sku_url": "",
+          "spec_id": "43ff9c180cd4517180e4531c2bd5ac20",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "43.64",
+            "sku_id": "5608165939683",
+            "spec_id": "43ff9c180cd4517180e4531c2bd5ac20"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "65",
+            "link_price": "43.64",
+            "price_diff": "-21.36"
+          },
+          "user_order_no": ""
+        }
+      }
+    ],
+    "sku_id错误；尺寸错误；价格错误": [
+      {
+        "row_index": 32,
+        "raw_data": {
+          "SKU": "belt221-msize-221black",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/741438004088.html",
+          "name": "belt221",
+          "size": "M",
+          "color": "221款",
+          "index": "31",
+          "price": "19",
+          "SkuURL": "",
+          "sku_id": "5446209214330",
+          "ItemURL": "",
+          "JANCODE": "4294593302597",
+          "spec_id": "cc8a1bf314a6252e6cc03fe40bc2ff5b",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "belt221-msize-221black",
+          "url": "https://detail.1688.com/offer/741438004088.html",
+          "name": "belt221",
+          "size": "M",
+          "color": "221款",
+          "price": "19",
+          "sku_id": "5446209214330",
+          "jancode": "4294593302597",
+          "sku_url": "",
+          "spec_id": "cc8a1bf314a6252e6cc03fe40bc2ff5b",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "15.5",
+            "sku_id": "6155304459844",
+            "spec_id": "cc8a1bf314a6252e6cc03fe40bc2ff5b"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "19",
+            "link_price": "15.5",
+            "price_diff": "-3.50"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 33,
+        "raw_data": {
+          "SKU": "belt221-xlsize-221black",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/741438004088.html",
+          "name": "belt221",
+          "size": "XL",
+          "color": "221款",
+          "index": "32",
+          "price": "19",
+          "SkuURL": "",
+          "sku_id": "5446209214334",
+          "ItemURL": "",
+          "JANCODE": "4294593302610",
+          "spec_id": "29e0b034fe447ce25566651c6fa33f78",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "belt221-xlsize-221black",
+          "url": "https://detail.1688.com/offer/741438004088.html",
+          "name": "belt221",
+          "size": "XL",
+          "color": "221款",
+          "price": "19",
+          "sku_id": "5446209214334",
+          "jancode": "4294593302610",
+          "sku_url": "",
+          "spec_id": "29e0b034fe447ce25566651c6fa33f78",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "15.5",
+            "sku_id": "6155304459846",
+            "spec_id": "29e0b034fe447ce25566651c6fa33f78"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "19",
+            "link_price": "15.5",
+            "price_diff": "-3.50"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 34,
+        "raw_data": {
+          "SKU": "belt221-3xlsize-221black",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/741438004088.html",
+          "name": "belt221",
+          "size": "3XL",
+          "color": "221款",
+          "index": "33",
+          "price": "19",
+          "SkuURL": "",
+          "sku_id": "5446209214326",
+          "ItemURL": "",
+          "JANCODE": "4294593302634",
+          "spec_id": "8fca88d4ef2ac507d6919460350bfb4a",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "belt221-3xlsize-221black",
+          "url": "https://detail.1688.com/offer/741438004088.html",
+          "name": "belt221",
+          "size": "3XL",
+          "color": "221款",
+          "price": "19",
+          "sku_id": "5446209214326",
+          "jancode": "4294593302634",
+          "sku_url": "",
+          "spec_id": "8fca88d4ef2ac507d6919460350bfb4a",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "15.5",
+            "sku_id": "6155304459842",
+            "spec_id": "8fca88d4ef2ac507d6919460350bfb4a"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "19",
+            "link_price": "15.5",
+            "price_diff": "-3.50"
+          },
+          "user_order_no": ""
+        }
+      }
+    ],
+    "颜色错误；价格错误": [
+      {
+        "row_index": 46,
+        "raw_data": {
+          "SKU": "ckbs689-zai-atypexpink",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/688522911098.html",
+          "name": "ckbs689",
+          "size": "",
+          "color": "粉色（耳朵款）",
+          "index": "45",
+          "price": "3.65",
+          "SkuURL": "",
+          "sku_id": "4918857269592",
+          "ItemURL": "",
+          "JANCODE": "4294592733545",
+          "spec_id": "3d1e84b63845a7c5ee60327e27acf620",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "ckbs689-zai-atypexpink",
+          "url": "https://detail.1688.com/offer/688522911098.html",
+          "name": "ckbs689",
+          "size": "",
+          "color": "粉色（耳朵款）",
+          "price": "3.65",
+          "sku_id": "4918857269592",
+          "jancode": "4294592733545",
+          "sku_url": "",
+          "spec_id": "3d1e84b63845a7c5ee60327e27acf620",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "3.04",
+            "sku_id": "4918857269592",
+            "spec_id": "3d1e84b63845a7c5ee60327e27acf620"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "3.65",
+            "link_price": "3.04",
+            "price_diff": "-0.61"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 47,
+        "raw_data": {
+          "SKU": "ckbs689-zai-atypexgreen",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/688522911098.html",
+          "name": "ckbs689",
+          "size": "",
+          "color": "绿色（耳朵款）",
+          "index": "46",
+          "price": "3.65",
+          "SkuURL": "",
+          "sku_id": "4918857269591",
+          "ItemURL": "",
+          "JANCODE": "4294592733552",
+          "spec_id": "e19f3071fdf6ffdbf8ba16f5337e5548",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "ckbs689-zai-atypexgreen",
+          "url": "https://detail.1688.com/offer/688522911098.html",
+          "name": "ckbs689",
+          "size": "",
+          "color": "绿色（耳朵款）",
+          "price": "3.65",
+          "sku_id": "4918857269591",
+          "jancode": "4294592733552",
+          "sku_url": "",
+          "spec_id": "e19f3071fdf6ffdbf8ba16f5337e5548",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "3.04",
+            "sku_id": "4918857269591",
+            "spec_id": "e19f3071fdf6ffdbf8ba16f5337e5548"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "3.65",
+            "link_price": "3.04",
+            "price_diff": "-0.61"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 48,
+        "raw_data": {
+          "SKU": "ckbs689-zai-btypexorange",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/688522911098.html",
+          "name": "ckbs689",
+          "size": "",
+          "color": "橙色（熊款）",
+          "index": "47",
+          "price": "3.65",
+          "SkuURL": "",
+          "sku_id": "4918857269593",
+          "ItemURL": "",
+          "JANCODE": "4294592733569",
+          "spec_id": "1a0a977e8656c1458d6f976e53dca22e",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "ckbs689-zai-btypexorange",
+          "url": "https://detail.1688.com/offer/688522911098.html",
+          "name": "ckbs689",
+          "size": "",
+          "color": "橙色（熊款）",
+          "price": "3.65",
+          "sku_id": "4918857269593",
+          "jancode": "4294592733569",
+          "sku_url": "",
+          "spec_id": "1a0a977e8656c1458d6f976e53dca22e",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "3.04",
+            "sku_id": "4918857269593",
+            "spec_id": "1a0a977e8656c1458d6f976e53dca22e"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "3.65",
+            "link_price": "3.04",
+            "price_diff": "-0.61"
+          },
+          "user_order_no": ""
+        }
+      }
+    ],
+    "尺寸错误": [
+      {
+        "row_index": 59,
+        "raw_data": {
+          "SKU": "cxpt600-zai-gray",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/679296014173.html",
+          "name": "cxpt600",
+          "size": "小号 43x29x5",
+          "color": "灰色",
+          "index": "58",
+          "price": "31.2",
+          "SkuURL": "",
+          "sku_id": "4873950497111",
+          "ItemURL": "",
+          "JANCODE": "4294592767885",
+          "spec_id": "56e667b2596e1e4de80a4bce7cfe74bd",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "cxpt600-zai-gray",
+          "url": "https://detail.1688.com/offer/679296014173.html",
+          "name": "cxpt600",
+          "size": "小号 43x29x5",
+          "color": "灰色",
+          "price": "31.2",
+          "sku_id": "4873950497111",
+          "jancode": "4294592767885",
+          "sku_url": "",
+          "spec_id": "56e667b2596e1e4de80a4bce7cfe74bd",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "31.2",
+            "sku_id": "4873950497111",
+            "spec_id": "56e667b2596e1e4de80a4bce7cfe74bd"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "31.2",
+            "link_price": "31.2",
+            "price_diff": "0.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 60,
+        "raw_data": {
+          "SKU": "cxpt600-zai-green",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/679296014173.html",
+          "name": "cxpt600",
+          "size": "小号 43x29x5",
+          "color": "蓝色",
+          "index": "59",
+          "price": "31.2",
+          "SkuURL": "",
+          "sku_id": "4873950497117",
+          "ItemURL": "",
+          "JANCODE": "4294592767908",
+          "spec_id": "8f4d25ca85b264b1c08bbbeffb13ef97",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "cxpt600-zai-green",
+          "url": "https://detail.1688.com/offer/679296014173.html",
+          "name": "cxpt600",
+          "size": "小号 43x29x5",
+          "color": "蓝色",
+          "price": "31.2",
+          "sku_id": "4873950497117",
+          "jancode": "4294592767908",
+          "sku_url": "",
+          "spec_id": "8f4d25ca85b264b1c08bbbeffb13ef97",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "31.2",
+            "sku_id": "4873950497117",
+            "spec_id": "8f4d25ca85b264b1c08bbbeffb13ef97"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "31.2",
+            "link_price": "31.2",
+            "price_diff": "0.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 61,
+        "raw_data": {
+          "SKU": "cxpt600-zai-black",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/679296014173.html",
+          "name": "cxpt600",
+          "size": "小号 43x29x5",
+          "color": "黑色",
+          "index": "60",
+          "price": "31.2",
+          "SkuURL": "",
+          "sku_id": "5050258229088",
+          "ItemURL": "",
+          "JANCODE": "4294592767915",
+          "spec_id": "445d354bdf5d6c99ae7695c487253b55",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "cxpt600-zai-black",
+          "url": "https://detail.1688.com/offer/679296014173.html",
+          "name": "cxpt600",
+          "size": "小号 43x29x5",
+          "color": "黑色",
+          "price": "31.2",
+          "sku_id": "5050258229088",
+          "jancode": "4294592767915",
+          "sku_url": "",
+          "spec_id": "445d354bdf5d6c99ae7695c487253b55",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "31.2",
+            "sku_id": "5050258229088",
+            "spec_id": "445d354bdf5d6c99ae7695c487253b55"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "31.2",
+            "link_price": "31.2",
+            "price_diff": "0.00"
+          },
+          "user_order_no": ""
+        }
+      }
+    ],
+    "颜色错误": [
+      {
+        "row_index": 96,
+        "raw_data": {
+          "SKU": "g1673-zai-bxpurplemint",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/572687380736.html",
+          "name": "g1673",
+          "size": "",
+          "color": "体式紫青",
+          "index": "95",
+          "price": "6.5",
+          "SkuURL": "",
+          "sku_id": "5051198078026",
+          "ItemURL": "",
+          "JANCODE": "4294593303815",
+          "spec_id": "fef8d53068dd136a4965cefbb685e62a",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "g1673-zai-bxpurplemint",
+          "url": "https://detail.1688.com/offer/572687380736.html",
+          "name": "g1673",
+          "size": "",
+          "color": "体式紫青",
+          "price": "6.5",
+          "sku_id": "5051198078026",
+          "jancode": "4294593303815",
+          "sku_url": "",
+          "spec_id": "fef8d53068dd136a4965cefbb685e62a",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "6.5",
+            "sku_id": "5051198078026",
+            "spec_id": "fef8d53068dd136a4965cefbb685e62a"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "6.5",
+            "link_price": "6.5",
+            "price_diff": "0.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 97,
+        "raw_data": {
+          "SKU": "g1673-zai-bxgraypurple",
+          "num": "2",
+          "url": "https://detail.1688.com/offer/572687380736.html",
+          "name": "g1673",
+          "size": "",
+          "color": "体式紫藤灰",
+          "index": "96",
+          "price": "6.5",
+          "SkuURL": "",
+          "sku_id": "4948483221337",
+          "ItemURL": "",
+          "JANCODE": "4294593303846",
+          "spec_id": "434d94966309bf5efdc892d42dfe5536",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "2",
+          "sku": "g1673-zai-bxgraypurple",
+          "url": "https://detail.1688.com/offer/572687380736.html",
+          "name": "g1673",
+          "size": "",
+          "color": "体式紫藤灰",
+          "price": "6.5",
+          "sku_id": "4948483221337",
+          "jancode": "4294593303846",
+          "sku_url": "",
+          "spec_id": "434d94966309bf5efdc892d42dfe5536",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "6.5",
+            "sku_id": "4948483221337",
+            "spec_id": "434d94966309bf5efdc892d42dfe5536"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "6.5",
+            "link_price": "6.5",
+            "price_diff": "0.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 1908,
+        "raw_data": {
+          "SKU": "nachs1050-zai-pink",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/655566321770.html",
+          "name": "nachs1050",
+          "size": "",
+          "color": "苹果（适合金丝熊或者仓鼠）",
+          "index": "1907",
+          "price": "10.5",
+          "SkuURL": "",
+          "sku_id": "4897875720454",
+          "ItemURL": "",
+          "JANCODE": "4294593337285",
+          "spec_id": "c2216975e661648327a941dd4167e370",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "nachs1050-zai-pink",
+          "url": "https://detail.1688.com/offer/655566321770.html",
+          "name": "nachs1050",
+          "size": "",
+          "color": "苹果（适合金丝熊或者仓鼠）",
+          "price": "10.5",
+          "sku_id": "4897875720454",
+          "jancode": "4294593337285",
+          "sku_url": "",
+          "spec_id": "c2216975e661648327a941dd4167e370",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "10.5",
+            "sku_id": "4897875720454",
+            "spec_id": "c2216975e661648327a941dd4167e370"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "10.5",
+            "link_price": "10.5",
+            "price_diff": "0.00"
+          },
+          "user_order_no": ""
+        }
+      }
+    ],
+    "数量超过可售库存": [
+      {
+        "row_index": 119,
+        "raw_data": {
+          "SKU": "g6165-zai-bear",
+          "num": "2",
+          "url": "https://detail.1688.com/offer/712219785303.html",
+          "name": "g6165",
+          "size": "",
+          "color": "小熊门卡",
+          "index": "118",
+          "price": "3.5",
+          "SkuURL": "",
+          "sku_id": "4991486833425",
+          "ItemURL": "",
+          "JANCODE": "4294593165604",
+          "spec_id": "64b6b13aa10c7ec422d63494f509d20d",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "2",
+          "sku": "g6165-zai-bear",
+          "url": "https://detail.1688.com/offer/712219785303.html",
+          "name": "g6165",
+          "size": "",
+          "color": "小熊门卡",
+          "price": "3.5",
+          "sku_id": "4991486833425",
+          "jancode": "4294593165604",
+          "sku_url": "",
+          "spec_id": "64b6b13aa10c7ec422d63494f509d20d",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "3.5",
+            "sku_id": "4991486833425",
+            "spec_id": "64b6b13aa10c7ec422d63494f509d20d"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "3.5",
+            "link_price": "3.5",
+            "price_diff": "0.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 240,
+        "raw_data": {
+          "SKU": "g6255-lsize-black",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/694622649353.html",
+          "name": "g6255",
+          "size": "L",
+          "color": "黑色",
+          "index": "239",
+          "price": "62",
+          "SkuURL": "",
+          "sku_id": "5049544672411",
+          "ItemURL": "",
+          "JANCODE": "4294593255688",
+          "spec_id": "b99ece08861a79e13a4dba90e97ebff8",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "g6255-lsize-black",
+          "url": "https://detail.1688.com/offer/694622649353.html",
+          "name": "g6255",
+          "size": "L",
+          "color": "黑色",
+          "price": "62",
+          "sku_id": "5049544672411",
+          "jancode": "4294593255688",
+          "sku_url": "",
+          "spec_id": "b99ece08861a79e13a4dba90e97ebff8",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "62",
+            "sku_id": "5049544672411",
+            "spec_id": "b99ece08861a79e13a4dba90e97ebff8"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "62",
+            "link_price": "62",
+            "price_diff": "0.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 241,
+        "raw_data": {
+          "SKU": "g6255-xlsize-black",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/694622649353.html",
+          "name": "g6255",
+          "size": "XL",
+          "color": "黑色",
+          "index": "240",
+          "price": "62",
+          "SkuURL": "",
+          "sku_id": "5049544672412",
+          "ItemURL": "",
+          "JANCODE": "4294593255695",
+          "spec_id": "5c337082186ff55b2d8267560ac89d59",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "g6255-xlsize-black",
+          "url": "https://detail.1688.com/offer/694622649353.html",
+          "name": "g6255",
+          "size": "XL",
+          "color": "黑色",
+          "price": "62",
+          "sku_id": "5049544672412",
+          "jancode": "4294593255695",
+          "sku_url": "",
+          "spec_id": "5c337082186ff55b2d8267560ac89d59",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "62",
+            "sku_id": "5049544672412",
+            "spec_id": "5c337082186ff55b2d8267560ac89d59"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "62",
+            "link_price": "62",
+            "price_diff": "0.00"
+          },
+          "user_order_no": ""
+        }
+      }
+    ],
+    "颜色错误；尺寸错误": [
+      {
+        "row_index": 152,
+        "raw_data": {
+          "SKU": "g6204-zai-white",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/689910205412.html",
+          "name": "g6204",
+          "size": "Nintendo 游戏卡带收纳盒",
+          "color": "白色-24位磁吸卡盒",
+          "index": "151",
+          "price": "12",
+          "SkuURL": "",
+          "sku_id": "5084498755445",
+          "ItemURL": "",
+          "JANCODE": "4294593197360",
+          "spec_id": "72e863dd4dc88ca39b0ffc1d7e8f29ee",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "g6204-zai-white",
+          "url": "https://detail.1688.com/offer/689910205412.html",
+          "name": "g6204",
+          "size": "Nintendo 游戏卡带收纳盒",
+          "color": "白色-24位磁吸卡盒",
+          "price": "12",
+          "sku_id": "5084498755445",
+          "jancode": "4294593197360",
+          "sku_url": "",
+          "spec_id": "72e863dd4dc88ca39b0ffc1d7e8f29ee",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "12",
+            "sku_id": "5084498755445",
+            "spec_id": "72e863dd4dc88ca39b0ffc1d7e8f29ee"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "12",
+            "link_price": "12",
+            "price_diff": "0.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 153,
+        "raw_data": {
+          "SKU": "g6204-zai-black",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/689910205412.html",
+          "name": "g6204",
+          "size": "Nintendo 游戏卡带收纳盒",
+          "color": "黑色-24位磁吸卡盒",
+          "index": "152",
+          "price": "12",
+          "SkuURL": "",
+          "sku_id": "5084498755446",
+          "ItemURL": "",
+          "JANCODE": "4294593197377",
+          "spec_id": "65b6ef23d48630001d1e464df46f3fbe",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "g6204-zai-black",
+          "url": "https://detail.1688.com/offer/689910205412.html",
+          "name": "g6204",
+          "size": "Nintendo 游戏卡带收纳盒",
+          "color": "黑色-24位磁吸卡盒",
+          "price": "12",
+          "sku_id": "5084498755446",
+          "jancode": "4294593197377",
+          "sku_url": "",
+          "spec_id": "65b6ef23d48630001d1e464df46f3fbe",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "12",
+            "sku_id": "5084498755446",
+            "spec_id": "65b6ef23d48630001d1e464df46f3fbe"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "12",
+            "link_price": "12",
+            "price_diff": "0.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 154,
+        "raw_data": {
+          "SKU": "g6204-zai-pink",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/689910205412.html",
+          "name": "g6204",
+          "size": "Nintendo 游戏卡带收纳盒",
+          "color": "粉色-24位磁吸卡盒",
+          "index": "153",
+          "price": "12",
+          "SkuURL": "",
+          "sku_id": "5084498755447",
+          "ItemURL": "",
+          "JANCODE": "4294593197384",
+          "spec_id": "b4c2091ade7090c5baf26613ff8e4355",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "g6204-zai-pink",
+          "url": "https://detail.1688.com/offer/689910205412.html",
+          "name": "g6204",
+          "size": "Nintendo 游戏卡带收纳盒",
+          "color": "粉色-24位磁吸卡盒",
+          "price": "12",
+          "sku_id": "5084498755447",
+          "jancode": "4294593197384",
+          "sku_url": "",
+          "spec_id": "b4c2091ade7090c5baf26613ff8e4355",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "12",
+            "sku_id": "5084498755447",
+            "spec_id": "b4c2091ade7090c5baf26613ff8e4355"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "12",
+            "link_price": "12",
+            "price_diff": "0.00"
+          },
+          "user_order_no": ""
+        }
+      }
+    ],
+    "价格错误；数量超过可售库存": [
+      {
+        "row_index": 208,
+        "raw_data": {
+          "SKU": "g6245-zai-ef858e",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/626495172088.html",
+          "name": "g6245",
+          "size": "110*110",
+          "color": "SMT105-EF581",
+          "index": "207",
+          "price": "36",
+          "SkuURL": "",
+          "sku_id": "4970692789856",
+          "ItemURL": "",
+          "JANCODE": "4294593228460",
+          "spec_id": "23a219460c35a28eaa54e910c224243e",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "g6245-zai-ef858e",
+          "url": "https://detail.1688.com/offer/626495172088.html",
+          "name": "g6245",
+          "size": "110*110",
+          "color": "SMT105-EF581",
+          "price": "36",
+          "sku_id": "4970692789856",
+          "jancode": "4294593228460",
+          "sku_url": "",
+          "spec_id": "23a219460c35a28eaa54e910c224243e",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "32",
+            "sku_id": "4970692789856",
+            "spec_id": "23a219460c35a28eaa54e910c224243e"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "36",
+            "link_price": "32",
+            "price_diff": "-4.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 257,
+        "raw_data": {
+          "SKU": "g6267-38to39-bbeige",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/678119713293.html",
+          "name": "g6267",
+          "size": "38/39码",
+          "color": "灰色灰褐色",
+          "index": "256",
+          "price": "15",
+          "SkuURL": "",
+          "sku_id": "5755473208064",
+          "ItemURL": "",
+          "JANCODE": "4294593261573",
+          "spec_id": "d75027d0aace6017e8bf89b44ec053c0",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "g6267-38to39-bbeige",
+          "url": "https://detail.1688.com/offer/678119713293.html",
+          "name": "g6267",
+          "size": "38/39码",
+          "color": "灰色灰褐色",
+          "price": "15",
+          "sku_id": "5755473208064",
+          "jancode": "4294593261573",
+          "sku_url": "",
+          "spec_id": "d75027d0aace6017e8bf89b44ec053c0",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "13.9",
+            "sku_id": "5755473208064",
+            "spec_id": "d75027d0aace6017e8bf89b44ec053c0"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "15",
+            "link_price": "13.9",
+            "price_diff": "-1.10"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 266,
+        "raw_data": {
+          "SKU": "g6275-msize-gray",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/668185000150.html",
+          "name": "g6275",
+          "size": "M码80-100斤",
+          "color": "灰色",
+          "index": "265",
+          "price": "40",
+          "SkuURL": "",
+          "sku_id": "4815569949084",
+          "ItemURL": "",
+          "JANCODE": "4294593268091",
+          "spec_id": "a8edb5b779a679147d97783d26b13efc",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "g6275-msize-gray",
+          "url": "https://detail.1688.com/offer/668185000150.html",
+          "name": "g6275",
+          "size": "M码80-100斤",
+          "color": "灰色",
+          "price": "40",
+          "sku_id": "4815569949084",
+          "jancode": "4294593268091",
+          "sku_url": "",
+          "spec_id": "a8edb5b779a679147d97783d26b13efc",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "39",
+            "sku_id": "4815569949084",
+            "spec_id": "a8edb5b779a679147d97783d26b13efc"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "40",
+            "link_price": "39",
+            "price_diff": "-1.00"
+          },
+          "user_order_no": ""
+        }
+      }
+    ],
+    "sku_id错误；spec_id错误；颜色错误；尺寸错误；价格错误": [
+      {
+        "row_index": 213,
+        "raw_data": {
+          "SKU": "g6248-msize-abrwon",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/732449310666.html",
+          "name": "g6248",
+          "size": "M",
+          "color": "人棉套装-水墨花卉",
+          "index": "212",
+          "price": "50",
+          "SkuURL": "",
+          "sku_id": "5243518155975",
+          "ItemURL": "",
+          "JANCODE": "4294593247249",
+          "spec_id": "b4430c993fba07e7a7841e4174e2045c",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "g6248-msize-abrwon",
+          "url": "https://detail.1688.com/offer/732449310666.html",
+          "name": "g6248",
+          "size": "M",
+          "color": "人棉套装-水墨花卉",
+          "price": "50",
+          "sku_id": "5243518155975",
+          "jancode": "4294593247249",
+          "sku_url": "",
+          "spec_id": "b4430c993fba07e7a7841e4174e2045c",
+          "item_url": "",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "50",
+            "link_price": "52",
+            "price_diff": "2.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 217,
+        "raw_data": {
+          "SKU": "g6248-msize-cyellow",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/732449310666.html",
+          "name": "g6248",
+          "size": "M",
+          "color": "人棉套装-芍药花",
+          "index": "216",
+          "price": "50",
+          "SkuURL": "",
+          "sku_id": "5243518155981",
+          "ItemURL": "",
+          "JANCODE": "4294593247300",
+          "spec_id": "f696f1ddf8943f3150088ca0cff164a0",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "g6248-msize-cyellow",
+          "url": "https://detail.1688.com/offer/732449310666.html",
+          "name": "g6248",
+          "size": "M",
+          "color": "人棉套装-芍药花",
+          "price": "50",
+          "sku_id": "5243518155981",
+          "jancode": "4294593247300",
+          "sku_url": "",
+          "spec_id": "f696f1ddf8943f3150088ca0cff164a0",
+          "item_url": "",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "50",
+            "link_price": "52",
+            "price_diff": "2.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 218,
+        "raw_data": {
+          "SKU": "g6248-lsize-cyellow",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/732449310666.html",
+          "name": "g6248",
+          "size": "L",
+          "color": "人棉套装-芍药花",
+          "index": "217",
+          "price": "50",
+          "SkuURL": "",
+          "sku_id": "5243518155982",
+          "ItemURL": "",
+          "JANCODE": "4294593247317",
+          "spec_id": "859de8f29e3d04db955c6556d0575ce8",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "g6248-lsize-cyellow",
+          "url": "https://detail.1688.com/offer/732449310666.html",
+          "name": "g6248",
+          "size": "L",
+          "color": "人棉套装-芍药花",
+          "price": "50",
+          "sku_id": "5243518155982",
+          "jancode": "4294593247317",
+          "sku_url": "",
+          "spec_id": "859de8f29e3d04db955c6556d0575ce8",
+          "item_url": "",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "50",
+            "link_price": "52",
+            "price_diff": "2.00"
+          },
+          "user_order_no": ""
+        }
+      }
+    ],
+    "尺寸错误；数量超过可售库存": [
+      {
+        "row_index": 372,
+        "raw_data": {
+          "SKU": "g6348-130cm-black",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/629172993169.html",
+          "name": "g6348",
+          "size": "15#（130）",
+          "color": "薄款黑灰色衬衫+格子领带",
+          "index": "371",
+          "price": "39",
+          "SkuURL": "",
+          "sku_id": "4969537275982",
+          "ItemURL": "",
+          "JANCODE": "4294593331726",
+          "spec_id": "9c253bbc3338859a6389b51a59361c95",
+          "else_remark": "麻烦领带和衣服颜色按照以下组合搭配\n①薄款黑灰色衬衫+格子领带\n②薄款卡其衬衫+黑色领带",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "g6348-130cm-black",
+          "url": "https://detail.1688.com/offer/629172993169.html",
+          "name": "g6348",
+          "size": "15#（130）",
+          "color": "薄款黑灰色衬衫+格子领带",
+          "price": "39",
+          "sku_id": "4969537275982",
+          "jancode": "4294593331726",
+          "sku_url": "",
+          "spec_id": "9c253bbc3338859a6389b51a59361c95",
+          "item_url": "",
+          "else_remark": "麻烦领带和衣服颜色按照以下组合搭配\n①薄款黑灰色衬衫+格子领带\n②薄款卡其衬衫+黑色领带",
+          "matched_sku": {
+            "price": "39",
+            "sku_id": "4969537275982",
+            "spec_id": "9c253bbc3338859a6389b51a59361c95"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "39",
+            "link_price": "39",
+            "price_diff": "0.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 1073,
+        "raw_data": {
+          "SKU": "ly9dp7-130cm-blue",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/626004827903.html",
+          "name": "ly9dp7",
+          "size": "130cm",
+          "color": "夏天丝薄款防蚊裤",
+          "index": "1072",
+          "price": "35",
+          "SkuURL": "",
+          "sku_id": "4804309051752",
+          "ItemURL": "",
+          "JANCODE": "4294592565207",
+          "spec_id": "cadf3b61224b8c72fd485ed8b0323dd2",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "ly9dp7-130cm-blue",
+          "url": "https://detail.1688.com/offer/626004827903.html",
+          "name": "ly9dp7",
+          "size": "130cm",
+          "color": "夏天丝薄款防蚊裤",
+          "price": "35",
+          "sku_id": "4804309051752",
+          "jancode": "4294592565207",
+          "sku_url": "",
+          "spec_id": "cadf3b61224b8c72fd485ed8b0323dd2",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "35",
+            "sku_id": "4804309051752",
+            "spec_id": "cadf3b61224b8c72fd485ed8b0323dd2"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "35",
+            "link_price": "35",
+            "price_diff": "0.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 1074,
+        "raw_data": {
+          "SKU": "ly9dp7-170cm-black",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/626004827903.html",
+          "name": "ly9dp7",
+          "size": "170cm",
+          "color": "黑色春秋单裤",
+          "index": "1073",
+          "price": "35",
+          "SkuURL": "",
+          "sku_id": "4464147444345",
+          "ItemURL": "",
+          "JANCODE": "4294592840212",
+          "spec_id": "a23740c27e4c14a39df78805a43fe509",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "ly9dp7-170cm-black",
+          "url": "https://detail.1688.com/offer/626004827903.html",
+          "name": "ly9dp7",
+          "size": "170cm",
+          "color": "黑色春秋单裤",
+          "price": "35",
+          "sku_id": "4464147444345",
+          "jancode": "4294592840212",
+          "sku_url": "",
+          "spec_id": "a23740c27e4c14a39df78805a43fe509",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "35",
+            "sku_id": "4464147444345",
+            "spec_id": "a23740c27e4c14a39df78805a43fe509"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "35",
+            "link_price": "35",
+            "price_diff": "0.00"
+          },
+          "user_order_no": ""
+        }
+      }
+    ],
+    "尺寸错误；价格错误；数量超过可售库存": [
+      {
+        "row_index": 373,
+        "raw_data": {
+          "SKU": "g6348-150cm-beige",
+          "num": "2",
+          "url": "https://detail.1688.com/offer/629172993169.html",
+          "name": "g6348",
+          "size": "19#（150）",
+          "color": "薄款卡其衬衫+黑色领带",
+          "index": "372",
+          "price": "39",
+          "SkuURL": "",
+          "sku_id": "5515225204726",
+          "ItemURL": "",
+          "JANCODE": "4294593331795",
+          "spec_id": "182e5f80f09f85744fbe97110b280d64",
+          "else_remark": "麻烦领带和衣服颜色按照以下组合搭配\n①薄款黑灰色衬衫+格子领带\n②薄款卡其衬衫+黑色领带",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "2",
+          "sku": "g6348-150cm-beige",
+          "url": "https://detail.1688.com/offer/629172993169.html",
+          "name": "g6348",
+          "size": "19#（150）",
+          "color": "薄款卡其衬衫+黑色领带",
+          "price": "39",
+          "sku_id": "5515225204726",
+          "jancode": "4294593331795",
+          "sku_url": "",
+          "spec_id": "182e5f80f09f85744fbe97110b280d64",
+          "item_url": "",
+          "else_remark": "麻烦领带和衣服颜色按照以下组合搭配\n①薄款黑灰色衬衫+格子领带\n②薄款卡其衬衫+黑色领带",
+          "matched_sku": {
+            "price": "41",
+            "sku_id": "5515225204726",
+            "spec_id": "182e5f80f09f85744fbe97110b280d64"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "39",
+            "link_price": "41",
+            "price_diff": "2.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 1938,
+        "raw_data": {
+          "SKU": "nakrp2300-66cm-zoo",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/729335368138.html",
+          "name": "nakrp2300",
+          "size": "66cm",
+          "color": "动物王国优克丝连体衣",
+          "index": "1937",
+          "price": "23",
+          "SkuURL": "",
+          "sku_id": "5059171717540",
+          "ItemURL": "",
+          "JANCODE": "4294593308957",
+          "spec_id": "19179a54a66ef980b68f3ff35134facf",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "nakrp2300-66cm-zoo",
+          "url": "https://detail.1688.com/offer/729335368138.html",
+          "name": "nakrp2300",
+          "size": "66cm",
+          "color": "动物王国优克丝连体衣",
+          "price": "23",
+          "sku_id": "5059171717540",
+          "jancode": "4294593308957",
+          "sku_url": "",
+          "spec_id": "19179a54a66ef980b68f3ff35134facf",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "19.9",
+            "sku_id": "5059171717540",
+            "spec_id": "19179a54a66ef980b68f3ff35134facf"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "23",
+            "link_price": "19.9",
+            "price_diff": "-3.10"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 2694,
+        "raw_data": {
+          "SKU": "pmy6024-zai-pinkxcow",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/619257747416.html",
+          "name": "pmy6024",
+          "size": "90*90cm",
+          "color": "牛头粉",
+          "index": "2693",
+          "price": "22",
+          "SkuURL": "",
+          "sku_id": "4786952279902",
+          "ItemURL": "",
+          "JANCODE": "4294592083060",
+          "spec_id": "306ee59f7dff44f427f0b1af52945349",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "pmy6024-zai-pinkxcow",
+          "url": "https://detail.1688.com/offer/619257747416.html",
+          "name": "pmy6024",
+          "size": "90*90cm",
+          "color": "牛头粉",
+          "price": "22",
+          "sku_id": "4786952279902",
+          "jancode": "4294592083060",
+          "sku_url": "",
+          "spec_id": "306ee59f7dff44f427f0b1af52945349",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "19.5",
+            "sku_id": "4786952279902",
+            "spec_id": "306ee59f7dff44f427f0b1af52945349"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "22",
+            "link_price": "19.5",
+            "price_diff": "-2.50"
+          },
+          "user_order_no": ""
+        }
+      }
+    ],
+    "颜色错误；价格错误；数量超过可售库存": [
+      {
+        "row_index": 589,
+        "raw_data": {
+          "SKU": "gcase4127-lite-pinkbluexgray",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/643868106956.html",
+          "name": "gcase4127",
+          "size": "",
+          "color": "Lite 元气猫爪款【蓝粉渐变】",
+          "index": "588",
+          "price": "29",
+          "SkuURL": "",
+          "sku_id": "4866806674846",
+          "ItemURL": "",
+          "JANCODE": "4294592227495",
+          "spec_id": "7375a9763f6924ad05fbbb74d1f19f4d",
+          "else_remark": "肩带需要单独购买\n麻烦按sku把收纳盒与对应的颜色肩带组装成一套吧\nblackxgray就是代表黑色的盒子和深灰的肩带",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "gcase4127-lite-pinkbluexgray",
+          "url": "https://detail.1688.com/offer/643868106956.html",
+          "name": "gcase4127",
+          "size": "",
+          "color": "Lite 元气猫爪款【蓝粉渐变】",
+          "price": "29",
+          "sku_id": "4866806674846",
+          "jancode": "4294592227495",
+          "sku_url": "",
+          "spec_id": "7375a9763f6924ad05fbbb74d1f19f4d",
+          "item_url": "",
+          "else_remark": "肩带需要单独购买\n麻烦按sku把收纳盒与对应的颜色肩带组装成一套吧\nblackxgray就是代表黑色的盒子和深灰的肩带",
+          "matched_sku": {
+            "price": "25",
+            "sku_id": "4866806674846",
+            "spec_id": "7375a9763f6924ad05fbbb74d1f19f4d"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "29",
+            "link_price": "25",
+            "price_diff": "-4.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 590,
+        "raw_data": {
+          "SKU": "gcase4127-lite-lightbluexblue",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/643868106956.html",
+          "name": "gcase4127",
+          "size": "",
+          "color": "Lite 元气猫爪款【风信蓝】",
+          "index": "589",
+          "price": "29",
+          "SkuURL": "",
+          "sku_id": "4866806674852",
+          "ItemURL": "",
+          "JANCODE": "4294592227518",
+          "spec_id": "daf1e17c17f456084b636a95e4771f5c",
+          "else_remark": "肩带需要单独购买\n麻烦按sku把收纳盒与对应的颜色肩带组装成一套吧\nblackxgray就是代表黑色的盒子和深灰的肩带",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "gcase4127-lite-lightbluexblue",
+          "url": "https://detail.1688.com/offer/643868106956.html",
+          "name": "gcase4127",
+          "size": "",
+          "color": "Lite 元气猫爪款【风信蓝】",
+          "price": "29",
+          "sku_id": "4866806674852",
+          "jancode": "4294592227518",
+          "sku_url": "",
+          "spec_id": "daf1e17c17f456084b636a95e4771f5c",
+          "item_url": "",
+          "else_remark": "肩带需要单独购买\n麻烦按sku把收纳盒与对应的颜色肩带组装成一套吧\nblackxgray就是代表黑色的盒子和深灰的肩带",
+          "matched_sku": {
+            "price": "23",
+            "sku_id": "4866806674852",
+            "spec_id": "daf1e17c17f456084b636a95e4771f5c"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "29",
+            "link_price": "23",
+            "price_diff": "-6.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 591,
+        "raw_data": {
+          "SKU": "gcase4127-lite-purplexpurple",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/643868106956.html",
+          "name": "gcase4127",
+          "size": "",
+          "color": "Lite 元气猫爪款【魅力紫】",
+          "index": "590",
+          "price": "29",
+          "SkuURL": "",
+          "sku_id": "4866806674849",
+          "ItemURL": "",
+          "JANCODE": "4294592227525",
+          "spec_id": "f64b271fe099a37d33f65e58e3669ece",
+          "else_remark": "肩带需要单独购买\n麻烦按sku把收纳盒与对应的颜色肩带组装成一套吧\nblackxgray就是代表黑色的盒子和深灰的肩带",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "gcase4127-lite-purplexpurple",
+          "url": "https://detail.1688.com/offer/643868106956.html",
+          "name": "gcase4127",
+          "size": "",
+          "color": "Lite 元气猫爪款【魅力紫】",
+          "price": "29",
+          "sku_id": "4866806674849",
+          "jancode": "4294592227525",
+          "sku_url": "",
+          "spec_id": "f64b271fe099a37d33f65e58e3669ece",
+          "item_url": "",
+          "else_remark": "肩带需要单独购买\n麻烦按sku把收纳盒与对应的颜色肩带组装成一套吧\nblackxgray就是代表黑色的盒子和深灰的肩带",
+          "matched_sku": {
+            "price": "23",
+            "sku_id": "4866806674849",
+            "spec_id": "f64b271fe099a37d33f65e58e3669ece"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "29",
+            "link_price": "23",
+            "price_diff": "-6.00"
+          },
+          "user_order_no": ""
+        }
+      }
+    ],
+    "颜色错误；尺寸错误；价格错误": [
+      {
+        "row_index": 825,
+        "raw_data": {
+          "SKU": "kcardcase01-zai-starxgreen",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/635836626111.html",
+          "name": "kcardcase01",
+          "size": "a5（无内页）",
+          "color": "拉链星星款苍葭绿",
+          "index": "824",
+          "price": "12.8",
+          "SkuURL": "",
+          "sku_id": "5625300847318",
+          "ItemURL": "",
+          "JANCODE": "4294593299545",
+          "spec_id": "509b1759c475c844d487494663230724",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "kcardcase01-zai-starxgreen",
+          "url": "https://detail.1688.com/offer/635836626111.html",
+          "name": "kcardcase01",
+          "size": "a5（无内页）",
+          "color": "拉链星星款苍葭绿",
+          "price": "12.8",
+          "sku_id": "5625300847318",
+          "jancode": "4294593299545",
+          "sku_url": "",
+          "spec_id": "509b1759c475c844d487494663230724",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "13.4",
+            "sku_id": "5625300847318",
+            "spec_id": "509b1759c475c844d487494663230724"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "12.8",
+            "link_price": "13.4",
+            "price_diff": "0.60"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 826,
+        "raw_data": {
+          "SKU": "kcardcase01-zai-starxbluegray",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/635836626111.html",
+          "name": "kcardcase01",
+          "size": "a5（无内页）",
+          "color": "拉链星星款雾霾蓝",
+          "index": "825",
+          "price": "12.8",
+          "SkuURL": "",
+          "sku_id": "5625300847292",
+          "ItemURL": "",
+          "JANCODE": "4294593299552",
+          "spec_id": "1077d11d61e8c9bca19cc61aad604aee",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "kcardcase01-zai-starxbluegray",
+          "url": "https://detail.1688.com/offer/635836626111.html",
+          "name": "kcardcase01",
+          "size": "a5（无内页）",
+          "color": "拉链星星款雾霾蓝",
+          "price": "12.8",
+          "sku_id": "5625300847292",
+          "jancode": "4294593299552",
+          "sku_url": "",
+          "spec_id": "1077d11d61e8c9bca19cc61aad604aee",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "13.4",
+            "sku_id": "5625300847292",
+            "spec_id": "1077d11d61e8c9bca19cc61aad604aee"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "12.8",
+            "link_price": "13.4",
+            "price_diff": "0.60"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 827,
+        "raw_data": {
+          "SKU": "kcardcase01-zai-starxpink",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/635836626111.html",
+          "name": "kcardcase01",
+          "size": "a5（无内页）",
+          "color": "拉链星星款樱花粉",
+          "index": "826",
+          "price": "12.8",
+          "SkuURL": "",
+          "sku_id": "5625300847302",
+          "ItemURL": "",
+          "JANCODE": "4294593299576",
+          "spec_id": "3b347c9703a7a8a75605a42c0bf85483",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "kcardcase01-zai-starxpink",
+          "url": "https://detail.1688.com/offer/635836626111.html",
+          "name": "kcardcase01",
+          "size": "a5（无内页）",
+          "color": "拉链星星款樱花粉",
+          "price": "12.8",
+          "sku_id": "5625300847302",
+          "jancode": "4294593299576",
+          "sku_url": "",
+          "spec_id": "3b347c9703a7a8a75605a42c0bf85483",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "13.4",
+            "sku_id": "5625300847302",
+            "spec_id": "3b347c9703a7a8a75605a42c0bf85483"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "12.8",
+            "link_price": "13.4",
+            "price_diff": "0.60"
+          },
+          "user_order_no": ""
+        }
+      }
+    ],
+    "sku_id错误；颜色错误；价格错误": [
+      {
+        "row_index": 2623,
+        "raw_data": {
+          "SKU": "pmy2100-zai-btype",
+          "num": "2",
+          "url": "https://detail.1688.com/offer/732403623752.html",
+          "name": "pmy2100",
+          "size": "",
+          "color": "40*26*0.2CM蓝色【计数器】",
+          "index": "2622",
+          "price": "40",
+          "SkuURL": "",
+          "sku_id": "5307957556535",
+          "ItemURL": "",
+          "JANCODE": "4294592988358",
+          "spec_id": "",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "2",
+          "sku": "pmy2100-zai-btype",
+          "url": "https://detail.1688.com/offer/732403623752.html",
+          "name": "pmy2100",
+          "size": "",
+          "color": "40*26*0.2CM蓝色【计数器】",
+          "price": "40",
+          "sku_id": "5307957556535",
+          "jancode": "4294592988358",
+          "sku_url": "",
+          "spec_id": "",
+          "item_url": "",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "40",
+            "link_price": "56",
+            "price_diff": "16.00"
+          },
+          "user_order_no": ""
+        }
+      },
+      {
+        "row_index": 2624,
+        "raw_data": {
+          "SKU": "pmy2100-zai-ctype",
+          "num": "2",
+          "url": "https://detail.1688.com/offer/732403623752.html",
+          "name": "pmy2100",
+          "size": "",
+          "color": "40*26*0.2CM红色【计数器】",
+          "index": "2623",
+          "price": "40",
+          "SkuURL": "",
+          "sku_id": "5307957556533",
+          "ItemURL": "",
+          "JANCODE": "4294592988365",
+          "spec_id": "",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "2",
+          "sku": "pmy2100-zai-ctype",
+          "url": "https://detail.1688.com/offer/732403623752.html",
+          "name": "pmy2100",
+          "size": "",
+          "color": "40*26*0.2CM红色【计数器】",
+          "price": "40",
+          "sku_id": "5307957556533",
+          "jancode": "4294592988365",
+          "sku_url": "",
+          "spec_id": "",
+          "item_url": "",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "40",
+            "link_price": "56",
+            "price_diff": "16.00"
+          },
+          "user_order_no": ""
+        }
+      }
+    ],
+    "sku_id错误；价格错误": [
+      {
+        "row_index": 4109,
+        "raw_data": {
+          "SKU": "sehxg019-zai-bxblack",
+          "num": "1",
+          "url": "https://detail.1688.com/offer/639896490246.html",
+          "name": "sehxg019",
+          "size": "可调节",
+          "color": "款二黑色",
+          "index": "4108",
+          "price": "9.8",
+          "SkuURL": "",
+          "sku_id": "4761798370915",
+          "ItemURL": "",
+          "JANCODE": "4294592389179",
+          "spec_id": "3d3296200e9acef8961501aff5e52100",
+          "else_remark": "",
+          "size_remark": "",
+          "color_remark": "",
+          "user_order_no": ""
+        },
+        "normalized_data": {
+          "num": "1",
+          "sku": "sehxg019-zai-bxblack",
+          "url": "https://detail.1688.com/offer/639896490246.html",
+          "name": "sehxg019",
+          "size": "可调节",
+          "color": "款二黑色",
+          "price": "9.8",
+          "sku_id": "4761798370915",
+          "jancode": "4294592389179",
+          "sku_url": "",
+          "spec_id": "3d3296200e9acef8961501aff5e52100",
+          "item_url": "",
+          "else_remark": "",
+          "matched_sku": {
+            "price": "8.5",
+            "sku_id": "6028925516618",
+            "spec_id": "3d3296200e9acef8961501aff5e52100"
+          },
+          "size_remark": "",
+          "color_remark": "",
+          "price_compare": {
+            "form_price": "9.8",
+            "link_price": "8.5",
+            "price_diff": "-1.30"
+          },
+          "user_order_no": ""
+        }
+      }
+    ]
+  }
+}

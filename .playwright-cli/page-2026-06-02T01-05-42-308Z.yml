@@ -1,0 +1,209 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e231]:
+      - button "Deploy" [ref=e233] [cursor=pointer]:
+        - generic [ref=e235]: Deploy
+      - button [ref=e237] [cursor=pointer]:
+        - img [ref=e238]
+  - generic [ref=e4]:
+    - button [ref=e9] [cursor=pointer]:
+      - img [ref=e10]
+    - list [ref=e17]:
+      - listitem [ref=e18]:
+        - link "app" [ref=e20] [cursor=pointer]:
+          - /url: http://localhost:8501/app
+          - generic [ref=e21]: app
+      - listitem [ref=e22]:
+        - link "测试执行" [ref=e24] [cursor=pointer]:
+          - /url: http://localhost:8501/测试执行
+          - generic [ref=e26]: 🧪
+          - generic [ref=e27]: 测试执行
+      - listitem [ref=e28]:
+        - link "sku verify" [ref=e30] [cursor=pointer]:
+          - /url: http://localhost:8501/sku_verify
+          - generic [ref=e31]: sku verify
+      - listitem [ref=e32]:
+        - link "性能压测" [ref=e34] [cursor=pointer]:
+          - /url: http://localhost:8501/性能压测
+          - generic [ref=e35]: 性能压测
+    - generic [ref=e139]:
+      - heading "🚦 性能压测" [level=1] [ref=e245]: 🚦 性能压测
+      - button "⬅️ 返回项目首页" [ref=e249] [cursor=pointer]:
+        - paragraph [ref=e251]: ⬅️ 返回项目首页
+      - generic [ref=e252]:
+        - alert [ref=e259]:
+          - paragraph [ref=e264]:
+            - text: 当前任务：
+            - code [ref=e607]: stress_prod_5r_20v_3m_20260602_090412
+            - text: "| 状态："
+            - strong [ref=e608]: 运行中
+            - text: "| PID："
+            - code [ref=e609]: "15840"
+        - button "停止当前压测" [ref=e615] [cursor=pointer]:
+          - paragraph [ref=e617]: 停止当前压测
+      - separator [ref=e269]
+      - generic [ref=e270]:
+        - generic [ref=e274]:
+          - heading "启动配置" [level=3] [ref=e279]: 启动配置
+          - generic [ref=e282]:
+            - paragraph [ref=e285]: 压测环境
+            - generic [ref=e287]:
+              - generic [ref=e288]:
+                - generic [ref=e289]: test
+                - combobox "Selected test. 压测环境" [ref=e291]
+              - img "open" [ref=e293]
+          - paragraph [ref=e298]:
+            - text: 当前
+            - code [ref=e299]: test
+            - text: 环境账号池：1 个真实注册账号
+          - generic [ref=e302]:
+            - generic [ref=e304]:
+              - generic [ref=e305]:
+                - paragraph [ref=e307]: 真实注册账号（从当前环境账号池选择）
+                - img [ref=e311]
+              - generic [ref=e316]:
+                - generic [ref=e317]:
+                  - button "369901314@qq.com, close by backspace" [ref=e318] [cursor=pointer]:
+                    - generic "369901314@qq.com" [ref=e319]
+                    - img [ref=e321]
+                  - combobox "Selected 369901314@qq.com. 真实注册账号（从当前环境账号池选择）" [ref=e324]
+                - generic [ref=e325]:
+                  - button "Clear all" [ref=e326] [cursor=pointer]
+                  - img "open" [ref=e328]
+            - generic [ref=e331]:
+              - generic [ref=e332]:
+                - paragraph [ref=e334]: 真实账号并发数
+                - img [ref=e338]
+              - generic [ref=e341]:
+                - spinbutton "真实账号并发数" [ref=e344]: "1"
+                - generic [ref=e345]:
+                  - button [ref=e346] [cursor=pointer]:
+                    - img [ref=e347]
+                  - button [ref=e349] [cursor=pointer]:
+                    - img [ref=e350]
+            - generic [ref=e353]:
+              - paragraph [ref=e356]: 虚拟账号数量
+              - generic [ref=e357]:
+                - spinbutton "虚拟账号数量" [ref=e360]: "200"
+                - generic [ref=e361]:
+                  - button [ref=e362] [cursor=pointer]:
+                    - img [ref=e363]
+                  - button [ref=e365] [cursor=pointer]:
+                    - img [ref=e366]
+            - generic [ref=e368]:
+              - generic [ref=e374]:
+                - paragraph [ref=e377]: 真实账号加载速率 / 秒
+                - generic [ref=e378]:
+                  - spinbutton "真实账号加载速率 / 秒" [ref=e381]: "1.00"
+                  - generic [ref=e382]:
+                    - button [ref=e383] [cursor=pointer]:
+                      - img [ref=e384]
+                    - button [ref=e386] [cursor=pointer]:
+                      - img [ref=e387]
+              - generic [ref=e394]:
+                - paragraph [ref=e397]: 虚拟账号加载速率 / 秒
+                - generic [ref=e398]:
+                  - spinbutton "虚拟账号加载速率 / 秒" [ref=e401]: "10.00"
+                  - generic [ref=e402]:
+                    - button [ref=e403] [cursor=pointer]:
+                      - img [ref=e404]
+                    - button [ref=e406] [cursor=pointer]:
+                      - img [ref=e407]
+            - generic [ref=e410]:
+              - generic [ref=e411]:
+                - paragraph [ref=e413]: 压测时间
+                - img [ref=e417]
+              - textbox "压测时间" [ref=e422]:
+                - /placeholder: ""
+                - text: 10m
+            - paragraph [ref=e426]:
+              - strong [ref=e427]: 压测策略
+            - generic [ref=e429]:
+              - paragraph [ref=e432]: 每个真实链路浏览步数
+              - generic [ref=e433]:
+                - spinbutton "每个真实链路浏览步数" [ref=e436]: "2"
+                - generic [ref=e437]:
+                  - button [ref=e438] [cursor=pointer]:
+                    - img [ref=e439]
+                  - button [ref=e441] [cursor=pointer]:
+                    - img [ref=e442]
+            - generic [ref=e446] [cursor=pointer]:
+              - checkbox "启用浏览 + 加购链路" [checked]
+              - paragraph [ref=e451]: 启用浏览 + 加购链路
+            - generic [ref=e454] [cursor=pointer]:
+              - checkbox "启用浏览 + 加购 + 提交报价单链路"
+              - paragraph [ref=e459]: 启用浏览 + 加购 + 提交报价单链路
+            - generic [ref=e461]:
+              - paragraph [ref=e464]: 每次提交报价单最多购物车明细数
+              - generic [ref=e465]:
+                - spinbutton "每次提交报价单最多购物车明细数" [disabled] [ref=e468]: "1"
+                - generic [ref=e469]:
+                  - button [disabled] [ref=e470]:
+                    - img [ref=e471]
+                  - button [disabled] [ref=e473]:
+                    - img [ref=e474]
+            - button "确认配置" [disabled] [ref=e478]:
+              - paragraph [ref=e480]: 确认配置
+            - alert [ref=e524]:
+              - paragraph [ref=e529]: 配置已确认，执行预览已更新。
+        - generic [ref=e484]:
+          - heading "执行预览" [level=3] [ref=e489]: 执行预览
+          - generic [ref=e530]:
+            - generic [ref=e536]:
+              - paragraph [ref=e540]: 真实账号
+              - generic [ref=e542]: "1"
+            - generic [ref=e548]:
+              - paragraph [ref=e552]: 虚拟账号
+              - generic [ref=e554]: "200"
+            - generic [ref=e560]:
+              - paragraph [ref=e564]: 总用户
+              - generic [ref=e566]: "201"
+            - generic [ref=e572]:
+              - paragraph [ref=e576]: 时长
+              - generic [ref=e578]: 600s
+          - paragraph [ref=e582]:
+            - text: 环境：
+            - code [ref=e583]: test
+            - text: "| 真实加载："
+            - code [ref=e584]: 1.0/s
+            - text: "| 虚拟加载："
+            - code [ref=e585]: 10.0/s
+          - paragraph [ref=e589]:
+            - text: 加购链路：启用 | 提交报价单链路：关闭 | 明细行数：
+            - code [ref=e590]: "1"
+          - paragraph [ref=e594]:
+            - text: 真实账号：
+            - code [ref=e595]: 369901314@qq.com
+          - generic [ref=e597]:
+            - code [ref=e600]: locust -f locustfile.py --headless --html reports/<run_id>.html --csv reports/<run_id>
+            - generic:
+              - button "Copy to clipboard":
+                - img
+          - button "确认执行" [disabled] [ref=e603]:
+            - paragraph [ref=e605]: 确认执行
+          - paragraph [ref=e621]: 最近一次启动命令
+          - generic [ref=e623]:
+            - code [ref=e626]: locust -f locustfile.py --headless --html D:\test_workspace\全球站压测脚本\Performance\reports\stress_prod_5r_20v_3m_20260602_090412.html --csv D:\test_workspace\全球站压测脚本\Performance\reports\stress_prod_5r_20v_3m_20260602_090412
+            - generic:
+              - button "Copy to clipboard":
+                - img
+      - separator [ref=e502]
+      - heading "日志与报告" [level=3] [ref=e507]: 日志与报告
+      - generic [ref=e628]:
+        - tablist [ref=e630]:
+          - tab "stderr" [selected] [ref=e631] [cursor=pointer]:
+            - paragraph [ref=e633]: stderr
+          - tab "stdout" [ref=e634] [cursor=pointer]:
+            - paragraph [ref=e636]: stdout
+          - tab "报告" [ref=e637] [cursor=pointer]:
+            - paragraph [ref=e639]: 报告
+        - tabpanel "stderr" [ref=e642]:
+          - generic [ref=e647]:
+            - code [ref=e650]: "Type Name # reqs # fails | Avg Min Max Med | req/s failures/s --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|----------- POST 关键词浏览_1688 37 0(0.00%) | 386 328 579 360 | 0.40 0.00 POST 关键词浏览_taobao 62 0(0.00%) | 1226 504 3037 550 | 0.80 0.00 POST 商品加购_1688 17 0(0.00%) | 553 409 812 510 | 0.20 0.00 POST 商品加购_taobao 29 0(0.00%) | 710 411 887 750 | 0.20 0.00 POST 图搜浏览 122 0(0.00%) | 368 326 551 360 | 1.40 0.00 BUSINESS 报价单号提取 14 0(0.00%) | 0 0 0 0 | 0.20 0.00 POST 提交报价单 14 0(0.00%) | 805 424 1413 700 | 0.20 0.00 POST 登录 [预热] 4 0(0.00%) | 848 820 870 840 | 0.00 0.00 POST 登录刷新 12 0(0.00%) | 382 377 396 380 | 0.30 0.00 POST 虚拟用户关键词查询_1688 192 0(0.00%) | 404 318 1272 340 | 3.40 0.00 POST 虚拟用户关键词查询_taobao 188 1(0.53%) | 1385 495 13115 550 | 3.40 0.00 GET 虚拟用户页面访问 250 9(3.60%) | 1171 252 19804 260 | 3.80 0.00 POST 购物车列表 [下单前] 15 0(0.00%) | 340 324 370 340 | 0.30 0.00 POST 购物车列表 [加购后] 28 0(0.00%) | 350 319 393 340 | 0.50 0.00 POST 购物车列表 [加购确认] 32 0(0.00%) | 358 320 411 350 | 0.10 0.00 --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|----------- Aggregated 1016 10(0.98%) | 828 0 19804 360 | 15.20 0.00 Type Name # reqs # fails | Avg Min Max Med | req/s failures/s --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|----------- POST 关键词浏览_1688 41 0(0.00%) | 386 328 579 360 | 0.20 0.00 POST 关键词浏览_taobao 64 0(0.00%) | 1235 504 3037 550 | 0.80 0.00 POST 商品加购_1688 17 0(0.00%) | 553 409 812 510 | 0.20 0.00 POST 商品加购_taobao 30 0(0.00%) | 710 411 887 730 | 0.10 0.00 POST 图搜浏览 124 0(0.00%) | 368 326 551 360 | 1.40 0.00 BUSINESS 报价单号提取 14 0(0.00%) | 0 0 0 0 | 0.30 0.00 POST 提交报价单 14 0(0.00%) | 805 424 1413 700 | 0.30 0.00 POST 登录 [预热] 4 0(0.00%) | 848 820 870 840 | 0.00 0.00 POST 登录刷新 12 0(0.00%) | 382 377 396 380 | 0.20 0.00 POST 虚拟用户关键词查询_1688 200 0(0.00%) | 401 318 1272 340 | 3.80 0.00 POST 虚拟用户关键词查询_taobao 195 1(0.51%) | 1375 495 13115 550 | 3.20 0.00 GET 虚拟用户页面访问 255 9(3.53%) | 1153 252 19804 260 | 3.90 0.00 POST 购物车列表 [下单前] 15 0(0.00%) | 340 324 370 340 | 0.30 0.00 POST 购物车列表 [加购后] 31 0(0.00%) | 348 319 393 340 | 0.50 0.00 POST 购物车列表 [加购确认] 32 0(0.00%) | 358 320 411 350 | 0.00 0.00 --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|----------- Aggregated 1048 10(0.95%) | 821 0 19804 360 | 15.20 0.00 Type Name # reqs # fails | Avg Min Max Med | req/s failures/s --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|----------- POST 关键词浏览_1688 41 0(0.00%) | 386 328 579 360 | 0.60 0.00 POST 关键词浏览_taobao 65 0(0.00%) | 1224 504 3037 550 | 1.00 0.00 POST 商品加购_1688 18 0(0.00%) | 551 409 812 510 | 0.10 0.00 POST 商品加购_taobao 30 0(0.00%) | 710 411 887 730 | 0.20 0.00 POST 图搜浏览 125 0(0.00%) | 368 326 551 360 | 1.40 0.00 BUSINESS 报价单号提取 15 0(0.00%) | 0 0 0 0 | 0.20 0.00 POST 提交报价单 15 0(0.00%) | 826 424 1413 770 | 0.20 0.00 POST 登录 [预热] 4 0(0.00%) | 848 820 870 840 | 0.00 0.00 POST 登录刷新 13 0(0.00%) | 382 377 396 380 | 0.20 0.00 POST 虚拟用户关键词查询_1688 209 0(0.00%) | 399 318 1272 340 | 3.70 0.00 POST 虚拟用户关键词查询_taobao 201 1(0.50%) | 1379 495 13115 550 | 2.90 0.00 GET 虚拟用户页面访问 264 9(3.41%) | 1123 252 19804 260 | 4.20 0.00 POST 购物车列表 [下单前] 15 0(0.00%) | 340 324 370 340 | 0.20 0.00 POST 购物车列表 [加购后] 31 0(0.00%) | 348 319 393 340 | 0.60 0.00 POST 购物车列表 [加购确认] 33 0(0.00%) | 357 320 411 350 | 0.00 0.00 --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|----------- Aggregated 1079 10(0.93%) | 814 0 19804 360 | 15.50 0.00 Type Name # reqs # fails | Avg Min Max Med | req/s failures/s --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|----------- POST 关键词浏览_1688 42 0(0.00%) | 386 328 579 360 | 0.70 0.00 POST 关键词浏览_taobao 68 0(0.00%) | 1224 504 3037 550 | 0.80 0.00 POST 商品加购_1688 18 0(0.00%) | 551 409 812 510 | 0.10 0.00 POST 商品加购_taobao 30 0(0.00%) | 710 411 887 730 | 0.20 0.00 POST 图搜浏览 129 0(0.00%) | 367 326 551 360 | 1.40 0.00 BUSINESS 报价单号提取 15 0(0.00%) | 0 0 0 0 | 0.30 0.00 POST 提交报价单 15 0(0.00%) | 826 424 1413 770 | 0.30 0.00 POST 登录 [预热] 4 0(0.00%) | 848 820 870 840 | 0.00 0.00 POST 登录刷新 13 0(0.00%) | 382 377 396 380 | 0.20 0.00 POST 虚拟用户关键词查询_1688 215 0(0.00%) | 397 318 1272 340 | 4.10 0.00 POST 虚拟用户关键词查询_taobao 205 1(0.49%) | 1382 495 13115 550 | 3.30 0.00 GET 虚拟用户页面访问 278 9(3.24%) | 1079 252 19804 260 | 3.60 0.00 POST 购物车列表 [下单前] 15 0(0.00%) | 340 324 370 340 | 0.20 0.00 POST 购物车列表 [加购后] 31 0(0.00%) | 348 319 393 340 | 0.60 0.00 POST 购物车列表 [加购确认] 33 0(0.00%) | 357 320 411 350 | 0.10 0.00 --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|----------- Aggregated 1111 10(0.90%) | 806 0 19804 360 | 15.90 0.00 Type Name # reqs # fails | Avg Min Max Med | req/s failures/s --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|----------- POST 关键词浏览_1688 43 0(0.00%) | 385 328 579 360 | 0.70 0.00 POST 关键词浏览_taobao 70 0(0.00%) | 1232 504 3037 550 | 0.90 0.00 POST 商品加购_1688 19 0(0.00%) | 548 409 812 510 | 0.10 0.00 POST 商品加购_taobao 30 0(0.00%) | 710 411 887 730 | 0.10 0.00 POST 图搜浏览 133 0(0.00%) | 366 326 551 360 | 1.50 0.00 BUSINESS 报价单号提取 15 0(0.00%) | 0 0 0 0 | 0.20 0.00 POST 提交报价单 15 0(0.00%) | 826 424 1413 770 | 0.20 0.00 POST 登录 [预热] 4 0(0.00%) | 848 820 870 840 | 0.00 0.00 POST 登录刷新 13 0(0.00%) | 382 377 396 380 | 0.10 0.00 POST 虚拟用户关键词查询_1688 224 0(0.00%) | 395 318 1272 340 | 3.90 0.00 POST 虚拟用户关键词查询_taobao 210 1(0.48%) | 1380 495 13115 550 | 2.60 0.00 GET 虚拟用户页面访问 287 9(3.14%) | 1054 252 19804 260 | 4.30 0.00 POST 购物车列表 [下单前] 15 0(0.00%) | 340 324 370 340 | 0.10 0.00 POST 购物车列表 [加购后] 31 0(0.00%) | 348 319 393 340 | 0.50 0.00 POST 购物车列表 [加购确认] 34 0(0.00%) | 356 317 411 350 | 0.10 0.00 --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|----------- Aggregated 1143 10(0.87%) | 799 0 19804 360 | 15.30 0.00 Type Name # reqs # fails | Avg Min Max Med | req/s failures/s --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|----------- POST 关键词浏览_1688 44 0(0.00%) | 384 328 579 360 | 0.70 0.00 POST 关键词浏览_taobao 71 0(0.00%) | 1250 504 3037 550 | 0.90 0.00 POST 商品加购_1688 21 0(0.00%) | 543 409 812 500 | 0.20 0.00 POST 商品加购_taobao 31 0(0.00%) | 703 411 887 730 | 0.10 0.00 POST 图搜浏览 139 0(0.00%) | 365 326 551 360 | 1.60 0.00 BUSINESS 报价单号提取 15 0(0.00%) | 0 0 0 0 | 0.20 0.00 POST 提交报价单 15 0(0.00%) | 826 424 1413 770 | 0.20 0.00 POST 登录 [预热] 4 0(0.00%) | 848 820 870 840 | 0.00 0.00 POST 登录刷新 13 0(0.00%) | 382 377 396 380 | 0.10 0.00 POST 虚拟用户关键词查询_1688 231 0(0.00%) | 393 318 1272 340 | 4.10 0.00 POST 虚拟用户关键词查询_taobao 216 1(0.46%) | 1366 495 13115 550 | 2.60 0.00 GET 虚拟用户页面访问 294 9(3.06%) | 1035 252 19804 260 | 4.30 0.00 POST 购物车列表 [下单前] 16 0(0.00%) | 339 320 370 340 | 0.10 0.00 POST 购物车列表 [加购后] 32 0(0.00%) | 347 317 393 340 | 0.30 0.00 POST 购物车列表 [加购确认] 36 0(0.00%) | 356 317 411 350 | 0.20 0.00 --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|----------- Aggregated 1178 10(0.85%) | 789 0 19804 360 | 15.60 0.00"
+            - generic:
+              - button "Copy to clipboard":
+                - img
+      - group [ref=e514]:
+        - generic "历史 HTML 报告" [ref=e515] [cursor=pointer]:
+          - paragraph [ref=e518]: 历史 HTML 报告
+          - img [ref=e519]

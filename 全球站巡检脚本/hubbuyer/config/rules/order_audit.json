@@ -1,0 +1,7 @@
+{
+  "order_audit_task": {
+    "key": "check_api_order_audit",
+    "desc": "后台报价单审核",
+    "script": "checker/api/order_audit.py"
+  }
+}

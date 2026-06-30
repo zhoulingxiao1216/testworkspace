@@ -1,0 +1,3101 @@
+{
+  "generatedAt": "2026-05-23T03:03:00.001Z",
+  "adminUrl": "https://wlz-admin-all-view.hubbuyer.com",
+  "candidatesTried": [
+    {
+      "account": "test-cgy",
+      "role": "采购员",
+      "success": false,
+      "url": "https://wlz-admin-all-view.hubbuyer.com/login",
+      "bodySnippet": "ee-supply\n\n欢迎回来 👋🏻\n\n请输入您的帐户信息登录系统\n\n账号\n密码\n记住账号\n登录\n\n账号或密码错误"
+    },
+    {
+      "account": "test-zhou",
+      "role": "from login_data.py",
+      "success": true,
+      "url": "https://wlz-admin-all-view.hubbuyer.com/admin/user/list",
+      "bodySnippet": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， test-zhou\n客户管理\n客户信息\n客户等级\n客户咨询\n管理员管理\n国际物流\n黑名单\n邮件管理\n产品管理\n意见反馈\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n查询\n重置\n展开\n批量禁用\n批量导出\n全部（103）\nS级客户（39）\nA级客户（2）\nB级客户（11）\nC级客户（5）\nD级客户（46）\n\t\n姓名\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n业务\n\t\n采购\n\t\n客户经理\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nS-JPN44-test-wlz\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n金月明\n\t\n270777420@qq.com\n\t\n9012345678\n\t\nB2B:7\n\t\nB2B:进行中\n\t\nB2B:39717.16\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-05-18 19:23\n\t\n2026-05-14 10:07\n\t\n详情\n\n\n\t\nC-CHN19-测试1米\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n张佳唯\n\t\n陈牧鹏\n\t\n金月明\n\t\nyangweibin@sakuradk.com\n\t\n12541526325\n\t\nB2B:6\n\t\nB2B:进行中\n\t\nB2B:34738.57\n\t\n/B2B\n\t\nYouTube\n\t\n2026-05-23 08:32\n\t\n2026-05-08 15:43\n\t\n详情\n\n\n\t\nD-POL1-senaelor"
+    }
+  ],
+  "selectedAccount": {
+    "account": "test-zhou",
+    "role": "from login_data.py",
+    "postLoginUrl": "https://wlz-admin-all-view.hubbuyer.com/admin/user/list",
+    "localStorageKeys": [
+      "user_info",
+      "REMEMBER_ME_wlz-admin-all-view.hubbuyer.com"
+    ]
+  },
+  "routes": [
+    {
+      "routeName": "admin_user_list",
+      "routePath": "/admin/user/list",
+      "finalUrl": "https://wlz-admin-all-view.hubbuyer.com/admin/user/list",
+      "title": "客户信息",
+      "bodySnippet": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， test-zhou\n客户管理\n客户信息\n客户等级\n客户咨询\n管理员管理\n国际物流\n黑名单\n邮件管理\n产品管理\n意见反馈\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n查询\n重置\n展开\n批量禁用\n批量导出\n全部（103）\nS级客户（39）\nA级客户（2）\nB级客户（11）\nC级客户（5）\nD级客户（46）\n\t\n姓名\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n业务\n\t\n采购\n\t\n客户经理\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nS-JPN44-test-wlz\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n金月明\n\t\n270777420@qq.com\n\t\n9012345678\n\t\nB2B:7\n\t\nB2B:进行中\n\t\nB2B:39717.16\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-05-18 19:23\n\t\n2026-05-14 10:07\n\t\n详情\n\n\n\t\nC-CHN19-测试1米\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n张佳唯\n\t\n陈牧鹏\n\t\n金月明\n\t\nyangweibin@sakuradk.com\n\t\n12541526325\n\t\nB2B:6\n\t\nB2B:进行中\n\t\nB2B:34738.57\n\t\n/B2B\n\t\nYouTube\n\t\n2026-05-23 08:32\n\t\n2026-05-08 15:43\n\t\n详情\n\n\n\t\nD-POL1-senaelorhan\n\t\nPoland\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nelorhanlindo@gmail.com\n\t\n692956183\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-05-07 19:04\n\t\n2026-05-07 19:02\n\t\n详情\n\n\n\t\nD-TUR2-YILDIRIMALİ\n\t\nTurkey\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nhingo2566@gmail.com\n\t\n5459653288\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n\t\n2026-04-29 20:31\n\t\n2026-04-29 20:30\n\t\n详情\n\n\n\t\nS-USA10-111\n\t\nAmerica\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nlihaokanya@gmail.com\n\t\n1234567890\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n熟人介绍\n\t\n2026-04-29 12:01\n\t\n2026-04-29 12:00\n\t\n详情\n\n\n\t\nD-IDN1-ImanAaron\n\t\nIndonesia\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nimansie@gmail.com\n\t\n081389895300\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n\t\n2026-04-28 15:40\n\t\n2026-04-28 15:40\n\t\n详情\n\n\n\t\nD-CHN18-户连超测试\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nzrkjhlc@gmail.com\n\t\n15268453999\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n熟人介绍\n\t\n2026-04-27 14:34\n\t\n2026-04-23 14:23\n\t\n详情\n\n\n\t\nD-JPN43-小林莉乃\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nrii20040728@icloud.com\n\t\n07021540728\n\t\nB2B:0\n\t\nB2B:暂无\n\t\nB2B:0.00\n\t\n/B2B\n\t\n\t\n2026-04-22 03:42\n\t\n2026-04-22 03:25\n\t\n详情\n\n\n\t\nD-TUR1-RahhalBasel\n\t\nTurkey\n\t\n已审",
+      "artifacts": {
+        "screenshot": "D:\\test_workspace\\output\\playwright\\order_detail_optimization\\agent2\\route_admin_user_list.png",
+        "txt": "D:\\test_workspace\\output\\playwright\\order_detail_optimization\\agent2\\route_admin_user_list.txt",
+        "html": "D:\\test_workspace\\output\\playwright\\order_detail_optimization\\agent2\\route_admin_user_list.html"
+      },
+      "controls": [
+        {
+          "i": 0,
+          "tag": "DIV",
+          "text": "你好， test-zhou",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "cursor-pointer el-tooltip__trigger el-tooltip__trigger"
+        },
+        {
+          "i": 1,
+          "tag": "BUTTON",
+          "text": "恢复默认",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button color-#333"
+        },
+        {
+          "i": 2,
+          "tag": "DIV",
+          "text": "",
+          "placeholder": "请输入客户ID",
+          "type": "",
+          "aria": "",
+          "className": "el-input el-input--suffix"
+        },
+        {
+          "i": 3,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "请输入客户ID",
+          "type": "text",
+          "aria": "",
+          "className": "el-input__inner"
+        },
+        {
+          "i": 4,
+          "tag": "DIV",
+          "text": "",
+          "placeholder": "请输入客户姓名",
+          "type": "",
+          "aria": "",
+          "className": "el-input el-input--suffix"
+        },
+        {
+          "i": 5,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "请输入客户姓名",
+          "type": "text",
+          "aria": "",
+          "className": "el-input__inner"
+        },
+        {
+          "i": 6,
+          "tag": "DIV",
+          "text": "请选择所属国家",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "el-select w-full"
+        },
+        {
+          "i": 7,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "text",
+          "aria": "",
+          "className": "el-select__input"
+        },
+        {
+          "i": 8,
+          "tag": "DIV",
+          "text": "",
+          "placeholder": "请输入联系电话",
+          "type": "",
+          "aria": "",
+          "className": "el-input el-input--suffix"
+        },
+        {
+          "i": 9,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "请输入联系电话",
+          "type": "text",
+          "aria": "",
+          "className": "el-input__inner"
+        },
+        {
+          "i": 10,
+          "tag": "BUTTON",
+          "text": "查询",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 11,
+          "tag": "BUTTON",
+          "text": "重置",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button is-plain"
+        },
+        {
+          "i": 12,
+          "tag": "BUTTON",
+          "text": "展开",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--info is-text"
+        },
+        {
+          "i": 13,
+          "tag": "BUTTON",
+          "text": "批量禁用",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger el-tooltip__trigger"
+        },
+        {
+          "i": 14,
+          "tag": "BUTTON",
+          "text": "批量导出",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 15,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "radio",
+          "aria": "",
+          "className": "el-radio-button__original-radio"
+        },
+        {
+          "i": 16,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "radio",
+          "aria": "",
+          "className": "el-radio-button__original-radio"
+        },
+        {
+          "i": 17,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "radio",
+          "aria": "",
+          "className": "el-radio-button__original-radio"
+        },
+        {
+          "i": 18,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "radio",
+          "aria": "",
+          "className": "el-radio-button__original-radio"
+        },
+        {
+          "i": 19,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "radio",
+          "aria": "",
+          "className": "el-radio-button__original-radio"
+        },
+        {
+          "i": 20,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "radio",
+          "aria": "",
+          "className": "el-radio-button__original-radio"
+        },
+        {
+          "i": 21,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 22,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 23,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 24,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 25,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 26,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 27,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 28,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 29,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 30,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 31,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 32,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 33,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 34,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 35,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 36,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 37,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 38,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 39,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 40,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 41,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 42,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 43,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 44,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 45,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 46,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 47,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 48,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 49,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 50,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 51,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 52,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 53,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 54,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 55,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 56,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 57,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 58,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 59,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 60,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 61,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 62,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 63,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 64,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 65,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 66,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 67,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 68,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 69,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 70,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 71,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 72,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 73,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 74,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 75,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 76,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 77,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 78,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 79,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 80,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 81,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 82,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 83,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 84,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 85,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 86,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 87,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 88,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 89,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 90,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 91,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 92,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 93,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 94,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 95,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 96,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 97,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 98,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 99,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 100,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 101,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 102,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 103,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 104,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 105,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 106,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 107,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 108,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 109,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 110,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 111,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 112,
+          "tag": "DIV",
+          "text": "30条/页",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "el-select"
+        },
+        {
+          "i": 113,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "text",
+          "aria": "",
+          "className": "el-select__input"
+        },
+        {
+          "i": 114,
+          "tag": "BUTTON",
+          "text": "",
+          "placeholder": "",
+          "type": "button",
+          "aria": "上一页",
+          "className": "btn-prev is-first"
+        },
+        {
+          "i": 115,
+          "tag": "BUTTON",
+          "text": "",
+          "placeholder": "",
+          "type": "button",
+          "aria": "下一页",
+          "className": "btn-next"
+        },
+        {
+          "i": 116,
+          "tag": "DIV",
+          "text": "",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "el-input el-pagination__editor is-in-pagination"
+        },
+        {
+          "i": 117,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "number",
+          "aria": "页",
+          "className": "el-input__inner"
+        }
+      ],
+      "apiEvents": [
+        {
+          "url": "https://wlz-admin-all-view.hubbuyer.com/admin/user/list",
+          "status": 200,
+          "method": "GET",
+          "bodySnippet": "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <link rel=\"icon\" href=\"/favicon.ico\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title></title>\n    <script type=\"module\" crossorigin src=\"/js/index.A9v-vrH6.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/css/index.IlJLTKEa.css\">\n  </head>\n  \n                <body>\n                <svg id=\"local-icon\" data-icon-name=\"local-account-disabled,local-add,local-b2b-blacklist-2,local-b2b-blacklist,local-b2b-change,local-b2b-clock,local-b2b-edit,local-b2b-return,local-b2b-roast"
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin/config/allNationList",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"admin\",\"message\":\"success\",\"data\":{\"data\":[{\"label\":\"Popular\",\"value\":[{\"country_code\":\"JP\",\"name\":\"Japan\",\"chinese_simplified\":\"日本\",\"short_name\":\"JPN\",\"flag\":\"\\/flag\\/japan_jpn.jpg\",\"mobile_location\":[\"+81\"]},{\"country_code\":\"US\",\"name\":\"America\",\"chinese_simplified\":\"美国\",\"short_name\":\"USA\",\"flag\":\"\\/flag\\/america_usa.jpg\",\"mobile_location\":[\"+1\"]},{\"country_code\":\"CN\",\"name\":\"China\",\"chinese_simplified\":\"中国\",\"short_name\":\"CHN\",\"flag\":\"\\/flag\\/china_chn.jpg\",\"mobile_location\":[\"+86\"]},{\"country_code\":\"KR\",\"name\":\"Korea\",\"chinese_simplified\":\"韩国\",\"short_name\":\"KOR\",\"flag\":\"\\"
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/chat/room/list",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"chat\",\"field\":\"success\",\"message\":\"success\",\"data\":{\"data\":[{\"id\":1,\"uuid\":\"251211660051\",\"avatar\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/chat\\/avatar\\/group-avatar.png\",\"group_admin_id\":7,\"name\":\"系统群\",\"user_name\":\"专属客服 - 朴雪锦\",\"user_ids\":\"-3-\",\"admin_ids\":\"-7-127-6-\",\"site\":\"\",\"type\":\"\",\"admin_name\":\"业务沟通群\",\"status\":200,\"date\":\"2025-12-11\",\"created_at\":\"2025-12-11 22:55:19\",\"updated_at\":\"2025-12-22 15:40:55\",\"last_data\":{\"content\":\"<p>1213123<\\/p>\",\"data\":{\"content\":\"<p>1213123<\\/p>\",\"mentions\":[],\"created_at\":\"2026-04-15 09:57:09\"},\"send_user_id\":\"127\",\"send_user_na"
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin/admin/salePurchaseList",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"admin\",\"message\":\"success\",\"data\":{\"admin_data\":[{\"id\":111,\"account\":\"wusijia\",\"name\":\"吴四佳\"},{\"id\":113,\"account\":\"zhangjiawei\",\"name\":\"张佳唯\"},{\"id\":115,\"account\":\"tangfenfen\",\"name\":\"唐芬芬\"},{\"id\":116,\"account\":\"xurong\",\"name\":\"徐榕\"},{\"id\":139,\"account\":\"FRUCHASLEY\",\"name\":\"FRU CHASLEY\"},{\"id\":144,\"account\":\"BO230222\",\"name\":\"吴四佳（正式账号）\"},{\"id\":145,\"account\":\"BO230302\",\"name\":\"徐榕（正式账号）\"},{\"id\":146,\"account\":\"BO230419\",\"name\":\"张佳唯（正式账号）\"},{\"id\":147,\"account\":\"BO230625\",\"name\":\"唐芬芬（正式账号）\"},{\"id\":151,\"account\":\"BO260105\",\"name\":\"FRU CHASLEY\"},{\"id\":155,\"account\":\"lilonghao\",\"name\":\""
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin/admin/salePurchaseList",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"admin\",\"message\":\"success\",\"data\":{\"admin_data\":[{\"id\":108,\"account\":\"jinyueming\",\"name\":\"金月明\"},{\"id\":109,\"account\":\"cuihongmei\",\"name\":\"崔红梅\"},{\"id\":148,\"account\":\"BO250722\",\"name\":\"金月明（正式账号）\"},{\"id\":149,\"account\":\"BO240327\",\"name\":\"崔红梅（正式账号）\"}]}}"
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin/admin/salePurchaseList",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"admin\",\"message\":\"success\",\"data\":{\"admin_data\":[{\"id\":110,\"account\":\"chenmupeng\",\"name\":\"陈牧鹏\"},{\"id\":112,\"account\":\"baoruinan\",\"name\":\"包瑞楠\"},{\"id\":114,\"account\":\"baojiamin\",\"name\":\"包佳民\"},{\"id\":117,\"account\":\"zhuyinggang\",\"name\":\"朱迎港\"},{\"id\":140,\"account\":\"PD180410\",\"name\":\"包瑞楠（正式账号）\"},{\"id\":141,\"account\":\"PD220926\",\"name\":\"陈牧鹏（正式账号）\"},{\"id\":142,\"account\":\"PD260320\",\"name\":\"汪杭壕（正式账号）\"},{\"id\":143,\"account\":\"PD240617\",\"name\":\"包佳民（正式账号）\"}]}}"
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin/user/list",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"admin\",\"message\":\"success\",\"data\":{\"user_level_data\":[{\"id\":1,\"level\":\"S\",\"index\":1,\"total\":39},{\"id\":2,\"level\":\"A\",\"index\":2,\"total\":2},{\"id\":3,\"level\":\"B\",\"index\":3,\"total\":11},{\"id\":4,\"level\":\"C\",\"index\":4,\"total\":5},{\"id\":5,\"level\":\"D\",\"index\":5,\"total\":46}],\"register_source_data\":[{\"id\":62,\"pid\":7,\"remark\":null},{\"id\":61,\"pid\":7,\"remark\":null},{\"id\":60,\"pid\":7,\"remark\":null},{\"id\":55,\"pid\":7,\"remark\":\"展示会\"},{\"id\":54,\"pid\":7,\"remark\":\"Facebook\"},{\"id\":53,\"pid\":7,\"remark\":\"Instagram\"},{\"id\":52,\"pid\":7,\"remark\":\"YouTube\"},{\"id\":49,\"pid\":7,\"remark\":\"tiktok\"},{\"id\":23,\"pid\":"
+        },
+        {
+          "url": "https://wlz-admin-all-view.hubbuyer.com/cdn-cgi/rum?",
+          "status": 204,
+          "method": "POST",
+          "bodySnippet": ""
+        }
+      ]
+    },
+    {
+      "routeName": "b2b_user_list",
+      "routePath": "/b2b/user/list",
+      "finalUrl": "https://wlz-admin-all-view.hubbuyer.com/b2b/user/list",
+      "title": "客户信息",
+      "bodySnippet": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， test-zhou\n工作台\n订单管理\n仓库管理\n发货配送\n客户管理\n客户信息\n会员等级\n营销管理\n附加项\n系统设置\n客户ID\n客户姓名\n所属国家\n请选择所属国家\n联系电话\n查询\n重置\n展开\n批量导出\n全部（103）\nS级客户（39）\nA级客户（2）\nB级客户（11）\nC级客户（5）\nD级客户（46）\n\t\n姓名\n\t\n客户ID\n\t\n所属国家\n\t\n账号状态\n\t\n会员等级\n\t\n会员剩余天数\n\t\n会员到期日期\n\t\n下单前沟通\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n邮箱\n\t\n电话号码\n\t\n正式订单数\n\t\n订单状态\n\t\n账户余额\n\t\n开通的业务\n\t\n注册来源\n\t\n最后登录日期\n\t\n注册日期\n\t\n操作\n\t\nS-JPN44-test-wlz\n\t\nJPN44\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n270777420@qq.com\n\t\n9012345678\n\t\n7\n\t\n暂无\n\t\n39717.16\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-05-18 19:23\n\t\n2026-05-14 10:07\n\t\n详情\n\n\n\t\nC-CHN19-测试1米\n\t\nCHN19\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n金月明\n\t\n张佳唯\n\t\n陈牧鹏\n\t\nyangweibin@sakuradk.com\n\t\n12541526325\n\t\n6\n\t\n暂无\n\t\n34738.57\n\t\n/B2B\n\t\nYouTube\n\t\n2026-05-23 08:32\n\t\n2026-05-08 15:43\n\t\n详情\n\n\n\t\nD-POL1-senaelorhan\n\t\nPOL1\n\t\nPoland\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nelorhanlindo@gmail.com\n\t\n692956183\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\ngoogle搜索\n\t\n2026-05-07 19:04\n\t\n2026-05-07 19:02\n\t\n详情\n\n\n\t\nD-TUR2-YILDIRIMALİ\n\t\nTUR2\n\t\nTurkey\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nhingo2566@gmail.com\n\t\n5459653288\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n\t\n2026-04-29 20:31\n\t\n2026-04-29 20:30\n\t\n详情\n\n\n\t\nS-USA10-111\n\t\nUSA10\n\t\nAmerica\n\t\n已禁用\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nlihaokanya@gmail.com\n\t\n1234567890\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n熟人介绍\n\t\n2026-04-29 12:01\n\t\n2026-04-29 12:00\n\t\n详情\n\n\n\t\nD-IDN1-ImanAaron\n\t\nIDN1\n\t\nIndonesia\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nimansie@gmail.com\n\t\n081389895300\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n\t\n2026-04-28 15:40\n\t\n2026-04-28 15:40\n\t\n详情\n\n\n\t\nD-CHN18-户连超测试\n\t\nCHN18\n\t\nChina\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nzrkjhlc@gmail.com\n\t\n15268453999\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n熟人介绍\n\t\n2026-04-27 14:34\n\t\n2026-04-23 14:23\n\t\n详情\n\n\n\t\nD-JPN43-小林莉乃\n\t\nJPN43\n\t\nJapan\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n待沟通\n\t\n\t\n\t\n\t\nrii20040728@icloud.com\n\t\n07021540728\n\t\n0\n\t\n暂无\n\t\n0.00\n\t\n/B2B\n\t\n\t\n2026-04-22 03:42\n\t\n2026-04-22 03:25\n\t\n详情\n\n\n\t\nD-TUR1-RahhalBasel\n\t\nTUR1\n\t\nTurkey\n\t\n已审核\n\t\n一般会员\n\t\n永久\n\t\n2099-12-31 23:59\n\t\n",
+      "artifacts": {
+        "screenshot": "D:\\test_workspace\\output\\playwright\\order_detail_optimization\\agent2\\route_b2b_user_list.png",
+        "txt": "D:\\test_workspace\\output\\playwright\\order_detail_optimization\\agent2\\route_b2b_user_list.txt",
+        "html": "D:\\test_workspace\\output\\playwright\\order_detail_optimization\\agent2\\route_b2b_user_list.html"
+      },
+      "controls": [
+        {
+          "i": 0,
+          "tag": "DIV",
+          "text": "你好， test-zhou",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "cursor-pointer el-tooltip__trigger el-tooltip__trigger"
+        },
+        {
+          "i": 1,
+          "tag": "BUTTON",
+          "text": "恢复默认",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button color-#333"
+        },
+        {
+          "i": 2,
+          "tag": "DIV",
+          "text": "",
+          "placeholder": "请输入客户ID",
+          "type": "",
+          "aria": "",
+          "className": "el-input el-input--suffix"
+        },
+        {
+          "i": 3,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "请输入客户ID",
+          "type": "text",
+          "aria": "",
+          "className": "el-input__inner"
+        },
+        {
+          "i": 4,
+          "tag": "DIV",
+          "text": "",
+          "placeholder": "请输入客户名字",
+          "type": "",
+          "aria": "",
+          "className": "el-input el-input--suffix"
+        },
+        {
+          "i": 5,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "请输入客户名字",
+          "type": "text",
+          "aria": "",
+          "className": "el-input__inner"
+        },
+        {
+          "i": 6,
+          "tag": "DIV",
+          "text": "请选择所属国家",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "el-select w-full"
+        },
+        {
+          "i": 7,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "text",
+          "aria": "",
+          "className": "el-select__input"
+        },
+        {
+          "i": 8,
+          "tag": "DIV",
+          "text": "",
+          "placeholder": "请输入联系电话",
+          "type": "",
+          "aria": "",
+          "className": "el-input el-input--suffix"
+        },
+        {
+          "i": 9,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "请输入联系电话",
+          "type": "text",
+          "aria": "",
+          "className": "el-input__inner"
+        },
+        {
+          "i": 10,
+          "tag": "BUTTON",
+          "text": "查询",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 11,
+          "tag": "BUTTON",
+          "text": "重置",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button is-plain"
+        },
+        {
+          "i": 12,
+          "tag": "BUTTON",
+          "text": "展开",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--info is-text"
+        },
+        {
+          "i": 13,
+          "tag": "BUTTON",
+          "text": "批量导出",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 14,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "radio",
+          "aria": "",
+          "className": "el-radio-button__original-radio"
+        },
+        {
+          "i": 15,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "radio",
+          "aria": "",
+          "className": "el-radio-button__original-radio"
+        },
+        {
+          "i": 16,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "radio",
+          "aria": "",
+          "className": "el-radio-button__original-radio"
+        },
+        {
+          "i": 17,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "radio",
+          "aria": "",
+          "className": "el-radio-button__original-radio"
+        },
+        {
+          "i": 18,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "radio",
+          "aria": "",
+          "className": "el-radio-button__original-radio"
+        },
+        {
+          "i": 19,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "radio",
+          "aria": "",
+          "className": "el-radio-button__original-radio"
+        },
+        {
+          "i": 20,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 21,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 22,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 23,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 24,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 25,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 26,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 27,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 28,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 29,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 30,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 31,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 32,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 33,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 34,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 35,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 36,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 37,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 38,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 39,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 40,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 41,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 42,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 43,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 44,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 45,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 46,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 47,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 48,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 49,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 50,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 51,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 52,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 53,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 54,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 55,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 56,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 57,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 58,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 59,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 60,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 61,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 62,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 63,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 64,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 65,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 66,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 67,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 68,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 69,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 70,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 71,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 72,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 73,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 74,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 75,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 76,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 77,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 78,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 79,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 80,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 81,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 82,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 83,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 84,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 85,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 86,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 87,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 88,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 89,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 90,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 91,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 92,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 93,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 94,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 95,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 96,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 97,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 98,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 99,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 100,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 101,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 102,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 103,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 104,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 105,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 106,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 107,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 108,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "checkbox",
+          "aria": "",
+          "className": "el-checkbox__original"
+        },
+        {
+          "i": 109,
+          "tag": "BUTTON",
+          "text": "待沟通",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--danger is-link"
+        },
+        {
+          "i": 110,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 111,
+          "tag": "DIV",
+          "text": "30条/页",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "el-select"
+        },
+        {
+          "i": 112,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "text",
+          "aria": "",
+          "className": "el-select__input"
+        },
+        {
+          "i": 113,
+          "tag": "BUTTON",
+          "text": "",
+          "placeholder": "",
+          "type": "button",
+          "aria": "上一页",
+          "className": "btn-prev is-first"
+        },
+        {
+          "i": 114,
+          "tag": "BUTTON",
+          "text": "",
+          "placeholder": "",
+          "type": "button",
+          "aria": "下一页",
+          "className": "btn-next"
+        },
+        {
+          "i": 115,
+          "tag": "DIV",
+          "text": "",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "el-input el-pagination__editor is-in-pagination"
+        },
+        {
+          "i": 116,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "number",
+          "aria": "页",
+          "className": "el-input__inner"
+        }
+      ],
+      "apiEvents": [
+        {
+          "url": "https://wlz-admin-all-view.hubbuyer.com/b2b/user/list",
+          "status": 200,
+          "method": "GET",
+          "bodySnippet": "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <link rel=\"icon\" href=\"/favicon.ico\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title></title>\n    <script type=\"module\" crossorigin src=\"/js/index.A9v-vrH6.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/css/index.IlJLTKEa.css\">\n  </head>\n  \n                <body>\n                <svg id=\"local-icon\" data-icon-name=\"local-account-disabled,local-add,local-b2b-blacklist-2,local-b2b-blacklist,local-b2b-change,local-b2b-clock,local-b2b-edit,local-b2b-return,local-b2b-roast"
+        },
+        {
+          "url": "https://wlz-admin-all-view.hubbuyer.com/cdn-cgi/rum?",
+          "status": 204,
+          "method": "POST",
+          "bodySnippet": ""
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin/config/allNationList",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"admin\",\"message\":\"success\",\"data\":{\"data\":[{\"label\":\"Popular\",\"value\":[{\"country_code\":\"JP\",\"name\":\"Japan\",\"chinese_simplified\":\"日本\",\"short_name\":\"JPN\",\"flag\":\"\\/flag\\/japan_jpn.jpg\",\"mobile_location\":[\"+81\"]},{\"country_code\":\"US\",\"name\":\"America\",\"chinese_simplified\":\"美国\",\"short_name\":\"USA\",\"flag\":\"\\/flag\\/america_usa.jpg\",\"mobile_location\":[\"+1\"]},{\"country_code\":\"CN\",\"name\":\"China\",\"chinese_simplified\":\"中国\",\"short_name\":\"CHN\",\"flag\":\"\\/flag\\/china_chn.jpg\",\"mobile_location\":[\"+86\"]},{\"country_code\":\"KR\",\"name\":\"Korea\",\"chinese_simplified\":\"韩国\",\"short_name\":\"KOR\",\"flag\":\"\\"
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/chat/room/list",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"chat\",\"field\":\"success\",\"message\":\"success\",\"data\":{\"data\":[{\"id\":1,\"uuid\":\"251211660051\",\"avatar\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/chat\\/avatar\\/group-avatar.png\",\"group_admin_id\":7,\"name\":\"系统群\",\"user_name\":\"专属客服 - 朴雪锦\",\"user_ids\":\"-3-\",\"admin_ids\":\"-7-127-6-\",\"site\":\"\",\"type\":\"\",\"admin_name\":\"业务沟通群\",\"status\":200,\"date\":\"2025-12-11\",\"created_at\":\"2025-12-11 22:55:19\",\"updated_at\":\"2025-12-22 15:40:55\",\"last_data\":{\"content\":\"<p>1213123<\\/p>\",\"data\":{\"content\":\"<p>1213123<\\/p>\",\"mentions\":[],\"created_at\":\"2026-04-15 09:57:09\"},\"send_user_id\":\"127\",\"send_user_na"
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/user/list",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"admin_b2b\",\"message\":\"success\",\"data\":{\"user_level_data\":[{\"id\":1,\"level\":\"S\",\"index\":1,\"total\":39},{\"id\":2,\"level\":\"A\",\"index\":2,\"total\":2},{\"id\":3,\"level\":\"B\",\"index\":3,\"total\":11},{\"id\":4,\"level\":\"C\",\"index\":4,\"total\":5},{\"id\":5,\"level\":\"D\",\"index\":5,\"total\":46}],\"register_source_data\":[{\"id\":62,\"pid\":7,\"remark\":null},{\"id\":61,\"pid\":7,\"remark\":null},{\"id\":60,\"pid\":7,\"remark\":null},{\"id\":55,\"pid\":7,\"remark\":\"展示会\"},{\"id\":54,\"pid\":7,\"remark\":\"Facebook\"},{\"id\":53,\"pid\":7,\"remark\":\"Instagram\"},{\"id\":52,\"pid\":7,\"remark\":\"YouTube\"},{\"id\":49,\"pid\":7,\"remark\":\"tiktok\"},{\"id\":23,\"p"
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin/admin/salePurchaseList",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"admin\",\"message\":\"success\",\"data\":{\"admin_data\":[{\"id\":110,\"account\":\"chenmupeng\",\"name\":\"陈牧鹏\"},{\"id\":112,\"account\":\"baoruinan\",\"name\":\"包瑞楠\"},{\"id\":114,\"account\":\"baojiamin\",\"name\":\"包佳民\"},{\"id\":117,\"account\":\"zhuyinggang\",\"name\":\"朱迎港\"},{\"id\":140,\"account\":\"PD180410\",\"name\":\"包瑞楠（正式账号）\"},{\"id\":141,\"account\":\"PD220926\",\"name\":\"陈牧鹏（正式账号）\"},{\"id\":142,\"account\":\"PD260320\",\"name\":\"汪杭壕（正式账号）\"},{\"id\":143,\"account\":\"PD240617\",\"name\":\"包佳民（正式账号）\"}]}}"
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin/admin/salePurchaseList",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"admin\",\"message\":\"success\",\"data\":{\"admin_data\":[{\"id\":108,\"account\":\"jinyueming\",\"name\":\"金月明\"},{\"id\":109,\"account\":\"cuihongmei\",\"name\":\"崔红梅\"},{\"id\":148,\"account\":\"BO250722\",\"name\":\"金月明（正式账号）\"},{\"id\":149,\"account\":\"BO240327\",\"name\":\"崔红梅（正式账号）\"}]}}"
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin/admin/salePurchaseList",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"admin\",\"message\":\"success\",\"data\":{\"admin_data\":[{\"id\":111,\"account\":\"wusijia\",\"name\":\"吴四佳\"},{\"id\":113,\"account\":\"zhangjiawei\",\"name\":\"张佳唯\"},{\"id\":115,\"account\":\"tangfenfen\",\"name\":\"唐芬芬\"},{\"id\":116,\"account\":\"xurong\",\"name\":\"徐榕\"},{\"id\":139,\"account\":\"FRUCHASLEY\",\"name\":\"FRU CHASLEY\"},{\"id\":144,\"account\":\"BO230222\",\"name\":\"吴四佳（正式账号）\"},{\"id\":145,\"account\":\"BO230302\",\"name\":\"徐榕（正式账号）\"},{\"id\":146,\"account\":\"BO230419\",\"name\":\"张佳唯（正式账号）\"},{\"id\":147,\"account\":\"BO230625\",\"name\":\"唐芬芬（正式账号）\"},{\"id\":151,\"account\":\"BO260105\",\"name\":\"FRU CHASLEY\"},{\"id\":155,\"account\":\"lilonghao\",\"name\":\""
+        }
+      ]
+    },
+    {
+      "routeName": "agent_buy_list",
+      "routePath": "/b2b/order/agentBuy",
+      "finalUrl": "https://wlz-admin-all-view.hubbuyer.com/b2b/order/agentBuy",
+      "title": "代购订单",
+      "bodySnippet": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， test-zhou\n工作台\n订单管理\n报价单\n代购订单\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n客户管理\n营销管理\n附加项\n系统设置\n国家\n请选择国家\n订单编号\n支付日期\n至\n客户姓名/ID\n客户等级\n请选择客户等级\n会员等级\n请选择会员等级\n客户经理\n请选择客户经理\n业务\n请选择业务\n用户注文\n查询\n重置\n展开\n待审核(122)\n进行中(107)\n待清算(24)\n已清算(118)\n已关闭(11)\n全部(382)\n国家\n\t\n编号\n\t\n订单状态\n\t\n客户信息\n\t\n会员等级\n\t\n订单金额\n\t\n下单数\n\t\n购入数\n\t\n到货数\n\t\n不良数\n\t\n正品数\n\t\n入库数\n\t\n发货数\n\t\n在库数\n\t\n客户经理\n\t\n业务\n\t\n采购\n\t\n部门备注\n\t\n支付日期\n\t\n操作\nJapan\n\t\nB2B-DD-JPN44-260519-008\n\t\n待审核\n\t\nS-JPN44-test-wlz\n\t\n一般会员\n\t\n780.75\n\t\n55\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n---\n\t\n2026-05-19 16:27\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN44-260519-007\n\t\n待审核\n\t\nS-JPN44-test-wlz\n\t\n一般会员\n\t\n815.75\n\t\n55\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n---\n\t\n2026-05-19 09:13\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN44-260518-006\n\t\n待审核\n\t\nS-JPN44-test-wlz\n\t\n一般会员\n\t\n790.75\n\t\n55\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n---\n\t\n2026-05-18 13:56\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN44-260515-005\n\t\n待审核\n\t\nS-JPN44-test-wlz\n\t\n一般会员\n\t\n355.22\n\t\n22\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n---\n\t\n2026-05-15 11:18\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN44-260515-003\n\t\n待审核\n\t\nS-JPN44-test-wlz\n\t\n一般会员\n\t\n6753.71\n\t\n554\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n---\n\t\n2026-05-15 08:51\n\t\n详情\n\n\nJapan\n\t\nB2B-DD-JPN44-260514-001\n\t\n待审核\n\t\nS-JPN44-test-wlz\n\t\n一般会员\n\t\n433.44\n\t\n42\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n吴四佳\n\t\n陈牧鹏\n\t\n---\n\t\n2026-05-14 11:16\n\t\n详情\n\n\nChina\n\t\nB2B-DD-CHN19-260514-007\n\t\n待审核\n\t\nC-CHN19-测试1米\n\t\n一般会员\n\t\n3441.75\n\t\n277\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n张佳唯\n\t\n陈牧鹏\n\t\n---\n\t\n2026-05-14 09:36\n\t\n详情\n\n\nChina\n\t\nB2B-DD-CHN19-260514-005\n\t\n待审核\n\t\nC-CHN19-测试1米\n\t\n一般会员\n\t\n3441.75\n\t\n277\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n张佳唯\n\t\n陈牧鹏\n\t\n---\n\t\n2026-05-14 08:31\n\t\n详情\n\n\nChina\n\t\nB2B-DD-CHN19-260514-004\n\t\n待审核\n\t\nC-CHN19-测试1米\n\t\n一般会员\n\t\n3441.75\n\t\n277\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n金月明\n\t\n张佳唯\n\t\n陈牧鹏\n\t\n---\n\t\n2026-05-14 08:19\n\t\n详情\n\n\nChina\n\t\nB2B-DD-CHN19-260513-003\n\t\n待审核\n\t\nC-CHN19-测试1米\n\t\n一般会员\n\t\n780.75\n\t\n55\n\t\n---\n\t\n---\n\t\n---\n\t",
+      "artifacts": {
+        "screenshot": "D:\\test_workspace\\output\\playwright\\order_detail_optimization\\agent2\\route_agent_buy_list.png",
+        "txt": "D:\\test_workspace\\output\\playwright\\order_detail_optimization\\agent2\\route_agent_buy_list.txt",
+        "html": "D:\\test_workspace\\output\\playwright\\order_detail_optimization\\agent2\\route_agent_buy_list.html"
+      },
+      "controls": [
+        {
+          "i": 0,
+          "tag": "DIV",
+          "text": "你好， test-zhou",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "cursor-pointer el-tooltip__trigger el-tooltip__trigger"
+        },
+        {
+          "i": 1,
+          "tag": "BUTTON",
+          "text": "恢复默认",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button color-#333"
+        },
+        {
+          "i": 2,
+          "tag": "DIV",
+          "text": "请选择国家",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "el-select w-full"
+        },
+        {
+          "i": 3,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "text",
+          "aria": "",
+          "className": "el-select__input"
+        },
+        {
+          "i": 4,
+          "tag": "DIV",
+          "text": "",
+          "placeholder": "请输入订单编号",
+          "type": "",
+          "aria": "",
+          "className": "el-input el-input--suffix"
+        },
+        {
+          "i": 5,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "请输入订单编号",
+          "type": "text",
+          "aria": "",
+          "className": "el-input__inner"
+        },
+        {
+          "i": 6,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "开始日期",
+          "type": "",
+          "aria": "",
+          "className": "el-range-input"
+        },
+        {
+          "i": 7,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "结束日期",
+          "type": "",
+          "aria": "",
+          "className": "el-range-input"
+        },
+        {
+          "i": 8,
+          "tag": "DIV",
+          "text": "",
+          "placeholder": "请输入客户ID",
+          "type": "",
+          "aria": "",
+          "className": "el-input el-input--suffix"
+        },
+        {
+          "i": 9,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "请输入客户ID",
+          "type": "text",
+          "aria": "",
+          "className": "el-input__inner"
+        },
+        {
+          "i": 10,
+          "tag": "DIV",
+          "text": "请选择客户等级",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "el-select"
+        },
+        {
+          "i": 11,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "text",
+          "aria": "",
+          "className": "el-select__input"
+        },
+        {
+          "i": 12,
+          "tag": "DIV",
+          "text": "请选择会员等级",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "el-select"
+        },
+        {
+          "i": 13,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "text",
+          "aria": "",
+          "className": "el-select__input"
+        },
+        {
+          "i": 14,
+          "tag": "DIV",
+          "text": "请选择客户经理",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "el-select"
+        },
+        {
+          "i": 15,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "text",
+          "aria": "",
+          "className": "el-select__input"
+        },
+        {
+          "i": 16,
+          "tag": "DIV",
+          "text": "请选择业务",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "el-select"
+        },
+        {
+          "i": 17,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "text",
+          "aria": "",
+          "className": "el-select__input"
+        },
+        {
+          "i": 18,
+          "tag": "DIV",
+          "text": "",
+          "placeholder": "请输入用户注文",
+          "type": "",
+          "aria": "",
+          "className": "el-input el-input--suffix"
+        },
+        {
+          "i": 19,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "请输入用户注文",
+          "type": "text",
+          "aria": "",
+          "className": "el-input__inner"
+        },
+        {
+          "i": 20,
+          "tag": "BUTTON",
+          "text": "查询",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary"
+        },
+        {
+          "i": 21,
+          "tag": "BUTTON",
+          "text": "重置",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button is-plain"
+        },
+        {
+          "i": 22,
+          "tag": "BUTTON",
+          "text": "展开",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--info is-text"
+        },
+        {
+          "i": 23,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "radio",
+          "aria": "",
+          "className": "el-radio-button__original-radio"
+        },
+        {
+          "i": 24,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "radio",
+          "aria": "",
+          "className": "el-radio-button__original-radio"
+        },
+        {
+          "i": 25,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "radio",
+          "aria": "",
+          "className": "el-radio-button__original-radio"
+        },
+        {
+          "i": 26,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "radio",
+          "aria": "",
+          "className": "el-radio-button__original-radio"
+        },
+        {
+          "i": 27,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "radio",
+          "aria": "",
+          "className": "el-radio-button__original-radio"
+        },
+        {
+          "i": 28,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "radio",
+          "aria": "",
+          "className": "el-radio-button__original-radio"
+        },
+        {
+          "i": 29,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 30,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 31,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 32,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 33,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 34,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 35,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 36,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 37,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 38,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 39,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 40,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 41,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 42,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 43,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 44,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 45,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 46,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 47,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 48,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 49,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 50,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 51,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 52,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 53,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 54,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 55,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 56,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 57,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 58,
+          "tag": "BUTTON",
+          "text": "详情",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--default"
+        },
+        {
+          "i": 59,
+          "tag": "DIV",
+          "text": "30条/页",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "el-select"
+        },
+        {
+          "i": 60,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "text",
+          "aria": "",
+          "className": "el-select__input"
+        },
+        {
+          "i": 61,
+          "tag": "BUTTON",
+          "text": "",
+          "placeholder": "",
+          "type": "button",
+          "aria": "上一页",
+          "className": "btn-prev is-first"
+        },
+        {
+          "i": 62,
+          "tag": "BUTTON",
+          "text": "",
+          "placeholder": "",
+          "type": "button",
+          "aria": "下一页",
+          "className": "btn-next"
+        },
+        {
+          "i": 63,
+          "tag": "DIV",
+          "text": "",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "el-input el-pagination__editor is-in-pagination"
+        },
+        {
+          "i": 64,
+          "tag": "INPUT",
+          "text": "",
+          "placeholder": "",
+          "type": "number",
+          "aria": "页",
+          "className": "el-input__inner"
+        },
+        {
+          "i": 65,
+          "tag": "BUTTON",
+          "text": "",
+          "placeholder": "",
+          "type": "button",
+          "aria": "前一年",
+          "className": "el-picker-panel__icon-btn d-arrow-left"
+        },
+        {
+          "i": 66,
+          "tag": "BUTTON",
+          "text": "",
+          "placeholder": "",
+          "type": "button",
+          "aria": "上个月",
+          "className": "el-picker-panel__icon-btn arrow-left"
+        },
+        {
+          "i": 67,
+          "tag": "SPAN",
+          "text": "2026 年",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "el-date-range-picker__header-label"
+        },
+        {
+          "i": 68,
+          "tag": "SPAN",
+          "text": "5 月",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "el-date-range-picker__header-label"
+        },
+        {
+          "i": 69,
+          "tag": "BUTTON",
+          "text": "",
+          "placeholder": "",
+          "type": "button",
+          "aria": "后一年",
+          "className": "el-picker-panel__icon-btn d-arrow-right"
+        },
+        {
+          "i": 70,
+          "tag": "BUTTON",
+          "text": "",
+          "placeholder": "",
+          "type": "button",
+          "aria": "下个月",
+          "className": "el-picker-panel__icon-btn arrow-right"
+        },
+        {
+          "i": 71,
+          "tag": "SPAN",
+          "text": "2026 年",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "el-date-range-picker__header-label"
+        },
+        {
+          "i": 72,
+          "tag": "SPAN",
+          "text": "6 月",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "el-date-range-picker__header-label"
+        }
+      ],
+      "apiEvents": [
+        {
+          "url": "https://wlz-admin-all-view.hubbuyer.com/b2b/order/agentBuy",
+          "status": 200,
+          "method": "GET",
+          "bodySnippet": "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <link rel=\"icon\" href=\"/favicon.ico\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title></title>\n    <script type=\"module\" crossorigin src=\"/js/index.A9v-vrH6.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/css/index.IlJLTKEa.css\">\n  </head>\n  \n                <body>\n                <svg id=\"local-icon\" data-icon-name=\"local-account-disabled,local-add,local-b2b-blacklist-2,local-b2b-blacklist,local-b2b-change,local-b2b-clock,local-b2b-edit,local-b2b-return,local-b2b-roast"
+        },
+        {
+          "url": "https://wlz-admin-all-view.hubbuyer.com/cdn-cgi/rum?",
+          "status": 204,
+          "method": "POST",
+          "bodySnippet": ""
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin/config/allNationList",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"admin\",\"message\":\"success\",\"data\":{\"data\":[{\"label\":\"Popular\",\"value\":[{\"country_code\":\"JP\",\"name\":\"Japan\",\"chinese_simplified\":\"日本\",\"short_name\":\"JPN\",\"flag\":\"\\/flag\\/japan_jpn.jpg\",\"mobile_location\":[\"+81\"]},{\"country_code\":\"US\",\"name\":\"America\",\"chinese_simplified\":\"美国\",\"short_name\":\"USA\",\"flag\":\"\\/flag\\/america_usa.jpg\",\"mobile_location\":[\"+1\"]},{\"country_code\":\"CN\",\"name\":\"China\",\"chinese_simplified\":\"中国\",\"short_name\":\"CHN\",\"flag\":\"\\/flag\\/china_chn.jpg\",\"mobile_location\":[\"+86\"]},{\"country_code\":\"KR\",\"name\":\"Korea\",\"chinese_simplified\":\"韩国\",\"short_name\":\"KOR\",\"flag\":\"\\"
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/chat/room/list",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"chat\",\"field\":\"success\",\"message\":\"success\",\"data\":{\"data\":[{\"id\":1,\"uuid\":\"251211660051\",\"avatar\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/chat\\/avatar\\/group-avatar.png\",\"group_admin_id\":7,\"name\":\"系统群\",\"user_name\":\"专属客服 - 朴雪锦\",\"user_ids\":\"-3-\",\"admin_ids\":\"-7-127-6-\",\"site\":\"\",\"type\":\"\",\"admin_name\":\"业务沟通群\",\"status\":200,\"date\":\"2025-12-11\",\"created_at\":\"2025-12-11 22:55:19\",\"updated_at\":\"2025-12-22 15:40:55\",\"last_data\":{\"content\":\"<p>1213123<\\/p>\",\"data\":{\"content\":\"<p>1213123<\\/p>\",\"mentions\":[],\"created_at\":\"2026-04-15 09:57:09\"},\"send_user_id\":\"127\",\"send_user_na"
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin/admin/salePurchaseList",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"admin\",\"message\":\"success\",\"data\":{\"admin_data\":[{\"id\":108,\"account\":\"jinyueming\",\"name\":\"金月明\"},{\"id\":109,\"account\":\"cuihongmei\",\"name\":\"崔红梅\"},{\"id\":148,\"account\":\"BO250722\",\"name\":\"金月明（正式账号）\"},{\"id\":149,\"account\":\"BO240327\",\"name\":\"崔红梅（正式账号）\"}]}}"
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin/admin/salePurchaseList",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"admin\",\"message\":\"success\",\"data\":{\"admin_data\":[{\"id\":110,\"account\":\"chenmupeng\",\"name\":\"陈牧鹏\"},{\"id\":112,\"account\":\"baoruinan\",\"name\":\"包瑞楠\"},{\"id\":114,\"account\":\"baojiamin\",\"name\":\"包佳民\"},{\"id\":117,\"account\":\"zhuyinggang\",\"name\":\"朱迎港\"},{\"id\":140,\"account\":\"PD180410\",\"name\":\"包瑞楠（正式账号）\"},{\"id\":141,\"account\":\"PD220926\",\"name\":\"陈牧鹏（正式账号）\"},{\"id\":142,\"account\":\"PD260320\",\"name\":\"汪杭壕（正式账号）\"},{\"id\":143,\"account\":\"PD240617\",\"name\":\"包佳民（正式账号）\"}]}}"
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin/admin/salePurchaseList",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"admin\",\"message\":\"success\",\"data\":{\"admin_data\":[{\"id\":111,\"account\":\"wusijia\",\"name\":\"吴四佳\"},{\"id\":113,\"account\":\"zhangjiawei\",\"name\":\"张佳唯\"},{\"id\":115,\"account\":\"tangfenfen\",\"name\":\"唐芬芬\"},{\"id\":116,\"account\":\"xurong\",\"name\":\"徐榕\"},{\"id\":139,\"account\":\"FRUCHASLEY\",\"name\":\"FRU CHASLEY\"},{\"id\":144,\"account\":\"BO230222\",\"name\":\"吴四佳（正式账号）\"},{\"id\":145,\"account\":\"BO230302\",\"name\":\"徐榕（正式账号）\"},{\"id\":146,\"account\":\"BO230419\",\"name\":\"张佳唯（正式账号）\"},{\"id\":147,\"account\":\"BO230625\",\"name\":\"唐芬芬（正式账号）\"},{\"id\":151,\"account\":\"BO260105\",\"name\":\"FRU CHASLEY\"},{\"id\":155,\"account\":\"lilonghao\",\"name\":\""
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/userRoleConfig/list",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\n    \"code\": 500,\n    \"msg\": \"Undefined property: stdClass::$invitation_instructions\",\n    \"traces\": \"ErrorException: Undefined property: stdClass::$invitation_instructions in /www/wwwroot/wlz/api-all/app/admin_b2b/service/UserRoleConfigService.php:29\\nStack trace:\\n#0 /www/wwwroot/wlz/api-all/app/admin_b2b/service/UserRoleConfigService.php(29): support\\\\App::{closure}()\\n#1 /www/wwwroot/wlz/api-all/app/admin_b2b/controller/UserRoleConfigController.php(26): app\\\\admin_b2b\\\\service\\\\UserRoleConfigService::executeUserRole()\\n#2 /www/wwwroot/wlz/api-all/vendor/workerman/webman-framework/src/App."
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin/userLevelConfig/list",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"admin\",\"message\":\"success\",\"data\":{\"data\":[{\"id\":1,\"level\":\"S\",\"purchase_price_min\":\"3.00\",\"purchase_price_max\":\"5.00\",\"remark\":null,\"status\":200,\"index\":1,\"date\":\"2025-04-23\",\"created_at\":\"2025-04-23 16:12\",\"updated_at\":\"2025-10-10 10:26\"},{\"id\":2,\"level\":\"A\",\"purchase_price_min\":\"1.00\",\"purchase_price_max\":\"3.00\",\"remark\":null,\"status\":200,\"index\":2,\"date\":\"2025-04-23\",\"created_at\":\"2025-04-23 16:12\",\"updated_at\":\"2025-04-23 16:16\"},{\"id\":3,\"level\":\"B\",\"purchase_price_min\":\"0.50\",\"purchase_price_max\":\"1.00\",\"remark\":null,\"status\":200,\"index\":3,\"date\":\"2025-04-23\",\"created_"
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/order/list",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"admin_b2b\",\"message\":\"success\",\"data\":{\"order_data\":[{\"id\":407,\"order_no\":\"B2B-DD-JPN44-260519-008\",\"quote_no\":\"B2B-BJ-JPN44-260519-008\",\"quote_pay_amount\":\"780.75\",\"settlement_amount\":\"0.00\",\"user_main_uuid\":\"JPN44\",\"user_uuid\":\"JPN44\",\"status\":100,\"csp_manager_admin_id\":108,\"purchase_admin_id\":110,\"sale_admin_id\":111,\"user_role_config_uuid\":\"\",\"member_level_uuid\":\"MLV-FREE-001\",\"user_level\":\"S\",\"is_purchase\":0,\"service_fee\":\"33.25\",\"pay_service_fee\":null,\"else_total_amount\":\"0.00\",\"nation\":\"Japan\",\"rate\":\"24.22\",\"currency\":\"JPY\",\"settlement_at\":null,\"stay_settlement_at\":nu"
+        }
+      ]
+    },
+    {
+      "routeName": "agent_buy_detail_plain",
+      "routePath": "/b2b/order/agentBuy/detail",
+      "finalUrl": "https://wlz-admin-all-view.hubbuyer.com/b2b/order/agentBuy/detail",
+      "title": "代购订单详情",
+      "bodySnippet": "管理系统\nB2B系统\nD2C系统\n介绍中心\n云仓系统\n物流系统\n财务系统\n日志系统\n你好， test-zhou\n工作台\n订单管理\n报价单\n代购订单\n全商品\n线下订单\n订单清算记录\n仓库管理\n发货配送\n客户管理\n营销管理\n附加项\n系统设置\n订单编号：---\n支付日期：---\n客户经理：---\n业务：---\n采购：---\n导出excel\n联系客户\n---\n客户信息：\n---\n---\n国家：---\n订单清算\n店铺数\n\t\nSKU数\n\t\n下单数\n\t\n购入数\n\t\n到货数\n\t\n正品数\n\t\n待检数\n\t\n不良数\n\t\n待定数\n\t\n退货数\n\t\n换货数\n\t\n入库数\n\t\n已发货数\n\t\n可发货数\n0\n\t\n0\n\t\n0\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\t\n---\n\n暂无数据",
+      "artifacts": {
+        "screenshot": "D:\\test_workspace\\output\\playwright\\order_detail_optimization\\agent2\\route_agent_buy_detail_plain.png",
+        "txt": "D:\\test_workspace\\output\\playwright\\order_detail_optimization\\agent2\\route_agent_buy_detail_plain.txt",
+        "html": "D:\\test_workspace\\output\\playwright\\order_detail_optimization\\agent2\\route_agent_buy_detail_plain.html"
+      },
+      "controls": [
+        {
+          "i": 0,
+          "tag": "DIV",
+          "text": "你好， test-zhou",
+          "placeholder": "",
+          "type": "",
+          "aria": "",
+          "className": "cursor-pointer el-tooltip__trigger el-tooltip__trigger"
+        },
+        {
+          "i": 1,
+          "tag": "BUTTON",
+          "text": "恢复默认",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button color-#333"
+        },
+        {
+          "i": 2,
+          "tag": "BUTTON",
+          "text": "订单清算",
+          "placeholder": "",
+          "type": "button",
+          "aria": "",
+          "className": "el-button el-button--primary el-button--small"
+        },
+        {
+          "i": 3,
+          "tag": "BUTTON",
+          "text": "",
+          "placeholder": "",
+          "type": "button",
+          "aria": "关闭此对话框",
+          "className": "el-drawer__close-btn"
+        }
+      ],
+      "apiEvents": [
+        {
+          "url": "https://wlz-admin-all-view.hubbuyer.com/b2b/order/agentBuy/detail",
+          "status": 200,
+          "method": "GET",
+          "bodySnippet": "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <link rel=\"icon\" href=\"/favicon.ico\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title></title>\n    <script type=\"module\" crossorigin src=\"/js/index.A9v-vrH6.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/css/index.IlJLTKEa.css\">\n  </head>\n  \n                <body>\n                <svg id=\"local-icon\" data-icon-name=\"local-account-disabled,local-add,local-b2b-blacklist-2,local-b2b-blacklist,local-b2b-change,local-b2b-clock,local-b2b-edit,local-b2b-return,local-b2b-roast"
+        },
+        {
+          "url": "https://wlz-admin-all-view.hubbuyer.com/cdn-cgi/rum?",
+          "status": 204,
+          "method": "POST",
+          "bodySnippet": ""
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/chat/room/list",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"chat\",\"field\":\"success\",\"message\":\"success\",\"data\":{\"data\":[{\"id\":1,\"uuid\":\"251211660051\",\"avatar\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/chat\\/avatar\\/group-avatar.png\",\"group_admin_id\":7,\"name\":\"系统群\",\"user_name\":\"专属客服 - 朴雪锦\",\"user_ids\":\"-3-\",\"admin_ids\":\"-7-127-6-\",\"site\":\"\",\"type\":\"\",\"admin_name\":\"业务沟通群\",\"status\":200,\"date\":\"2025-12-11\",\"created_at\":\"2025-12-11 22:55:19\",\"updated_at\":\"2025-12-22 15:40:55\",\"last_data\":{\"content\":\"<p>1213123<\\/p>\",\"data\":{\"content\":\"<p>1213123<\\/p>\",\"mentions\":[],\"created_at\":\"2026-04-15 09:57:09\"},\"send_user_id\":\"127\",\"send_user_na"
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/LanguageConfig/language",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"admin_b2b\",\"field\":\"success\",\"message\":\"success\",\"data\":{\"data\":{\"Download_order\":{\"korean\":\"주문 다운로드\",\"english\":\"Download order\",\"japanese\":\"注文情報ダウンロード\",\"chinese_simplified\":\"下载订单\"},\"product_id\":{\"korean\":\"상품 ID\",\"english\":\"Product ID\",\"japanese\":\"商品ID\",\"chinese_simplified\":\"商品ID\"},\"specification‌\":{\"korean\":\"규격\",\"english\":\"Specifications\",\"japanese\":\"仕様\",\"chinese_simplified\":\"规格‌\"},\"arrival_quantity‌\":{\"korean\":\"입고 수량\",\"english\":\"Arrived quantity\",\"japanese\":\"入荷数\",\"chinese_simplified\":\"‌到货数\"},\"genuine_quantity‌\":{\"korean\":\"양호한 상품 수\",\"english\":\"Good products quantity\",\"japan"
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/orderDetail/statOrderData",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"admin_b2b\",\"message\":\"success\",\"data\":{\"total_shop_num\":0,\"total_sku_num\":0,\"total_quantity\":0,\"total_change_quantity\":0,\"total_purchase_qty\":\"\",\"total_arrive_qty\":\"\",\"total_wait_check_qty\":\"\",\"total_genuine_qty\":\"\",\"total_bad_qty\":\"\",\"total_wait_qty\":\"\",\"total_return_qty\":\"\",\"total_change_qty\":\"\",\"total_store_qty\":\"\",\"total_send_qty\":\"\",\"total_stock_num\":\"\"}}"
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/quote/productDisableLogo",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\"code\":200,\"app\":\"admin_b2b\",\"message\":\"success\",\"data\":{\"data\":[{\"id\":1,\"uuid\":\"CHUAN-YUN\",\"icon\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/b2b\\/admin\\/chuan_yun.png\",\"name_language\":{\"chinese_simplified\":\"船运\",\"english\":\"shipping\",\"japanese\":\"海運\",\"korean\":\"선박 운송\",\"arabic\":\"\",\"spanish\":\"\",\"russian\":\"\",\"french\":\"\"}},{\"id\":2,\"uuid\":\"YI-SUI\",\"icon\":\"https:\\/\\/wlz-api-all.test.hubbuyer.com\\/img\\/b2b\\/admin\\/yi_sui.png\",\"name_language\":{\"chinese_simplified\":\"易碎\",\"english\":\"fragile\",\"japanese\":\"壊れやすい\",\"korean\":\"깨지기 쉬운\",\"arabic\":\"\",\"spanish\":\"\",\"russian\":\"\",\"french\":\"\"}},{\"id\":3,\"uuid\":\"DIAN-CH"
+        },
+        {
+          "url": "https://wlz-api-all.test.hubbuyer.com/admin_b2b/orderDetail/list",
+          "status": 200,
+          "method": "POST",
+          "bodySnippet": "{\n    \"code\": 500,\n    \"msg\": \"Attempt to read property \\\"user_main_uuid\\\" on null\",\n    \"traces\": \"ErrorException: Attempt to read property \\\"user_main_uuid\\\" on null in /www/wwwroot/wlz/api-all/app/admin_b2b/controller/OrderDetailController.php:101\\nStack trace:\\n#0 /www/wwwroot/wlz/api-all/app/admin_b2b/controller/OrderDetailController.php(101): support\\\\App::{closure}()\\n#1 /www/wwwroot/wlz/api-all/vendor/workerman/webman-framework/src/App.php(336): app\\\\admin_b2b\\\\controller\\\\OrderDetailController->list()\\n#2 /www/wwwroot/wlz/api-all/vendor/workerman/webman-framework/src/App.php(359): Web"
+        }
+      ]
+    }
+  ]
+}

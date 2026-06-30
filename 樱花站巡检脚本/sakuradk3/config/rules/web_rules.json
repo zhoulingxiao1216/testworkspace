@@ -1,0 +1,30 @@
+{
+  "url_B2B_h5": {
+    "key": "check_web_url_B2B_h5",
+    "_comment注": "备注：用于校验web端请求",
+    "desc": "B2B H5站点标题巡检",
+    "script": "checker/web/url_B2B_h5.py",
+    "rules": {
+      "status_code": 200,
+      "title_contains": "中国輸入代行、中国仕入れ、中国商品仕入れ、中国タオバオ代行は海外仕入れのさくら代行へ"
+    }
+  },
+  "url_B2B_pc": {
+    "key": "check_web_url_B2B_pc",
+    "desc": "B2B PC站点标题巡检",
+    "script": "checker/web/url_B2B_pc.py",
+    "rules": {
+      "status_code": 200,
+      "title_contains": "中国仕入れ、アリババ仕入れ、タオバオ仕入れ、輸入代行は中国仕入れのさくら代行へ"
+    }
+  },
+  "url_D2C_pc": {
+    "key": "check_web_url_D2C_pc",
+    "desc": "D2C pc站点标题巡检",
+    "script": "checker/web/url_D2C_pc.py",
+    "rules": {
+      "status_code": 200,
+      "title_contains": "無在庫販売＋顧客直送で利益を最大化できる中国仕入れのさくら代行のサービス"
+    }
+  }
+}

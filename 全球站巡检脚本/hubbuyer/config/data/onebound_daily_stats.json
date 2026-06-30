@@ -1,0 +1,16 @@
+{
+  "console_base_url": "https://console.open.onebound.cn/console/",
+  "login": {
+    "username": "xierun",
+    "password": "xierun008"
+  },
+  "api_key_cookie": "tel13735644342,xierun-key-pro",
+  "cookies": {
+    "api_key": "tel13735644342,xierun-key-pro",
+    "PHPSESSID": "n5o9v53gjmkt4t58mn6qkumb97"
+  },
+  "page_size": 100,
+  "max_pages": 10,
+  "request_timeout": 30,
+  "stats_date_offset_days": -1
+}

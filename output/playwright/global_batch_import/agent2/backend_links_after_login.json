@@ -1,0 +1,902 @@
+[
+  {
+    "i": 0,
+    "tag": "BUTTON",
+    "text": "恢复默认",
+    "href": null,
+    "title": null,
+    "cls": "el-button color-#333",
+    "visible": false
+  },
+  {
+    "i": 1,
+    "tag": "LI",
+    "text": "客户管理\n客户信息\n客户等级\n客户咨询",
+    "href": null,
+    "title": null,
+    "cls": "el-sub-menu is-active is-opened",
+    "visible": true
+  },
+  {
+    "i": 2,
+    "tag": "LI",
+    "text": "客户信息",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item is-active",
+    "visible": true
+  },
+  {
+    "i": 3,
+    "tag": "LI",
+    "text": "客户等级",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": true
+  },
+  {
+    "i": 4,
+    "tag": "LI",
+    "text": "客户咨询",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": true
+  },
+  {
+    "i": 5,
+    "tag": "LI",
+    "text": "管理员管理",
+    "href": null,
+    "title": null,
+    "cls": "el-sub-menu",
+    "visible": true
+  },
+  {
+    "i": 6,
+    "tag": "LI",
+    "text": "管理员列表",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": false
+  },
+  {
+    "i": 7,
+    "tag": "LI",
+    "text": "菜单管理",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": false
+  },
+  {
+    "i": 8,
+    "tag": "LI",
+    "text": "角色管理",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": false
+  },
+  {
+    "i": 9,
+    "tag": "LI",
+    "text": "国际物流",
+    "href": null,
+    "title": null,
+    "cls": "el-sub-menu",
+    "visible": true
+  },
+  {
+    "i": 10,
+    "tag": "LI",
+    "text": "国际物流管理",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": false
+  },
+  {
+    "i": 11,
+    "tag": "LI",
+    "text": "黑名单",
+    "href": null,
+    "title": null,
+    "cls": "el-sub-menu",
+    "visible": true
+  },
+  {
+    "i": 12,
+    "tag": "LI",
+    "text": "黑名单商品",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": false
+  },
+  {
+    "i": 13,
+    "tag": "LI",
+    "text": "黑名单店铺",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": false
+  },
+  {
+    "i": 14,
+    "tag": "LI",
+    "text": "邮件管理",
+    "href": null,
+    "title": null,
+    "cls": "el-sub-menu",
+    "visible": true
+  },
+  {
+    "i": 15,
+    "tag": "LI",
+    "text": "邮件模板",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": false
+  },
+  {
+    "i": 16,
+    "tag": "LI",
+    "text": "邮件记录",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": false
+  },
+  {
+    "i": 17,
+    "tag": "LI",
+    "text": "产品管理",
+    "href": null,
+    "title": null,
+    "cls": "el-sub-menu",
+    "visible": true
+  },
+  {
+    "i": 18,
+    "tag": "LI",
+    "text": "分类管理",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": false
+  },
+  {
+    "i": 19,
+    "tag": "LI",
+    "text": "产品单位",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": false
+  },
+  {
+    "i": 20,
+    "tag": "LI",
+    "text": "意见反馈",
+    "href": null,
+    "title": null,
+    "cls": "el-sub-menu",
+    "visible": true
+  },
+  {
+    "i": 21,
+    "tag": "LI",
+    "text": "反馈信息",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": false
+  },
+  {
+    "i": 22,
+    "tag": "LI",
+    "text": "系统设置",
+    "href": null,
+    "title": null,
+    "cls": "el-sub-menu",
+    "visible": true
+  },
+  {
+    "i": 23,
+    "tag": "LI",
+    "text": "多语言配置",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": false
+  },
+  {
+    "i": 24,
+    "tag": "LI",
+    "text": "注册配置",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": false
+  },
+  {
+    "i": 25,
+    "tag": "LI",
+    "text": "汇率配置",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": false
+  },
+  {
+    "i": 26,
+    "tag": "LI",
+    "text": "营业日配置",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": false
+  },
+  {
+    "i": 27,
+    "tag": "LI",
+    "text": "汇率确认",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": false
+  },
+  {
+    "i": 28,
+    "tag": "LI",
+    "text": "IP黑白名单",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": false
+  },
+  {
+    "i": 29,
+    "tag": "LI",
+    "text": "1688采购账号授权",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": false
+  },
+  {
+    "i": 30,
+    "tag": "LI",
+    "text": "淘宝采购账号授权",
+    "href": null,
+    "title": null,
+    "cls": "el-menu-item",
+    "visible": false
+  },
+  {
+    "i": 31,
+    "tag": "BUTTON",
+    "text": "查询",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 32,
+    "tag": "BUTTON",
+    "text": "重置",
+    "href": null,
+    "title": null,
+    "cls": "el-button is-plain",
+    "visible": true
+  },
+  {
+    "i": 33,
+    "tag": "BUTTON",
+    "text": "展开",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--info is-text",
+    "visible": true
+  },
+  {
+    "i": 34,
+    "tag": "BUTTON",
+    "text": "批量禁用",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger el-tooltip__trigger",
+    "visible": true
+  },
+  {
+    "i": 35,
+    "tag": "BUTTON",
+    "text": "批量导出",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 36,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 37,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 38,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 39,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 40,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 41,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 42,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 43,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 44,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 45,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 46,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 47,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 48,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 49,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 50,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 51,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 52,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 53,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 54,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 55,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 56,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 57,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 58,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 59,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 60,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 61,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 62,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 63,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 64,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 65,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 66,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 67,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 68,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 69,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 70,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 71,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 72,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 73,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 74,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 75,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 76,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 77,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 78,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 79,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 80,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 81,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 82,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 83,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 84,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 85,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 86,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 87,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 88,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 89,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 90,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 91,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 92,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 93,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 94,
+    "tag": "BUTTON",
+    "text": "待沟通",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--danger is-link",
+    "visible": true
+  },
+  {
+    "i": 95,
+    "tag": "BUTTON",
+    "text": "详情",
+    "href": null,
+    "title": null,
+    "cls": "el-button el-button--primary",
+    "visible": true
+  },
+  {
+    "i": 96,
+    "tag": "BUTTON",
+    "text": "",
+    "href": null,
+    "title": null,
+    "cls": "btn-prev is-first",
+    "visible": true
+  },
+  {
+    "i": 97,
+    "tag": "BUTTON",
+    "text": "",
+    "href": null,
+    "title": null,
+    "cls": "btn-next",
+    "visible": true
+  },
+  {
+    "i": 98,
+    "tag": "LI",
+    "text": "偏好设置",
+    "href": null,
+    "title": null,
+    "cls": "el-dropdown-menu__item",
+    "visible": false
+  },
+  {
+    "i": 99,
+    "tag": "LI",
+    "text": "退出登录",
+    "href": null,
+    "title": null,
+    "cls": "el-dropdown-menu__item",
+    "visible": false
+  }
+]

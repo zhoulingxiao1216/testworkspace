@@ -1,0 +1,18 @@
+{
+  "d2c_keyword_search_task": {
+    "key": "check_api_d2c_keyword_search",
+    "desc": "D2C 关键字搜索接口校验（1688）",
+    "script": "checker/api/d2c_keyword_search.py",
+    "login_account": "qa1tr@2200freefonts.com",
+    "rules": {
+      "status_code": 200
+    }
+  },
+  "d2c_keyword_1688": {
+    "keywords": ["手机壳", "外套", "衬衣", "内衣", "鞋子"],
+    "sign": "25d4a6f34cd05d0",
+    "cross_token": "f3c34949710da61c2ee51c037d33f922",
+    "callback": "flightHandler1",
+    "data_not_empty": true
+  }
+}
