@@ -1,0 +1,19 @@
+{
+    "api_login": {
+        "key": "check_api_login",
+        "desc": "登录接口校验",
+        "script": "checker/api/login.py",
+        "rules": {
+            "status_code": 200,
+            "json_match": {
+                "code": 200,
+                "msg": "success"
+            },
+            "extract_keys": [
+                "data.token",
+                "data.user.id",
+                "data.role.status"
+            ]
+        }
+    }
+}

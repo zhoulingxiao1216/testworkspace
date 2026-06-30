@@ -1,0 +1,7 @@
+{
+  "plugin_task": {
+    "key": "check_api_plugin",
+    "desc": "B2B&D2C插件添加1688&淘宝商品",
+    "script": "checker/api/plugin.py"
+  }
+}

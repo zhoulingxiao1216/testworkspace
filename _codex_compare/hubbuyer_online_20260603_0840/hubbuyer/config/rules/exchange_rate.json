@@ -1,0 +1,7 @@
+{
+    "exchange_rate": {
+        "key": "check_api_exchange_rate",
+        "desc": "当日汇率检测",
+        "script": "checker/api/exchange_rate.py"
+    }
+}

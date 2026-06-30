@@ -1,0 +1,7 @@
+{
+  "payment_task": {
+    "key": "check_api_payment",
+    "desc": "B2B报价单支付",
+    "script": "checker/api/payment.py"
+  }
+}

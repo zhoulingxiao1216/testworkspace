@@ -1,0 +1,30 @@
+{
+    "keyword_search_task": {
+        "key": "check_api_keyword_search",
+        "desc": "B2B 1688&淘宝 关键词搜索接口校验",
+        "script": "checker/api/keyword_search.py",
+        "login_account": ""
+    },
+    "B2B_1688_keyword": {
+        "params": {},
+        "assertion": {
+            "status_code": 200
+        },
+        "currency": "KRW",
+        "language": "korean",
+        "nation": "Korea",
+        "rate": "220.68",
+        "logintype": "user"
+    },
+    "B2B_taobao_keyword": {
+        "params": {},
+        "assertion": {
+            "status_code": 200
+        },
+        "currency": "KRW",
+        "language": "korean",
+        "nation": "Korea",
+        "rate": "220.68",
+        "logintype": "user"
+    }
+}

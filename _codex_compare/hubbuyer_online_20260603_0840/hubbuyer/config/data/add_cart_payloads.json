@@ -1,0 +1,262 @@
+{
+  "D2C_1688": {
+    "sku_id": "6082029598585",
+    "specId": "b556600accfd99ff5c2740514effd0b8",
+    "PropID": "カラー:8007【夹克】浅蓝色;サイズ:M",
+    "stock_num": "1000",
+    "cart_price": "48.00",
+    "quantity": "2",
+    "alibabaPrice": "[{\"price\":\"48.00\",\"range\":\"≥1\"}]",
+    "ItemPic": "https://cbu01.alicdn.com/img/ibank/O1CN01S7KGiW1r8tmXTPHXr_!!2216588385587-0-cib.jpg",
+    "judgeMiniNum": "0",
+    "sheetVal": "1",
+    "CeilingPrice": "",
+    "ExternalID": "",
+    "ItemID": "968555142329",
+    "ItemName": "2024新春秋冬メンズデニムジャケット日系カジュアル青春トレンド工服デニムコートメンズ",
+    "ItemNameCN": "2024新款春秋冬男士牛仔衫夹克日系休闲青春流行工装牛仔外套男装",
+    "ItemNick": "鑫运服装厂",
+    "ItemURL": "https://detail.1688.com/offer/968555142329.html",
+    "typeid": "4"
+  },
+  "D2C_taobao": {
+    "id": "989952235886",
+    "sku_id": "1627207:380670167,20509:28315",
+    "specId": "",
+    "ItemNameCN": "WASSUP美式復古雪花刺繡連帽衛衣女秋冬加絨加厚潮牌情侶重複外套",
+    "ItemName": "WASSUPアメリカンレトロ雪の刺繍連帽衛衣女秋冬加絨加厚潮牌カップル重ポンドコート",
+    "ItemID": "989952235886",
+    "ItemURL": "https://item.taobao.com/item.htm?id=989952235886",
+    "ItemNick": "WSP聯名商城",
+    "ItemPic": "https://img.alicdn.com/bao/uploaded/i2/2214726257423/O1CN01r9PsV424hn68DGFV6_!!2214726257423.jpg",
+    "PropID": "カラー:黒色（加絨）;サイズ:M",
+    "buytype": "0",
+    "typeid": "0",
+    "alibabaPrice": "",
+    "iswholesale": "",
+    "sheetVal": "1",
+    "stock_num": "200",
+    "cart_price": "102.04",
+    "quantity": "5",
+    "ExternalID": "",
+    "CeilingPrice": ""
+  },
+  "B2B_1688": [
+    {
+      "product_index_uuid": "2026013008563781",
+      "item_id": "732934777093",
+      "platform": "pc",
+      "goods_info": [
+        {
+          "spec_id": "60879fd6f5494b711b433ee64faa4ba6",
+          "sku_id": 5314663724173,
+          "quantity": 3
+        }
+      ]
+    },
+    {
+      "product_index_uuid": "2026013009467991",
+      "item_id": "827700010643",
+      "platform": "pc",
+      "goods_info": [
+        {
+          "spec_id": "b82d7e6f68d27395d240952c2411bef2",
+          "sku_id": 5556418857790,
+          "quantity": 1
+        },
+        {
+          "spec_id": "43b0631f9eae79abaa6e60060486bcb0",
+          "sku_id": 5556418857791,
+          "quantity": 1
+        },
+        {
+          "spec_id": "ce5e66625afb34613e5f5a0506e1e82a",
+          "sku_id": 5556418857792,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "product_index_uuid": "2026013009513709",
+      "item_id": "897112360412",
+      "platform": "pc",
+      "goods_info": [
+        {
+          "spec_id": "22c472f77c0b6d3fe37bad87a281ff70",
+          "sku_id": 5750214565572,
+          "quantity": 3
+        }
+      ]
+    },
+    {
+      "product_index_uuid": "2026013009513709",
+      "item_id": "897112360412",
+      "platform": "pc",
+      "goods_info": [
+        {
+          "spec_id": "ba36b5e84355d7c13c3e9833aeb295ee",
+          "sku_id": 5748008312764,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "product_index_uuid": "2026013009513709",
+      "item_id": "897112360412",
+      "platform": "pc",
+      "goods_info": [
+        {
+          "spec_id": "eaafc0976306ffd8f1afcd9b64cdd0f6",
+          "sku_id": 5748008312766,
+          "quantity": 3
+        }
+      ]
+    },
+    {
+      "product_index_uuid": "2026013009529101",
+      "item_id": "828971980137",
+      "platform": "pc",
+      "goods_info": [
+        {
+          "spec_id": "8663408aa5d691c75c0ee31eba809eb2",
+          "sku_id": 5728366675973,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "product_index_uuid": "2026013009529101",
+      "item_id": "828971980137",
+      "platform": "pc",
+      "goods_info": [
+        {
+          "spec_id": "7665315e55011f698311077f2ed8e439",
+          "sku_id": 5728366675996,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "product_index_uuid": "2026013009568372",
+      "item_id": "684992551107",
+      "platform": "pc",
+      "goods_info": [
+        {
+          "spec_id": "c33dbf901da76bec43d0b30d82aefb6c",
+          "sku_id": 4889825584625,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "product_index_uuid": "2026013009577129",
+      "item_id": "848541243940",
+      "platform": "pc",
+      "goods_info": [
+        {
+          "spec_id": "1fe3165727bb35be42d649d1aa5ebfda",
+          "sku_id": 5803876494704,
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "B2B_taobao": [
+    {
+      "product_index_uuid": "2026013008578603",
+      "item_id": "973985240957",
+      "platform": "pc",
+      "goods_info": [
+        {
+          "spec_id": 5923975608298,
+          "sku_id": 5923975608298,
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "product_index_uuid": "2026013010012427",
+      "item_id": "1005985283846",
+      "platform": "pc",
+      "goods_info": [
+        {
+          "spec_id": 6169053271511,
+          "sku_id": 6169053271511,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "product_index_uuid": "2026013010011838",
+      "item_id": "937114328833",
+      "platform": "pc",
+      "goods_info": [
+        {
+          "spec_id": 5827862724491,
+          "sku_id": 5827862724491,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "product_index_uuid": "2026013010016272",
+      "item_id": "748468176862",
+      "platform": "pc",
+      "goods_info": [
+        {
+          "spec_id": 5646702165612,
+          "sku_id": 5646702165612,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "product_index_uuid": "2026013010013401",
+      "item_id": "977375782003",
+      "platform": "pc",
+      "goods_info": [
+        {
+          "spec_id": 5932151420806,
+          "sku_id": 5932151420806,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "product_index_uuid": "2026013010019838",
+      "item_id": "1005031744991",
+      "platform": "pc",
+      "goods_info": [
+        {
+          "spec_id": 5996379525185,
+          "sku_id": 5996379525185,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "product_index_uuid": "2026013010022385",
+      "item_id": "967913069115",
+      "platform": "pc",
+      "goods_info": [
+        {
+          "spec_id": 6081055079442,
+          "sku_id": 6081055079442,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "product_index_uuid": "2026013010029854",
+      "item_id": "635755541429",
+      "platform": "pc",
+      "goods_info": [
+        {
+          "spec_id": 4969296675270,
+          "sku_id": 4969296675270,
+          "quantity": 1
+        }
+      ]
+    }
+  ]
+}
