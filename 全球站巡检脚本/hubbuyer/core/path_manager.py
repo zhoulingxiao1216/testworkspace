@@ -90,3 +90,20 @@ def normalize_purchase_order_ops_config(cfg):
     steps = data.get("steps") or {}
     data["steps"] = {name: normalize_api_block(step) for name, step in steps.items()}
     return data
+
+
+def normalize_purchase_order_shipping_config(cfg):
+    data = dict(cfg or {})
+    _shipping_api_keys = [
+        "create_ship_order_api", "ship_order_detail_list_api",
+        "distribute_api", "distribute_done_api",
+        "box_insert_api", "box_done_api",
+        "update_fjx_api", "complete_box_api",
+        "remove_settling_api", "deduct_money_api",
+        "update_waybill_no_api", "sure_ship_api",
+        "ship_order_list_api", "ku_stock_in_log_list_api",
+    ]
+    for key in _shipping_api_keys:
+        if data.get(key):
+            data[key] = normalize_api_block(data[key])
+    return data

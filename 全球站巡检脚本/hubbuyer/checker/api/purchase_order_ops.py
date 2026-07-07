@@ -16,6 +16,11 @@ from config.settings import REQUEST_TIMEOUT_API, API_CONFIG, ENV_TYPE
 from core.rules.assertion import AssertionTool
 from core.path_manager import DATA_DIR
 from checker.api.order_audit import _admin_login
+try:
+    from checker.api.order_audit import admin_api_base_url
+except ImportError:
+    def admin_api_base_url():
+        return (API_CONFIG.get("BASE_URL") or "https://api.hubbuyer.com").rstrip("/")
 from checker.api.purchase_order_audit import _resolve_order_no, _build_audit_headers
 from checker.api.quote_order_store import resolve_target_mail
 from core.path_manager import normalize_purchase_order_ops_config
@@ -142,6 +147,46 @@ def _build_warehouse_payload_for_line(seller, item, step_cfg, target_cfg):
     }
 
 
+def _fetch_ku_log_id_from_stock_list(token, product_uuid):
+    """入库成功后立即查 stockProductList，返回 ku_stock_in_log_id。
+    必须在 createShipOrder 之前调用，否则空发货单会锁定库存记录导致查不到。
+    """
+    if not product_uuid:
+        return None
+    try:
+        url = f"{admin_api_base_url()}/admin_b2b/KuStockLog/stockProductList"
+        headers = _build_audit_headers(token, {})
+        payload = {
+            "user_main_uuid": "",  # 必须为空，传 uuid 会导致 PHP 500
+            "user_name": "",
+            "order_detail_uuid": product_uuid,
+            "serial_number": "",
+            "order_no": "",
+        }
+        resp = requests.post(
+            url, headers=headers, json=payload,
+            timeout=REQUEST_TIMEOUT_API, verify=False,
+            proxies={"http": None, "https": None},
+        )
+        body = resp.json()
+        if body.get("code") == 200:
+            data = body.get("data") or {}
+            rows = (
+                data.get("all_stock_data")
+                or data.get("list")
+                or data.get("data")
+                or []
+            )
+            if isinstance(data, list):
+                rows = data
+            if rows:
+                log_id = rows[0].get("id") or rows[0].get("ku_stock_in_log_id")
+                return int(log_id) if log_id else None
+    except Exception:
+        pass
+    return None
+
+
 def _collect_warehouse_candidates(sellers, step_cfg, target_cfg, prefer_open_id=None):
     ordered = []
     prefer_open_id = (prefer_open_id or "").strip()
@@ -265,6 +310,33 @@ def _execute_warehouse_in_step(
                 f"ids={','.join(missing_price_ids[:5])})"
             )
             return {"success": bool(skip_without_price), "message": msg}
+        # 即使已全部入库，也尝试从明细数据中构建发货上下文（下一轮发货模块使用）
+        try:
+            _fallback_item = None
+            for _s in sellers:
+                for _it in (_s.get("detail_data") or []):
+                    if isinstance(_it, dict) and _it.get("id") is not None:
+                        _fallback_item = _it
+                        _fallback_seller = _s
+                        break
+                if _fallback_item:
+                    break
+            if _fallback_item:
+                _fallback_uuid = _fallback_item.get("user_main_uuid") or (
+                    _fallback_seller.get("user_main_uuid") or ""
+                )
+                _ctx = _build_shipping_ctx(
+                    order_no,
+                    {
+                        "ku_stock_in_log_data": [{"order_detail_id": _fallback_item["id"], "quantity": 0}],
+                        "user_main_uuid": _fallback_uuid,
+                    },
+                    _fallback_item,
+                    {},
+                )
+                return {"success": True, "message": f"{desc}:OK(已全部入库|待入库=0)", "_shipping_ctx": _ctx}
+        except Exception:
+            pass
         return {"success": True, "message": f"{desc}:OK(已全部入库|待入库=0)"}
 
     last_fail = ""
@@ -279,16 +351,29 @@ def _execute_warehouse_in_step(
         )
         if check["success"]:
             price_key = _get_warehouse_price(item)
+            # 入库成功后立即查 stockProductList，拿到 ku_stock_in_log_id
+            # 必须在 createShipOrder 之前调用，否则空发货单会锁定记录
+            product_uuid = item.get("uuid") or ""
+            ku_log_id = _fetch_ku_log_id_from_stock_list(token, product_uuid)
+            shipping_ctx = _build_shipping_ctx(order_no, payload, item, body)
+            if ku_log_id:
+                shipping_ctx["ku_stock_in_log_id"] = ku_log_id
             return {
                 "success": True,
                 "message": (
                     f"{desc}:OK({seller_name}|{line_desc}|库位={payload['ku_shelves_ku_id']}|"
                     f"采购价={price_key})"
                 ),
+                "_shipping_ctx": shipping_ctx,
             }
         if _is_idempotent_success(body, step_cfg):
             api_msg = body.get("message") or "已入库"
-            return {"success": True, "message": f"{desc}:OK(已执行|{seller_name}|{api_msg})"}
+            shipping_ctx = _build_shipping_ctx(order_no, payload, item, body)
+            return {
+                "success": True,
+                "message": f"{desc}:OK(已执行|{seller_name}|{api_msg})",
+                "_shipping_ctx": shipping_ctx,
+            }
 
         detail = check.get("message", "未知错误")
         if body.get("message"):
@@ -300,6 +385,47 @@ def _execute_warehouse_in_step(
         return {"success": False, "message": f"{desc}:FAIL({detail})"}
 
     return {"success": False, "message": f"{desc}:FAIL({last_fail or '所有候选明细入库失败'})"}
+
+
+def _build_shipping_ctx(order_no, payload, item, body):
+    """从入库成功结果中提取发货上下文字段。"""
+    log_data = (payload.get("ku_stock_in_log_data") or [{}])[0]
+    ctx = {
+        "order_no": order_no,
+        "order_detail_id": log_data.get("order_detail_id"),
+        "quantity": int(float(log_data.get("quantity") or 0)),
+        "user_main_uuid": payload.get("user_main_uuid", ""),
+    }
+    try:
+        data = body.get("data") or {}
+        ku_log_id = (
+            data.get("id") or data.get("ku_stock_in_log_id")
+            or data.get("log_id") or data.get("stockInLogId")
+        )
+        if ku_log_id:
+            ctx["ku_stock_in_log_id"] = int(ku_log_id)
+    except Exception:
+        pass
+    try:
+        pid = (
+            item.get("product_no") or item.get("goods_no")
+            or item.get("product_id") or item.get("goods_id") or ""
+        )
+        if pid:
+            ctx["product_id"] = str(pid)
+    except Exception:
+        pass
+    # uuid 字段是 D 格式的产品UUID，stockProductList 的 order_detail_uuid 参数需要它
+    try:
+        product_uuid = item.get("uuid") or ""
+        if product_uuid:
+            ctx["product_uuid"] = str(product_uuid)
+        goods_uuid = item.get("goods_uuid") or ""
+        if goods_uuid:
+            ctx["goods_uuid"] = str(goods_uuid)
+    except Exception:
+        pass
+    return ctx
 
 
 def _execute_post_step(token, order_no, seller_ctx, step_cfg, rule_key, all_rules):
@@ -469,6 +595,17 @@ def run(task_config=None):
                 msgs.append(step_result["message"])
                 continue
             msgs.append(step_result["message"])
+
+            # 入库成功后保存发货上下文（供 purchase_order_shipping 消费）
+            if step_key == "warehouse_in" and step_result.get("success"):
+                _ctx = step_result.pop("_shipping_ctx", None)
+                if _ctx:
+                    try:
+                        from checker.api.shipping_context_store import save_shipping_context
+                        save_shipping_context(_ctx)
+                    except Exception:
+                        pass
+
             if not step_result["success"]:
                 break
 

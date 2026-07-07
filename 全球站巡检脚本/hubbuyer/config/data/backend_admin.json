@@ -5,6 +5,9 @@
     },
     "exchange_rate": {
       "enabled": true
+    },
+    "purchase_order_shipping": {
+      "enabled": true
     }
   }
 }

@@ -35,6 +35,7 @@ INSPECTION_SWITCHES = {
     "check_api_backend_admin": True,   #纯后台管理检查点(代购仓配+汇率，汇率最后)
     "check_api_exchange_rate": True,   #子模块：由 backend_admin 调度
     "check_api_purchase_order_ops": True,  #子模块：由 backend_admin 调度
+    "check_api_purchase_order_shipping": False,  #子模块：由 backend_admin 调度
     "check_api_onebound_daily_stats": True  #万邦控制台前一日 API 调用统计
 }
 

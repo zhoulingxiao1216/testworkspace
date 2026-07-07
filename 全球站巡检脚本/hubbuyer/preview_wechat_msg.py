@@ -46,6 +46,10 @@ SAMPLE_REPORT = {
         "success": True,
         "message": "USD(银行:0.15 全球站:0.16) | JPY(银行:24 全球站:24.75)",
     },
+    "后台管理检查点-发货链路": {
+        "success": True,
+        "message": "创建发货单:OK(WL-KOR8-260703-017) | 配货:OK | 配货完成:OK | 创建发货箱:OK(box_id=3272) | 商品入箱:OK | 满箱确认:OK | 发货附加项:OK(8项) | 装箱完成:OK | 移动待清算:OK | 待清算扣款:OK | 绑定运单号:OK(20260703-001) | 确认发货:OK(WL-KOR8-260703-017|运单:20260703-001)",
+    },
 }
 
 FAIL_REPORT = dict(SAMPLE_REPORT)

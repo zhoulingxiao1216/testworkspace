@@ -17,6 +17,7 @@ from core.path_manager import DATA_DIR
 CONFIG_FILE = "backend_admin.json"
 SUB_OPS_DESC = "后台管理检查点-代购仓配"
 SUB_RATE_DESC = "后台管理检查点-汇率"
+SUB_SHIPPING_DESC = "后台管理检查点-发货链路"
 
 
 def _load_config():
@@ -91,6 +92,23 @@ def run(task_config=None):
             }
             summary_parts.append("汇率:跳过")
 
+        if _module_enabled(cfg, "purchase_order_shipping", "check_api_purchase_order_shipping"):
+            from checker.api.purchase_order_shipping import run as run_purchase_order_shipping
+
+            shipping_result = _normalize_sub_result(
+                SUB_SHIPPING_DESC, run_purchase_order_shipping(task_config)
+            )
+            sub_results[SUB_SHIPPING_DESC] = shipping_result
+            summary_parts.append(f"发货链路:{'OK' if shipping_result['success'] else 'FAIL'}")
+        else:
+            sub_results[SUB_SHIPPING_DESC] = {
+                "success": True,
+                "message": "发货链路:跳过(未启用)",
+                "status_code": 200,
+                "actual": "发货链路:跳过(未启用)",
+            }
+            summary_parts.append("发货链路:跳过")
+
         active_results = [
             item
             for item in sub_results.values()
@@ -100,7 +118,7 @@ def run(task_config=None):
         all_ok = all(item.get("success") for item in active_results)
         detail_msgs = [
             sub_results[desc]["message"]
-            for desc in (SUB_OPS_DESC, SUB_RATE_DESC)
+            for desc in (SUB_OPS_DESC, SUB_RATE_DESC, SUB_SHIPPING_DESC)
             if sub_results.get(desc, {}).get("message")
         ]
 

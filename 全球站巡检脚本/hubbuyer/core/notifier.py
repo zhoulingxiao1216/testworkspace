@@ -41,6 +41,7 @@ class Notifier:
     BACKEND_ADMIN_ITEMS = [
         ("🛠 后台管理-代购仓配", "后台管理检查点-代购仓配"),
         ("💱 后台管理-汇率", "后台管理检查点-汇率"),
+        ("🚚 后台管理-发货链路", "后台管理检查点-发货链路"),
     ]
     EXTERNAL_API_ITEMS = [
         ("📊 万邦API调用统计", "万邦 API 前日调用统计"),
@@ -166,6 +167,21 @@ class Notifier:
         return ""
 
     @staticmethod
+    def _shipping_extra_line(report_data):
+        item = report_data.get("后台管理检查点-发货链路", {})
+        if not item.get("success"):
+            return ""
+        msg = item.get("message", "")
+        # 提取发货单号和运单号
+        import re as _re
+        ship_no = (_re.search(r"WL-[A-Z0-9\-]+", msg) or _re.search(r"创建发货单:OK\(([^)]+)\)", msg))
+        waybill = _re.search(r"运单:([0-9\-]+)", msg)
+        if ship_no and waybill:
+            no = ship_no.group(0) if ship_no.lastindex is None else ship_no.group(1)
+            return f"　发货单: {no} | 运单: {waybill.group(1)}"
+        return ""
+
+    @staticmethod
     def _short_onebound_api_label(label):
         parts = str(label).split("/")
         if len(parts) >= 3:
@@ -275,6 +291,9 @@ class Notifier:
             extra = Notifier._rate_extra_line(report_data)
             if extra:
                 content += f"{extra}\n"
+            shipping_extra = Notifier._shipping_extra_line(report_data)
+            if shipping_extra:
+                content += f"{shipping_extra}\n"
         if "外部 API" in section_title:
             for line in Notifier._onebound_extra_lines(report_data):
                 content += f"{line}\n"
