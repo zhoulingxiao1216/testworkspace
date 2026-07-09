@@ -1,6 +1,6 @@
 {
     "admin_session": {
-        "PHPSESSID": "s8gqlf3s0fog2pusg924cn148k",
+        "PHPSESSID": "aitspb9befffppdkh6q0ce5opr",
         "_comment": "管理员后台的 PHPSESSID，过期后需要重新登录后台并更新此值"
     },
     "accounts": [

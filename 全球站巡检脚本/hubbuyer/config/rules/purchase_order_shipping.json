@@ -1,0 +1,13 @@
+{
+  "shipping_task": {
+    "key": "check_api_purchase_order_shipping",
+    "desc": "后台发货链路",
+    "script": "checker/api/purchase_order_shipping.py",
+    "runner_timeout": 300
+  },
+  "default": {
+    "status_code": 200,
+    "json_path": "code",
+    "expected": 200
+  }
+}

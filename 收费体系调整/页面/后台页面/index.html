@@ -1,0 +1,1343 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>全球站收费体系调整 - 代购订单详情后台页</title>
+  <link rel="stylesheet" href="./后台页面.css" />
+  <style>
+    @media (max-width: 900px) { body { min-width: 390px; } }
+
+    .jewelry-thumb {
+      width: 72px;
+      height: 63px;
+      border: 1px solid #e3e8f3;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 47% 43%, rgba(236, 201, 92, .95) 0 11%, transparent 12%),
+        radial-gradient(circle at 56% 35%, rgba(188, 164, 92, .72) 0 8%, transparent 9%),
+        linear-gradient(135deg, #f7f9fc, #dce4f2);
+    }
+
+    .jewelry-thumb.silver {
+      background:
+        radial-gradient(circle at 45% 45%, rgba(196, 202, 210, .95) 0 12%, transparent 13%),
+        radial-gradient(circle at 58% 35%, rgba(145, 153, 166, .72) 0 9%, transparent 10%),
+        linear-gradient(135deg, #f8fafc, #d9e0ea);
+    }
+
+    .jewelry-thumb::after {
+      content: "";
+      position: absolute;
+      inset: 18px 16px 12px;
+      border: 2px solid rgba(165, 126, 38, .55);
+      border-radius: 50% 50% 45% 45%;
+      transform: rotate(-22deg);
+    }
+
+    .jewelry-thumb.silver::after {
+      border-color: rgba(110, 119, 133, .55);
+    }
+
+    .ring-thumb {
+      width: 72px;
+      height: 63px;
+      border: 1px solid #e3e8f3;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, .94) 0 28%, transparent 29%),
+        radial-gradient(circle at 50% 50%, rgba(139, 143, 145, .72) 0 37%, transparent 38%),
+        linear-gradient(135deg, #f8fafc, #e3e8f0);
+    }
+
+    .ring-thumb::before {
+      content: "";
+      position: absolute;
+      left: 18px;
+      top: 12px;
+      width: 36px;
+      height: 36px;
+      border: 5px solid #d5d7d9;
+      border-radius: 50%;
+      box-shadow:
+        inset 0 1px 3px rgba(0, 0, 0, .22),
+        0 2px 4px rgba(77, 84, 96, .18);
+      background: transparent;
+    }
+
+    .ring-thumb::after {
+      content: "";
+      position: absolute;
+      left: 23px;
+      top: 17px;
+      width: 24px;
+      height: 24px;
+      border-top: 3px solid rgba(255, 255, 255, .82);
+      border-left: 2px solid rgba(255, 255, 255, .62);
+      border-radius: 50%;
+      transform: rotate(-18deg);
+    }
+
+    .shop-name .shop-title {
+      font-size: 14px;
+      color: #111827;
+    }
+
+    .blocked-icon {
+      width: 15px;
+      height: 15px;
+      border: 2px solid #8f98a5;
+      border-radius: 50%;
+      position: relative;
+      display: inline-block;
+      box-sizing: border-box;
+    }
+
+    .blocked-icon::after {
+      content: "";
+      position: absolute;
+      left: 2px;
+      right: 2px;
+      top: 5px;
+      height: 2px;
+      background: #8f98a5;
+      transform: rotate(32deg);
+      border-radius: 2px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      color: var(--primary);
+      font-weight: 400;
+      font-size: 12px;
+    }
+
+    .contact-dot {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #2f73ff;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      line-height: 1;
+    }
+
+    .product-mini-icons {
+      margin-top: 7px;
+      display: flex;
+      justify-content: center;
+      gap: 11px;
+      color: #606266;
+    }
+
+    .mini-tag-icon,
+    .mini-clip-icon {
+      width: 13px;
+      height: 13px;
+      display: inline-block;
+      position: relative;
+    }
+
+    .mini-tag-icon {
+      border: 1px solid #606266;
+      border-radius: 2px 2px 2px 0;
+      transform: rotate(-38deg);
+    }
+
+    .mini-tag-icon::before {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      border: 1px solid #606266;
+      border-radius: 50%;
+      left: 2px;
+      top: 2px;
+      background: #fff;
+    }
+
+    .mini-clip-icon::before {
+      content: "";
+      position: absolute;
+      left: 3px;
+      top: 1px;
+      width: 8px;
+      height: 11px;
+      border: 1px solid #737b87;
+      border-radius: 1px;
+    }
+
+    .mini-clip-icon::after {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 4px;
+      width: 6px;
+      height: 1px;
+      background: #737b87;
+      box-shadow: 0 3px 0 #737b87;
+    }
+
+    .edit-circle,
+    .rotate-circle {
+      width: 24px;
+      height: 24px;
+      margin: 0 auto 6px;
+      border-radius: 50%;
+      display: block;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .edit-circle {
+      background: var(--primary);
+    }
+
+    .edit-circle::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 11px;
+      width: 11px;
+      height: 3px;
+      background: #fff;
+      border-radius: 2px;
+      transform: rotate(-42deg);
+    }
+
+    .edit-circle::after {
+      content: "";
+      position: absolute;
+      left: 15px;
+      top: 7px;
+      width: 3px;
+      height: 3px;
+      background: #fff;
+      transform: rotate(-42deg);
+      border-radius: 1px;
+    }
+
+    .rotate-circle {
+      border: 2px solid #222;
+      border-left-color: transparent;
+      background: #fff;
+    }
+
+    .rotate-circle::after {
+      content: "";
+      position: absolute;
+      left: 1px;
+      top: 1px;
+      width: 6px;
+      height: 6px;
+      border-left: 2px solid #222;
+      border-top: 2px solid #222;
+      transform: rotate(-45deg);
+    }
+
+    .yellow-badge {
+      min-width: 22px;
+      height: 17px;
+      padding: 0 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      background: #f6c400;
+      color: #fff;
+      font-weight: 700;
+      line-height: 17px;
+    }
+
+    .house-icon,
+    .box-shape-icon {
+      width: 30px;
+      height: 28px;
+      margin: 0 auto 4px;
+      display: block;
+      box-sizing: border-box;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    .house-icon {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath d='M4 16L18 6l14 10v3H4z' fill='%23f3c27a' stroke='%238e642c' stroke-width='1.2'/%3E%3Cpath d='M7 16L18 9l11 7' fill='none' stroke='%2397d7e4' stroke-width='3' stroke-linecap='round'/%3E%3Crect x='7' y='18' width='22' height='14' fill='%23d6a05d' stroke='%238e642c' stroke-width='1.2'/%3E%3Crect x='12' y='22' width='12' height='10' fill='%236a4a2b'/%3E%3Ccircle cx='18' cy='14' r='3' fill='%23949ca3'/%3E%3Cpath d='M5 17H31' stroke='%23fff' stroke-width='2' opacity='.65'/%3E%3C/svg%3E");
+    }
+
+    .box-shape-icon {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath d='M5 11L18 4l13 7-13 7z' fill='%23f5d190' stroke='%23505a96' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M5 11l13 7v14L5 25z' fill='%23e7b66a' stroke='%23505a96' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M31 11L18 18v14l13-7z' fill='%23f0c07b' stroke='%23505a96' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M18 18v14' stroke='%23505a96' stroke-width='2'/%3E%3Cpath d='M10 8l13 7' stroke='%23ffe1a8' stroke-width='2' opacity='.7'/%3E%3C/svg%3E");
+    }
+
+    .operation-icons {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 2px;
+    }
+
+    .op-warning,
+    .op-ban,
+    .op-image {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .op-warning::before {
+      content: "";
+      position: absolute;
+      left: 1px;
+      top: 1px;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 16px solid #ffae16;
+    }
+
+    .op-warning::after {
+      content: "!";
+      position: absolute;
+      left: 7px;
+      top: 6px;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .op-ban {
+      border: 3px solid #8a8f98;
+      border-radius: 50%;
+    }
+
+    .op-ban::after {
+      content: "";
+      position: absolute;
+      left: 1px;
+      right: 1px;
+      top: 6px;
+      height: 3px;
+      background: #8a8f98;
+      transform: rotate(38deg);
+      border-radius: 2px;
+    }
+
+    .op-image {
+      border-radius: 3px;
+      background: #8a8f98;
+    }
+
+    .op-image::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 5px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .op-image::after {
+      content: "";
+      position: absolute;
+      left: 3px;
+      bottom: 4px;
+      width: 12px;
+      height: 6px;
+      background: linear-gradient(135deg, transparent 0 40%, #fff 41% 62%, transparent 63%),
+        linear-gradient(45deg, transparent 0 42%, #fff 43%);
+    }
+
+    .blue-icon.gray {
+      background: #858b95;
+    }
+
+    .blue-icon.green {
+      background: #48b547;
+    }
+
+    .blue-icon.red {
+      background: #f45b5b;
+    }
+
+    .qty-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .qc-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin: 6px 0;
+    }
+
+    .qc-option {
+      height: 21px;
+      min-width: 54px;
+      padding: 0 7px;
+      border: 1px solid #d8dee8;
+      border-radius: 3px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      color: #303133;
+      font-size: 11px;
+    }
+
+    .qc-option.dot::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #606266;
+      margin-right: 4px;
+    }
+
+    .row-note {
+      height: 74px;
+      line-height: 1.6;
+    }
+
+    .shop-header {
+      grid-template-columns: 24px 245px 380px 1fr;
+    }
+
+    .goods-header-grid,
+    .goods-row {
+      display: grid;
+      grid-template-columns:
+        31px
+        minmax(220px, 1.15fr)
+        minmax(150px, .82fr)
+        54px 54px 54px 54px 60px 54px 54px 54px
+        116px
+        220px
+        170px
+        112px;
+    }
+
+    .goods-header-grid {
+      background: #eef0f2;
+      border: 1px solid var(--line-soft);
+      border-bottom: 0;
+      font-weight: 700;
+    }
+
+    .goods-header-grid > div {
+      height: 32px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      border-right: 1px solid var(--line-soft);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .goods-header-grid > div:last-child {
+      border-right: 0;
+    }
+
+    .goods-row {
+      min-height: 122px;
+    }
+
+    .fee-row {
+      padding-left: 36px;
+    }
+
+    .inspect-box .qc-options {
+      grid-column: 1 / 3;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 5px;
+      margin: 6px 0;
+    }
+
+    .inspect-actions {
+      grid-column: 1 / 3;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+
+    .inspect-actions .btn {
+      width: 100%;
+    }
+
+    .operate-tags {
+      width: 100%;
+    }
+
+    .btn.confirmed,
+    .btn.confirmed:disabled {
+      background: #d7dbe2;
+      border-color: #c8ced8;
+      color: #606266;
+      cursor: not-allowed;
+    }
+  </style>
+  <link rel="stylesheet" href="./ui-standard-admin.css" />
+  <style>
+    body {
+      background: #f3f7ff;
+    }
+
+    .admin-shell {
+      min-width: 1440px;
+      background: #f3f7ff;
+    }
+
+    .topbar {
+      height: 47px;
+      align-items: flex-end;
+      padding: 0 31px 0 14px;
+      background: #cfe0ff !important;
+      border-bottom: 1px solid #c7d8f5;
+    }
+
+    .system-tabs {
+      height: 47px;
+      align-items: flex-end;
+      gap: 9px;
+    }
+
+    .system-tab {
+      height: 36px;
+      min-width: 130px;
+      padding: 0 18px 0 14px;
+      border-color: #b9ccec;
+      border-radius: 6px 6px 0 0;
+      background: rgba(255, 255, 255, 0.52);
+      font-size: 14px;
+      color: #111827;
+    }
+
+    .system-tab.active {
+      background: #eef4ff !important;
+      color: #0066ff !important;
+      font-weight: 700;
+    }
+
+    .tab-icon {
+      width: 16px;
+      height: 16px;
+      font-size: 10px;
+    }
+
+    .top-user {
+      height: 36px;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    .message-dot {
+      width: 18px;
+      height: 18px;
+      background: #2f73ff;
+      font-size: 12px;
+    }
+
+    .layout {
+      min-height: calc(100vh - 47px);
+      grid-template-columns: 205px minmax(1220px, 1fr);
+      gap: 10px;
+      padding: 10px 0 0 4px;
+    }
+
+    .sidebar {
+      min-height: calc(100vh - 57px);
+      padding: 18px 12px 54px;
+      border: 0;
+      border-radius: 8px 8px 0 0;
+      background: #fff;
+      box-shadow: none;
+    }
+
+    .menu {
+      gap: 9px;
+    }
+
+    .menu-item,
+    .menu-child {
+      height: 40px;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #111827;
+    }
+
+    .menu-item {
+      padding: 0 18px;
+      font-weight: 500;
+    }
+
+    .menu-child {
+      padding-left: 48px;
+    }
+
+    .menu-item.active,
+    .menu-child.active {
+      background: transparent !important;
+      color: #0066ff !important;
+      font-weight: 500;
+    }
+
+    .collapse-btn {
+      left: 12px;
+      bottom: 10px;
+      width: 28px;
+      height: 28px;
+      min-height: 28px;
+      background: #f0f2f5;
+      color: #667085;
+      font-weight: 700;
+    }
+
+    .content {
+      min-height: calc(100vh - 47px);
+      padding: 0 0 48px;
+      border-radius: 8px 0 0 0;
+      background: #fff;
+    }
+
+    .content-scroll {
+      height: calc(100vh - 47px) !important;
+      overflow-y: visible !important;
+      scrollbar-gutter: auto !important;
+      padding: 25px 20px 76px;
+      border: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      background: #fff !important;
+    }
+
+    .top-line {
+      min-height: 25px;
+      margin-bottom: 9px;
+      padding: 0;
+      gap: 18px;
+    }
+
+    .order-meta {
+      gap: 28px;
+      font-size: 14px;
+    }
+
+    .top-actions {
+      gap: 30px;
+      color: #0066ff;
+      font-size: 14px;
+    }
+
+    .summary-panel {
+      grid-template-columns: 154px minmax(0, 1fr);
+      min-height: 136px;
+      margin-bottom: 20px;
+      border: 1px solid #dbe3ef !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      background: #fff !important;
+    }
+
+    .status-box {
+      min-height: 134px;
+      border-right: 1px solid #dbe3ef;
+      color: #14b520;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .summary-main {
+      padding: 12px 12px 20px 20px;
+    }
+
+    .customer-line {
+      min-height: 31px;
+      margin-bottom: 5px;
+    }
+
+    .customer-left {
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    .tag {
+      height: 22px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .summary-main > .btn,
+    .customer-line > .btn {
+      height: 26px;
+      min-height: 26px;
+      min-width: 72px;
+      padding: 0 12px;
+      font-size: 12px;
+    }
+
+    .table th,
+    .table td {
+      height: 34px;
+      padding: 0 12px;
+      font-size: 14px;
+    }
+
+    .table th {
+      background: #eef1f5;
+    }
+
+    .filter-panel {
+      margin-bottom: 25px;
+      padding: 0 15px;
+      border: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      background: #fff !important;
+    }
+
+    .filter-grid {
+      grid-template-columns: minmax(230px, .95fr) repeat(4, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 10px;
+    }
+
+    .filter-item {
+      grid-template-columns: 64px minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    .control {
+      height: 32px;
+      border-color: #d2dae8;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    .inline-actions {
+      gap: 10px;
+    }
+
+    .inline-actions .btn {
+      height: 32px;
+      min-width: 80px;
+      min-height: 32px;
+      font-size: 14px;
+    }
+
+    .goods-list-scroll {
+      overflow: visible;
+    }
+
+    .goods-header-grid {
+      min-height: 40px;
+      background: #eef1f5;
+      border: 0;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .goods-header-grid > div {
+      padding: 0 12px;
+      border-right-color: #e4eaf2;
+    }
+
+    .shop-block {
+      margin-bottom: 0;
+      border-color: #dfe7f2;
+      border-top: 0;
+      background: #fff;
+    }
+
+    .shop-header {
+      min-height: 45px;
+      grid-template-columns: 24px minmax(250px, 1fr) minmax(420px, 1.4fr) minmax(360px, 1.1fr);
+      gap: 10px;
+      padding: 0 12px;
+      background: #eaf2ff;
+    }
+
+    .shop-name {
+      font-size: 15px;
+    }
+
+    .shop-tools {
+      gap: 10px;
+    }
+
+    .shop-tools .btn {
+      height: 26px;
+      min-height: 26px;
+      min-width: 72px;
+      font-size: 12px;
+    }
+
+    .shop-input {
+      height: 24px;
+      width: 250px;
+    }
+
+    .goods-row {
+      min-height: 138px;
+      background: #fff;
+    }
+
+    .goods-row > * {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    .product-info {
+      gap: 10px;
+    }
+
+    .product-lines {
+      line-height: 21px;
+    }
+
+    .sku-box {
+      gap: 7px;
+    }
+
+    .qty-cell,
+    .package-cell {
+      min-height: 112px;
+      justify-content: center;
+    }
+
+    .inspect-box {
+      min-height: 112px;
+    }
+
+    .operate-tags .btn {
+      height: 24px;
+      min-height: 24px;
+      min-width: 66px;
+      font-size: 12px;
+    }
+
+    .bottom-bar {
+      left: 220px;
+      right: 0;
+      bottom: 0;
+      height: 55px;
+      padding: 8px 16px;
+      border: 0;
+      border-radius: 6px 6px 0 0;
+      background: #e6e9ee;
+      box-shadow: none;
+    }
+
+    .bottom-left,
+    .bottom-right {
+      gap: 10px;
+    }
+
+    .bottom-bar .btn {
+      height: 27px;
+      min-height: 27px;
+      min-width: 90px;
+      font-size: 12px;
+    }
+
+    .fee-row {
+      align-items: center;
+      gap: 13px;
+      padding: 7px 12px 7px 36px;
+      background: #fff;
+    }
+
+    .fee-chip {
+      flex: 0 0 auto;
+      min-width: 62px;
+      border-color: #d5dbe6 !important;
+      border-radius: 4px;
+      background: #fff;
+      box-shadow: none;
+    }
+
+    .fee-chip .name,
+    .fee-chip .value {
+      min-width: 0;
+      padding-left: 9px;
+      padding-right: 9px;
+      white-space: nowrap;
+      text-align: center;
+      justify-content: center;
+      font-size: 12px;
+      line-height: 1;
+    }
+
+    .fee-chip .name {
+      height: 24px;
+      background: #dfe2e7;
+      color: #111827;
+      font-weight: 700;
+    }
+
+    .fee-chip .value {
+      min-height: 27px;
+      background: #fff;
+      color: #000;
+      font-weight: 400;
+    }
+
+    .fee-chip.active .name,
+    .fee-chip.active .value {
+      background: #dfe2e7;
+      color: #000;
+    }
+
+    .fee-row > .btn {
+      flex: 0 0 auto;
+      height: 32px;
+      min-width: 88px;
+      margin-left: 8px;
+      padding: 0 18px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-shell">
+    <header class="topbar">
+      <nav class="system-tabs" aria-label="系统导航">
+        <a class="system-tab active" href="./index.html"><span class="tab-icon">B</span>B2B系统</a>
+        <a class="system-tab" href="#"><span class="tab-icon">D</span>D2C系统</a>
+        <a class="system-tab" href="#"><span class="tab-icon">I</span>介绍中心</a>
+        <a class="system-tab" href="#"><span class="tab-icon">Y</span>云仓系统</a>
+        <a class="system-tab" href="#"><span class="tab-icon">L</span>物流系统</a>
+        <a class="system-tab" href="#"><span class="tab-icon">F</span>财务系统</a>
+        <a class="system-tab" href="#"><span class="tab-icon">R</span>日志系统</a>
+      </nav>
+      <div class="top-user">
+        <span class="message-dot">3</span>
+        <span>你好， <span class="user-name">admin</span></span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <nav class="menu" aria-label="B2B菜单">
+          <div class="menu-item">工作台 <span>⌄</span></div>
+          <div class="menu-item active"><span class="label">订单管理</span><span>⌄</span></div>
+          <div class="menu-child">报价单</div>
+          <a class="menu-child active" href="./index.html">代购订单</a>
+          <div class="menu-child">全部品</div>
+          <div class="menu-child">线下订单</div>
+          <div class="menu-item">仓库管理 <span>⌄</span></div>
+          <div class="menu-item">发货配送 <span>⌄</span></div>
+          <div class="menu-item">客户管理 <span>⌄</span></div>
+          <div class="menu-item">营销管理 <span>⌄</span></div>
+          <div class="menu-item">附加项 <span>⌄</span></div>
+          <div class="menu-item">系统设置 <span>⌄</span></div>
+        </nav>
+        <button class="collapse-btn" type="button">≪</button>
+      </aside>
+
+      <main class="content">
+        <div class="content-scroll">
+          <section class="top-line" aria-label="订单信息">
+            <div class="order-meta">
+              <span><span class="muted">订单编号：</span>B2B-DD-JPN62-260609-028 <span class="link">复制</span></span>
+              <span><span class="muted">支付日期：</span>2026-06-09 17:13</span>
+              <span><span class="muted">客户经理：</span>金月明</span>
+              <span><span class="muted">业务：</span>吴四佳</span>
+              <span><span class="muted">采购：</span>陈牧鹏</span>
+            </div>
+            <div class="top-actions">
+              <span>修改负责人</span>
+              <span>导出excel</span>
+              <span>联系客户</span>
+            </div>
+          </section>
+
+          <section class="summary-panel" aria-label="订单统计">
+            <div class="status-box">进行中</div>
+            <div class="summary-main">
+              <div class="customer-line">
+                <div class="customer-left">
+                  <span><span class="muted">客户信息：</span>D-JPN62-testtest02</span>
+                  <span class="tag">企业会员</span>
+                  <span><span class="muted">国家：</span>Japan</span>
+                </div>
+                <a class="btn primary small" href="./订单清算弹窗页.html">订单清算</a>
+              </div>
+              <table class="table compact" aria-label="订单数量统计">
+                <thead>
+                  <tr>
+                    <th>店铺数</th>
+                    <th>SKU数</th>
+                    <th>下单数</th>
+                    <th>购入数</th>
+                    <th>到货数</th>
+                    <th>正品数</th>
+                    <th>不良数</th>
+                    <th>待定数</th>
+                    <th>退货数</th>
+                    <th>换货数</th>
+                    <th>入库数</th>
+                    <th>已发货数</th>
+                    <th>可发货数</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>4</td>
+                    <td>8</td>
+                    <td>58</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>---</td>
+                    <td>3</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="filter-panel" aria-label="商品筛选">
+            <div class="filter-grid">
+              <label class="filter-item"><span>商品ID</span><input class="control" aria-label="商品ID" placeholder="输入商品ID" /></label>
+              <label class="filter-item"><span>商品状态</span><select class="control" aria-label="商品状态"><option>全部</option><option>待入库</option><option>已入库</option></select></label>
+              <label class="filter-item"><span>采购状态</span><select class="control" aria-label="采购状态"><option>全部</option><option>待采购</option><option>已采购</option></select></label>
+              <label class="filter-item"><span>采购金额</span><select class="control" aria-label="采购金额"><option>全部</option><option>已填写</option><option>未填写</option></select></label>
+              <label class="filter-item"><span>质检状态</span><select class="control" aria-label="质检状态"><option>全部</option><option>有不良</option><option>有待定</option></select></label>
+            </div>
+            <div class="inline-actions">
+              <button class="btn primary" type="button">查询</button>
+              <button class="btn plain" type="button">重置</button>
+            </div>
+          </section>
+
+          <section class="admin-table-scroll goods-list-scroll" aria-label="商品列表">
+            <div class="goods-header-grid" role="table" aria-label="商品列表表头">
+              <div></div>
+              <div>商品信息</div>
+              <div>商品属性</div>
+              <div>采购</div>
+              <div>到货</div>
+              <div>不良</div>
+              <div>待定</div>
+              <div>退/换</div>
+              <div>正品</div>
+              <div>入库</div>
+              <div>已发</div>
+              <div>包裹</div>
+              <div>质检/附加项</div>
+              <div>订单备注</div>
+              <div>操作</div>
+            </div>
+
+            <section class="shop-block" aria-label="lipengwujin">
+            <div class="shop-header">
+              <div class="fake-checkbox"></div>
+              <div class="shop-name">
+                <span class="platform-dot">1688</span>
+                <span class="shop-title">lipengwujin</span>
+                <span class="blocked-icon" aria-hidden="true"></span>
+                <span class="contact-link"><span class="contact-dot">i</span>联系商家</span>
+              </div>
+              <div class="shop-tools">
+                <button class="btn success small" type="button">一键下单</button>
+                <button class="btn orange-plain small" type="button">一键采购</button>
+                <button class="btn small primary" type="button">一键到货</button>
+                <button class="btn green-plain small" type="button">一键正品</button>
+                <button class="btn red-plain small" type="button">一键发货</button>
+              </div>
+              <div class="shop-tools">
+                <input class="shop-input" aria-label="国内运单" value="国内运单" />
+                <span class="link">编辑</span>
+              </div>
+            </div>
+
+            <div class="goods-row">
+              <div class="check-cell"><span class="fake-checkbox"></span></div>
+              <div class="product-info">
+                <div>
+                  <div class="ring-thumb" aria-label="商品缩略图"></div>
+                  <span class="status-pill">部分到货</span>
+                </div>
+                <div class="product-lines">
+                  <div class="product-title"><strong>现货金属弹簧圈开...</strong></div>
+                  <div class="product-id">ID:D000007495</div>
+                  <div>MySKU:---</div>
+                  <div>ASIN:---</div>
+                  <div class="product-mini-icons" aria-label="商品标记">
+                    <span class="mini-tag-icon" aria-hidden="true"></span>
+                    <span class="mini-clip-icon" aria-hidden="true"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="sku-box">
+                <div><input class="control" aria-label="商品属性1" value="颜色:镍色（银色）；型号:0335#（内径11mm*线粗3.5mm）；" /></div>
+                <div class="money-line"><span>单价:</span><strong>￥0.35</strong></div>
+                <div class="money-line"><span>下单数量:</span><strong>33</strong></div>
+                <div class="money-line"><span>小计:</span><strong>11.55</strong></div>
+              </div>
+              <div class="qty-cell"><span class="edit-circle" aria-hidden="true"></span><div class="num">33355</div></div>
+              <div class="qty-cell"><span class="edit-circle" aria-hidden="true"></span><div class="num">799</div></div>
+              <div class="qty-cell"><span class="edit-circle" aria-hidden="true"></span><div class="num">0</div></div>
+              <div class="qty-cell"><span class="edit-circle" aria-hidden="true"></span><div class="num">0</div></div>
+              <div class="qty-cell"><span class="edit-circle" aria-hidden="true"></span><div><span class="warning-text">退</span> 0</div><div><span class="warning-text">换</span> 0</div></div>
+              <div class="qty-cell"><span class="rotate-circle" aria-hidden="true"></span><span class="yellow-badge">22</span></div>
+              <div class="qty-cell"><span class="house-icon" aria-hidden="true"></span><div class="num">0</div></div>
+              <div class="qty-cell"><span class="box-shape-icon" aria-hidden="true"></span><div class="num">0</div></div>
+              <div class="package-cell">
+                <div class="weak">---</div>
+              </div>
+              <div class="inspect-box">
+                <div class="inspect-title">全数详细</div>
+                <div class="qc-options">
+                  <span class="qc-option dot">领标...</span>
+                  <span class="qc-option dot">去掉...</span>
+                  <span class="qc-option">中国制...</span>
+                  <span class="qc-option">开扣眼</span>
+                  <span class="qc-option">量尺寸</span>
+                  <span class="qc-option">共...30种</span>
+                </div>
+                <div class="inspect-actions">
+                  <button class="btn small primary" type="button">查看</button>
+                  <button class="btn small orange-plain" type="button">修改</button>
+                </div>
+              </div>
+              <div>
+                <div class="remark-box row-note">---</div>
+              </div>
+              <div class="operate-tags">
+                <button class="btn primary small" type="button">工单处理</button>
+                <button class="btn primary small" type="button">内部备注</button>
+                <div class="operation-icons" aria-label="操作状态">
+                  <span class="op-warning" aria-hidden="true"></span>
+                  <span class="op-ban" aria-hidden="true"></span>
+                  <span class="op-image" aria-hidden="true"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="fee-row">
+              <div class="fee-chip active"><div class="name">商品金额</div><div class="value">￥27.09</div></div>
+              <div class="fee-chip active"><div class="name">变化金额</div><div class="value">￥27.09</div></div>
+              <div class="fee-chip"><div class="name">实际支出</div><div class="value">---</div></div>
+              <div class="fee-chip"><div class="name">正品金额</div><div class="value">￥27.09</div></div>
+              <div class="fee-chip active"><div class="name">预估国内运费</div><div class="value">￥0.00</div></div>
+              <div class="fee-chip"><div class="name">国内运费</div><div class="value">---</div></div>
+              <div class="fee-chip"><div class="name">到付运费</div><div class="value">---</div></div>
+              <div class="fee-chip"><div class="name">退换货运费</div><div class="value">￥0.00</div></div>
+              <div class="fee-chip"><div class="name">没货退款金额</div><div class="value">---</div></div>
+              <div class="fee-chip"><div class="name">不良退款金额</div><div class="value">---</div></div>
+              <div class="fee-chip"><div class="name">其他费用</div><div class="value">---</div></div>
+              <div class="fee-chip"><div class="name">店铺返现</div><div class="value">---</div></div>
+              <div class="fee-chip"><div class="name">采购差价</div><div class="value">￥27.09</div></div>
+              <button class="btn confirmed" type="button" disabled>采购已确认</button>
+            </div>
+            </section>
+
+            <section class="shop-block" aria-label="玖韩饰品">
+            <div class="shop-header">
+              <div class="fake-checkbox"></div>
+              <div class="shop-name">
+                <span class="platform-dot">1688</span>
+                <span>玖韩饰品</span>
+                <span class="weak">⊘</span>
+                <span class="link">联系商家</span>
+              </div>
+              <div class="shop-tools">
+                <button class="btn success small" type="button">一键下单</button>
+                <button class="btn orange-plain small" type="button">一键采购</button>
+                <button class="btn small primary" type="button">一键到货</button>
+                <button class="btn green-plain small" type="button">一键正品</button>
+                <button class="btn red-plain small" type="button">一键发货</button>
+              </div>
+              <div class="shop-tools">
+                <input class="shop-input" aria-label="国内运单2" value="国内运单" />
+                <span class="link">编辑</span>
+              </div>
+            </div>
+
+            <div class="goods-row">
+              <div class="check-cell"><span class="fake-checkbox"></span></div>
+              <div class="product-info">
+                <div>
+                  <div class="jewelry-thumb" aria-label="商品缩略图"></div>
+                  <span class="status-pill">待采购</span>
+                </div>
+                <div class="product-lines">
+                  <div class="product-title"><strong>甜美爱心耳环女耳饰</strong></div>
+                  <div class="product-id">ID: D000007485</div>
+                  <div>MySKU:45136001695...</div>
+                  <div>ASIN:---</div>
+                </div>
+              </div>
+              <div class="sku-box">
+                <div><input class="control" aria-label="商品属性2" value="颜色: 真金耳夹;" /></div>
+                <div class="money-line"><span>单价:</span><strong>￥13.10</strong></div>
+                <div class="money-line"><span>下单数量:</span><strong>10</strong></div>
+                <div class="money-line"><span>小计:</span><strong>131.00</strong></div>
+              </div>
+              <div class="qty-cell qty-stack"><span class="blue-icon">✓</span><span class="blue-icon green">✓</span><span class="blue-icon red">×</span></div>
+              <div class="qty-cell qty-stack"><span class="blue-icon gray">✓</span><span class="blue-icon gray">✓</span></div>
+              <div class="qty-cell"><span class="blue-icon gray">✓</span><div class="num">0</div></div>
+              <div class="qty-cell"><span class="blue-icon gray">✓</span><div class="num">0</div></div>
+              <div class="qty-cell"><span class="blue-icon gray">✓</span><div><span class="warning-text">退</span> 0</div><div><span class="warning-text">换</span> 0</div></div>
+              <div class="qty-cell"><span class="blue-icon">↻</span><div class="num">0</div></div>
+              <div class="qty-cell"><span class="house-icon" aria-hidden="true"></span><div class="num">0</div></div>
+              <div class="qty-cell"><span class="box-shape-icon" aria-hidden="true"></span><div class="num">0</div></div>
+              <div class="package-cell">
+                <div class="weak">---</div>
+              </div>
+              <div class="inspect-box">
+                <div class="inspect-title">全数质检</div>
+                <div class="qc-options">
+                  <span class="qc-option dot">另...</span>
+                  <span class="qc-option">通常OP...</span>
+                  <span class="qc-option">吊牌替换</span>
+                </div>
+                <div class="inspect-actions">
+                  <button class="btn small primary" type="button">查看</button>
+                  <button class="btn small orange-plain" type="button">修改</button>
+                </div>
+              </div>
+              <div>
+                <div class="remark-box row-note">0422发注意0606_zozo-ZOZO</div>
+                <div class="link" style="margin-top:8px">备注翻译</div>
+              </div>
+              <div class="operate-tags">
+                <button class="btn primary small" type="button">工单处理</button>
+                <button class="btn primary small" type="button">内部备注</button>
+                <div class="operation-icons" aria-label="操作状态">
+                  <span class="op-warning" aria-hidden="true"></span>
+                  <span class="op-ban" aria-hidden="true"></span>
+                  <span class="op-image" aria-hidden="true"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="goods-row">
+              <div class="check-cell"><span class="fake-checkbox"></span></div>
+              <div class="product-info">
+                <div>
+                  <div class="jewelry-thumb silver" aria-label="商品缩略图"></div>
+                  <span class="status-pill">待采购</span>
+                </div>
+                <div class="product-lines">
+                  <div class="product-title"><strong>甜美爱心耳环女耳饰</strong></div>
+                  <div class="product-id">ID: D000007486</div>
+                  <div>MySKU:45136001695...</div>
+                  <div>ASIN:---</div>
+                </div>
+              </div>
+              <div class="sku-box">
+                <div><input class="control" aria-label="商品属性3" value="颜色: 银色耳夹;" /></div>
+                <div class="money-line"><span>单价:</span><strong>￥13.10</strong></div>
+                <div class="money-line"><span>下单数量:</span><strong>10</strong></div>
+                <div class="money-line"><span>小计:</span><strong>131.00</strong></div>
+              </div>
+              <div class="qty-cell"><span class="blue-icon">✓</span></div>
+              <div class="qty-cell"><span class="blue-icon gray">✓</span></div>
+              <div class="qty-cell"><span class="blue-icon gray">✓</span><div class="num">0</div></div>
+              <div class="qty-cell"><span class="blue-icon gray">✓</span><div class="num">0</div></div>
+              <div class="qty-cell"><span class="blue-icon gray">✓</span><div><span class="warning-text">退</span> 0</div><div><span class="warning-text">换</span> 0</div></div>
+              <div class="qty-cell"><span class="blue-icon">↻</span><div class="num">0</div></div>
+              <div class="qty-cell"><span class="house-icon" aria-hidden="true"></span><div class="num">0</div></div>
+              <div class="qty-cell"><span class="box-shape-icon" aria-hidden="true"></span><div class="num">0</div></div>
+              <div class="package-cell">
+                <div class="weak">---</div>
+              </div>
+              <div class="inspect-box">
+                <div class="inspect-title">全数质检</div>
+                <div class="qc-options">
+                  <span class="qc-option dot">另...</span>
+                  <span class="qc-option">通常OP...</span>
+                  <span class="qc-option">吊牌替换</span>
+                </div>
+                <div class="inspect-actions">
+                  <button class="btn small primary" type="button">查看</button>
+                  <button class="btn small orange-plain" type="button">修改</button>
+                </div>
+              </div>
+              <div>
+                <div class="remark-box row-note">0422发注意0606_zozo-ZOZO</div>
+                <div class="link" style="margin-top:8px">备注翻译</div>
+              </div>
+              <div class="operate-tags">
+                <button class="btn primary small" type="button">工单处理</button>
+                <button class="btn primary small" type="button">内部备注</button>
+                <div class="operation-icons" aria-label="操作状态">
+                  <span class="op-warning" aria-hidden="true"></span>
+                  <span class="op-ban" aria-hidden="true"></span>
+                  <span class="op-image" aria-hidden="true"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="fee-row">
+              <div class="fee-chip active"><div class="name">商品金额</div><div class="value">￥262.00</div></div>
+              <div class="fee-chip active"><div class="name">变化金额</div><div class="value">￥262.00</div></div>
+              <div class="fee-chip"><div class="name">实际支出</div><div class="value">---</div></div>
+              <div class="fee-chip"><div class="name">正品金额</div><div class="value">---</div></div>
+              <div class="fee-chip active"><div class="name">预估国内运费</div><div class="value">￥0.00</div></div>
+              <div class="fee-chip"><div class="name">国内运费</div><div class="value">---</div></div>
+              <div class="fee-chip"><div class="name">到付运费</div><div class="value">---</div></div>
+              <div class="fee-chip"><div class="name">退换货运费</div><div class="value">￥0.00</div></div>
+              <div class="fee-chip"><div class="name">没货退款金额</div><div class="value">---</div></div>
+              <div class="fee-chip"><div class="name">不良退款金额</div><div class="value">---</div></div>
+              <div class="fee-chip"><div class="name">其他费用</div><div class="value">---</div></div>
+              <div class="fee-chip"><div class="name">店铺返现</div><div class="value">---</div></div>
+              <div class="fee-chip"><div class="name">采购差价</div><div class="value">---</div></div>
+              <button class="btn primary" type="button">采购确认</button>
+            </div>
+            </section>
+          </section>
+        </div>
+
+        <div class="bottom-bar" aria-label="批量操作">
+          <div class="bottom-left">
+            <span class="fake-checkbox"></span>
+            <span>全选</span>
+            <span>已选：0</span>
+            <button class="btn warning small" type="button">1688一键下单（0）</button>
+            <button class="btn success small" type="button">淘宝一键下单（0）</button>
+            <button class="btn primary small" type="button">批量确认金额</button>
+            <button class="btn success small" type="button">批量解锁金额</button>
+            <button class="btn danger small" type="button">暂不购买</button>
+            <button class="btn primary small" type="button">可购买</button>
+          </div>
+          <div class="bottom-right">
+            <button class="btn success small" type="button">免费初检打印</button>
+            <button class="btn primary small" type="button">收费初检打印</button>
+            <button class="btn warning small" type="button">捆绑打印</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
+
+

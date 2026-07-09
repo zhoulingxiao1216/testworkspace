@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>全球站收费体系调整 - 订单清算弹窗</title>
+  <link rel="stylesheet" href="./后台页面.css" />
+  <style>
+    @media (max-width: 900px) { body { min-width: 390px; } }
+
+    html,
+    body {
+      min-width: 0;
+      overflow: hidden;
+      background: var(--page);
+    }
+
+    .modal-backdrop {
+      inset: 0;
+      padding: 22px 20px;
+      background: rgba(0, 0, 0, .28);
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .dialog {
+      width: min(1320px, calc(100vw - 40px));
+      min-width: 1080px;
+      max-width: 1320px;
+      height: auto;
+      max-height: calc(100vh - 44px);
+      border-radius: 4px;
+      box-shadow: 0 10px 32px rgba(0, 0, 0, .18);
+    }
+
+    .dialog-header {
+      height: 44px;
+      padding: 0 9px;
+      border-bottom: 1px solid #ebeef5;
+    }
+
+    .dialog-title {
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .dialog-close {
+      width: 24px;
+      height: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #7c8492;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .dialog-body {
+      flex: 1;
+      min-height: 0;
+      padding: 8px 9px 0;
+      overflow-y: auto;
+      overflow-x: auto;
+    }
+
+    .settle-table-wrap {
+      max-height: 190px;
+      overflow: auto;
+      border-top: 1px solid var(--line-soft);
+      border-right: 1px solid var(--line-soft);
+      margin-bottom: 18px;
+    }
+
+    .settle-table {
+      min-width: 1420px;
+    }
+
+    .settle-table th {
+      height: 34px;
+      background: #d9d9d9;
+    }
+
+    .settle-table td {
+      height: 36px;
+      color: #3f4650;
+    }
+
+    .settle-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .settle-title {
+      height: 22px;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .settle-box {
+      min-height: 386px;
+      padding: 8px 10px 10px;
+      border-color: #d7deea;
+      border-radius: 4px;
+      box-shadow: 4px 4px 9px rgba(0, 0, 0, .12);
+    }
+
+    .settle-line {
+      min-height: 28px;
+      border-bottom: 0;
+      color: #4a5565;
+    }
+
+    .settle-line strong,
+    .settle-line b {
+      color: #303846;
+    }
+
+    .detail-link {
+      color: var(--primary-dark);
+      font-weight: 700;
+      margin-left: 8px;
+    }
+
+    .other-fee-bar {
+      height: 24px;
+      margin-top: 5px;
+      padding: 0 6px 0 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #d7e5ff;
+      color: #1f2937;
+      font-weight: 700;
+    }
+
+    .calc-section {
+      margin-top: 8px;
+      line-height: 1.8;
+    }
+
+    .calc-title {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 16px;
+      font-weight: 700;
+    }
+
+    .calc-result {
+      margin-top: 14px;
+      color: #303846;
+    }
+
+    .diff-line {
+      margin-top: 18px;
+      color: #5b6370;
+    }
+
+    .diff-line .warning-text {
+      margin-left: 8px;
+    }
+
+    .formula-text {
+      color: #7d8694;
+      font-size: 11px;
+    }
+
+    .dialog-footer {
+      min-height: 56px;
+      padding: 10px 8px 13px;
+      border-top: 0;
+      justify-content: flex-end;
+    }
+
+    .dialog-footer .btn.primary {
+      min-width: 78px;
+      height: 29px;
+    }
+  </style>
+  <link rel="stylesheet" href="./ui-standard-admin.css" />
+  <style>
+    .dialog {
+      width: min(1260px, calc(100vw - 48px)) !important;
+      min-width: 1080px !important;
+      max-width: 1260px !important;
+    }
+
+    .modal-backdrop {
+      padding: 16px !important;
+    }
+
+    .dialog-body {
+      padding: 6px 8px 0 !important;
+      overflow-x: hidden !important;
+    }
+
+    .settle-table-wrap {
+      max-height: none !important;
+      overflow: visible !important;
+      border-right: 0 !important;
+      margin-bottom: 10px !important;
+    }
+
+    .settle-table {
+      width: 100% !important;
+      min-width: 0 !important;
+      table-layout: fixed !important;
+      font-size: 11px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .settle-table th,
+    .settle-table td {
+      height: 28px !important;
+      padding: 0 4px !important;
+      white-space: nowrap;
+    }
+
+    .settle-table th {
+      overflow: visible !important;
+      text-overflow: clip !important;
+    }
+
+    .settle-table th:not(:first-child),
+    .settle-table td:not(:first-child) {
+      text-align: right;
+    }
+
+    .settle-table th:first-child,
+    .settle-table td:first-child {
+      width: 112px !important;
+    }
+
+    .settle-table th:nth-child(4),
+    .settle-table td:nth-child(4),
+    .settle-table th:nth-child(8),
+    .settle-table td:nth-child(8),
+    .settle-table th:nth-child(9),
+    .settle-table td:nth-child(9),
+    .settle-table th:nth-child(10),
+    .settle-table td:nth-child(10) {
+      width: 92px !important;
+    }
+
+    .formula-dialog-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 0;
+      background: rgba(0, 0, 0, .12);
+    }
+
+    .formula-dialog-backdrop:target {
+      display: flex;
+    }
+
+    .formula-dialog {
+      width: min(1320px, 100vw);
+      max-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border-radius: 0;
+      box-shadow: 0 6px 22px rgba(15, 23, 42, .12);
+    }
+
+    .formula-dialog-header {
+      height: 34px;
+      padding: 0 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #e7ebf2;
+    }
+
+    .formula-dialog-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: #111827;
+    }
+
+    .formula-dialog-close {
+      width: 24px;
+      height: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #303846;
+      font-size: 18px;
+      font-weight: 400;
+      text-decoration: none;
+    }
+
+    .formula-dialog-body {
+      padding: 10px 8px 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      scrollbar-gutter: stable;
+    }
+
+    .formula-note {
+      margin: 0 0 10px;
+      color: #8b949e;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .formula-table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+      font-size: 13px;
+      color: #111827;
+    }
+
+    .formula-table th,
+    .formula-table td {
+      border: 1px solid #e5ebf3 !important;
+      padding: 9px 12px !important;
+      height: auto !important;
+      min-height: 38px;
+      line-height: 1.7;
+      white-space: normal !important;
+      overflow: visible !important;
+      text-overflow: clip !important;
+      vertical-align: top;
+    }
+
+    .formula-table th {
+      background: #fafbfc !important;
+      color: #667085;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .formula-table th:first-child,
+    .formula-table td:first-child {
+      width: 33.5%;
+      color: #1f2937;
+      font-weight: 400;
+    }
+
+    .formula-table th:nth-child(2),
+    .formula-table td:nth-child(2) {
+      width: 33.5%;
+      color: #303846;
+    }
+
+    .formula-new-field {
+      color: #df2020;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-shell">
+    <header class="topbar">
+      <nav class="system-tabs" aria-label="系统导航">
+        <a class="system-tab active" href="./index.html"><span class="tab-icon">B</span>B2B系统</a>
+        <a class="system-tab" href="#"><span class="tab-icon">D</span>D2C系统</a>
+        <a class="system-tab" href="#"><span class="tab-icon">I</span>介绍中心</a>
+        <a class="system-tab" href="#"><span class="tab-icon">Y</span>云仓系统</a>
+        <a class="system-tab" href="#"><span class="tab-icon">L</span>物流系统</a>
+        <a class="system-tab" href="#"><span class="tab-icon">F</span>财务系统</a>
+        <a class="system-tab" href="#"><span class="tab-icon">R</span>日志系统</a>
+      </nav>
+      <div class="top-user"><span class="message-dot">3</span><span>你好， <span class="user-name">admin</span></span></div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <nav class="menu" aria-label="B2B菜单">
+          <div class="menu-item">工作台 <span>⌄</span></div>
+          <div class="menu-item active"><span class="label">订单管理</span><span>⌄</span></div>
+          <div class="menu-child">报价单</div>
+          <a class="menu-child active" href="./index.html">代购订单</a>
+          <div class="menu-child">全部品</div>
+          <div class="menu-child">线下订单</div>
+          <div class="menu-item">仓库管理 <span>⌄</span></div>
+          <div class="menu-item">发货配送 <span>⌄</span></div>
+          <div class="menu-item">客户管理 <span>⌄</span></div>
+          <div class="menu-item">营销管理 <span>⌄</span></div>
+          <div class="menu-item">附加项 <span>⌄</span></div>
+          <div class="menu-item">系统设置 <span>⌄</span></div>
+        </nav>
+        <button class="collapse-btn" type="button">≪</button>
+      </aside>
+
+      <main class="content">
+        <div class="content-scroll">
+          <section class="top-line">
+            <div class="order-meta">
+              <span><span class="muted">订单编号：</span>B2B-DD-JPN62-260605-009</span>
+              <span><span class="muted">支付日期：</span>2026-06-05 11:44</span>
+              <span><span class="muted">采购：</span>陈牧鹏</span>
+              <span><span class="muted">收费版本：</span><span class="tag orange">PLUS-202606</span></span>
+            </div>
+            <div class="top-actions"><a href="./index.html">返回订单详情</a><span>导出excel</span><span>联系客户</span></div>
+          </section>
+
+          <section class="summary-panel">
+            <div class="status-box">待清算</div>
+            <div class="summary-main">
+              <div class="customer-line">
+                <div class="customer-left">
+                  <span><span class="muted">客户信息：</span>D-JPN62-testtest02</span>
+                  <span class="tag">企业会员</span>
+                  <span><span class="muted">国家：</span>Japan</span>
+                </div>
+                <button class="btn primary small" type="button">订单清算</button>
+              </div>
+              <table class="table compact">
+                <thead>
+                  <tr>
+                    <th>报价单支付金额</th>
+                    <th>实际结算金额</th>
+                    <th>返现金额</th>
+                    <th>商品税率</th>
+                    <th>商品税</th>
+                    <th>订单差额</th>
+                    <th>客户处理</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>￥268.40</td>
+                    <td>￥426.96</td>
+                    <td>￥154.00</td>
+                    <td>3%</td>
+                    <td>￥5.54</td>
+                    <td class="warning-text">+￥152.02</td>
+                    <td>客户补差价</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <div class="modal-backdrop" aria-label="订单清算弹窗">
+          <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+            <header class="dialog-header">
+              <div class="dialog-title" id="dialog-title">订单清算</div>
+              <a class="dialog-close" href="./index.html" aria-label="关闭">×</a>
+            </header>
+            <div class="dialog-body">
+              <div class="settle-table-wrap">
+                <table class="table settle-table" aria-label="店铺清算明细">
+                  <thead>
+                    <tr>
+                      <th style="width:112px">店铺</th>
+                      <th>实际支出</th>
+                      <th>正品金额</th>
+                      <th>预估国内运费</th>
+                      <th>国内运费</th>
+                      <th>到付运费</th>
+                      <th>退换运费</th>
+                      <th>没货退款金额</th>
+                      <th>不良退款金额</th>
+                      <th>店铺其他费用</th>
+                      <th>店铺返现</th>
+                      <th>采购差额</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>昕然饰品1688</td>
+                      <td>0.00</td>
+                      <td>27.09</td>
+                      <td>0.00</td>
+                      <td>0.00</td>
+                      <td>0.00</td>
+                      <td>0.00</td>
+                      <td>0.00</td>
+                      <td>0.00</td>
+                      <td>0.00</td>
+                      <td>27.09</td>
+                      <td>27.09</td>
+                    </tr>
+                    <tr>
+                      <td>玖韩饰品</td>
+                      <td>0.00</td>
+                      <td>0.00</td>
+                      <td>0.00</td>
+                      <td>0.00</td>
+                      <td>0.00</td>
+                      <td>0.00</td>
+                      <td>0.00</td>
+                      <td>0.00</td>
+                      <td>0.00</td>
+                      <td>0.00</td>
+                      <td>0.00</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="settle-grid">
+                <section class="settle-panel">
+                  <div class="settle-title">报价单金额</div>
+                  <div class="settle-box">
+                    <div class="settle-line"><span>报价单支付金额：</span><strong>￥268.40</strong></div>
+                    <div class="settle-line"><span>商品金额：</span><span>￥184.80</span></div>
+                    <div class="settle-line"><span>预估国内运费：</span><span>￥0.00</span></div>
+                    <div class="settle-line"><span>预估检品费用：</span><span>￥18.00</span></div>
+                    <div class="settle-line"><span>预估附加项费用：</span><span>￥12.00</span></div>
+                    <div class="settle-line"><span>预估手续费：</span><span>￥53.60</span></div>
+                    <div class="settle-line"><span>平台服务费：</span><span>￥0.00</span></div>
+                  </div>
+                </section>
+
+                <section class="settle-panel">
+                  <div class="settle-title">
+                    <span>实际结算金额</span>
+                    <a class="link" href="#formula-dialog">计算公式</a>
+                  </div>
+                  <div class="settle-box">
+                    <div class="settle-line"><span>实际支出：</span><span>￥30.80</span></div>
+                    <div class="settle-line"><span>正品总金额：</span><span>￥184.80</span></div>
+                    <div class="settle-line"><span>国内总运费：</span><span>￥0.00</span></div>
+                    <div class="settle-line"><span>退换货总运费：</span><span>￥0.00</span></div>
+                    <div class="settle-line"><span>到付总运费：</span><span>￥0.00</span></div>
+                    <div class="settle-line"><span>店铺其他总费用：</span><span>￥0.00</span></div>
+                    <div class="settle-line"><span>手续费：</span><span>￥53.60</span></div>
+                    <div class="settle-line"><span>店铺总返现金额：</span><strong>￥154.00</strong></div>
+                    <div class="settle-line"><span>店铺总退款：</span><span>￥0.00</span></div>
+                    <div class="settle-line"><span>实际检品费用：</span><span>￥18.00</span></div>
+                    <div class="settle-line"><span>实际附加项费用：</span><span>￥12.00</span></div>
+                    <div class="settle-line"><span>没货退款差额：</span><span>￥0.00</span></div>
+                    <div class="other-fee-bar">
+                      <span>订单其他费用（￥0.00）</span>
+                      <a class="link" href="#add">⊕ 添加</a>
+                    </div>
+                  </div>
+                </section>
+              </div>
+
+              <section class="calc-section" id="formula">
+                <span class="calc-title">清算</span>
+                <button class="btn primary" type="button">重新计算</button>
+                <div class="calc-result">实际结算金额：￥426.96</div>
+                <div class="diff-line">
+                  订单差额：
+                  <span class="formula-text">实际结算金额-报价单支付金额-采购差额</span>
+                  应退换客户：<span class="warning-text">-￥152.02</span>
+                </div>
+              </section>
+            </div>
+            <footer class="dialog-footer">
+              <button class="btn primary" type="button">确定清算</button>
+            </footer>
+          </section>
+
+          <section class="formula-dialog-backdrop" id="formula-dialog" aria-label="计算公式弹窗">
+            <div class="formula-dialog" role="dialog" aria-modal="true" aria-labelledby="formula-dialog-title">
+              <header class="formula-dialog-header">
+                <div class="formula-dialog-title" id="formula-dialog-title">计算公式</div>
+                <a class="formula-dialog-close" href="#dialog-title" aria-label="关闭">×</a>
+              </header>
+              <div class="formula-dialog-body">
+                <p class="formula-note">注：当价格修改时，按照变价单价计算；当数量修改时，按照修改数量计算。</p>
+                <table class="table formula-table" aria-label="订单清算计算公式">
+                  <thead>
+                    <tr>
+                      <th>费用名称</th>
+                      <th>计算公式</th>
+                      <th>说明</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>商品金额</td>
+                      <td>下单数量 × 单价</td>
+                      <td>客户下单时的数量和单价，系统自动计算。</td>
+                    </tr>
+                    <tr>
+                      <td>变化金额</td>
+                      <td>下单数量或修改数量 × 变化单价</td>
+                      <td>当变动单价不为 0 时，按变化单价计算客户价。</td>
+                    </tr>
+                    <tr>
+                      <td>实际支出</td>
+                      <td>填写</td>
+                      <td>采购时实际支出的金额。</td>
+                    </tr>
+                    <tr>
+                      <td>预估国内运费</td>
+                      <td>报价单预估国内运费</td>
+                      <td>用于清算对比；实际国内运费以清算填写金额为准。</td>
+                    </tr>
+                    <tr>
+                      <td>国内运费</td>
+                      <td>填写</td>
+                      <td>采购时商家收取的国内运费。</td>
+                    </tr>
+                    <tr>
+                      <td>到付运费</td>
+                      <td>填写</td>
+                      <td>采购时国内运费为到付时的金额。</td>
+                    </tr>
+                    <tr>
+                      <td>退换货运费</td>
+                      <td>填写</td>
+                      <td>产生退换货时支出的国内运费。</td>
+                    </tr>
+                    <tr>
+                      <td>不良退款金额</td>
+                      <td>不良商品数量 × 单价</td>
+                      <td>退换货时对应的不良商品金额。</td>
+                    </tr>
+                    <tr>
+                      <td>店铺其他费用</td>
+                      <td>填写</td>
+                      <td>该店铺产生的其他费用，如辅料、样品等。</td>
+                    </tr>
+                    <tr>
+                      <td>订单其他费用</td>
+                      <td>填写</td>
+                      <td>该订单产生的其他费用，如托盘、叉车等。</td>
+                    </tr>
+                    <tr>
+                      <td>店铺返现</td>
+                      <td>填写</td>
+                      <td>店铺给的返现金额；二次确认后才计入采购差额。</td>
+                    </tr>
+                    <tr>
+                      <td>正品金额</td>
+                      <td>正品数 × 单价或变化单价</td>
+                      <td>质检后更新为正品的商品金额，系统自动计算。</td>
+                    </tr>
+                    <tr>
+                      <td>没货退款金额</td>
+                      <td>填写</td>
+                      <td>已采购但商家没货时，商家退款的金额。</td>
+                    </tr>
+                    <tr>
+                      <td>没货退款商品金额</td>
+                      <td>没货商品数量 × 单价或变化单价</td>
+                      <td>已采购但商家没货的商品数量对应金额。</td>
+                    </tr>
+                    <tr>
+                      <td>没货退款差额</td>
+                      <td>没货退款金额 - 没货退款商品金额（注：为负数时，差额为 0）</td>
+                      <td>没货退款金额和没货退款商品金额可能不同。</td>
+                    </tr>
+                    <tr>
+                      <td>店铺总退款</td>
+                      <td>没货退款金额 + 不良退款金额</td>
+                      <td>店铺总退款包含没货退款和不良商品退款。</td>
+                    </tr>
+                    <tr>
+                      <td>客户价</td>
+                      <td>正品金额 + 国内运费 + 退换货运费 + 到付金额 + 店铺其他费用 - 没货退款差额</td>
+                      <td>客户需要支付的商品相关价格。</td>
+                    </tr>
+                    <tr>
+                      <td>采购差额</td>
+                      <td>正品金额 + 国内运费 + 不良退款金额 + 店铺返现 + 没货退款金额 - 实际支出</td>
+                      <td>采购差额组成：1688商家商品价格优惠，店铺返现，国内物流让利，没货退还差额等部分；对应的是前台的“人工降价”。</td>
+                    </tr>
+                    <tr>
+                      <td>报价单支付金额</td>
+                      <td><span class="formula-new-field">商品金额</span> + <span class="formula-new-field">预估国内运费</span> + <span class="formula-new-field">预估检品费用</span> + <span class="formula-new-field">预估附加项费用</span> + <span class="formula-new-field">预估手续费</span></td>
+                      <td>新增报价单支付口径，用于和实际结算金额对比。</td>
+                    </tr>
+                    <tr>
+                      <td>实际结算金额</td>
+                      <td>客户价 + 附加项费用 + 质检费用 + 订单其他费用 + 手续费</td>
+                      <td>清算后的实际金额。</td>
+                    </tr>
+                    <tr>
+                      <td>订单差额</td>
+                      <td>实际结算金额 - 报价单支付金额 - <span class="formula-new-field">采购差额</span></td>
+                      <td>服务费扣减项替换为采购差额，用于对比新旧公式口径。</td>
+                    </tr>
+                    <tr>
+                      <td>总差价率</td>
+                      <td>总差价 / 正品金额</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>汇率收益</td>
+                      <td>正品金额 × 汇率增值比例/数值</td>
+                      <td>汇率增值比例/数值在汇率配置中进行配置获得。</td>
+                    </tr>
+                    <tr>
+                      <td>业绩差额</td>
+                      <td>采购差额</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>订单收入利益</td>
+                      <td>业绩差额 + 附加项费用 + 质检费用 + 汇率收益 + 手续费</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>国际物流客户价</td>
+                      <td>国际物流客户运费 + 其他费用</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>国际物流成本价</td>
+                      <td>国际物流成本运费 + 其他费用</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>物流收入利益</td>
+                      <td>国际物流客户价 - 国际物流成本价</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>总收入利益</td>
+                      <td>订单收入利益 + 物流收入利益 + 发货附加项客户费用 - 赔偿金</td>
+                      <td>赔偿金在列表中手动添加，系统无法自动计算。</td>
+                    </tr>
+                    <tr>
+                      <td>商品总价</td>
+                      <td>正品金额 + 国内运费 + 店铺总退款</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>总差价</td>
+                      <td>商品总价 - 实际支出</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
+
+

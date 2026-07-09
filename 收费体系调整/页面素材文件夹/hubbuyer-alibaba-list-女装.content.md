@@ -1,0 +1,442 @@
+﻿# Hubbuyer Alibaba 列表页素材：女装
+
+- URL: https://b2b.hubbuyer.com/Alibaba/list?key=%E5%A5%B3%E8%A3%85
+- 抓取时间: 2026-06-08 13:26:23
+- 页面标题: Hubbuyer | B2B list
+- 渲染方式: 原始 HTML + 浏览器渲染提取
+- 商品条目数: 50
+
+## 页面主要内容
+
+页面包含顶部国家/登录/注册/首页/语言/汇率信息、搜索框、图片搜索、购物车、商品分类、B2B 使用说明、服务费率、国际运输、Blog、FAQ，以及 1688 / Taobao 切换入口。列表页筛选项包括价格区间、工厂认证、代发、7 天新品、商品类型、全球精选、官方直供、Amazon 热销、新品、下游热销、Nox 热销，并支持综合、价格、月销量排序。
+
+## 前 20 个商品摘录
+
+| 序号 | 来源 | 商品标题 | 价格 CNY | 价格 EUR | 月销量 | 复购率 |
+| --- | --- | --- | --- | --- | ---: | --- |
+| 1 | 1688 | Cross-Border Round Neck Small Camisole Women's Suit Inner Wear Sleeveless Bottoming Shirt French Top 2025 Summer Summer | 14.00CNY | 1.82 EUR | 222 | 30.56% |
+| 2 | 1688 | 2025 European and American Cross-Border Autumn and Winter Women's Clothing Amazon Furry Long-Sleeved Lapel Women's Plush Top Long Coat | 48.00CNY | 6.24 EUR | 380 | 33.33% |
+| 3 | 1688 | 2026 Summer New European and American Style Round Neck Solid Color Tank Top with Built-In Bra, Sexy Women's Base Layer Top for Inner Wear or Outer Wear | 16.50CNY | 2.15 EUR | 6969 | 44.44% |
+| 4 | 1688 | Modal Small Camisole Women's Inner Wear Beautiful Back Summer Thin Sexy Outer Wear Pure Desire Style Base Black Top | 5.70CNY | 0.74 EUR | 1599 | 9.71% |
+| 5 | 1688 | Summer Fresh Cotton Camisole Design Sense Pleated Inner Lap with Chest Pad Outer Wear Slimming Beautiful Back Top for Women | 11.00CNY | 1.43 EUR | 3443 | 8.67% |
+| 6 | 1688 | Modal Round Neck Camisole Women's Summer Chest Pad Inner Base All-match Solid Color Sleeveless Large Size Thin Top | 14.90CNY | 1.94 EUR | 363 | 14.41% |
+| 7 | 1688 | Spring and Summer I-shaped Pure Cotton Vest Women's One-character Collar Hanging Neck Slimming Inner Thread Sleeveless Base Shirt Sling Top | 19.90CNY | 2.59 EUR | 892 | 14.56% |
+| 8 | 1688 | All-match anti-slip sleeveless thin bottoming camisole women's summer stretch slim-fit slimming Korean-style exterior wear | 5.90CNY | 0.77 EUR | 10961 | 20.34% |
+| 9 | 1688 | Tang Ge Silk Satin Beautiful Back Short Sling French Triangular Cup Mulberry Silk Underwear No Wires Silk Bra | 59.00CNY | 7.67 EUR | 1741 | 23.47% |
+| 10 | 1688 | Eyelash Lace Camisole Women's Summer All-match Silk Satin Suit Inner Top Silk Beautiful Back Base Shirt | 17.95CNY | 2.33 EUR | 399 | 35.71% |
+| 11 | 1688 | 2025 Summer European and American New Style Solid Color Tank Top with Built-In Bra, Sexy Women's Undershirt for Layering or Wearing Alone | 20.00CNY | 2.60 EUR | 8287 | 47.19% |
+| 12 | 1688 | 銆?A Antibacterial Lyocell銆慍ooling Camisole with Chest Pads for Women, Suitable for Outerwear, Plus Size, Inner Wear, Beautiful Back Design, White Top | 39.00CNY | 5.07 EUR | 2484 | 5.51% |
+| 13 | 1688 | Cross-Border Foreign Trade Pure Desire Polka Dot Hottie Halter Neck Camisole Women's Summer Sexy Tie-Up Slim Fit Top | 20.90CNY | 2.72 EUR | 343 | 23.64% |
+| 14 | 1688 | 92 Cotton Blue Shoulder Short-sleeved T-shirt Women's Summer Slim-fit Slimming Western-style Pleated Waist Short T-shirt Top | 15.50CNY | 2.02 EUR | 1694 | 11.15% |
+| 15 | 1688 | American-Style Spicy Girl Tank Top for Women, Summer Slim-Fit Outerwear, New Sleeveless Racerback Inner Camisole Top | 17.20CNY | 2.24 EUR | 306 | 6.15% |
+| 16 | 1688 | One-Shoulder Ice Silk Without Breast Pad Small Camisole Women's Thin Inner Wear Beautiful Back Intimates Women's Anti-Exposure Wrapped Tube Top | 6.50CNY | 0.84 EUR | 445 | 7.61% |
+| 17 | 1688 | One-Shoulder Camisole for Outerwear, Sleeveless Top That Covers Side Breasts, Slim Fit, Beautiful Back, Sports Inner Wear, Fashionable Camisole | 6.00CNY | 0.78 EUR | 7642 | 25.51% |
+| 18 | 1688 | Women's Short-Sleeved Modal Bottoming Shirt with Breast Pads, Women's Spring and Summer All-In-One Pajamas, Five-Finger Half-Sleeved Women's Clothing | 19.49CNY | 2.53 EUR | 1859 | 6.67% |
+| 19 | 1688 | [Factory Outlet] Solid Color Large Neckline Short Sleeve T-Shirt Women's Loose Casual Slimming V-neck Base Shirt Fashion Brand | 7.80CNY | 1.01 EUR | 6239 | 19.06% |
+| 20 | 1688 | Spring and Summer Women's Bottoming Vest Pure Cotton Round Neck High Elastic Breathable Breast Reduction High School Girls Wear Outside and Inside Vest | 13.00CNY | 1.69 EUR | 323 | 28.57% |
+
+## 原始可见文本
+
+```text
+Spain
+Login
+Sign up
+Homepage
+Business days
+English
+1聽CNY 鈮埪犅?0.13 EUR
+Christmas
+Halloween
+pet feeder
+Search
+Image search
+Cart
+Product categories
+(B2B)How to use
+(B2B)Service/Rates
+(B2B)International shipping
+Blog
+FAQ
+1688
+Taobao
+1688 Cross-border Assistant
+NEW
+Product prices
+All
+10-50
+50-80
+80-100
+100-200
+-
+Confirm
+Factory
+All
+Certified factory
+Dropshipping
+New arrivals in 7 days
+Product type
+All
+Global Selection
+Official direct supply
+Amazon best sellers
+New products
+Downstream hot items
+Nox hot sellers
+Sort
+Comprehensive
+Price
+Monthly Sales
+1688Cross-Border Round Neck Small Camisole Women's Suit Inner Wear Sleeveless Bottoming Shirt French Top 2025 Summer Summer
+14.00CNY
+1.82 EUR
+Monthly Sales
+222
+Repurchase rate
+30.56%
+16882025 European and American Cross-Border Autumn and Winter Women's Clothing Amazon Furry Long-Sleeved Lapel Women's Plush Top Long Coat
+48.00CNY
+6.24 EUR
+Monthly Sales
+380
+Repurchase rate
+33.33%
+16882026 Summer New European and American Style Round Neck Solid Color Tank Top with Built-In Bra, Sexy Women's Base Layer Top for Inner Wear or Outer Wear
+16.50CNY
+2.15 EUR
+Monthly Sales
+6969
+Repurchase rate
+44.44%
+1688Modal Small Camisole Women's Inner Wear Beautiful Back Summer Thin Sexy Outer Wear Pure Desire Style Base Black Top
+5.70CNY
+0.74 EUR
+Monthly Sales
+1599
+Repurchase rate
+9.71%
+1688Summer Fresh Cotton Camisole Design Sense Pleated Inner Lap with Chest Pad Outer Wear Slimming Beautiful Back Top for Women
+11.00CNY
+1.43 EUR
+Monthly Sales
+3443
+Repurchase rate
+8.67%
+1688Modal Round Neck Camisole Women's Summer Chest Pad Inner Base All-match Solid Color Sleeveless Large Size Thin Top
+14.90CNY
+1.94 EUR
+Monthly Sales
+363
+Repurchase rate
+14.41%
+1688Spring and Summer I-shaped Pure Cotton Vest Women's One-character Collar Hanging Neck Slimming Inner Thread Sleeveless Base Shirt Sling Top
+19.90CNY
+2.59 EUR
+Monthly Sales
+892
+Repurchase rate
+14.56%
+1688All-match anti-slip sleeveless thin bottoming camisole women's summer stretch slim-fit slimming Korean-style exterior wear
+5.90CNY
+0.77 EUR
+Monthly Sales
+10961
+Repurchase rate
+20.34%
+1688Tang Ge Silk Satin Beautiful Back Short Sling French Triangular Cup Mulberry Silk Underwear No Wires Silk Bra
+59.00CNY
+7.67 EUR
+Monthly Sales
+1741
+Repurchase rate
+23.47%
+1688Eyelash Lace Camisole Women's Summer All-match Silk Satin Suit Inner Top Silk Beautiful Back Base Shirt
+17.95CNY
+2.33 EUR
+Monthly Sales
+399
+Repurchase rate
+35.71%
+16882025 Summer European and American New Style Solid Color Tank Top with Built-In Bra, Sexy Women's Undershirt for Layering or Wearing Alone
+20.00CNY
+2.60 EUR
+Monthly Sales
+8287
+Repurchase rate
+47.19%
+1688銆?A Antibacterial Lyocell銆慍ooling Camisole with Chest Pads for Women, Suitable for Outerwear, Plus Size, Inner Wear, Beautiful Back Design, White Top
+39.00CNY
+5.07 EUR
+Monthly Sales
+2484
+Repurchase rate
+5.51%
+1688Cross-Border Foreign Trade Pure Desire Polka Dot Hottie Halter Neck Camisole Women's Summer Sexy Tie-Up Slim Fit Top
+20.90CNY
+2.72 EUR
+Monthly Sales
+343
+Repurchase rate
+23.64%
+168892 Cotton Blue Shoulder Short-sleeved T-shirt Women's Summer Slim-fit Slimming Western-style Pleated Waist Short T-shirt Top
+15.50CNY
+2.02 EUR
+Monthly Sales
+1694
+Repurchase rate
+11.15%
+1688American-Style Spicy Girl Tank Top for Women, Summer Slim-Fit Outerwear, New Sleeveless Racerback Inner Camisole Top
+17.20CNY
+2.24 EUR
+Monthly Sales
+306
+Repurchase rate
+6.15%
+1688One-Shoulder Ice Silk Without Breast Pad Small Camisole Women's Thin Inner Wear Beautiful Back Intimates Women's Anti-Exposure Wrapped Tube Top
+6.50CNY
+0.84 EUR
+Monthly Sales
+445
+Repurchase rate
+7.61%
+1688One-Shoulder Camisole for Outerwear, Sleeveless Top That Covers Side Breasts, Slim Fit, Beautiful Back, Sports Inner Wear, Fashionable Camisole
+6.00CNY
+0.78 EUR
+Monthly Sales
+7642
+Repurchase rate
+25.51%
+1688Women's Short-Sleeved Modal Bottoming Shirt with Breast Pads, Women's Spring and Summer All-In-One Pajamas, Five-Finger Half-Sleeved Women's Clothing
+19.49CNY
+2.53 EUR
+Monthly Sales
+1859
+Repurchase rate
+6.67%
+1688[Factory Outlet] Solid Color Large Neckline Short Sleeve T-Shirt Women's Loose Casual Slimming V-neck Base Shirt Fashion Brand
+7.80CNY
+1.01 EUR
+Monthly Sales
+6239
+Repurchase rate
+19.06%
+1688Spring and Summer Women's Bottoming Vest Pure Cotton Round Neck High Elastic Breathable Breast Reduction High School Girls Wear Outside and Inside Vest
+13.00CNY
+1.69 EUR
+Monthly Sales
+323
+Repurchase rate
+28.57%
+1688Bm Style American Hot Girl Solid Color Six-Button Tank Top, Slim Fit Outerwear Cotton Top for Women
+38.00CNY
+4.94 EUR
+Monthly Sales
+252
+Repurchase rate
+5.65%
+1688Modal Camisole Women's Summer Thin Inner Sleeveless Base Large Size Loose Slim Top for Chubby Girls
+9.00CNY
+1.17 EUR
+Monthly Sales
+876
+Repurchase rate
+4.98%
+1688in stock Lyocell Tencel Linen Cotton Button Outer Wear Inner Vest Korean All-match Comfortable Slim-fit Clavicle-exposed Sling
+28.00CNY
+3.64 EUR
+Monthly Sales
+456
+Repurchase rate
+7.73%
+1688Love T-Shirt for Women Pure Cotton Kawasaki Heart T-Shirt for Men Play Baby Little Red Heart Baaling Short-Sleeved Family Couple Wear
+25.00CNY
+3.25 EUR
+Monthly Sales
+160
+Repurchase rate
+23.08%
+1688Cross-border European and American Foreign Trade Strapless Women's Inner Wearing Pure Spice Girl Top Summer Outer Wearing Pullover Vest Slim-fit Women's Clothing
+7.50CNY
+0.98 EUR
+Monthly Sales
+3295
+Repurchase rate
+28.93%
+1688Oil painting jacket women's summer new seaside vacation hot girl hanging neck strap small vest short small jacket wholesale
+15.50CNY
+2.02 EUR
+Monthly Sales
+1007
+Repurchase rate
+18.56%
+1688Shake Tone Same Summer Pure Spice Girl Thick Coaster Small Chest Large Camisole Women Slim All-match Underwear Top
+8.50CNY
+1.10 EUR
+Monthly Sales
+1999
+Repurchase rate
+25.93%
+1688European Station French Design Sense Mesh Lace Plastic Beautiful Back Underwear Spice Girl Fish Bone Tube Chest Women's Thin
+31.00CNY
+4.03 EUR
+Monthly Sales
+248
+Repurchase rate
+45.45%
+1688Purely Sexy Camisole for Women with Breast Pads, Versatile and Slim-Fitting, Can Be Worn Outside or as an Inner Layer, with a Beautiful Back Design, Sleeveless Top for Summer
+7.88CNY
+1.02 EUR
+Monthly Sales
+2142
+Repurchase rate
+28.21%
+1688In-Stock Manga-Style Chest-Enhancing Camisole with Chest Pads for Summer, Slim-Fit, Suitable for Small Busts, Base Layer Top
+20.00CNY
+2.60 EUR
+Monthly Sales
+509
+Repurchase rate
+8.55%
+1688Breathable Camisole with Built-In Chest Pads and Wide Shoulder Straps, Women's Summer Slim-Fit Square-Neck Base Top
+33.50CNY
+4.36 EUR
+Monthly Sales
+1551
+Repurchase rate
+5.13%
+16882024 Summer Women's Clothing Amazon Cotton and Linen Set European and American Sleeveless Top Wide-Leg Pants Two-Piece Set Girly Style
+38.00CNY
+4.94 EUR
+Monthly Sales
+386
+Repurchase rate
+52.94%
+1688Thickened 260g Solid Color Racerback Camisole for Women with Chest Pads, Slim Fit, Versatile Base Layer
+18.90CNY
+2.46 EUR
+Monthly Sales
+352
+Repurchase rate
+5.5%
+1688[Factory Direct Sale] Sweet Lace Splicing Camisole Women's Spring and Summer Korean Style Thin Inner Sleeveless Vest
+4.70CNY
+0.61 EUR
+Monthly Sales
+14363
+Repurchase rate
+54.97%
+16882025 Camisole Women's White Beautiful Back Acetic Acid Silk Top Satin Summer Suit Imitation Base Shirt
+18.80CNY
+2.44 EUR
+Monthly Sales
+1259
+Repurchase rate
+8.57%
+1688Pure Cotton White Tank Top for Women, 2026 New Spring Fashion, Anti-Exposure, Slimming, Beautiful Back Design, Camisole Base Layer Top
+16.50CNY
+2.15 EUR
+Monthly Sales
+476
+Repurchase rate
+3.39%
+1688Selected Ribbed Cotton 2026 Summer New Style Spicy Girl Camisole Tank Top for Women, Can Be Worn as an Inner Layer or Outerwear, with Beautiful Back Design and Chest Pads
+19.98CNY
+2.60 EUR
+Monthly Sales
+538
+Repurchase rate
+16.22%
+1688862 # Rayon Vitality Dopamine Color Check Cross Bra Camisole Pure Desire Hot Girl Fake Two-Piece Small Top for Women
+10.50CNY
+1.36 EUR
+Monthly Sales
+1360
+Repurchase rate
+28.42%
+1688Summer 2026 American Style Spicy Girl U-Neck Camisole with Chest Pads, Stunning Slim-Fit Tank Top That Hides Side Breasts, Short Top
+19.00CNY
+2.47 EUR
+Monthly Sales
+193
+Repurchase rate
+4.48%
+1688European and American Cross-Border Sexy Lace Camisole Top, New Summer Vacation Style, Short Striped Lace Tank Top That Shows the Bust
+35.60CNY
+4.63 EUR
+Monthly Sales
+188
+Repurchase rate
+21.43%
+16882026 Summer New Korean Designer Alo Sports Knitted Casual Yoga Bra Fitness Camisole for Women
+29.90CNY
+3.89 EUR
+Monthly Sales
+235
+Repurchase rate
+8.62%
+16882026 Spring and Summer Silk Wool T-Shirt for Women, Thin, Slightly See-Through, Loose Casual Outerwear, Round Neck, Long-Sleeved Blouse
+46.00CNY
+5.98 EUR
+Monthly Sales
+334
+Repurchase rate
+18.42%
+1688Metwo Concave Collar Racerback Vest with Latex Straps, Ultra-Thin, Breathable, Comfortable, Backless Racerback Vest Inner Top
+21.00CNY
+2.73 EUR
+Monthly Sales
+242
+Repurchase rate
+4.67%
+1688Small Camisole with Built-In Bra Pads for Women, Invisible Foundation-Like Base Layer, Beautiful Back Design, Plus Size, Short Style
+18.00CNY
+2.34 EUR
+Monthly Sales
+194
+Repurchase rate
+11.29%
+1688Purple New Style Pleated Camisole with Chest Pads for Women, Suitable for Wearing Outside or Inside, Featuring a Cinched Waist and Beautiful Back Design for Summer
+12.60CNY
+1.64 EUR
+Monthly Sales
+1134
+Repurchase rate
+15.56%
+16882026 European and American Cotton and Linen Camisole Women's Summer New Loose Cotton and Linen Sleeveless Versatile Base Top
+15.00CNY
+1.95 EUR
+Monthly Sales
+876
+Repurchase rate
+52%
+1688Summer Thin Pure Cotton Women's Sleeveless Ribbed Knit Tank Top Versatile Outerwear
+11.80CNY
+1.53 EUR
+Monthly Sales
+775
+Repurchase rate
+23.4%
+1688Cartoon Outer-Chest Expanded Camisole Women's Outer Wear Summer Slim-Fit Slimming Small Chest Large Spice Girl Inner Base Top
+15.50CNY
+2.02 EUR
+Monthly Sales
+224
+Repurchase rate
+6.19%
+1688Four Seasons New Style High-Elastic Thin Strap Women's Tank Top, Soft and Comfortable, Slimming, Suitable for Outerwear or as a Base Layer, with a Beautiful Back Design
+37.00CNY
+4.81 EUR
+Monthly Sales
+2094
+Repurchase rate
+8.82%
+1688Live Broadcast Thickened Chest Pads for a Larger Appearance, Detachable Camisole Versatile Short Style with Beautiful Back, Base Wrap, and Bandeau for Women
+6.90CNY
+0.90 EUR
+Monthly Sales
+319
+Repurchase rate
+17.65%
+We use cookies to ensure the best experience on our website. By browsing this site, you accept our Privacy Policy.
+Agree
+```
+

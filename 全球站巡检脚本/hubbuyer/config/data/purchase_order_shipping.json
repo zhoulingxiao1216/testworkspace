@@ -1,0 +1,127 @@
+{
+  "allowed_envs": ["main", "prod", "test"],
+  "strict_round_data": true,
+  "target_product_id": "D000065203",
+  "waybill_no_retry_limit": 5,
+  "logistics_config_id": 26,
+  "delivery_address_id": 54,
+  "tariff_payment_type": 1,
+  "fjx_smoke_item": {
+    "uuid": "JPT-FJX-047",
+    "quantity": 1
+  },
+  "box_spec": {
+    "long": "12",
+    "width": "12",
+    "height": "12",
+    "weight": "3"
+  },
+  "config_param": [
+    {"uuid": "JPT-FJX-038", "quantity": 0},
+    {"uuid": "JPT-FJX-039", "quantity": 0},
+    {"uuid": "JPT-FJX-040", "quantity": 0},
+    {"uuid": "JPT-FJX-041", "quantity": 0},
+    {"uuid": "JPT-FJX-043", "quantity": 0},
+    {"uuid": "JPT-FJX-044", "quantity": 0, "fjx_spec_info": {"spec": "3辺合計60cm以下", "cost_price": 3, "user_price": 5, "user_select": "yes"}},
+    {"uuid": "JPT-FJX-045", "quantity": 0, "fjx_spec_info": {"spec": "3辺合計60cm以下", "cost_price": 80, "user_price": 100, "user_select": "yes"}},
+    {"uuid": "JPT-FJX-047", "quantity": 0}
+  ],
+  "create_ship_order_api": {
+    "enabled": true,
+    "url": "/admin_b2b/KuStockLog/createShipOrder",
+    "method": "POST",
+    "admin_site_origin": "",
+    "headers": {}
+  },
+  "ship_order_detail_list_api": {
+    "enabled": true,
+    "url": "/admin_b2b/shipOrderDetail/goodsList",
+    "method": "POST",
+    "admin_site_origin": "",
+    "headers": {}
+  },
+  "distribute_api": {
+    "enabled": true,
+    "url": "/admin_b2b/shipOrderDetail/distribute",
+    "method": "POST",
+    "admin_site_origin": "",
+    "headers": {}
+  },
+  "distribute_done_api": {
+    "enabled": true,
+    "url": "/admin_b2b/shipOrderDetail/distributeDone",
+    "method": "POST",
+    "admin_site_origin": "",
+    "headers": {}
+  },
+  "box_insert_api": {
+    "enabled": true,
+    "url": "/admin_b2b/shipOrderBox/insert",
+    "method": "POST",
+    "admin_site_origin": "",
+    "headers": {}
+  },
+  "box_done_api": {
+    "enabled": true,
+    "url": "/admin_b2b/shipOrderBox/boxDone",
+    "method": "POST",
+    "admin_site_origin": "",
+    "headers": {}
+  },
+  "update_fjx_api": {
+    "enabled": true,
+    "url": "/admin_b2b/shipOrderDetail/updateFjx",
+    "method": "POST",
+    "admin_site_origin": "",
+    "headers": {}
+  },
+  "complete_box_api": {
+    "enabled": true,
+    "url": "/admin_b2b/shipOrderDetail/completeBox",
+    "method": "POST",
+    "admin_site_origin": "",
+    "headers": {}
+  },
+  "remove_settling_api": {
+    "enabled": true,
+    "url": "/admin_b2b/shipOrder/removeSettling",
+    "method": "POST",
+    "admin_site_origin": "",
+    "headers": {}
+  },
+  "deduct_money_api": {
+    "enabled": true,
+    "url": "/admin_b2b/shipOrder/deductMoney",
+    "method": "POST",
+    "admin_site_origin": "",
+    "headers": {}
+  },
+  "update_waybill_no_api": {
+    "enabled": true,
+    "url": "/admin_b2b/shipOrder/updateWaybillNo",
+    "method": "POST",
+    "admin_site_origin": "",
+    "headers": {}
+  },
+  "sure_ship_api": {
+    "enabled": true,
+    "url": "/admin_b2b/shipOrder/sureShip",
+    "method": "POST",
+    "admin_site_origin": "",
+    "headers": {}
+  },
+  "ship_order_list_api": {
+    "enabled": true,
+    "url": "/admin_b2b/shipOrder/list",
+    "method": "POST",
+    "admin_site_origin": "",
+    "headers": {}
+  },
+  "ku_stock_in_log_list_api": {
+    "enabled": true,
+    "url": "/admin_b2b/KuStockLog/stockProductList",
+    "method": "POST",
+    "admin_site_origin": "",
+    "headers": {}
+  }
+}
