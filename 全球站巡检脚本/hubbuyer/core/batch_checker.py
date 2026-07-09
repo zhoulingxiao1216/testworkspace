@@ -40,6 +40,7 @@ class BatchChecker:
             "payment.json",
             "purchase_order_audit.json",
             "backend_admin.json",
+            "member_pricing_complete_chain.json",
             "onebound_daily_stats.json",
         ]
         json_files = [f for f in os.listdir(self.rules_dir) if f.endswith('.json')]

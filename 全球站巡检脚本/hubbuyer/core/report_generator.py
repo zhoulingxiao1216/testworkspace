@@ -45,6 +45,7 @@ class ReportGenerator:
         # status_register = get_status_by_keyword("注册")  # register.py 未实现，暂时移除
         status_img_search = get_status_by_keyword("商品图搜")
         status_keyword_search = get_status_by_keyword("关键词搜索")
+        status_member_pricing = get_status_by_keyword("会员价格")
 
         # 解析商品加购任务的子任务状态（从消息中查找）
         add_cart_message = ""
@@ -314,6 +315,7 @@ class ReportGenerator:
             f"• B2B 加购1688商品       {status_add_cart_1688}",
             f"• B2B 加购淘宝商品        {status_add_cart_taobao}",
             f"• B2B 编辑保存附加项           {status_b2b_addon}",
+            f"• 会员价格/附加项专项           {status_member_pricing}",
             f"• D2C 选择商品附加项           {status_d2c_addon}",
             f"• B2B 提交自助报价单           {status_submit_order}",
             f"• B2B 支付报价单               {status_payment}",
