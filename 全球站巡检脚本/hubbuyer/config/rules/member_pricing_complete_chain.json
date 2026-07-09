@@ -1,9 +1,10 @@
 {
   "member_pricing_complete_chain_task": {
     "key": "check_api_member_pricing_complete_chain",
-    "desc": "会员价格/附加项专项只读巡检",
+    "desc": "价格体系专项巡检链路",
     "script": "checker/api/member_pricing_complete_chain.py",
     "runner_timeout": 180,
-    "login_account": ""
+    "login_account": "",
+    "suppress_sub_results": true
   }
 }

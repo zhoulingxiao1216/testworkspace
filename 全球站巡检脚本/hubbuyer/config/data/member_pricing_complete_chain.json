@@ -1,5 +1,5 @@
 {
-  "_comment": "会员价格/附加项专项巡检配置。默认用当前巡检登录账号做只读健康检查；如需按完整链路强断言，补充目标 UUID、历史 quote_no、ship_order_no 后开启对应块。",
+  "_comment": "价格体系专项巡检链路配置。默认用当前巡检登录账号做只读健康检查；如需按完整链路强断言，补充目标 UUID、历史 quote_no、ship_order_no 后开启对应块。",
   "defaults": {
     "language": "korean",
     "currency": "KRW",
@@ -7,9 +7,10 @@
   },
   "cases": [
     {
-      "name": "当前登录账号附加项基础健康",
+      "name": "当前登录账号价格体系基础健康",
       "enabled": true,
       "login_account": "",
+      "countryCode": "Korea",
       "useStoredCartDetailIds": true,
       "expected": {
         "minCheckCount": 1,
@@ -17,26 +18,40 @@
         "requirePricingSourceOnPricedItems": false
       },
       "cartPreview": {
-        "enabled": false,
+        "enabled": true,
         "useStoredCartDetailIds": true,
         "checkUuid": "",
         "fjxUuids": [],
         "userFjxUuids": [],
         "expectedTotal": null
       },
-      "snapshotChecks": [],
-      "adminCustomPricing": {
-        "enabled": false,
-        "expectMemberLevelUuids": [],
-        "expectNoBlankMemberLevel": true
-      },
+      "snapshotChecks": [
+        {
+          "name": "附加项列表快照健康",
+          "auth": "user",
+          "path": "/api_b2b/cartQuoteStep1/getCheckFjxList",
+          "body": {},
+          "expectContains": ["check_data", "fjx_data"],
+          "expectNotContains": []
+        }
+      ],
       "servicePricing": {
-        "enabled": false,
+        "enabled": true,
         "expectNoBlankMemberLevel": true,
-        "checkConfigUuid": "",
-        "fjxConfigUuid": ""
+        "checkConfigUuid": "JPT-CHK-002",
+        "fjxConfigUuid": "JPT-FJX-001"
       },
-      "shipFjxChecks": []
+      "shipFjxChecks": [
+        {
+          "name": "发货附加项健康",
+          "path": "/admin_b2b/shipOrderDetail/fjxList",
+          "body": {
+            "ship_order_no": "WL-KOR8-260709-010"
+          },
+          "requireAnyShipAddon": true,
+          "requiredPricingSources": []
+        }
+      ]
     }
   ],
   "exampleStrongAssertions": {

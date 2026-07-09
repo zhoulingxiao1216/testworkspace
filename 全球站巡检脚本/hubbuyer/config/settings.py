@@ -9,7 +9,7 @@
 # 1. 核心环境开关
 # ==========================================
 
-ENV_TYPE = "prod" 
+ENV_TYPE = "main" 
 
 # ==========================================
 # 2. 业务巡检开关
@@ -36,7 +36,11 @@ INSPECTION_SWITCHES = {
     "check_api_exchange_rate": True,   #子模块：由 backend_admin 调度
     "check_api_purchase_order_ops": True,  #子模块：由 backend_admin 调度
     "check_api_purchase_order_shipping": False,  #子模块：由 backend_admin 调度
-    "check_api_member_pricing_complete_chain": True,  #会员价格/附加项专项只读巡检
+    "check_api_member_pricing_complete_chain": True,  #价格体系专项巡检链路
+    "check_api_member_pricing_cart_preview": True,  #子模块：费用预览
+    "check_api_member_pricing_snapshot": True,  #子模块：快照校验
+    "check_api_member_pricing_service_pricing": True,  #子模块：国家服务价
+    "check_api_member_pricing_ship_fjx": True,  #子模块：发货附加项
     "check_api_onebound_daily_stats": True  #万邦控制台前一日 API 调用统计
 }
 

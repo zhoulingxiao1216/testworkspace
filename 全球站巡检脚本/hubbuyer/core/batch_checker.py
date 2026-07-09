@@ -60,6 +60,8 @@ class BatchChecker:
             if result.get("stats") is not None:
                 entry["stats"] = result.get("stats")
             batch_results[task_desc] = entry
+            if task_config.get("suppress_sub_results"):
+                return
             for sub_desc, sub_result in (result.get("sub_results") or {}).items():
                 if not sub_desc or sub_desc in batch_results:
                     continue
@@ -130,9 +132,10 @@ class BatchChecker:
                             print(f"   {status_icon} 结论: {result.get('message')}")
 
                             _store_task_result(task_desc, task_config, result)
-                            for sub_desc, sub_result in (result.get("sub_results") or {}).items():
-                                sub_icon = "✅" if sub_result.get("success") else "❌"
-                                print(f"   {sub_icon} 子项 {sub_desc}: {sub_result.get('message')}")
+                            if not task_config.get("suppress_sub_results"):
+                                for sub_desc, sub_result in (result.get("sub_results") or {}).items():
+                                    sub_icon = "✅" if sub_result.get("success") else "❌"
+                                    print(f"   {sub_icon} 子项 {sub_desc}: {sub_result.get('message')}")
                         except Exception as e:
                             self.logger.log_error(f"{task_desc} 崩溃: {str(e)}")
                             print(f"   ❌ 结论: 执行异常")

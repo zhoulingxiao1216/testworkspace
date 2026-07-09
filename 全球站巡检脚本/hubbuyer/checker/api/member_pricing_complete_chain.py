@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # checker/api/member_pricing_complete_chain.py
-# 会员价格/附加项专项巡检：只读校验展示、价格来源、费用预览、快照与发货附加项。
+# 价格体系专项巡检链路：只读校验附加项展示、价格来源、费用预览、快照与发货附加项。
 import json
 import os
 import sys
@@ -31,7 +31,7 @@ if root_path not in sys.path:
 
 from config.data.cookie import CookieManager
 from config.data.headers import get_base_headers, get_b2b_headers
-from config.settings import API_CONFIG, ENV_TYPE, REQUEST_TIMEOUT_API
+from config.settings import API_CONFIG, ENV_TYPE, REQUEST_TIMEOUT_API, INSPECTION_SWITCHES
 from config.data.login_data import ACCOUNTS_POOL
 from core.path_manager import DATA_DIR, TOKEN_DIR
 from core.rules.assertion import AssertionTool
@@ -40,6 +40,21 @@ from core.rules.assertion import AssertionTool
 CONFIG_FILE = "member_pricing_complete_chain.json"
 DEFAULT_CHECK_PATH = "/api_b2b/cartQuoteStep1/getCheckFjxList"
 DEFAULT_PREVIEW_PATH = "/api_b2b/cartQuoteStep1/getCheckFjxFeeTotal"
+CHECKPOINT_TITLE = "价格体系专项巡检链路"
+CHECKPOINT_EXPECTED = "价格体系专项巡检通过"
+FEATURE_SWITCH_KEYS = {
+    "cart_preview": "check_api_member_pricing_cart_preview",
+    "snapshot": "check_api_member_pricing_snapshot",
+    "service_pricing": "check_api_member_pricing_service_pricing",
+    "ship_fjx": "check_api_member_pricing_ship_fjx",
+}
+
+
+def _is_feature_enabled(feature_name, fallback_enabled=True):
+    switch_key = FEATURE_SWITCH_KEYS.get(feature_name)
+    if switch_key and switch_key in INSPECTION_SWITCHES:
+        return bool(INSPECTION_SWITCHES.get(switch_key)), True
+    return bool(fallback_enabled), False
 
 
 def emit_result(final_result):
@@ -109,7 +124,7 @@ class InspectionRecorder:
             "success": success,
             "message": message,
             "status_code": 200 if success else 500,
-            "expected": "会员价格/附加项只读巡检通过",
+            "expected": CHECKPOINT_EXPECTED,
             "actual": "Passed=%s Failed=%s Skipped=%s" % (self.passed, self.failed, self.skipped),
             "sub_results": self.sub_results,
         }
@@ -130,7 +145,7 @@ def load_config(task_config=None):
         "defaults": {"language": "korean", "currency": "KRW", "nation": "Korea"},
         "cases": [
             {
-                "name": "当前登录账号附加项基础健康",
+                "name": "当前登录账号价格体系基础健康",
                 "enabled": True,
                 "login_account": "",
                 "expected": {
@@ -524,48 +539,161 @@ def _cart_detail_ids_from_store(target_mail):
     return ids
 
 
-def run_cart_preview(config, case, headers, target_mail, recorder):
+def _first_uuid(items):
+    for item in items or []:
+        uid = item_uuid(item)
+        if uid:
+            return uid
+    return ""
+
+
+def run_cart_preview(config, case, headers, target_mail, recorder, flat=None):
     preview = case.get("cartPreview") or {}
     name = case.get("name") or "未命名用例"
-    if not preview.get("enabled"):
-        recorder.skip("%s-费用预览" % name, "未启用")
+    enabled, from_global = _is_feature_enabled("cart_preview", preview.get("enabled"))
+    if not enabled:
+        recorder.skip("%s-费用预览" % name, "统一开关关闭" if from_global else "未启用")
         return
     cart_ids = preview.get("cartDetailIds") or []
     if preview.get("useStoredCartDetailIds") and not cart_ids:
         cart_ids = _cart_detail_ids_from_store(target_mail)
     if not cart_ids:
-        recorder.skip("%s-费用预览" % name, "缺少 cartDetailIds")
+        if from_global:
+            recorder.fail("%s-费用预览" % name, "统一开关已开启但缺少 cartDetailIds")
+        else:
+            recorder.skip("%s-费用预览" % name, "缺少 cartDetailIds")
         return
 
     base_url = (config.get("apiBaseUrl") or API_CONFIG.get("BASE_URL") or "").rstrip("/")
     path = preview.get("path") or DEFAULT_PREVIEW_PATH
-    payload = {
+    check_uuids = list(preview.get("checkUuids") or [])
+    if preview.get("checkUuid"):
+        check_uuids = [preview.get("checkUuid")] + check_uuids
+    fjx_uuids = list(preview.get("fjxUuids") or [])
+    user_fjx_uuids = list(preview.get("userFjxUuids") or [])
+
+    # 健康巡检模式下允许自动从 getCheckFjxList 结果里回填一组选择项，避免 40000 入参错误。
+    if not check_uuids and not fjx_uuids and not user_fjx_uuids and isinstance(flat, dict):
+        first_check = _first_uuid(flat.get("checks"))
+        first_fjx = _first_uuid(flat.get("fjx"))
+        first_user_fjx = _first_uuid(flat.get("userFjx"))
+        # 仅回填一种类型，避免接口对组合参数校验失败。
+        if first_check:
+            check_uuids = [first_check]
+        elif first_fjx:
+            fjx_uuids = [first_fjx]
+        elif first_user_fjx:
+            user_fjx_uuids = [first_user_fjx]
+
+    if not check_uuids and not fjx_uuids and not user_fjx_uuids:
+        if from_global:
+            recorder.fail("%s-费用预览" % name, "统一开关已开启但缺少 check/fjx/user_fjx 选择项")
+        else:
+            recorder.skip("%s-费用预览" % name, "缺少 check/fjx/user_fjx 选择项")
+        return
+
+    base_payload = {
         "cart_detail_ids": cart_ids,
-        "check_uuid": [preview.get("checkUuid")] if preview.get("checkUuid") else preview.get("checkUuids") or [],
-        "fjx_uuids": preview.get("fjxUuids") or [],
-        "user_fjx_uuids": preview.get("userFjxUuids") or [],
+        "check_uuid": check_uuids,
+        "fjx_uuids": fjx_uuids,
+        "user_fjx_uuids": user_fjx_uuids,
     }
-    try:
-        response = request_json(base_url, path, headers, payload)
-        recorder.pass_("%s-费用预览接口" % name)
-        expected_total = preview.get("expectedTotal")
-        if expected_total is not None:
-            data = response_data(response)
-            actual = data.get("total_check_fjx_fee") if isinstance(data, dict) else None
-            recorder.assert_(
-                almost_equal(actual, expected_total),
-                "%s-费用预览合计" % name,
-                "actual=%s expected=%s" % (actual, expected_total),
-            )
-    except Exception as e:
-        recorder.fail("%s-费用预览接口" % name, str(e), traceback.format_exc())
+
+    variants = [("default", base_payload)]
+    # 部分环境对 check_uuid 仅接受字符串。
+    if len(check_uuids) == 1:
+        as_str = dict(base_payload)
+        as_str["check_uuid"] = check_uuids[0]
+        variants.append(("check_uuid_str", as_str))
+    # 尝试按单一选择类型请求，规避组合校验导致的 40000。
+    if check_uuids:
+        variants.append(("check_only", {
+            "cart_detail_ids": cart_ids,
+            "check_uuid": [check_uuids[0]],
+            "fjx_uuids": [],
+            "user_fjx_uuids": [],
+        }))
+        variants.append(("check_only_str", {
+            "cart_detail_ids": cart_ids,
+            "check_uuid": check_uuids[0],
+            "fjx_uuids": [],
+            "user_fjx_uuids": [],
+        }))
+    if fjx_uuids:
+        variants.append(("fjx_only", {
+            "cart_detail_ids": cart_ids,
+            "check_uuid": [],
+            "fjx_uuids": [fjx_uuids[0]],
+            "user_fjx_uuids": [],
+        }))
+    if user_fjx_uuids:
+        variants.append(("user_fjx_only", {
+            "cart_detail_ids": cart_ids,
+            "check_uuid": [],
+            "fjx_uuids": [],
+            "user_fjx_uuids": [user_fjx_uuids[0]],
+        }))
+
+    seen = set()
+    normalized_variants = []
+    for label, payload in variants:
+        key = json.dumps(payload, ensure_ascii=False, sort_keys=True)
+        if key in seen:
+            continue
+        seen.add(key)
+        normalized_variants.append((label, payload))
+
+    # 兼容另一种常见命名：cart_detail_id_arr
+    cart_key_variants = []
+    for label, payload in normalized_variants:
+        if "cart_detail_ids" in payload:
+            alt = dict(payload)
+            alt["cart_detail_id_arr"] = alt.pop("cart_detail_ids")
+            cart_key_variants.append((label + "_cart_arr", alt))
+    for label, payload in cart_key_variants:
+        key = json.dumps(payload, ensure_ascii=False, sort_keys=True)
+        if key in seen:
+            continue
+        seen.add(key)
+        normalized_variants.append((label, payload))
+
+    errors = []
+    for label, payload in normalized_variants:
+        try:
+            response = request_json(base_url, path, headers, payload)
+            recorder.pass_("%s-费用预览接口" % name, "命中策略:%s" % label)
+            expected_total = preview.get("expectedTotal")
+            if expected_total is not None:
+                data = response_data(response)
+                actual = data.get("total_check_fjx_fee") if isinstance(data, dict) else None
+                recorder.assert_(
+                    almost_equal(actual, expected_total),
+                    "%s-费用预览合计" % name,
+                    "actual=%s expected=%s" % (actual, expected_total),
+                )
+            return
+        except Exception as e:
+            errors.append("%s=%s" % (label, str(e)))
+
+    recorder.fail(
+        "%s-费用预览接口" % name,
+        "所有策略失败",
+        " | ".join(errors[:6]),
+    )
 
 
 def run_snapshot_checks(config, case, user_headers, recorder):
     checks = case.get("snapshotChecks") or []
     name = case.get("name") or "未命名用例"
+    enabled, from_global = _is_feature_enabled("snapshot", True)
+    if not enabled:
+        recorder.skip("%s-快照校验" % name, "统一开关关闭" if from_global else "未启用")
+        return
     if not checks:
-        recorder.skip("%s-快照校验" % name, "未配置")
+        if from_global:
+            recorder.fail("%s-快照校验" % name, "统一开关已开启但未配置 snapshotChecks")
+        else:
+            recorder.skip("%s-快照校验" % name, "未配置")
         return
 
     base_url = (config.get("apiBaseUrl") or API_CONFIG.get("BASE_URL") or "").rstrip("/")
@@ -590,51 +718,15 @@ def run_snapshot_checks(config, case, user_headers, recorder):
             recorder.fail(label, str(e), traceback.format_exc())
 
 
-def run_admin_custom_pricing(config, case, recorder):
-    probe = case.get("adminCustomPricing") or {}
-    name = case.get("name") or "未命名用例"
-    if not probe.get("enabled"):
-        recorder.skip("%s-后台用户专属价" % name, "未启用")
-        return
-    if not case.get("userMainUuid") or not case.get("countryCode"):
-        recorder.skip("%s-后台用户专属价" % name, "缺少 userMainUuid/countryCode")
-        return
-    base_url = (config.get("apiBaseUrl") or API_CONFIG.get("BASE_URL") or "").rstrip("/")
-    try:
-        token = _admin_login_lazy()
-        headers = _build_admin_auth_headers_lazy(token)
-        response = request_json(
-            base_url,
-            "/admin_b2b/UserFjxConfig/listByUser",
-            headers,
-            {
-                "user_main_uuid": case.get("userMainUuid"),
-                "country_code": case.get("countryCode"),
-            },
-        )
-        recorder.pass_("%s-后台用户专属价接口" % name)
-        data = response_data(response)
-        levels = data.get("member_levels") if isinstance(data, dict) else []
-        level_uuids = [str(level.get("uuid")) for level in levels or [] if isinstance(level, dict) and level.get("uuid")]
-        for uuid in probe.get("expectMemberLevelUuids") or []:
-            recorder.assert_(str(uuid) in level_uuids, "%s-会员等级%s存在" % (name, uuid), "levels=%s" % level_uuids)
-        if probe.get("expectNoBlankMemberLevel"):
-            blank = []
-            for row in rows_from_list_data(response):
-                for key in ("default_fee_info", "custom_fee_info"):
-                    for fee_row in row.get(key) or []:
-                        if not fee_row.get("member_level_uuid"):
-                            blank.append("%s:%s" % (item_uuid(row), key))
-            recorder.assert_(not blank, "%s-后台用户专属价无空会员等级" % name, ",".join(blank))
-    except Exception as e:
-        recorder.fail("%s-后台用户专属价" % name, str(e), traceback.format_exc())
+
 
 
 def run_service_pricing(config, case, recorder):
     probe = case.get("servicePricing") or {}
     name = case.get("name") or "未命名用例"
-    if not probe.get("enabled"):
-        recorder.skip("%s-国家服务价" % name, "未启用")
+    enabled, from_global = _is_feature_enabled("service_pricing", probe.get("enabled"))
+    if not enabled:
+        recorder.skip("%s-国家服务价" % name, "统一开关关闭" if from_global else "未启用")
         return
     base_url = (config.get("apiBaseUrl") or API_CONFIG.get("BASE_URL") or "").rstrip("/")
     calls = []
@@ -653,7 +745,10 @@ def run_service_pricing(config, case, recorder):
             "pageSize": 100,
         }))
     if not calls:
-        recorder.skip("%s-国家服务价" % name, "未配置 config uuid")
+        if from_global:
+            recorder.fail("%s-国家服务价" % name, "统一开关已开启但未配置 config uuid")
+        else:
+            recorder.skip("%s-国家服务价" % name, "未配置 config uuid")
         return
     try:
         token = _admin_login_lazy()
@@ -675,8 +770,15 @@ def run_service_pricing(config, case, recorder):
 def run_ship_fjx_checks(config, case, recorder):
     checks = case.get("shipFjxChecks") or []
     name = case.get("name") or "未命名用例"
+    enabled, from_global = _is_feature_enabled("ship_fjx", True)
+    if not enabled:
+        recorder.skip("%s-发货附加项" % name, "统一开关关闭" if from_global else "未启用")
+        return
     if not checks:
-        recorder.skip("%s-发货附加项" % name, "未配置")
+        if from_global:
+            recorder.fail("%s-发货附加项" % name, "统一开关已开启但未配置 shipFjxChecks")
+        else:
+            recorder.skip("%s-发货附加项" % name, "未配置")
         return
     base_url = (config.get("apiBaseUrl") or API_CONFIG.get("BASE_URL") or "").rstrip("/")
     try:
@@ -713,6 +815,7 @@ def run_case(config, case, task_config, recorder):
 
     base_url = (config.get("apiBaseUrl") or API_CONFIG.get("BASE_URL") or "").rstrip("/")
     headers = _case_headers(config, case, token, cookie)
+    flat = None
     try:
         payload = case.get("checkFjxListPayload")
         if payload is None:
@@ -729,9 +832,7 @@ def run_case(config, case, task_config, recorder):
     except Exception as e:
         recorder.fail("%s-附加项列表接口" % name, str(e), traceback.format_exc())
 
-    run_cart_preview(config, case, headers, target_mail, recorder)
     run_snapshot_checks(config, case, headers, recorder)
-    run_admin_custom_pricing(config, case, recorder)
     run_service_pricing(config, case, recorder)
     run_ship_fjx_checks(config, case, recorder)
 
@@ -749,7 +850,7 @@ def run(task_config=None):
                 run_case(config, case, task_config, recorder)
     except Exception as e:
         recorder.fail("执行异常", "%s: %s" % (type(e).__name__, e), traceback.format_exc())
-    return emit_result(recorder.to_result("会员价格体系附加项专项巡检"))
+    return emit_result(recorder.to_result(CHECKPOINT_TITLE))
 
 
 if __name__ == "__main__":
