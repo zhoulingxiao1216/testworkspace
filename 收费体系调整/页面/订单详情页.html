@@ -1,0 +1,3132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>订单详情</title>
+  <style>
+    :root {
+      --main: #022559;
+      --active: #b4272b;
+      --active-soft: #fff6f6;
+      --active-line: #f4b7bd;
+      --line: #ccd3de;
+      --line-soft: #e1e5ed;
+      --bg: #f2f4f8;
+      --panel: #fff;
+      --soft: #f6f7fb;
+      --muted: #888;
+      --danger: #ff4000;
+      --success: #317818;
+      --success-bg: #eef8e8;
+      --danger-bg: #f7e9e9;
+      --header: 56px;
+      --sidebar: 156px;
+      --radius: 4px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow: hidden;
+      background: var(--bg);
+      color: #111;
+      font-family: Arial, "Microsoft YaHei", sans-serif;
+      font-size: 12px;
+      letter-spacing: 0;
+    }
+
+    button {
+      font: inherit;
+      cursor: default;
+    }
+
+    .app {
+      min-width: 1180px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      height: var(--header);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 14px 8px 10px;
+      background: #fff;
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.12);
+      z-index: 5;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand img {
+      width: 150px;
+      height: 32px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .menu-toggle {
+      width: 25px;
+      height: 25px;
+      border: 0;
+      border-radius: var(--radius);
+      background: #eef3fb;
+      color: var(--main);
+      position: relative;
+    }
+
+    .menu-toggle::before,
+    .menu-toggle::after,
+    .menu-toggle span {
+      content: "";
+      position: absolute;
+      left: 7px;
+      right: 7px;
+      height: 2px;
+      background: var(--main);
+      border-radius: 2px;
+    }
+
+    .menu-toggle::before {
+      top: 7px;
+    }
+
+    .menu-toggle span {
+      top: 12px;
+    }
+
+    .menu-toggle::after {
+      top: 17px;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: #30343b;
+      white-space: nowrap;
+      font-size: 12px;
+    }
+
+    .top-pill,
+    .logout {
+      height: 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      border: 1px solid var(--main);
+      border-radius: 14px;
+      padding: 0 10px;
+      background: #f7fbff;
+      color: #111;
+      line-height: 24px;
+    }
+
+    .top-pill img {
+      width: 16px;
+      height: 16px;
+      object-fit: cover;
+      border-radius: 1px;
+    }
+
+    .avatar {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .avatar img {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+
+    .workspace {
+      height: calc(100vh - var(--header));
+      display: flex;
+      min-height: 0;
+    }
+
+    .sidebar {
+      width: var(--sidebar);
+      flex: 0 0 var(--sidebar);
+      padding: 10px 7px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .nav-section {
+      margin-bottom: 2px;
+    }
+
+    .nav-row,
+    .sub-row {
+      height: 32px;
+      display: flex;
+      align-items: center;
+      border-radius: var(--radius);
+      color: #24416b;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .nav-row {
+      padding: 0 8px;
+      gap: 7px;
+      font-weight: 600;
+    }
+
+    .sub-row {
+      margin-top: 2px;
+      padding-left: 39px;
+      padding-right: 10px;
+      color: #24416b;
+      font-weight: 500;
+    }
+
+    .sub-row.active {
+      background: #c8d0dd;
+      color: var(--main);
+      font-weight: 700;
+    }
+
+    .chev {
+      margin-left: auto;
+      color: #7e91ad;
+      font-size: 12px;
+    }
+
+    .nav-ico {
+      width: 14px;
+      height: 14px;
+      flex: 0 0 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-ico svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+    }
+
+    .page {
+      position: relative;
+      flex: 1;
+      min-width: 0;
+      padding-bottom: 78px;
+      overflow: auto;
+      background: var(--bg);
+    }
+
+    .content {
+      max-width: 1512px;
+      margin: 0 auto;
+      padding: 0 10px 22px;
+    }
+
+    .breadcrumb {
+      height: 34px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #111;
+      font-size: 12px;
+    }
+
+    .breadcrumb span:first-child {
+      color: var(--main);
+    }
+
+    .order-head {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .order-head-left {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px 24px;
+      min-width: 0;
+    }
+
+    .status-tag {
+      min-width: 92px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 12px;
+      border: 1px solid #d8e9ce;
+      border-radius: 4px;
+      background: var(--success-bg);
+      color: var(--success);
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .order-meta {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      line-height: 24px;
+      font-size: 14px;
+    }
+
+    .order-no {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .copy {
+      color: #8f969f;
+      margin-left: 2px;
+    }
+
+    .head-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 0 0 auto;
+    }
+
+    .panel-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 0 0 auto;
+    }
+
+    .btn {
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      padding: 0 12px;
+      text-decoration: none;
+      white-space: nowrap;
+      font-weight: 700;
+      background: #fff;
+      color: var(--main);
+    }
+
+    .btn.primary {
+      background: var(--main);
+      border-color: var(--main);
+      color: #fff;
+    }
+
+    .btn.outline {
+      background: #f7fbff;
+      border-color: #7896bf;
+      color: var(--main);
+    }
+
+    .btn.warning {
+      border-color: #e5a0a0;
+      border-radius: 15px;
+      background: #fff6f6;
+      color: var(--active);
+    }
+
+    .panel {
+      margin-top: 14px;
+      padding: 14px 16px 16px;
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .panel-title {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .summary-chips {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .summary-chip {
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      overflow: hidden;
+      border: 1px solid #c9d4e4;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .summary-chip > span:first-child {
+      height: 100%;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 10px;
+      background: #e1e5ed;
+      font-weight: 700;
+    }
+
+    .summary-chip strong {
+      padding: 0 12px;
+      color: var(--active);
+    }
+
+    .summary-chip.success strong {
+      color: var(--success);
+    }
+
+    .summary-chip.warning strong {
+      color: var(--active);
+    }
+
+    .collapsed-cost-summary {
+      display: none;
+      margin-left: auto;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .fee-panel.is-collapsed .collapsed-cost-summary {
+      display: flex;
+    }
+
+    .collapsed-cost-summary .summary-chip {
+      height: 32px;
+      min-height: 32px;
+      font-size: 12px;
+    }
+
+    .collapsed-cost-summary .summary-chip > span:first-child {
+      padding: 0 8px;
+    }
+
+    .collapsed-cost-summary .summary-chip strong {
+      padding: 0 8px;
+      white-space: nowrap;
+    }
+
+    .cost-hint {
+      margin-bottom: 12px;
+      padding: 10px 12px;
+      border-radius: var(--radius);
+      background: #f6f7fb;
+      color: #222;
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    .cost-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .cost-card {
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .cost-card-head {
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 0 10px;
+      border-bottom: 1px solid var(--line);
+      background: #e1e5ed;
+      color: var(--active);
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .cost-card-head.success {
+      color: var(--success);
+    }
+
+    .cost-card-head.warning {
+      color: var(--active);
+    }
+
+    .cost-card-head.saving {
+      color: var(--active);
+    }
+
+    .cost-card.saving-card {
+      border-color: var(--active-line);
+    }
+
+    .cost-card.saving-card .cost-card-head {
+      background: #FFF6F6;
+    }
+
+    .cost-card-head > span:first-child {
+      text-align: left;
+    }
+
+    .cost-card-head > span:last-child {
+      margin-left: auto;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .fee-money {
+      display: inline-flex;
+      align-items: baseline;
+      justify-content: flex-end;
+      gap: 4px;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+
+    .fee-money .fee-num {
+      font-size: 1.12em;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .fee-money .fee-unit {
+      color: currentColor;
+      font-size: 0.78em;
+      font-weight: 700;
+      opacity: 0.76;
+      letter-spacing: 0;
+    }
+
+    .cost-card-head .fee-money .fee-num {
+      font-size: 15px;
+    }
+
+    .cost-card-head .fee-money .fee-unit {
+      font-size: 11px;
+    }
+
+    .cost-row .fee-money .fee-num {
+      font-size: 13px;
+    }
+
+    .cost-row .fee-money .fee-unit {
+      font-size: 10px;
+    }
+
+    .summary-chip .fee-money .fee-num {
+      font-size: 13px;
+    }
+
+    .summary-chip .fee-money .fee-unit {
+      font-size: 10px;
+    }
+
+    .saving-amount {
+      color: var(--active);
+      font-weight: 900;
+    }
+
+    .cost-row {
+      min-height: 42px;
+      display: grid;
+      grid-template-columns: 1fr 130px;
+      align-items: stretch;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cost-row:last-child {
+      border-bottom: 0;
+    }
+
+    .cost-row > span,
+    .cost-row > strong {
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+    }
+
+    .cost-row > span {
+      justify-content: flex-start;
+      text-align: left;
+      border-right: 1px solid var(--line);
+    }
+
+    .cost-row > strong {
+      justify-content: flex-end;
+      text-align: right;
+    }
+
+    .cost-row a {
+      color: var(--active);
+      text-decoration: none;
+    }
+
+    .amount-with-discount {
+      min-height: 42px;
+      height: 100%;
+      align-items: flex-end;
+      box-sizing: border-box;
+      flex-direction: column;
+      justify-content: center;
+      justify-self: stretch;
+      gap: 2px;
+      line-height: 1.15;
+      text-align: right;
+      width: 100%;
+    }
+
+    .amount-with-discount em,
+    .amount-with-discount small {
+      align-self: flex-end;
+      display: block;
+    }
+
+    .amount-with-discount em {
+      font-style: normal;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .amount-with-discount small {
+      color: var(--active);
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .diff-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 14px 10px;
+      color: #333;
+      font-size: 15px;
+      line-height: 24px;
+    }
+
+    .diff-value {
+      margin-bottom: 14px;
+      color: var(--success);
+      font-size: 30px;
+      font-weight: 800;
+    }
+
+    .diff-value.warning {
+      color: var(--active);
+    }
+
+    .fee-tax-note {
+      margin-top: 10px;
+      color: #666;
+      font-size: 12px;
+      line-height: 18px;
+      text-align: right;
+    }
+
+    .fee-panel {
+      position: relative;
+    }
+
+    .fee-scheme-content {
+      display: none;
+    }
+
+    .fee-scheme-content.active {
+      display: block;
+    }
+
+    .notice {
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 12px;
+      padding: 8px 14px;
+      border-radius: var(--radius);
+      background: #fff4f0;
+      color: var(--danger);
+      font-size: 12px;
+      line-height: 17px;
+    }
+
+    .notice.is-hidden {
+      display: none;
+    }
+
+    .notice-main {
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+    }
+
+    .notice-main > div {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 18px;
+    }
+
+    .notice-icon {
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 18px;
+      border-radius: 50%;
+      background: var(--danger);
+      color: #fff;
+      font-weight: 800;
+      line-height: 18px;
+    }
+
+    .notice-close {
+      width: 22px;
+      height: 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      background: transparent;
+      padding: 0;
+      color: var(--danger);
+      font-size: 16px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .notice-restore-button {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 50%;
+      background: var(--danger);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .notice-restore-button.is-hidden {
+      display: none;
+    }
+
+    .fee-overview-cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .fee-overview-card {
+      min-height: 76px;
+      border: 1px solid #d8dee8;
+      border-radius: 4px;
+      padding: 10px;
+      background: #fff;
+    }
+
+    .fee-overview-card.primary {
+      border-color: #f0bbbb;
+      background: #fff7f7;
+    }
+
+    .fee-overview-card-title {
+      margin-bottom: 6px;
+      color: #25364f;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .fee-overview-card-value {
+      color: #111;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 22px;
+      white-space: nowrap;
+    }
+
+    .fee-overview-card.primary .fee-overview-card-value,
+    .fee-overview-card-value.saving {
+      color: var(--active);
+    }
+
+    .fee-overview-card-desc {
+      margin-top: 6px;
+      color: #606b78;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    .fee-overview-table-wrap {
+      overflow-x: auto;
+      margin-bottom: 12px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+    }
+
+    .fee-overview-table,
+    .fee-compare-table,
+    .fee-summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      background: #fff;
+      color: #111;
+      font-size: 12px;
+    }
+
+    .fee-overview-table {
+      min-width: 1260px;
+    }
+
+    .fee-compare-table {
+      min-width: 900px;
+    }
+
+    .fee-summary-table.wide {
+      min-width: 1120px;
+    }
+
+    .fee-overview-table th,
+    .fee-overview-table td,
+    .fee-compare-table th,
+    .fee-compare-table td,
+    .fee-summary-table th,
+    .fee-summary-table td {
+      min-height: 38px;
+      padding: 9px 10px;
+      border-right: 1px solid var(--line-soft);
+      border-bottom: 1px solid var(--line-soft);
+      line-height: 18px;
+      vertical-align: middle;
+    }
+
+    .fee-overview-table th,
+    .fee-overview-table .subhead-cell,
+    .fee-compare-table th {
+      background: #e1e5ed;
+      color: var(--main);
+      font-weight: 800;
+    }
+
+    .fee-summary-table th {
+      background: #f6f7fb;
+      color: var(--main);
+      font-weight: 800;
+      text-align: left;
+    }
+
+    .fee-overview-table .store-name,
+    .fee-total-table .total-name {
+      background: #f6f7fb;
+      color: var(--main);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .fee-overview-table .amount,
+    .fee-compare-table .amount,
+    .fee-summary-table .amount {
+      text-align: right;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .fee-overview-table .saving-cell,
+    .fee-summary-table .saving-cell,
+    .fee-summary-table .saving,
+    .fee-compare-table .saving {
+      color: var(--active);
+      font-weight: 800;
+      background: #fff8f8;
+    }
+
+    .fee-overview-table .saving-cell small,
+    .fee-summary-table .saving-cell small {
+      display: block;
+      margin-top: 4px;
+      color: #777;
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 16px;
+    }
+
+    .fee-overview-table .detail-button,
+    .fee-summary-table .detail-button,
+    .detail-button,
+    .freight-detail-button {
+      min-width: 74px;
+      height: 30px;
+      border: 0;
+      border-radius: 4px;
+      background: var(--main);
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .fee-compare-store,
+    .fee-summary-card {
+      margin-bottom: 12px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .fee-compare-head {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(4, minmax(120px, 1fr));
+      border-bottom: 1px solid var(--line);
+      background: #f8fafc;
+    }
+
+    .fee-compare-head > div {
+      min-height: 54px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+      padding: 8px 12px;
+      border-right: 1px solid var(--line-soft);
+    }
+
+    .fee-compare-head span {
+      color: #6b7280;
+      font-size: 12px;
+    }
+
+    .fee-compare-head strong {
+      color: #111;
+      font-size: 15px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .fee-compare-head .saving,
+    .fee-compare-table .increase {
+      color: #9a5b00;
+      font-weight: 800;
+    }
+
+    .fee-compare-head .saving,
+    .fee-compare-table .saving {
+      color: var(--active);
+    }
+
+    .fee-summary-full {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .fee-summary-title {
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 0 12px;
+      border-bottom: 1px solid var(--line);
+      background: #e1e5ed;
+      color: var(--main);
+      font-weight: 800;
+    }
+
+    .fee-summary-title strong {
+      color: var(--active);
+      font-size: 16px;
+    }
+
+    .fee-total-table {
+      min-width: 980px;
+    }
+
+    .fee-total-table .total-desc {
+      text-align: left;
+      color: #334155;
+      font-weight: 700;
+    }
+
+    .freight-detail-button {
+      min-width: 74px;
+      height: 24px;
+      margin-left: 6px;
+      padding: 0 8px;
+      border-radius: 4px !important;
+      font-size: 12px;
+    }
+
+    .quantity-table {
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+
+    .quantity-head,
+    .quantity-row {
+      min-width: 1180px;
+      display: grid;
+      grid-template-columns: repeat(11, 1fr);
+    }
+
+    .quantity-head {
+      background: #e1e5ed;
+      font-weight: 800;
+    }
+
+    .quantity-head div,
+    .quantity-row div {
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 8px;
+      border-right: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .quantity-row div {
+      background: #fff;
+      border-top: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    .quantity-head div:last-child,
+    .quantity-row div:last-child {
+      border-right: 0;
+    }
+
+    .product-table {
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      border-radius: 4px 4px 0 0;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .product-inner {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .table-head,
+    .sku-row {
+      display: grid;
+      grid-template-columns: 16.8% 17% 12.2% 10.6% 10.6% 10.6% 11.5% 10.7%;
+    }
+
+    .table-head {
+      height: 40px;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background: #e1e5ed;
+    }
+
+    .th,
+    .td {
+      min-width: 0;
+      border-right: 1px solid var(--line);
+    }
+
+    .th {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 6px;
+      color: #111;
+      font-size: 14px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .th:last-child,
+    .td:last-child {
+      border-right: 0;
+    }
+
+    .shop-row {
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 0 10px;
+      border-bottom: 1px solid var(--line);
+      background: #f6f7fb;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .shop-left,
+    .shop-money {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .shop-money {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .shop-row img {
+      width: 20px;
+      height: 20px;
+      border-radius: 3px;
+    }
+
+    .money-mini {
+      display: inline-flex;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .money-mini span:first-child {
+      padding: 3px 8px;
+      background: #e1e5ed;
+    }
+
+    .money-mini span:last-child {
+      padding: 3px 8px;
+      background: #fff;
+    }
+
+    .money-mini.discount span:last-child {
+      color: var(--active);
+      font-weight: 800;
+    }
+
+    .sku-row {
+      min-height: 154px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .sku-row:last-child {
+      border-bottom: 0;
+    }
+
+    .td {
+      min-height: 154px;
+      display: flex;
+      align-items: flex-start;
+      padding: 8px;
+      font-size: 13px;
+      line-height: 21px;
+    }
+
+    .product-info {
+      display: flex;
+      gap: 8px;
+      min-width: 0;
+      width: 100%;
+    }
+
+    .product-img {
+      width: 54px;
+      height: 78px;
+      flex: 0 0 54px;
+      border: 1px solid #e2edf8;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-copy {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .product-title {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #111;
+      font-size: 13px;
+    }
+
+    .product-id {
+      display: inline-flex;
+      margin: 6px 0;
+      padding: 1px 6px;
+      border-radius: 4px;
+      background: #f0f0f0;
+      color: #999;
+      font-size: 12px;
+    }
+
+    .sku-meta {
+      color: #666;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .spec-stack {
+      display: block;
+      width: 100%;
+      padding-top: 2px;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .status-line {
+      width: 100%;
+      min-height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 7px;
+      border: 1px solid #cbd5e4;
+      border-radius: 4px;
+      background: #eef3fb;
+      color: var(--main);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .status-line.success {
+      border-color: #d8e9ce;
+      background: var(--success-bg);
+      color: var(--success);
+    }
+
+    .data-stack {
+      width: 100%;
+    }
+
+    .data-row {
+      min-height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 5px;
+      margin-top: 7px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #f6f7fb;
+      line-height: 20px;
+    }
+
+    .data-row:first-child {
+      margin-top: 0;
+    }
+
+    .data-row.warning {
+      background: var(--danger-bg);
+      color: var(--active);
+    }
+
+    .data-row.changed-old {
+      color: #888;
+      font-weight: 400;
+    }
+
+    .data-row.changed-old span,
+    .data-row.changed-old strong {
+      font-weight: 400;
+    }
+
+    .data-row .changed-old-value {
+      color: #555d68;
+      font-weight: 400;
+      text-decoration-line: line-through;
+      text-decoration-thickness: 2px;
+      text-decoration-color: #4b5563;
+      text-decoration-skip-ink: none;
+    }
+
+    .data-row strong {
+      min-width: 34px;
+      text-align: right;
+      font-weight: 700;
+    }
+
+    .data-row span {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .remark-box {
+      width: 100%;
+      min-height: 132px;
+      padding: 6px;
+      border-radius: 4px;
+      background: #fff;
+      color: #222;
+      overflow: hidden;
+    }
+
+    .remark-reply {
+      color: var(--active);
+      margin-bottom: 8px;
+      overflow-wrap: anywhere;
+    }
+
+    .remark-user {
+      padding: 4px 5px;
+      background: #efefef;
+      line-height: 20px;
+      overflow-wrap: anywhere;
+    }
+
+    .add-on-box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      padding-top: 2px;
+    }
+
+    .add-on-main {
+      width: min(104px, 100%);
+      border-radius: 4px;
+      overflow: hidden;
+      text-align: center;
+      border: 1px solid #d8e9ce;
+      background: #fff;
+    }
+
+    .add-on-name {
+      padding: 5px;
+      background: #6b9f5b;
+      color: #fff;
+      font-size: 13px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .add-on-count {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      color: #555;
+    }
+
+    .add-on-count strong {
+      color: var(--active);
+    }
+
+    .report-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .icon-btn {
+      width: 28px;
+      height: 28px;
+      border: 1px solid #d6e4d1;
+      border-radius: 4px;
+      background: #f1f7ef;
+      color: var(--success);
+      font-weight: 800;
+    }
+
+    .missing-action {
+      color: #ff4000;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+      overflow-wrap: anywhere;
+    }
+
+    .detail-footer {
+      position: fixed;
+      left: var(--sidebar);
+      right: 0;
+      bottom: 0;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 0 30px;
+      background: #fff;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.12);
+      z-index: 4;
+    }
+
+    .detail-footer .right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0;
+      background: rgba(15, 23, 42, 0.42);
+      z-index: 20;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-card {
+      width: 760px;
+      max-width: calc(100vw - 42px);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      border-radius: 0;
+      background: #fff;
+      box-shadow: -18px 0 40px rgba(15, 23, 42, 0.22);
+      overflow: hidden;
+    }
+
+    .modal-head {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      border-bottom: 1px solid var(--line-soft);
+      font-size: 16px;
+      font-weight: 800;
+      background: #fff;
+    }
+
+    .modal-close {
+      width: 30px;
+      height: 30px;
+      border: 0;
+      border-radius: 50%;
+      background: #eef1f6;
+      color: #344054;
+      font-size: 18px;
+      line-height: 26px;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      flex: 1;
+      overflow: auto;
+      padding: 16px 18px 24px;
+      background: #f7f8fb;
+      font-size: 13px;
+      line-height: 22px;
+    }
+
+    .modal-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    .modal-table th,
+    .modal-table td {
+      height: 34px;
+      border: 1px solid var(--line);
+      text-align: center;
+      padding: 0 8px;
+    }
+
+    .modal-table th {
+      background: #e1e5ed;
+      color: var(--main);
+    }
+
+    .modal-table th:first-child,
+    .modal-table td:first-child {
+      text-align: left;
+    }
+
+    .drawer-subtitle {
+      margin-top: 4px;
+      color: #667085;
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    .drawer-hero {
+      display: grid;
+      grid-template-columns: 1.25fr repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .drawer-store-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .drawer-store-stat-card {
+      min-height: 66px;
+      padding: 10px 12px;
+      border: 1px solid #d8dee8;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .drawer-store-stat-title {
+      grid-column: 1 / -1;
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      padding: 8px 12px;
+      border: 1px solid #d8dee8;
+      border-radius: 4px;
+      background: #eef2f7;
+      color: var(--main);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .drawer-store-stat-card > span {
+      display: block;
+      color: #667085;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .drawer-store-stat-card strong {
+      display: block;
+      margin-top: 6px;
+      color: #111;
+      font-size: 18px;
+      line-height: 22px;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .drawer-store-stat-card strong .fee-money {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: baseline;
+    }
+
+    .drawer-store-stat-card.saving {
+      border-color: var(--active-line);
+      background: var(--active-soft);
+    }
+
+    .drawer-store-stat-card.saving strong {
+      color: var(--active);
+    }
+
+    .drawer-store-stat-card.saving .fee-num,
+    .drawer-store-stat-card.saving .fee-unit {
+      color: var(--active);
+      opacity: 1;
+    }
+
+    .drawer-hero-card {
+      min-height: 86px;
+      padding: 12px;
+      border: 1px solid #d8dee8;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .drawer-hero-card.primary {
+      border-color: #efc0c0;
+      background: #fff6f6;
+    }
+
+    .drawer-hero-label {
+      color: #344054;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .drawer-hero-value {
+      margin-top: 7px;
+      color: #111;
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 26px;
+      white-space: nowrap;
+    }
+
+    .drawer-hero-card.primary .drawer-hero-value,
+    .drawer-saving {
+      color: var(--active);
+    }
+
+    .drawer-hero-note,
+    .drawer-product-price-desc,
+    .drawer-source-note {
+      margin-top: 5px;
+      color: #667085;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    .drawer-process,
+    .drawer-product-prices {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .drawer-process-item,
+    .drawer-mini-item,
+    .drawer-product-price-card {
+      padding: 10px;
+      border: 1px solid #e3e8f0;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .drawer-process-item span,
+    .drawer-mini-item span,
+    .drawer-product-price-label {
+      display: block;
+      color: #667085;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .drawer-process-item strong,
+    .drawer-mini-item strong {
+      display: block;
+      margin-top: 4px;
+      color: #111;
+      font-size: 15px;
+      line-height: 20px;
+    }
+
+    .drawer-saving-formula {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin: -4px 0 14px;
+      padding: 10px 12px;
+      border: 1px solid #f0bbbb;
+      border-radius: 4px;
+      background: #fff6f6;
+      color: #344054;
+      line-height: 20px;
+    }
+
+    .drawer-saving-formula strong {
+      color: var(--active);
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    .drawer-section {
+      margin-top: 12px;
+      border: 1px solid #dbe2ec;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .drawer-section-head {
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      background: #eef2f7;
+      color: var(--main);
+      font-weight: 800;
+    }
+
+    .drawer-section-head small {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 4px;
+      color: #667085;
+      font-weight: 600;
+    }
+
+    .drawer-section-body {
+      padding: 12px;
+    }
+
+    .drawer-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .drawer-product-price-card.result {
+      border-color: #efc0c0;
+      background: #fff6f6;
+    }
+
+    .drawer-product-price-value {
+      margin-top: 8px;
+      color: #111;
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 26px;
+      white-space: nowrap;
+    }
+
+    .drawer-product-price-card.result .drawer-product-price-value {
+      color: var(--active);
+    }
+
+    .drawer-line-table,
+    .drawer-compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      color: #111;
+      font-size: 12px;
+    }
+
+    .drawer-line-table th,
+    .drawer-line-table td,
+    .drawer-compare-table th,
+    .drawer-compare-table td {
+      min-height: 34px;
+      padding: 9px 8px;
+      border: 1px solid #e1e5ed;
+      text-align: left;
+      vertical-align: middle;
+      line-height: 18px;
+    }
+
+    .drawer-line-table th,
+    .drawer-compare-table th {
+      background: #f3f6fa;
+      color: var(--main);
+      font-weight: 800;
+    }
+
+    .drawer-line-table .amount,
+    .drawer-compare-table .amount {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .drawer-line-table .fee-money,
+    .drawer-compare-table .fee-money,
+    .drawer-store-stat-card .fee-money,
+    .modal-table .fee-money {
+      justify-content: flex-end;
+    }
+
+    .drawer-line-table .fee-money .fee-num,
+    .drawer-compare-table .fee-money .fee-num,
+    .modal-table .fee-money .fee-num {
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .drawer-line-table .fee-money .fee-unit,
+    .drawer-compare-table .fee-money .fee-unit,
+    .modal-table .fee-money .fee-unit {
+      font-size: 10px;
+      font-weight: 700;
+      opacity: 0.72;
+    }
+
+    .drawer-store-stat-card .fee-money .fee-num {
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .drawer-store-stat-card .fee-money .fee-unit,
+    .drawer-section-head .fee-money .fee-unit {
+      font-size: 10px;
+      font-weight: 700;
+      opacity: 0.72;
+    }
+
+    .drawer-other-group + .drawer-other-group {
+      margin-top: 12px;
+    }
+
+    .drawer-other-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 30px;
+      padding: 0 10px;
+      border: 1px solid #e1e5ed;
+      border-bottom: 0;
+      background: #f8fafc;
+      color: var(--main);
+      font-weight: 800;
+    }
+
+    .drawer-line-table th:first-child,
+    .drawer-line-table td:first-child,
+    .drawer-compare-table th:first-child,
+    .drawer-compare-table td:first-child {
+      text-align: left;
+    }
+
+    .drawer-line-table.compact-detail-table col:first-child {
+      width: 34%;
+    }
+
+    .drawer-help-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .drawer-help-text {
+      min-width: 0;
+      text-align: left;
+    }
+
+    .drawer-help {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #d8e0eb;
+      color: #334155;
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1;
+      cursor: help;
+      flex: 0 0 auto;
+      outline: none;
+    }
+
+    .drawer-help::after {
+      content: attr(data-tip);
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% + 8px);
+      z-index: 30;
+      width: max-content;
+      max-width: 280px;
+      min-width: 160px;
+      padding: 7px 9px;
+      border-radius: 4px;
+      background: #111827;
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, .22);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      text-align: left;
+      white-space: normal;
+      transform: translate(-50%, 4px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .12s ease, transform .12s ease;
+    }
+
+    .drawer-help::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% + 3px);
+      z-index: 31;
+      width: 8px;
+      height: 8px;
+      background: #111827;
+      transform: translate(-50%, 4px) rotate(45deg);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .12s ease, transform .12s ease;
+    }
+
+    .drawer-help:hover::after,
+    .drawer-help:focus::after {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    .drawer-help:hover::before,
+    .drawer-help:focus::before {
+      opacity: 1;
+      transform: translate(-50%, 0) rotate(45deg);
+    }
+
+    @media (max-width: 900px) {
+      body {
+        overflow: auto;
+      }
+
+      .app {
+        min-width: 0;
+        height: auto;
+      }
+
+      .topbar {
+        height: auto;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 8px;
+      }
+
+      .modal-card {
+        width: 100vw;
+        max-width: 100vw;
+      }
+
+      .drawer-hero,
+      .drawer-store-stats,
+      .drawer-process,
+      .drawer-mini-grid,
+      .drawer-product-prices {
+        grid-template-columns: 1fr;
+      }
+
+      .brand img {
+        width: 170px;
+        height: 36px;
+      }
+
+      .top-actions {
+        width: 100%;
+        overflow-x: auto;
+        gap: 8px;
+      }
+
+      .workspace {
+        display: block;
+        height: auto;
+      }
+
+      .sidebar {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+        padding: 8px;
+      }
+
+      .nav-section {
+        flex: 0 0 auto;
+      }
+
+      .sub-row:not(.active),
+      .nav-row .chev {
+        display: none;
+      }
+
+      .page {
+        padding: 0 10px 95px;
+      }
+
+      .order-head,
+      .panel-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .cost-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-footer {
+        left: 0;
+        padding: 0 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="ui-standard-frontstage.css" />
+  <style>
+    .fee-panel .collapsed-cost-summary .summary-chip {
+      height: 32px;
+      min-height: 32px;
+      font-size: 12px;
+    }
+
+    .fee-panel .collapsed-cost-summary .summary-chip > span:first-child,
+    .fee-panel .collapsed-cost-summary .summary-chip strong {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      line-height: 1;
+    }
+
+    .fee-panel .panel-actions .fee-detail-button.detail-button {
+      min-width: 74px;
+      height: 24px;
+      padding: 0 8px;
+      border-radius: 4px !important;
+      font-size: 12px;
+    }
+
+    #productRows .shop-money .freight-detail-button.detail-button {
+      border-radius: 4px !important;
+    }
+
+    .drawer-store-stat-card.saving {
+      border-color: var(--active-line) !important;
+      background: #FFF6F6 !important;
+    }
+
+    .drawer-store-stat-card.saving strong,
+    .drawer-store-stat-card.saving .fee-num,
+    .drawer-store-stat-card.saving .fee-unit {
+      color: var(--active) !important;
+      opacity: 1 !important;
+    }
+
+    .drawer-store-stat-card > span {
+      display: block;
+      color: #667085 !important;
+      font-size: 12px !important;
+      font-weight: 700 !important;
+    }
+
+    .drawer-store-stat-card strong .fee-money {
+      display: inline-flex !important;
+      flex-direction: row;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .drawer-store-stat-card .fee-money .fee-num {
+      display: inline !important;
+      font-size: 15px !important;
+      font-weight: 900 !important;
+    }
+
+    .drawer-store-stat-card .fee-money .fee-unit {
+      display: inline !important;
+      font-size: 10px !important;
+      font-weight: 700 !important;
+      opacity: 0.72;
+    }
+
+    .drawer-store-stat-card.saving .fee-unit {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <img src="../../../../user-b2b-view/src/assets/img/user/header/logo.png" alt="樱花代行 Hubbuyer B2B">
+        <button class="menu-toggle" type="button" aria-label="折叠菜单"><span></span></button>
+      </div>
+      <div class="top-actions" aria-label="顶部工具">
+        <span class="top-pill">营业日</span>
+        <span class="top-pill">中文</span>
+        <span class="top-pill">
+          <img src="../../../../user-b2b-view/src/assets/img/header/headerCHN.png" alt="中国">
+          1 CNY =
+          <img src="../../../../user-b2b-view/src/assets/img/header/heaaderJP.png" alt="日本">
+          24.68 JPY
+        </span>
+        <span class="avatar"><img src="../../../../user-b2b-view/src/assets/img/header/headerRight-yyr.png" alt="">JPN8</span>
+        <span class="logout">退出登录</span>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <aside class="sidebar" aria-label="会员中心导航">
+        <div class="nav-section">
+          <div class="nav-row">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+            会员中心
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-row">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg></span>
+            重要任务...
+            <span class="chev">›</span>
+          </div>
+        </div>
+        <div class="nav-section">
+          <a class="nav-row" href="购物车页面.html">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg></span>
+            我的购物车
+            <span class="chev">›</span>
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-row">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></span>
+            B2B代购...
+            <span class="chev">›</span>
+          </div>
+          <a class="sub-row" href="报价单详情页.html">报价单列表</a>
+          <a class="sub-row active" href="订单详情页.html">订单历史</a>
+          <div class="sub-row">全部商品</div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-row">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 7h18v10H3z"/><path d="M7 7V4h10v3"/></svg></span>
+            配送管理
+            <span class="chev">›</span>
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-row">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+            资金管理
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-row">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l2.4 5 5.5.8-4 3.9.9 5.5L12 14.5 7.1 17.2l.9-5.5-4-3.9 5.5-.8z"/></svg></span>
+            推荐商品
+            <span class="chev">›</span>
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-row">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
+            收藏商品...
+            <span class="chev">›</span>
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-row">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+            我的足迹
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-row">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.6V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.6-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3h.1a1.7 1.7 0 0 0 1-1.6V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.6h.1a1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8v.1a1.7 1.7 0 0 0 1.6 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.6 1z"/></svg></span>
+            设置
+            <span class="chev">›</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="page">
+        <div class="content">
+          <div class="breadcrumb">
+            <span>B2B代购管理</span>
+            <span>›</span>
+            <strong>订单详情</strong>
+          </div>
+
+          <section class="order-head" aria-label="订单基础信息">
+            <div class="order-head-left">
+              <span class="status-tag">已清算</span>
+              <div class="order-meta"><span class="muted">订单编号:</span><span class="order-no">B2B-O-JPN8-260609-006</span><span class="copy">□</span></div>
+              <div class="order-meta"><span class="muted">支付时间:</span><span>2026-06-09 12:06</span></div>
+              <div class="order-meta"><span class="muted">订单支付金额:</span><strong>13020.00 CNY</strong><span class="muted">(含服务费：390.60 CNY)</span></div>
+            </div>
+            <div class="head-actions">
+              <button class="notice-restore-button is-hidden" type="button" id="noticeRestoreBtn" aria-label="显示清算透明提示" title="显示清算透明提示">!</button>
+              <button class="btn primary" type="button" id="resubmitBtn">再提交</button>
+              <button class="btn outline" type="button">订单下载</button>
+            </div>
+          </section>
+
+          <section class="notice" id="settlementNotice" aria-label="Hubbuyer清算透明承诺">
+            <div class="notice-main">
+              <span class="notice-icon">!</span>
+              <div>
+                <div>Hubbuyer不收取任何商品差价！ 清算费用完全透明，中国代采就找Hubbuyer！</div>
+              </div>
+            </div>
+            <button class="notice-close" type="button" id="noticeCloseBtn" aria-label="关闭清算透明提示">×</button>
+          </section>
+
+          <section class="panel fee-panel" aria-label="费用一览">
+            <div class="panel-head">
+              <div class="panel-title">费用一览</div>
+              <div class="summary-chips collapsed-cost-summary" aria-label="费用一览收起摘要">
+                <span class="summary-chip"><span>报价单支付金额</span><strong><span class="fee-money"><span class="fee-num">13020.00</span><span class="fee-unit">CNY</span></span></strong></span>
+                <span class="summary-chip"><span>实际清算金额</span><strong><span class="fee-money"><span class="fee-num">13045.03</span><span class="fee-unit">CNY</span></span></strong></span>
+                <span class="summary-chip warning"><span>订单差额</span><strong><span class="fee-money"><span class="fee-num">-25.03</span><span class="fee-unit">CNY</span></span></strong></span>
+                <span class="summary-chip warning"><span>HUBBUYER为您节省</span><strong><span class="fee-money"><span class="fee-num">928.87</span><span class="fee-unit">CNY</span></span></strong></span>
+              </div>
+              <div class="panel-actions">
+                <button class="fee-detail-button detail-button" type="button" data-fee-store="order">订单明细</button>
+                <button class="btn warning" type="button" id="toggleCost">收起⌃</button>
+              </div>
+            </div>
+            <div id="costContent">
+              <div class="fee-scheme-content active" id="scheme1">
+              <div class="cost-grid">
+                <div class="cost-card">
+                  <div class="cost-card-head"><span>报价单支付金额</span><span class="fee-money"><span class="fee-num">13020.00</span><span class="fee-unit">CNY</span></span></div>
+                  <div class="cost-row"><span>商品金额</span><strong><span class="fee-money"><span class="fee-num">12350.24</span><span class="fee-unit">CNY</span></span></strong></div>
+                  <div class="cost-row"><span>预估国内运费</span><strong><span class="fee-money"><span class="fee-num">270.00</span><span class="fee-unit">CNY</span></span></strong></div>
+                  <div class="cost-row"><span>预估检品费用</span><strong><span class="fee-money"><span class="fee-num">120.00</span><span class="fee-unit">CNY</span></span></strong></div>
+                  <div class="cost-row"><span>预估附加项费用</span><strong><span class="fee-money"><span class="fee-num">170.00</span><span class="fee-unit">CNY</span></span></strong></div>
+                  <div class="cost-row"><span>预估手续费</span><strong><span class="fee-money"><span class="fee-num">90.00</span><span class="fee-unit">CNY</span></span></strong></div>
+                  <div class="cost-row"><span>其他费用</span><strong><span class="fee-money"><span class="fee-num">0.00</span><span class="fee-unit">CNY</span></span></strong></div>
+                </div>
+                <div class="cost-card">
+                  <div class="cost-card-head"><span>实际清算金额</span><span class="fee-money"><span class="fee-num">13045.03</span><span class="fee-unit">CNY</span></span></div>
+                  <div class="cost-row"><span>正品金额</span><strong><span class="fee-money"><span class="fee-num">11600.00</span><span class="fee-unit">CNY</span></span></strong></div>
+                  <div class="cost-row"><span>实际国内运费</span><strong><span class="fee-money"><span class="fee-num">145.00</span><span class="fee-unit">CNY</span></span></strong></div>
+                  <div class="cost-row"><span>实际检品费用</span><strong><span class="fee-money"><span class="fee-num">160.00</span><span class="fee-unit">CNY</span></span></strong></div>
+                  <div class="cost-row"><span>实际附加项费用</span><strong><span class="fee-money"><span class="fee-num">390.00</span><span class="fee-unit">CNY</span></span></strong></div>
+                  <div class="cost-row"><span>实际手续费</span><strong><span class="fee-money"><span class="fee-num">300.00</span><span class="fee-unit">CNY</span></span></strong></div>
+                  <div class="cost-row"><span>其他费用</span><strong><span class="fee-money"><span class="fee-num">450.03</span><span class="fee-unit">CNY</span></span></strong></div>
+                </div>
+                <div class="cost-card">
+                  <div class="cost-card-head warning"><span>订单差额</span><span class="fee-money"><span class="fee-num">-25.03</span><span class="fee-unit">CNY</span></span></div>
+                  <div class="diff-card">
+                    <div>（订单差额 = 报价单支付金额 - 实际清算金额）</div>
+                    <div class="muted">多退少补，账单可以资金管理查看。</div>
+                  </div>
+                </div>
+                <div class="cost-card saving-card">
+                  <div class="cost-card-head saving"><span>HUBBUYER为您节省</span><span class="fee-money"><span class="fee-num">928.87</span><span class="fee-unit">CNY</span></span></div>
+                  <div class="cost-row"><span>商品金额节省</span><strong class="saving-amount"><span class="fee-money"><span class="fee-num">750.24</span><span class="fee-unit">CNY</span></span></strong></div>
+                  <div class="cost-row"><span>人工交涉节省</span><strong class="saving-amount"><span class="fee-money"><span class="fee-num">178.63</span><span class="fee-unit">CNY</span></span></strong></div>
+                  <div class="cost-row"><span>手续费节省</span><strong class="saving-amount"><span class="fee-money"><span class="fee-num">25.83</span><span class="fee-unit">CNY</span></span></strong></div>
+                  <div class="diff-card">
+                    <div class="muted">人工交涉节省：商品采购时和1688商家的还价、国内物流沟通后的降价以及店铺沟通后的整单返利等合计费用！</div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" aria-label="数量一览">
+            <div class="panel-head">
+              <div class="panel-title">数量一览</div>
+            </div>
+            <div class="quantity-table">
+              <div class="quantity-head">
+                <div>下单数</div>
+                <div>变动数</div>
+                <div>购入数</div>
+                <div>到货数</div>
+                <div>正品数</div>
+                <div>不良数</div>
+                <div>退货数</div>
+                <div>换货数</div>
+                <div>入库数</div>
+                <div>发货数</div>
+                <div>在库数</div>
+              </div>
+              <div class="quantity-row">
+                <div>18</div>
+                <div>17</div>
+                <div>17</div>
+                <div>16</div>
+                <div>15</div>
+                <div>1</div>
+                <div>1</div>
+                <div>0</div>
+                <div>15</div>
+                <div>6</div>
+                <div>9</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="product-table" aria-label="订单商品明细">
+            <div class="product-inner">
+              <div class="table-head">
+                <div class="th">商品</div>
+                <div class="th">规格</div>
+                <div class="th">价格 (CNY)</div>
+                <div class="th">商品数据</div>
+                <div class="th">质检数据</div>
+                <div class="th">仓库数据</div>
+                <div class="th">备注</div>
+                <div class="th">附加项</div>
+              </div>
+              <div id="productRows"></div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <footer class="detail-footer">
+      <a class="btn outline" href="报价单列表页.html">返回报价单列表</a>
+      <div class="right">
+        <span class="muted">可再提交商品：12 件</span>
+        <button class="btn outline" type="button">下载订单</button>
+        <button class="btn primary" type="button">再提交</button>
+      </div>
+    </footer>
+  </div>
+
+      <div class="modal" id="feeModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-label="费用明细">
+      <div class="modal-head">
+        <div>
+          <span id="feeTitle">费用明细</span>
+          <div class="drawer-subtitle" id="feeSubtitle">按店铺展示报价单与实际清算差异</div>
+        </div>
+        <button class="modal-close" type="button" id="feeClose" aria-label="关闭">×</button>
+      </div>
+      <div class="modal-body" id="feeBody"></div>
+    </div>
+  </div>
+
+  <script src="../页面素材文件夹/00-商品数据快速引用.js"></script>
+  <script>
+    const products = (window.HUBBUYER_FAST_PRODUCT_DATA && window.HUBBUYER_FAST_PRODUCT_DATA.products) || [];
+
+    const shops = [
+      {
+        seller: "广州织语服饰",
+        feeKey: "guangzhou",
+        platform: "1688",
+        originalGoodsAmount: "8740.24",
+        genuineTotalAmount: "8240.00",
+        discountAmount: "500.24",
+        domesticAmount: "48.00",
+        items: [
+          {
+            productIndex: 0,
+            uuid: "B000007401",
+            customSku: "SK-2186-M",
+            asin: "B0JPN2606",
+            fnsku: "X004JPN86",
+            spec: ["颜色: 2186 月光灰", "尺码: 6/M"],
+            status: "已入库",
+            success: true,
+            price: "44.00",
+            changePrice: "",
+            goodsFee: "792.00",
+            quantity: 18,
+            changeQuantity: 18,
+            purchaseQty: 18,
+            arriveQty: 17,
+            genuineQty: 16,
+            badQty: 1,
+            returnQty: 1,
+            exchangeQty: 0,
+            storeQty: 16,
+            sendQty: 6,
+            inStockQty: 10,
+            reply: "已按下单规格核对，1件轻微污点已转问题商品。",
+            remark: "出库前保留吊牌，包装破损时请拍照反馈。",
+            checkName: "标准检品",
+            addOnCount: 4,
+            reports: ["商品报告", "量尺寸", "问题商品"],
+            missing: ["未提供FBA贴标"]
+          },
+          {
+            productIndex: 1,
+            uuid: "B000007400",
+            customSku: "SK-2186-S",
+            asin: "--",
+            fnsku: "--",
+            spec: ["颜色: 2186 月光灰", "尺码: 4/S"],
+            status: "已采购",
+            success: true,
+            price: "44.00",
+            changePrice: "42.00",
+            goodsFee: "168.00",
+            quantity: 4,
+            changeQuantity: 4,
+            purchaseQty: 4,
+            arriveQty: 4,
+            genuineQty: 4,
+            badQty: 0,
+            returnQty: 0,
+            exchangeQty: 0,
+            storeQty: 4,
+            sendQty: 0,
+            inStockQty: 4,
+            reply: "",
+            remark: "同批货源优先，允许轻微色差。",
+            checkName: "外观检品",
+            addOnCount: 2,
+            reports: ["商品报告"],
+            missing: []
+          }
+        ]
+      },
+      {
+        seller: "峻知服饰工厂",
+        feeKey: "junzhi",
+        platform: "1688",
+        originalGoodsAmount: "4210.00",
+        genuineTotalAmount: "3960.00",
+        discountAmount: "250.00",
+        domesticAmount: "33.00",
+        items: [
+          {
+            productIndex: 2,
+            uuid: "B000007399",
+            customSku: "NATURAL-FREE",
+            asin: "--",
+            fnsku: "--",
+            spec: ["颜色: 亚麻自然色", "尺码: 均码"],
+            status: "作业中",
+            success: false,
+            price: "39.00",
+            changePrice: "",
+            goodsFee: "273.00",
+            quantity: 7,
+            changeQuantity: 7,
+            purchaseQty: 7,
+            arriveQty: 6,
+            genuineQty: 6,
+            badQty: 0,
+            returnQty: 0,
+            exchangeQty: 0,
+            storeQty: 6,
+            sendQty: 0,
+            inStockQty: 6,
+            reply: "",
+            remark: "需要简单检品，面料抽丝时拍照确认。",
+            checkName: "简单检品",
+            addOnCount: 3,
+            reports: ["量尺寸"],
+            missing: ["未提供水洗唛"]
+          },
+          {
+            productIndex: 3,
+            uuid: "B000007398",
+            customSku: "BLACK-L",
+            asin: "B0BLACK2606",
+            fnsku: "X004BLK86",
+            spec: ["颜色: 黑色", "尺码: L"],
+            status: "已发完",
+            success: true,
+            price: "58.00",
+            changePrice: "",
+            goodsFee: "580.00",
+            quantity: 10,
+            changeQuantity: 10,
+            purchaseQty: 10,
+            arriveQty: 10,
+            genuineQty: 10,
+            badQty: 0,
+            returnQty: 0,
+            exchangeQty: 0,
+            storeQty: 10,
+            sendQty: 10,
+            inStockQty: 0,
+            reply: "已完成打包发出。",
+            remark: "--",
+            checkName: "精细检品",
+            addOnCount: 5,
+            reports: ["商品报告", "量尺寸"],
+            missing: []
+          }
+        ]
+      }
+    ];
+
+    const feeDetails = {
+      order: {
+        title: "订单费用明细",
+        scopeTitle: "订单统计",
+        savingLabel: "本单为你节省",
+        quote: "13020.00",
+        actual: "13045.03",
+        diff: "应补 25.03",
+        saving: "928.87",
+        productSaving: "750.24",
+        negotiationSaving: "178.63",
+        product: {
+          ordered: "232 件",
+          genuine: "218 件",
+          returnAmount: "0.00",
+          outAmount: "290.00",
+          originalAmount: "12350.24",
+          memberAmount: "11600.00",
+          saving: "750.24"
+        },
+        freight: {
+          final: "145.00",
+          rows: [
+            ["预估国内运费", "1688商家提供", "270.00"],
+            ["实际运费", "3 家店铺实际发货后确认", "145.00"],
+            ["退还货运费", "缺货或退换货关联退回", "15.00"],
+            ["到付运费", "本订单未发生", "0.00"],
+            ["没货退还运费", "缺货商品对应退回", "5.00"]
+          ]
+        },
+        inspection: {
+          estimate: "120.00",
+          actual: "160.00",
+          rows: [
+            ["抽样检品", "14", "3.00", "42.00"],
+            ["全数宽松", "15", "4.00", "60.00"],
+            ["全数详细", "7", "6.00", "42.00"],
+            ["计时检品", "2", "8.00", "16.00"]
+          ]
+        },
+        addons: {
+          estimate: "170.00",
+          actual: "390.00",
+          rows: [
+            ["吊牌保留", "12", "5.00", "60.00"],
+            ["FBA贴标", "8", "8.00", "64.00"],
+            ["量尺寸", "11", "10.64", "117.00"],
+            ["拍照报告", "5", "18.60", "93.00"],
+            ["补贴标", "4", "4.00", "16.00"],
+            ["辅料处理", "7", "5.71", "40.00"]
+          ]
+        },
+        serviceFee: { estimate: "0.00", actual: "0.00", waived: "0.00" },
+        other: {
+          actual: "450.03",
+          orderRows: [
+            ["补包装", "3", "5.00", "15.00"],
+            ["仓内复称", "1", "6.40", "6.40"],
+            ["退货处理", "1", "15.00", "15.00"]
+          ],
+          storeRows: [
+            ["辅料采购", "3", "26.68", "80.03"],
+            ["样品费", "3", "45.00", "135.00"],
+            ["样品运费", "3", "36.67", "110.00"],
+            ["托盘费用", "3", "25.00", "75.00"],
+            ["叉车费用", "1", "13.60", "13.60"]
+          ]
+        }
+      },
+      guangzhou: {
+        title: "广州织语服饰费用明细",
+        subtitle: "报价单支付 6530.00 CNY，实际清算 6517.03 CNY，本店节省 545.24 CNY",
+        quote: "6530.00",
+        actual: "6517.03",
+        diff: "应退 12.97",
+        saving: "545.24",
+        productSaving: "460.24",
+        negotiationSaving: "85.00",
+        product: {
+          ordered: "130 件",
+          genuine: "124 件",
+          returnAmount: "0.00",
+          outAmount: "0.00",
+          originalAmount: "6200.24",
+          memberAmount: "5740.00",
+          saving: "460.24"
+        },
+        freight: {
+          final: "80.00",
+          rows: [
+            ["预估国内运费", "1688商家提供", "120.00"],
+            ["实际运费", "商家实际发货后确认", "80.00"],
+            ["退还货运费", "本店未发生", "0.00"],
+            ["到付运费", "本店未发生", "0.00"],
+            ["没货退还运费", "本店未发生", "0.00"]
+          ]
+        },
+        inspection: {
+          estimate: "80.00",
+          actual: "96.00",
+          rows: [
+            ["抽样检品", "8", "3.00", "24.00"],
+            ["全数宽松", "10", "4.00", "40.00"],
+            ["全数详细", "4", "6.00", "24.00"],
+            ["计时检品", "1", "8.00", "8.00"]
+          ]
+        },
+        addons: {
+          estimate: "90.00",
+          actual: "265.00",
+          rows: [
+            ["吊牌保留", "12", "5.00", "60.00"],
+            ["FBA贴标", "8", "8.00", "64.00"],
+            ["量尺寸", "6", "12.00", "72.00"],
+            ["拍照报告", "3", "23.00", "69.00"]
+          ]
+        },
+        serviceFee: { estimate: "0.00", actual: "0.00", waived: "0.00" },
+        other: {
+          actual: "156.03",
+          orderRows: [
+            ["补包装", "1", "6.03", "6.03"]
+          ],
+          storeRows: [
+            ["辅料采购", "1", "20.03", "20.03"],
+            ["样品费", "1", "55.00", "55.00"],
+            ["样品运费", "1", "36.00", "36.00"],
+            ["托盘费用", "1", "30.00", "30.00"],
+            ["叉车费用", "1", "8.97", "8.97"]
+          ]
+        }
+      },
+      junzhi: {
+        title: "峻知服饰工厂费用明细",
+        subtitle: "报价单支付 4190.00 CNY，实际清算 4228.00 CNY，本店节省 273.63 CNY",
+        quote: "4190.00",
+        actual: "4228.00",
+        diff: "应补 38.00",
+        saving: "273.63",
+        productSaving: "210.00",
+        negotiationSaving: "63.63",
+        product: {
+          ordered: "72 件",
+          genuine: "66 件",
+          returnAmount: "0.00",
+          outAmount: "210.00",
+          originalAmount: "3950.00",
+          memberAmount: "3740.00",
+          saving: "210.00"
+        },
+        freight: {
+          final: "35.00",
+          rows: [
+            ["预估国内运费", "1688商家提供", "90.00"],
+            ["实际运费", "商家实际发货后确认", "35.00"],
+            ["退还货运费", "缺货商品不再发货", "15.00"],
+            ["到付运费", "本店未发生", "0.00"],
+            ["没货退还运费", "随缺货一并退回", "5.00"]
+          ]
+        },
+        inspection: {
+          estimate: "40.00",
+          actual: "64.00",
+          rows: [
+            ["抽样检品", "6", "3.00", "18.00"],
+            ["全数宽松", "5", "4.00", "20.00"],
+            ["全数详细", "3", "6.00", "18.00"],
+            ["计时检品", "1", "8.00", "8.00"]
+          ]
+        },
+        addons: {
+          estimate: "60.00",
+          actual: "85.00",
+          rows: [
+            ["量尺寸", "5", "9.00", "45.00"],
+            ["拍照报告", "2", "12.00", "24.00"],
+            ["补贴标", "4", "4.00", "16.00"]
+          ]
+        },
+        serviceFee: { estimate: "0.00", actual: "0.00", waived: "0.00" },
+        other: {
+          actual: "204.00",
+          orderRows: [
+            ["退货处理", "1", "14.00", "14.00"]
+          ],
+          storeRows: [
+            ["辅料采购", "1", "40.00", "40.00"],
+            ["样品费", "1", "50.00", "50.00"],
+            ["样品运费", "1", "44.00", "44.00"],
+            ["托盘费用", "1", "40.00", "40.00"],
+            ["叉车费用", "1", "16.00", "16.00"]
+          ]
+        }
+      },
+      hangzhou: {
+        title: "杭州云布辅料费用明细",
+        subtitle: "报价单支付 2300.00 CNY，实际清算 2300.00 CNY，本店节省 110.00 CNY",
+        quote: "2300.00",
+        actual: "2300.00",
+        diff: "无差额",
+        saving: "110.00",
+        productSaving: "80.00",
+        negotiationSaving: "30.00",
+        product: {
+          ordered: "30 件",
+          genuine: "28 件",
+          returnAmount: "0.00",
+          outAmount: "80.00",
+          originalAmount: "2200.00",
+          memberAmount: "2120.00",
+          saving: "80.00"
+        },
+        freight: {
+          final: "30.00",
+          rows: [
+            ["预估国内运费", "1688商家提供", "60.00"],
+            ["实际运费", "商家实际发货后确认", "30.00"],
+            ["退还货运费", "本店未发生", "0.00"],
+            ["到付运费", "本店未发生", "0.00"],
+            ["没货退还运费", "本店未发生", "0.00"]
+          ]
+        },
+        inspection: {
+          estimate: "0.00",
+          actual: "0.00",
+          rows: [
+            ["抽样检品", "0", "0.00", "0.00"],
+            ["全数宽松", "0", "0.00", "0.00"],
+            ["全数详细", "0", "0.00", "0.00"],
+            ["计时检品", "0", "0.00", "0.00"]
+          ]
+        },
+        addons: {
+          estimate: "20.00",
+          actual: "40.00",
+          rows: [
+            ["分拣贴标", "5", "4.00", "20.00"],
+            ["辅料拍照", "2", "10.00", "20.00"]
+          ]
+        },
+        serviceFee: { estimate: "0.00", actual: "0.00", waived: "0.00" },
+        other: {
+          actual: "90.00",
+          orderRows: [
+            ["仓内处理", "1", "10.00", "10.00"]
+          ],
+          storeRows: [
+            ["辅料采购", "1", "20.00", "20.00"],
+            ["样品费", "1", "20.00", "20.00"],
+            ["样品运费", "1", "30.00", "30.00"],
+            ["托盘费用", "1", "8.00", "8.00"],
+            ["叉车费用", "1", "2.00", "2.00"]
+          ]
+        }
+      },
+      check: {
+        title: "实际检品费用",
+        rows: [
+          ["抽样检品", "8", "3.00/点", "24.00"],
+          ["全数宽松", "10", "4.00/点", "40.00"],
+          ["全数详细", "4", "6.00/点", "24.00"],
+          ["计时检品", "1", "8.00/时", "8.00"]
+        ],
+        total: "96.00"
+      },
+      fjx: {
+        title: "实际附加项费用",
+        rows: [
+          ["吊牌保留", "12", "5.00/sku", "60.00"],
+          ["FBA贴标", "8", "8.00/sku", "64.00"],
+          ["量尺寸", "6", "12.00/sku", "72.00"],
+          ["拍照报告", "3", "23.00/sku", "69.00"]
+        ],
+        total: "265.00"
+      },
+      other: {
+        title: "其他费用",
+        rows: [
+          ["补包装", "3", "5.00/件", "15.00"],
+          ["仓内复称", "1", "6.40/次", "6.40"],
+          ["退货处理", "1", "15.00/次", "15.00"]
+        ],
+        total: "36.40"
+      }
+    };
+
+    function productAt(index) {
+      return products[index] || products[0] || {};
+    }
+
+    function imageHtml(index) {
+      const product = productAt(index);
+      const title = product.displayTitle || product.title || "商品图片";
+      return `<img src="${product.image || ""}" alt="${title}">`;
+    }
+
+    function dataRow(label, value, options = {}) {
+      const classes = ["data-row"];
+      if (options.warning) classes.push("warning");
+      if (options.old) classes.push("changed-old");
+      const valueClass = options.old ? ' class="changed-old-value"' : "";
+      return `<div class="${classes.join(" ")}"><span>${label}:</span><strong${valueClass}>${value || 0}</strong></div>`;
+    }
+
+    function priceRows(item, rowIndex) {
+      const rows = [`<div class="status-line ${item.success ? "success" : ""}">${item.status}</div>`];
+      const settlementPrice = item.changePrice || item.price;
+      const isLowerSettlement = Number(settlementPrice) < Number(item.price);
+      rows.push(dataRow("单价", item.price, { old: rowIndex === 2 }));
+      if (rowIndex === 2 && item.changePrice) {
+        rows.push(dataRow("变动价", item.changePrice, { warning: isLowerSettlement }));
+      }
+      rows.push(dataRow("小计", item.goodsFee));
+      return rows.join("");
+    }
+
+    function commodityRows(item) {
+      const rows = [];
+      if (item.quantity === item.changeQuantity) {
+        rows.push(dataRow("下单数", item.quantity));
+      } else {
+        rows.push(dataRow("下单数", item.quantity, { old: true }));
+        rows.push(dataRow("变动数", item.changeQuantity, { warning: true }));
+      }
+      rows.push(dataRow("购入数", item.purchaseQty));
+      rows.push(dataRow("到货数", item.arriveQty));
+      return rows.join("");
+    }
+
+    function inspectionRows(item) {
+      return [
+        dataRow("正品数", item.genuineQty),
+        dataRow("不良数", item.badQty, { warning: item.badQty > 0 }),
+        dataRow("退货数", item.returnQty),
+        dataRow("换货数", item.exchangeQty)
+      ].join("");
+    }
+
+    function warehouseRows(item) {
+      return [
+        dataRow("入库数", item.storeQty),
+        dataRow("发货数", item.sendQty),
+        dataRow("在库数", item.inStockQty)
+      ].join("");
+    }
+
+    function productTitle(item) {
+      const product = productAt(item.productIndex);
+      return product.displayTitle || product.title || "订单商品";
+    }
+
+    function productRow(item, rowIndex) {
+      return `
+        <div class="sku-row">
+          <div class="td">
+            <div class="product-info">
+              <div class="product-img">${imageHtml(item.productIndex)}</div>
+              <div class="product-copy">
+                <div class="product-title">${productTitle(item)}</div>
+                <div class="product-id">ID:${item.uuid}</div>
+                <div class="sku-meta"><span class="muted">MySKU:</span> ${item.customSku}</div>
+                <div class="sku-meta"><span class="muted">ASIN:</span> ${item.asin}</div>
+                <div class="sku-meta"><span class="muted">FNSKU:</span> ${item.fnsku}</div>
+              </div>
+            </div>
+          </div>
+          <div class="td"><div class="spec-stack">${item.spec.map((line) => `<div>${line}</div>`).join("")}</div></div>
+          <div class="td"><div class="data-stack">${priceRows(item, rowIndex)}</div></div>
+          <div class="td"><div class="data-stack">${commodityRows(item)}</div></div>
+          <div class="td"><div class="data-stack">${inspectionRows(item)}</div></div>
+          <div class="td"><div class="data-stack">${warehouseRows(item)}</div></div>
+          <div class="td">
+            <div class="remark-box">
+              ${item.reply ? `<div class="remark-reply">回复：${item.reply}</div>` : ""}
+              <div class="remark-user">${item.remark}</div>
+            </div>
+          </div>
+          <div class="td">
+            <div class="add-on-box">
+              <div class="add-on-main">
+                <div class="add-on-name">${item.checkName}</div>
+                <div class="add-on-count"><strong>${item.addOnCount}</strong><span>个附加项</span></div>
+              </div>
+              <div class="report-actions">
+                ${item.reports.map((report) => `<button class="icon-btn" type="button" title="${report}">${report.slice(0, 1)}</button>`).join("")}
+              </div>
+              ${item.missing.map((text) => `<div class="missing-action">${text} &gt;</div>`).join("")}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    let productRowSerial = 0;
+
+    function shopHtml(shop) {
+      return `
+        <div class="shop-row">
+          <div class="shop-left">
+            <img src="../../../../user-b2b-view/src/assets/img/user/cart/index/1688.png" alt="1688">
+            <span>${shop.seller}</span>
+          </div>
+          <div class="shop-money">
+            <span class="money-mini"><span>正品金额:</span><span>${shop.genuineTotalAmount} CNY</span></span>
+            <span class="money-mini"><span>实际国内运费:</span><span>${shop.domesticAmount} CNY</span></span>
+            <span class="money-mini discount"><span>本店节省:</span><span>${shop.discountAmount || "0.00"} CNY</span></span>
+            <button class="freight-detail-button detail-button" type="button" data-fee-store="${shop.feeKey}">店铺明细</button>
+          </div>
+        </div>
+        ${shop.items.map((item) => productRow(item, ++productRowSerial)).join("")}
+      `;
+    }
+
+    function renderProducts() {
+      productRowSerial = 0;
+      const productRows = document.getElementById("productRows");
+      productRows.innerHTML = shops.map((shop) => shopHtml(shop)).join("");
+      bindFeeTriggers(productRows);
+    }
+
+    renderProducts();
+
+    const costContent = document.getElementById("costContent");
+    const toggleCost = document.getElementById("toggleCost");
+    const feePanel = document.querySelector(".fee-panel");
+    toggleCost.addEventListener("click", () => {
+      const isHidden = costContent.style.display === "none";
+      costContent.style.display = isHidden ? "block" : "none";
+      feePanel?.classList.toggle("is-collapsed", !isHidden);
+      toggleCost.textContent = isHidden ? "收起⌃" : "展开⌄";
+    });
+
+    const feeModal = document.getElementById("feeModal");
+    const feeTitle = document.getElementById("feeTitle");
+    const feeSubtitle = document.getElementById("feeSubtitle");
+    const feeBody = document.getElementById("feeBody");
+
+    function moneyMarkup(value) {
+      const raw = String(value ?? "").trim();
+      const match = raw.match(/^(-?\d+(?:\.\d+)?)(?:\s*CNY)?(\/.+)?$/);
+      if (!match) return raw;
+      const suffix = match[2] || "";
+      return `<span class="fee-money"><span class="fee-num">${match[1]}</span><span class="fee-unit">CNY${suffix}</span></span>`;
+    }
+
+    function moneySummary(value) {
+      return String(value ?? "").replace(/(-?\d+(?:\.\d+)?)\s*CNY/g, (_, amount) => moneyMarkup(amount));
+    }
+
+    function moneyCell(header, value) {
+      if (!/(金额|费用|运费|手续费|单价|小计|已省)/.test(header)) return value;
+      return moneyMarkup(value);
+    }
+
+    function simpleTable(detail) {
+      feeSubtitle.textContent = "按费用明细展示数量、单价和小计";
+      return `
+        <table class="modal-table">
+          <thead><tr><th>明细</th><th>数量</th><th>单价</th><th>小计(CNY)</th></tr></thead>
+          <tbody>${detail.rows.map((row) => `<tr>${row.map((cell, index) => `<td>${index >= 2 ? moneyMarkup(cell) : cell}</td>`).join("")}</tr>`).join("")}</tbody>
+        </table>
+        <div style="margin-top: 12px; text-align: right;">合计：<strong style="color: var(--active);">${moneyMarkup(detail.total)}</strong></div>
+      `;
+    }
+
+    function heroCard(label, value, note, primary = false) {
+      return `
+        <div class="drawer-hero-card ${primary ? "primary" : ""}">
+          <div class="drawer-hero-label">${label}</div>
+          <div class="drawer-hero-value">${value}</div>
+          <div class="drawer-hero-note">${note}</div>
+        </div>
+      `;
+    }
+
+    function miniItem(label, value, saving = false) {
+      return `<div class="drawer-mini-item"><span>${label}</span><strong class="${saving ? "drawer-saving" : ""}">${value}</strong></div>`;
+    }
+
+    function escapeAttr(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/"/g, "&quot;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+    }
+
+    function helpLabel(label, tip) {
+      if (!tip) return label;
+      const text = escapeAttr(tip);
+      return `<span class="drawer-help-label"><span class="drawer-help-text">${label}</span><span class="drawer-help" tabindex="0" aria-label="${text}" data-tip="${text}">?</span></span>`;
+    }
+
+    function lineTable(headers, rows, noteIndex = -1) {
+      const visibleHeaders = headers;
+      const tableClass = noteIndex >= 0 ? "drawer-line-table compact-detail-table" : "drawer-line-table";
+      return `
+        <table class="${tableClass}">
+          ${noteIndex >= 0 ? `<colgroup>${visibleHeaders.map(() => "<col>").join("")}</colgroup>` : ""}
+          <thead><tr>${visibleHeaders.map((head) => `<th>${head}</th>`).join("")}</tr></thead>
+          <tbody>${rows.map((row) => {
+            const visibleCells = row.filter((_, index) => index !== noteIndex);
+            return `<tr>${visibleCells.map((cell, index) => {
+              const content = index === 0 && noteIndex >= 0 ? helpLabel(cell, row[noteIndex]) : cell;
+              const isAmount = /(金额|费用|运费|手续费|单价|小计|已省)/.test(visibleHeaders[index]);
+              const formatted = index === 0 && noteIndex >= 0 ? content : moneyCell(visibleHeaders[index], content);
+              return `<td class="${isAmount ? "amount" : ""}">${formatted}</td>`;
+            }).join("")}</tr>`;
+          }).join("")}</tbody>
+        </table>
+      `;
+    }
+
+    function serviceFeeTable(fee) {
+      return `
+        <table class="drawer-compare-table">
+          <thead>
+            <tr><th>明细</th><th class="amount">金额(CNY)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>预估手续费</td><td class="amount">${moneyMarkup(fee.estimate)}</td></tr>
+            <tr><td>实际手续费</td><td class="amount">${moneyMarkup(fee.actual)}</td></tr>
+          </tbody>
+        </table>
+      `;
+    }
+
+    function otherFeeTables(other, includeOrderRows = true) {
+      const orderRows = other.orderRows || other.rows || [];
+      const storeRows = other.storeRows || [];
+      const group = (title, rows) => rows.length ? `
+        <div class="drawer-other-group">
+          <div class="drawer-other-title"><span>${title}</span></div>
+          ${lineTable(["明细", "数量", "单价(CNY)", "小计(CNY)"], rows)}
+        </div>
+      ` : "";
+      return `${includeOrderRows ? group("订单产生", orderRows) : ""}${group("店铺产生", storeRows)}`;
+    }
+
+    function drawerSection(title, summary, body) {
+      return `
+        <section class="drawer-section">
+          <div class="drawer-section-head"><span>${title}</span><small>${moneySummary(summary)}</small></div>
+          <div class="drawer-section-body">${body}</div>
+        </section>
+      `;
+    }
+
+    function storeDetailHtml(detail) {
+      return `
+        <div class="drawer-store-stats">
+          <div class="drawer-store-stat-title">${detail.scopeTitle || "本店统计"}</div>
+          <div class="drawer-store-stat-card"><span>报价单金额</span><strong>${moneyMarkup(detail.quote)}</strong></div>
+          <div class="drawer-store-stat-card"><span>实际清算金额</span><strong>${moneyMarkup(detail.actual)}</strong></div>
+          <div class="drawer-store-stat-card saving"><span>${detail.savingLabel || "本店为你节省"}</span><strong>${moneyMarkup(detail.saving)}</strong></div>
+        </div>
+        ${drawerSection("1. 商品明细", "", `
+          ${lineTable(["明细", "数量/金额"], [
+            ["下单商品数量", detail.product.ordered, "客户提交采购的商品数量"],
+            ["清算后正品数量", detail.product.genuine, "质检后计入正品清算的数量"],
+            ["正品金额", `${detail.product.memberAmount} CNY`, "Hubbuyer 实采价格，不收取任何差价！"],
+            ["退换商品金额", `${detail.product.returnAmount} CNY`, "退换货产生的商品金额"],
+            ["没货退款商品金额", `${detail.product.outAmount} CNY`, "缺货未采购或未发货退回金额"],
+            ["1688商品金额", `${detail.product.originalAmount} CNY`, "按 1688 原商品价格计算"],
+            ["商品金额节省", `${detail.product.saving} CNY`, "会员身份优惠和采购员和商家洽谈后给出的优惠总和！"]
+          ], 2)}
+        `)}
+        ${drawerSection("2. 国内运费", `最终运费 ${detail.freight.final} CNY`, `
+          ${lineTable(["明细", "金额(CNY)"], detail.freight.rows.map((row) => [row[0], row[2], row[1]]), 2)}
+        `)}
+        ${drawerSection("3. 检品费用", `预估 ${detail.inspection.estimate} CNY / 实际 ${detail.inspection.actual} CNY`, `
+          ${lineTable(["检品种类", "数量", "单价(CNY)", "小计(CNY)"], detail.inspection.rows)}
+        `)}
+        ${drawerSection("4. 附加费", `预估 ${detail.addons.estimate} CNY / 实际 ${detail.addons.actual} CNY`, `
+          ${lineTable(["附加项", "数量", "单价(CNY)", "小计(CNY)"], detail.addons.rows)}
+        `)}
+        ${drawerSection("5. 手续费", `手续费金额 ${detail.serviceFee.actual} CNY`, `
+          ${serviceFeeTable(detail.serviceFee)}
+        `)}
+        ${drawerSection("6. 其他费用", `实际 ${detail.other.actual} CNY`, `
+          ${otherFeeTables(detail.other, detail.scopeTitle === "订单统计")}
+        `)}
+      `;
+    }
+
+    function openFeeModal(type) {
+      const detail = feeDetails[type];
+      if (!detail) return;
+      feeTitle.textContent = detail.title;
+      feeSubtitle.textContent = detail.rows ? "按费用明细展示数量、单价和小计" : "Hubbuyer不收取任何商品差价，清算费用完全透明！";
+      feeBody.innerHTML = detail.rows ? simpleTable(detail) : storeDetailHtml(detail);
+      feeModal.classList.add("open");
+      feeModal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeFeeModal() {
+      feeModal.classList.remove("open");
+      feeModal.setAttribute("aria-hidden", "true");
+    }
+
+    function bindFeeTriggers(root = document) {
+      root.querySelectorAll(".detail-button, [data-fee]").forEach((link) => {
+        if (link.dataset.feeTriggerBound === "true") return;
+        link.dataset.feeTriggerBound = "true";
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          openFeeModal(link.dataset.feeStore || link.dataset.fee || "guangzhou");
+        });
+      });
+    }
+
+    bindFeeTriggers();
+
+    document.getElementById("feeClose").addEventListener("click", closeFeeModal);
+    feeModal.addEventListener("click", (event) => {
+      if (event.target === feeModal) closeFeeModal();
+    });
+
+    document.getElementById("resubmitBtn").addEventListener("click", () => {
+      openFeeModal("fjx");
+      feeTitle.textContent = "再提交商品预览";
+    });
+
+    const settlementNotice = document.getElementById("settlementNotice");
+    const noticeCloseBtn = document.getElementById("noticeCloseBtn");
+    const noticeRestoreBtn = document.getElementById("noticeRestoreBtn");
+
+    if (settlementNotice && noticeCloseBtn && noticeRestoreBtn) {
+      noticeCloseBtn.addEventListener("click", () => {
+        settlementNotice.classList.add("is-hidden");
+        noticeRestoreBtn.classList.remove("is-hidden");
+      });
+
+      noticeRestoreBtn.addEventListener("click", () => {
+        settlementNotice.classList.remove("is-hidden");
+        noticeRestoreBtn.classList.add("is-hidden");
+      });
+    }
+  </script>`r`n</body>
+</html>
+
+

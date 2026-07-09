@@ -1,0 +1,3893 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>购物车</title>
+  <style>
+    :root {
+      --main: #022559;
+      --main-soft: #eef3fb;
+      --active: #B4272B;
+      --success: #1b8a4d;
+      --warning: #d46b08;
+      --line: #ccd3de;
+      --line-soft: #e1e5ed;
+      --bg: #f2f4f8;
+      --text: #222;
+      --muted: #888;
+      --radius: 4px;
+      --sidebar: 156px;
+      --header: 56px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-width: 1180px;
+      min-height: 100vh;
+      overflow: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, "Microsoft YaHei", sans-serif;
+      font-size: 12px;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .app {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      height: var(--header);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 14px 8px 10px;
+      background: #fff;
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.12);
+      z-index: 5;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand img {
+      width: 150px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .menu-toggle {
+      width: 25px;
+      height: 25px;
+      border: 0;
+      border-radius: var(--radius);
+      background: #f0f3f8;
+      color: var(--main);
+      cursor: default;
+      position: relative;
+    }
+
+    .menu-toggle::before,
+    .menu-toggle::after,
+    .menu-toggle span {
+      content: "";
+      position: absolute;
+      left: 7px;
+      right: 7px;
+      height: 2px;
+      background: var(--main);
+      border-radius: 2px;
+    }
+
+    .menu-toggle::before {
+      top: 7px;
+    }
+
+    .menu-toggle span {
+      top: 12px;
+    }
+
+    .menu-toggle::after {
+      top: 17px;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: #30343b;
+      white-space: nowrap;
+      font-size: 12px;
+    }
+
+    .top-actions .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .top-actions img {
+      width: 16px;
+      height: 16px;
+      object-fit: cover;
+      border-radius: 1px;
+    }
+
+    .avatar {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #d8d8d8;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .workspace {
+      height: calc(100vh - var(--header));
+      display: flex;
+      min-height: 0;
+    }
+
+    .sidebar {
+      width: var(--sidebar);
+      padding: 10px 7px;
+      background: #fff;
+      overflow: hidden;
+      flex: 0 0 var(--sidebar);
+    }
+
+    .nav-section {
+      margin-bottom: 2px;
+    }
+
+    .nav-row,
+    .sub-row {
+      height: 32px;
+      display: flex;
+      align-items: center;
+      border-radius: var(--radius);
+      color: #24416b;
+      white-space: nowrap;
+    }
+
+    .nav-row {
+      padding: 0 8px;
+      gap: 7px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .nav-row .chev {
+      margin-left: auto;
+      color: #7e91ad;
+      font-size: 12px;
+    }
+
+    .sub-row {
+      margin-top: 2px;
+      padding-left: 39px;
+      padding-right: 10px;
+      font-weight: 500;
+    }
+
+    .sub-row.active {
+      background: #c8d0dd;
+      color: var(--main);
+      font-weight: 700;
+    }
+
+    .nav-ico {
+      width: 14px;
+      height: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 14px;
+      color: var(--main);
+    }
+
+    .nav-ico svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+    }
+
+    .main {
+      position: relative;
+      flex: 1;
+      min-width: 0;
+      background: var(--bg);
+      padding: 10px 10px 92px;
+      overflow: auto;
+    }
+
+    .cart {
+      min-height: calc(100vh - var(--header) - 20px);
+      background: var(--bg);
+    }
+
+    .cart-tabs {
+      height: 44px;
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      padding: 0 10px;
+      background: #fff;
+      border-radius: var(--radius);
+      position: relative;
+    }
+
+    .tab {
+      width: 136px;
+      height: 34px;
+      border: 0;
+      border-radius: var(--radius) var(--radius) 0 0;
+      background: #f0f2f6;
+      color: #babec6;
+      cursor: default;
+      font-weight: 600;
+    }
+
+    .tab.active {
+      background: var(--main);
+      color: #fff;
+    }
+
+    .manual-order {
+      margin-left: auto;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 0;
+      background: transparent;
+      color: #555;
+      padding-right: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .manual-order:hover,
+    .manual-order:focus-visible {
+      color: var(--main);
+      outline: 0;
+    }
+
+    .manual-order img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .import-entry {
+      margin-left: 0;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: 1px solid var(--main);
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--main);
+      padding: 0 12px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .import-entry:hover,
+    .import-entry:focus-visible {
+      background: var(--main);
+      color: #fff;
+    }
+
+    .import-entry.primary {
+      background: var(--main);
+      color: #fff;
+    }
+
+    .import-entry.primary:hover,
+    .import-entry.primary:focus-visible {
+      background: #0b3674;
+      border-color: #0b3674;
+    }
+
+    .prompt {
+      margin-top: 10px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      border-radius: var(--radius);
+      background: #fff4f0;
+      color: #ff4000;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .prompt-text {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .warn-dot {
+      width: 16px;
+      height: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #ff5b1a;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      flex: 0 0 16px;
+    }
+
+    .prompt-close {
+      border: 0;
+      background: transparent;
+      color: #ff4000;
+      font-size: 18px;
+      line-height: 1;
+      cursor: default;
+    }
+
+    .import-workbench {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: minmax(260px, 1fr) auto auto;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border: 1px solid #d8dfeb;
+      border-radius: var(--radius);
+      background: #f9fbff;
+    }
+
+    .import-workbench-main {
+      min-width: 0;
+    }
+
+    .import-workbench-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--main);
+      font-weight: 800;
+    }
+
+    .import-workbench-copy {
+      margin-top: 4px;
+      color: #56657a;
+      line-height: 1.45;
+    }
+
+    .import-badge {
+      min-height: 20px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 11px;
+      background: #eef3fb;
+      color: var(--main);
+      padding: 0 8px;
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .import-stats {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .import-stat {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 72px;
+      min-height: 44px;
+      border-radius: var(--radius);
+      background: #fff;
+      border: 1px solid #e1e7f0;
+      color: var(--main);
+      font-weight: 800;
+    }
+
+    .import-stat span {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .import-stat.warn {
+      color: var(--warning);
+    }
+
+    .import-tools {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .import-tool-btn {
+      min-height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #d8dfeb;
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--main);
+      padding: 0 10px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .import-tool-btn.primary {
+      border-color: var(--main);
+      background: var(--main);
+      color: #fff;
+    }
+
+    .import-status-bar,
+    .import-status-head,
+    .import-status-actions,
+    .import-result-row,
+    .import-result-left,
+    .import-file,
+    .import-status-stats,
+    .cart-list-toolbar,
+    .list-scope,
+    .list-number-tools,
+    .compact-group {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .import-status-bar {
+      min-height: 46px;
+      position: relative;
+      z-index: 2;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 10px;
+      padding: 9px 10px;
+      border: 1px solid #cbd6e5;
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 1px 2px rgba(2, 37, 89, 0.05);
+    }
+
+    .import-status-bar.has-result {
+      min-height: 72px;
+    }
+
+    .import-status-bar:not(.has-result) .import-result-row {
+      display: none;
+    }
+
+    .import-status-bar:not(.has-result) .import-file {
+      display: none;
+    }
+
+    .import-status-head,
+    .import-result-row {
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .import-status-head {
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+    }
+
+    .import-status-head .import-status-actions {
+      margin-left: auto;
+    }
+
+    .import-status-title {
+      min-height: 26px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 9px;
+      border: 1px solid #dbe4f1;
+      border-radius: var(--radius);
+      background: var(--main-soft);
+      color: var(--main);
+      font-size: 14px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .import-status-actions {
+      justify-content: flex-end;
+      gap: 8px;
+      flex: 0 1 auto;
+      flex-wrap: wrap;
+      white-space: nowrap;
+    }
+
+    .import-result-row {
+      padding-top: 7px;
+      border-top: 1px solid #e7edf5;
+    }
+
+    .import-result-left {
+      gap: 18px;
+      flex: 1 1 auto;
+      flex-wrap: nowrap;
+    }
+
+    .import-file {
+      gap: 4px;
+      width: 280px;
+      flex: 0 0 280px;
+      color: #56657a;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .import-file strong {
+      display: inline-block;
+      max-width: 218px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: bottom;
+      white-space: nowrap;
+      color: var(--main);
+      font-weight: 900;
+    }
+
+    .import-status-stats {
+      gap: 8px;
+      flex: 1 1 auto;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      min-width: 96px;
+      min-height: 28px;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 0 8px;
+      border: 1px solid #d8dfeb;
+      border-radius: var(--radius);
+      background: #f8fafc;
+      color: #56657a;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .stat-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      color: #56657a;
+    }
+
+    .stat-item strong {
+      color: var(--main);
+      margin: 0 1px;
+      font-weight: 900;
+    }
+
+    .stat-item.pending,
+    .stat-item.error {
+      min-width: 124px;
+    }
+
+    .stat-item.has-action {
+      min-width: 136px;
+      overflow: visible;
+      padding-right: 0;
+    }
+
+    .stat-item.pending strong {
+      color: var(--active);
+    }
+
+    .stat-item.error strong {
+      color: var(--active);
+    }
+
+    .stat-action-link {
+      min-height: 28px;
+      align-self: stretch;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-left: 1px solid rgba(180, 39, 43, 0.24);
+      background: var(--active);
+      color: #fff;
+      padding: 0 11px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .stat-action-link:hover,
+    .stat-action-link:focus-visible {
+      background: #981f23;
+      color: #fff;
+      outline: 0;
+    }
+
+    .stat-help {
+      width: 15px;
+      height: 15px;
+      position: relative;
+      z-index: 20;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #b9c4d5;
+      border-radius: 50%;
+      background: #fff;
+      color: #7a8797;
+      font-size: 11px;
+      font-weight: 900;
+      cursor: help;
+    }
+
+    .stat-help::after {
+      content: attr(data-tip);
+      width: 220px;
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% + 8px);
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%) translateY(4px);
+      padding: 8px 10px;
+      border-radius: var(--radius);
+      background: rgba(19, 32, 50, 0.95);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.45;
+      white-space: normal;
+      box-shadow: 0 8px 18px rgba(2, 37, 89, 0.18);
+      transition: opacity 0.14s ease, transform 0.14s ease, visibility 0.14s ease;
+      pointer-events: none;
+    }
+
+    .stat-help:hover::after,
+    .stat-help:focus-visible::after {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .cart-list-toolbar {
+      min-height: 44px;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 8px;
+      padding: 8px 12px;
+      border: 1px solid #d8dfeb;
+      border-bottom: 0;
+      border-radius: var(--radius) var(--radius) 0 0;
+      background: #fff;
+    }
+
+    .list-scope {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #506078;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .list-title {
+      color: var(--main);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .list-count {
+      color: #506078;
+      font-weight: 800;
+    }
+
+    .list-number-tools {
+      justify-content: flex-end;
+      gap: 10px;
+      flex: 1 1 auto;
+      flex-wrap: wrap;
+    }
+
+    .list-tool-label {
+      color: #506078;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .compact-group {
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .compact-value {
+      color: #56657a;
+      font-weight: 700;
+    }
+
+    .compact-value strong {
+      color: var(--main);
+      margin-right: 2px;
+    }
+
+    .compact-warning {
+      min-height: 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      border: 1px solid #f0c98e;
+      border-radius: 13px;
+      background: #fff3e3;
+      color: var(--warning);
+      padding: 0 8px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .compact-progress {
+      width: 92px;
+      height: 5px;
+      flex: 0 0 92px;
+    }
+
+    .compact-tip {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .number-toolbar {
+      margin-top: 10px;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 8px 12px;
+      border: 1px solid #d8dfeb;
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .number-status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .number-status-title {
+      color: var(--main);
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .number-progress {
+      width: 160px;
+      height: 6px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #e8edf5;
+    }
+
+    .number-progress span {
+      display: block;
+      width: 50%;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--main);
+    }
+
+    .number-status-copy {
+      color: #555;
+      white-space: nowrap;
+    }
+
+    .number-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .number-chip {
+      min-height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .number-chip {
+      border: 1px solid #d8dfeb;
+      background: #f7f9fc;
+      color: #45546a;
+      padding: 0 10px;
+    }
+
+    .number-chip.active {
+      border-color: var(--main);
+      background: var(--main-soft);
+      color: var(--main);
+    }
+
+    .cart-table-wrap {
+      margin-top: 8px;
+      border-radius: var(--radius) var(--radius) 0 0;
+      overflow-x: auto;
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      min-width: 1040px;
+      border-collapse: collapse;
+      table-layout: fixed;
+      background: #fff;
+    }
+
+    col.product { width: 28%; }
+    col.spec { width: 14%; }
+    col.qty { width: 10%; }
+    col.price { width: 12%; }
+    col.subtotal { width: 13%; }
+    col.remark { width: 15%; }
+    col.remark-img { width: 8%; }
+
+    th {
+      height: 34px;
+      border: 1px solid var(--line);
+      background: var(--line-soft);
+      color: #222;
+      font-weight: 700;
+      text-align: center;
+      padding: 0 8px;
+    }
+
+    td {
+      border: 1px solid var(--line);
+      padding: 7px 8px;
+      vertical-align: middle;
+      color: #222;
+      line-height: 1.45;
+      background: #fff;
+    }
+
+    th:last-child,
+    td:last-child {
+      padding-left: 10px;
+      padding-right: 14px;
+    }
+
+    .shop-row td {
+      height: 32px;
+      padding: 0 9px;
+      background: #f6f7fb;
+      font-weight: 700;
+      border-top: 0;
+    }
+
+    .shop-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .shop-head img.platform {
+      width: 19px;
+      height: 19px;
+      object-fit: contain;
+    }
+
+    .shop-risk {
+      width: 22px;
+      height: 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      overflow: hidden;
+      border-radius: 999px;
+      cursor: help;
+      white-space: nowrap;
+      transition: width 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .shop-risk:hover,
+    .shop-risk:focus {
+      width: 156px;
+      padding-right: 8px;
+      background: #fff3f4;
+      box-shadow: 0 2px 8px rgba(180, 39, 43, 0.14);
+    }
+
+    .shop-risk:focus-visible {
+      outline: 2px solid rgba(180, 39, 43, 0.28);
+      outline-offset: 2px;
+    }
+
+    .shop-risk-icon {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid rgba(255, 255, 255, 0.95);
+      border-radius: 50%;
+      background: rgba(189, 32, 40, 0.92);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(2, 37, 89, 0.22);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .shop-risk-copy {
+      flex: 0 0 auto;
+      color: var(--active);
+      font-size: 12px;
+      font-weight: 900;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.14s ease 0.04s, transform 0.14s ease 0.04s;
+    }
+
+    .shop-risk:hover .shop-risk-copy,
+    .shop-risk:focus .shop-risk-copy {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .sku-row td {
+      height: 96px;
+    }
+
+    .product-cell {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .row-select,
+    .shop-select {
+      width: 22px;
+      height: 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 22px;
+      border: 0;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .shop-select {
+      flex: 0 0 22px;
+    }
+
+    .check {
+      width: 14px;
+      height: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 14px;
+      border: 1px solid #bbb;
+      border-radius: 2px;
+      background: #fff;
+      color: #fff;
+      font-size: 10px;
+      line-height: 1;
+    }
+
+    .check.checked {
+      border-color: var(--active);
+      background: var(--active);
+    }
+
+    .check.half:not(.checked)::before {
+      content: "";
+      width: 8px;
+      height: 2px;
+      background: #fff;
+    }
+
+    .check.checked:not(.half)::before {
+      content: "✓";
+      transform: translateY(-1px);
+    }
+
+    .photo {
+      width: 72px;
+      height: 72px;
+      position: relative;
+      flex: 0 0 72px;
+      overflow: hidden;
+      border: 1px solid #d6dde8;
+      border-radius: 3px;
+      background: #a58c6f;
+    }
+
+    .photo-wrap {
+      position: relative;
+      display: block;
+      width: 72px;
+      height: 72px;
+      flex: 0 0 72px;
+      z-index: 2;
+    }
+
+    .photo-wrap .photo {
+      width: 100%;
+      height: 100%;
+    }
+
+    .product-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-wrap:hover,
+    .photo-wrap:focus-within {
+      z-index: 40;
+    }
+
+    .photo.is-blacklisted::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .photo.is-blacklisted::after {
+      content: "!";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-50%, -50%);
+      border: 2px solid rgba(255, 255, 255, 0.95);
+      border-radius: 50%;
+      background: rgba(189, 32, 40, 0.92);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(2, 37, 89, 0.22);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0;
+      line-height: 1;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .image-preview-layer {
+      position: fixed;
+      left: 0;
+      top: 0;
+      display: none;
+      width: 300px;
+      padding: 10px;
+      border: 1px solid #cbd4e2;
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 8px 22px rgba(2, 37, 89, 0.18);
+      pointer-events: none;
+      z-index: 30;
+    }
+
+    .image-preview-layer.is-open {
+      display: block;
+    }
+
+    .image-preview-visual {
+      position: relative;
+      width: 100%;
+      height: 226px;
+      overflow: hidden;
+      border-radius: 3px;
+      background: #a58c6f;
+    }
+
+    .image-preview-visual .toy {
+      transform: translate(-50%, -43%) scale(3.5);
+      transform-origin: center;
+    }
+
+    .image-preview-visual .product-img {
+      object-fit: contain;
+      background: #f8f9fb;
+    }
+
+    .image-preview-copy {
+      margin-top: 6px;
+      padding: 6px 8px;
+      border-radius: var(--radius);
+      background: #fff4f4;
+      color: var(--active);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .image-preview-copy[hidden] {
+      display: none;
+    }
+
+    .photo.bear {
+      background: linear-gradient(135deg, #d6b77a, #fbefd0);
+    }
+
+    .toy {
+      position: absolute;
+      left: 50%;
+      top: 53%;
+      width: 30px;
+      height: 39px;
+      border-radius: 48% 48% 42% 42%;
+      transform: translate(-50%, -43%);
+      background: #ffd3e9;
+      box-shadow:
+        -15px 11px 0 -9px #ffd3e9,
+        15px 11px 0 -9px #ffd3e9,
+        -10px 30px 0 -10px #ffd3e9,
+        10px 30px 0 -10px #ffd3e9;
+    }
+
+    .toy::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -13px;
+      width: 27px;
+      height: 24px;
+      border-radius: 50%;
+      transform: translateX(-50%);
+      background: #ff8cc3;
+      box-shadow:
+        -14px -3px 0 -5px #ff8cc3,
+        14px -3px 0 -5px #ff8cc3;
+    }
+
+    .toy::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -4px;
+      width: 17px;
+      height: 7px;
+      border-radius: 50%;
+      transform: translateX(-50%);
+      background: #ffe9f3;
+      box-shadow: -6px -6px 0 -3px #222, 6px -6px 0 -3px #222;
+    }
+
+    .photo.bear .toy {
+      width: 30px;
+      height: 39px;
+      background: #f4dfbe;
+      box-shadow:
+        -15px 12px 0 -9px #f4dfbe,
+        15px 12px 0 -9px #f4dfbe,
+        -10px 30px 0 -10px #f4dfbe,
+        10px 30px 0 -10px #f4dfbe;
+    }
+
+    .photo.bear .toy::before {
+      background: #f1d2a4;
+      box-shadow:
+        -14px -3px 0 -5px #f1d2a4,
+        14px -3px 0 -5px #f1d2a4;
+    }
+
+    .photo.bear .toy::after {
+      background: #f9ead5;
+    }
+
+    .sku-info {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .product-link {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .product-link:hover .sku-title,
+    .product-link:focus-visible .sku-title {
+      color: var(--main);
+      text-decoration: none;
+    }
+
+    .sku-title {
+      overflow: hidden;
+      display: block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: #222;
+      font-weight: 600;
+      margin-bottom: 4px;
+      line-height: 1.35;
+    }
+
+    .sku-id-list {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 2px 6px;
+      color: #222;
+      line-height: 1.35;
+    }
+
+    .sku-id-list .spec-label,
+    .spec-cell .spec-label {
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .sku-id-list .spec-value {
+      min-width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .spec-cell {
+      color: #222;
+      line-height: 1.5;
+    }
+
+    .spec-line {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .spec-cell .spec-value {
+      min-width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-weight: 700;
+    }
+
+    .number-tag {
+      min-height: 20px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 11px;
+      padding: 0 7px;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .number-tag.done {
+      background: #e9f7ef;
+      color: var(--success);
+    }
+
+    .number-tag.needs-config {
+      background: #fff3e3;
+      color: var(--warning);
+    }
+
+    .number-tag.dirty {
+      background: #fff1f0;
+      color: var(--active);
+    }
+
+    .number-tag.platform {
+      background: #eef3fb;
+      color: var(--main);
+    }
+
+    .number-edit-btn {
+      min-height: 22px;
+      border: 1px solid var(--main);
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--main);
+      padding: 0 8px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .number-cell {
+      padding: 5px 7px;
+      vertical-align: top;
+    }
+
+    .number-inline {
+      min-height: 70px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .number-inline-head,
+    .number-inline-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .number-inline-tags {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
+      min-width: 0;
+    }
+
+    .number-detail-btn,
+    .number-save-btn {
+      min-height: 22px;
+      border-radius: var(--radius);
+      padding: 0 8px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .number-detail-btn {
+      border: 1px solid var(--main);
+      background: #fff;
+      color: var(--main);
+      transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+    }
+
+    .number-detail-btn:hover,
+    .number-detail-btn:focus-visible {
+      border-color: var(--main);
+      background: var(--main);
+      color: #fff;
+    }
+
+    .number-detail-btn.is-configure {
+      border-color: var(--active);
+      background: #fff7f7;
+      color: var(--active);
+    }
+
+    .number-detail-btn.is-configure:hover,
+    .number-detail-btn.is-configure:focus-visible {
+      border-color: var(--active);
+      background: var(--active);
+      color: #fff;
+    }
+
+    .number-save-btn {
+      border: 1px solid var(--main);
+      background: var(--main);
+      color: #fff;
+    }
+
+    .number-save-btn[hidden] {
+      display: none;
+    }
+
+    .number-inline-grid {
+      display: grid;
+      grid-template-columns: minmax(92px, 1.25fr) minmax(72px, 1fr) minmax(72px, 1fr);
+      gap: 5px;
+      align-items: start;
+    }
+
+    .number-inline-field {
+      min-width: 0;
+    }
+
+    .number-inline-field label {
+      color: var(--muted);
+      font-weight: 700;
+      white-space: nowrap;
+      display: block;
+      margin-bottom: 2px;
+      font-size: 11px;
+    }
+
+    .number-inline-input {
+      width: 100%;
+      height: 23px;
+      border: 1px solid #c7ceda;
+      border-radius: var(--radius);
+      padding: 0 7px;
+      color: #222;
+      outline: none;
+    }
+
+    .number-inline-input:focus {
+      border-color: var(--main);
+      box-shadow: 0 0 0 2px rgba(2, 37, 89, 0.08);
+    }
+
+    .number-inline-input::placeholder {
+      color: #aab3c2;
+    }
+
+    .number-inline-input:focus::placeholder {
+      color: transparent;
+    }
+
+    .source-tasks {
+      margin-top: 10px;
+      border: 1px solid #f3d49d;
+      border-radius: var(--radius);
+      background: #fffaf2;
+    }
+
+    .source-task-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border-bottom: 1px solid #f6dfb8;
+    }
+
+    .source-task-title {
+      color: #8a5a08;
+      font-weight: 900;
+    }
+
+    .source-task-copy {
+      margin-top: 3px;
+      color: #6d5a3b;
+      line-height: 1.4;
+    }
+
+    .source-task-card {
+      display: grid;
+      grid-template-columns: minmax(420px, 1fr) auto;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      background: #fff;
+    }
+
+    .source-task-name {
+      overflow: hidden;
+      color: #222;
+      font-weight: 800;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .source-task-meta,
+    .source-task-suggest {
+      margin-top: 4px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .source-task-suggest strong {
+      color: var(--main);
+    }
+
+    .source-summary-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .source-summary-item {
+      min-height: 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid #e7edf6;
+      border-radius: var(--radius);
+      background: #f9fbff;
+      color: #56657a;
+      padding: 0 9px;
+      white-space: nowrap;
+    }
+
+    .source-summary-item strong {
+      color: var(--main);
+    }
+
+    .source-summary-item.warn strong {
+      color: var(--warning);
+    }
+
+    .source-task-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .match-source-btn {
+      min-height: 30px;
+      border-radius: var(--radius);
+      padding: 0 12px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .match-source-btn {
+      border: 1px solid var(--main);
+      background: var(--main);
+      color: #fff;
+    }
+
+    .source-task-status {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      border-radius: 12px;
+      background: #fff3e3;
+      color: var(--warning);
+      padding: 0 8px;
+      font-size: 11px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .source-workspace {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 12px;
+      min-height: 0;
+    }
+
+    .source-queue {
+      min-height: 0;
+      border: 1px solid #d8dfeb;
+      border-radius: var(--radius);
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .source-queue-head {
+      padding: 10px;
+      border-bottom: 1px solid #e8edf5;
+      background: #f7f9fc;
+    }
+
+    .source-queue-title {
+      color: var(--main);
+      font-weight: 900;
+    }
+
+    .source-queue-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .source-queue-tab {
+      min-height: 24px;
+      border: 1px solid #d8dfeb;
+      border-radius: 13px;
+      background: #fff;
+      color: #56657a;
+      padding: 0 8px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .source-queue-tab.active {
+      border-color: var(--main);
+      background: var(--main);
+      color: #fff;
+    }
+
+    .source-search {
+      width: 100%;
+      height: 30px;
+      margin-top: 8px;
+      border: 1px solid #d8dfeb;
+      border-radius: var(--radius);
+      padding: 0 9px;
+      outline: none;
+    }
+
+    .source-queue-list {
+      max-height: calc(100vh - 290px);
+      overflow: auto;
+    }
+
+    .source-queue-item {
+      display: grid;
+      grid-template-columns: 38px minmax(0, 1fr);
+      gap: 8px;
+      padding: 9px 10px;
+      border-bottom: 1px solid #edf1f7;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .source-queue-item.active {
+      background: #f3f7ff;
+      box-shadow: inset 3px 0 0 var(--main);
+    }
+
+    .source-queue-photo {
+      width: 38px;
+      height: 38px;
+      overflow: hidden;
+      border-radius: 3px;
+      background: #a58c6f;
+    }
+
+    .source-queue-name {
+      overflow: hidden;
+      color: #222;
+      font-weight: 800;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .source-queue-meta {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 11px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .source-queue-status {
+      display: inline-flex;
+      margin-top: 5px;
+      border-radius: 10px;
+      background: #eef3fb;
+      color: var(--main);
+      padding: 2px 6px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .source-queue-status.warn {
+      background: #fff3e3;
+      color: var(--warning);
+    }
+
+    .source-detail-pane {
+      min-width: 0;
+    }
+
+    .candidate-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .candidate-item {
+      display: grid;
+      grid-template-columns: 58px minmax(0, 1fr);
+      gap: 8px;
+      align-items: center;
+      padding: 8px;
+      border: 1px solid #d8dfeb;
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .candidate-item.is-selected {
+      border-color: var(--main);
+      box-shadow: inset 0 0 0 1px var(--main);
+    }
+
+    .no-candidate-card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border: 1px solid #f2d7b8;
+      border-radius: var(--radius);
+      background: #fffaf2;
+      padding: 10px;
+      color: #6b4f2a;
+      line-height: 1.45;
+    }
+
+    .no-candidate-card strong {
+      color: var(--warning);
+    }
+
+    .no-candidate-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 2px;
+    }
+
+    .skip-import-btn,
+    .transfer-manual-btn {
+      min-height: 28px;
+      border-radius: var(--radius);
+      padding: 0 10px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .skip-import-btn {
+      border: 1px solid #cbd4e2;
+      background: #fff;
+      color: #56657a;
+    }
+
+    .skip-import-btn:hover,
+    .skip-import-btn:focus-visible {
+      border-color: #8a94a6;
+      background: #f6f8fb;
+      color: #263445;
+      outline: 0;
+    }
+
+    .transfer-manual-btn {
+      border: 1px solid var(--main);
+      background: #fff;
+      color: var(--main);
+    }
+
+    .transfer-manual-btn:hover,
+    .transfer-manual-btn:focus-visible {
+      background: var(--main);
+      border-color: var(--main);
+      color: #fff;
+      outline: 0;
+    }
+
+    .candidate-photo {
+      width: 58px;
+      height: 58px;
+      overflow: hidden;
+      border-radius: 3px;
+      background: #a58c6f;
+    }
+
+    .candidate-name {
+      overflow: hidden;
+      color: #222;
+      font-weight: 800;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .candidate-meta {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .candidate-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .match-score {
+      color: var(--warning);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .candidate-select,
+    .confirm-match-btn {
+      min-height: 26px;
+      border-radius: var(--radius);
+      padding: 0 9px;
+      font-size: 11px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .candidate-select {
+      border: 1px solid var(--main);
+      background: #fff;
+      color: var(--main);
+    }
+
+    .candidate-select:hover,
+    .candidate-select:focus-visible {
+      background: var(--main);
+      color: #fff;
+    }
+
+    .confirm-match-btn {
+      border: 1px solid var(--main);
+      background: var(--main);
+      color: #fff;
+    }
+
+    .number-inline-hint {
+      color: #8a94a6;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .number-inline-hint:empty {
+      display: none;
+    }
+
+    .sku-row.is-active td {
+      background: #f8fbff;
+      box-shadow: inset 3px 0 0 var(--main);
+    }
+
+    .sku-row.is-dirty td {
+      background: #fffafa;
+    }
+
+    .sku-row.is-filtered,
+    .shop-row.is-filtered {
+      display: none;
+    }
+
+    .qty-control {
+      display: inline-flex;
+      align-items: center;
+      height: 26px;
+      border: 1px solid #b8b8b8;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .qty-control button {
+      width: 25px;
+      height: 24px;
+      border: 0;
+      background: #fff;
+      color: #666;
+      border-right: 1px solid #c7c7c7;
+      cursor: default;
+    }
+
+    .qty-control button:last-child {
+      border-left: 1px solid #c7c7c7;
+      border-right: 0;
+    }
+
+    .qty-control input {
+      width: 58px;
+      border: 0;
+      text-align: center;
+      color: #555;
+      outline: none;
+    }
+
+    .price-cell,
+    .subtotal-cell {
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .price-stack,
+    .subtotal-stack {
+      min-height: 68px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      line-height: 1.2;
+    }
+
+    .member-price {
+      color: var(--active);
+      font-size: 15px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .market-price {
+      color: #9aa4b2;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .market-price-value {
+      color: #555d68;
+      text-decoration-line: line-through;
+      text-decoration-thickness: 2px;
+      text-decoration-color: #4b5563;
+      text-decoration-skip-ink: none;
+    }
+
+    .plain-price {
+      color: #333;
+      font-size: 14px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .subtotal-amount {
+      color: #333;
+      font-size: 14px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .remark-box {
+      min-height: 66px;
+      max-height: 66px;
+      overflow: hidden;
+      color: #222;
+      line-height: 1.45;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+
+    .remark-placeholder {
+      color: #b0b0b0;
+    }
+
+    .manual-source-row td {
+      height: 92px;
+      background: #fffdf8;
+    }
+
+    .manual-source-shop td {
+      background: #fff7eb;
+    }
+
+    .manual-shop-badge,
+    .manual-row-status,
+    .manual-ref-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      border-radius: 12px;
+      padding: 0 8px;
+      font-size: 11px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .manual-shop-badge,
+    .manual-row-status {
+      background: #fff3e3;
+      color: var(--warning);
+    }
+
+    .manual-ref-label {
+      margin-right: 4px;
+      background: #fff3e3;
+      color: var(--warning);
+    }
+
+    .manual-source-card {
+      min-height: 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 6px;
+      border: 1px solid #f2d7b8;
+      border-radius: var(--radius);
+      background: #fffaf2;
+      padding: 7px 8px;
+    }
+
+    .manual-source-card strong {
+      color: var(--main);
+    }
+
+    .manual-source-card span {
+      color: #6b7280;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .manual-proof-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .upload-box {
+      width: 66px;
+      height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      border: 1px solid #b8b8b8;
+      border-radius: 3px;
+      background: #fff;
+      color: #9aa3af;
+    }
+
+    .upload-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+
+    .upload-symbol {
+      width: 30px;
+      height: 22px;
+      position: relative;
+      border: 2px solid #a8a8a8;
+      border-radius: 3px;
+    }
+
+    .upload-symbol::before {
+      content: "";
+      position: absolute;
+      left: 5px;
+      bottom: 3px;
+      width: 10px;
+      height: 8px;
+      background: linear-gradient(135deg, transparent 50%, #a8a8a8 0) left bottom / 100% 100% no-repeat;
+      opacity: 0.75;
+    }
+
+    .upload-symbol::after {
+      content: "+";
+      position: absolute;
+      right: -9px;
+      bottom: -8px;
+      width: 16px;
+      height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #a8a8a8;
+      border-radius: 50%;
+      background: #fff;
+      color: #a8a8a8;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .cart-footer {
+      position: fixed;
+      left: calc(var(--sidebar) + 10px);
+      right: 10px;
+      bottom: 0;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 28px 10px 10px;
+      border: 0;
+      border-radius: 0;
+      background: #fff;
+      box-shadow: none;
+      z-index: 4;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .select-all-control {
+      min-height: 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 0;
+      background: transparent;
+      color: #39485d;
+      padding: 0;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .footer-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .batch-download,
+    .batch-delete {
+      min-height: 26px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid;
+      border-radius: var(--radius);
+      border-color: var(--active);
+      background: #fff;
+      color: var(--active);
+      padding: 0 12px;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .batch-download {
+      border-color: var(--main);
+      background: #fff;
+      color: var(--main);
+    }
+
+    .batch-download:hover,
+    .batch-download:focus-visible {
+      background: var(--main);
+      color: #fff;
+      outline: 0;
+    }
+
+    .batch-delete:hover,
+    .batch-delete:focus-visible {
+      background: #981f23;
+      border-color: #981f23;
+      color: #fff;
+      outline: 0;
+    }
+
+    .footer-right {
+      margin-left: auto;
+      gap: 28px;
+      white-space: nowrap;
+      font-size: 13px;
+    }
+
+    .summary {
+      display: flex;
+      gap: 26px;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+    }
+
+    .member-saving strong {
+      color: var(--active);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .total,
+    .freight-estimate {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .total strong,
+    .freight-estimate strong {
+      color: var(--active);
+      font-size: 16px;
+    }
+
+    .freight-help {
+      margin-left: 2px;
+      border-color: #b9c4d5;
+      color: var(--main);
+    }
+
+    .next-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .next-btn {
+      min-width: 96px;
+      height: 30px;
+      border: 0;
+      border-radius: var(--radius);
+      background: var(--main);
+      color: #fff;
+      font-weight: 700;
+      cursor: default;
+    }
+
+    .drawer-mask {
+      position: fixed;
+      inset: var(--header) 0 0 0;
+      background: rgba(2, 37, 89, 0.12);
+      z-index: 6;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.18s ease, visibility 0.18s ease;
+      pointer-events: none;
+    }
+
+    .sku-drawer,
+    .source-drawer,
+    .import-error-drawer,
+    .manual-drawer {
+      position: fixed;
+      top: var(--header);
+      right: 0;
+      bottom: 0;
+      width: 430px;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border-left: 1px solid #cbd4e2;
+      box-shadow: -8px 0 22px rgba(2, 37, 89, 0.18);
+      z-index: 7;
+      transform: translateX(100%);
+      visibility: hidden;
+      transition: transform 0.2s ease, visibility 0.2s ease;
+    }
+
+    .source-drawer {
+      width: min(860px, calc(100vw - var(--sidebar) - 24px));
+    }
+
+    .import-error-drawer {
+      width: min(720px, calc(100vw - var(--sidebar) - 24px));
+    }
+
+    .manual-drawer {
+      width: min(520px, calc(100vw - var(--sidebar) - 24px));
+    }
+
+    body.drawer-open .drawer-mask,
+    body.source-open .drawer-mask,
+    body.error-open .drawer-mask,
+    body.manual-open .drawer-mask {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    body.drawer-open .sku-drawer {
+      transform: translateX(0);
+      visibility: visible;
+    }
+
+    body.source-open .source-drawer {
+      transform: translateX(0);
+      visibility: visible;
+    }
+
+    body.error-open .import-error-drawer {
+      transform: translateX(0);
+      visibility: visible;
+    }
+
+    body.manual-open .manual-drawer {
+      transform: translateX(0);
+      visibility: visible;
+    }
+
+    .drawer-head {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line-soft);
+      background: #f7f9fc;
+    }
+
+    .drawer-title {
+      color: var(--main);
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .drawer-subtitle {
+      margin-top: 3px;
+      color: #666;
+      font-size: 12px;
+    }
+
+    .drawer-close {
+      width: 28px;
+      height: 28px;
+      border: 1px solid #d8dfeb;
+      border-radius: var(--radius);
+      background: #fff;
+      color: #667085;
+      font-size: 18px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .drawer-body {
+      flex: 1;
+      min-height: 0;
+      overflow: auto;
+      padding: 14px 16px 16px;
+    }
+
+    .drawer-product {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid #d8dfeb;
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .drawer-product .photo {
+      width: 52px;
+      height: 52px;
+      flex-basis: 52px;
+    }
+
+    .drawer-product-main {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .drawer-product-title {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-weight: 700;
+    }
+
+    .drawer-product-meta {
+      margin-top: 4px;
+      color: #666;
+    }
+
+    .source-original {
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+      border: 1px solid #d8dfeb;
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .source-original .photo {
+      width: 62px;
+      height: 62px;
+      flex-basis: 62px;
+    }
+
+    .source-original-main {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .source-original-title {
+      overflow: hidden;
+      color: #222;
+      font-weight: 800;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .source-original-meta,
+    .source-original-link {
+      margin-top: 4px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .source-original-link {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .source-match-summary {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: start;
+      gap: 6px;
+      margin-top: 8px;
+      color: #4b5563;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .source-match-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 20px;
+      border: 1px solid #d8dfeb;
+      border-radius: 3px;
+      background: #f6f8fb;
+      color: var(--main);
+      padding: 0 6px;
+      font-size: 11px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .source-match-copy {
+      min-width: 0;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+
+    .drawer-section {
+      margin-top: 12px;
+      border: 1px solid #d8dfeb;
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .drawer-section-head {
+      height: 34px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0 10px;
+      background: var(--line-soft);
+      color: var(--main);
+      font-weight: 800;
+    }
+
+    .drawer-section-head::before {
+      content: "";
+      width: 4px;
+      height: 16px;
+      border-radius: 2px;
+      background: var(--main);
+    }
+
+    .drawer-section-body {
+      padding: 12px 10px;
+    }
+
+    .manual-intake-note {
+      display: flex;
+      gap: 8px;
+      border: 1px solid #d8dfeb;
+      border-radius: var(--radius);
+      background: #f8fbff;
+      color: #506078;
+      padding: 9px 10px;
+      line-height: 1.45;
+    }
+
+    .manual-intake-note strong {
+      color: var(--main);
+      white-space: nowrap;
+    }
+
+    .manual-upload {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 10px;
+      align-items: center;
+      border: 1px dashed #b8c4d6;
+      border-radius: var(--radius);
+      background: #fbfcff;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .manual-upload input {
+      display: none;
+    }
+
+    .manual-upload-preview {
+      width: 76px;
+      height: 76px;
+      overflow: hidden;
+      border: 1px solid #d8dfeb;
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .manual-upload-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .manual-upload-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      color: #506078;
+      line-height: 1.45;
+    }
+
+    .manual-upload-copy strong {
+      color: var(--main);
+    }
+
+    .manual-drawer .form-grid {
+      margin-top: 12px;
+    }
+
+    .manual-drawer textarea {
+      width: 100%;
+      min-height: 74px;
+      resize: vertical;
+      border: 1px solid #c7ceda;
+      border-radius: var(--radius);
+      padding: 8px;
+      color: #222;
+      font-family: inherit;
+      line-height: 1.45;
+      outline: none;
+    }
+
+    .manual-drawer input::placeholder,
+    .manual-drawer textarea::placeholder {
+      color: #aab3c2;
+    }
+
+    .manual-drawer input:focus::placeholder,
+    .manual-drawer textarea:focus::placeholder {
+      color: transparent;
+    }
+
+    .error-overview {
+      display: grid;
+      grid-template-columns: 1.3fr repeat(3, minmax(110px, 1fr));
+      gap: 10px;
+    }
+
+    .error-overview-main,
+    .error-type-card {
+      border: 1px solid #d8dfeb;
+      border-radius: var(--radius);
+      background: #fff;
+      padding: 10px;
+    }
+
+    .error-overview-main strong {
+      display: block;
+      color: var(--active);
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .error-overview-main span,
+    .error-type-card span {
+      color: #667085;
+      line-height: 1.45;
+    }
+
+    .error-type-card b {
+      display: block;
+      color: var(--main);
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .error-table {
+      display: grid;
+      border: 1px solid #d8dfeb;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .error-table-row {
+      display: grid;
+      grid-template-columns: 54px 1.2fr 90px 1fr 1.25fr;
+      min-height: 38px;
+      border-top: 1px solid #edf1f7;
+    }
+
+    .error-table-row:first-child {
+      border-top: 0;
+    }
+
+    .error-table-row.head {
+      min-height: 34px;
+      background: var(--line-soft);
+      color: #26364d;
+      font-weight: 800;
+    }
+
+    .error-table-row > span {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      padding: 7px 8px;
+      border-left: 1px solid #edf1f7;
+      line-height: 1.35;
+    }
+
+    .error-table-row > span:first-child {
+      border-left: 0;
+      justify-content: center;
+    }
+
+    .error-ellipsis {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .error-type {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 22px;
+      border-radius: 12px;
+      padding: 0 8px;
+      background: #fff0f0;
+      color: var(--active);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .error-suggestion {
+      color: var(--main);
+      font-weight: 700;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .field {
+      min-width: 0;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+      font-weight: 700;
+    }
+
+    .field input {
+      width: 100%;
+      height: 30px;
+      border: 1px solid #c7ceda;
+      border-radius: var(--radius);
+      padding: 0 8px;
+      color: #222;
+      outline: none;
+    }
+
+    .platform-card {
+      border: 1px solid #d8dfeb;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #fbfcff;
+    }
+
+    .platform-card + .platform-card {
+      margin-top: 10px;
+    }
+
+    .platform-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 8px 10px;
+      background: #f2f5fa;
+      color: var(--main);
+      font-weight: 800;
+    }
+
+    .platform-title-input {
+      min-width: 0;
+      flex: 1;
+      height: 28px;
+      border: 1px solid #c7ceda;
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--main);
+      padding: 0 8px;
+      font-weight: 800;
+    }
+
+    .platform-card-body {
+      padding: 10px;
+    }
+
+    .child-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 24px;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .child-row input,
+    .platform-url input {
+      width: 100%;
+      height: 30px;
+      border: 1px solid #c7ceda;
+      border-radius: var(--radius);
+      padding: 0 8px;
+    }
+
+    .sku-drawer input::placeholder {
+      color: #aab3c2;
+    }
+
+    .sku-drawer input:focus::placeholder {
+      color: transparent;
+    }
+
+    .icon-btn {
+      width: 24px;
+      height: 24px;
+      border: 1px solid #d8dfeb;
+      border-radius: var(--radius);
+      background: #fff;
+      color: #667085;
+      cursor: pointer;
+    }
+
+    .add-platform {
+      width: 100%;
+      height: 30px;
+      margin-top: 10px;
+      border: 1px dashed var(--main);
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--main);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .add-child-btn {
+      height: 28px;
+      border: 1px solid #d8dfeb;
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--main);
+      padding: 0 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .drawer-foot {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      padding: 12px 16px;
+      border-top: 1px solid var(--line-soft);
+      background: #fff;
+    }
+
+    .drawer-foot button {
+      height: 32px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .secondary-btn {
+      border: 1px solid var(--main);
+      background: #fff;
+      color: var(--main);
+      padding: 0 14px;
+    }
+
+    .primary-btn {
+      border: 1px solid var(--main);
+      background: var(--main);
+      color: #fff;
+      padding: 0 16px;
+    }
+
+    .source-drawer .drawer-foot {
+      justify-content: flex-end;
+    }
+
+    .source-drawer .drawer-foot button {
+      min-width: 76px;
+      padding: 0 14px;
+    }
+
+    .source-drawer .confirm-match-btn {
+      min-width: 88px;
+    }
+
+    .float-help {
+      position: fixed;
+      right: 0;
+      top: 35%;
+      width: 60px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 5px 7px;
+      border: 1px solid var(--main);
+      border-right: 0;
+      border-radius: 8px 0 0 8px;
+      background: #fff9f7;
+      color: var(--main);
+      z-index: 8;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    }
+
+    body.drawer-open .float-help {
+      right: 430px;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      top: 72px;
+      min-width: 220px;
+      transform: translate(-50%, -12px);
+      opacity: 0;
+      visibility: hidden;
+      z-index: 20;
+      border-radius: var(--radius);
+      background: #1f2937;
+      color: #fff;
+      padding: 9px 14px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, 0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+
+    .float-help .bubble {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      border: 2px solid currentColor;
+      border-radius: 50%;
+    }
+
+    .float-help .bubble::before {
+      content: "1";
+      position: absolute;
+      right: -8px;
+      top: -8px;
+      width: 15px;
+      height: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #ff4000;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .float-help .phone {
+      width: 18px;
+      height: 22px;
+      position: relative;
+      border: 2px solid currentColor;
+      border-radius: 7px 7px 3px 3px;
+      transform: rotate(15deg);
+    }
+
+    .float-help .phone::after {
+      content: "";
+      position: absolute;
+      left: 5px;
+      bottom: 2px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      body {
+        min-width: 0;
+        overflow: auto;
+      }
+
+      .topbar {
+        height: auto;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .top-actions {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        gap: 12px;
+      }
+
+      .workspace {
+        display: block;
+        height: auto;
+      }
+
+      .sidebar {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+        padding: 8px;
+      }
+
+      .nav-section {
+        flex: 0 0 auto;
+      }
+
+      .nav-row .chev,
+      .sub-row:not(.active) {
+        display: none;
+      }
+
+      .nav-row,
+      .sub-row.active {
+        padding: 0 12px;
+      }
+
+      .main {
+        padding-bottom: 16px;
+      }
+
+      .cart-tabs {
+        overflow-x: auto;
+        align-items: center;
+      }
+
+      .tab {
+        flex: 0 0 112px;
+      }
+
+      .manual-order {
+        flex: 0 0 auto;
+      }
+
+      .import-entry {
+        margin-left: 0;
+      }
+
+      .import-status-bar,
+      .import-status-main,
+      .import-status-stats,
+      .import-status-actions,
+      .cart-list-toolbar,
+      .list-scope,
+      .list-number-tools,
+      .import-workbench,
+      .source-task-card,
+      .source-workspace,
+      .candidate-list {
+        grid-template-columns: 1fr;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .import-stats,
+      .import-tools,
+      .source-task-actions {
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .import-result-left {
+        flex-wrap: wrap;
+      }
+
+      .import-status-bar,
+      .cart-list-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .import-status-title {
+        padding-right: 0;
+        border-right: 0;
+      }
+
+      .number-toolbar,
+      .number-status,
+      .number-actions {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .number-progress {
+        width: 100%;
+      }
+
+      .sku-drawer,
+      .source-drawer,
+      .import-error-drawer,
+      .manual-drawer {
+        position: static;
+        width: auto;
+        max-height: none;
+        margin-top: 12px;
+        border: 1px solid #cbd4e2;
+        box-shadow: none;
+      }
+
+      .drawer-mask {
+        display: none;
+      }
+
+      .error-overview,
+      .error-table-row {
+        grid-template-columns: 1fr;
+      }
+
+      .error-table-row > span {
+        border-left: 0;
+        border-top: 1px solid #edf1f7;
+        justify-content: flex-start;
+      }
+
+      .error-table-row > span:first-child {
+        border-top: 0;
+        justify-content: flex-start;
+      }
+
+      .float-help {
+        right: 0;
+      }
+
+      .form-grid,
+      .child-row {
+        grid-template-columns: 1fr;
+      }
+
+      .cart-footer {
+        position: static;
+        margin-top: 12px;
+        height: auto;
+        flex-wrap: wrap;
+        padding: 12px;
+      }
+
+      .footer-right,
+      .summary {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="ui-standard-frontstage.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <img src="../../../../user-b2b-view/src/assets/img/user/header/logo.png" alt="ee-supply B2B">
+        <button class="menu-toggle" aria-label="折叠菜单"><span></span></button>
+      </div>
+      <div class="top-actions" aria-label="顶部工具">
+        <span class="pill">⌘ 营业日</span>
+        <span class="pill">◎ 한국어⌄</span>
+        <span class="pill">
+          <img src="../../../../user-b2b-view/src/assets/img/header/headerCHN.png" alt="中国">
+          1 CNY ≈
+          <img src="../../../../user-b2b-view/src/assets/img/header/headerKR.png" alt="韩国">
+          197.56 KRW
+        </span>
+        <span class="pill"><span class="avatar">ee</span> JPN20001</span>
+        <span class="pill">退出登录</span>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <aside class="sidebar" aria-label="个人中心导航">
+        <div class="nav-section">
+          <div class="nav-row">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+            个人中心
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-row">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg></span>
+            重要待办
+            <span class="chev">⌃</span>
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-row">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg></span>
+            购物车
+            <span class="chev">⌄</span>
+          </div>
+          <div class="sub-row active">购物车</div>
+          <div class="sub-row">预设附加项</div>
+        </div>
+        <div class="nav-section">
+          <a class="nav-row" href="报价单列表页.html" aria-label="进入 B2B代行管理报价单列表页">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></span>
+            B2B代行管理
+            <span class="chev">⌃</span>
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-row">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 7h18v10H3z"/><path d="M7 7V4h10v3"/></svg></span>
+            发货配送
+            <span class="chev">⌃</span>
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-row">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+            资金管理
+            <span class="chev">⌃</span>
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-row">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg></span>
+            AI图像生成
+            <span class="chev">⌃</span>
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-row">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></span>
+            专属推荐
+            <span class="chev">⌃</span>
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-row">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
+            我的收藏
+            <span class="chev">⌃</span>
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-row">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+            我的足迹
+            <span class="chev">⌃</span>
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-row">
+            <span class="nav-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1A2 2 0 1 1 4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1A2 2 0 1 1 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1A2 2 0 1 1 19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.5 1h.1a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></span>
+            账户设置
+            <span class="chev">⌃</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <section class="cart" aria-label="购物车">
+          <div class="cart-tabs" role="tablist" aria-label="商品类型">
+            <button class="tab active" type="button" role="tab" aria-selected="true">普通商品</button>
+          </div>
+
+          <div class="cart-table-wrap">
+            <table aria-label="购物车商品列表">
+              <colgroup>
+                <col class="product">
+                <col class="spec">
+                <col class="qty">
+                <col class="price">
+                <col class="subtotal">
+                <col class="remark">
+                <col class="remark-img">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">商品</th>
+                  <th scope="col">规格</th>
+                  <th scope="col">数量</th>
+                  <th scope="col">单价</th>
+                  <th scope="col">小计</th>
+                  <th scope="col">备注</th>
+                  <th scope="col">备注图像</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="shop-row">
+                  <td colspan="7">
+                    <div class="shop-head">
+                      <button class="shop-select" type="button" aria-label="取消选择 1688 女装精选商品">
+                        <span class="check checked" aria-hidden="true"></span>
+                      </button>
+                      <img class="platform" src="../../../../user-b2b-view/src/assets/img/user/cart/index/1688.png" alt="1688">
+                      <span>1688 女装精选商品</span>
+                      <span class="shop-risk" tabindex="0" aria-label="商品来自页面素材文件夹">
+                        <span class="shop-risk-icon" aria-hidden="true">!</span>
+                        <span class="shop-risk-copy">素材商品</span>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="sku-row is-selected" data-selected="true" data-unit-price="14.00" data-regular-price="18.00">
+                  <td>
+                    <div class="product-cell">
+                      <button class="row-select" type="button" aria-label="取消选择 跨境圆领无袖小吊带">
+                        <span class="check checked" aria-hidden="true"></span>
+                      </button>
+                      <a class="photo-wrap product-link" href="商品详情页.html" aria-label="查看 跨境圆领无袖小吊带 商品详情" data-preview-src="assets/cart-v2-products/cart-v2-product-1.jpg" data-preview-alt="跨境圆领无袖小吊带大图">
+                        <div class="photo" aria-hidden="true">
+                          <img class="product-img" src="assets/cart-v2-products/cart-v2-product-1.jpg" alt="跨境圆领无袖小吊带">
+                        </div>
+                      </a>
+                      <div class="sku-info">
+                        <a class="product-link" href="商品详情页.html">
+                          <div class="sku-title">跨境圆领无袖小吊带女夏季内搭法式上衣</div>
+                        </a>
+                        <div class="sku-id-list">
+                          <span class="spec-label">MySKU:</span><span class="spec-value">--</span>
+                          <span class="spec-label">ASIN:</span><span class="spec-value">--</span>
+                          <span class="spec-label">FNSKU:</span><span class="spec-value">--</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="spec-cell">
+                    <div class="spec-line"><span class="spec-label">颜色:</span><span class="spec-value">橄榄绿</span></div>
+                    <div class="spec-line"><span class="spec-label">尺码:</span><span class="spec-value">M</span></div>
+                  </td>
+                  <td class="price-cell">
+                    <div class="qty-control" aria-label="数量 20">
+                      <button type="button" aria-label="减少">-</button>
+                      <input value="20" aria-label="数量" inputmode="numeric">
+                      <button type="button" aria-label="增加">+</button>
+                    </div>
+                  </td>
+                  <td class="price-cell">
+                    <div class="price-stack price-scheme-row-save">
+                      <span class="market-price"><span class="market-price-value">18.00</span></span>
+                      <strong class="member-price">14.00</strong>
+                    </div>
+                  </td>
+                  <td class="subtotal-cell">
+                    <div class="subtotal-stack">
+                      <strong class="subtotal-amount" data-row-subtotal>280.00</strong>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="remark-box">跨境夏季基础款，优先核对颜色和尺码后采购。</div>
+                  </td>
+                  <td>
+                    <div class="upload-box">
+                      <img class="product-img" src="assets/cart-v2-products/cart-v2-product-1.jpg" alt="备注图像">
+                    </div>
+                  </td>
+                </tr>
+                <tr class="sku-row is-selected" data-selected="true" data-unit-price="48.00">
+                  <td>
+                    <div class="product-cell">
+                      <button class="row-select" type="button" aria-label="取消选择 欧美毛绒长袖翻领外套">
+                        <span class="check checked" aria-hidden="true"></span>
+                      </button>
+                      <a class="photo-wrap product-link" href="商品详情页.html" aria-label="查看 欧美毛绒长袖翻领外套 商品详情" data-preview-src="assets/cart-v2-products/cart-v2-product-2.jpg" data-preview-alt="欧美毛绒长袖翻领外套大图">
+                        <div class="photo" aria-hidden="true">
+                          <img class="product-img" src="assets/cart-v2-products/cart-v2-product-2.jpg" alt="欧美毛绒长袖翻领外套">
+                        </div>
+                      </a>
+                      <div class="sku-info">
+                        <a class="product-link" href="商品详情页.html">
+                          <div class="sku-title">2025 欧美跨境秋冬毛绒长袖翻领女外套</div>
+                        </a>
+                        <div class="sku-id-list">
+                          <span class="spec-label">MySKU:</span><span class="spec-value">--</span>
+                          <span class="spec-label">ASIN:</span><span class="spec-value">--</span>
+                          <span class="spec-label">FNSKU:</span><span class="spec-value">--</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="spec-cell">
+                    <div class="spec-line"><span class="spec-label">颜色:</span><span class="spec-value">米白</span></div>
+                    <div class="spec-line"><span class="spec-label">尺码:</span><span class="spec-value">均码</span></div>
+                  </td>
+                  <td class="price-cell">
+                    <div class="qty-control" aria-label="数量 12">
+                      <button type="button" aria-label="减少">-</button>
+                      <input value="12" aria-label="数量" inputmode="numeric">
+                      <button type="button" aria-label="增加">+</button>
+                    </div>
+                  </td>
+                  <td class="price-cell">
+                    <div class="price-stack">
+                      <strong class="plain-price">48.00</strong>
+                    </div>
+                  </td>
+                  <td class="subtotal-cell">
+                    <div class="subtotal-stack">
+                      <strong class="subtotal-amount" data-row-subtotal>576.00</strong>
+                    </div>
+                  </td>
+                  <td><div class="remark-box">秋冬长袖款，加入订单前确认面料厚度。</div></td>
+                  <td>
+                    <div class="upload-box">
+                      <img class="product-img" src="assets/cart-v2-products/cart-v2-product-2.jpg" alt="备注图像">
+                    </div>
+                  </td>
+                </tr>
+                <tr class="sku-row is-selected" data-selected="true" data-unit-price="16.50" data-regular-price="20.00">
+                  <td>
+                    <div class="product-cell">
+                      <button class="row-select" type="button" aria-label="取消选择 圆领带胸垫纯色背心">
+                        <span class="check checked" aria-hidden="true"></span>
+                      </button>
+                      <a class="photo-wrap product-link" href="商品详情页.html" aria-label="查看 圆领带胸垫纯色背心 商品详情" data-preview-src="assets/cart-v2-products/cart-v2-product-3.jpg" data-preview-alt="圆领带胸垫纯色背心大图">
+                        <div class="photo" aria-hidden="true">
+                          <img class="product-img" src="assets/cart-v2-products/cart-v2-product-3.jpg" alt="圆领带胸垫纯色背心">
+                        </div>
+                      </a>
+                      <div class="sku-info">
+                        <a class="product-link" href="商品详情页.html">
+                          <div class="sku-title">2026 夏季欧美圆领带胸垫纯色背心上衣</div>
+                        </a>
+                        <div class="sku-id-list">
+                          <span class="spec-label">MySKU:</span><span class="spec-value">--</span>
+                          <span class="spec-label">ASIN:</span><span class="spec-value">--</span>
+                          <span class="spec-label">FNSKU:</span><span class="spec-value">--</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="spec-cell">
+                    <div class="spec-line"><span class="spec-label">颜色:</span><span class="spec-value">黑色</span></div>
+                    <div class="spec-line"><span class="spec-label">尺码:</span><span class="spec-value">S</span></div>
+                  </td>
+                  <td class="price-cell">
+                    <div class="qty-control" aria-label="数量 35">
+                      <button type="button" aria-label="减少">-</button>
+                      <input value="35" aria-label="数量" inputmode="numeric">
+                      <button type="button" aria-label="增加">+</button>
+                    </div>
+                  </td>
+                  <td class="price-cell">
+                    <div class="price-stack price-scheme-row-save">
+                      <span class="market-price"><span class="market-price-value">20.00</span></span>
+                      <strong class="member-price">16.50</strong>
+                    </div>
+                  </td>
+                  <td class="subtotal-cell">
+                    <div class="subtotal-stack">
+                      <strong class="subtotal-amount" data-row-subtotal>577.50</strong>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="remark-box">热销款，建议优先确认补货周期。</div>
+                  </td>
+                  <td>
+                    <div class="upload-box">
+                      <img class="product-img" src="assets/cart-v2-products/cart-v2-product-3.jpg" alt="备注图像">
+                    </div>
+                  </td>
+                </tr>
+                <tr class="shop-row">
+                  <td colspan="7">
+                    <div class="shop-head">
+                      <button class="shop-select" type="button" aria-label="取消选择 1688 女装补货商品">
+                        <span class="check checked" aria-hidden="true"></span>
+                      </button>
+                      <img class="platform" src="../../../../user-b2b-view/src/assets/img/user/cart/index/1688.png" alt="1688">
+                      <span>1688 女装补货商品</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="sku-row is-selected" data-selected="true" data-unit-price="5.70">
+                  <td>
+                    <div class="product-cell">
+                      <button class="row-select" type="button" aria-label="取消选择 莫代尔黑色小吊带">
+                        <span class="check checked" aria-hidden="true"></span>
+                      </button>
+                      <a class="photo-wrap product-link" href="商品详情页.html" aria-label="查看 莫代尔黑色小吊带 商品详情" data-preview-src="assets/cart-v2-products/cart-v2-product-4.jpg" data-preview-alt="莫代尔黑色小吊带大图">
+                        <div class="photo" aria-hidden="true">
+                          <img class="product-img" src="assets/cart-v2-products/cart-v2-product-4.jpg" alt="莫代尔黑色小吊带">
+                        </div>
+                      </a>
+                      <div class="sku-info">
+                        <a class="product-link" href="商品详情页.html">
+                          <div class="sku-title">莫代尔黑色小吊带女夏季美背外穿内搭</div>
+                        </a>
+                        <div class="sku-id-list">
+                          <span class="spec-label">MySKU:</span><span class="spec-value">--</span>
+                          <span class="spec-label">ASIN:</span><span class="spec-value">--</span>
+                          <span class="spec-label">FNSKU:</span><span class="spec-value">--</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="spec-cell">
+                    <div class="spec-line"><span class="spec-label">颜色:</span><span class="spec-value">黑色</span></div>
+                    <div class="spec-line"><span class="spec-label">尺码:</span><span class="spec-value">M</span></div>
+                  </td>
+                  <td class="price-cell">
+                    <div class="qty-control" aria-label="数量 18">
+                      <button type="button" aria-label="减少">-</button>
+                      <input value="18" aria-label="数量" inputmode="numeric">
+                      <button type="button" aria-label="增加">+</button>
+                    </div>
+                  </td>
+                  <td class="price-cell">
+                    <div class="price-stack">
+                      <strong class="plain-price">5.70</strong>
+                    </div>
+                  </td>
+                  <td class="subtotal-cell">
+                    <div class="subtotal-stack">
+                      <strong class="subtotal-amount" data-row-subtotal>102.60</strong>
+                    </div>
+                  </td>
+                  <td><div class="remark-box remark-placeholder">请输入备注内容</div></td>
+                  <td>
+                    <div class="upload-box">
+                      <img class="product-img" src="assets/cart-v2-products/cart-v2-product-4.jpg" alt="备注图像">
+                    </div>
+                  </td>
+                </tr>
+                <tr class="sku-row is-selected" data-selected="true" data-unit-price="11.00" data-regular-price="14.00">
+                  <td>
+                    <div class="product-cell">
+                      <button class="row-select" type="button" aria-label="取消选择 清新棉质压褶带胸垫吊带">
+                        <span class="check checked" aria-hidden="true"></span>
+                      </button>
+                      <a class="photo-wrap product-link" href="商品详情页.html" aria-label="查看 清新棉质压褶带胸垫吊带 商品详情" data-preview-src="assets/cart-v2-products/cart-v2-product-5.jpg" data-preview-alt="清新棉质压褶带胸垫吊带大图">
+                        <div class="photo" aria-hidden="true">
+                          <img class="product-img" src="assets/cart-v2-products/cart-v2-product-5.jpg" alt="清新棉质压褶带胸垫吊带">
+                        </div>
+                      </a>
+                      <div class="sku-info">
+                        <a class="product-link" href="商品详情页.html">
+                          <div class="sku-title">清新棉质压褶带胸垫吊带女夏季外穿上衣</div>
+                        </a>
+                        <div class="sku-id-list">
+                          <span class="spec-label">MySKU:</span><span class="spec-value">--</span>
+                          <span class="spec-label">ASIN:</span><span class="spec-value">--</span>
+                          <span class="spec-label">FNSKU:</span><span class="spec-value">--</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="spec-cell">
+                    <div class="spec-line"><span class="spec-label">颜色:</span><span class="spec-value">混色</span></div>
+                    <div class="spec-line"><span class="spec-label">尺码:</span><span class="spec-value">均码</span></div>
+                  </td>
+                  <td class="price-cell">
+                    <div class="qty-control" aria-label="数量 24">
+                      <button type="button" aria-label="减少">-</button>
+                      <input value="24" aria-label="数量" inputmode="numeric">
+                      <button type="button" aria-label="增加">+</button>
+                    </div>
+                  </td>
+                  <td class="price-cell">
+                    <div class="price-stack price-scheme-row-save">
+                      <span class="market-price"><span class="market-price-value">14.00</span></span>
+                      <strong class="member-price">11.00</strong>
+                    </div>
+                  </td>
+                  <td class="subtotal-cell">
+                    <div class="subtotal-stack">
+                      <strong class="subtotal-amount" data-row-subtotal>264.00</strong>
+                    </div>
+                  </td>
+                  <td><div class="remark-box">注意胸垫版本，避免混发。</div></td>
+                  <td>
+                    <div class="upload-box">
+                      <img class="product-img" src="assets/cart-v2-products/cart-v2-product-5.jpg" alt="备注图像">
+                    </div>
+                  </td>
+                </tr>
+                <tr class="sku-row is-selected" data-selected="true" data-unit-price="14.90">
+                  <td>
+                    <div class="product-cell">
+                      <button class="row-select" type="button" aria-label="取消选择 莫代尔圆领带胸垫背心">
+                        <span class="check checked" aria-hidden="true"></span>
+                      </button>
+                      <a class="photo-wrap product-link" href="商品详情页.html" aria-label="查看 莫代尔圆领带胸垫背心 商品详情" data-preview-src="assets/cart-v2-products/cart-v2-product-6.jpg" data-preview-alt="莫代尔圆领带胸垫背心大图">
+                        <div class="photo" aria-hidden="true">
+                          <img class="product-img" src="assets/cart-v2-products/cart-v2-product-6.jpg" alt="莫代尔圆领带胸垫背心">
+                        </div>
+                      </a>
+                      <div class="sku-info">
+                        <a class="product-link" href="商品详情页.html">
+                          <div class="sku-title">莫代尔圆领带胸垫背心女夏季大码内搭</div>
+                        </a>
+                        <div class="sku-id-list">
+                          <span class="spec-label">MySKU:</span><span class="spec-value">--</span>
+                          <span class="spec-label">ASIN:</span><span class="spec-value">--</span>
+                          <span class="spec-label">FNSKU:</span><span class="spec-value">--</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="spec-cell">
+                    <div class="spec-line"><span class="spec-label">颜色:</span><span class="spec-value">粉色</span></div>
+                    <div class="spec-line"><span class="spec-label">尺码:</span><span class="spec-value">L</span></div>
+                  </td>
+                  <td class="price-cell">
+                    <div class="qty-control" aria-label="数量 16">
+                      <button type="button" aria-label="减少">-</button>
+                      <input value="16" aria-label="数量" inputmode="numeric">
+                      <button type="button" aria-label="增加">+</button>
+                    </div>
+                  </td>
+                  <td class="price-cell">
+                    <div class="price-stack">
+                      <strong class="plain-price">14.90</strong>
+                    </div>
+                  </td>
+                  <td class="subtotal-cell">
+                    <div class="subtotal-stack">
+                      <strong class="subtotal-amount" data-row-subtotal>238.40</strong>
+                    </div>
+                  </td>
+                  <td><div class="remark-box remark-placeholder">请输入备注内容</div></td>
+                  <td>
+                    <div class="upload-box">
+                      <img class="product-img" src="assets/cart-v2-products/cart-v2-product-6.jpg" alt="备注图像">
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="cart-footer" aria-label="购物车结算栏">
+      <div class="footer-left" aria-label="批量操作">
+        <button class="select-all-control" type="button" data-select-all aria-pressed="true">
+          <span class="check checked" aria-hidden="true"></span>
+          <span>全选</span>
+        </button>
+        <button class="batch-delete" type="button" data-batch-delete>批量删除</button>
+      </div>
+      <div class="footer-right">
+        <div class="summary">
+          <span><span class="muted">SKU种类:</span> <strong data-selected-sku>6</strong>/6</span>
+          <span><span class="muted">商品总数:</span> <strong data-selected-qty>125</strong>/125</span>
+          <span class="member-saving"><span class="muted">会员已省:</span> <strong data-selected-saving>274.50 CNY</strong></span>
+          <span class="freight-estimate">
+            <span class="muted">预估国内运费:</span>
+            <strong>25.67 CNY</strong>
+            <span class="stat-help freight-help" tabindex="0" aria-label="预估国内运费说明" data-tip="1688商家提供，实际国内运费按清算后计算">?</span>
+          </span>
+        </div>
+        <div class="total">
+          <span class="muted">商品总金额:</span>
+          <strong data-selected-total>2038.50 CNY</strong>
+          <span class="muted" data-selected-krw>(约 432162 KRW)</span>
+        </div>
+        <div class="next-group">
+          <button class="next-btn" type="button" onclick="window.location.href='确认订单页面.html'">下一步</button>
+        </div>
+      </div>
+    </footer>
+
+    <div class="image-preview-layer" aria-hidden="true">
+      <div class="image-preview-visual"><img class="product-img" src="" alt=""></div>
+      <div class="image-preview-copy" hidden></div>
+    </div>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+
+  </div>
+  <script>
+    (() => {
+      const rows = Array.from(document.querySelectorAll(".sku-row"));
+      const selectAll = document.querySelector("[data-select-all]");
+      const batchDelete = document.querySelector("[data-batch-delete]");
+      const listCount = document.querySelector("[data-list-count]");
+      const selectedSku = document.querySelector("[data-selected-sku]");
+      const selectedQty = document.querySelector("[data-selected-qty]");
+      const selectedTotal = document.querySelector("[data-selected-total]");
+      const selectedSaving = document.querySelector("[data-selected-saving]");
+      const selectedKrw = document.querySelector("[data-selected-krw]");
+      const toast = document.querySelector(".toast");
+      const imagePreviewLayer = document.querySelector(".image-preview-layer");
+      const imagePreviewImg = imagePreviewLayer?.querySelector(".product-img");
+      const imagePreviewCopy = imagePreviewLayer?.querySelector(".image-preview-copy");
+      let toastTimer = null;
+      let activePreviewWrap = null;
+
+      const parseQty = (input) => Math.max(0, Math.floor(Number(input?.value || 0) || 0));
+      const formatMoney = (value) => value.toFixed(2);
+      const isSelected = (row) => row.dataset.selected === "true";
+
+      const showToast = (message) => {
+        if (!toast) return;
+        toast.textContent = message;
+        toast.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove("show"), 1600);
+      };
+
+      const syncRow = (row) => {
+        const input = row.querySelector(".qty-control input");
+        const qty = parseQty(input);
+        const unitPrice = Number(row.dataset.unitPrice || 0);
+        const regularPrice = Number(row.dataset.regularPrice || unitPrice);
+        const subtotal = qty * unitPrice;
+        const saving = Math.max(0, (regularPrice - unitPrice) * qty);
+        if (input) input.value = String(qty);
+        row.querySelectorAll("[data-row-subtotal]").forEach((node) => {
+          node.textContent = formatMoney(subtotal);
+        });
+        return { qty, subtotal, saving };
+      };
+
+      const setRowSelected = (row, selected) => {
+        row.dataset.selected = selected ? "true" : "false";
+        row.classList.toggle("is-selected", selected);
+        const check = row.querySelector(".row-select .check");
+        const button = row.querySelector(".row-select");
+        const title = row.querySelector(".sku-title")?.textContent.trim() || "商品";
+        check?.classList.toggle("checked", selected);
+        check?.classList.remove("half");
+        button?.setAttribute("aria-label", `${selected ? "取消选择" : "选择"} ${title}`);
+      };
+
+      const getRowsForShop = (shopRow) => {
+        const groupRows = [];
+        let next = shopRow.nextElementSibling;
+        while (next && !next.classList.contains("shop-row")) {
+          if (next.classList.contains("sku-row")) groupRows.push(next);
+          next = next.nextElementSibling;
+        }
+        return groupRows;
+      };
+
+      const updateShopRows = () => {
+        document.querySelectorAll(".shop-row").forEach((shopRow) => {
+          const groupRows = getRowsForShop(shopRow);
+          const selectedCount = groupRows.filter(isSelected).length;
+          const allSelected = groupRows.length > 0 && selectedCount === groupRows.length;
+          const halfSelected = selectedCount > 0 && selectedCount < groupRows.length;
+          const check = shopRow.querySelector(".shop-select .check");
+          const button = shopRow.querySelector(".shop-select");
+          const shopName = shopRow.querySelector(".shop-head > span:not(.shop-risk):not(.shop-risk-copy)")?.textContent.trim() || "店铺商品";
+
+          check?.classList.toggle("checked", allSelected);
+          check?.classList.toggle("half", halfSelected);
+          button?.setAttribute("aria-label", `${allSelected ? "取消选择" : "选择"} ${shopName}`);
+          button?.setAttribute("aria-pressed", allSelected ? "true" : "false");
+        });
+      };
+
+      const cleanupShopRows = () => {
+        document.querySelectorAll(".shop-row").forEach((shopRow) => {
+          let next = shopRow.nextElementSibling;
+          let hasProduct = false;
+          while (next && !next.classList.contains("shop-row")) {
+            if (next.classList.contains("sku-row")) hasProduct = true;
+            next = next.nextElementSibling;
+          }
+          if (!hasProduct) shopRow.remove();
+        });
+      };
+
+      const updateSummary = () => {
+        const liveRows = Array.from(document.querySelectorAll(".sku-row"));
+        let qtyTotal = 0;
+        let amountTotal = 0;
+        let savingTotal = 0;
+        let selectedCount = 0;
+
+        liveRows.forEach((row) => {
+          const data = syncRow(row);
+          if (isSelected(row)) {
+            selectedCount += 1;
+            qtyTotal += data.qty;
+            amountTotal += data.subtotal;
+            savingTotal += data.saving;
+          }
+        });
+
+        const allSelected = liveRows.length > 0 && selectedCount === liveRows.length;
+        const check = selectAll?.querySelector(".check");
+        selectAll?.setAttribute("aria-pressed", allSelected ? "true" : "false");
+        check?.classList.toggle("checked", allSelected);
+        check?.classList.toggle("half", selectedCount > 0 && !allSelected);
+        updateShopRows();
+        if (selectedSku) selectedSku.textContent = String(selectedCount);
+        if (selectedQty) selectedQty.textContent = String(qtyTotal);
+        if (selectedSaving) selectedSaving.textContent = `${formatMoney(savingTotal)} CNY`;
+        if (selectedTotal) selectedTotal.textContent = `${formatMoney(amountTotal)} CNY`;
+        if (selectedKrw) selectedKrw.textContent = `(约 ${Math.round(amountTotal * 212)} KRW)`;
+        if (listCount) listCount.textContent = `商品${liveRows.length}条`;
+      };
+
+      const positionImagePreview = (wrap) => {
+        if (!wrap || !imagePreviewLayer?.classList.contains("is-open")) return;
+        const rect = wrap.getBoundingClientRect();
+        const gap = 10;
+        const margin = 8;
+        const layerRect = imagePreviewLayer.getBoundingClientRect();
+        let left = rect.right + gap;
+        if (left + layerRect.width > window.innerWidth - margin) {
+          left = rect.left - layerRect.width - gap;
+        }
+        if (left < margin) left = margin;
+        let top = rect.top;
+        if (top + layerRect.height > window.innerHeight - margin) {
+          top = window.innerHeight - layerRect.height - margin;
+        }
+        if (top < margin) top = margin;
+        imagePreviewLayer.style.left = `${left}px`;
+        imagePreviewLayer.style.top = `${top}px`;
+      };
+
+      const showImagePreview = (wrap) => {
+        if (!imagePreviewLayer || !imagePreviewImg) return;
+        const img = wrap.querySelector(".product-img");
+        const src = wrap.dataset.previewSrc || img?.getAttribute("src") || "";
+        if (!src) return;
+        activePreviewWrap = wrap;
+        imagePreviewImg.src = src;
+        imagePreviewImg.alt = wrap.dataset.previewAlt || img?.getAttribute("alt") || "商品大图";
+        const note = wrap.dataset.previewNote || "";
+        if (imagePreviewCopy) {
+          imagePreviewCopy.textContent = note;
+          imagePreviewCopy.hidden = !note;
+        }
+        imagePreviewLayer.classList.add("is-open");
+        imagePreviewLayer.setAttribute("aria-hidden", "false");
+        positionImagePreview(wrap);
+      };
+
+      const hideImagePreview = () => {
+        activePreviewWrap = null;
+        imagePreviewLayer?.classList.remove("is-open");
+        imagePreviewLayer?.setAttribute("aria-hidden", "true");
+      };
+
+      document.addEventListener("click", (event) => {
+        const rowSelect = event.target.closest(".row-select");
+        if (rowSelect) {
+          const row = rowSelect.closest(".sku-row");
+          setRowSelected(row, !isSelected(row));
+          updateSummary();
+          return;
+        }
+
+        const shopSelect = event.target.closest(".shop-select");
+        if (shopSelect) {
+          const shopRow = shopSelect.closest(".shop-row");
+          const groupRows = getRowsForShop(shopRow);
+          const shouldSelectAll = groupRows.some((row) => !isSelected(row));
+          groupRows.forEach((row) => setRowSelected(row, shouldSelectAll));
+          updateSummary();
+          return;
+        }
+
+        if (event.target.closest("[data-select-all]")) {
+          const liveRows = Array.from(document.querySelectorAll(".sku-row"));
+          const shouldSelectAll = liveRows.some((row) => !isSelected(row));
+          liveRows.forEach((row) => setRowSelected(row, shouldSelectAll));
+          updateSummary();
+          return;
+        }
+
+        if (event.target.closest("[data-batch-delete]")) {
+          const selectedRows = Array.from(document.querySelectorAll(".sku-row")).filter(isSelected);
+          selectedRows.forEach((row) => row.remove());
+          cleanupShopRows();
+          updateSummary();
+          showToast(selectedRows.length ? `已删除 ${selectedRows.length} 个商品` : "请选择要删除的商品");
+          return;
+        }
+
+        const qtyButton = event.target.closest(".qty-control button");
+        if (qtyButton) {
+          const input = qtyButton.parentElement.querySelector("input");
+          const step = qtyButton.textContent.trim() === "-" ? -1 : 1;
+          input.value = String(Math.max(0, parseQty(input) + step));
+          updateSummary();
+        }
+      });
+
+      document.addEventListener("input", (event) => {
+        if (event.target.closest(".qty-control input")) updateSummary();
+      });
+
+      document.addEventListener("pointerover", (event) => {
+        const wrap = event.target.closest(".photo-wrap");
+        if (!wrap || wrap === activePreviewWrap) return;
+        showImagePreview(wrap);
+      });
+
+      document.addEventListener("pointerout", (event) => {
+        const wrap = event.target.closest(".photo-wrap");
+        if (!wrap || (event.relatedTarget && wrap.contains(event.relatedTarget))) return;
+        hideImagePreview();
+      });
+
+      window.addEventListener("resize", () => positionImagePreview(activePreviewWrap));
+      document.addEventListener("scroll", () => positionImagePreview(activePreviewWrap), true);
+      updateSummary();
+    })();
+  </script>`r`n</body>
+</html>
+
+
