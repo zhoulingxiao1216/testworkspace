@@ -1,0 +1,35 @@
+# 安全优化 main 环境测试账号（勿提交 token 到 git）
+# 更新：2026-06-16
+
+environment: main
+api_base: https://main-api.hubbuyer.com
+login_endpoint: /api/login/login
+
+accounts:
+  user_a:
+    role: 攻击方 / 跨用户探测
+    email: mxnrq@airsworld.net
+    password: "123456"
+    source: 全球站巡检脚本/hubbuyer/config/data/login_data.py (main.frontend[0])
+  user_b:
+    role: 受害方 / IDOR 对照
+    email: zhoulingxiao1216@proton.me
+    password: "123456"
+    source: 用户补充 2026-06-16
+  admin_patrol:
+    account: test-zhou
+    password: "123456qwe"
+    source: 全球站巡检脚本/hubbuyer/config/data/login_data.py (main.admin)
+  admin:
+    account: admin
+    password: "123333"
+    source: 用户补充 2026-06-16
+
+# 运行时由 Agent2 登录后填充，勿入库
+runtime:
+  user_a_token: ""
+  user_b_token: ""
+  admin_patrol_token: ""
+  admin_token: ""
+  user_a_uuid: ""
+  user_b_uuid: ""

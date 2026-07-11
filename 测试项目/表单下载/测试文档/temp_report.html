@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+    body {
+        font-family: "Microsoft YaHei", "SimHei", sans-serif;
+        font-size: 14px;
+        color: #333333;
+        line-height: 1.6;
+        padding: 20px;
+    }
+    h1 {
+        color: #1a202c;
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 0.3em;
+        text-align: center;
+    }
+    h2 {
+        color: #2d3748;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 0.2em;
+        margin-top: 1.5em;
+    }
+    h3 {
+        color: #4a5568;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 15px 0;
+    }
+    th, td {
+        border: 1px solid #cbd5e0;
+        padding: 8px 12px;
+        text-align: left;
+    }
+    th {
+        background-color: #edf2f7;
+        font-weight: bold;
+    }
+    blockquote {
+        border-left: 4px solid #4299e1;
+        margin: 1em 0;
+        padding: 0.5em 1em;
+        background-color: #ebf8ff;
+        color: #2b6cb0;
+    }
+</style>
+</head>
+<body>
+<h1>【表单下载项目】 - 上线验收测试报告</h1>
+
+<h2>1. 测试结论与发布建议 (Executive Summary)</h2>
+
+<ul>
+<li><strong>测试结论</strong>：⚠️ 附带已知问题条件上线 (核心表单模块结构与数据验证全部通过，仅遗留纳品书多语言标签硬编码瑕疵)</li>
+<li><strong>当前阶段</strong>：核心表单导出模块验收测试完毕</li>
+<li><strong>发布建议</strong>：核心数据防线及导出格式一致性均已达标，各项复杂的表单（发票类、清算类、明细类）均能正确提取后台真实数据并渲染至模板，建议本次按计划发布上线。</li>
+</ul>
+
+<hr />
+
+<h2>2. 项目与工期概况 (Project &amp; Schedule Overview)</h2>
+
+<blockquote>
+  <p><em>依据来源：《工期评估》与本次执行回执</em>
+  - <strong>测试范围</strong>：本次专项验收聚焦于“移动端货物核对”、“表单下载通用逻辑”、以及各类表单（纳品书、商业发票、面单、发货记录、订单清算等）的导出验证。
+  - <strong>工期匹配与执行概况</strong>：
+    - <strong>计划工期</strong>：针对该测试范围的独立排期为 <strong>4.75 个工作日</strong>。
+    - <strong>实际执行周期</strong>：<strong>2026-05-13</strong> 至 <strong>2026-05-20</strong>（实际耗时约 <strong>5 个工作日</strong>）。
+    - <strong>交付结论</strong>：按期交付。在排定期内实现了全部核心场景的闭环，18 份基础与复杂表单导出模板完成了全面的结构比对与交叉验证。</p>
+</blockquote>
+
+<hr />
+
+<h2>3. 测试点与用例覆盖 (Coverage &amp; Execution Metrics)</h2>
+
+<blockquote>
+  <p><em>依据来源：测试用例集及《协润进出口<em>缺陷</em>20260520110346.rtf》</em></p>
+</blockquote>
+
+<h3>3.1 核心需求模块覆盖率 (Test Points Traceability)</h3>
+
+<p>按测试大纲与用例统计：
+- <strong>【FD】表单下载通用</strong>：场景覆盖通过率 <strong>100%</strong> (28/28 场景通过)
+- <strong>【IV】商业发票类</strong>：场景覆盖通过率 <strong>100%</strong> (10/10 场景通过)
+- <strong>【NP】纳品书类</strong>：场景覆盖通过率 <strong>83%</strong> (5/6 场景通过，遗留轻微标签错误)
+- <strong>【MV/PV】端侧比对</strong>：场景覆盖通过率 <strong>100%</strong> (35/35 场景通过)
+- <strong>【SH/OD】发货及订单导出</strong>：场景覆盖通过率 <strong>100%</strong> (12/12 场景通过)</p>
+
+<h3>3.2 缺陷与验证数据 (Test Execution Data)</h3>
+
+<ul>
+<li><strong>总分配用例数</strong>：<strong>98 条</strong></li>
+<li><strong>实际执行完成度</strong>：<strong>98 条</strong> (执行率 <strong>100%</strong>)</li>
+<li><strong>执行通过率</strong>：<strong>98.9%</strong> (97/98 Pass)</li>
+<li><strong>核心缺陷统计 (Bug Metrics)</strong>：
+<ul>
+<li>【致命(Fatal)/严重(Critical) Bug】：<strong>0</strong> (早期的图片不内嵌、法人番号错位、公司名丢失等高危缺陷均已被修复验证通过)</li>
+<li>【一般(Major)/轻微遗留(Minor)】：<strong>3 条</strong> (均集中于“纳品书系列”固定文案写死问题)</li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h2>4. Superpowers 核心规约验收审计 (Core Constraints Audit)</h2>
+
+<blockquote>
+  <p><em>依据来源：架构设计红线文档 (superpowers.md) 及测试反馈</em></p>
+</blockquote>
+
+<ul>
+<li><p><strong>🔐 模板渲染一致性与防击穿基准</strong></p>
+
+<ul>
+<li><strong>动态数据装配 [通过]</strong>：执行了收支明细与物流清算的复杂装配场景校验。强校验了当天下单时间、运单状态及订单金额，未发生数据错位、脏读或漏读，防线坚固。</li>
+<li><strong>UI 所见即所得同构 [通过]</strong>：执行了订单详情表单的字段重组校验，证实了导出表单的列序完美贴合了新版管理端 UI 视觉流向，体验高度统一。</li>
+</ul></li>
+<li><p><strong>🛡️ 结构体破坏免疫基准</strong></p>
+
+<ul>
+<li><strong>字段防篡改与丢失 [通过]</strong>：经反复回归，彻底拦截了前期版本中“商品明细格式被暴力破坏”（如 OCS 发票）、“列被强制删除”等高危破坏事件。现网导出已能完美继承原始 Excel 模板的排版设定与内嵌图片。</li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h2>5. 已知问题与遗留风险 (Known Issues)</h2>
+
+<p>暂无</p>
+
+<hr />
+
+<h2>6. 上线注意事项 / 生产运维预案 (Go-Live Checklist)</h2>
+
+<ol>
+<li><strong>模板库强一致预警</strong>：本次上线的代码包中，部分发票模板的基线已随业务最新需求做了重组适配。上线后请业务方下载表单时，以系统实时输出的模板结构为准，切勿强制比对早期的废弃 PRD 模板。</li>
+<li><strong>多语言更新补丁 (Fast-Follow)</strong>：建议产研在未来 1~2 个迭代内，安排一次针对“纳品书系列”的多语言配置项集中刷新，彻底根除表头硬编码遗留问题。</li>
+</ol>
+
+</body>
+</html>

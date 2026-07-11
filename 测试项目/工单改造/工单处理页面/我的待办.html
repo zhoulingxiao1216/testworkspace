@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>我的待办 - 商品问题工单</title>
+  <script>
+    (function () {
+      try {
+        [
+          "global-v2-workorder-simple-flow",
+          "global-v2-workorder-simple-flow-v1",
+          "global-v2-workorder-simple-flow-v2",
+          "global-v2-workorder-simple-flow-v3",
+          "global-v2-workorder-simple-flow-v4",
+          "global-v2-workorder-simple-flow-v5",
+          "global-v2-workorder-simple-flow-v6",
+          "global-v2-workorder-simple-flow-v7",
+          "global-v2-workorder-simple-flow-v8"
+        ].forEach(function (key) {
+          localStorage.removeItem(key);
+        });
+      } catch (error) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/workorder-ui.css">
+  <link rel="stylesheet" href="assets/workorder-vue.css?v=20260525o">
+</head>
+<body>
+  <div id="vueBootError" class="boot-message">页面加载中...</div>
+  <div id="workbenchApp" class="app-shell" v-cloak>
+    <header class="top-tabs">
+      <nav class="module-tabs">
+        <a class="module-tab" href="#"><span class="module-mark">管</span>管理系统</a>
+        <a class="module-tab is-active" href="#"><span class="module-mark">B2B</span>B2B系统</a>
+        <a class="module-tab" href="#"><span class="module-mark">D2C</span>D2C系统</a>
+        <a class="module-tab" href="#"><span class="module-mark">介</span>介绍中心</a>
+        <a class="module-tab" href="#"><span class="module-mark">仓</span>云仓系统</a>
+        <a class="module-tab" href="#"><span class="module-mark">物</span>物流系统</a>
+        <a class="module-tab" href="#"><span class="module-mark">财</span>财务系统</a>
+        <a class="module-tab" href="#"><span class="module-mark">日</span>日志系统</a>
+      </nav>
+      <div class="account-area">
+        <a class="color-primary" href="我的待办.html">待办 {{ myPendingCount }}</a>
+        <span>你好，<span class="color-primary">admin</span></span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-inner">
+          <div class="side-group">
+            <div class="side-title has-badge">工作台<span class="badge pill">{{ myPendingCount }}</span></div>
+            <span class="side-link is-disabled">业务总览</span>
+            <a class="side-link is-clickable is-active" href="我的待办.html">我的待办<span class="badge pill">{{ myPendingCount }}</span></a>
+          </div>
+          <div class="side-group">
+            <div class="side-title">订单管理</div>
+            <span class="side-link is-disabled">报价单</span>
+            <a class="side-link is-clickable" href="代购订单详情.html">代购订单</a>
+            <span class="side-link is-disabled">全部商品</span>
+            <span class="side-link is-disabled">订单清算记录</span>
+          </div>
+          <div class="side-group">
+            <div class="side-title">仓库管理</div>
+            <div class="side-title">发货配送</div>
+            <div class="side-title">客户管理</div>
+            <div class="side-title">系统设置</div>
+            <a class="side-link is-clickable" href="工单模板.html">工单模板</a>
+          </div>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <section class="page workbench-page">
+          <div class="page-title-row">
+            <div>
+              <div class="page-mode-tabs">
+                <button :class="{ 'is-active': workbenchMode === 'todo' }" type="button" @click="setWorkbenchMode('todo')">我的待办</button>
+                <button :class="{ 'is-active': workbenchMode === 'history' }" type="button" @click="setWorkbenchMode('history')">全部工单</button>
+              </div>
+              <p>{{ workbenchMode === 'history' ? '查看权限范围内所有订单的全部工单。' : '只显示当前需要我处理，或我负责对客沟通的商品问题。' }}</p>
+            </div>
+          </div>
+
+          <section class="filter-card workbench-filter">
+            <div class="filter-grid">
+              <label class="filter-field">
+                <span>客户ID</span>
+                <input class="input" v-model="customerQuery" placeholder="请输入客户ID">
+              </label>
+              <label class="filter-field">
+                <span>订单/工单</span>
+                <input class="input" v-model="searchOrder" placeholder="请输入订单号或工单号">
+              </label>
+              <label class="filter-field">
+                <span>状态</span>
+                <select class="select" v-model="filterStage">
+                  <option value="all">全部状态</option>
+                  <option value="todo">待处理</option>
+                  <option value="waiting_customer">待客户确认</option>
+                  <option value="customer_replied">客户已回复</option>
+                  <option value="customer_confirmed">客户已确认</option>
+                  <option value="closed">已完结</option>
+                </select>
+              </label>
+              <label class="filter-field">
+                <span>处理人</span>
+                <select class="select" v-model="filterHandler">
+                  <option value="all">全部处理人</option>
+                  <option v-for="person in people" :key="person.value" :value="person.value">{{ person.value }}</option>
+                </select>
+              </label>
+              <label class="filter-field filter-field-date">
+                <span>创建时间</span>
+                <div class="date-range merged-date-range">
+                  <span class="date-icon" aria-hidden="true"></span>
+                  <input type="date" v-model="filterDateStart" aria-label="开始日期">
+                  <em>至</em>
+                  <input type="date" v-model="filterDateEnd" aria-label="结束日期">
+                </div>
+              </label>
+            </div>
+            <div class="filter-actions-row">
+              <button class="btn primary" type="button">查询</button>
+              <button class="btn" type="button" @click="resetFilters">重置</button>
+            </div>
+          </section>
+
+          <nav class="tabs-line">
+            <button v-for="tab in workbenchTabs" :key="tab.key" :class="{ 'is-active': activeFilter === tab.key }" @click="activeFilter = tab.key">
+              {{ tab.label }}（{{ tab.count }}）
+            </button>
+          </nav>
+
+          <section class="table-card">
+            <table class="todo-table">
+              <thead>
+                <tr>
+                  <th>工单编号</th>
+                  <th>创建时间</th>
+                  <th>订单/客户</th>
+                  <th>商品与问题</th>
+                  <th>状态</th>
+                  <th>当前处理人</th>
+                  <th>下一步</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="ticket in filteredTickets" :key="ticket.id" :class="{ 'is-selected': selectedTicket && selectedTicket.id === ticket.id }" @click="selectedTicketId = ticket.id">
+                  <td>
+                    <strong>{{ ticket.id }}</strong>
+                    <small>提出：{{ ticket.proposer }}</small>
+                  </td>
+                  <td class="todo-created-time">{{ ticket.createdAt }}</td>
+                  <td>
+                    <a class="order-link-text" :href="'代购订单详情.html?ticket=' + ticket.id">{{ orderNoOf(ticket) }}</a>
+                    <small>{{ customerNoOf(ticket) }}</small>
+                  </td>
+                  <td>
+                    <div class="todo-product">
+                      <div class="goods-img demo-img" :class="productById(ticket.productId).image"></div>
+                      <div>
+                        <strong>{{ productById(ticket.productId).name }}</strong>
+                        <p>{{ summaryText(ticket) }}</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span :class="tagClass(ticket.stage)">{{ ticketStateLabel(ticket) }}</span></td>
+                  <td>{{ currentOwnerText(ticket) }}</td>
+                  <td>
+                    <button class="btn small primary" @click.stop="openTicketFromWorkbench(ticket)">{{ nextActionLabel(ticket) }}</button>
+                  </td>
+                </tr>
+                <tr v-if="!filteredTickets.length">
+                  <td colspan="7">
+                    <div class="empty-text">暂无符合条件的工单。</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="assets/vue.global.prod.js?v=20260523h"></script>
+  <script src="assets/workorder-vue.js?v=20260525o"></script>
+</body>
+</html>

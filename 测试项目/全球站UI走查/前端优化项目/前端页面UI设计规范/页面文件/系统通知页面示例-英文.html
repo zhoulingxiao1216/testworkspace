@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>System Notifications Page Example</title>
+  <style>
+    :root {
+      --primary: #022559;
+      --accent: #b4272b;
+      --text: #1f2937;
+      --text-2: #344054;
+      --muted: #667085;
+      --weak: #98a2b3;
+      --line: #cbd4e1;
+      --bg: #f4f6f8;
+      --panel: #ffffff;
+      --table-head: #e5ebf3;
+      --shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-width: 1280px;
+      height: 100%;
+      overflow: hidden;
+      color: var(--text);
+      background: var(--bg);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      line-height: 1.5;
+    }
+
+    .system-notify-sample-title {
+      margin: 22px 0 12px;
+      color: var(--accent);
+      font-size: 18px;
+      font-weight: 850;
+    }
+
+    .system-notify-sample-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .system-notify-sample-title a:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .system-notify-sample {
+      overflow: hidden;
+      border: 1px solid #d6dde8;
+      border-radius: 8px;
+      background: #f4f6f8;
+    }
+
+    .system-notify-sample .notify-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 66px;
+      padding: 0 28px;
+      border-bottom: 1px solid #e5e9f0;
+      background: #fff;
+    }
+
+    .system-notify-sample .notify-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--primary);
+      font-size: 20px;
+      font-weight: 850;
+    }
+
+    .system-notify-sample .notify-logo {
+      width: 44px;
+      height: 34px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 18px 17px, #fff 0 9px, transparent 10px),
+        radial-gradient(circle at 18px 17px, #b4272b 0 15px, transparent 16px);
+    }
+
+    .system-notify-sample .notify-tag {
+      display: inline-flex;
+      align-items: center;
+      height: 20px;
+      padding: 0 8px;
+      border-radius: 4px;
+      background: #b4272b;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .system-notify-sample .notify-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: flex-end;
+      color: var(--primary);
+      font-size: 14px;
+    }
+
+    .system-notify-sample .notify-tool {
+      display: inline-flex;
+      align-items: center;
+      height: 30px;
+      padding: 0 14px;
+      border: 1px solid var(--primary);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--primary);
+      white-space: normal;
+    }
+
+    .system-notify-sample .notify-layout {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      min-height: 560px;
+    }
+
+    .system-notify-sample .notify-side {
+      padding: 18px 4px 18px 0;
+      border-right: 1px solid #e3e8f0;
+      background: #fff;
+    }
+
+    .system-notify-sample .notify-menu-item,
+    .system-notify-sample .notify-sub-item {
+      height: 42px;
+      padding: 0 20px;
+      color: #17345f;
+      font-size: 15px;
+      line-height: 42px;
+      white-space: normal;
+    }
+
+    .system-notify-sample .notify-menu-item {
+      font-weight: 650;
+    }
+
+    .system-notify-sample .notify-sub-item {
+      margin-left: 12px;
+      border-radius: 0 6px 6px 0;
+      color: #344054;
+    }
+
+    .system-notify-sample .notify-sub-item.active {
+      background: #e7ecf3;
+      color: var(--primary);
+      font-weight: 750;
+    }
+
+    .system-notify-sample .notify-main {
+      position: relative;
+      min-width: 0;
+      padding: 0 12px 74px;
+      background: #fff;
+    }
+
+    .system-notify-sample .notify-crumb {
+      height: 38px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 38px;
+    }
+
+    .system-notify-sample .notify-table-wrap {
+      overflow: hidden;
+      border: 1px solid #cbd4e1;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .system-notify-sample table {
+      border: 0;
+      border-radius: 0;
+      font-size: 14px;
+    }
+
+    .system-notify-sample th {
+      height: 34px;
+      padding: 0 12px;
+      border-right: 1px solid #cbd4e1;
+      border-bottom: 1px solid #cbd4e1;
+      background: #e5ebf3;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .system-notify-sample td {
+      height: 42px;
+      min-height: 42px;
+      padding: 10px 12px;
+      border-right: 1px solid #cbd4e1;
+      border-bottom: 1px solid #cbd4e1;
+      color: var(--text);
+      font-size: 14px;
+      vertical-align: middle;
+    }
+
+    .system-notify-sample th:last-child,
+    .system-notify-sample td:last-child {
+      border-right: 0;
+    }
+
+    .system-notify-sample .notify-center {
+      text-align: center;
+      white-space: normal;
+    }
+
+    .system-notify-sample td.notify-left {
+      text-align: left;
+      white-space: normal;
+    }
+
+    .system-notify-sample th.notify-left {
+      text-align: center;
+      white-space: normal;
+    }
+
+    .system-notify-sample .notify-detail {
+      display: block;
+      overflow: hidden;
+      max-width: 100%;
+      text-overflow: ellipsis;
+      white-space: normal;
+    }
+
+    .system-notify-sample .notify-link-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 86px;
+      height: 32px;
+      padding: 0 14px;
+      border: 1px solid #9fb1cc;
+      border-radius: 999px;
+      background: #eff4fb;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 700;
+      white-space: normal;
+    }
+
+    .system-notify-sample .notify-handle {
+      position: absolute;
+      right: 0;
+      top: 248px;
+      width: 24px;
+      height: 54px;
+      border-radius: 6px 0 0 6px;
+      background: var(--primary);
+    }
+
+    .system-notify-sample .notify-handle::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 20px;
+      width: 12px;
+      height: 12px;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(45deg);
+    }
+
+    .system-notify-sample .notify-pagination {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      height: 56px;
+      padding: 0 24px;
+      background: #fff;
+      box-shadow: 0 -8px 22px rgba(15, 23, 42, 0.12);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .system-notify-sample .notify-page-size,
+    .system-notify-sample .notify-page-input {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 32px;
+      min-width: 86px;
+      padding: 0 12px;
+      border: 1px solid #d6dde8;
+      border-radius: 4px;
+      background: #fff;
+      color: var(--muted);
+    }
+
+    .system-notify-sample .notify-page {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 2px;
+      background: #eef1f5;
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .system-notify-sample .notify-page.active {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .system-notify-sample {
+      height: 100vh;
+      border: 0;
+      border-radius: 0;
+    }
+
+    .system-notify-sample .notify-layout {
+      height: calc(100vh - 66px);
+      min-height: 0;
+    }
+
+    .system-notify-sample .notify-side {
+      overflow-y: auto;
+    }
+
+    .system-notify-sample .notify-main {
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 66px);
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .system-notify-sample .notify-table-wrap {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: auto;
+    }
+
+    .system-notify-sample table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .system-notify-sample th {
+      position: sticky;
+      top: 0;
+      z-index: 4;
+    }
+
+    @media (max-width: 1280px) {
+      html,
+      body {
+        min-width: 0;
+      }
+
+      .system-notify-sample .notify-tools,
+      .system-notify-sample .notify-pagination {
+        min-width: 1120px;
+      }
+
+      .system-notify-sample table {
+        min-width: 1120px;
+      }
+    }
+  
+
+    
+
+    /* UI规范整改覆盖：字体、字号、搜索、按钮、表头 */
+    body { font-size: 14px; line-height: 1.5; }
+    input,
+    select,
+    textarea,
+    [class$="-input"],
+    [class*="-input "],
+    [class$="-date"],
+    [class*="-date "] {
+      height: 32px;
+      min-height: 32px;
+      border-radius: 4px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    .ui-audit-field-token,
+    .ui-audit-select-token,
+    .ui-audit-date-token {
+      height: 32px;
+      min-height: 32px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    button,
+    [class$="-btn"],
+    [class*="-btn "],
+    [class$="-button"],
+    [class*="-button "],
+    [class$="-action"],
+    [class*="-action "],
+    [class$="-tool"],
+    [class*="-tool "],
+    .tool-pill,
+    .action-btn,
+    .detail-btn {
+      min-height: 32px;
+      font-size: 14px;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
+    [class$="-btn"].primary,
+    [class*="-btn "].primary,
+    button.primary,
+    .primary {
+      min-width: 88px;
+    }
+    [class$="-btn"].reset,
+    [class*="-btn "].reset,
+    button.reset,
+    .reset {
+      background: #eef2f7 !important;
+      color: #344054 !important;
+      border: 1px solid #d8dfeb !important;
+    }
+    html[lang="en"] button,
+    html[lang="en"] [class$="-btn"],
+    html[lang="en"] [class*="-btn "],
+    html[lang="en"] [class$="-button"],
+    html[lang="en"] [class*="-button "],
+    html[lang="en"] [class$="-action"],
+    html[lang="en"] [class*="-action "],
+    html[lang="en"] [class$="-tool"],
+    html[lang="en"] [class*="-tool "],
+    html[lang="en"] .tool-pill,
+    html[lang="en"] .action-btn,
+    html[lang="en"] .detail-btn {
+      min-width: 118px;
+    }
+    th {
+      height: 40px;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+      color: #1f2937;
+      background: #e5ebf3;
+    }
+    html[lang="en"] th {
+      height: 48px;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      line-height: 1.25;
+    }
+    h2,
+    h3,
+    h4,
+    .section-title,
+    .card-title,
+    .panel-title,
+    .module-title,
+    .summary-title,
+    .finance-section-head h4,
+    .notice-title,
+    .account-title {
+      font-size: 18px;
+      font-weight: 850;
+    }
+
+  </style>
+</head>
+<body>
+<div class="system-notify-sample">
+        <div class="notify-topbar">
+          <div class="notify-brand">
+            <span class="notify-logo" aria-hidden="true"></span>
+            <span>Hubbuyer</span>
+            <span class="notify-tag">B2B</span>
+          </div>
+          <div class="notify-tools">
+            <span class="notify-tool">Business Day</span>
+            <a class="notify-tool" href="系统通知页面示例.html" aria-label="Switch to Chinese page">English</a>
+            <span class="notify-tool">1 USD ≈ 6.25 CNY</span>
+            <span>CHN20</span>
+            <span class="notify-tool">Log out</span>
+          </div>
+        </div>
+        <div class="notify-layout">
+          <aside class="notify-side">
+            <div class="notify-menu-item">Personal Center</div>
+            <div class="notify-menu-item">Important Tasks</div>
+            <div class="notify-sub-item">Issue Confirmation</div>
+            <div class="notify-sub-item">Measurement / Report</div>
+            <div class="notify-sub-item active">System Notifications</div>
+            <div class="notify-menu-item">Cart</div>
+            <div class="notify-menu-item">B2B Agent...</div>
+            <div class="notify-menu-item">Shipping</div>
+            <div class="notify-menu-item">Funds</div>
+            <div class="notify-menu-item">Recommended Products</div>
+            <div class="notify-menu-item">Favorites</div>
+            <div class="notify-menu-item">Browsing History</div>
+            <div class="notify-menu-item">Account Settings</div>
+          </aside>
+          <main class="notify-main">
+            <div class="notify-crumb">Important Tasks <span>›</span> System Notifications</div>
+            <div class="notify-table-wrap">
+              <table data-skip-example="true">
+                <thead>
+                  <tr>
+                    <th class="notify-left" style="width:18%">Notification Type</th>
+                    <th class="notify-left" style="width:23%">Code</th>
+                    <th style="width:36%">Notification Details</th>
+                    <th style="width:13%">Notice Time</th>
+                    <th style="width:10%">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="notify-center">International Shipping Review</td>
+                    <td class="notify-center">WL-CHN20-260604-006</td>
+                    <td><span class="notify-detail">Product ID: D000007204, rejection reason: 1111</span></td>
+                    <td class="notify-center">2026-06-04</td>
+                    <td class="notify-center"><span class="notify-link-pill">View Details</span></td>
+                  </tr>
+                  <tr>
+                    <td class="notify-center">International Shipping Review</td>
+                    <td class="notify-center">WL-CHN20-260604-007</td>
+                    <td><span class="notify-detail">This logistics order review has been completed.</span></td>
+                    <td class="notify-center">2026-06-04</td>
+                    <td class="notify-center"><span class="notify-link-pill">View Details</span></td>
+                  </tr>
+                  <tr>
+                    <td class="notify-center">Quotation Review</td>
+                    <td class="notify-center">B2B-BJ-CHN20-260604-036</td>
+                    <td><span class="notify-detail">This quotation review was rejected. Reason: 122</span></td>
+                    <td class="notify-center">2026-06-04</td>
+                    <td class="notify-center"><span class="notify-link-pill">View Details</span></td>
+                  </tr>
+                  <tr>
+                    <td class="notify-center">Quotation Review</td>
+                    <td class="notify-center">B2B-BJ-CHN20-260604-035</td>
+                    <td><span class="notify-detail">This quotation review has been approved.</span></td>
+                    <td class="notify-center">2026-06-04</td>
+                    <td class="notify-center"><span class="notify-link-pill">View Details</span></td>
+                  </tr>
+                  <tr>
+                    <td class="notify-center">Balance Remittance</td>
+                    <td class="notify-center">B2B-RZ-CHN20-260604-008</td>
+                    <td><span class="notify-detail">The balance remittance review has been approved.</span></td>
+                    <td class="notify-center">2026-06-04</td>
+                    <td class="notify-center"><span class="notify-link-pill">View Details</span></td>
+                  </tr>
+                  <tr>
+                    <td class="notify-center">Quotation Review</td>
+                    <td class="notify-center">B2B-BJ-CHN20-260604-033</td>
+                    <td><span class="notify-detail">This quotation review has been approved.</span></td>
+                    <td class="notify-center">2026-06-04</td>
+                    <td class="notify-center"><span class="notify-link-pill">View Details</span></td>
+                  </tr>
+                  <tr>
+                    <td class="notify-center">Order Settlement Notice</td>
+                    <td class="notify-center">B2B-DD-CHN20-260604-032</td>
+                    <td><span class="notify-detail">This order settlement has been completed.</span></td>
+                    <td class="notify-center">2026-06-04</td>
+                    <td class="notify-center"><span class="notify-link-pill">View Details</span></td>
+                  </tr>
+                  <tr>
+                    <td class="notify-center">Balance Remittance</td>
+                    <td class="notify-center">B2B-RZ-CHN20-260604-007</td>
+                    <td><span class="notify-detail">The balance remittance review has been approved.</span></td>
+                    <td class="notify-center">2026-06-04</td>
+                    <td class="notify-center"><span class="notify-link-pill">View Details</span></td>
+                  </tr>
+                  <tr>
+                    <td class="notify-center">Balance Withdrawal</td>
+                    <td class="notify-center">B2B-ZC-CHN20-260604-001</td>
+                    <td><span class="notify-detail">The balance withdrawal review has been approved.</span></td>
+                    <td class="notify-center">2026-06-04</td>
+                    <td class="notify-center"><span class="notify-link-pill">View Details</span></td>
+                  </tr>
+                  <tr>
+                    <td class="notify-center">International Shipping Dispatch</td>
+                    <td class="notify-center">WL-CHN20-260604-005</td>
+                    <td><span class="notify-detail">This logistics order has been shipped.</span></td>
+                    <td class="notify-center">2026-06-04</td>
+                    <td class="notify-center"><span class="notify-link-pill">View Details</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="notify-handle" aria-hidden="true"></div>
+            <div class="notify-pagination">
+              <span>Total 82 items</span>
+              <span class="notify-page-size">20 / page</span>
+              <span class="notify-page active">1</span>
+              <span class="notify-page">2</span>
+              <span class="notify-page">3</span>
+              <span class="notify-page">4</span>
+              <span class="notify-page">5</span>
+              <span>Go to</span>
+              <span class="notify-page-input">1</span>
+              <span>page</span>
+            </div>
+          </main>
+        </div>
+      </div>
+  <style id="ui-spec-copy-style">
+    .ui-spec-copy-code {
+      cursor: pointer;
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .ui-spec-copy-code:hover,
+    .ui-spec-copy-code:focus {
+      color: #155bd4;
+      text-decoration: underline;
+      outline: none;
+    }
+
+    .ui-spec-copy-toast {
+      position: fixed;
+      left: 50%;
+      bottom: 32px;
+      z-index: 99999;
+      padding: 8px 14px;
+      border-radius: 4px;
+      background: rgba(17, 24, 39, 0.92);
+      color: #fff;
+      font-size: 13px;
+      line-height: 1.4;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(-50%, 12px);
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
+    }
+
+    .ui-spec-copy-toast.is-visible {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  </style>
+  <script id="ui-spec-copy-script">
+    (function () {
+      if (window.__uiSpecCopyReady) return;
+      window.__uiSpecCopyReady = true;
+
+      var codePattern = /\b(?:B2B|WL)-[A-Z0-9]+(?:-[A-Z0-9]+)*\b/g;
+      var copyButtonSelector = [
+        ".order-copy",
+        ".finance-copy",
+        ".shipping-copy",
+        ".measure-copy",
+        ".customer-info-copy",
+        ".mini-copy",
+        ".mini-code-copy",
+        ".copy-icon",
+        ".mini-copy-icon",
+        "[data-copy]",
+        "[data-copy-text]"
+      ].join(",");
+      var toastTimer = 0;
+
+      function isEnglishPage() {
+        return /english|order|shipping|measurement|account|notification|favorite|cart|finance/i.test(document.title || "");
+      }
+
+      function getToastText() {
+        return isEnglishPage() ? "Copied" : "\u5df2\u590d\u5236";
+      }
+
+      function showToast(message) {
+        var toast = document.querySelector(".ui-spec-copy-toast");
+        if (!toast) {
+          toast = document.createElement("div");
+          toast.className = "ui-spec-copy-toast";
+          toast.setAttribute("role", "status");
+          toast.setAttribute("aria-live", "polite");
+          document.body.appendChild(toast);
+        }
+        toast.textContent = message || getToastText();
+        toast.classList.add("is-visible");
+        window.clearTimeout(toastTimer);
+        toastTimer = window.setTimeout(function () {
+          toast.classList.remove("is-visible");
+        }, 1400);
+      }
+
+      function writeClipboard(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          return navigator.clipboard.writeText(text);
+        }
+
+        var input = document.createElement("textarea");
+        input.value = text;
+        input.setAttribute("readonly", "");
+        input.style.position = "fixed";
+        input.style.left = "-9999px";
+        input.style.top = "0";
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        input.remove();
+        return Promise.resolve();
+      }
+
+      function normalizeCopyText(text) {
+        var value = (text || "").replace(/\s+/g, " ").trim();
+        var codeMatch = value.match(codePattern);
+        if (codeMatch) return codeMatch[0];
+        value = value.replace(/^[^:]{1,24}[:]\s*/, "").trim();
+        return value;
+      }
+
+      function textBeforeButton(button) {
+        var pieces = [];
+        var node = button.previousSibling;
+        while (node) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            pieces.unshift(node.textContent || "");
+          } else if (node.nodeType === Node.ELEMENT_NODE && !node.matches(copyButtonSelector)) {
+            pieces.unshift(node.textContent || "");
+          }
+          if (pieces.join("").trim()) break;
+          node = node.previousSibling;
+        }
+        return normalizeCopyText(pieces.join(""));
+      }
+
+      function textFromScope(scope) {
+        if (!scope) return "";
+        var clone = scope.cloneNode(true);
+        clone.querySelectorAll(copyButtonSelector + ",script,style").forEach(function (node) {
+          node.remove();
+        });
+        return normalizeCopyText(clone.textContent || "");
+      }
+
+      function getButtonCopyText(button) {
+        if (!button) return "";
+        var explicit = button.getAttribute("data-copy-text") || button.getAttribute("data-copy");
+        if (explicit) return explicit.trim();
+
+        var nearby = textBeforeButton(button);
+        if (nearby) return nearby;
+
+        var parentValue = textFromScope(button.parentElement);
+        if (parentValue) return parentValue;
+
+        return textFromScope(button.closest("td,li,div,tr"));
+      }
+
+      function copyValue(value) {
+        value = normalizeCopyText(value);
+        if (!value) return;
+        writeClipboard(value).then(function () {
+          showToast();
+        }).catch(function () {
+          showToast();
+        });
+      }
+
+      function wrapOrderCodes(root) {
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+          acceptNode: function (node) {
+            var parent = node.parentElement;
+            if (!parent) return NodeFilter.FILTER_REJECT;
+            if (parent.closest("script,style,.ui-spec-copy-code")) return NodeFilter.FILTER_REJECT;
+            if (!codePattern.test(node.nodeValue || "")) return NodeFilter.FILTER_REJECT;
+            codePattern.lastIndex = 0;
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        });
+        var nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+
+        nodes.forEach(function (node) {
+          var text = node.nodeValue || "";
+          var fragment = document.createDocumentFragment();
+          var lastIndex = 0;
+          var match;
+          codePattern.lastIndex = 0;
+          while ((match = codePattern.exec(text))) {
+            if (match.index > lastIndex) {
+              fragment.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+            }
+            var code = match[0];
+            var span = document.createElement("span");
+            span.className = "ui-spec-copy-code";
+            span.setAttribute("role", "button");
+            span.setAttribute("tabindex", "0");
+            span.setAttribute("data-copy-text", code);
+            span.setAttribute("title", isEnglishPage() ? "Copy" : "\u590d\u5236");
+            span.textContent = code;
+            fragment.appendChild(span);
+            lastIndex = match.index + code.length;
+          }
+          if (lastIndex < text.length) {
+            fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+          }
+          node.parentNode.replaceChild(fragment, node);
+        });
+      }
+
+      document.addEventListener("click", function (event) {
+        var button = event.target.closest(copyButtonSelector);
+        if (button) {
+          event.preventDefault();
+          copyValue(getButtonCopyText(button));
+          return;
+        }
+
+        var code = event.target.closest(".ui-spec-copy-code");
+        if (code) {
+          event.preventDefault();
+          copyValue(code.getAttribute("data-copy-text") || code.textContent);
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        var target = event.target.closest(".ui-spec-copy-code," + copyButtonSelector);
+        if (!target) return;
+        event.preventDefault();
+        if (target.matches(".ui-spec-copy-code")) {
+          copyValue(target.getAttribute("data-copy-text") || target.textContent);
+        } else {
+          copyValue(getButtonCopyText(target));
+        }
+      });
+
+      wrapOrderCodes(document.body);
+    })();
+  </script>
+</body>
+</html>

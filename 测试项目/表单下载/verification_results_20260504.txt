@@ -1,0 +1,52 @@
+
+--- 7182商业发票-20260514132428.xlsx ---
+✅ PASS: Headers Match Perfectly (Worksheet)
+
+--- 7182纳品书-20260514115016.xlsx ---
+❌ FAIL: Headers Differ (Worksheet)
+  DL : ['会社名', '', 'YIWU XIERUN IMPORT&EXPORT CO.LTD']
+  TPL: ['会社名', '', 'Yiwu Xierun Import and Export Co., Ltd.']
+
+--- LDX发票-20260514132409.xlsx ---
+❌ FAIL: Headers Differ (Worksheet)
+  DL : ['SHIPPER  寄件人（需要英文版信息）', '', '', '客户名*', 'TEST-朴国哲', '服务渠道*', '', 'LDX--快速船便 Japan', '', 'INVOICE NO:', '', '', 'WL-JPN12-260514-001']
+  TPL: ['SHIPPER  寄件人（需要英文版信息）', '', '', '客户名*', '', '服务渠道*', '', '日本专线', '', 'INVOICE NO:']
+
+--- OCS发票-20260514132314.xlsx ---
+❌ FAIL: Headers Differ (Sheet1)
+  DL : ['', '', '', '', '', 'OCS NO：', 'WL-JPN12-260514-001']
+  TPL: ['', '', '', '', '', 'OCS NO：', '694845892']
+
+--- TW发票-20260514132330.xlsx ---
+✅ PASS: Headers Match Perfectly (Worksheet)
+
+--- ZOZO纳品书-20260514115007.xlsx ---
+✅ PASS: Headers Match Perfectly (一覧)
+
+--- 商品发票合并-20260514132420.xlsx ---
+❌ FAIL: Headers Differ (Worksheet)
+  DL : ['Company/公司', '', '义乌市test有限公司']
+  TPL: ['Company/公司', '', '株式会社Cieze']
+
+--- 带地址和附加项纳品书-20260514115023.xlsx ---
+❌ FAIL: Headers Differ (Worksheet)
+  DL : ['お名前', '', 'セツキ 様']
+  TPL: ['会社名', '', 'Yiwu Xierun Import and Export Co., Ltd.']
+
+--- 流通王发票-20260514132340.xlsx ---
+❌ FAIL: Headers Differ (Worksheet)
+  DL : ['出货日 DATE', '2026-05-14', '', '件数', '1391', 'HAWB NO.', '', 'WL-JPN12-260514-001']
+  TPL: ['出货日 DATE', '2026-04-23', '', '件数', '0', 'HAWB NO.']
+
+--- 海源发票-20260514132400.xlsx ---
+❌ FAIL: Headers Differ (Worksheet)
+  DL : ['1) Seller/Exporter 发件人信息', '', '', '', '', '2026-05-14']
+  TPL: ['1) Seller/Exporter 发件人信息', '', '', '', '', '2026-04-23']
+
+--- 纳品书-20260514114950.xlsx ---
+❌ FAIL: Headers Differ (Worksheet)
+  DL : ['收件人', '', 'セツキ 様']
+  TPL: ['お名前', '', 'setuki']
+
+--- 收支明细-20260514131355.xlsx ---
+✅ PASS: Headers Match Perfectly (收支明细)

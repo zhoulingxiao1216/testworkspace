@@ -1,0 +1,1185 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>收费体系调整 产品需求文档</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --panel: #fff;
+      --ink: #172033;
+      --muted: #647083;
+      --line: #dfe6f2;
+      --head: #eef3fb;
+      --blue: #1959b7;
+      --blue-soft: #eaf2ff;
+      --green: #15803d;
+      --green-soft: #eaf8ef;
+      --red: #b42318;
+      --red-soft: #fff0ed;
+      --orange: #b45309;
+      --orange-soft: #fff7ed;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-size: 14px; line-height: 1.7; }
+    .page { max-width: 1480px; margin: 0 auto; padding: 28px 30px 48px; }
+    .hero, section { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 8px 24px rgba(23, 32, 51, .06); }
+    .hero { padding: 26px 28px; margin-bottom: 16px; }
+    section { padding: 22px; margin-bottom: 16px; }
+    h1, h2, h3, h4, p { margin: 0; }
+    h1 { font-size: 30px; line-height: 1.32; margin-bottom: 10px; }
+    h2 { font-size: 21px; margin-bottom: 12px; }
+    h3 { font-size: 17px; margin: 18px 0 10px; }
+    h4 { font-size: 15px; margin: 14px 0 8px; }
+    .desc, .muted { color: var(--muted); }
+    .meta-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 18px; }
+    .meta { border: 1px solid var(--line); background: #fbfdff; border-radius: 6px; padding: 10px 12px; }
+    .meta span { display: block; color: var(--muted); font-size: 12px; }
+    .meta strong { display: block; margin-top: 3px; }
+    .tag { display: inline-flex; align-items: center; justify-content: center; min-height: 24px; padding: 2px 9px; border-radius: 999px; border: 1px solid var(--line); background: #f8fafc; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .tag.blue { color: var(--blue); border-color: #bfd4ff; background: var(--blue-soft); }
+    .tag.green { color: var(--green); border-color: #b8e6c6; background: var(--green-soft); }
+    .tag.red { color: var(--red); border-color: #ffd0c7; background: var(--red-soft); }
+    .tag.orange { color: var(--orange); border-color: #fed7aa; background: var(--orange-soft); }
+    table { width: 100%; border-collapse: collapse; table-layout: fixed; margin: 10px 0 14px; background: #fff; }
+    th, td { border: 1px solid var(--line); padding: 10px 12px; vertical-align: top; word-break: break-word; }
+    th { background: var(--head); color: #25324a; font-weight: 700; text-align: left; }
+    .group { background: #f8fafc; color: #25324a; font-weight: 700; text-align: center; }
+    .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .callout { border: 1px solid #fed7aa; background: #fff7ed; color: #7c2d12; border-radius: 6px; padding: 12px 14px; margin: 10px 0 14px; }
+    .ok { color: var(--green); font-weight: 700; }
+    .risk { color: var(--red); font-weight: 700; }
+    .anchor-note { display: none; }
+    @media (max-width: 960px) {
+      .page { padding: 18px; }
+      .meta-grid { grid-template-columns: 1fr; }
+      table { min-width: 980px; }
+      .table-scroll { overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <article class="hero">
+      <span class="tag blue">产品需求文档</span>
+      <h1>收费体系调整 产品需求文档</h1>
+      <p class="desc">面向 Hubbuyer、ee-supply 企业代购链路，覆盖前台商品、购物车、报价单、订单清算展示，以及后台代购订单详情和订单清算弹窗。核心目标是把会员价和后台所有携带单价的字段统一为 1688 返回的营销价 promotionPrice，并按订单清算弹窗页公式明确实际结算金额和订单差额。</p>
+      <div class="meta-grid">
+        <div class="meta"><span>版本</span><strong>v1.1</strong></div>
+        <div class="meta"><span>整理日期</span><strong>2026-07-02</strong></div>
+        <div class="meta"><span>输出格式</span><strong>网页三件套</strong></div>
+        <div class="meta"><span>同步状态</span><strong>产品需求文档 / 功能清单 / 业务流程图已建立编号映射</strong></div>
+      </div>
+    </article>
+
+    <section id="price-standard">
+      <h2>0. 最高优先级全局价格口径：会员价与商品单价统一使用 promotionPrice</h2>
+      <div class="callout"><strong>全局硬规则：</strong>前台所有“会员价 / Hubbuyer 价格 / 商品单价”，以及后台所有携带“单价”的页面、明细、表单下载、导出和打印文件，统一取 1688 词搜、图片搜索和商品详情返回的营销价 <code>promotionPrice</code>。覆盖订单、报价单、全商品、发货订单、采购处理、入库/仓库发货、清算弹窗等链路，不再使用此前旧商品单价。</div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 120px;">需求编号</th>
+              <th style="width: 180px;">规则对象</th>
+              <th>规则定义</th>
+              <th>影响页面 / 模块</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="num">REQ-016</td>
+              <td>会员价取值</td>
+              <td>会员价 = 1688 接口返回的营销价 <code>promotionPrice</code>。来源包括 1688 词搜、图片搜索，以及对应商品详情中的营销价字段。</td>
+              <td>商品列表、商品详情、购物车、确认订单、报价单列表、报价单详情、订单详情。</td>
+            </tr>
+            <tr>
+              <td class="num">REQ-016</td>
+              <td>后台所有携带单价字段</td>
+              <td>后台所有页面只要展示、录入、计算或导出商品单价，均使用 <code>promotionPrice</code>；订单、报价单、全商品、发货订单、采购处理、入库/仓库发货、清算弹窗不得再使用旧单价。</td>
+              <td>后台代购订单详情、订单、报价单、全商品、发货订单、采购处理、入库/仓库发货、订单清算弹窗及其明细。</td>
+            </tr>
+            <tr>
+              <td class="num">REQ-016</td>
+              <td>表单下载 / 导出单价</td>
+              <td>所有表单下载、导出、打印、明细文件中只要包含商品单价字段，单价必须等于 <code>promotionPrice</code>，即 1688 优惠价格 / 营销价。</td>
+              <td>订单下载、报价单下载、发货订单下载、全商品导出、采购/仓库/清算相关表单下载与打印。</td>
+            </tr>
+            <tr>
+              <td class="num">REQ-008</td>
+              <td>订单详情节省公式</td>
+              <td>人工交涉节省 = 采购差价；商品金额节省 = 1688 原价对应的金额 - 会员价对应的金额，其中会员价对应的金额按 <code>promotionPrice × 数量</code> 汇总。</td>
+              <td>前台订单详情页、费用明细抽屉、店铺清算详情展示。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted">来源说明：用户补充需求指定 1688 开放平台字段，会员价参考 <a href="https://open.1688.com/api/apidocdetail.htm?spm=a260s.develop-solution-detail.0.0.45de46cbn1qsyI&amp;id=com.alibaba.fenxiao.crossborder%3Aproduct.search.keywordQuery-1&amp;aopApiCategory=category_new">1688 product.search.keywordQuery 接口文档</a>；预估国内运费参考 <a href="https://open.1688.com/api/apidocdetail.htm?spm=a260s.develop-solution-detail.0.0.45de55edX2sA8j&amp;id=com.alibaba.fenxiao.crossborder%3Aproduct.freight.estimate-1&amp;aopApiCategory=category_new">1688 product.freight.estimate 接口文档</a>。本文档不发明额外接口名，只定义字段取值和页面/后端使用口径。</p>
+    </section>
+
+    <div class="anchor-note">
+      ## 1. 项目背景与目标
+      ## 2. 【管理端】收费与清算模块
+      ### 2.1 页面节点
+      ## 4. 其他关联模块
+      | 字段/控件名称 | 功能展现描述 | 业务规则与异常边界处理 |
+    </div>
+
+    <section id="background">
+      <h2>1. 项目背景与目标</h2>
+      <h3>1.1 项目背景</h3>
+      <p>当前页面素材显示，前台已在商品列表、详情、购物车、确认订单、报价单、订单详情中展示 Hubbuyer 价格/会员价、报价单支付金额、会员免代采手续费、实际清算金额、订单差额、HUBBUYER 为您节省等信息；后台已在代购订单详情和订单清算弹窗中补充采购、质检、退换、返现、退款、实际支出等字段。本次补充要求将所有会员价和商品单价统一为 1688 返回的营销价 promotionPrice，收费体系调整需要把这些页面串成统一的价格、收费和清算规则。</p>
+
+      <h3>1.2 优化目标</h3>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 120px;">目标编号</th>
+              <th>目标</th>
+              <th>业务价值</th>
+              <th>验收口径</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="num">OBJ-001</td>
+              <td>建立报价单支付金额、实际结算金额、采购差额、订单差额的统一口径。</td>
+              <td>减少前后台金额口径不一致，降低清算争议。</td>
+              <td>前台订单详情、后台清算弹窗和资金处理文案对同一订单给出一致方向。</td>
+            </tr>
+            <tr>
+              <td class="num">OBJ-002</td>
+              <td>在现有清算字段基础上优化返现、退款、人工降价等金额的展示和校验提示。</td>
+              <td>避免同一来源金额在页面展示、弹窗录入、资金处理说明中被重复理解。</td>
+              <td>不新增清算公式，不引入额外费用分类规则。</td>
+            </tr>
+            <tr>
+              <td class="num">OBJ-003</td>
+              <td>让客户在下单前、支付前、订单清算后都能看到费用构成。</td>
+              <td>提升收费透明度，支撑“Hubbuyer 不收取商品差价”的前台表达。</td>
+              <td>确认订单、报价单详情、订单详情均有费用一览和关键说明。</td>
+            </tr>
+            <tr>
+              <td class="num">OBJ-004</td>
+              <td>统一会员价和后台所有携带单价字段的数据来源。</td>
+              <td>避免词搜、图搜、商品详情、报价单、订单、仓库发货各自使用不同单价。</td>
+              <td>所有涉及商品单价的前后台页面、明细、表单下载、导出、打印均使用 promotionPrice，订单详情节省金额按本文档明确公式展示。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>1.3 范围与非范围</h3>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 110px;">类型</th>
+              <th>内容</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="group">范围内</td>
+              <td>前台商品列表、商品详情、购物车、确认订单、报价单列表、报价单详情、订单详情。</td>
+              <td>以用户提供的页面目录为准，按页面节点写明字段、交互、金额展示和异常。</td>
+            </tr>
+            <tr>
+              <td class="group">范围内</td>
+              <td>后台代购订单详情页、订单清算弹窗页。</td>
+              <td>覆盖订单清算入口、店铺清算明细、报价单金额、实际结算金额、重新计算、确定清算。</td>
+            </tr>
+            <tr>
+              <td class="group">范围内</td>
+              <td>收费/清算字段口径、订单清算弹窗现有公式、前后台展示同步、单价来源与下载/导出口径。</td>
+              <td>基于现有页面字段和后台订单清算弹窗公式做优化；当前版本不改清算主逻辑。</td>
+            </tr>
+            <tr>
+              <td class="group">非范围</td>
+              <td>真实支付通道接入、银行汇款到账、第三方支付平台交易回调、资金账户入账实现。</td>
+              <td>本文档只定义页面展示、金额含义、清算能力和接口能力，不发明具体接口名称。</td>
+            </tr>
+            <tr>
+              <td class="group">非范围</td>
+              <td>经营利润报表、业绩差额报表、汇率收益报表。</td>
+              <td>旧逻辑中的收益口径应移到经营报表，不作为客户清算公式。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>1.4 角色与权限</h3>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 150px;">角色</th>
+              <th>权限范围</th>
+              <th>关键限制</th>
+              <th>审计要求</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>前台客户 / 企业会员</td>
+              <td>查看商品价格、购物车费用、报价单支付金额、订单清算金额、订单差额和资金处理提示。</td>
+              <td>不得修改后台清算字段；对未清算订单只看报价和进行中状态。</td>
+              <td>支付、取消、再提交、下载报价单/订单需要记录用户、时间、订单编号。</td>
+            </tr>
+            <tr>
+              <td>采购</td>
+              <td>维护实际支出、国内运费、到付运费、退换货运费、没货退款、店铺返现等采购相关字段。</td>
+              <td>关键金额一旦采购确认或订单清算后不得无审计修改。</td>
+              <td>金额修改前后值、修改原因、操作人、时间必须可追溯。</td>
+            </tr>
+            <tr>
+              <td>业务 / 客户经理</td>
+              <td>查看订单、联系客户、解释补差价或退款原因。</td>
+              <td>不能直接改清算公式；仅可发起问题处理或备注。</td>
+              <td>联系客户、修改负责人、处理备注需留痕。</td>
+            </tr>
+            <tr>
+              <td>财务 / 管理员</td>
+              <td>执行重新计算、确定清算、确认客户补差价/退款处理。</td>
+              <td>确定清算属于高风险操作，需二次确认和权限校验。</td>
+              <td>清算版本、公式版本、输入金额、输出金额、客户处理动作需写入清算记录。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>1.5 证据与假设</h3>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 130px;">证据级别</th>
+              <th>来源</th>
+              <th>用于本文档的内容</th>
+              <th>开发状态</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tag green">已确认</span></td>
+              <td>用户指定页面目录和后台页面路径。</td>
+              <td>前后台页面范围、输出目录、网页格式输出。</td>
+              <td>可开发。</td>
+            </tr>
+            <tr>
+              <td><span class="tag green">已确认</span></td>
+              <td>页面可见文案。</td>
+              <td>费用一览、报价单支付金额、实际清算金额、实际结算金额、订单差额、会员免代采手续费、后台清算字段。</td>
+              <td>可按页面实现。</td>
+            </tr>
+            <tr>
+              <td><span class="tag green">已确认</span></td>
+              <td>后台订单清算弹窗页可见计算公式。</td>
+              <td>实际结算金额 = 客户价 + 附加项费用 + 质检费用 + 订单其他费用 + 代采手续费；订单差额 = 实际结算金额 - 报价单支付金额 - 采购差额。</td>
+              <td>可按页面原文进入开发。</td>
+            </tr>
+            <tr>
+              <td><span class="tag green">已确认</span></td>
+              <td>用户补充需求与 1688 开放平台字段说明。</td>
+              <td>会员价和后台所有携带单价字段统一取营销价 promotionPrice；人工交涉节省 = 采购差价；商品金额节省 = 1688 原价对应金额 - 会员价对应金额。</td>
+              <td>可按规则进入开发，接口返回缺失场景需做异常兜底。</td>
+            </tr>
+            <tr>
+              <td><span class="tag green">已确认</span></td>
+              <td>用户补充的 1688 预估国内运费接口链接。</td>
+              <td>商品详情页按已选 SKU、数量和收货相关参数获取预估国内运费；购物车、确认订单、报价单详情沿用报价阶段预估运费快照。</td>
+              <td>可按 1688 <code>product.freight.estimate</code> 能力进入开发联调，接口失败时展示待确认并阻断异常值入账。</td>
+            </tr>
+            <tr>
+              <td><span class="tag orange">需同步</span></td>
+              <td>前台订单详情页与后台订单清算弹窗页。</td>
+              <td>前台订单详情页当前展示“订单差额 = 报价单支付金额 - 实际清算金额”，后台订单清算弹窗页展示“订单差额 = 实际结算金额 - 报价单支付金额 - 采购差额”。</td>
+              <td>本文档以后台订单清算弹窗页公式为准，前台展示需同步修正。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="inventory">
+      <h2>2. 页面节点清单</h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 95px;">模块编号</th>
+              <th style="width: 95px;">需求编号</th>
+              <th>页面 / 节点</th>
+              <th>来源页面</th>
+              <th>核心业务规则</th>
+              <th style="width: 110px;">证据状态</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="num">MOD-001</td>
+              <td class="num">REQ-001</td>
+              <td>商品列表宫格商品卡样式</td>
+              <td>商品列表页.html</td>
+              <td>当前图中仅搜索页完成该样式，但所有宫格商品列表入口都需统一优化为该商品卡样式；重点说明普通商品卡片与有 Hubbuyer 价格商品卡片的展示差异。</td>
+              <td><span class="tag green">已确认</span></td>
+            </tr>
+            <tr>
+              <td class="num">MOD-002</td>
+              <td class="num">REQ-002</td>
+              <td>商品详情 Hubbuyer 价格与预估运费</td>
+              <td>商品详情页.html</td>
+              <td>新增 Hubbuyer 价格模块样式说明；按选中 SKU、数量和收货参数调用 1688 product.freight.estimate 获取预估国内运费。</td>
+              <td><span class="tag green">已确认</span></td>
+            </tr>
+            <tr>
+              <td class="num">MOD-003</td>
+              <td class="num">REQ-003</td>
+              <td>购物车会员价样式与底部汇总</td>
+              <td>购物车页面.html</td>
+              <td>区分有会员价商品行和普通商品行；底部导航新增会员已省、预估国内运费，单价和商品金额按 promotionPrice 计算。</td>
+              <td><span class="tag green">已确认</span></td>
+            </tr>
+            <tr>
+              <td class="num">MOD-004</td>
+              <td class="num">REQ-004</td>
+              <td>确认订单费用一览</td>
+              <td>确认订单页面.html</td>
+              <td>增加预估国内运费；说明代采手续费/会员免代采手续费变更；商品列表中有会员价商品展示 1688 原价和 Hubbuyer 会员价，普通商品无字段变化。</td>
+              <td><span class="tag green">已确认</span></td>
+            </tr>
+            <tr>
+              <td class="num">MOD-005</td>
+              <td class="num">REQ-005</td>
+              <td>报价单列表与支付弹窗</td>
+              <td>报价单列表页.html</td>
+              <td>报价单列表新增会员已省字段；保留筛选、状态分类、批量支付；支付弹窗展示汇率、支付期限、支付方式、平台服务费。</td>
+              <td><span class="tag green">已确认</span></td>
+            </tr>
+            <tr>
+              <td class="num">MOD-006</td>
+              <td class="num">REQ-006</td>
+              <td>报价单详情</td>
+              <td>报价单详情页.html</td>
+              <td>增加预估国内运费和代采手续费说明；商品列表中有会员价商品展示 1688 原价和 Hubbuyer 会员价，普通商品无字段变化。</td>
+              <td><span class="tag green">已确认</span></td>
+            </tr>
+            <tr>
+              <td class="num">MOD-008</td>
+              <td class="num">REQ-008</td>
+              <td>订单详情清算结果</td>
+              <td>订单详情页.html</td>
+              <td>详细说明费用一览三个业务模块、订单差额处理卡、订单明细、店铺明细，以及店铺列表新增的本店节省字段。</td>
+              <td><span class="tag green">已确认</span></td>
+            </tr>
+            <tr>
+              <td class="num">MOD-009</td>
+              <td class="num">REQ-009</td>
+              <td>后台代购订单详情</td>
+              <td>后台页面/index.html</td>
+              <td>提供订单清算入口，并维护商品、采购、质检、退换、正品、入库、仓库发货、费用字段；商品单价统一使用 promotionPrice。</td>
+              <td><span class="tag green">已确认</span></td>
+            </tr>
+            <tr>
+              <td class="num">MOD-010</td>
+              <td class="num">REQ-010</td>
+              <td>后台订单清算弹窗</td>
+              <td>后台页面/订单清算弹窗页.html</td>
+              <td>店铺维度展示和录入现有清算弹窗字段，订单维度展示报价单金额、实际结算金额、采购差额、订单差额、客户处理。</td>
+              <td><span class="tag green">已确认</span></td>
+            </tr>
+            <tr>
+              <td class="num">MOD-011</td>
+              <td class="num">REQ-011</td>
+              <td>收费与清算公式规则</td>
+              <td>本文档规则定义</td>
+              <td>订单差额公式必须以后台订单清算弹窗页为准：实际结算金额 - 报价单支付金额 - 采购差额。</td>
+              <td><span class="tag orange">需复核</span></td>
+            </tr>
+            <tr>
+              <td class="num">MOD-012</td>
+              <td class="num">REQ-016</td>
+              <td>全局会员价与后台所有单价口径</td>
+              <td>用户补充需求 / 1688 promotionPrice 字段</td>
+              <td>前台会员价、后台订单、报价单、全商品、发货订单、采购处理、仓库发货、清算弹窗及所有表单下载/导出/打印中的商品单价均取 promotionPrice，不再使用旧单价。</td>
+              <td><span class="tag green">已确认</span></td>
+            </tr>
+            <tr>
+              <td class="num">MOD-013</td>
+              <td class="num">REQ-017</td>
+              <td>前台新增字段多语言配置</td>
+              <td>前台页面原型 / 用户补充需求</td>
+              <td>商品列表、商品详情、购物车、确认订单、报价单列表、报价单详情、订单详情中页面可见的新增或调整字段、提示、按钮、表头、状态、抽屉文案，以及鼠标移入/聚焦后展示的提示说明均需接入多语言配置。</td>
+              <td><span class="tag green">已确认</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="frontstage">
+      <h2>3. 【前台】页面需求</h2>
+
+      <h3>3.1 商品列表页：宫格商品卡统一样式、普通商品卡片与 Hubbuyer 价格卡片</h3>
+      <p><strong>核心业务逻辑：</strong>当前图中只有搜索页做了新版商品列表样式，但该样式不是搜索页专属。所有会以宫格形式展示商品列表的页面都需要统一优化为该商品卡样式，包括首页、首页模块中的二级页面、搜索页、图搜、商品详情中的店铺内页、足迹等入口。商品列表页只解释商品卡价格展示差异，不产生费用汇总，也不计算运费、代采手续费或清算金额。</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 120px;">需求编号</th>
+              <th style="width: 150px;">卡片类型</th>
+              <th>展示样式与字段</th>
+              <th>业务规则与异常边界处理</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="num" rowspan="3">REQ-001</td>
+              <td>适用页面范围</td>
+              <td>所有宫格商品列表入口统一使用新版商品卡样式：搜索页、图搜、首页商品列表、首页模块二级页面、商品详情中的店铺内页、足迹等。只要页面以宫格方式展示商品卡，就纳入本样式优化范围。</td>
+              <td>不得只改搜索页。后续新增宫格商品列表页面时，也必须复用同一商品卡样式、价格展示规则和 Hubbuyer 价格空态规则。</td>
+            </tr>
+            <tr>
+              <td>普通商品卡片</td>
+              <td>展示商品图、标题、1688 原价、CNY/USD 折算；Hubbuyer 价格区展示“无”或等价空态，不展示会员节省强调样式。</td>
+              <td>普通商品无会员价时不得使用旧单价补齐 Hubbuyer 价格；点击仍可进入商品详情，但后续报价需在详情页确认是否有有效 promotionPrice。</td>
+            </tr>
+            <tr>
+              <td>有 Hubbuyer 价格卡片</td>
+              <td>在 1688 原价旁并列展示 Hubbuyer 价格，Hubbuyer 价格取 <code>promotionPrice</code>，视觉上应比普通价更突出；同时展示对应 USD 折算，方便用户直接感知会员价优势。</td>
+              <td>当 <code>promotionPrice</code> 存在且大于 0 时才展示 Hubbuyer 价格；若接口返回异常、为 0 或格式不合法，卡片回到普通商品空态，不得回退旧商品单价。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>交互与跳转说明：</strong>商品列表仅承担商品发现和价格提示，点击商品卡进入商品详情页；筛选、排序、搜索不改变会员价取值来源。</p>
+
+      <h3>3.2 商品详情页：Hubbuyer 价格模块与预估国内运费</h3>
+      <p><strong>核心业务逻辑：</strong>商品详情页新增 Hubbuyer 价格模块，并在用户选择商品规格和数量后刷新预估国内运费。商品金额按选中 SKU 的 <code>promotionPrice × 数量</code> 计算。</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 120px;">需求编号</th>
+              <th style="width: 170px;">字段/控件名称</th>
+              <th>功能展现描述</th>
+              <th>业务规则与异常边界处理</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="num" rowspan="4">REQ-002</td>
+              <td>Hubbuyer 价格模块</td>
+              <td>在价格区域展示“Hubbuyer 价格”标题、会员价格梯度、CNY/USD 折算、1688 原价对比和最小起订量。Hubbuyer 价格视觉层级高于 1688 原价，1688 原价使用弱化或划线/次级样式。</td>
+              <td>Hubbuyer 价格必须取 1688 词搜、图片搜索或商品详情返回的营销价 <code>promotionPrice</code>；页面上的“会员价”“Hubbuyer 价格”“商品单价”口径一致。</td>
+            </tr>
+            <tr>
+              <td>SKU、库存、数量</td>
+              <td>按规格展示 SKU 价格、库存、数量步进器和已选汇总；用户调整数量后，商品金额和预估国内运费同步刷新。</td>
+              <td>未选 SKU、低于最小起订量、库存不足时禁止加入购物车；错误需要在当前操作区域内给出可见反馈。</td>
+            </tr>
+            <tr>
+              <td>预估国内运费</td>
+              <td>在详情页底部或价格汇总区展示“预估国内运费”，并根据当前选中的 SKU、数量和收货相关参数刷新。</td>
+              <td>预估国内运费接口取 1688 <code>product.freight.estimate</code>；本文档以用户提供的官方链接为接口依据。接口失败、超时或参数不足时展示“待确认”并禁止把异常值计入报价金额。</td>
+            </tr>
+            <tr>
+              <td>加购按钮</td>
+              <td>校验 SKU、起订量、库存、会员价和预估运费状态后加入购物车。</td>
+              <td>加入购物车时需要保存商品单价快照、1688 原价、Hubbuyer 价格、预估国内运费、规格和数量，后续页面沿用该报价阶段快照。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>交互与跳转说明：</strong>选择 SKU 和数量后，详情页先刷新商品金额与预估国内运费，再允许加购；商品详情不触发资金冻结或清算。</p>
+
+      <h3>3.3 购物车页面：会员价商品样式、会员已省、预估国内运费</h3>
+      <p><strong>核心业务逻辑：</strong>购物车负责汇总可报价商品，并清楚区分“有 Hubbuyer 价格的商品”和“普通商品”。底部导航需新增会员已省和预估国内运费汇总。</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 120px;">需求编号</th>
+              <th style="width: 170px;">字段/控件名称</th>
+              <th>功能展现描述</th>
+              <th>业务规则与异常边界处理</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="num" rowspan="4">REQ-003</td>
+              <td>有会员价商品行</td>
+              <td>价格区域展示 1688 原价弱化/划线、Hubbuyer 会员价高亮、会员节省提示和小计；会员价商品的价格层级应明显区别于普通商品。</td>
+              <td>会员价单价取 <code>promotionPrice</code> 快照；商品小计 = <code>promotionPrice × 数量</code>；会员已省 = 1688 原价对应金额 - Hubbuyer 会员价对应金额。</td>
+            </tr>
+            <tr>
+              <td>普通商品行</td>
+              <td>仅展示普通单价、小计、规格、数量、备注等基础字段，不展示 1688 原价与 Hubbuyer 会员价对比，也不计入会员已省。</td>
+              <td>普通商品无 Hubbuyer 价格时不得展示虚假的会员省钱信息；后续若拿到有效 <code>promotionPrice</code>，需重新计算并更新商品行样式。</td>
+            </tr>
+            <tr>
+              <td>底部导航汇总</td>
+              <td>底部固定汇总区展示 SKU 种类、商品总数、会员已省、预估国内运费、商品总金额和下一步按钮。</td>
+              <td>数量变更、删除商品、勾选状态变化后，会员已省、预估国内运费、商品总金额需实时刷新；预估国内运费为报价阶段金额，清算后以实际国内运费为准。</td>
+            </tr>
+            <tr>
+              <td>进入确认订单</td>
+              <td>用户点击下一步时，将购物车商品、会员价快照、1688 原价快照、预估国内运费和会员已省带入确认订单页。</td>
+              <td>若任一商品价格失效、库存不足、预估运费未返回或商品状态不可报价，应阻断进入确认订单并定位到异常商品。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>3.4 确认订单页：预估国内运费、代采手续费和商品价格行</h3>
+      <p><strong>核心业务逻辑：</strong>确认订单页形成报价单支付金额。页面需要同时说明预估国内运费、代采手续费/会员免代采手续费改动，以及商品列表中普通商品和会员价商品的字段差异。</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 120px;">需求编号</th>
+              <th style="width: 170px;">字段/控件名称</th>
+              <th>功能展现描述</th>
+              <th>业务规则与异常边界处理</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="num" rowspan="5">REQ-004</td>
+              <td>预估国内运费</td>
+              <td>费用一览中增加预估国内运费，商品列表和费用汇总金额需保持一致。</td>
+              <td>预估国内运费来自商品详情/购物车报价阶段快照，参与报价单支付金额；最终清算时以后台实际国内运费替代展示。</td>
+            </tr>
+            <tr>
+              <td>代采手续费 / 会员免代采手续费</td>
+              <td>确认订单展示代采手续费原值、当前代采手续费和会员免代采手续费提示；会员场景可展示原代采手续费划线和当前 0 元。</td>
+              <td>“手续费”统一解释为 Hubbuyer 代采手续费；会员免代采手续费只减免代采手续费。第三方支付平台收取的支付手续费统一命名为“平台服务费”，不由 Hubbuyer 收取，也不计入报价单金额。</td>
+            </tr>
+            <tr>
+              <td>有 Hubbuyer 价格商品</td>
+              <td>商品列表行展示 1688 原价和 Hubbuyer 会员价，Hubbuyer 会员价高亮，1688 原价弱化/划线，并展示按会员价计算的小计。</td>
+              <td>该类商品必须有有效 <code>promotionPrice</code>；报价单商品金额以会员价小计汇总，会员已省只作为权益展示，不重复抵扣费用。</td>
+            </tr>
+            <tr>
+              <td>普通商品</td>
+              <td>普通商品无新增字段变化，继续展示原有商品图、标题、规格、数量、单价和小计。</td>
+              <td>普通商品不展示 1688 原价/Hubbuyer 会员价双字段，也不计入会员已省；如后端补齐会员价，需要重新生成报价单或刷新确认订单。</td>
+            </tr>
+            <tr>
+              <td>报价单支付金额</td>
+              <td>展示商品金额、预估国内运费、代采手续费、选项费用和报价单支付金额及外币折算。</td>
+              <td>报价单支付金额中的商品金额必须以 <code>promotionPrice × 数量</code> 汇总；支付完成后作为订单差额公式中的对比金额。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>3.5 报价单列表页：会员已省字段</h3>
+      <p><strong>核心业务逻辑：</strong>报价单列表页在原有查询、状态和支付入口之外，新增“会员已省”字段，用于让用户在列表层快速识别本报价单的 Hubbuyer 价格权益。</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 120px;">需求编号</th>
+              <th style="width: 170px;">字段/控件名称</th>
+              <th>功能展现描述</th>
+              <th>业务规则与异常边界处理</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="num" rowspan="3">REQ-005</td>
+              <td>会员已省</td>
+              <td>报价单列表行新增会员已省金额，可放在报价金额旁或订单摘要区，展示该报价单因 Hubbuyer 会员价节省的商品金额。</td>
+              <td>会员已省 = 该报价单内所有有会员价商品的 1688 原价对应金额 - Hubbuyer 会员价对应金额；普通商品不参与该字段计算。</td>
+            </tr>
+            <tr>
+              <td>报价单筛选与状态</td>
+              <td>保留按报价单编号、支付状态、国际物流、订单日、用户订单编号查询；状态包括自助报价单、审核中、待入金、已取消、不通过。</td>
+              <td>会员已省不改变报价单状态；待入金报价单需展示 72 小时提交汇款提醒。</td>
+            </tr>
+            <tr>
+              <td>支付弹窗</td>
+              <td>展示支付金额、兑换汇率、支付期限、报价单编号、商品金额、代采手续费、附加项费用、报价单支付金额、账户余额、支付方式和平台服务费。</td>
+              <td>报价单商品金额必须由 <code>promotionPrice</code> 汇总得出；平台服务费是第三方支付平台收取的支付手续费，不计入报价单金额，也不得与会员免代采手续费混用。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>3.6 报价单详情页：预估国内运费、代采手续费和商品价格行</h3>
+      <p><strong>核心业务逻辑：</strong>报价单详情页是支付前的最终确认页，需要完整展示预估国内运费、代采手续费变更、商品列表中 1688 原价和 Hubbuyer 会员价字段。</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 120px;">需求编号</th>
+              <th style="width: 170px;">字段/控件名称</th>
+              <th>功能展现描述</th>
+              <th>业务规则与异常边界处理</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="num" rowspan="5">REQ-006</td>
+              <td>费用一览</td>
+              <td>展示商品金额、预估国内运费、代采手续费、选项费用、报价单支付金额和外币折算。</td>
+              <td>报价单详情读取报价单生成时冻结的价格和运费快照；支付期限到期后禁用立即支付，并展示已取消/已过期状态。</td>
+            </tr>
+            <tr>
+              <td>代采手续费 / 会员免代采手续费</td>
+              <td>展示代采手续费原值、当前代采手续费和会员免代采手续费提示，样式与确认订单保持一致。</td>
+              <td>会员免代采手续费只影响代采手续费；第三方支付平台收取的支付手续费统一命名为平台服务费，并且不计入报价单金额。</td>
+            </tr>
+            <tr>
+              <td>有 Hubbuyer 价格商品</td>
+              <td>商品列表展示 1688 原价、Hubbuyer 会员价、数量和小计；Hubbuyer 会员价使用强调样式，1688 原价使用次级/划线样式。</td>
+              <td>Hubbuyer 会员价沿用报价单冻结的 <code>promotionPrice</code>，不得因 1688 后续价格变动自动覆盖已生成报价单。</td>
+            </tr>
+            <tr>
+              <td>普通商品</td>
+              <td>普通商品无字段变化，继续展示数量、单价和小计，不展示 1688 原价与 Hubbuyer 会员价对比。</td>
+              <td>普通商品不参与会员已省；若重新报价后获得会员价，需形成新报价单快照。</td>
+            </tr>
+            <tr>
+              <td>立即支付 / 取消 / 下载</td>
+              <td>支持立即支付、取消订单和下载报价单。</td>
+              <td>下载内容必须与当前报价单费用、预估国内运费、代采手续费和商品价格快照一致；取消订单需二次确认。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>3.7 订单详情页：费用一览、订单明细、店铺明细与本店节省</h3>
+      <p><strong>核心业务逻辑：</strong>订单详情页展示清算结果。费用一览按三个业务模块说明：报价单支付金额、实际清算金额、HUBBUYER 为您节省；订单差额作为清算结果处理卡展示。订单明细、店铺明细和列表中的“本店节省”都需要解释清楚。</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 120px;">需求编号</th>
+              <th style="width: 170px;">模块/字段</th>
+              <th>功能展现描述</th>
+              <th>业务规则与异常边界处理</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="num" rowspan="8">REQ-008</td>
+              <td>费用一览：报价单支付金额</td>
+              <td>展示用户报价阶段已确认并支付的金额构成，包括商品金额、预估国内运费、预估检品费用、预估附加项费用、预估代采手续费和其他费用。</td>
+              <td>该模块是报价阶段支付金额视角，商品金额按报价单冻结的 <code>promotionPrice × 数量</code> 汇总；预估类费用不代表最终实际支出。</td>
+            </tr>
+            <tr>
+              <td>费用一览：实际清算金额</td>
+              <td>展示清算后真实发生的金额构成，包括正品金额、实际国内运费、实际检品费用、实际附加项费用、实际代采手续费和其他费用。</td>
+              <td>实际清算金额来自后台清算结果；与报价单支付金额比较后产生补款、退款或无需处理的客户资金动作。</td>
+            </tr>
+            <tr>
+              <td>费用一览：HUBBUYER 为您节省</td>
+              <td>展示商品金额节省和人工交涉节省，并说明节省来源。</td>
+              <td>商品金额节省 = 1688 原价对应金额 - Hubbuyer 会员价对应金额；人工交涉节省 = 采购差价。节省金额用于前台说明展示，不作为额外抵扣金额重复参与清算。</td>
+            </tr>
+            <tr>
+              <td>订单差额处理卡</td>
+              <td>展示订单差额、客户需补款/应退款/无需处理状态，以及资金管理提示。</td>
+              <td>页面现有文案显示“订单差额 = 报价单支付金额 - 实际清算金额”，与后台订单清算弹窗公式不同；本文档以后台公式为准，前台需同步修正。</td>
+            </tr>
+            <tr>
+              <td>订单明细</td>
+              <td>按订单维度展示商品数量、正品数量、正品金额、退换商品金额、没货退款商品金额、1688 商品金额、商品金额节省等字段。</td>
+              <td>订单明细用于解释订单级金额来源；商品金额节省按全单有会员价商品汇总，不能与退款、返现、采购差价重复抵扣。</td>
+            </tr>
+            <tr>
+              <td>店铺列表：本店节省</td>
+              <td>店铺列表新增“本店节省”字段，与正品金额、实际国内运费等字段同列展示，帮助用户理解每个店铺的节省贡献。</td>
+              <td>本店节省 = 本店商品金额节省 + 本店人工交涉节省；若某店铺无 Hubbuyer 会员价和采购差价，则展示 0 或“无”。</td>
+            </tr>
+            <tr>
+              <td>店铺明细抽屉</td>
+              <td>展示店铺维度的报价单金额、实际清算金额、本店为你节省，以及商品明细、国内运费、检品费用、附加费、代采手续费、其他费用等分组。</td>
+              <td>店铺明细金额必须能回溯到后台店铺清算输入；店铺维度合计需与订单维度费用一览一致。</td>
+            </tr>
+            <tr>
+              <td>返回、再提交、下载</td>
+              <td>订单详情支持返回上一页、再提交、下载订单和查看费用明细。</td>
+              <td>下载订单需包含费用一览、订单明细、店铺明细和节省字段，金额口径与页面展示一致。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="admin">
+      <h2>4. 【管理端】后台清算需求</h2>
+      <h3>4.1 后台代购订单详情页</h3>
+      <p><strong>核心业务逻辑：</strong>后台订单详情页是清算前的数据维护入口，采购、质检、仓库和订单备注等信息汇总到订单清算弹窗。后台所有携带商品单价的页面、明细、表单下载、导出和打印文件必须沿用报价阶段冻结的 promotionPrice，包括订单、报价单、全商品、发货订单、采购处理、入库/仓库发货和订单清算弹窗。</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 120px;">需求编号</th>
+              <th>字段/控件名称</th>
+              <th>功能展现描述</th>
+              <th>业务规则与异常边界处理</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="num">REQ-009</td>
+              <td>订单清算入口</td>
+              <td>订单概览区域提供“订单清算”按钮，并展示订单编号、支付日期、客户、国家、负责人、订单状态。</td>
+              <td>只有具备清算权限且订单进入可清算状态时可点击；清算后按钮改为查看清算记录或重新清算申请。</td>
+            </tr>
+            <tr>
+              <td class="num">REQ-009</td>
+              <td>采购金额字段组 / 商品单价</td>
+              <td>商品行展示商品单价、商品金额、变化金额、实际支出、正品金额、预估国内运费、国内运费、到付运费、退换货运费、没货退款金额、不良退款金额、其他费用、店铺返现、采购差价。</td>
+              <td>商品单价必须为 promotionPrice；金额字段沿用现有清算弹窗字段含义，不在本版本重新拆分清算分类；清算后修改必须走审计或重算流程。</td>
+            </tr>
+            <tr>
+              <td class="num">REQ-016</td>
+              <td>后台单价覆盖范围</td>
+              <td>订单、报价单、全商品、发货订单、采购处理、入库/仓库发货、清算弹窗，以及这些模块的明细、表单下载、导出、打印中，只要字段含义是商品单价，均展示 promotionPrice。</td>
+              <td>不允许出现“页面展示为 promotionPrice、下载表单仍为旧单价”的口径分裂；表单下载、导出和打印必须与页面单价一致。</td>
+            </tr>
+            <tr>
+              <td class="num">REQ-009</td>
+              <td>批量操作</td>
+              <td>支持一键下单、一键采购、一键到货、一键正品、一键发货、批量确认金额、批量解锁金额等操作。</td>
+              <td>批量动作影响商品单价或清算字段时，商品单价仍以 promotionPrice 为准；需刷新订单清算候选值；采购已确认后不得静默覆盖金额。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>4.2 后台订单清算弹窗</h3>
+      <div class="callout"><strong>最高优先级规则提醒：</strong>订单清算弹窗页公式以页面原文为准，其中弹窗字段“手续费”在本文档中统一解释为代采手续费：实际结算金额 = 客户价 + 附加项费用 + 质检费用 + 订单其他费用 + 代采手续费；订单差额 = 实际结算金额 - 报价单支付金额 - 采购差额。</div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 120px;">需求编号</th>
+              <th>字段/控件名称</th>
+              <th>功能展现描述</th>
+              <th>业务规则与异常边界处理</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="num">REQ-010</td>
+              <td>店铺清算明细表</td>
+              <td>按店铺展示实际支出、正品金额、预估国内运费、国内运费、到付运费、退换运费、没货退款金额、不良退款金额、店铺其他费用、店铺返现、采购差额。</td>
+              <td>表格中每个金额字段必须有默认值、精度、方向和可编辑权限；空值按 0 参与试算，但需在提交前校验必填项。</td>
+            </tr>
+            <tr>
+              <td class="num">REQ-010</td>
+              <td>报价单金额区域</td>
+              <td>展示报价单支付金额、商品金额、预估国内运费、预估检品费用、预估附加项费用、预估代采手续费。</td>
+              <td>商品金额由报价阶段冻结的 promotionPrice 汇总；平台服务费是第三方支付平台收取的支付手续费，不计入报价单支付金额。</td>
+            </tr>
+            <tr>
+              <td class="num">REQ-011</td>
+              <td>实际结算金额区域</td>
+              <td>展示客户价、附加项费用、质检费用、订单其他费用、代采手续费，并计算实际结算金额。</td>
+              <td>实际结算金额沿用弹窗公式；弹窗字段“手续费”在本文档中统一解释为代采手续费。</td>
+            </tr>
+            <tr>
+              <td class="num">REQ-012</td>
+              <td>重新计算 / 确定清算</td>
+              <td>“重新计算”刷新实际结算金额、订单差额和客户处理；“确定清算”固化清算结果。</td>
+              <td>确定清算前需二次确认，写入公式版本、输入字段快照、输出金额、客户处理类型、操作人和时间。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>4.3 其他关联模块 (连带核心后端系统影响与风险规范)</h3>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>前端表现 / 用户侧操作</th>
+              <th>潜在漏洞与防线断层风险点</th>
+              <th>核心关联的后端能力及加固要求</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>代采手续费、会员免代采手续费、平台服务费同时出现在不同页面。</td>
+              <td>容易把 Hubbuyer 代采手续费减免和第三方支付平台收取的支付手续费混为一类费用。</td>
+              <td>页面展示和字段说明需统一：手续费 = 代采手续费；原第三方支付相关费用统一命名为平台服务费。平台服务费不由 Hubbuyer 收取，也不计入报价单金额。</td>
+            </tr>
+            <tr>
+              <td>前台展示人工交涉节省，后台展示采购差额和店铺返现。</td>
+              <td>采购差额既可能是利润口径，也可能是让利口径，重复扣减会造成客户多退。</td>
+              <td>前台人工交涉节省直接等于采购差价；本版本不改变采购差额在订单差额公式中的位置，只要求返现、退款、采购差额等现有字段来源可追溯，避免人工重复录入。</td>
+            </tr>
+            <tr>
+              <td>后台订单、报价单、全商品、发货订单、采购、仓库发货页面及表单下载都展示商品单价。</td>
+              <td>任一页面、导出、下载或打印文件沿用旧单价，都会导致报价金额、订单金额、发货金额、清算金额和对账文件不一致。</td>
+              <td>建立商品价格快照能力：订单生成时冻结 promotionPrice，订单、报价单、全商品、发货订单、采购处理、入库/仓库发货、清算弹窗、表单下载、导出和打印均读取同一价格快照。</td>
+            </tr>
+            <tr>
+              <td>订单清算后资金管理查看账单。</td>
+              <td>清算确认与资金流水不同步会导致前台展示已清算但客户账户未入账/未扣款。</td>
+              <td>清算后沿用现有资金处理逻辑：客户需补款时自动扣除客户余额，余额不足时扣成不足金；应退款按现有退款逻辑处理。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="rules">
+      <h2>5. 业务规则与风险控制</h2>
+      <h3>5.1 订单清算公式</h3>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 170px;">规则编号</th>
+              <th>规则</th>
+              <th>说明</th>
+              <th>风险控制</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="num">RULE-001</td>
+              <td>报价单支付金额 = 客户已支付金额。</td>
+              <td>支付完成后的报价单支付金额作为订单差额公式中的对比金额。</td>
+              <td>未支付、支付失败、部分支付、逾期取消不得进入清算。</td>
+            </tr>
+            <tr>
+              <td class="num">RULE-002</td>
+              <td>实际结算金额 = 客户价 + 附加项费用 + 质检费用 + 订单其他费用 + 代采手续费。</td>
+              <td>该公式取自后台订单清算弹窗页的“计算公式”表。</td>
+              <td>客户价、附加项费用、质检费用、订单其他费用、代采手续费必须与弹窗字段一致；弹窗字段“手续费”按代采手续费理解。</td>
+            </tr>
+            <tr>
+              <td class="num">RULE-003</td>
+              <td>订单差额 = 实际结算金额 - 报价单支付金额 - 采购差额。</td>
+              <td>该公式取自后台订单清算弹窗页，字段名称必须沿用系统已有“订单差额”。</td>
+              <td>前台订单详情页若仍展示“报价单支付金额 - 实际清算金额”，必须同步修正为后台公式或明确差异来源。</td>
+            </tr>
+            <tr>
+              <td class="num">RULE-008</td>
+              <td>会员价 / 商品单价 = promotionPrice。</td>
+              <td>1688 词搜、图片搜索和商品详情返回的营销价 promotionPrice 是前台会员价和后台所有携带单价字段的唯一价格基准。</td>
+              <td>promotionPrice 缺失或异常时不得回退旧单价；订单、报价单、全商品、发货订单、采购、仓库发货、清算、表单下载、导出和打印均需读取同一价格快照。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>5.2 费用字段口径与当前版本处理方式</h3>
+      <div class="callout"><strong>当前版本边界：</strong>本版本不修改后台订单清算弹窗的现有公式，不新增额外费用分类规则；只在现有清算字段基础上统一单价来源、节省金额展示、字段说明、下载/导出/打印口径和前后台公式同步。</div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 220px;">字段 / 区域</th>
+              <th>当前版本处理方式</th>
+              <th style="width: 190px;">是否改变清算逻辑</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>会员价 / 商品单价 promotionPrice</td>
+              <td>前台会员价、报价商品单价、后台所有携带单价字段及其下载/导出/打印文件均取 1688 营销价 promotionPrice。</td>
+              <td><span class="tag green">不改清算公式</span></td>
+            </tr>
+            <tr>
+              <td>1688 原价对应金额 / 商品金额节省</td>
+              <td>1688 原价对应金额用于前台展示“商品金额节省”；商品金额节省 = 1688 原价对应金额 - 会员价对应金额，会员价对应金额按 promotionPrice × 数量汇总。</td>
+              <td><span class="tag blue">展示优化</span></td>
+            </tr>
+            <tr>
+              <td>采购差价 / 人工交涉节省 / 采购差额</td>
+              <td>前台人工交涉节省 = 采购差价；后台订单差额公式继续使用现有“采购差额”字段，不新增抵扣字段。</td>
+              <td><span class="tag blue">展示同步</span></td>
+            </tr>
+            <tr>
+              <td>报价单支付金额</td>
+              <td>沿用后台清算弹窗现有口径，作为订单差额公式中的对比金额。</td>
+              <td><span class="tag green">沿用现有公式</span></td>
+            </tr>
+            <tr>
+              <td>实际结算金额</td>
+              <td>沿用后台订单清算弹窗公式；弹窗字段“手续费”统一解释为代采手续费，即客户价 + 附加项费用 + 质检费用 + 订单其他费用 + 代采手续费。</td>
+              <td><span class="tag green">沿用现有公式</span></td>
+            </tr>
+            <tr>
+              <td>订单差额</td>
+              <td>沿用后台订单清算弹窗公式：实际结算金额 - 报价单支付金额 - 采购差额；前台订单详情如展示不同公式，需要同步为该口径或明确差异来源。</td>
+              <td><span class="tag green">沿用现有公式</span></td>
+            </tr>
+            <tr>
+              <td>店铺清算明细现有字段</td>
+              <td>实际支出、正品金额、预估国内运费、国内运费、到付运费、退换运费、没货退款金额、不良退款金额、店铺其他费用、店铺返现、采购差额等字段沿用弹窗当前含义；本版本不重新归类。</td>
+              <td><span class="tag blue">字段说明优化</span></td>
+            </tr>
+            <tr>
+              <td>代采手续费 / 平台服务费</td>
+              <td>手续费统一解释为代采手续费；原第三方支付相关费用统一命名为平台服务费。平台服务费不由 Hubbuyer 收取，也不计入报价单金额。</td>
+              <td><span class="tag blue">展示说明优化</span></td>
+            </tr>
+            <tr>
+              <td>表单下载 / 导出 / 打印</td>
+              <td>所有包含商品单价的表单下载、导出和打印文件，单价均使用 promotionPrice，并与页面展示一致。</td>
+              <td><span class="tag green">不改清算公式</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>5.3 状态、权限、异常与回滚</h3>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 130px;">规则编号</th>
+              <th>场景</th>
+              <th>业务规则</th>
+              <th>异常 / 失败处理</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="num">RULE-004</td>
+              <td>清算前</td>
+              <td>订单必须已支付，且采购、质检或费用字段达到可清算条件。</td>
+              <td>缺少必填金额、金额方向不明、商品状态未完成时禁止确定清算。</td>
+            </tr>
+            <tr>
+              <td class="num">RULE-005</td>
+              <td>确定清算</td>
+              <td>确定清算生成清算记录；客户需补款时自动扣除客户余额，余额不足时扣成不足金；应退款按现有退款逻辑处理。</td>
+              <td>余额扣除或退款处理失败时不得向前台展示已完成退款/扣款，只能展示待处理或不足金状态。</td>
+            </tr>
+            <tr>
+              <td class="num">RULE-006</td>
+              <td>重新计算</td>
+              <td>重新计算仅刷新试算结果，不写入最终清算记录。</td>
+              <td>重算失败需保留上一次试算结果并提示失败原因。</td>
+            </tr>
+            <tr>
+              <td class="num">RULE-007</td>
+              <td>清算后修改</td>
+              <td>已清算订单的关键金额不可直接覆盖，需发起重算/调整记录。</td>
+              <td>回滚需保留原清算记录，新增调整单，不删除历史。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>5.4 前台本次新增多语言配置</h3>
+      <div class="callout"><strong>多语言硬规则：</strong>本节只保留当前前台项目和现有语言配置中未检出的本次新增可见文案。当前项目已经有语言入口的基础字段、按钮、表头、状态和费用名称不在本节展示，也不要求本版本重复新增。金额、币种、订单号、报价单号、商品名、店铺名、SKU、数量、图片等业务数据按原数据展示；Hubbuyer、1688、promotionPrice 等专有名词按既有品牌和字段规则处理。</div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 120px;">页面</th>
+              <th style="width: 300px;">本次新增文案或字段</th>
+              <th>出现位置</th>
+              <th>多语言配置要求</th>
+              <th style="width: 260px;">当前项目核查结论</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="2">商品列表页</td><td>1688价</td><td>宫格商品卡价格区。</td><td>可见标签和同名 hover title 接入多语言配置。</td><td>当前商品宫格未检出同名语言入口。</td></tr>
+            <tr><td>Hubbuyer价格</td><td>宫格商品卡会员价区。</td><td>可见标签和同名 hover title 接入多语言配置。</td><td>当前商品宫格未检出同名语言入口。</td></tr>
+            <tr><td rowspan="3">商品详情页</td><td>Hubbuyer价格</td><td>商品详情价格模块。</td><td>作为会员价模块标题或价格标签接入多语言配置。</td><td>当前商品详情未检出同名语言入口。</td></tr>
+            <tr><td>1688价</td><td>商品详情价格对比区。</td><td>作为 1688 原价标签接入多语言配置。</td><td>当前商品详情未检出同名语言入口。</td></tr>
+            <tr><td>预估国内运费：</td><td>选择商品规格和数量后的运费展示区。</td><td>字段名和冒号样式接入多语言配置。</td><td>当前项目已有国际/通用运费文案，但未检出本次 1688 国内预估运费字段。</td></tr>
+            <tr><td rowspan="3">购物车</td><td>会员已省:</td><td>底部汇总导航。</td><td>字段名接入多语言配置。</td><td>当前购物车未检出同名语言入口。</td></tr>
+            <tr><td>预估国内运费:</td><td>底部汇总导航。</td><td>字段名接入多语言配置。</td><td>当前购物车未检出本次 1688 国内预估运费字段。</td></tr>
+            <tr><td>1688商家提供，实际国内运费按清算后计算</td><td>预估国内运费问号图标 hover 提示。</td><td>鼠标移入/聚焦后展示的提示说明接入多语言配置。</td><td>当前购物车未检出该提示文案。</td></tr>
+            <tr><td rowspan="4">确认订单页</td><td>预估国内运费</td><td>费用汇总明细行。</td><td>字段名接入多语言配置。</td><td>当前确认订单未检出本次 1688 国内预估运费字段。</td></tr>
+            <tr><td>会员免代采手续费！</td><td>代采手续费减免展示区。</td><td>整句减免文案接入多语言配置。</td><td>当前确认订单仅有基础代采手续费语言入口，未检出会员免代采手续费文案。</td></tr>
+            <tr><td>1688原价:</td><td>有会员价商品的价格行。</td><td>字段名接入多语言配置。</td><td>当前确认订单未检出同名语言入口。</td></tr>
+            <tr><td>Hubbuyer价格:</td><td>有会员价商品的价格行。</td><td>字段名接入多语言配置。</td><td>当前确认订单未检出同名语言入口。</td></tr>
+            <tr><td>报价单列表页</td><td>会员已省:</td><td>报价单列表行费用摘要。</td><td>字段名接入多语言配置。</td><td>当前报价单列表未检出同名语言入口。</td></tr>
+            <tr><td rowspan="4">报价单详情页</td><td>预估国内运费</td><td>费用汇总明细行。</td><td>字段名接入多语言配置。</td><td>当前报价单详情已有国际预估运费文案，未检出本次 1688 国内预估运费字段。</td></tr>
+            <tr><td>会员免代采手续费！</td><td>代采手续费减免展示区。</td><td>整句减免文案接入多语言配置。</td><td>当前报价单详情仅有基础代采手续费语言入口，未检出会员免代采手续费文案。</td></tr>
+            <tr><td>1688原价:</td><td>有会员价商品的价格行。</td><td>字段名接入多语言配置。</td><td>当前报价单详情未检出同名语言入口。</td></tr>
+            <tr><td>Hubbuyer价格:</td><td>有会员价商品的价格行。</td><td>字段名接入多语言配置。</td><td>当前报价单详情未检出同名语言入口。</td></tr>
+            <tr><td rowspan="11">订单详情页</td><td>Hubbuyer不收取任何商品差价！ 清算费用完全透明，中国代采就找Hubbuyer！</td><td>订单详情清算透明提示。</td><td>整句提示接入多语言配置。</td><td>当前订单详情未检出该提示文案。</td></tr>
+            <tr><td>显示清算透明提示</td><td>清算透明提示收起后的恢复按钮 hover title。</td><td>鼠标移入展示的提示文案接入多语言配置。</td><td>当前订单详情未检出该 title 文案。</td></tr>
+            <tr><td>HUBBUYER为您节省</td><td>节省金额模块标题。</td><td>模块标题接入多语言配置。</td><td>当前订单详情未检出该模块标题。</td></tr>
+            <tr><td>商品金额节省 / 人工交涉节省 / 手续费节省</td><td>节省金额明细。</td><td>字段名接入多语言配置。</td><td>当前订单详情未检出该组节省字段。</td></tr>
+            <tr><td>人工交涉节省：商品采购时和1688商家的还价、国内物流沟通后的降价以及店铺沟通后的整单返利等合计费用！</td><td>人工交涉节省说明。</td><td>整句说明接入多语言配置。</td><td>当前订单详情未检出该说明文案。</td></tr>
+            <tr><td>本单为你节省 / 本店节省 / 本店为你节省 / 无差额</td><td>订单明细、店铺列表和店铺明细。</td><td>字段名和状态文案接入多语言配置。</td><td>当前订单详情未检出该组节省字段和状态文案。</td></tr>
+            <tr><td>按店铺展示报价单与实际清算差异</td><td>费用明细入口说明。</td><td>整句说明接入多语言配置。</td><td>当前订单详情未检出该说明文案。</td></tr>
+            <tr><td>1688商品金额</td><td>费用抽屉商品明细。</td><td>字段名接入多语言配置。</td><td>当前订单详情未检出同名语言入口。</td></tr>
+            <tr><td>Hubbuyer 实采价格，不收取任何差价！ / 按 1688 原商品价格计算 / 会员身份优惠和采购员和商家洽谈后给出的优惠总和！</td><td>费用抽屉商品明细问号 hover 提示。</td><td>鼠标移入/聚焦后展示的提示说明接入多语言配置。</td><td>当前订单详情未检出该组提示文案。</td></tr>
+            <tr><td>到付运费 / 没货退还运费</td><td>费用抽屉国内运费明细。</td><td>字段名接入多语言配置。</td><td>当前订单详情未检出该组明细字段。</td></tr>
+            <tr><td>1688商家提供 / 商家实际发货后确认 / 3 家店铺实际发货后确认 / 缺货或退换货关联退回 / 缺货商品不再发货 / 缺货商品对应退回 / 随缺货一并退回 / 本订单未发生 / 本店未发生</td><td>费用抽屉国内运费问号 hover 提示。</td><td>鼠标移入/聚焦后展示的提示说明接入多语言配置。</td><td>当前订单详情未检出该组提示文案；店铺数量需支持变量或按当前文案配置。</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted">配置落地要求：新增文案应使用稳定文案键管理；同一新增字段在多个页面出现时复用同一术语键。前端验收时至少覆盖中文、日文、英文三种语言切换，确认本节列出的新增可见字段和鼠标移入/聚焦后出现的提示说明都随语言切换；金额和业务数据不被误翻译。当前项目已有语言入口的字段继续复用现有配置，不在本节重复列出。</p>
+    </section>
+
+    <section id="backend-impact">
+      <h2>6. 数据、接口与后端影响说明</h2>
+      <p class="muted">以下只描述能力和数据概念，不发明具体接口名、数据库表名或字段枚举。</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 120px;">需求编号</th>
+              <th>能力域</th>
+              <th>需要支持的数据/能力</th>
+              <th>证据级别</th>
+              <th>风险</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="num">REQ-001 ~ REQ-006</td>
+              <td>报价与支付</td>
+              <td>商品报价、普通商品/会员价商品展示差异、会员已省、代采手续费减免、预估国内运费、选项费用、汇率折算、平台服务费展示、支付期限。</td>
+              <td><span class="tag green">已确认</span></td>
+              <td>代采手续费与平台服务费混用会导致报价金额和支付金额对不上。</td>
+            </tr>
+            <tr>
+              <td class="num">REQ-002 ~ REQ-006</td>
+              <td>1688 预估国内运费</td>
+              <td>商品详情页在 SKU/数量变化后调用或透传 1688 <code>product.freight.estimate</code> 能力获取预估国内运费；购物车、确认订单、报价单详情读取报价阶段运费快照。</td>
+              <td><span class="tag green">已确认</span></td>
+              <td>运费接口失败或快照缺失时，不能把默认值静默计入报价单支付金额。</td>
+            </tr>
+            <tr>
+              <td class="num">REQ-008</td>
+              <td>前台订单清算展示</td>
+              <td>报价单支付金额、实际清算金额、订单差额、返现金额、HUBBUYER 为您节省、订单明细、店铺明细、本店节省、估算/实际费用明细、资金处理状态。</td>
+              <td><span class="tag green">已确认</span></td>
+              <td>正负号展示口径不一致会造成客户误解。</td>
+            </tr>
+            <tr>
+              <td class="num">REQ-009 ~ REQ-012</td>
+              <td>后台清算计算</td>
+              <td>按后台订单清算弹窗现有字段和公式计算；店铺维度汇总；订单维度汇总；重算；确定清算；审计记录。</td>
+              <td><span class="tag green">已确认</span></td>
+              <td>当前版本不改清算主逻辑；前台订单详情展示需同步后台订单差额公式。</td>
+            </tr>
+            <tr>
+              <td class="num">REQ-012 / REQ-015</td>
+              <td>资金处理与费用命名</td>
+              <td>清算后客户需补款时自动扣除客户余额，余额不足时扣成不足金；平台服务费统一命名，不计入报价单金额。</td>
+              <td><span class="tag green">已确认</span></td>
+              <td>若平台服务费误计入报价单金额，或余额不足未扣成不足金，会造成客户账务展示错误。</td>
+            </tr>
+            <tr>
+              <td class="num">REQ-016</td>
+              <td>1688 价格源与商品价格快照</td>
+              <td>从 1688 词搜、图片搜索和商品详情读取 promotionPrice；订单生成时冻结商品单价快照；订单、报价单、全商品、发货订单、采购处理、入库/仓库发货、清算弹窗、表单下载、导出和打印统一读取该快照。</td>
+              <td><span class="tag green">已确认</span></td>
+              <td>promotionPrice 缺失、精度不一致或快照未冻结，会造成页面金额、下载表单、导出文件和清算金额不一致。</td>
+            </tr>
+            <tr>
+              <td class="num">REQ-017</td>
+              <td>前台多语言配置</td>
+              <td>商品列表、商品详情、购物车、确认订单、报价单列表、报价单详情、订单详情的页面可见新增字段、按钮、提示、表头、状态、抽屉标题、抽屉说明，以及鼠标移入/聚焦后展示的提示说明均从多语言配置读取。</td>
+              <td><span class="tag green">已确认</span></td>
+              <td>若新增字段写死在页面，会造成语言切换不完整，且“代采手续费 / 平台服务费”命名再次混淆。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="acceptance">
+      <h2>7. 验收检查</h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 105px;">验收编号</th>
+              <th style="width: 110px;">需求编号</th>
+              <th>检查方法</th>
+              <th>预期结果</th>
+              <th style="width: 110px;">负责人</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="num">AC-001</td><td class="num">REQ-001</td><td>分别打开搜索页、图搜、首页商品列表、首页模块二级页面、商品详情店铺内页、足迹等宫格商品列表入口，对比普通商品卡片和有 Hubbuyer 价格商品卡片。</td><td>所有宫格商品列表入口统一为新版商品卡样式；普通卡片展示“无”或会员价空态；有价卡片展示 Hubbuyer 价格、1688 原价和折算币种，且不使用旧单价补价。</td><td>前端 / 产品</td></tr>
+            <tr><td class="num">AC-002</td><td class="num">REQ-002</td><td>在商品详情页切换商品规格和数量，并触发预估国内运费刷新。</td><td>Hubbuyer 价格模块样式清晰；商品金额随数量变化；预估国内运费来自预估国内运费能力；库存/起订量不满足时禁止加入购物车。</td><td>前端 / 测试</td></tr>
+            <tr><td class="num">AC-003</td><td class="num">REQ-003</td><td>购物车分别查看有会员价商品和普通商品，并修改数量、删除商品、进入下一步。</td><td>有会员价商品展示 1688 原价与 Hubbuyer 会员价对比；普通商品无字段变化；底部会员已省、预估国内运费、商品总金额实时刷新。</td><td>前端 / 测试</td></tr>
+            <tr><td class="num">AC-004</td><td class="num">REQ-004</td><td>确认订单检查预估国内运费、代采手续费和商品列表价格行。</td><td>费用一览包含预估国内运费；会员免代采手续费展示原值划线和当前 0 元；有会员价商品展示 1688 原价与 Hubbuyer 会员价，普通商品无字段变化；平台服务费不计入报价单金额。</td><td>前端 / 产品</td></tr>
+            <tr><td class="num">AC-005</td><td class="num">REQ-005</td><td>报价单列表查看会员已省字段并打开支付弹窗。</td><td>列表行展示会员已省；该字段按有会员价商品汇总，普通商品不计入；支付金额、汇率、期限、余额不足、平台服务费和充值入口展示完整，且平台服务费不计入报价单金额。</td><td>前端 / 测试</td></tr>
+            <tr><td class="num">AC-006</td><td class="num">REQ-006</td><td>报价单详情检查费用一览、商品列表、立即支付、取消订单、下载报价单。</td><td>费用一览包含预估国内运费和代采手续费；有会员价商品展示 1688 原价与 Hubbuyer 会员价，普通商品无字段变化；下载内容与当前报价单费用一致。</td><td>前端 / 测试</td></tr>
+            <tr><td class="num">AC-008</td><td class="num">REQ-008</td><td>订单详情查看费用一览、订单明细、店铺列表和店铺明细。</td><td>费用一览三个业务模块字段完整；订单差额解释清楚；订单明细展示节省口径；店铺列表展示本店节省，店铺明细金额可回溯并与订单维度一致。</td><td>产品 / 测试</td></tr>
+            <tr><td class="num">AC-009</td><td class="num">REQ-009</td><td>后台订单详情维护采购和退款字段后打开清算。</td><td>清算弹窗读取最新实际支出、正品金额、预估国内运费、国内运费、到付运费、退换运费、退款金额、店铺其他费用、店铺返现、采购差额等现有字段。</td><td>后端 / 测试</td></tr>
+            <tr><td class="num">AC-010</td><td class="num">REQ-010</td><td>在清算弹窗录入店铺金额并重算。</td><td>店铺维度和订单维度汇总正确，空值按规则处理，异常字段提示。</td><td>后端 / 测试</td></tr>
+            <tr><td class="num">AC-011</td><td class="num">REQ-011</td><td>按订单清算弹窗公式构造补款、退款、无差额三类订单。</td><td>实际结算金额 = 客户价 + 附加项费用 + 质检费用 + 订单其他费用 + 代采手续费；订单差额 = 实际结算金额 - 报价单支付金额 - 采购差额。</td><td>产品 / 后端</td></tr>
+            <tr><td class="num">AC-012</td><td class="num">REQ-012</td><td>确定清算后查看订单详情和资金处理。</td><td>清算记录、前台展示和审计日志一致；客户需补款时自动扣除客户余额，余额不足时扣成不足金；应退款按现有退款逻辑处理。</td><td>后端 / 财务</td></tr>
+            <tr><td class="num">AC-016</td><td class="num">REQ-016</td><td>构造同一商品在词搜、图搜、详情、订单、报价单、全商品、发货订单、采购处理、仓库发货、清算弹窗，以及对应表单下载/导出/打印文件中的单价链路。</td><td>所有会员价、后台所有携带单价字段、表单下载单价、导出文件单价和打印明细单价均等于 promotionPrice；商品金额节省 = 1688 原价对应金额 - promotionPrice 对应金额；人工交涉节省 = 采购差价。</td><td>产品 / 后端 / 测试</td></tr>
+            <tr><td class="num">AC-017</td><td class="num">REQ-017</td><td>分别在中文、日文、英文环境打开商品列表、商品详情、购物车、确认订单、报价单列表、报价单详情和订单详情。</td><td>页面可见新增字段、按钮、提示、表头、状态、抽屉标题、抽屉说明，以及鼠标移入/聚焦后展示的提示说明均随语言切换；金额、币种、订单号、商品名、店铺名、SKU、数量和图片不被误翻译；代采手续费、平台服务费命名保持本文档口径。</td><td>前端 / 测试</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="questions">
+      <h2>8. 待确认问题</h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 105px;">问题编号</th>
+              <th style="width: 110px;">需求编号</th>
+              <th>待确认问题</th>
+              <th style="width: 120px;">负责人</th>
+              <th style="width: 170px;">需在何时确认</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="5">当前无待确认问题。已按本次反馈收口：手续费为代采手续费；第三方支付平台收取的支付手续费统一命名为平台服务费且不计入报价单金额；已删除模块不在当前文档展示；清算后补款按现有逻辑自动扣除客户余额，余额不足扣成不足金。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="sync">
+      <h2>9. 三件套同步索引</h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 120px;">需求编号</th>
+              <th>产品需求章节</th>
+              <th style="width: 120px;">功能编号</th>
+              <th style="width: 120px;">流程节点编号</th>
+              <th style="width: 120px;">验收编号</th>
+              <th style="width: 110px;">同步状态</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="num">REQ-001</td><td>3.1 宫格商品卡统一样式</td><td class="num">FUN-001</td><td class="num">FLOW-001</td><td class="num">AC-001</td><td>已同步</td></tr>
+            <tr><td class="num">REQ-002</td><td>3.2 商品详情 Hubbuyer 价格与预估运费</td><td class="num">FUN-002</td><td class="num">FLOW-002</td><td class="num">AC-002</td><td>已同步</td></tr>
+            <tr><td class="num">REQ-003</td><td>3.3 购物车会员价样式与底部汇总</td><td class="num">FUN-003</td><td class="num">FLOW-003</td><td class="num">AC-003</td><td>已同步</td></tr>
+            <tr><td class="num">REQ-004</td><td>3.4 确认订单费用一览</td><td class="num">FUN-004</td><td class="num">FLOW-004</td><td class="num">AC-004</td><td>已同步</td></tr>
+            <tr><td class="num">REQ-005</td><td>3.5 报价单列表会员已省</td><td class="num">FUN-005</td><td class="num">FLOW-005</td><td class="num">AC-005</td><td>已同步</td></tr>
+            <tr><td class="num">REQ-006</td><td>3.6 报价单详情费用确认</td><td class="num">FUN-006</td><td class="num">FLOW-006</td><td class="num">AC-006</td><td>已同步</td></tr>
+            <tr><td class="num">REQ-008</td><td>3.7 订单详情清算结果与本店节省</td><td class="num">FUN-008</td><td class="num">FLOW-014</td><td class="num">AC-008</td><td>已同步</td></tr>
+            <tr><td class="num">REQ-009</td><td>4.1 后台代购订单详情</td><td class="num">FUN-009</td><td class="num">FLOW-008</td><td class="num">AC-009</td><td>已同步</td></tr>
+            <tr><td class="num">REQ-010</td><td>4.2 后台订单清算弹窗输入</td><td class="num">FUN-010</td><td class="num">FLOW-009</td><td class="num">AC-010</td><td>已同步</td></tr>
+            <tr><td class="num">REQ-011</td><td>5.1 订单清算公式</td><td class="num">FUN-011</td><td class="num">FLOW-010</td><td class="num">AC-011</td><td>已同步</td></tr>
+            <tr><td class="num">REQ-012</td><td>4.2 确定清算与资金处理</td><td class="num">FUN-012</td><td class="num">FLOW-013</td><td class="num">AC-012</td><td>已同步</td></tr>
+            <tr><td class="num">REQ-014</td><td>5.2 现有金额字段重复录入提示</td><td class="num">FUN-014</td><td class="num">FLOW-011</td><td class="num">AC-014</td><td>已同步</td></tr>
+            <tr><td class="num">REQ-015</td><td>5.2 代采手续费、平台服务费、会员减免</td><td class="num">FUN-015</td><td class="num">FLOW-016</td><td class="num">AC-015</td><td>已同步</td></tr>
+            <tr><td class="num">REQ-016</td><td>0 全局价格口径 / 5.2 价格基准</td><td class="num">FUN-016</td><td class="num">FLOW-017</td><td class="num">AC-016</td><td>已同步</td></tr>
+            <tr><td class="num">REQ-017</td><td>5.4 前台新增字段多语言配置</td><td class="num">FUN-017</td><td class="num">FLOW-018</td><td class="num">AC-017</td><td>已同步</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

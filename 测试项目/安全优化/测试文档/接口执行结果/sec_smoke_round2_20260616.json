@@ -1,0 +1,444 @@
+{
+  "environment": "main",
+  "round": "R1-round2",
+  "executed_at": "2026-06-17T02:23:48.653957+00:00",
+  "results": [
+    {
+      "case_id": "LOGIN",
+      "status": "Pass",
+      "summary": "user_a",
+      "detail": {
+        "ok": true
+      },
+      "at": "2026-06-17T02:23:02.148836+00:00"
+    },
+    {
+      "case_id": "LOGIN",
+      "status": "Pass",
+      "summary": "user_b",
+      "detail": {
+        "ok": true
+      },
+      "at": "2026-06-17T02:23:02.148847+00:00"
+    },
+    {
+      "case_id": "LOGIN",
+      "status": "Pass",
+      "summary": "admin",
+      "detail": {
+        "ok": true
+      },
+      "at": "2026-06-17T02:23:02.148850+00:00"
+    },
+    {
+      "case_id": "TC-SEC-SECRET-001",
+      "status": "Pass",
+      "summary": "扩展敏感路径未泄露",
+      "detail": [
+        {
+          "path": "/storage/certificates/worldtrade/sandbox/private_key.pem",
+          "http": 200,
+          "leak": false,
+          "preview": "{\"code\":404,\"msg\":\"404 not found\"}"
+        },
+        {
+          "path": "/.env",
+          "http": 200,
+          "leak": false,
+          "preview": "{\"code\":404,\"msg\":\"404 not found\"}"
+        },
+        {
+          "path": "/.env.example",
+          "http": 200,
+          "leak": false,
+          "preview": "{\"code\":404,\"msg\":\"404 not found\"}"
+        },
+        {
+          "path": "/storage/.env",
+          "http": 200,
+          "leak": false,
+          "preview": "{\"code\":404,\"msg\":\"404 not found\"}"
+        },
+        {
+          "path": "/config/database.key",
+          "http": 200,
+          "leak": false,
+          "preview": "{\"code\":404,\"msg\":\"404 not found\"}"
+        }
+      ],
+      "at": "2026-06-17T02:23:05.081030+00:00"
+    },
+    {
+      "case_id": "TC-SEC-AUTH-001",
+      "status": "Pass",
+      "summary": "伪造 admin token 写 admin_index 被拒绝",
+      "detail": {
+        "variant": "forged_token",
+        "probes": [
+          {
+            "path": "/admin_index/blogArticle/updateDeepLConfig",
+            "biz_code": 30001,
+            "msg": "令牌解析失败"
+          },
+          {
+            "path": "/admin_index/bannerConfig/update",
+            "biz_code": 30001,
+            "msg": "令牌解析失败"
+          }
+        ]
+      },
+      "at": "2026-06-17T02:23:06.257253+00:00"
+    },
+    {
+      "case_id": "TC-SEC-AUTH-003",
+      "status": "Fail",
+      "summary": "refreshToken 无鉴权仍成功",
+      "detail": [
+        {
+          "path": "/api_tb/auth/refreshToken",
+          "biz_code": 200,
+          "msg": "success"
+        },
+        {
+          "path": "/api_tb/Auth/refreshToken",
+          "biz_code": 200,
+          "msg": "success"
+        }
+      ],
+      "at": "2026-06-17T02:23:07.979919+00:00"
+    },
+    {
+      "case_id": "TC-SEC-AUTH-004",
+      "status": "Pass",
+      "summary": "refreshToken 响应未泄漏长 token/secret",
+      "detail": [
+        {
+          "path": "/api_tb/auth/refreshToken",
+          "biz_code": 200,
+          "msg": "success"
+        },
+        {
+          "path": "/api_tb/Auth/refreshToken",
+          "biz_code": 200,
+          "msg": "success"
+        }
+      ],
+      "at": "2026-06-17T02:23:07.979927+00:00"
+    },
+    {
+      "case_id": "TC-SEC-AUTH-008",
+      "status": "Pass",
+      "summary": "未发现明显邮箱枚举差异（或接口不可用）",
+      "detail": [
+        {
+          "path": "/api/register/checkEmail",
+          "email_type": "registered",
+          "biz_code": 404,
+          "msg": "404 not found"
+        },
+        {
+          "path": "/api/register/checkEmail",
+          "email_type": "unregistered",
+          "biz_code": 404,
+          "msg": "404 not found"
+        },
+        {
+          "path": "/api/emailCode/send",
+          "email_type": "registered",
+          "biz_code": 404,
+          "msg": "404 not found"
+        },
+        {
+          "path": "/api/emailCode/send",
+          "email_type": "unregistered",
+          "biz_code": 404,
+          "msg": "404 not found"
+        },
+        {
+          "path": "/api/register/register",
+          "email_type": "registered",
+          "biz_code": 40001,
+          "msg": "必填参数nation不能为空"
+        },
+        {
+          "path": "/api/register/register",
+          "email_type": "unregistered",
+          "biz_code": 40001,
+          "msg": "必填参数nation不能为空"
+        }
+      ],
+      "at": "2026-06-17T02:23:12.222724+00:00"
+    },
+    {
+      "case_id": "TC-SEC-SECRET-003",
+      "status": "Pass",
+      "summary": "错误登录响应未泄漏敏感明文",
+      "detail": [
+        {
+          "user_login": "token_obtained",
+          "len": 393
+        },
+        {
+          "admin_login": "token_obtained",
+          "len": 373
+        },
+        {
+          "wrong_password_response": " Invalid username or password."
+        }
+      ],
+      "at": "2026-06-17T02:23:12.875318+00:00"
+    },
+    {
+      "case_id": "TC-SEC-IDOR-001",
+      "status": "Conditional",
+      "summary": "完整 payload 跨用户 update 未成功",
+      "detail": {
+        "biz_code": 40000,
+        "msg": "정보를 정확히 입력해 주세요",
+        "name_before": "12",
+        "name_after": "12"
+      },
+      "at": "2026-06-17T02:23:14.926790+00:00"
+    },
+    {
+      "case_id": "TC-SEC-IDOR-002",
+      "status": "Conditional",
+      "summary": "跨用户写被拒绝或无副作用",
+      "detail": {
+        "target_id": 101,
+        "ops": [
+          {
+            "op": "delete",
+            "path": "/api_b2b/userDeliveryAddress/delete",
+            "biz_code": 404,
+            "msg": "404 not found",
+            "denied": false
+          },
+          {
+            "op": "default",
+            "path": "/api_b2b/userDeliveryAddress/updateDefault",
+            "biz_code": 40000,
+            "msg": "수정 실패",
+            "denied": false
+          },
+          {
+            "op": "delivery_note",
+            "path": "/api_b2b/userDeliveryAddress/updateIncludeDeliveryNote",
+            "biz_code": 40000,
+            "msg": "error",
+            "denied": false
+          }
+        ],
+        "verify": {
+          "name_before": "12",
+          "name_after": "12",
+          "unchanged": true
+        }
+      },
+      "at": "2026-06-17T02:23:17.378200+00:00"
+    },
+    {
+      "case_id": "TC-SEC-IDOR-003",
+      "status": "Blocked",
+      "summary": "user_b 无进口商地址或 list 接口不可用",
+      "detail": {
+        "path": null
+      },
+      "at": "2026-06-17T02:23:21.414391+00:00"
+    },
+    {
+      "case_id": "TC-SEC-FIN-008",
+      "status": "Pass",
+      "summary": "0/负数/探测提现未成功入账",
+      "detail": [
+        {
+          "user": "user_a",
+          "path": "/api_b2b/userRechargeLog/withdrawalFunds",
+          "amount": 0,
+          "biz_code": 40001,
+          "msg": "amount_invalid"
+        },
+        {
+          "user": "user_a",
+          "path": "/api_b2b/userWithdrawalLog/withdraw",
+          "amount": 0,
+          "biz_code": 404,
+          "msg": "404 not found"
+        },
+        {
+          "user": "user_a",
+          "path": "/api_b2b/userRechargeLog/withdrawalFunds",
+          "amount": -1,
+          "biz_code": 40001,
+          "msg": "amount_invalid"
+        },
+        {
+          "user": "user_a",
+          "path": "/api_b2b/userWithdrawalLog/withdraw",
+          "amount": -1,
+          "biz_code": 404,
+          "msg": "404 not found"
+        },
+        {
+          "user": "user_a",
+          "path": "/api_b2b/userRechargeLog/withdrawalFunds",
+          "amount": 1,
+          "biz_code": 40000,
+          "msg": "error"
+        },
+        {
+          "user": "user_a",
+          "path": "/api_b2b/userWithdrawalLog/withdraw",
+          "amount": 1,
+          "biz_code": 404,
+          "msg": "404 not found"
+        },
+        {
+          "user": "user_b",
+          "path": "/api_b2b/userRechargeLog/withdrawalFunds",
+          "amount": 0,
+          "biz_code": 40001,
+          "msg": "amount_invalid"
+        },
+        {
+          "user": "user_b",
+          "path": "/api_b2b/userWithdrawalLog/withdraw",
+          "amount": 0,
+          "biz_code": 404,
+          "msg": "404 not found"
+        },
+        {
+          "user": "user_b",
+          "path": "/api_b2b/userRechargeLog/withdrawalFunds",
+          "amount": -1,
+          "biz_code": 40001,
+          "msg": "amount_invalid"
+        },
+        {
+          "user": "user_b",
+          "path": "/api_b2b/userWithdrawalLog/withdraw",
+          "amount": -1,
+          "biz_code": 404,
+          "msg": "404 not found"
+        },
+        {
+          "user": "user_b",
+          "path": "/api_b2b/userRechargeLog/withdrawalFunds",
+          "amount": 1,
+          "biz_code": 40000,
+          "msg": "error"
+        },
+        {
+          "user": "user_b",
+          "path": "/api_b2b/userWithdrawalLog/withdraw",
+          "amount": 1,
+          "biz_code": 404,
+          "msg": "404 not found"
+        }
+      ],
+      "at": "2026-06-17T02:23:32.571493+00:00"
+    },
+    {
+      "case_id": "TC-SEC-FIN-007",
+      "status": "Conditional",
+      "summary": "提现密码探测已执行，需结合账号是否设密人工判定",
+      "detail": [
+        {
+          "user": "user_a",
+          "path": "/api_b2b/userRechargeLog/withdrawalFunds",
+          "amount": 0,
+          "biz_code": 40001,
+          "msg": "amount_invalid"
+        },
+        {
+          "user": "user_a",
+          "path": "/api_b2b/userWithdrawalLog/withdraw",
+          "amount": 0,
+          "biz_code": 404,
+          "msg": "404 not found"
+        },
+        {
+          "user": "user_a",
+          "path": "/api_b2b/userRechargeLog/withdrawalFunds",
+          "amount": -1,
+          "biz_code": 40001,
+          "msg": "amount_invalid"
+        },
+        {
+          "user": "user_a",
+          "path": "/api_b2b/userWithdrawalLog/withdraw",
+          "amount": -1,
+          "biz_code": 404,
+          "msg": "404 not found"
+        },
+        {
+          "user": "user_a",
+          "path": "/api_b2b/userRechargeLog/withdrawalFunds",
+          "amount": 1,
+          "biz_code": 40000,
+          "msg": "error"
+        },
+        {
+          "user": "user_a",
+          "path": "/api_b2b/userWithdrawalLog/withdraw",
+          "amount": 1,
+          "biz_code": 404,
+          "msg": "404 not found"
+        },
+        {
+          "user": "user_b",
+          "path": "/api_b2b/userRechargeLog/withdrawalFunds",
+          "amount": 0,
+          "biz_code": 40001,
+          "msg": "amount_invalid"
+        },
+        {
+          "user": "user_b",
+          "path": "/api_b2b/userWithdrawalLog/withdraw",
+          "amount": 0,
+          "biz_code": 404,
+          "msg": "404 not found"
+        },
+        {
+          "user": "user_b",
+          "path": "/api_b2b/userRechargeLog/withdrawalFunds",
+          "amount": -1,
+          "biz_code": 40001,
+          "msg": "amount_invalid"
+        },
+        {
+          "user": "user_b",
+          "path": "/api_b2b/userWithdrawalLog/withdraw",
+          "amount": -1,
+          "biz_code": 404,
+          "msg": "404 not found"
+        },
+        {
+          "user": "user_b",
+          "path": "/api_b2b/userRechargeLog/withdrawalFunds",
+          "amount": 1,
+          "biz_code": 40000,
+          "msg": "error"
+        },
+        {
+          "user": "user_b",
+          "path": "/api_b2b/userWithdrawalLog/withdraw",
+          "amount": 1,
+          "biz_code": 404,
+          "msg": "404 not found"
+        }
+      ],
+      "at": "2026-06-17T02:23:32.571504+00:00"
+    },
+    {
+      "case_id": "TC-SEC-FIN-001",
+      "status": "Blocked",
+      "summary": "未找到 B 的可退/订单号或 user_a 未登录",
+      "detail": {
+        "orders_b": [],
+        "refund_probes": []
+      },
+      "at": "2026-06-17T02:23:48.653947+00:00"
+    }
+  ]
+}

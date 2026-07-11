@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API客户授权 - API维护</title>
+  <link rel="stylesheet" href="assets/api-maintenance.css">
+  <style>@media (max-width: 760px) { .responsive-check { display: block; } }</style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">管</span>
+        <span>管理系统</span>
+      </div>
+      <div class="topbar-right">
+        <span>API维护</span>
+        <span>你好，admin</span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-panel">
+          <div class="nav-group">
+            <div class="nav-title">工作台</div>
+            <span class="nav-link">业务总览</span>
+            <span class="nav-link">我的待办</span>
+          </div>
+          <div class="nav-group">
+            <div class="nav-title">API维护</div>
+            <a class="nav-link is-active" href="API客户授权.html">API客户授权</a>
+            <a class="nav-link" href="调用日志记录.html">调用日志记录</a>
+          </div>
+          <div class="nav-group">
+            <div class="nav-title">系统设置</div>
+            <span class="nav-link">操作日志</span>
+            <span class="nav-link">权限角色</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <nav class="mobile-nav" aria-label="API维护导航">
+          <a href="API客户授权.html">API客户授权</a>
+          <a href="调用日志记录.html">调用日志记录</a>
+        </nav>
+
+        <section class="page">
+          <div class="page-head">
+            <div>
+              <div class="crumb">API维护 / API客户授权</div>
+              <h1>API客户授权</h1>
+            </div>
+            <button class="btn primary" type="button" data-dialog-target="#addCustomerModal">添加客户</button>
+          </div>
+
+          <section class="panel auth-note" aria-label="API认证参数说明">
+            <strong>API认证参数对应关系：</strong>
+            <span>client_key = 客户ID</span>
+            <span>client_secret = Client Secret</span>
+          </section>
+
+          <section class="panel filter-panel" aria-label="授权筛选">
+            <label class="field-inline field-wide">
+              <span>客户ID（client_key）</span>
+              <input class="input" value="SKR7182" aria-label="客户ID（client_key）">
+            </label>
+            <label class="field-inline">
+              <span>状态</span>
+              <select class="select" aria-label="状态">
+                <option selected>全部</option>
+                <option>启用</option>
+                <option>禁用</option>
+              </select>
+            </label>
+            <label class="field-inline field-wide">
+              <span>时间</span>
+              <button class="date-range-control" type="button" aria-label="时间范围">
+                <span class="date-icon" aria-hidden="true"></span>
+                <span class="date-placeholder">开始日期</span>
+                <span class="date-separator">至</span>
+                <span class="date-placeholder">结束日期</span>
+              </button>
+            </label>
+            <button class="btn primary" type="button" data-action-toast="已按条件查询授权客户">搜索</button>
+            <button class="btn" type="button" data-action-toast="授权筛选条件已重置">重置</button>
+          </section>
+
+          <section class="panel pad">
+            <div class="toolbar">
+              <h2>客户列表 <span class="muted">共 2 条</span></h2>
+              <span class="toolbar-info">词搜、商详、商品状态查询共用同一套 Client Key / Client Secret</span>
+            </div>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>客户ID（client_key）</th>
+                    <th>Client Secret（client_secret）</th>
+                    <th>Token</th>
+                    <th>限流(/分)</th>
+                    <th>状态</th>
+                    <th>创建时间</th>
+                    <th>更新时间</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="ID">1</td>
+                    <td data-label="客户ID（client_key）">
+                      <div class="copy-line"><span class="mono">SKR7182</span><button class="btn text small" type="button" data-copy="客户ID">复制</button></div>
+                    </td>
+                    <td data-label="Client Secret">
+                      <div class="copy-line"><span class="masked">d9d50b37-1c3f-11f1-8498-08c0ebd06b2e</span><button class="btn text small" type="button" data-copy="client_secret">复制</button></div>
+                    </td>
+                    <td data-label="Token"><span class="masked">eyJ0eXAiOiJKV1QiLCJh...</span></td>
+                    <td data-label="限流(/分)">
+                      <div class="rate-stepper" data-stepper>
+                        <button type="button" data-step="-1" aria-label="减少限流">-</button>
+                        <input value="60" aria-label="每分钟限流">
+                        <button type="button" data-step="1" aria-label="增加限流">+</button>
+                      </div>
+                    </td>
+                    <td data-label="状态"><span class="tag green">启用</span></td>
+                    <td data-label="创建时间">2026-03-10 09:45</td>
+                    <td data-label="更新时间">2026-06-01 10:20</td>
+                    <td data-label="操作">
+                      <div class="table-actions">
+                        <button class="btn small warning" type="button" data-dialog-target="#tokenModal">生成Token</button>
+                        <button class="btn small danger" type="button" data-dialog-target="#disableModal">禁用</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="ID">6</td>
+                    <td data-label="客户ID（client_key）">
+                      <div class="copy-line"><span class="mono">SKR7182</span><button class="btn text small" type="button" data-copy="客户ID">复制</button></div>
+                    </td>
+                    <td data-label="Client Secret">
+                      <div class="copy-line"><span class="masked">a1b62f84-603d-4f6c-b134-97dd10247b7a</span><button class="btn text small" type="button" data-copy="client_secret">复制</button></div>
+                    </td>
+                    <td data-label="Token"><span class="masked">eyJhbGciOiJIUzI1NiIsIn...</span></td>
+                    <td data-label="限流(/分)">
+                      <div class="rate-stepper" data-stepper>
+                        <button type="button" data-step="-1" aria-label="减少限流">-</button>
+                        <input value="60" aria-label="每分钟限流">
+                        <button type="button" data-step="1" aria-label="增加限流">+</button>
+                      </div>
+                    </td>
+                    <td data-label="状态"><span class="tag green">启用</span></td>
+                    <td data-label="创建时间">2026-03-10 09:45</td>
+                    <td data-label="更新时间">2026-06-01 10:18</td>
+                    <td data-label="操作">
+                      <div class="table-actions">
+                        <button class="btn small warning" type="button" data-dialog-target="#tokenModal">生成Token</button>
+                        <button class="btn small danger" type="button" data-dialog-target="#disableModal">禁用</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="pagination">
+              <span>共 2 条</span>
+              <span class="page-num is-active">1</span>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="modal" id="addCustomerModal" role="dialog" aria-modal="true" aria-labelledby="addCustomerTitle">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2 id="addCustomerTitle">添加客户</h2>
+        <button class="modal-close" type="button" data-dialog-close aria-label="关闭">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-grid">
+          <label class="form-field">
+            <span>客户ID（client_key）<b class="required">*</b></span>
+            <input class="input" value="SKR7182" aria-label="客户ID（client_key）">
+            <small>客户获取 Token 时传入该值。</small>
+          </label>
+          <label class="form-field">
+            <span>每分钟限流</span>
+            <input class="input" value="60" aria-label="每分钟限流">
+          </label>
+          <label class="form-field">
+            <span>启用状态</span>
+            <select class="select" aria-label="启用状态">
+              <option selected>启用</option>
+              <option>禁用</option>
+            </select>
+          </label>
+        </div>
+        <div class="alert">
+          <strong>Client Secret 将自动生成。</strong>
+          <span>保存后系统同步生成客户密钥和初始 Token，敏感字段仅在授权记录中维护。</span>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn" type="button" data-dialog-close>取消</button>
+        <button class="btn primary" type="button" data-save="客户已添加，Secret 和 Token 已生成">保存并生成凭据</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="tokenModal" role="dialog" aria-modal="true" aria-labelledby="tokenTitle">
+    <div class="modal-card small">
+      <div class="modal-head">
+        <h2 id="tokenTitle">生成 Token</h2>
+        <button class="modal-close" type="button" data-dialog-close aria-label="关闭">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="alert">
+          <strong>生成新 Token 后，旧 Token 将失效。</strong>
+          <span>请确认 7182 客户系统已准备切换，操作会写入后台操作日志。</span>
+        </div>
+        <div class="kv-list">
+          <div class="kv"><span>客户ID</span><strong>SKR7182</strong></div>
+          <div class="kv"><span>当前限流</span><span>60 次/分</span></div>
+          <div class="kv"><span>生效范围</span><span>词搜、商详、商品状态查询</span></div>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn" type="button" data-dialog-close>取消</button>
+        <button class="btn warning" type="button" data-save="新 Token 已生成">确认生成</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="disableModal" role="dialog" aria-modal="true" aria-labelledby="disableTitle">
+    <div class="modal-card small">
+      <div class="modal-head">
+        <h2 id="disableTitle">禁用客户</h2>
+        <button class="modal-close" type="button" data-dialog-close aria-label="关闭">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="alert">
+          <strong>是否确认禁用客户 SKR7182？</strong>
+          <span>禁用后，该客户无法获取 Token，也无法调用词搜、商详、商品状态查询接口。</span>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn" type="button" data-dialog-close>取消</button>
+        <button class="btn danger" type="button" data-save="客户已禁用">确认禁用</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+  <script src="assets/api-maintenance.js"></script>
+</body>
+</html>

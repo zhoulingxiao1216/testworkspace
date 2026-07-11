@@ -1,0 +1,1178 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>商品详情页选中效果示例-2</title>
+  <style>
+    * { box-sizing: border-box; }
+    :root {
+      --blue: #002b66;
+      --line: #e8e8e8;
+      --red: #c8242d;
+      --soft-red: #fff0f0;
+      --text: #222;
+      --muted: #777;
+    }
+
+    body {
+      margin: 0;
+      min-width: 1360px;
+      background: #fff;
+      color: var(--text);
+      font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-size: 14px;
+    }
+
+    .topbar {
+      height: 30px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 13px;
+    }
+
+    .top-inner, .head-inner, .page {
+      width: 1360px;
+      margin: 0 auto;
+    }
+
+    .top-inner {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .top-left, .top-right, .pill {
+      display: flex;
+      align-items: center;
+    }
+
+    .top-left { gap: 12px; }
+    .top-right { gap: 10px; }
+
+    .pill {
+      height: 22px;
+      border: 1px solid rgba(255,255,255,.65);
+      border-radius: 13px;
+      padding: 0 12px;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .flag {
+      width: 18px;
+      height: 12px;
+      border-radius: 1px;
+      background: #de2910;
+      display: inline-block;
+      position: relative;
+    }
+
+    .flag:before {
+      content: "★";
+      position: absolute;
+      left: 2px;
+      top: -4px;
+      color: #ffde00;
+      font-size: 9px;
+    }
+
+    .flag.us {
+      background: linear-gradient(#b22234 0 14%, #fff 14% 28%, #b22234 28% 42%, #fff 42% 56%, #b22234 56% 70%, #fff 70% 84%, #b22234 84%);
+    }
+
+    .flag.us:before {
+      content: "";
+      left: 0;
+      top: 0;
+      width: 8px;
+      height: 7px;
+      background: #3c3b6e;
+    }
+
+    .header {
+      height: 74px;
+      background: #fff;
+      border-bottom: 1px solid #f2f2f2;
+    }
+
+    .head-inner {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo {
+      width: 250px;
+      height: 64px;
+      object-fit: contain;
+      object-position: left center;
+      display: block;
+    }
+
+    .search {
+      flex: 1;
+      height: 38px;
+      border: 1px solid #0b3770;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .search .glass {
+      width: 38px;
+      color: #8b95a5;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .search input {
+      flex: 1;
+      border: 0;
+      outline: 0;
+      height: 100%;
+      color: #a7a7a7;
+      font-size: 14px;
+    }
+
+    .hot {
+      display: flex;
+      gap: 8px;
+      margin-right: 8px;
+    }
+
+    .hot span {
+      height: 24px;
+      padding: 0 12px;
+      border-radius: 13px;
+      background: #f6f6f6;
+      color: #b8b8b8;
+      line-height: 24px;
+      font-size: 12px;
+    }
+
+    .search button {
+      width: 84px;
+      height: 32px;
+      margin-right: 5px;
+      border: 0;
+      border-radius: 4px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .head-btn {
+      width: 68px;
+      height: 38px;
+      border: 1px solid #0b3770;
+      border-radius: 4px;
+      color: #0b3770;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      position: relative;
+      line-height: 1.15;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -10px;
+      right: -14px;
+      min-width: 30px;
+      height: 18px;
+      border-radius: 10px;
+      background: #ff4b00;
+      color: #fff;
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 700;
+    }
+
+    .page {
+      padding-top: 14px;
+      display: grid;
+      grid-template-columns: 750px 474px;
+      column-gap: 16px;
+      position: relative;
+    }
+
+    .crumb {
+      grid-column: 1 / -1;
+      height: 24px;
+      color: #9a9a9a;
+      font-size: 13px;
+    }
+
+    .shop-card {
+      height: 86px;
+      background: #e9edf4;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      justify-content: space-between;
+    }
+
+    .shop-main {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .shop-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      background: #ff681c;
+      color: #fff;
+      font-size: 11px;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+    }
+
+    .shop-name {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .shop-name span {
+      font-size: 14px;
+      font-weight: 400;
+      margin-left: 10px;
+    }
+
+    .scores {
+      display: flex;
+      gap: 26px;
+      color: #7a7a7a;
+    }
+
+    .scores b { color: #d40000; font-weight: 500; }
+
+    .shop-card button {
+      width: 72px;
+      height: 30px;
+      border: 1px solid #ff5d69;
+      border-radius: 3px;
+      color: #d3232b;
+      background: #fff5f6;
+      font-size: 14px;
+    }
+
+    h1 {
+      margin: 15px 0 8px;
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 700;
+    }
+
+    .badges {
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 11px;
+    }
+
+    .rate-tags {
+      display: flex;
+      gap: 22px;
+    }
+
+    .rate-tags span {
+      color: #d8242d;
+      background: #fff0f0;
+      padding: 2px 8px;
+    }
+
+    .share {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: #333;
+    }
+
+    .alibaba {
+      color: #ff6f00;
+      font-size: 18px;
+      font-family: Georgia, serif;
+      margin-right: -8px;
+    }
+
+    .media {
+      display: grid;
+      grid-template-columns: 82px 650px;
+      gap: 18px;
+    }
+
+    .thumbs {
+      width: 82px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .arrow {
+      width: 80px;
+      height: 20px;
+      background: #bd222a;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      line-height: 20px;
+      border-radius: 2px;
+    }
+
+    .thumb {
+      width: 78px;
+      height: 78px;
+      border: 1px solid transparent;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .thumb.active { border: 3px solid #c8242d; }
+
+    .thumb-img {
+      width: 76px;
+      height: 76px;
+      background: #f4f4f4;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .thumb-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .play {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(0,0,0,.35);
+    }
+
+    .play:after {
+      content: "";
+      position: absolute;
+      left: 13px;
+      top: 9px;
+      border-left: 12px solid rgba(255,255,255,.9);
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+    }
+
+    .main-video {
+      width: 650px;
+      height: 440px;
+      background: #f3f3f3;
+      border: 1px solid #a8a8a8;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .main-video img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-bar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 75px;
+      color: #fff;
+      background: linear-gradient(transparent, rgba(0,0,0,.82));
+      display: flex;
+      align-items: flex-end;
+      padding: 0 14px 17px;
+      gap: 17px;
+    }
+
+    .bar-play {
+      width: 0;
+      height: 0;
+      border-left: 13px solid #fff;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+    }
+
+    .time { color: #fff; }
+    .progress {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 18px;
+      height: 4px;
+      background: #fff;
+      opacity: .95;
+    }
+
+    .video-icons {
+      margin-left: auto;
+      display: flex;
+      gap: 24px;
+      font-size: 18px;
+    }
+
+    .download-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 30px;
+    }
+
+    .download {
+      width: 138px;
+      height: 30px;
+      border: 0;
+      border-radius: 4px;
+      background: var(--blue);
+      color: #fff;
+    }
+
+    .attrs-title {
+      margin-top: -2px;
+      color: var(--blue);
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .detail-images {
+      width: 650px;
+      margin: 14px 0 0 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .detail-images img {
+      width: 650px;
+      display: block;
+    }
+
+    .buy-card {
+      grid-column: 2;
+      grid-row: 2 / span 6;
+      width: 474px;
+      height: 724px;
+      border: 1px solid #efefef;
+      border-radius: 5px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+      padding: 20px 10px 0;
+      position: sticky;
+      top: 10px;
+    }
+
+    .price-panel {
+      height: 88px;
+      background: #e7ebf1;
+      display: grid;
+      grid-template-columns: 82px repeat(3, 1fr);
+      align-items: center;
+      color: #777;
+    }
+
+    .price-labels {
+      height: 88px;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      align-items: center;
+      padding-left: 12px;
+      color: #888;
+    }
+
+    .tier {
+      height: 88px;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      align-items: center;
+    }
+
+    .tier b {
+      align-self: end;
+      color: var(--red);
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    .tier b small {
+      font-size: 13px;
+      margin-left: 1px;
+      font-weight: 400;
+    }
+
+    .tier span {
+      align-self: start;
+      margin-top: 8px;
+      color: #111;
+      font-size: 13px;
+    }
+
+    .tip {
+      height: 25px;
+      text-align: right;
+      color: #777;
+      font-size: 13px;
+      line-height: 25px;
+    }
+
+    .sku-title {
+      height: 34px;
+      display: flex;
+      align-items: center;
+      color: #111;
+      font-size: 14px;
+    }
+
+    .sku-list {
+      height: 465px;
+      overflow: hidden;
+      border-bottom: 1px solid #e3e3e3;
+    }
+
+    .sku-row {
+      height: 40px;
+      display: grid;
+      grid-template-columns: 178px 76px 102px 92px;
+      align-items: center;
+      border-bottom: 1px dashed #ddd;
+      color: #333;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .sku-row:hover {
+      z-index: 1;
+      background: #fffafa;
+      box-shadow: inset 0 0 0 1px #f1c9cc;
+    }
+
+    .sku-row.active,
+    .sku-row.selected {
+      z-index: 1;
+      background: #fff8f8;
+      box-shadow: inset 0 0 0 1px #e16a70;
+    }
+
+    .sku-row.active::after,
+    .sku-row.selected::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-right: 12px solid #e16a70;
+      border-top: 12px solid transparent;
+    }
+
+    .sku-row.active .sku-name,
+    .sku-row.selected .sku-name {
+      color: #1f2937;
+      font-weight: 600;
+    }
+
+    .sku-row.active .stepper input,
+    .sku-row.selected .stepper input {
+      color: #1f2937;
+      font-weight: 700;
+    }
+
+    .sku-name {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .sku-swatch {
+      width: 34px;
+      height: 22px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .sku-price small { font-size: 12px; }
+    .stock { color: #777; }
+
+    .stepper {
+      width: 92px;
+      height: 28px;
+      display: grid;
+      grid-template-columns: 24px 44px 24px;
+      border: 1px solid #d9dfe8;
+      border-radius: 3px;
+      overflow: hidden;
+      background: #fff;
+      position: relative;
+      z-index: 2;
+    }
+
+    .stepper button, .stepper input {
+      border: 0;
+      outline: 0;
+      text-align: center;
+      background: #fff;
+      color: #656b76;
+      font-size: 15px;
+    }
+
+    .stepper button {
+      color: #b8c0ca;
+      background: #fbfcfe;
+      cursor: pointer;
+    }
+
+    .summary {
+      height: 101px;
+      display: grid;
+      grid-template-columns: 1fr 90px;
+      grid-template-rows: 32px 1fr;
+      padding: 8px 0 0;
+      align-items: center;
+    }
+
+    .selected-text {
+      grid-column: 1 / -1;
+      color: #333;
+    }
+
+    .selected-text b, .amount b { color: #d40000; font-weight: 500; }
+
+    .add-cart {
+      width: 266px;
+      height: 46px;
+      border: 0;
+      border-radius: 3px;
+      background: #8fa0ba;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .amount {
+      color: #222;
+      line-height: 23px;
+      font-size: 12px;
+    }
+
+    .amount b {
+      display: block;
+      font-size: 24px;
+      line-height: 22px;
+    }
+
+    .float-menu {
+      position: fixed;
+      right: 18px;
+      top: 390px;
+      width: 62px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 13px rgba(0,0,0,.16);
+      overflow: hidden;
+    }
+
+    .float-menu div {
+      height: 57px;
+      display: grid;
+      place-items: center;
+      color: var(--blue);
+      font-size: 22px;
+      border-bottom: 1px solid #eee;
+      position: relative;
+    }
+
+    .float-menu .num {
+      position: absolute;
+      right: 6px;
+      top: 7px;
+      background: #ff4b00;
+      color: #fff;
+      border-radius: 9px;
+      font-size: 11px;
+      min-width: 22px;
+      height: 17px;
+      line-height: 17px;
+      text-align: center;
+    }
+
+    .round {
+      position: fixed;
+      right: 18px;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 2px 13px rgba(0,0,0,.14);
+      display: grid;
+      place-items: center;
+      color: #c8242d;
+      font-size: 30px;
+    }
+
+    .round.menu { top: 696px; }
+    .round.top { top: 767px; color: #999; font-size: 18px; font-weight: 700; line-height: 1.05; text-align: center; }
+
+    @media (max-width: 1380px) {
+      .top-inner, .head-inner, .page { margin-left: 150px; margin-right: 0; }
+      .page { grid-template-columns: 750px 474px; column-gap: 14px; }
+      .float-menu, .round { right: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="top-inner">
+      <div class="top-left">
+        <div class="pill"><span class="flag"></span>China</div>
+        <span>CHN20-侯，欢迎您</span>
+        <div class="pill">退出</div>
+        <div class="pill">首页</div>
+      </div>
+      <div class="top-right">
+        <div class="pill">▣ 营业日</div>
+        <div class="pill">◎ 简体中文⌄</div>
+        <div class="pill"><span class="flag"></span>1 CNY ≈ <span class="flag us"></span>0.16 USD</div>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="head-inner">
+      <img class="logo" src="assets/logo.png" alt="Hubbuyer">
+      <div class="search">
+        <div class="glass">⌕</div>
+        <input placeholder="输入关键词、URL、商品名称搜索">
+        <div class="hot"><span>圣诞节</span><span>万圣节</span><span>宠物投食器</span></div>
+        <button>搜索</button>
+      </div>
+      <div class="head-btn">▣ 图搜</div>
+      <div class="head-btn">🛒<br>购物车<span class="cart-badge">180</span></div>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="crumb">B2B采购商城首页 &gt; 刻度梳子米白厂家批发寸梳美发理发梳尖尾梳平头梳假发接发造型梳</div>
+
+    <section class="left">
+      <div class="shop-card">
+        <div class="shop-main">
+          <div class="shop-icon">1688</div>
+          <div>
+            <div class="shop-name">温州秀姿美发用品有限公司 <span>☆ 收藏店铺</span></div>
+            <div class="scores">
+              <span>综合服务评分 <b>5.0</b></span>
+              <span>商品品质 <b>5.0</b></span>
+              <span>买家回头率 <b>53%</b></span>
+            </div>
+          </div>
+        </div>
+        <button>进店铺</button>
+      </div>
+
+      <h1>刻度梳子米白厂家批发寸梳美发理发梳尖尾梳平头梳假发接发造型梳</h1>
+      <div class="badges">
+        <div class="rate-tags"><span>商品评分 0</span><span>近30天销量 0</span><span>复购率 0</span></div>
+        <div class="share"><span class="alibaba">e</span><span>1688 ⧉</span><span>☆ 收藏</span></div>
+      </div>
+
+      <div class="media">
+        <div class="thumbs">
+          <div class="arrow">⌃</div>
+          <div class="thumb active" data-main="商品详情页选中效果示例-2_assets/main/001_main_1.jpg"><div class="thumb-img"><img src="商品详情页选中效果示例-2_assets/main/001_main_1.jpg" alt="刻度梳主图1"><span class="play"></span></div></div>
+          <div class="thumb" data-main="商品详情页选中效果示例-2_assets/main/002_main_2.jpg"><div class="thumb-img"><img src="商品详情页选中效果示例-2_assets/main/002_main_2.jpg" alt="刻度梳主图2"></div></div>
+          <div class="thumb" data-main="商品详情页选中效果示例-2_assets/main/003_main_3.jpg"><div class="thumb-img"><img src="商品详情页选中效果示例-2_assets/main/003_main_3.jpg" alt="刻度梳主图3"></div></div>
+          <div class="thumb" data-main="商品详情页选中效果示例-2_assets/main/004_main_4.jpg"><div class="thumb-img"><img src="商品详情页选中效果示例-2_assets/main/004_main_4.jpg" alt="刻度梳主图4"></div></div>
+          <div class="thumb" data-main="商品详情页选中效果示例-2_assets/main/005_main_5.jpg"><div class="thumb-img"><img src="商品详情页选中效果示例-2_assets/main/005_main_5.jpg" alt="刻度梳主图5"></div></div>
+          <div class="arrow">⌄</div>
+        </div>
+
+        <div class="main-video">
+          <img id="mainProductImage" src="商品详情页选中效果示例-2_assets/main/001_main_1.jpg" alt="刻度梳商品主图">
+          <div class="video-bar">
+            <span class="bar-play"></span>
+            <span class="time">0:27 / 0:27</span>
+            <span class="video-icons">⌁ ⛶ ⋮</span>
+            <span class="progress"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="download-row"><button class="download">↓ 商品图片下载</button></div>
+      <div class="attrs-title">商品属性</div>
+      <div class="detail-images">
+        <img src="商品详情页选中效果示例-2_assets/detail/001_detail_1.jpg" alt="商品详情图1">
+        <img src="商品详情页选中效果示例-2_assets/detail/002_detail_2.jpg" alt="商品详情图2">
+        <img src="商品详情页选中效果示例-2_assets/detail/003_detail_3.jpg" alt="商品详情图3">
+      </div>
+    </section>
+
+    <aside class="buy-card">
+      <div class="price-panel">
+        <div class="price-labels"><span>单价</span><span>起订量</span></div>
+        <div class="tier"><b>5.00<small>CNY</small></b><span>≥12个</span></div>
+        <div class="tier"><b>3.50<small>CNY</small></b><span>≥120个</span></div>
+        <div class="tier"><b>2.50<small>CNY</small></b><span>≥1200个</span></div>
+      </div>
+      <div class="tip">● 温馨提示</div>
+      <div class="sku-title">颜色</div>
+      <div class="sku-list" id="skuList"></div>
+      <div class="summary">
+        <div class="selected-text">已选 <b id="kindCount">0</b> 种 <b id="qtyCount">0</b> 个</div>
+        <button class="add-cart">加入购物车</button>
+        <div class="amount">商品金额:<b id="amount">0</b> CNY</div>
+      </div>
+    </aside>
+  </main>
+
+  <div class="float-menu">
+    <div>☊</div>
+    <div>☑</div>
+    <div>▰<span class="num">18</span></div>
+    <div>♟</div>
+    <div>▤</div>
+  </div>
+  <div class="round menu">☰›</div>
+  <div class="round top">⌃<br>TOP</div>
+
+  <script>
+    const skus = [
+      { name: "M9001", image: "商品详情页选中效果示例-2_assets/sku/001_sku_M9001.jpg" },
+      { name: "M9002", image: "商品详情页选中效果示例-2_assets/sku/002_sku_M9002.jpg" },
+      { name: "M9011", image: "商品详情页选中效果示例-2_assets/sku/003_sku_M9011.jpg" },
+      { name: "M9015", image: "商品详情页选中效果示例-2_assets/sku/004_sku_M9015.jpg" },
+      { name: "M9020", image: "商品详情页选中效果示例-2_assets/sku/005_sku_M9020.jpg" },
+      { name: "M9030", image: "商品详情页选中效果示例-2_assets/sku/006_sku_M9030.jpg" },
+      { name: "M9034", image: "商品详情页选中效果示例-2_assets/sku/007_sku_M9034.jpg" },
+      { name: "M9035", image: "商品详情页选中效果示例-2_assets/sku/008_sku_M9035.jpg" },
+      { name: "M9036", image: "商品详情页选中效果示例-2_assets/sku/009_sku_M9036.jpg" },
+      { name: "M9045", image: "商品详情页选中效果示例-2_assets/sku/010_sku_M9045.jpg" },
+      { name: "M9070", image: "商品详情页选中效果示例-2_assets/sku/011_sku_M9070.jpg" }
+    ];
+    const stocks = [10000, 10000, 10000, 10000, 10000, 10000, 9998, 9999, 9996, 9999, 10000];
+    const list = document.querySelector("#skuList");
+
+    list.innerHTML = skus.map((sku, index) => `
+      <div class="sku-row" data-index="${index}" data-main="${sku.image}">
+        <div class="sku-name"><img class="sku-swatch" src="${sku.image}" alt="${sku.name}">${sku.name}</div>
+        <div class="sku-price">5.00 <small>CNY</small></div>
+        <div class="stock">库存： ${stocks[index]}</div>
+        <div class="stepper">
+          <button type="button" data-step="-1" data-index="${index}">−</button>
+          <input value="0" data-index="${index}" inputmode="numeric">
+          <button type="button" data-step="1" data-index="${index}">＋</button>
+        </div>
+      </div>
+    `).join("");
+
+    function setMainImage(src, activeRow) {
+      document.querySelector("#mainProductImage").src = src;
+      document.querySelectorAll(".sku-row").forEach(row => row.classList.remove("active"));
+      if (activeRow) activeRow.classList.add("active");
+      document.querySelectorAll(".thumb").forEach(item => item.classList.remove("active"));
+    }
+
+    document.querySelectorAll(".thumb[data-main]").forEach(thumb => {
+      thumb.addEventListener("click", () => {
+        document.querySelectorAll(".thumb").forEach(item => item.classList.remove("active"));
+        thumb.classList.add("active");
+        document.querySelector("#mainProductImage").src = thumb.dataset.main;
+        document.querySelectorAll(".sku-row").forEach(row => row.classList.remove("active"));
+      });
+    });
+
+    document.querySelectorAll(".sku-row").forEach(row => {
+      row.addEventListener("click", event => {
+        if (event.target.closest(".stepper")) return;
+        setMainImage(row.dataset.main, row);
+      });
+    });
+
+    function refresh() {
+      const values = [...document.querySelectorAll(".stepper input")]
+        .map(input => Math.max(0, Number(input.value) || 0));
+      document.querySelectorAll(".sku-row").forEach((row, index) => {
+        row.classList.toggle("selected", values[index] > 0);
+      });
+      const kinds = values.filter(Boolean).length;
+      const qty = values.reduce((sum, value) => sum + value, 0);
+      document.querySelector("#kindCount").textContent = kinds;
+      document.querySelector("#qtyCount").textContent = qty;
+      document.querySelector("#amount").textContent = (qty * 5).toFixed(qty ? 2 : 0);
+    }
+
+    document.querySelectorAll("[data-step]").forEach(button => {
+      button.addEventListener("click", () => {
+        const input = button.parentElement.querySelector("input");
+        input.value = Math.max(0, (Number(input.value) || 0) + Number(button.dataset.step));
+        const row = button.closest(".sku-row");
+        setMainImage(row.dataset.main, row);
+        refresh();
+      });
+    });
+
+    document.querySelectorAll(".stepper input").forEach(input => {
+      input.addEventListener("input", () => {
+        const row = input.closest(".sku-row");
+        setMainImage(row.dataset.main, row);
+        refresh();
+      });
+    });
+
+    refresh();
+  </script>
+  <style id="ui-spec-copy-style">
+    .ui-spec-copy-code {
+      cursor: pointer;
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .ui-spec-copy-code:hover,
+    .ui-spec-copy-code:focus {
+      color: #155bd4;
+      text-decoration: underline;
+      outline: none;
+    }
+
+    .ui-spec-copy-toast {
+      position: fixed;
+      left: 50%;
+      bottom: 32px;
+      z-index: 99999;
+      padding: 8px 14px;
+      border-radius: 4px;
+      background: rgba(17, 24, 39, 0.92);
+      color: #fff;
+      font-size: 13px;
+      line-height: 1.4;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(-50%, 12px);
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
+    }
+
+    .ui-spec-copy-toast.is-visible {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  </style>
+  <script id="ui-spec-copy-script">
+    (function () {
+      if (window.__uiSpecCopyReady) return;
+      window.__uiSpecCopyReady = true;
+
+      var codePattern = /\b(?:B2B|WL)-[A-Z0-9]+(?:-[A-Z0-9]+)*\b/g;
+      var copyButtonSelector = [
+        ".order-copy",
+        ".finance-copy",
+        ".shipping-copy",
+        ".measure-copy",
+        ".customer-info-copy",
+        ".mini-copy",
+        ".mini-code-copy",
+        ".copy-icon",
+        ".mini-copy-icon",
+        "[data-copy]",
+        "[data-copy-text]"
+      ].join(",");
+      var toastTimer = 0;
+
+      function isEnglishPage() {
+        return /english|order|shipping|measurement|account|notification|favorite|cart|finance/i.test(document.title || "");
+      }
+
+      function getToastText() {
+        return isEnglishPage() ? "Copied" : "\u5df2\u590d\u5236";
+      }
+
+      function showToast(message) {
+        var toast = document.querySelector(".ui-spec-copy-toast");
+        if (!toast) {
+          toast = document.createElement("div");
+          toast.className = "ui-spec-copy-toast";
+          toast.setAttribute("role", "status");
+          toast.setAttribute("aria-live", "polite");
+          document.body.appendChild(toast);
+        }
+        toast.textContent = message || getToastText();
+        toast.classList.add("is-visible");
+        window.clearTimeout(toastTimer);
+        toastTimer = window.setTimeout(function () {
+          toast.classList.remove("is-visible");
+        }, 1400);
+      }
+
+      function writeClipboard(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          return navigator.clipboard.writeText(text);
+        }
+
+        var input = document.createElement("textarea");
+        input.value = text;
+        input.setAttribute("readonly", "");
+        input.style.position = "fixed";
+        input.style.left = "-9999px";
+        input.style.top = "0";
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        input.remove();
+        return Promise.resolve();
+      }
+
+      function normalizeCopyText(text) {
+        var value = (text || "").replace(/\s+/g, " ").trim();
+        var codeMatch = value.match(codePattern);
+        if (codeMatch) return codeMatch[0];
+        value = value.replace(/^[^:]{1,24}[:]\s*/, "").trim();
+        return value;
+      }
+
+      function textBeforeButton(button) {
+        var pieces = [];
+        var node = button.previousSibling;
+        while (node) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            pieces.unshift(node.textContent || "");
+          } else if (node.nodeType === Node.ELEMENT_NODE && !node.matches(copyButtonSelector)) {
+            pieces.unshift(node.textContent || "");
+          }
+          if (pieces.join("").trim()) break;
+          node = node.previousSibling;
+        }
+        return normalizeCopyText(pieces.join(""));
+      }
+
+      function textFromScope(scope) {
+        if (!scope) return "";
+        var clone = scope.cloneNode(true);
+        clone.querySelectorAll(copyButtonSelector + ",script,style").forEach(function (node) {
+          node.remove();
+        });
+        return normalizeCopyText(clone.textContent || "");
+      }
+
+      function getButtonCopyText(button) {
+        if (!button) return "";
+        var explicit = button.getAttribute("data-copy-text") || button.getAttribute("data-copy");
+        if (explicit) return explicit.trim();
+
+        var nearby = textBeforeButton(button);
+        if (nearby) return nearby;
+
+        var parentValue = textFromScope(button.parentElement);
+        if (parentValue) return parentValue;
+
+        return textFromScope(button.closest("td,li,div,tr"));
+      }
+
+      function copyValue(value) {
+        value = normalizeCopyText(value);
+        if (!value) return;
+        writeClipboard(value).then(function () {
+          showToast();
+        }).catch(function () {
+          showToast();
+        });
+      }
+
+      function wrapOrderCodes(root) {
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+          acceptNode: function (node) {
+            var parent = node.parentElement;
+            if (!parent) return NodeFilter.FILTER_REJECT;
+            if (parent.closest("script,style,.ui-spec-copy-code")) return NodeFilter.FILTER_REJECT;
+            if (!codePattern.test(node.nodeValue || "")) return NodeFilter.FILTER_REJECT;
+            codePattern.lastIndex = 0;
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        });
+        var nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+
+        nodes.forEach(function (node) {
+          var text = node.nodeValue || "";
+          var fragment = document.createDocumentFragment();
+          var lastIndex = 0;
+          var match;
+          codePattern.lastIndex = 0;
+          while ((match = codePattern.exec(text))) {
+            if (match.index > lastIndex) {
+              fragment.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+            }
+            var code = match[0];
+            var span = document.createElement("span");
+            span.className = "ui-spec-copy-code";
+            span.setAttribute("role", "button");
+            span.setAttribute("tabindex", "0");
+            span.setAttribute("data-copy-text", code);
+            span.setAttribute("title", isEnglishPage() ? "Copy" : "\u590d\u5236");
+            span.textContent = code;
+            fragment.appendChild(span);
+            lastIndex = match.index + code.length;
+          }
+          if (lastIndex < text.length) {
+            fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+          }
+          node.parentNode.replaceChild(fragment, node);
+        });
+      }
+
+      document.addEventListener("click", function (event) {
+        var button = event.target.closest(copyButtonSelector);
+        if (button) {
+          event.preventDefault();
+          copyValue(getButtonCopyText(button));
+          return;
+        }
+
+        var code = event.target.closest(".ui-spec-copy-code");
+        if (code) {
+          event.preventDefault();
+          copyValue(code.getAttribute("data-copy-text") || code.textContent);
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        var target = event.target.closest(".ui-spec-copy-code," + copyButtonSelector);
+        if (!target) return;
+        event.preventDefault();
+        if (target.matches(".ui-spec-copy-code")) {
+          copyValue(target.getAttribute("data-copy-text") || target.textContent);
+        } else {
+          copyValue(getButtonCopyText(target));
+        }
+      });
+
+      wrapOrderCodes(document.body);
+    })();
+  </script>
+</body>
+</html>

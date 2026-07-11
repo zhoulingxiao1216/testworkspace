@@ -1,0 +1,27 @@
+total_cases: 14
+priority_distribution:
+  Critical: 10
+  High: 3
+  Medium: 1
+  Low: 0
+env_requirements:
+  - requirement: "1个全新白板账号 (Account-Normal) 用于非会员计费验证"
+  - requirement: "1个企业会员账号 (Account-VIP) 用于免代采手续费打标验证"
+  - requirement: "1个最高权限财务账号 (Account-Admin) 用于进行二次差额确认及确定清算"
+  - requirement: "1688商品数据Mock池，需涵盖正常promotionPrice与空值异常返回"
+estimated_time: "5.0 工日"
+execution_queue:
+  - TC-C-GOODS-001
+  - TC-C-GOODS-002
+  - TC-C-GOODS-003
+  - TC-C-CART-001
+  - TC-C-CART-002
+  - TC-C-QUOTE-001
+  - TC-C-QUOTE-002
+  - TC-C-QUOTE-003
+  - TC-A-ORDER-001
+  - TC-A-SETTLE-001
+  - TC-A-SETTLE-002
+  - TC-A-SETTLE-003
+  - TC-A-SETTLE-004
+  - TC-G-EXPORT-001

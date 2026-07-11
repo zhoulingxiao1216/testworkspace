@@ -1,0 +1,558 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "国内快递签收功能 API",
+    "description": "国内快递包裹签收及处理相关接口（支持导入 Apifox）\n\n## 业务流程\n快递到达仓库 → 扫码签收(receipt) → 初检部揽收(takeover) → 标记已处理(handle)\n\n## 统计口径\n- **已处理** = 业务包裹已处理(handle_status=200) + 私人包裹(is_private=1)\n- **未处理** = 非私人包裹 且 handle_status=100\n- **超时** = 非私人包裹 且 is_timeout=1",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:12240",
+      "description": "本地开发环境"
+    },
+    {
+      "url": "https://test-wcz-api.hubbuyer.com",
+      "description": "测试环境"
+    }
+  ],
+  "tags": [
+    {
+      "name": "国内包裹签收管理",
+      "description": "DomesticExpressController — 包裹签收、揽收、处理、录入、物流查询"
+    },
+    {
+      "name": "包裹超时配置",
+      "description": "DomesticExpressConfigController — 超时阈值与节假日配置"
+    }
+  ],
+  "paths": {
+    "/admin_b2b/DomesticExpress/list": {
+      "post": {
+        "tags": ["国内包裹签收管理"],
+        "summary": "1. 包裹列表及统计",
+        "description": "综合列表 + 顶部统计，支持多条件筛选。调用时自动刷新超时状态。排序规则：超时未处理优先 → 签收时间升序。",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "page": { "type": "integer", "default": 1, "description": "页码" },
+                  "pageSize": { "type": "integer", "default": 30, "description": "每页数量" },
+                  "package_no": { "type": "string", "description": "快递单号（模糊匹配）" },
+                  "order_no": { "type": "string", "description": "关联订单号（模糊匹配）" },
+                  "handle_status": { "type": "integer", "enum": [100, 200], "description": "处理状态: 100=未处理 200=已处理" },
+                  "is_timeout": { "type": "integer", "enum": [0, 1], "description": "是否超时: 0=正常 1=超时" },
+                  "is_private": { "type": "integer", "enum": [0, 1], "description": "包裹类型: 0=业务包裹 1=私人包裹" },
+                  "user_main_uuid": { "type": "string", "description": "用户主UUID（触发JOIN订单表筛选）" },
+                  "logistics_name": { "type": "string", "description": "物流公司名称（模糊匹配）" },
+                  "receipt_date": {
+                    "type": "array",
+                    "items": { "type": "string", "format": "date" },
+                    "description": "签收时间范围，例如 [\"2026-04-01\", \"2026-04-30\"]",
+                    "example": ["2026-05-01", "2026-05-12"]
+                  },
+                  "create_date": {
+                    "type": "array",
+                    "items": { "type": "string", "format": "date" },
+                    "description": "创建时间范围"
+                  },
+                  "takeover_date": {
+                    "type": "array",
+                    "items": { "type": "string", "format": "date" },
+                    "description": "揽收时间范围"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": { "type": "integer", "example": 200 },
+                    "msg": { "type": "string", "example": "success" },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "total": { "type": "integer", "description": "列表总数（分页用）" },
+                        "data": {
+                          "type": "array",
+                          "description": "包裹列表",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": { "type": "integer" },
+                              "package_no": { "type": "string", "description": "快递单号" },
+                              "logistics_name": { "type": "string", "description": "物流公司名称" },
+                              "order_no": { "type": "string", "description": "主订单号" },
+                              "platform_order_no": { "type": "string", "description": "平台订单号" },
+                              "is_private": { "type": "integer", "description": "0=业务包裹 1=私人包裹" },
+                              "receipt_time": { "type": "string", "description": "签收时间" },
+                              "takeover_time": { "type": "string", "description": "揽收时间" },
+                              "takeover_admin_id": { "type": "integer", "description": "揽收人ID" },
+                              "takeover_admin_name": { "type": "string", "description": "揽收人姓名" },
+                              "handle_status": { "type": "integer", "description": "100=未处理 200=已处理" },
+                              "handle_time": { "type": "string", "description": "处理时间" },
+                              "handle_remark": { "type": "string", "description": "处理备注" },
+                              "is_timeout": { "type": "integer", "description": "0=正常 1=超时" },
+                              "timeout_hours": { "type": "number", "description": "实际耗时(小时)" },
+                              "shipping_time": { "type": "string", "description": "发货时间" },
+                              "handle_duration_text": { "type": "string", "description": "处理时长文本，如 1天3时" },
+                              "orders": {
+                                "type": "array",
+                                "description": "关联订单列表",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "order_no": { "type": "string", "description": "B2B订单号" },
+                                    "platform_order_no": { "type": "string", "description": "平台订单号" },
+                                    "user_main_uuid": { "type": "string", "description": "用户主UUID" },
+                                    "sale_admin_id": { "type": "integer", "description": "业务员ID" },
+                                    "sale_admin_name": { "type": "string", "description": "业务员姓名" },
+                                    "purchase_admin_id": { "type": "integer", "description": "采购员ID" },
+                                    "purchase_admin_name": { "type": "string", "description": "采购员姓名" }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "stat": {
+                          "type": "object",
+                          "description": "顶部统计数据",
+                          "properties": {
+                            "total": { "type": "integer", "description": "全部包裹总数" },
+                            "receipted": { "type": "integer", "description": "已签收数" },
+                            "not_receipted": { "type": "integer", "description": "未签收数" },
+                            "handled": { "type": "integer", "description": "已处理数（含私人包裹）" },
+                            "not_handled": { "type": "integer", "description": "未处理数（排除私人包裹）" },
+                            "timeout": { "type": "integer", "description": "超时数（排除私人包裹）" },
+                            "private": { "type": "integer", "description": "私人包裹总数" }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin_b2b/DomesticExpress/detail": {
+      "post": {
+        "tags": ["国内包裹签收管理"],
+        "summary": "2. 包裹详情",
+        "description": "根据包裹ID获取详情及关联订单列表。",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["id"],
+                "properties": {
+                  "id": { "type": "integer", "description": "包裹ID" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": { "type": "integer", "example": 200 },
+                    "msg": { "type": "string", "example": "success" },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "express": {
+                          "type": "object",
+                          "description": "包裹详情（字段同列表项）"
+                        },
+                        "orders": {
+                          "type": "array",
+                          "description": "关联订单列表",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": { "type": "integer" },
+                              "express_id": { "type": "integer" },
+                              "package_no": { "type": "string" },
+                              "order_no": { "type": "string" },
+                              "platform_order_no": { "type": "string" },
+                              "seller_open_id": { "type": "string" },
+                              "user_main_uuid": { "type": "string" },
+                              "sale_admin_id": { "type": "integer" },
+                              "purchase_admin_id": { "type": "integer" },
+                              "created_at": { "type": "string" }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin_b2b/DomesticExpress/receipt": {
+      "post": {
+        "tags": ["国内包裹签收管理"],
+        "summary": "3. 签收扫码（核心接口）",
+        "description": "通过扫码枪或手动输入快递单号，系统自动匹配订单并记录签收。\n\n**业务逻辑：**\n1. 若包裹已存在且已签收 → 返回 already_receipted\n2. 若包裹已存在但未签收 → 更新签收时间，返回 receipt_updated\n3. 若包裹不存在 → 通过 china_waybill 智能匹配订单，匹配成功为业务包裹，匹配失败标记为私人包裹\n\n**私人包裹** 自动设置 handle_status=200（无需处理）。",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["package_no"],
+                "properties": {
+                  "package_no": { "type": "string", "description": "快递单号" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": { "type": "integer", "example": 200 },
+                    "msg": { "type": "string", "example": "success" },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "action": {
+                          "type": "string",
+                          "enum": ["already_receipted", "receipt_updated", "receipt_created"],
+                          "description": "操作类型"
+                        },
+                        "message": { "type": "string", "description": "操作说明" },
+                        "express_id": { "type": "integer", "description": "包裹ID" },
+                        "is_private": { "type": "integer", "description": "0=业务包裹 1=私人包裹" },
+                        "order_no": { "type": "string", "description": "匹配到的主订单号" },
+                        "orders": {
+                          "type": "array",
+                          "description": "匹配到的关联订单列表"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin_b2b/DomesticExpress/takeover": {
+      "post": {
+        "tags": ["国内包裹签收管理"],
+        "summary": "4. 初检部揽收",
+        "description": "初检人员揽收包裹，记录揽收时间和操作人，并将包裹标记为已处理(handle_status=200)。同时实时计算超时状态。",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["id"],
+                "properties": {
+                  "id": { "type": "integer", "description": "包裹ID" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": { "type": "integer", "example": 200 },
+                    "msg": { "type": "string", "example": "success" },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": { "type": "string", "example": "揽收成功" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin_b2b/DomesticExpress/handle": {
+      "post": {
+        "tags": ["国内包裹签收管理"],
+        "summary": "5. 标记为已处理",
+        "description": "将业务包裹标记为已处理并记录处理时间和备注。\n\n**限制：** 私人包裹和已处理包裹不可重复操作。",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["id"],
+                "properties": {
+                  "id": { "type": "integer", "description": "包裹ID" },
+                  "handle_remark": { "type": "string", "description": "处理备注（选填）" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": { "type": "integer", "example": 200 },
+                    "msg": { "type": "string", "example": "success" },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": { "type": "string", "example": "处理成功" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin_b2b/DomesticExpress/addManual": {
+      "post": {
+        "tags": ["国内包裹签收管理"],
+        "summary": "6. 手工录入包裹",
+        "description": "手动录入快递单号并可选指定物流公司和订单号。\n\n**逻辑：**\n- 若未提供 order_no，系统通过 china_waybill 自动匹配\n- 匹配失败则标记为私人包裹\n- 不允许重复录入已存在的快递单号",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["package_no"],
+                "properties": {
+                  "package_no": { "type": "string", "description": "快递单号" },
+                  "logistics_id": { "type": "integer", "description": "物流公司ID（选填）" },
+                  "logistics_name": { "type": "string", "description": "物流公司名称（选填）" },
+                  "order_no": { "type": "string", "description": "关联订单号（选填，不填则自动匹配）" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": { "type": "integer", "example": 200 },
+                    "msg": { "type": "string", "example": "success" },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": { "type": "string", "example": "录入成功" },
+                        "express_id": { "type": "integer", "description": "新建的包裹ID" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin_b2b/DomesticExpress/traceInfo": {
+      "post": {
+        "tags": ["国内包裹签收管理"],
+        "summary": "7. 物流轨迹查询",
+        "description": "根据快递单号查询物流详情。\n\n**缓存策略：**\n1. 先从 china_waybill 表读缓存\n2. 已签收(delivered)状态 → 永久缓存，直接返回\n3. 运输中(fetched)状态 → 6小时内有效，超时重新拉取\n4. 无缓存或过期 → 调用1688物流接口实时查询，并写入缓存\n\n同时自动提取发货时间更新到主表 shipping_time 字段。",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["package_no"],
+                "properties": {
+                  "package_no": { "type": "string", "description": "快递单号" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功 — 返回1688物流轨迹原始数据",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": { "type": "integer", "example": 200 },
+                    "msg": { "type": "string", "example": "success" },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "success": { "type": "boolean", "description": "是否查询成功" },
+                        "logisticsTrace": {
+                          "type": "array",
+                          "description": "物流轨迹列表",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "logisticsCompanyName": { "type": "string", "description": "物流公司" },
+                              "logisticsBillNo": { "type": "string", "description": "物流单号" },
+                              "logisticsSteps": {
+                                "type": "array",
+                                "description": "轨迹明细（时间倒序）",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "acceptTime": { "type": "string", "description": "操作时间" },
+                                    "remark": { "type": "string", "description": "轨迹描述" }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin_b2b/DomesticExpressConfig/list": {
+      "post": {
+        "tags": ["包裹超时配置"],
+        "summary": "1. 获取超时配置列表",
+        "description": "获取所有超时相关配置项。",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": { "type": "integer", "example": 200 },
+                    "msg": { "type": "string", "example": "success" },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": { "type": "integer" },
+                          "config_key": {
+                            "type": "string",
+                            "enum": ["timeout_weekday_hours", "timeout_saturday_hours", "holidays"],
+                            "description": "配置键"
+                          },
+                          "config_value": { "type": "string", "description": "配置值" },
+                          "config_desc": { "type": "string", "description": "配置说明" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin_b2b/DomesticExpressConfig/update": {
+      "post": {
+        "tags": ["包裹超时配置"],
+        "summary": "2. 更新超时配置",
+        "description": "更新指定配置项的值。holidays 配置值传 JSON 数组字符串。",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["id", "config_value"],
+                "properties": {
+                  "id": { "type": "integer", "description": "配置项ID" },
+                  "config_value": {
+                    "type": "string",
+                    "description": "配置值。数值型直接传数字字符串；holidays传JSON数组如 [\"2026-01-01\",\"2026-05-01\"]"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": { "type": "integer", "example": 200 },
+                    "msg": { "type": "string", "example": "success" },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "message": { "type": "string", "example": "更新成功" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

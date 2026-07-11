@@ -1,0 +1,111 @@
+{
+  "url": "https://b2b.hubbuyer.com/Alibaba/list?key=%E5%A5%B3%E8%A3%85",
+  "started": "2026-06-08T05:24:59.925Z",
+  "finalUrl": "https://b2b.hubbuyer.com/Alibaba/list?key=%E5%A5%B3%E8%A3%85",
+  "title": "Hubbuyer | B2B list",
+  "navigationStatus": 200,
+  "textLength": 10276,
+  "htmlLength": 207458,
+  "linkCount": 0,
+  "imageCount": 277,
+  "headingCount": 0,
+  "headings": [],
+  "buttons": [
+    "Search",
+    "Confirm",
+    "Upload imageDrag files here or click to upload (up to 6 files can be selected)",
+    "Upload image",
+    "Search"
+  ],
+  "apiResponses": [
+    {
+      "url": "https://b2b.hubbuyer.com/Alibaba/list?key=%E5%A5%B3%E8%A3%85",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://api.hubbuyer.com/api_b2b/languageConfig/index",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://api.hubbuyer.com/api_b2b/languageConfig/index",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://api.hubbuyer.com/api_b2b/languageConfig/index",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://api.hubbuyer.com/api_b2b/index/moduleRightNavigation",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://api.hubbuyer.com/api_b2b/SearchPalletConfig/list",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://api.hubbuyer.com/api_b2b/languageConfig/index",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://api.hubbuyer.com/api/config/main",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://api.hubbuyer.com/api_b2b/languageConfig/index",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://api.hubbuyer.com/api_b2b/index/moduleHeader",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://api.hubbuyer.com/api_b2b/index/moduleRightNavigation",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://api.hubbuyer.com/api/config/main",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://api.hubbuyer.com/api_b2b/productCate/list",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://api.hubbuyer.com/api_b2b/languageConfig/index",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://api.hubbuyer.com/api_b2b/index/moduleTop",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "url": "https://api.hubbuyer.com/api_ali/product/keyword",
+      "status": 200,
+      "contentType": "application/json"
+    }
+  ],
+  "browserMessages": [],
+  "files": {
+    "renderedHtml": "D:\\AI\\项目\\global\\docs\\pm\\9 收费体系调整\\页面素材文件夹\\hubbuyer-alibaba-list-女装.rendered.html",
+    "visibleText": "D:\\AI\\项目\\global\\docs\\pm\\9 收费体系调整\\页面素材文件夹\\hubbuyer-alibaba-list-女装.visible-text.txt",
+    "links": "D:\\AI\\项目\\global\\docs\\pm\\9 收费体系调整\\页面素材文件夹\\hubbuyer-alibaba-list-女装.links.json",
+    "images": "D:\\AI\\项目\\global\\docs\\pm\\9 收费体系调整\\页面素材文件夹\\hubbuyer-alibaba-list-女装.images.json",
+    "screenshot": "D:\\AI\\项目\\global\\docs\\pm\\9 收费体系调整\\页面素材文件夹\\hubbuyer-alibaba-list-女装.rendered.png",
+    "summary": "D:\\AI\\项目\\global\\docs\\pm\\9 收费体系调整\\页面素材文件夹\\hubbuyer-alibaba-list-女装.render-summary.json"
+  }
+}

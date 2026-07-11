@@ -1,0 +1,1437 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>国际配送-待审核详情页面示例</title>
+  <style>
+    :root {
+      --primary: #022559;
+      --accent: #b4272b;
+      --danger: #cf1f25;
+      --success: #22822c;
+      --text: #1f2937;
+      --muted: #667085;
+      --weak: #98a2b3;
+      --line: #cbd4e1;
+      --line-2: #e3e8f0;
+      --bg: #f4f6f8;
+      --panel: #ffffff;
+      --table-head: #e5ebf3;
+      --field: #f3f6fa;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      min-width: 1366px;
+      margin: 0;
+      overflow: hidden;
+      color: var(--text);
+      background: var(--bg);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    button,
+    input,
+    select { font: inherit; }
+
+    .page {
+      height: 100vh;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 66px;
+      padding: 0 28px;
+      border-bottom: 1px solid #e5e9f0;
+      background: #fff;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--primary);
+      font-size: 21px;
+      font-weight: 850;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border: 8px solid #c3272d;
+      border-radius: 50%;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 20px;
+      padding: 0 8px;
+      border-radius: 4px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .tools {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--primary);
+    }
+
+    .tool {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 30px;
+      padding: 0 14px;
+      border: 1px solid var(--primary);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d7dce5, #eef2f7);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      height: calc(100vh - 66px);
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .side {
+      overflow: auto;
+      padding: 18px 4px 18px 0;
+      border-right: 1px solid #e3e8f0;
+      background: #fff;
+    }
+
+    .menu-item,
+    .sub-item {
+      height: 42px;
+      padding: 0 20px;
+      color: #17345f;
+      line-height: 42px;
+      white-space: nowrap;
+    }
+
+    .menu-item { font-weight: 650; }
+
+    .sub-item {
+      margin-left: 4px;
+      border-radius: 0 6px 6px 0;
+      color: #344054;
+    }
+
+    .sub-item.active {
+      background: #e7ecf3;
+      color: var(--primary);
+      font-weight: 750;
+    }
+
+    .chev { float: right; color: var(--muted); }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 0;
+      overflow: hidden;
+      padding: 0 12px;
+    }
+
+    .crumb {
+      flex: 0 0 auto;
+      height: 38px;
+      color: var(--muted);
+      line-height: 38px;
+    }
+
+    .content-scroll {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: auto;
+      padding-bottom: 96px;
+    }
+
+    .panel {
+      margin-bottom: 12px;
+      padding: 12px;
+      border-radius: 4px;
+      background: var(--panel);
+    }
+
+    .detail-top {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr 1fr 1fr;
+      gap: 18px;
+      padding: 0 8px 12px;
+      border-bottom: 1px solid var(--line-2);
+      color: var(--muted);
+    }
+
+    .detail-top strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .detail-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 8px 8px;
+    }
+
+    .status-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      min-width: 0;
+    }
+
+    .state-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 62px;
+      height: 28px;
+      padding: 0 12px;
+      border: 1px solid #b9cff0;
+      border-radius: 4px;
+      background: #edf5ff;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .state-chip.pending {
+      border-color: #b9cff0;
+      background: #edf5ff;
+      color: var(--primary);
+    }
+
+    .divider {
+      width: 1px;
+      height: 26px;
+      background: var(--line);
+    }
+
+    .action-bar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      white-space: nowrap;
+    }
+
+    .btn {
+      height: 32px;
+      padding: 0 18px;
+      border: 1px solid #9fb5d4;
+      border-radius: 4px;
+      background: #eef5ff;
+      color: var(--primary);
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .btn.primary {
+      border-color: var(--primary);
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn.ghost {
+      background: #fff;
+      color: var(--primary);
+    }
+
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      min-width: 88px;
+      height: 32px;
+      min-height: 32px;
+      margin: 0;
+      padding: 0 24px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 32px;
+      white-space: nowrap;
+      box-shadow: none;
+    }
+
+    .filter-btn.primary {
+      border: 1px solid var(--primary);
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .filter-btn.reset {
+      min-width: 76px;
+      border: 1px solid #d6dde8;
+      background: #f3f6fa;
+      color: #344054;
+    }
+
+    .btn.danger {
+      border-color: #b71f2a;
+      background: #b71f2a;
+      color: #fff;
+    }
+
+    .btn.disabled {
+      border-color: #a9adb5;
+      background: #a9adb5;
+      color: #fff;
+      cursor: default;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 2px 0 10px;
+    }
+
+    .section-title {
+      margin: 0;
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 750;
+    }
+
+    .summary {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .summary-item {
+      display: inline-flex;
+      align-items: center;
+      height: 24px;
+      padding: 0 12px;
+      border: 1px solid #c8d3e4;
+      border-radius: 4px;
+      background: #eef2f7;
+      color: #344054;
+      white-space: nowrap;
+    }
+
+    .summary-item strong {
+      margin-left: 10px;
+      color: var(--danger);
+      font-weight: 800;
+    }
+
+    .collapse-btn {
+      height: 30px;
+      padding: 0 13px;
+      border: 1px solid #ff9da4;
+      border-radius: 999px;
+      background: #fff4f5;
+      color: var(--danger);
+      cursor: pointer;
+    }
+
+    .filters {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 78px 78px;
+      gap: 20px 28px;
+      align-items: end;
+      margin-bottom: 18px;
+    }
+
+    .filters.pending-filters {
+      grid-template-columns: 260px 260px 260px 88px 76px;
+      justify-content: start;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-weight: 750;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      height: 32px;
+      padding: 0 12px;
+      border: 1px solid #d8dfeb;
+      border-radius: 4px;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+    }
+
+    .field input::placeholder {
+      color: var(--weak);
+    }
+
+    .table-wrap {
+      overflow: visible;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th,
+    td {
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      vertical-align: middle;
+    }
+
+    th {
+      height: 40px;
+      background: var(--table-head);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+    th:last-child,
+    td:last-child { border-right: 0; }
+
+    .box-table td {
+      height: 40px;
+      padding: 0 10px;
+      text-align: center;
+    }
+
+    .waybill {
+      color: var(--danger);
+      font-weight: 750;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .goods-panel {
+      padding: 14px 12px;
+    }
+
+    .table-toolbar {
+      position: fixed;
+      right: 12px;
+      bottom: 0;
+      z-index: 45;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      height: 82px;
+      padding: 0 60px;
+      border-top: 1px solid #d8e0eb;
+      background: rgba(255, 255, 255, .96);
+      box-shadow: 0 -8px 18px rgba(15, 23, 42, .06);
+    }
+
+    .main .table-toolbar {
+      left: 182px;
+    }
+
+    .table-toolbar .btn {
+      min-width: 120px;
+      height: 38px;
+      border-radius: 4px;
+    }
+
+    .toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--text);
+    }
+
+    .check {
+      width: 14px;
+      height: 14px;
+      margin: 0;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    .goods-table-wrap {
+      overflow: visible;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .goods-table th:first-child,
+    .goods-table td:first-child {
+      width: 28px;
+      padding: 0;
+      text-align: center;
+    }
+
+    .goods-table .image-cell {
+      padding: 10px 8px;
+      text-align: center;
+    }
+
+    .goods-table td {
+      min-height: 110px;
+      padding: 10px;
+      vertical-align: top;
+    }
+
+    .goods-table tbody tr:last-child td {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .goods-table tr.is-selected td {
+      background: #f0f6ff;
+    }
+
+    .goods-table .image-cell,
+    .goods-table td:first-child,
+    .goods-table .center {
+      vertical-align: middle;
+    }
+
+    .stock-time-cell {
+      min-width: 136px;
+      color: var(--text);
+      font-weight: 700;
+      text-align: center;
+      vertical-align: middle !important;
+      white-space: nowrap;
+    }
+
+    .product-info {
+      position: relative;
+      display: block;
+      min-width: 0;
+    }
+
+    .product-summary {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr) 122px;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .product-main {
+      min-width: 0;
+    }
+
+    .product-code-box {
+      color: #5f6f87;
+      line-height: 1.45;
+    }
+
+    .product-code-box .id-badge {
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    .product-photo {
+      position: relative;
+      z-index: 1;
+      width: 72px;
+      height: 72px;
+      border: 1px solid #e4eaf2;
+      border-radius: 6px;
+      background: #f8fafc;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      margin: 0 auto;
+      cursor: zoom-in;
+      outline: none;
+    }
+
+    .product-photo:hover,
+    .product-photo:focus {
+      position: relative;
+      z-index: 40;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(2, 37, 89, .12);
+    }
+
+    .product-photo::after {
+      content: "";
+      position: absolute;
+      left: calc(100% + 12px);
+      top: 0;
+      z-index: 60;
+      display: none;
+      width: 180px;
+      height: 180px;
+      border: 2px solid var(--primary);
+      border-radius: 6px;
+      background: inherit;
+      background-color: #f8fafc;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      box-shadow: 0 0 0 2px rgba(2, 37, 89, .12), 0 12px 28px rgba(15, 23, 42, .18);
+      pointer-events: none;
+    }
+
+    .product-photo:hover::after,
+    .product-photo:focus::after {
+      display: block;
+    }
+
+    .goods-table tbody tr:last-child .product-photo::after {
+      top: auto;
+      bottom: 0;
+    }
+
+    .product-main,
+    .code-lines,
+    .sku-lines,
+    .spec-lines,
+    .order-lines,
+    .price-lines {
+      min-width: 0;
+      color: #52627a;
+    }
+
+    .product-title {
+      display: block;
+      margin-bottom: 2px;
+      overflow: hidden;
+      color: var(--text);
+      font-weight: 760;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      cursor: default;
+    }
+
+    .product-info[data-full-title]:has(.product-title:hover)::after,
+    .product-info[data-full-title]:has(.product-title:focus)::after {
+      content: attr(data-full-title);
+      position: absolute;
+      left: 0;
+      top: 28px;
+      z-index: 30;
+      max-width: 520px;
+      padding: 6px 10px;
+      border: 1px solid #d4d9e4;
+      border-radius: 3px;
+      background: #fff;
+      color: var(--text);
+      box-shadow: 0 8px 22px rgba(15, 23, 42, .16);
+      font-weight: 650;
+      white-space: normal;
+    }
+
+    .id-badge {
+      display: inline-flex;
+      max-width: 100%;
+      height: 22px;
+      margin-top: 6px;
+      padding: 0 8px;
+      align-items: center;
+      border-radius: 4px;
+      background: #eef1f5;
+      color: #8a94a3;
+      white-space: nowrap;
+    }
+
+    .info-line {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      max-width: 100%;
+      overflow: hidden;
+      color: var(--text);
+      white-space: nowrap;
+      font-size: 14px;
+    }
+
+    .muted-line { color: #52627a; }
+
+    .code-lines {
+      color: #52627a;
+      line-height: 1.55;
+    }
+
+    .sku-side {
+      justify-self: end;
+      width: 112px;
+      color: #8a94a3;
+    }
+
+    .copy-target,
+    .copy-icon {
+      cursor: pointer;
+    }
+
+    .copy-icon {
+      display: inline-flex;
+      flex: 0 0 16px;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      margin-left: 2px;
+      color: #7d8794;
+      vertical-align: -3px;
+    }
+
+    .copy-icon:hover { color: var(--primary); }
+
+    .copy-icon svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .spec-lines,
+    .order-lines,
+    .price-lines { line-height: 1.45; }
+
+    .order-code {
+      display: inline-block;
+      flex: 1 1 auto;
+      min-width: 0;
+      overflow: hidden;
+      color: var(--text);
+      text-overflow: ellipsis;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 6px;
+    }
+
+    .metric {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      min-height: 22px;
+      padding: 0 8px;
+      border-radius: 4px;
+      background: var(--field);
+      color: #6b778c;
+      white-space: nowrap;
+    }
+
+    .metric strong {
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .center { text-align: center; }
+
+    .empty-op {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .row-action {
+      position: relative;
+      min-height: 92px;
+    }
+
+    .corner-delete {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 36px;
+      height: 36px;
+      border: 0;
+      padding: 0;
+      background: linear-gradient(45deg, transparent 0 49%, #9b9b9b 50% 100%);
+      cursor: pointer;
+    }
+
+    .corner-delete::before {
+      content: "";
+      position: absolute;
+      right: 6px;
+      top: 8px;
+      width: 13px;
+      height: 3px;
+      border-top: 2px solid #fff;
+      border-radius: 1px;
+      background: transparent;
+      box-shadow: 3px -3px 0 -1px #fff;
+      transform: rotate(45deg);
+      transform-origin: center;
+    }
+
+    .corner-delete::after {
+      content: "";
+      position: absolute;
+      right: 7px;
+      top: 14px;
+      width: 11px;
+      height: 10px;
+      border: 2px solid #fff;
+      border-top: 0;
+      border-radius: 0 0 2px 2px;
+      background:
+        linear-gradient(90deg, transparent 0 3px, #fff 3px 5px, transparent 5px 6px, #fff 6px 8px, transparent 8px);
+      transform: rotate(45deg);
+      transform-origin: center;
+    }
+
+    .pending-table th:nth-child(6) {
+      color: #111827;
+      font-weight: 750;
+    }
+
+    .pending-table th:first-child,
+    .pending-table td:first-child {
+      width: auto;
+      padding: 10px 8px;
+      text-align: center;
+    }
+
+    .pending-table td {
+      height: 110px;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      top: 48%;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      height: 34px;
+      padding: 0 16px;
+      border: 1px solid #ccefc4;
+      border-radius: 4px;
+      background: #e9ffd9;
+      color: #55aa36;
+      font-weight: 800;
+      box-shadow: 0 12px 28px rgba(85, 170, 54, .16);
+      transform: translate(-50%, -50%);
+    }
+
+    .toast.show { display: inline-flex; }
+
+    .confirm-mask,
+    .image-preview-mask {
+      position: fixed;
+      inset: 0;
+      z-index: 120;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 23, 42, .48);
+    }
+
+    .confirm-mask.show,
+    .image-preview-mask.show { display: flex; }
+
+    .confirm-dialog {
+      width: 360px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 18px 48px rgba(15, 23, 42, .28);
+      overflow: hidden;
+    }
+
+    .confirm-body {
+      padding: 26px 20px 20px;
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .confirm-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      padding: 0 20px 24px;
+      border-top: 0;
+    }
+
+    .confirm-actions .btn {
+      min-width: 92px;
+      height: 34px;
+    }
+
+    .image-preview-box {
+      position: relative;
+      width: 520px;
+      height: 520px;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 18px 48px rgba(15, 23, 42, .32);
+    }
+
+    .image-preview-box img {
+      width: 100%;
+      height: 100%;
+      padding: 24px;
+      object-fit: contain;
+    }
+
+    .image-preview-close {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      width: 32px;
+      height: 32px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(2, 37, 89, .08);
+      color: var(--primary);
+      font-size: 22px;
+      line-height: 32px;
+      cursor: pointer;
+    }
+
+    .side-tab {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      z-index: 50;
+      width: 24px;
+      height: 54px;
+      border-radius: 6px 0 0 6px;
+      background: var(--primary);
+    }
+
+    .side-tab::before,
+    .side-tab::after {
+      content: "";
+      position: absolute;
+      left: 8px;
+      width: 12px;
+      height: 2px;
+      background: #fff;
+      transform-origin: left center;
+    }
+
+    .side-tab::before {
+      top: 22px;
+      transform: rotate(45deg);
+    }
+
+    .side-tab::after {
+      top: 30px;
+      transform: rotate(-45deg);
+    }
+
+    .right { text-align: right; }
+    .red { color: var(--danger); }
+  </style>
+<style id="global-copy-success-toast-style">
+  .ui-spec-copy-toast,
+  .project-copy-toast,
+  .copy-toast,
+  .measure-toast,
+  .copy-success-tip,
+  #toast.toast {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    z-index: 99999 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    min-width: auto !important;
+    min-height: auto !important;
+    padding: 8px 14px !important;
+    border: 1px solid #cdeec7 !important;
+    border-radius: 4px !important;
+    background: #effbea !important;
+    color: #53bd45 !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    transform: translate(-50%, -50%) !important;
+    box-shadow: 0 8px 22px rgba(83, 189, 69, 0.14) !important;
+    transition: opacity 0.18s ease, transform 0.18s ease !important;
+  }
+
+  .ui-spec-copy-toast::before,
+  .project-copy-toast::before,
+  .copy-toast::before,
+  .measure-toast::before,
+  .copy-success-tip::before,
+  #toast.toast::before {
+    content: "✓" !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 14px !important;
+    height: 14px !important;
+    border-radius: 50% !important;
+    background: #53bd45 !important;
+    color: #fff !important;
+    font-size: 10px !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+  }
+
+  .ui-spec-copy-toast::after,
+  .project-copy-toast::after,
+  .copy-toast::after,
+  .measure-toast::after,
+  .copy-success-tip::after,
+  #toast.toast::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .ui-spec-copy-toast.is-visible,
+  .ui-spec-copy-toast.show,
+  .project-copy-toast.is-visible,
+  .project-copy-toast.show,
+  .copy-toast.is-visible,
+  .copy-toast.show,
+  .measure-toast.is-visible,
+  .measure-toast.show,
+  .copy-success-tip,
+  #toast.toast.show,
+  #toast.toast.is-visible {
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) !important;
+  }
+</style>
+
+<style id="order-copy-no-underline">
+  .product-cell .copy-text,
+  .product-cell .copy-text:hover,
+  .product-cell .copy-text:focus,
+  .product-cell .copy-text:active,
+  .product-cell .order-code,
+  .product-cell .order-code:hover,
+  .product-cell .order-code:focus,
+  .product-cell .order-code:active,
+  .product-cell [data-copy-text],
+  .product-cell [data-copy-text]:hover,
+  .product-cell [data-copy-text]:focus,
+  .product-cell [data-copy-text]:active,
+  .product-cell [data-copy],
+  .product-cell [data-copy]:hover,
+  .product-cell [data-copy]:focus,
+  .product-cell [data-copy]:active,
+  .product-order,
+  .product-order:hover,
+  .product-order:focus,
+  .product-order *,
+  .product-order *:hover,
+  .order-line.copyable,
+  .order-line.copyable:hover,
+  .order-line.copyable:focus,
+  .order-line.copyable *,
+  .order-line.copyable *:hover,
+  .info-line .order-code,
+  .info-line .order-code:hover,
+  .info-line [data-copy],
+  .info-line [data-copy]:hover {
+    text-decoration: none !important;
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span>さくら代行 &amp; Hubbuyer</span>
+        <span class="tag">B2B</span>
+      </div>
+      <div class="tools">
+        <span class="tool">营业日</span>
+        <span class="tool">简体中文⌄</span>
+        <span class="tool">🇨🇳 1 CNY ≈ 🇺🇸 0.16 USD</span>
+        <span class="avatar"></span>
+        <strong>CHN20</strong>
+        <span class="tool">退出登录</span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="side">
+        <div class="menu-item">个人中心</div>
+        <div class="menu-item">重要待办 <span class="chev">⌄</span></div>
+        <div class="menu-item">购物车 <span class="chev">⌄</span></div>
+        <div class="menu-item">B2B代行... <span class="chev">⌄</span></div>
+        <div class="menu-item">发货配送 <span class="chev">⌃</span></div>
+        <div class="sub-item">我的仓库</div>
+        <div class="sub-item active">国际配送</div>
+        <div class="menu-item">资金管理</div>
+        <div class="menu-item">推荐商品 <span class="chev">⌄</span></div>
+        <div class="menu-item">我的收藏 <span class="chev">⌄</span></div>
+        <div class="menu-item">我的足迹</div>
+        <div class="menu-item">账户设置 <span class="chev">⌄</span></div>
+      </aside>
+
+      <main class="main">
+        <div class="crumb">发货配送 › 国际配送详情</div>
+        <div class="content-scroll">
+          <section class="panel">
+            <div class="detail-top" style="grid-template-columns: 1fr 1fr;">
+              <div>发货单号: <strong class="copy-target" data-copy="WL-CHN20-260623-002">WL-CHN20-260623-002</strong><span class="copy-icon" data-copy="WL-CHN20-260623-002" aria-label="复制发货单号"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="1.5"></rect><path d="M5 15V5h10"></path></svg></span></div>
+              <div>申请时间: <strong>2026-06-23 09:04</strong></div>
+            </div>
+            <div class="detail-bottom">
+              <div class="status-row">
+                <span class="state-chip pending">审核中</span>
+                <span class="divider"></span>
+                <span>国际物流: <strong>海源-DQ</strong></span>
+              </div>
+              <div class="action-bar">
+                <button class="btn primary">添加商品</button>
+                <button class="btn primary">查看地址/进口商关税账户</button>
+                <button class="btn">下载发货单</button>
+                <button class="btn">下载纳品书</button>
+                <button class="btn">下载包裹明细</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel goods-panel">
+            <h2 class="section-title">发货商品（5）</h2>
+            <div class="filters pending-filters">
+              <div class="field"><label>MySKU:</label><input placeholder="请输入MySKU"></div>
+              <div class="field"><label>ID:</label><input placeholder="请输入ID"></div>
+              <div class="field"><label>订单编号:</label><input placeholder="请输入订单编号"></div>
+              <button class="btn filter-btn primary">搜索</button>
+              <button class="btn filter-btn reset">重置</button>
+            </div>
+
+            <div class="goods-table-wrap">
+              <table class="goods-table pending-table">
+                <colgroup>
+                  <col style="width: 3%">
+                  <col style="width: 7%">
+                  <col style="width: 23%">
+                  <col style="width: 20%">
+                  <col style="width: 12%">
+                  <col style="width: 13%">
+                  <col style="width: 10%">
+                  <col style="width: 12%">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>图片</th>
+                    <th>商品信息</th>
+                    <th>编号管理</th>
+                    <th>价格(CNY)</th>
+                    <th>入库时间</th>
+                    <th>备注</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="center"><input class="check row-check" type="checkbox" aria-label="选择商品"></td>
+                    <td class="image-cell"><div class="product-photo" tabindex="0" data-preview="assets/product-images/0017_1054582390786_5bd730e103.jpg" style="background-image:url('assets/product-images/0017_1054582390786_5bd730e103.jpg')" aria-label="商品图片，悬停显示放大预览，点击查看大图"></div></td>
+                    <td>
+                      <div class="product-main product-info" data-full-title="大码设计感加绒小熊卫衣宽松连帽外套">
+                        
+                                                <div class="info-line">订单编号： <span class="order-code copy-target" data-copy="B2B-DD-CHN20-260623-049">B2B-DD-CHN20-260623-049</span><span class="copy-icon" data-copy="B2B-DD-CHN20-260623-049"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="1.5"></rect><path d="M5 15V5h10"></path></svg></span></div>
+                        
+                        <span class="product-title" tabindex="0">大码设计感加绒小熊卫衣宽松连帽外套</span>
+                        <div><span class="id-badge">ID: D000007752</span></div>
+                        <div class="muted-line">颜色: 藏青色 加绒款<br>尺码: 2XL 建议150-180斤</div>
+                      </div>
+                    </td>
+                    <td><div class="code-lines"><div>MySKU: --</div><div>ASIN: --</div><div>FNSKU: --</div></div></td>
+                    <td><div class="price-grid"><span class="metric">装箱/出货:<strong>--/2</strong></span><span class="metric">在库数:<strong>--</strong></span><span class="metric">单价:<strong>42.99</strong></span><span class="metric">小计:<strong>85.98</strong></span></div></td>
+                    <td class="stock-time-cell">2026-06-23 09:04</td>
+                    <td></td>
+                    <td class="center row-action"><button class="corner-delete" type="button" aria-label="移除发货单"></button><span class="empty-op">--</span></td>
+                  </tr>
+                  <tr>
+                    <td class="center"><input class="check row-check" type="checkbox" aria-label="选择商品"></td>
+                    <td class="image-cell"><div class="product-photo" tabindex="0" data-preview="assets/product-images/0018_1055130273820_784c755ed4.jpg" style="background-image:url('assets/product-images/0018_1055130273820_784c755ed4.jpg')" aria-label="商品图片，悬停显示放大预览，点击查看大图"></div></td>
+                    <td>
+                      <div class="product-main product-info" data-full-title="大码设计感加绒小熊卫衣宽松连帽外套">
+                        
+                                                <div class="info-line">订单编号： <span class="order-code copy-target" data-copy="B2B-DD-CHN20-260623-049">B2B-DD-CHN20-260623-049</span><span class="copy-icon" data-copy="B2B-DD-CHN20-260623-049"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="1.5"></rect><path d="M5 15V5h10"></path></svg></span></div>
+                        
+                        <span class="product-title" tabindex="0">大码设计感加绒小熊卫衣宽松连帽外套</span>
+                        <div><span class="id-badge">ID: D000007753</span></div>
+                        <div class="muted-line">颜色: 桔色 加绒款<br>尺码: M 建议100斤内</div>
+                      </div>
+                    </td>
+                    <td><div class="code-lines"><div>MySKU: --</div><div>ASIN: --</div><div>FNSKU: --</div></div></td>
+                    <td><div class="price-grid"><span class="metric">装箱/出货:<strong>--/2</strong></span><span class="metric">在库数:<strong>--</strong></span><span class="metric">单价:<strong>42.99</strong></span><span class="metric">小计:<strong>85.98</strong></span></div></td>
+                    <td class="stock-time-cell">2026-06-23 09:04</td>
+                    <td></td>
+                    <td class="center row-action"><button class="corner-delete" type="button" aria-label="移除发货单"></button><span class="empty-op">--</span></td>
+                  </tr>
+                  <tr>
+                    <td class="center"><input class="check row-check" type="checkbox" aria-label="选择商品"></td>
+                    <td class="image-cell"><div class="product-photo" tabindex="0" data-preview="assets/product-images/0018_1055130273820_784c755ed4.jpg" style="background-image:url('assets/product-images/0018_1055130273820_784c755ed4.jpg')" aria-label="商品图片，悬停显示放大预览，点击查看大图"></div></td>
+                    <td>
+                      <div class="product-main product-info" data-full-title="大码设计感加绒小熊卫衣宽松连帽外套">
+                        
+                                                <div class="info-line">订单编号： <span class="order-code copy-target" data-copy="B2B-DD-CHN20-260623-049">B2B-DD-CHN20-260623-049</span><span class="copy-icon" data-copy="B2B-DD-CHN20-260623-049"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="1.5"></rect><path d="M5 15V5h10"></path></svg></span></div>
+                        
+                        <span class="product-title" tabindex="0">大码设计感加绒小熊卫衣宽松连帽外套</span>
+                        <div><span class="id-badge">ID: D000007754</span></div>
+                        <div class="muted-line">颜色: 桔色 加绒款<br>尺码: L 建议100-120斤</div>
+                      </div>
+                    </td>
+                    <td><div class="code-lines"><div>MySKU: --</div><div>ASIN: --</div><div>FNSKU: --</div></div></td>
+                    <td><div class="price-grid"><span class="metric">装箱/出货:<strong>--/2</strong></span><span class="metric">在库数:<strong>--</strong></span><span class="metric">单价:<strong>42.99</strong></span><span class="metric">小计:<strong>85.98</strong></span></div></td>
+                    <td class="stock-time-cell">2026-06-23 09:04</td>
+                    <td></td>
+                    <td class="center row-action"><button class="corner-delete" type="button" aria-label="移除发货单"></button><span class="empty-op">--</span></td>
+                  </tr>
+                  <tr>
+                    <td class="center"><input class="check row-check" type="checkbox" aria-label="选择商品"></td>
+                    <td class="image-cell"><div class="product-photo" tabindex="0" data-preview="assets/product-images/0018_1055130273820_784c755ed4.jpg" style="background-image:url('assets/product-images/0018_1055130273820_784c755ed4.jpg')" aria-label="商品图片，悬停显示放大预览，点击查看大图"></div></td>
+                    <td>
+                      <div class="product-main product-info" data-full-title="大码设计感加绒小熊卫衣宽松连帽外套">
+                        
+                                                <div class="info-line">订单编号： <span class="order-code copy-target" data-copy="B2B-DD-CHN20-260623-049">B2B-DD-CHN20-260623-049</span><span class="copy-icon" data-copy="B2B-DD-CHN20-260623-049"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="1.5"></rect><path d="M5 15V5h10"></path></svg></span></div>
+                        
+                        <span class="product-title" tabindex="0">大码设计感加绒小熊卫衣宽松连帽外套</span>
+                        <div><span class="id-badge">ID: D000007755</span></div>
+                        <div class="muted-line">颜色: 桔色 加绒款<br>尺码: XL 建议120-150斤</div>
+                      </div>
+                    </td>
+                    <td><div class="code-lines"><div>MySKU: --</div><div>ASIN: --</div><div>FNSKU: --</div></div></td>
+                    <td><div class="price-grid"><span class="metric">装箱/出货:<strong>--/2</strong></span><span class="metric">在库数:<strong>--</strong></span><span class="metric">单价:<strong>42.99</strong></span><span class="metric">小计:<strong>85.98</strong></span></div></td>
+                    <td class="stock-time-cell">2026-06-23 09:04</td>
+                    <td></td>
+                    <td class="center row-action"><button class="corner-delete" type="button" aria-label="移除发货单"></button><span class="empty-op">--</span></td>
+                  </tr>
+                  <tr>
+                    <td class="center"><input class="check row-check" type="checkbox" aria-label="选择商品"></td>
+                    <td class="image-cell"><div class="product-photo" tabindex="0" data-preview="assets/product-images/0018_1055130273820_784c755ed4.jpg" style="background-image:url('assets/product-images/0018_1055130273820_784c755ed4.jpg')" aria-label="商品图片，悬停显示放大预览，点击查看大图"></div></td>
+                    <td>
+                      <div class="product-main product-info" data-full-title="大码设计感加绒小熊卫衣宽松连帽外套">
+                        
+                                                <div class="info-line">订单编号： <span class="order-code copy-target" data-copy="B2B-DD-CHN20-260623-049">B2B-DD-CHN20-260623-049</span><span class="copy-icon" data-copy="B2B-DD-CHN20-260623-049"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="10" height="10" rx="1.5"></rect><path d="M5 15V5h10"></path></svg></span></div>
+                        
+                        <span class="product-title" tabindex="0">大码设计感加绒小熊卫衣宽松连帽外套</span>
+                        <div><span class="id-badge">ID: D000007756</span></div>
+                        <div class="muted-line">颜色: 桔色 加绒款<br>尺码: 2XL 建议150-180斤</div>
+                      </div>
+                    </td>
+                    <td><div class="code-lines"><div>MySKU: --</div><div>ASIN: --</div><div>FNSKU: --</div></div></td>
+                    <td><div class="price-grid"><span class="metric">装箱/出货:<strong>--/2</strong></span><span class="metric">在库数:<strong>--</strong></span><span class="metric">单价:<strong>42.99</strong></span><span class="metric">小计:<strong>85.98</strong></span></div></td>
+                    <td class="stock-time-cell">2026-06-23 09:04</td>
+                    <td></td>
+                    <td class="center row-action"><button class="corner-delete" type="button" aria-label="移除发货单"></button><span class="empty-op">--</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="table-toolbar">
+              <div class="toolbar-left">
+                <label class="select-all"><input class="check" id="checkAll" type="checkbox"> 全选</label>
+              </div>
+              <button class="btn danger" type="button" data-cancel-shipping>取消配送</button>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">复制成功</div>
+  <div class="confirm-mask" id="cancelConfirm" aria-hidden="true">
+    <div class="confirm-dialog" role="dialog" aria-modal="true" aria-label="取消配送确认">
+      <div class="confirm-body">是否取消该国际配送单吗</div>
+      <div class="confirm-actions">
+        <button class="btn ghost" type="button" data-confirm-close>取消</button>
+        <button class="btn danger" type="button" data-confirm-close>确认取消</button>
+      </div>
+    </div>
+  </div>
+  <div class="image-preview-mask" id="imagePreview" aria-hidden="true">
+    <div class="image-preview-box" role="dialog" aria-modal="true" aria-label="商品图片预览">
+      <button class="image-preview-close" type="button" aria-label="关闭预览">×</button>
+      <img src="" alt="商品图片预览">
+    </div>
+  </div>
+  <div class="side-tab" aria-hidden="true"></div>
+
+  <script>
+    const toast = document.getElementById('toast');
+    let toastTimer;
+
+    function showToast() {
+      clearTimeout(toastTimer);
+      toast.classList.add('show');
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 1200);
+    }
+
+    function copyText(text) {
+      const value = text || '';
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(value).then(showToast, fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
+
+      function fallbackCopy() {
+        const input = document.createElement('textarea');
+        input.value = value;
+        input.style.position = 'fixed';
+        input.style.opacity = '0';
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+        showToast();
+      }
+    }
+
+    document.addEventListener('click', (event) => {
+      const deleteNode = event.target.closest('.corner-delete');
+      const cancelNode = event.target.closest('[data-cancel-shipping]');
+      if (deleteNode || cancelNode) {
+        event.preventDefault();
+        const confirm = document.getElementById('cancelConfirm');
+        confirm.classList.add('show');
+        confirm.setAttribute('aria-hidden', 'false');
+        return;
+      }
+
+      if (event.target.closest('[data-confirm-close]') || event.target.id === 'cancelConfirm') {
+        const confirm = document.getElementById('cancelConfirm');
+        confirm.classList.remove('show');
+        confirm.setAttribute('aria-hidden', 'true');
+        return;
+      }
+
+      const copyNode = event.target.closest('[data-copy]');
+      if (copyNode) {
+        event.preventDefault();
+        copyText(copyNode.dataset.copy);
+      }
+
+      const collapse = event.target.closest('[data-collapse]');
+      if (collapse) {
+        const target = document.querySelector(collapse.dataset.collapse);
+        if (!target) return;
+        const hidden = target.style.display === 'none';
+        target.style.display = hidden ? '' : 'none';
+        collapse.textContent = hidden ? '收起⌃' : '展开⌄';
+      }
+
+      const previewNode = event.target.closest('[data-preview]');
+      if (previewNode) {
+        const mask = document.getElementById('imagePreview');
+        mask.querySelector('img').src = previewNode.dataset.preview;
+        mask.classList.add('show');
+        mask.setAttribute('aria-hidden', 'false');
+      }
+
+      const previewMask = event.target.closest('#imagePreview');
+      const closePreview = event.target.closest('.image-preview-close');
+      if (closePreview || event.target.id === 'imagePreview') {
+        const mask = document.getElementById('imagePreview');
+        mask.classList.remove('show');
+        mask.setAttribute('aria-hidden', 'true');
+        mask.querySelector('img').src = '';
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      const activePhoto = event.target.closest?.('[data-preview]');
+      if (activePhoto && (event.key === 'Enter' || event.key === ' ')) {
+        event.preventDefault();
+        activePhoto.click();
+      }
+
+      if (event.key === 'Escape') {
+        const confirm = document.getElementById('cancelConfirm');
+        if (confirm.classList.contains('show')) {
+          confirm.classList.remove('show');
+          confirm.setAttribute('aria-hidden', 'true');
+          return;
+        }
+
+        const mask = document.getElementById('imagePreview');
+        if (mask.classList.contains('show')) {
+          mask.classList.remove('show');
+          mask.setAttribute('aria-hidden', 'true');
+          mask.querySelector('img').src = '';
+        }
+      }
+    });
+
+    const checkAll = document.getElementById('checkAll');
+    const checks = Array.from(document.querySelectorAll('.row-check'));
+    const confirmBtn = document.getElementById('confirmBtn');
+
+    function updateSelection() {
+      if (!checkAll || !checks.length) return;
+      const selected = checks.filter((item) => item.checked).length;
+      checks.forEach((item) => item.closest('tr').classList.toggle('is-selected', item.checked));
+      checkAll.checked = selected === checks.length;
+      checkAll.indeterminate = selected > 0 && selected < checks.length;
+      if (confirmBtn) {
+        confirmBtn.textContent = `核对确认（${selected}/6）`;
+      }
+    }
+
+    if (checkAll && checks.length) {
+      checkAll.addEventListener('change', () => {
+        checks.forEach((item) => { item.checked = checkAll.checked; });
+        updateSelection();
+      });
+
+      checks.forEach((item) => item.addEventListener('change', updateSelection));
+    }
+  </script>
+</body>
+</html>

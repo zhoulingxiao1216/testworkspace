@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>我的商品页面示例</title>
+<style>
+    :root {
+      --primary: #022559;
+      --primary-soft: #e8eef8;
+      --accent: #b4272b;
+      --danger: #c1121f;
+      --success: #46b536;
+      --text: #1f2937;
+      --text-2: #344054;
+      --muted: #667085;
+      --weak: #98a2b3;
+      --line: #cbd4e1;
+      --line-2: #e4eaf2;
+      --bg: #f4f6f8;
+      --panel: #ffffff;
+      --table-head: #e5ebf3;
+      --shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-width: 1280px;
+      overflow: hidden;
+      color: var(--text);
+      background: var(--bg);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .goods-page {
+      height: 100vh;
+      background: var(--bg);
+    }
+
+    .goods-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 66px;
+      padding: 0 28px;
+      border-bottom: 1px solid #e5e9f0;
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(15, 23, 42, 0.04);
+    }
+
+    .goods-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 220px;
+      color: var(--primary);
+      font-size: 20px;
+      font-weight: 850;
+    }
+
+    .goods-logo {
+      width: 44px;
+      height: 34px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 18px 17px, #fff 0 9px, transparent 10px),
+        radial-gradient(circle at 18px 17px, var(--accent) 0 15px, transparent 16px);
+    }
+
+    .goods-tag {
+      display: inline-flex;
+      align-items: center;
+      height: 20px;
+      padding: 0 8px;
+      border-radius: 4px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .goods-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: flex-end;
+      color: var(--primary);
+      font-size: 14px;
+    }
+
+    .goods-tool {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 14px;
+      border: 1px solid var(--primary);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--primary);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .goods-avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #d1d5db;
+    }
+
+    .goods-layout {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      height: calc(100vh - 66px);
+      min-height: 0;
+    }
+
+    .goods-side {
+      padding: 18px 4px 18px 0;
+      overflow-y: auto;
+      border-right: 1px solid #e3e8f0;
+      background: #fff;
+    }
+
+    .goods-menu-item,
+    .goods-sub-item {
+      height: 42px;
+      padding: 0 20px;
+      color: #17345f;
+      font-size: 15px;
+      line-height: 42px;
+      white-space: nowrap;
+    }
+
+    .goods-menu-item {
+      font-weight: 650;
+    }
+
+    .goods-sub-item {
+      margin-left: 12px;
+      border-radius: 0 6px 6px 0;
+      color: var(--text-2);
+    }
+
+    .goods-sub-item.active {
+      background: #e7ecf3;
+      color: var(--primary);
+      font-weight: 750;
+    }
+
+    .goods-menu-item .chev {
+      float: right;
+      color: var(--weak);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .goods-main {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      height: calc(100vh - 66px);
+      min-height: 0;
+      overflow: hidden;
+      padding: 0 12px 74px;
+      background: var(--bg);
+    }
+
+    .goods-crumb {
+      height: 38px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 38px;
+    }
+
+    .goods-filter {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr)) auto auto;
+      gap: 16px;
+      align-items: end;
+      margin-bottom: 14px;
+      padding: 18px 20px;
+      border-radius: 4px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .goods-field label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .goods-input {
+      display: flex;
+      align-items: center;
+      height: 32px;
+      padding: 0 10px;
+      border: 1px solid #d6dde8;
+      border-radius: 4px;
+      background: #fff;
+      color: var(--weak);
+      font-size: 14px;
+    }
+
+    .goods-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 32px;
+      min-width: 78px;
+      padding: 0 16px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .goods-btn.primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .goods-btn.reset {
+      background: #b8b8b8;
+      color: #fff;
+    }
+
+    .goods-tabs-bar {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      padding: 0 20px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .goods-tabs {
+      display: flex;
+      gap: 10px;
+      height: 54px;
+      align-items: flex-end;
+    }
+
+    .goods-tab {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 180px;
+      height: 46px;
+      padding: 0 28px;
+      border-radius: 7px 7px 0 0;
+      background: #dce3ec;
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
+    .goods-tab.active {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .goods-table-wrap {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border: 0;
+      border-collapse: collapse;
+      table-layout: fixed;
+      background: #fff;
+      font-size: 14px;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 3;
+      height: 40px;
+      padding: 0 8px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--table-head);
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 800;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    td {
+      height: 112px;
+      padding: 8px 10px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.32;
+      vertical-align: top;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: 0;
+    }
+
+    .photo-cell {
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .product-cell {
+      min-width: 0;
+    }
+
+    .goods-photo {
+      position: relative;
+      z-index: 1;
+      width: 72px;
+      height: 72px;
+      margin: 0 auto;
+      border: 1px solid #dbe3ee;
+      border-radius: 6px;
+      background-color: #f8fafc;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      cursor: zoom-in;
+      outline: none;
+    }
+
+    .goods-photo:hover,
+    .goods-photo:focus {
+      z-index: 40;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(2, 37, 89, 0.12);
+    }
+
+    .goods-photo::after {
+      content: "";
+      position: absolute;
+      left: calc(100% + 12px);
+      top: 0;
+      z-index: 50;
+      display: none;
+      width: 180px;
+      height: 180px;
+      border: 2px solid var(--primary);
+      border-radius: 6px;
+      background: inherit;
+      background-color: #f8fafc;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      box-shadow: 0 0 0 2px rgba(2, 37, 89, 0.12), 0 12px 28px rgba(15, 23, 42, 0.18);
+      pointer-events: none;
+    }
+
+    .goods-photo:hover::after,
+    .goods-photo:focus::after {
+      display: block;
+    }
+
+    .product-info {
+      min-width: 0;
+    }
+
+    .order-line {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-width: 0;
+      overflow: hidden;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .order-code {
+      color: var(--text);
+      font-size: 14px;
+      flex: 1 1 auto;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .copy-icon {
+      position: relative;
+      display: inline-block;
+      flex: 0 0 auto;
+      width: 14px;
+      height: 14px;
+      color: #8a8f99;
+      vertical-align: -2px;
+      cursor: pointer;
+    }
+
+    .copy-icon::before,
+    .copy-icon::after {
+      content: "";
+      position: absolute;
+      box-sizing: border-box;
+      width: 9px;
+      height: 10px;
+      border: 1.5px solid currentColor;
+      border-radius: 1.5px;
+      background: #fff;
+    }
+
+    .copy-icon::before {
+      left: 2px;
+      top: 3px;
+    }
+
+    .copy-icon::after {
+      left: 4px;
+      top: 1px;
+      background: transparent;
+    }
+
+    .product-title {
+      max-width: 100%;
+      margin-bottom: 6px;
+      overflow: hidden;
+      color: var(--text);
+      font-weight: 650;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      cursor: default;
+      outline: none;
+    }
+
+    .product-title:hover,
+    .product-title:focus {
+      color: var(--primary);
+    }
+
+    .name-tooltip {
+      position: fixed;
+      z-index: 100;
+      display: none;
+      max-width: 360px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #fff;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.5;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+      pointer-events: none;
+      white-space: normal;
+    }
+
+    .name-tooltip.is-visible {
+      display: block;
+    }
+
+    .copy-toast {
+      position: fixed;
+      left: 50%;
+      top: 310px;
+      z-index: 99999;
+      display: none;
+      min-width: 110px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 16px;
+      border-radius: 4px;
+      background: #ecfde5;
+      color: #52b33f;
+      font-size: 14px;
+      font-weight: 700;
+      opacity: 0;
+      transform: translate(-50%, -8px);
+      transition: opacity 160ms ease, transform 160ms ease;
+      pointer-events: none;
+      box-shadow: 0 8px 20px rgba(82, 179, 63, 0.14);
+    }
+
+    .copy-toast::before {
+      content: "✓";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #57c146;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 850;
+      line-height: 1;
+    }
+
+    .copy-toast.is-visible {
+      display: inline-flex;
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    .product-status-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 4px;
+      color: var(--text);
+      font-size: 13px;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+
+    .product-status-line span:last-child {
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .id-chip {
+      display: inline-flex;
+      height: 22px;
+      align-items: center;
+      padding: 0 8px;
+      margin-bottom: 4px;
+      border-radius: 4px;
+      background: #f3f6fa;
+      color: var(--weak);
+      font-size: 13px;
+      line-height: 22px;
+    }
+
+    .sku-lines,
+    .spec-lines {
+      color: var(--text-2);
+      font-size: 13px;
+      line-height: 20px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .data-lines {
+      display: grid;
+      gap: 4px;
+      width: 100%;
+    }
+
+    .data-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      height: 22px;
+      padding: 0 8px;
+      border-radius: 4px;
+      background: #f3f6fa;
+      line-height: 22px;
+    }
+
+    .data-line span:first-child {
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .data-line span:last-child {
+      color: var(--text);
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
+
+    .data-line.is-struck span {
+      color: #8a93a3;
+      text-decoration: line-through;
+      text-decoration-thickness: 2px;
+    }
+
+
+    .status-pill {
+      display: flex;
+      height: 24px;
+      align-items: center;
+      justify-content: center;
+      margin: 0 0 6px;
+      border: 1px solid #b7c4d9;
+      border-radius: 4px;
+      background: #e8eef8;
+      color: var(--primary);
+      font-weight: 800;
+      line-height: 24px;
+    }
+
+    .status-pill.ok {
+      border-color: #cdeec1;
+      background: #effbea;
+      color: var(--success);
+    }
+
+    .remark-reply {
+      color: var(--danger);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .addon-cell {
+      padding: 8px 6px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .addon-actions {
+      display: inline-flex;
+      width: 116px;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 6px;
+    }
+
+    .addon-detail-btn,
+    .addon-count-btn {
+      display: inline-flex;
+      width: 116px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      font: inherit;
+      font-size: 12px;
+      line-height: 1;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: border-color 140ms ease, background-color 140ms ease, color 140ms ease;
+    }
+
+    .addon-detail-btn {
+      height: 26px;
+      border: 1px solid #6750e8;
+      background: #6750e8;
+      color: #fff;
+    }
+
+    .addon-detail-btn:hover,
+    .addon-detail-btn:focus-visible {
+      border-color: #5942d6;
+      background: #5942d6;
+      outline: none;
+    }
+
+    .addon-count-btn {
+      height: 24px;
+      border: 1px solid #d7d7d7;
+      background: #f2f2f2;
+      color: #7b7b7b;
+    }
+
+    .addon-count-btn:hover,
+    .addon-count-btn:focus-visible {
+      border-color: #c6cbd3;
+      background: #f7f7f7;
+      outline: none;
+    }
+
+    .addon-detail-btn:active,
+    .addon-count-btn:active {
+      transform: translateY(1px);
+    }
+
+    .addon-count-btn b {
+      margin-right: 2px;
+      color: var(--danger);
+      font-weight: 700;
+    }
+
+
+    .addon-detail-mask {
+      position: fixed;
+      inset: 0;
+      z-index: 90000;
+      display: block;
+      pointer-events: none;
+      background: transparent;
+    }
+
+    .addon-detail-mask.is-hidden {
+      display: none;
+    }
+
+    .addon-detail-popover {
+      position: fixed;
+      left: var(--addon-popover-left, 50%);
+      top: var(--addon-popover-top, 50%);
+      width: min(500px, calc(100vw - 48px));
+      max-height: calc(100vh - 48px);
+      overflow: visible;
+      border: 1px solid var(--line-2);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 18px 48px rgba(15, 23, 42, 0.20);
+      pointer-events: auto;
+    }
+
+    .addon-detail-popover::after {
+      content: "";
+      position: absolute;
+      right: -8px;
+      top: var(--addon-arrow-top, 64px);
+      width: 14px;
+      height: 14px;
+      border-top: 1px solid var(--line-2);
+      border-right: 1px solid var(--line-2);
+      background: #fff;
+      transform: rotate(45deg);
+    }
+
+    .addon-modal-head {
+      display: flex;
+      min-height: 40px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px 0 14px;
+      border-bottom: 1px solid var(--line-2);
+      background: #fff;
+    }
+
+    .addon-modal-title {
+      margin: 0;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .addon-modal-close {
+      position: relative;
+      display: inline-flex;
+      width: 28px;
+      height: 28px;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 4px;
+      background: transparent;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    .addon-modal-close:hover,
+    .addon-modal-close:focus-visible {
+      background: #f3f6fa;
+      outline: none;
+    }
+
+    .addon-modal-close::before,
+    .addon-modal-close::after {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 2px;
+      border-radius: 2px;
+      background: currentColor;
+    }
+
+    .addon-modal-close::before {
+      transform: rotate(45deg);
+    }
+
+    .addon-modal-close::after {
+      transform: rotate(-45deg);
+    }
+
+    .addon-detail-table-wrap {
+      max-height: 382px;
+      overflow-y: auto;
+      padding: 10px;
+      background: #fff;
+    }
+
+    .addon-detail-table {
+      width: 100%;
+      overflow: hidden;
+      border: 1px solid #cfd8e6;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 4px;
+      table-layout: fixed;
+    }
+
+    .addon-detail-table th {
+      height: 34px;
+      padding: 0 8px;
+      border-right: 1px solid #cfd8e6;
+      border-bottom: 1px solid #cfd8e6;
+      background: #f3f6fa;
+      color: #1f2937;
+      font-size: 13px;
+      font-weight: 650;
+      line-height: 34px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .addon-detail-table th:last-child {
+      border-right: 0;
+    }
+
+    .addon-detail-table td {
+      height: 32px;
+      padding: 0 8px;
+      border-right: 1px solid #cfd8e6;
+      color: #1f2937;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 32px;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    .addon-detail-table td:last-child {
+      border-right: 0;
+      color: var(--danger);
+      font-weight: 700;
+      text-align: right;
+    }
+
+    .addon-modal-footer {
+      display: flex;
+      min-height: 40px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 0 14px;
+      border-top: 1px solid var(--line-2);
+      background: #f8fafc;
+      color: #1f2937;
+      font-size: 12px;
+    }
+
+    .addon-modal-count {
+      color: var(--danger);
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .addon-modal-total {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 10px;
+      color: #1f2937;
+      font-size: 12px;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
+    .addon-modal-total strong {
+      color: var(--danger);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      .addon-detail-popover {
+        width: calc(100vw - 32px);
+      }
+
+      .addon-detail-table-wrap {
+        overflow-x: auto;
+      }
+
+      .addon-detail-table {
+        min-width: 480px;
+      }
+    }
+
+    .goods-handle {
+      position: absolute;
+      right: 0;
+      top: 330px;
+      z-index: 20;
+      width: 24px;
+      height: 54px;
+      border-radius: 6px 0 0 6px;
+      background: var(--primary);
+    }
+
+    .goods-handle::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 20px;
+      width: 12px;
+      height: 12px;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(45deg);
+    }
+
+    .goods-pagination {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      height: 56px;
+      padding: 0 24px;
+      background: #fff;
+      box-shadow: 0 -8px 22px rgba(15, 23, 42, 0.12);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .page-size,
+    .page-input {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 32px;
+      min-width: 86px;
+      padding: 0 12px;
+      border: 1px solid #d6dde8;
+      border-radius: 4px;
+      background: #fff;
+      color: var(--muted);
+    }
+
+    .page-no {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 2px;
+      background: #eef1f5;
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .page-no.active {
+      background: var(--primary);
+      color: #fff;
+    }
+    /* unified field-value row style */
+    .data-lines,
+    .quote-money-lines {
+      display: grid;
+      gap: 4px;
+      width: 100%;
+      max-width: none;
+    }
+
+    .data-line,
+    .quote-data-line,
+    .quote-money-line,
+    .order-data-line,
+    .text-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      width: 100%;
+      min-width: 0;
+      height: 22px;
+      margin: 0 0 4px;
+      padding: 0 8px;
+      border-radius: 4px;
+      background: #f3f6fa;
+      color: var(--muted, #667085);
+      font-size: 14px;
+      line-height: 22px;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .data-lines .data-line,
+    .quote-money-lines .quote-money-line {
+      margin-bottom: 0;
+    }
+
+    .data-line span:first-child,
+    .quote-data-line span:first-child,
+    .quote-money-line span:first-child,
+    .order-data-line span:first-child,
+    .text-line span:first-child {
+      flex: 0 0 auto;
+      color: var(--muted, #667085);
+      white-space: nowrap;
+    }
+
+    .data-line span:last-child,
+    .quote-data-line span:last-child,
+    .quote-money-line span:last-child,
+    .order-data-line span:last-child,
+    .text-line span:last-child {
+      flex: 1 1 auto;
+      min-width: 0;
+      overflow: hidden;
+      color: var(--text, #1f2937);
+      font-weight: 650;
+      text-align: right;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+
+    .data-line.is-change,
+    .data-line.is-danger {
+      background: #f8e6e8;
+    }
+
+    .data-line.is-change span,
+    .data-line.is-danger span,
+    .data-line.is-change span:first-child,
+    .data-line.is-danger span:first-child,
+    .data-line.is-change span:last-child,
+    .data-line.is-danger span:last-child {
+      color: var(--danger, #c1121f);
+      font-weight: 800;
+    }
+
+    .quote-amount-line span:last-child,
+    .text-line.price-line span:last-child {
+      color: var(--accent, #b4272b);
+      font-weight: 850;
+    }
+
+  
+      .product-spec-lines {
+        margin-top: 4px;
+        color: var(--text-2);
+        font-size: 13px;
+        line-height: 19px;
+      }
+
+      .product-spec-lines .muted,
+      .product-spec-lines .label {
+        color: var(--muted);
+      }
+
+    /* 搜索/重置按钮统一规范：以设计截图为准，禁止页面内单独改色 */
+    .quote-filter .quote-btn.primary,
+    .order-filter .order-btn.primary,
+    .goods-filter .goods-btn.primary,
+    .filter .btn.primary,
+    .shipping-filter .shipping-btn.primary,
+    .measure-filter .measure-btn.primary,
+    .search button {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: auto !important;
+      min-width: 88px !important;
+      height: 32px !important;
+      min-height: 32px !important;
+      margin: 0 !important;
+      padding: 0 24px !important;
+      border: 1px solid #022559 !important;
+      border-radius: 4px !important;
+      background: #022559 !important;
+      color: #fff !important;
+      font-size: 14px !important;
+      font-weight: 700 !important;
+      line-height: 32px !important;
+      white-space: nowrap !important;
+      box-shadow: none !important;
+    }
+
+    .quote-filter .quote-btn.reset,
+    .order-filter .order-btn.reset,
+    .goods-filter .goods-btn.reset,
+    .filter .btn.reset,
+    .shipping-filter .shipping-btn.reset,
+    .measure-filter .measure-btn.reset {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: auto !important;
+      min-width: 76px !important;
+      height: 32px !important;
+      min-height: 32px !important;
+      padding: 0 24px !important;
+      border: 1px solid #d6dde8 !important;
+      border-radius: 4px !important;
+      background: #f3f6fa !important;
+      color: #344054 !important;
+      font-size: 14px !important;
+      font-weight: 700 !important;
+      line-height: 32px !important;
+      white-space: nowrap !important;
+      box-shadow: none !important;
+    }
+</style>
+<style id="global-copy-success-toast-style">
+  .ui-spec-copy-toast,
+  .project-copy-toast,
+  .copy-toast,
+  .measure-toast,
+  .copy-success-tip,
+  #toast.toast {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    z-index: 99999 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    min-width: auto !important;
+    min-height: auto !important;
+    padding: 8px 14px !important;
+    border: 1px solid #cdeec7 !important;
+    border-radius: 4px !important;
+    background: #effbea !important;
+    color: #53bd45 !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    transform: translate(-50%, -50%) !important;
+    box-shadow: 0 8px 22px rgba(83, 189, 69, 0.14) !important;
+    transition: opacity 0.18s ease, transform 0.18s ease !important;
+  }
+
+  .ui-spec-copy-toast::before,
+  .project-copy-toast::before,
+  .copy-toast::before,
+  .measure-toast::before,
+  .copy-success-tip::before,
+  #toast.toast::before {
+    content: "✓" !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 14px !important;
+    height: 14px !important;
+    border-radius: 50% !important;
+    background: #53bd45 !important;
+    color: #fff !important;
+    font-size: 10px !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+  }
+
+  .ui-spec-copy-toast::after,
+  .project-copy-toast::after,
+  .copy-toast::after,
+  .measure-toast::after,
+  .copy-success-tip::after,
+  #toast.toast::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .ui-spec-copy-toast.is-visible,
+  .ui-spec-copy-toast.show,
+  .project-copy-toast.is-visible,
+  .project-copy-toast.show,
+  .copy-toast.is-visible,
+  .copy-toast.show,
+  .measure-toast.is-visible,
+  .measure-toast.show,
+  .copy-success-tip,
+  #toast.toast.show,
+  #toast.toast.is-visible {
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) !important;
+  }
+</style>
+
+<style id="order-copy-no-underline">
+  .product-cell .copy-text,
+  .product-cell .copy-text:hover,
+  .product-cell .copy-text:focus,
+  .product-cell .copy-text:active,
+  .product-cell .order-code,
+  .product-cell .order-code:hover,
+  .product-cell .order-code:focus,
+  .product-cell .order-code:active,
+  .product-cell [data-copy-text],
+  .product-cell [data-copy-text]:hover,
+  .product-cell [data-copy-text]:focus,
+  .product-cell [data-copy-text]:active,
+  .product-cell [data-copy],
+  .product-cell [data-copy]:hover,
+  .product-cell [data-copy]:focus,
+  .product-cell [data-copy]:active,
+  .product-order,
+  .product-order:hover,
+  .product-order:focus,
+  .product-order *,
+  .product-order *:hover,
+  .order-line.copyable,
+  .order-line.copyable:hover,
+  .order-line.copyable:focus,
+  .order-line.copyable *,
+  .order-line.copyable *:hover,
+  .info-line .order-code,
+  .info-line .order-code:hover,
+  .info-line [data-copy],
+  .info-line [data-copy]:hover {
+    text-decoration: none !important;
+  }
+</style>
+</head>
+<body>
+<div class="goods-page">
+<header class="goods-topbar">
+<div class="goods-brand">
+<span aria-hidden="true" class="goods-logo"></span>
+<span>Hubbuyer</span>
+<span class="goods-tag">B2B</span>
+</div>
+<div class="goods-tools">
+<span class="goods-tool">⌘ 营业日</span>
+<span class="goods-tool">◎ 简体中文⌄</span>
+<span class="goods-tool">🇨🇳 1 CNY ≈ 🇺🇸 0.16 USD</span>
+<span aria-hidden="true" class="goods-avatar"></span>
+<strong>CHN20</strong>
+<span class="goods-tool">退出登录</span>
+</div>
+</header>
+<div class="goods-layout">
+<aside class="goods-side">
+<div class="goods-menu-item">♙ 个人中心</div>
+<div class="goods-menu-item">☑ 重要待办 <span class="chev">⌄</span></div>
+<div class="goods-menu-item">⌁ 购物车 <span class="chev">⌄</span></div>
+<div class="goods-menu-item">▤ B2B代行... <span class="chev">⌃</span></div>
+<div class="goods-sub-item">报价单</div>
+<div class="goods-sub-item">我的订单</div>
+<div class="goods-sub-item active">我的商品</div>
+<div class="goods-menu-item">▤ 发货配送 <span class="chev">⌄</span></div>
+<div class="goods-menu-item">▣ 资金管理</div>
+<div class="goods-menu-item">✥ 推荐商品 <span class="chev">⌄</span></div>
+<div class="goods-menu-item">☆ 我的收藏 <span class="chev">⌄</span></div>
+<div class="goods-menu-item">▣ 我的足迹</div>
+<div class="goods-menu-item">⚙ 账户设置 <span class="chev">⌄</span></div>
+</aside>
+<main class="goods-main">
+<div class="goods-crumb">B2B代行管理 <span>›</span> 我的商品</div>
+<section class="goods-filter">
+<div class="goods-field">
+<label>MySKU：</label>
+<div class="goods-input">请输入MySKU</div>
+</div>
+<div class="goods-field">
+<label>商品名称：</label>
+<div class="goods-input">请输入商品名称</div>
+</div>
+<div class="goods-field">
+<label>ID：</label>
+<div class="goods-input">请输入ID</div>
+</div>
+<div class="goods-field">
+<label>订单编号：</label>
+<div class="goods-input">请输入订单编号</div>
+</div>
+<div class="goods-btn primary">搜索</div>
+<div class="goods-btn reset">重置</div>
+</section>
+<section class="goods-tabs-bar">
+<div class="goods-tabs">
+<div class="goods-tab active">全部 (33)</div>
+<div class="goods-tab">受理中 (13)</div>
+<div class="goods-tab">已采购 (7)</div>
+<div class="goods-tab">作业中 (7)</div>
+<div class="goods-tab">已入库 (6)</div>
+</div>
+</section>
+<section class="goods-table-wrap">
+<table>
+<thead>
+<tr>
+<th style="width:7%">图片</th>
+<th style="width:22%">商品信息</th>
+<th style="width:12%">编号管理</th>
+
+<th style="width:10.5%">价格(CNY)</th>
+<th style="width:10.5%">商品数据</th>
+<th style="width:10.5%">质检数据</th>
+<th style="width:10.5%">仓库数据</th>
+<th style="width:9%">备注</th>
+<th style="width:8%">附加项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="photo-cell">
+<div aria-label="商品图，悬停显示放大预览" class="goods-photo" style="background-image:url('assets/product-images/0001_617991002984_5dcf73bbe1.jpg')" tabindex="0"></div>
+</td>
+<td>
+<div class="product-cell">
+<div class="product-info">
+
+                      <div class="order-line"><span class="muted">订单编号：</span><span class="order-code copy-text" data-copy-text="B2B-DD-CHN20-260618-048" title="复制订单编号" aria-label="复制订单编号" role="button" tabindex="0">B2B-DD-CHN20-260618-048</span><span class="copy-icon" data-copy-text="B2B-DD-CHN20-260618-048" title="复制订单编号" aria-label="复制订单编号" role="button" tabindex="0"></span></div>
+
+<div class="product-title" data-full-name="暖小艾702吊带背心暖小艾背心莫代尔纯色内搭女夏季修身上衣" tabindex="0" title="暖小艾702吊带背心暖小艾背心莫代尔纯色内搭女夏季修身上衣">暖小艾702吊带背心暖小艾背心莫代尔...</div>
+<div class="id-chip">ID:D000007696</div>
+<div class="product-spec-lines"><div class="spec-lines"><span class="muted">颜色:</span> 柠檬绿<br/><span class="muted">尺码:</span> 均码 80—130斤内</div></div>
+<div class="product-status-line"><span class="muted">状态：</span><span>受理中</span></div>
+</div>
+</div>
+</td>
+<td><div class="sku-lines">MySKU: --<br/>ASIN: --<br/>FNSKU: --</div></td>
+
+<td><div class="data-line"><span>单价:</span><span>20.00</span></div><div class="data-line"><span>小计:</span><span>400.00</span></div></td>
+<td><div class="data-lines"><div class="data-line is-struck"><span>下单数:</span><span>20</span></div><div class="data-line is-change"><span>变动数量:</span><span>100</span></div><div class="data-line"><span>购入数:</span><span>--</span></div><div class="data-line"><span>到货数:</span><span>--</span></div></div></td>
+<td><div class="data-lines"><div class="data-line"><span>良品数:</span><span>--</span></div><div class="data-line is-danger"><span>不良数:</span><span>20</span></div><div class="data-line"><span>退货数:</span><span>--</span></div><div class="data-line"><span>换货数:</span><span>--</span></div></div></td>
+<td><div class="data-lines"><div class="data-line"><span>入库数:</span><span>--</span></div><div class="data-line"><span>发货数:</span><span>--</span></div><div class="data-line"><span>在库数:</span><span>--</span></div></div></td>
+<td><span class="remark-reply">回复：</span></td>
+<td class="addon-cell"><div class="addon-actions"><button class="addon-detail-btn" type="button" data-addon-open data-addon-count="1" aria-label="查看附加项全数详细">全数详细</button><button class="addon-count-btn" type="button" data-addon-open data-addon-count="1" aria-label="查看1项附加项"><b>1</b>附加项</button></div></td>
+</tr>
+<tr>
+<td class="photo-cell">
+<div aria-label="商品图，悬停显示放大预览" class="goods-photo" style="background-image:url('assets/product-images/0002_612575121554_adceef2c64.jpg')" tabindex="0"></div>
+</td>
+<td>
+<div class="product-cell">
+<div class="product-info">
+
+                      <div class="order-line"><span class="muted">订单编号：</span><span class="order-code copy-text" data-copy-text="B2B-DD-CHN20-260618-048" title="复制订单编号" aria-label="复制订单编号" role="button" tabindex="0">B2B-DD-CHN20-260618-048</span><span class="copy-icon" data-copy-text="B2B-DD-CHN20-260618-048" title="复制订单编号" aria-label="复制订单编号" role="button" tabindex="0"></span></div>
+
+<div class="product-title" data-full-name="暖小艾702吊带背心暖小艾背心莫代尔浅粉色内搭女夏季修身上衣" tabindex="0" title="暖小艾702吊带背心暖小艾背心莫代尔浅粉色内搭女夏季修身上衣">暖小艾702吊带背心暖小艾背心莫代尔...</div>
+<div class="id-chip">ID:D000007695</div>
+<div class="product-spec-lines"><div class="spec-lines"><span class="muted">颜色:</span> 浅粉色<br/><span class="muted">尺码:</span> 均码 80—130斤内</div></div>
+<div class="product-status-line"><span class="muted">状态：</span><span>受理中</span></div>
+</div>
+</div>
+</td>
+<td><div class="sku-lines">MySKU: --<br/>ASIN: --<br/>FNSKU: --</div></td>
+
+<td><div class="data-line"><span>单价:</span><span>20.00</span></div><div class="data-line"><span>小计:</span><span>400.00</span></div></td>
+<td><div class="data-lines"><div class="data-line"><span>下单数:</span><span>20</span></div><div class="data-line"><span>购入数:</span><span>--</span></div><div class="data-line"><span>到货数:</span><span>--</span></div></div></td>
+<td><div class="data-lines"><div class="data-line"><span>良品数:</span><span>--</span></div><div class="data-line"><span>不良数:</span><span>--</span></div><div class="data-line"><span>退货数:</span><span>--</span></div><div class="data-line"><span>换货数:</span><span>--</span></div></div></td>
+<td><div class="data-lines"><div class="data-line"><span>入库数:</span><span>--</span></div><div class="data-line"><span>发货数:</span><span>--</span></div><div class="data-line"><span>在库数:</span><span>--</span></div></div></td>
+<td><span class="remark-reply">回复：</span></td>
+<td class="addon-cell"><div class="addon-actions"><button class="addon-detail-btn" type="button" data-addon-open data-addon-count="1" aria-label="查看附加项全数详细">全数详细</button><button class="addon-count-btn" type="button" data-addon-open data-addon-count="1" aria-label="查看1项附加项"><b>1</b>附加项</button></div></td>
+</tr>
+<tr>
+<td class="photo-cell">
+<div aria-label="商品图，悬停显示放大预览" class="goods-photo" style="background-image:url('assets/product-images/0003_651901354875_a6aa381c1c.jpg')" tabindex="0"></div>
+</td>
+<td>
+<div class="product-cell">
+<div class="product-info">
+
+                      <div class="order-line"><span class="muted">订单编号：</span><span class="order-code copy-text" data-copy-text="B2B-DD-CHN20-260618-048" title="复制订单编号" aria-label="复制订单编号" role="button" tabindex="0">B2B-DD-CHN20-260618-048</span><span class="copy-icon" data-copy-text="B2B-DD-CHN20-260618-048" title="复制订单编号" aria-label="复制订单编号" role="button" tabindex="0"></span></div>
+
+<div class="product-title" data-full-name="暖小艾702吊带背心暖小艾背心莫代尔红色内搭女夏季修身上衣" tabindex="0" title="暖小艾702吊带背心暖小艾背心莫代尔红色内搭女夏季修身上衣">暖小艾702吊带背心暖小艾背心莫代尔...</div>
+<div class="id-chip">ID:D000007694</div>
+<div class="product-spec-lines"><div class="spec-lines"><span class="muted">颜色:</span> 红色<br/><span class="muted">尺码:</span> 均码 80—130斤内</div></div>
+<div class="product-status-line"><span class="muted">状态：</span><span>受理中</span></div>
+</div>
+</div>
+</td>
+<td><div class="sku-lines">MySKU: --<br/>ASIN: --<br/>FNSKU: --</div></td>
+
+<td><div class="data-line"><span>单价:</span><span>20.00</span></div><div class="data-line"><span>小计:</span><span>400.00</span></div></td>
+<td><div class="data-lines"><div class="data-line"><span>下单数:</span><span>20</span></div><div class="data-line"><span>购入数:</span><span>--</span></div><div class="data-line"><span>到货数:</span><span>--</span></div></div></td>
+<td><div class="data-lines"><div class="data-line"><span>良品数:</span><span>--</span></div><div class="data-line"><span>不良数:</span><span>--</span></div><div class="data-line"><span>退货数:</span><span>--</span></div><div class="data-line"><span>换货数:</span><span>--</span></div></div></td>
+<td><div class="data-lines"><div class="data-line"><span>入库数:</span><span>--</span></div><div class="data-line"><span>发货数:</span><span>--</span></div><div class="data-line"><span>在库数:</span><span>--</span></div></div></td>
+<td><span class="remark-reply">回复：</span></td>
+<td class="addon-cell"><div class="addon-actions"><button class="addon-detail-btn" type="button" data-addon-open data-addon-count="1" aria-label="查看附加项全数详细">全数详细</button><button class="addon-count-btn" type="button" data-addon-open data-addon-count="1" aria-label="查看1项附加项"><b>1</b>附加项</button></div></td>
+</tr>
+<tr>
+<td class="photo-cell">
+<div aria-label="商品图，悬停显示放大预览" class="goods-photo" style="background-image:url('assets/product-images/0004_587394448252_6ea3415013.jpg')" tabindex="0"></div>
+</td>
+<td>
+<div class="product-cell">
+<div class="product-info">
+
+                      <div class="order-line"><span class="muted">订单编号：</span><span class="order-code copy-text" data-copy-text="B2B-DD-CHN20-260618-048" title="复制订单编号" aria-label="复制订单编号" role="button" tabindex="0">B2B-DD-CHN20-260618-048</span><span class="copy-icon" data-copy-text="B2B-DD-CHN20-260618-048" title="复制订单编号" aria-label="复制订单编号" role="button" tabindex="0"></span></div>
+
+<div class="product-title" data-full-name="暖小艾702吊带背心暖小艾背心莫代尔白色内搭女夏季修身上衣" tabindex="0" title="暖小艾702吊带背心暖小艾背心莫代尔白色内搭女夏季修身上衣">暖小艾702吊带背心暖小艾背心莫代尔...</div>
+<div class="id-chip">ID:D000007693</div>
+<div class="product-spec-lines"><div class="spec-lines"><span class="muted">颜色:</span> -白色<br/><span class="muted">尺码:</span> 均码 80—130斤内</div></div>
+<div class="product-status-line"><span class="muted">状态：</span><span>受理中</span></div>
+</div>
+</div>
+</td>
+<td><div class="sku-lines">MySKU: --<br/>ASIN: --<br/>FNSKU: --</div></td>
+
+<td><div class="data-line"><span>单价:</span><span>20.00</span></div><div class="data-line"><span>小计:</span><span>400.00</span></div></td>
+<td><div class="data-lines"><div class="data-line"><span>下单数:</span><span>20</span></div><div class="data-line"><span>购入数:</span><span>--</span></div><div class="data-line"><span>到货数:</span><span>--</span></div></div></td>
+<td><div class="data-lines"><div class="data-line"><span>良品数:</span><span>--</span></div><div class="data-line"><span>不良数:</span><span>--</span></div><div class="data-line"><span>退货数:</span><span>--</span></div><div class="data-line"><span>换货数:</span><span>--</span></div></div></td>
+<td><div class="data-lines"><div class="data-line"><span>入库数:</span><span>--</span></div><div class="data-line"><span>发货数:</span><span>--</span></div><div class="data-line"><span>在库数:</span><span>--</span></div></div></td>
+<td><span class="remark-reply">回复：</span></td>
+<td class="addon-cell"><div class="addon-actions"><button class="addon-detail-btn" type="button" data-addon-open data-addon-count="2" aria-label="查看附加项全数详细">全数详细</button><button class="addon-count-btn" type="button" data-addon-open data-addon-count="2" aria-label="查看2项附加项"><b>2</b>附加项</button></div></td>
+</tr>
+<tr>
+<td class="photo-cell">
+<div aria-label="商品图，悬停显示放大预览" class="goods-photo" style="background-image:url('assets/product-images/0005_718601275463_eebab103a8.jpg')" tabindex="0"></div>
+</td>
+<td>
+<div class="product-cell">
+<div class="product-info">
+
+                      <div class="order-line"><span class="muted">订单编号：</span><span class="order-code copy-text" data-copy-text="B2B-DD-CHN20-260618-047" title="复制订单编号" aria-label="复制订单编号" role="button" tabindex="0">B2B-DD-CHN20-260618-047</span><span class="copy-icon" data-copy-text="B2B-DD-CHN20-260618-047" title="复制订单编号" aria-label="复制订单编号" role="button" tabindex="0"></span></div>
+
+<div class="product-title" data-full-name="3-30mm仿珍珠abs直孔高亮水磨米白圆珠散珠手工饰品配件" tabindex="0" title="3-30mm仿珍珠abs直孔高亮水磨米白圆珠散珠手工饰品配件">3-30mm仿珍珠abs直孔高亮水磨米白...</div>
+<div class="id-chip">ID:D000006193</div>
+<div class="product-spec-lines"><div class="spec-lines"><span class="muted">颜色:</span> 高亮水磨米白<br/><span class="muted">型号:</span> 18mm（约150颗/斤）</div></div>
+<div class="product-status-line"><span class="muted">状态：</span><span>已入库</span></div>
+</div>
+</div>
+</td>
+<td><div class="sku-lines">MySKU: --<br/>ASIN: --<br/>FNSKU: --</div></td>
+
+<td><div class="data-line"><span>单价:</span><span>16.80</span></div><div class="data-line"><span>小计:</span><span>336.00</span></div></td>
+<td><div class="data-lines"><div class="data-line"><span>下单数:</span><span>20</span></div><div class="data-line"><span>购入数:</span><span>20</span></div><div class="data-line"><span>到货数:</span><span>20</span></div></div></td>
+<td><div class="data-lines"><div class="data-line"><span>良品数:</span><span>20</span></div><div class="data-line"><span>不良数:</span><span>--</span></div><div class="data-line"><span>退货数:</span><span>--</span></div><div class="data-line"><span>换货数:</span><span>--</span></div></div></td>
+<td><div class="data-lines"><div class="data-line"><span>入库数:</span><span>20</span></div><div class="data-line"><span>发货数:</span><span>--</span></div><div class="data-line"><span>在库数:</span><span>20</span></div></div></td>
+<td><span class="remark-reply">回复：</span></td>
+<td class="addon-cell"><div class="addon-actions"><button class="addon-detail-btn" type="button" data-addon-open data-addon-count="1" aria-label="查看附加项全数详细">全数详细</button><button class="addon-count-btn" type="button" data-addon-open data-addon-count="1" aria-label="查看1项附加项"><b>1</b>附加项</button></div></td>
+</tr>
+<tr>
+<td class="photo-cell">
+<div aria-label="商品图，悬停显示放大预览" class="goods-photo" style="background-image:url('assets/product-images/0006_1049119261500_dd61d7a24f.jpg')" tabindex="0"></div>
+</td>
+<td>
+<div class="product-cell">
+<div class="product-info">
+
+                      <div class="order-line"><span class="muted">订单编号：</span><span class="order-code copy-text" data-copy-text="B2B-DD-CHN20-260618-047" title="复制订单编号" aria-label="复制订单编号" role="button" tabindex="0">B2B-DD-CHN20-260618-047</span><span class="copy-icon" data-copy-text="B2B-DD-CHN20-260618-047" title="复制订单编号" aria-label="复制订单编号" role="button" tabindex="0"></span></div>
+
+<div class="product-title" data-full-name="DIY首饰饰品配件材料手作黑色串珠配件 1mm【5米装/5g】" tabindex="0" title="DIY首饰饰品配件材料手作黑色串珠配件 1mm【5米装/5g】">DIY首饰饰品配件材料手作黑色串珠配件...</div>
+<div class="id-chip">ID:D000007206</div>
+<div class="product-spec-lines"><div class="spec-lines"><span class="muted">颜色:</span> 黑色<br/><span class="muted">型号:</span> 1mm【5米装/5g】</div></div>
+<div class="product-status-line"><span class="muted">状态：</span><span>已入库</span></div>
+</div>
+</div>
+</td>
+<td><div class="sku-lines">MySKU: --<br/>ASIN: --<br/>FNSKU: --</div></td>
+
+<td><div class="data-line"><span>单价:</span><span>18.00</span></div><div class="data-line"><span>小计:</span><span>360.00</span></div></td>
+<td><div class="data-lines"><div class="data-line"><span>下单数:</span><span>20</span></div><div class="data-line"><span>购入数:</span><span>20</span></div><div class="data-line"><span>到货数:</span><span>20</span></div></div></td>
+<td><div class="data-lines"><div class="data-line"><span>良品数:</span><span>20</span></div><div class="data-line"><span>不良数:</span><span>--</span></div><div class="data-line"><span>退货数:</span><span>--</span></div><div class="data-line"><span>换货数:</span><span>--</span></div></div></td>
+<td><div class="data-lines"><div class="data-line"><span>入库数:</span><span>20</span></div><div class="data-line"><span>发货数:</span><span>--</span></div><div class="data-line"><span>在库数:</span><span>20</span></div></div></td>
+<td><span class="remark-reply">回复：</span></td>
+<td class="addon-cell"><div class="addon-actions"><button class="addon-detail-btn" type="button" data-addon-open data-addon-count="1" aria-label="查看附加项全数详细">全数详细</button><button class="addon-count-btn" type="button" data-addon-open data-addon-count="1" aria-label="查看1项附加项"><b>1</b>附加项</button></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<div aria-hidden="true" class="goods-handle"></div>
+<footer class="goods-pagination">
+<span>共 33 条</span>
+<span class="page-size">20条/页⌄</span>
+<span class="page-no">‹</span>
+<span class="page-no active">1</span>
+<span class="page-no">2</span>
+<span class="page-no">›</span>
+<span>前往</span>
+<span class="page-input">1</span>
+<span>页</span>
+</footer>
+</main>
+</div>
+</div>
+<div class="name-tooltip" id="nameTooltip"></div>
+<div class="copy-toast" id="copyToast">复制成功</div>
+<script>
+    (function () {
+      var tooltip = document.getElementById("nameTooltip");
+      var toast = document.getElementById("copyToast");
+      var toastTimer = null;
+      if (!tooltip) return;
+
+      function placeTooltip(target) {
+        var rect = target.getBoundingClientRect();
+        var top = rect.bottom + 8;
+        var left = rect.left;
+        tooltip.style.maxWidth = Math.min(360, window.innerWidth - 32) + "px";
+        tooltip.style.left = left + "px";
+        tooltip.style.top = top + "px";
+
+        var tipRect = tooltip.getBoundingClientRect();
+        if (tipRect.right > window.innerWidth - 12) {
+          tooltip.style.left = Math.max(12, window.innerWidth - tipRect.width - 12) + "px";
+        }
+        if (tipRect.bottom > window.innerHeight - 12) {
+          tooltip.style.top = Math.max(12, rect.top - tipRect.height - 8) + "px";
+        }
+      }
+
+      function showTooltip(target) {
+        var text = target.getAttribute("data-full-name");
+        if (!text) return;
+        tooltip.textContent = text;
+        tooltip.classList.add("is-visible");
+        placeTooltip(target);
+      }
+
+      function hideTooltip() {
+        tooltip.classList.remove("is-visible");
+      }
+
+      function placeToast(anchor) {
+        if (!toast) return;
+        var top = Math.min(310, Math.max(96, window.innerHeight - 56));
+        toast.style.left = "50%";
+        toast.style.top = top + "px";
+        toast.classList.add("is-visible");
+      }
+
+      function showToast(anchor) {
+        if (!toast) return;
+        toast.textContent = "复制成功";
+        placeToast(anchor);
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+          toast.classList.remove("is-visible");
+        }, 1400);
+      }
+
+      function fallbackCopy(text) {
+        var input = document.createElement("textarea");
+        input.value = text;
+        input.setAttribute("readonly", "");
+        input.style.position = "fixed";
+        input.style.left = "-9999px";
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        document.body.removeChild(input);
+      }
+
+      function copyText(text, anchor) {
+        if (!text) return;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            showToast(anchor);
+          }).catch(function () {
+            fallbackCopy(text);
+            showToast(anchor);
+          });
+          return;
+        }
+        fallbackCopy(text);
+        showToast(anchor);
+      }
+
+      document.querySelectorAll(".product-title[data-full-name]").forEach(function (title) {
+        title.addEventListener("mouseenter", function () {
+          showTooltip(title);
+        });
+        title.addEventListener("focus", function () {
+          showTooltip(title);
+        });
+        title.addEventListener("mouseleave", hideTooltip);
+        title.addEventListener("blur", hideTooltip);
+      });
+
+      document.addEventListener("click", function (event) {
+        var target = event.target.closest("[data-copy-text]");
+        if (!target) return;
+        event.preventDefault();
+        event.stopPropagation();
+        copyText(target.getAttribute("data-copy-text"), target);
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        var target = event.target.closest("[data-copy-text]");
+        if (!target) return;
+        event.preventDefault();
+        event.stopPropagation();
+        copyText(target.getAttribute("data-copy-text"), target);
+      });
+
+      window.addEventListener("scroll", hideTooltip, true);
+      window.addEventListener("resize", hideTooltip);
+    })();
+  </script>
+  <style id="project-copy-unify-style">
+    .project-copy-code,
+    .copy-text,
+    .order-code,
+    [data-copy-text],
+    [data-copy] {
+      cursor: pointer;
+    }
+
+    .project-copy-code:hover,
+    .project-copy-code:focus,
+    .copy-text:hover,
+    .copy-text:focus,
+    .order-code:hover,
+    .order-code:focus {
+      color: #155bd4;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      outline: none;
+    }
+
+    .project-copy-toast {
+      position: fixed;
+      left: 50%;
+      top: 310px;
+      z-index: 999999;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: 110px;
+      height: 38px;
+      padding: 0 16px;
+      border-radius: 4px;
+      background: #ecfde5;
+      color: #52b33f;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(-50%, -8px);
+      transition: opacity 160ms ease, transform 160ms ease;
+      box-shadow: 0 8px 20px rgba(82, 179, 63, 0.14);
+    }
+
+    .project-copy-toast::before {
+      content: "✓";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #57c146;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 850;
+      line-height: 1;
+    }
+
+    .project-copy-toast.is-visible {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  </style>
+  <script id="project-copy-unify-script">
+    (function () {
+      if (window.__projectCopyUnifyReady) return;
+      window.__projectCopyUnifyReady = true;
+
+      var codePattern = /(?:B2B|WL)-[A-Z0-9]+(?:-[A-Z0-9]+)*|D\d{6,}/g;
+      var copySelector = [
+        ".project-copy-code",
+        ".ui-spec-copy-code",
+        ".copy-text",
+        ".order-code",
+        ".copy-icon",
+        ".quote-copy",
+        ".order-copy",
+        ".finance-copy",
+        ".shipping-copy",
+        ".measure-copy",
+        ".customer-info-copy",
+        ".mini-copy",
+        ".mini-code-copy",
+        ".mini-copy-icon",
+        "[data-copy]",
+        "[data-copy-text]"
+      ].join(",");
+      var toastTimer = 0;
+
+      function copyTitle(value) {
+        if (/^B2B-DD-/i.test(value)) return "复制订单编号";
+        if (/^B2B-BJ-/i.test(value)) return "复制报价单编号";
+        if (/^WL-/i.test(value)) return "复制物流编号";
+        if (/^D\d{6,}$/i.test(value)) return "复制ID";
+        return "复制编号";
+      }
+
+      function normalizeCopyText(text) {
+        var value = (text || "").replace(/\s+/g, " ").trim();
+        var match = value.match(codePattern);
+        if (match) return match[0];
+        return value.replace(/^[^:：]{1,24}[:：]\s*/, "").trim();
+      }
+
+      function getNearbyText(target) {
+        var pieces = [];
+        var node = target.previousSibling;
+        while (node) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            pieces.unshift(node.textContent || "");
+          } else if (node.nodeType === Node.ELEMENT_NODE && !node.matches(copySelector)) {
+            pieces.unshift(node.textContent || "");
+          }
+          if (normalizeCopyText(pieces.join(""))) break;
+          node = node.previousSibling;
+        }
+        var nearby = normalizeCopyText(pieces.join(""));
+        if (nearby) return nearby;
+
+        var scope = target.closest("td,li,div,p,span,tr,section,header");
+        if (!scope) return "";
+        var clone = scope.cloneNode(true);
+        clone.querySelectorAll(copySelector + ",script,style").forEach(function (item) {
+          item.remove();
+        });
+        return normalizeCopyText(clone.textContent || "");
+      }
+
+      function getCopyValue(target) {
+        var explicit = target.getAttribute("data-copy-text") || target.getAttribute("data-copy");
+        if (explicit) return normalizeCopyText(explicit);
+        var ownText = normalizeCopyText(target.textContent || "");
+        if (ownText) return ownText;
+        return getNearbyText(target);
+      }
+
+      function ensureToast() {
+        var toast = document.querySelector(".project-copy-toast");
+        if (toast) return toast;
+        toast = document.createElement("div");
+        toast.className = "project-copy-toast";
+        toast.setAttribute("role", "status");
+        toast.setAttribute("aria-live", "polite");
+        toast.textContent = "复制成功";
+        document.body.appendChild(toast);
+        return toast;
+      }
+
+      function placeToast(toast) {
+        var top = Math.min(310, Math.max(96, window.innerHeight - 56));
+        toast.style.left = "50%";
+        toast.style.top = top + "px";
+        toast.classList.add("is-visible");
+      }
+
+      function showToast() {
+        var toast = ensureToast();
+        toast.textContent = "复制成功";
+        placeToast(toast);
+        window.clearTimeout(toastTimer);
+        toastTimer = window.setTimeout(function () {
+          toast.classList.remove("is-visible");
+        }, 1400);
+      }
+
+      function writeClipboard(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          return navigator.clipboard.writeText(text);
+        }
+        var input = document.createElement("textarea");
+        input.value = text;
+        input.setAttribute("readonly", "");
+        input.style.position = "fixed";
+        input.style.left = "-9999px";
+        input.style.top = "0";
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        input.remove();
+        return Promise.resolve();
+      }
+
+      function copyFromTarget(target) {
+        var value = getCopyValue(target);
+        if (!value) return;
+        writeClipboard(value).then(showToast).catch(showToast);
+      }
+
+      function prepareCopyTarget(target, value) {
+        if (!target || target.dataset.projectCopyReady === "1") return;
+        target.dataset.projectCopyReady = "1";
+        target.setAttribute("role", "button");
+        target.setAttribute("tabindex", target.getAttribute("tabindex") || "0");
+        var title = copyTitle(value || getCopyValue(target));
+        target.setAttribute("title", title);
+        target.setAttribute("aria-label", title);
+      }
+
+      function wrapCodes(root) {
+        if (!root) return;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+          acceptNode: function (node) {
+            var parent = node.parentElement;
+            if (!parent) return NodeFilter.FILTER_REJECT;
+            if (parent.closest("script,style,textarea,input,select,button,a,.project-copy-code," + copySelector)) return NodeFilter.FILTER_REJECT;
+            if (!codePattern.test(node.nodeValue || "")) return NodeFilter.FILTER_REJECT;
+            codePattern.lastIndex = 0;
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        });
+        var nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach(function (node) {
+          var text = node.nodeValue || "";
+          var fragment = document.createDocumentFragment();
+          var last = 0;
+          var match;
+          codePattern.lastIndex = 0;
+          while ((match = codePattern.exec(text))) {
+            if (match.index > last) fragment.appendChild(document.createTextNode(text.slice(last, match.index)));
+            var code = match[0];
+            var span = document.createElement("span");
+            span.className = "project-copy-code";
+            span.setAttribute("data-copy-text", code);
+            span.textContent = code;
+            prepareCopyTarget(span, code);
+            fragment.appendChild(span);
+            last = match.index + code.length;
+          }
+          if (last < text.length) fragment.appendChild(document.createTextNode(text.slice(last)));
+          node.parentNode.replaceChild(fragment, node);
+        });
+      }
+
+      function prepareExistingTargets() {
+        document.querySelectorAll(copySelector).forEach(function (target) {
+          prepareCopyTarget(target);
+        });
+      }
+
+      function init() {
+        wrapCodes(document.body);
+        prepareExistingTargets();
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+      } else {
+        init();
+      }
+
+      document.addEventListener("click", function (event) {
+        var target = event.target.closest(copySelector);
+        if (!target) return;
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+        copyFromTarget(target);
+      }, true);
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        var target = event.target.closest(copySelector);
+        if (!target) return;
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+        copyFromTarget(target);
+      }, true);
+    })();
+  </script>
+
+
+<div class="addon-detail-mask is-hidden" id="addonDetailModal" aria-hidden="true">
+  <div class="addon-detail-popover" role="dialog" aria-modal="false" aria-labelledby="addonDetailTitle">
+    <div class="addon-modal-head">
+      <h3 class="addon-modal-title" id="addonDetailTitle">附加项明细</h3>
+      <button class="addon-modal-close" type="button" data-addon-close aria-label="关闭附加项明细"></button>
+    </div>
+    <div class="addon-detail-table-wrap">
+      <table class="addon-detail-table">
+        <thead>
+          <tr>
+            <th>检品种类</th>
+            <th>数量</th>
+            <th>单价</th>
+            <th>小计(CNY)</th>
+          </tr>
+        </thead>
+        <tbody id="addonDetailBody">
+          <tr>
+            <td>全数宽松</td>
+            <td>2</td>
+            <td>2.00CNY/ 套</td>
+            <td>4.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="addon-modal-footer">
+      <span class="addon-modal-count" id="addonModalCount">1 个附加项</span>
+      <span class="addon-modal-total"><span>合计:</span><strong id="addonModalTotal">4.00CNY</strong></span>
+    </div>
+  </div>
+</div>
+
+<script>
+    (function () {
+      var modal = document.getElementById("addonDetailModal");
+      var popover = modal ? modal.querySelector(".addon-detail-popover") : null;
+      var detailBody = document.getElementById("addonDetailBody");
+      var countLabel = document.getElementById("addonModalCount");
+      var totalLabel = document.getElementById("addonModalTotal");
+      var currentAnchor = null;
+      if (!modal || !popover || !detailBody || !countLabel || !totalLabel) return;
+
+      var addonRows = [
+        ["全数宽松", "2", "2.00CNY/ 套", "4.00"],
+        ["全数详细", "2", "2.00CNY/ 套", "4.00"],
+        ["挂牌", "2", "1.00CNY/ 个", "2.00"],
+        ["贴标", "2", "1.00CNY/ 个", "2.00"],
+        ["拆包装", "2", "1.00CNY/ 个", "2.00"],
+        ["OPP袋更换", "2", "1.50CNY/ 个", "3.00"],
+        ["气泡膜包装", "2", "2.00CNY/ 个", "4.00"],
+        ["加固纸箱", "1", "5.00CNY/ 个", "5.00"],
+        ["拍照确认", "2", "1.00CNY/ 次", "2.00"],
+        ["特殊备注处理", "1", "2.00CNY/ 次", "2.00"],
+        ["全数严检", "2", "3.00CNY/ 套", "6.00"],
+        ["尺寸复核", "2", "1.00CNY/ 次", "2.00"],
+        ["重量复核", "2", "1.00CNY/ 次", "2.00"],
+        ["颜色分拣", "2", "1.00CNY/ 次", "2.00"],
+        ["尺码分拣", "2", "1.00CNY/ 次", "2.00"],
+        ["独立包装", "2", "1.50CNY/ 个", "3.00"],
+        ["防潮袋", "2", "1.50CNY/ 个", "3.00"],
+        ["易碎贴", "2", "0.50CNY/ 个", "1.00"],
+        ["外箱贴标", "1", "2.00CNY/ 个", "2.00"],
+        ["出库复拍", "1", "2.00CNY/ 次", "2.00"]
+      ];
+
+      function normalizedCount(value) {
+        var count = parseInt(value, 10);
+        if (!Number.isFinite(count) || count < 1) return 1;
+        return count;
+      }
+
+      function renderAddonDetail(count) {
+        count = normalizedCount(count);
+        var rows = addonRows.slice(0, Math.min(count, addonRows.length));
+        var total = rows.reduce(function (sum, row) {
+          return sum + Number(row[3] || 0);
+        }, 0);
+        detailBody.innerHTML = rows.map(function (row) {
+          return "<tr><td>" + row[0] + "</td><td>" + row[1] + "</td><td>" + row[2] + "</td><td>" + row[3] + "</td></tr>";
+        }).join("");
+        countLabel.textContent = count + " 个附加项";
+        totalLabel.textContent = total.toFixed(2) + "CNY";
+      }
+
+      function placePopover(anchor) {
+        if (!anchor) return;
+        var rect = anchor.getBoundingClientRect();
+        var popoverWidth = Math.min(500, window.innerWidth - 48);
+        var popoverHeight = popover.offsetHeight || 150;
+        var gap = 14;
+        var left = rect.left - popoverWidth - gap;
+        if (left < 16) left = Math.min(window.innerWidth - popoverWidth - 16, rect.right + gap);
+        if (left < 16) left = 16;
+        var top = rect.top + rect.height / 2 - 52;
+        if (top + popoverHeight > window.innerHeight - 16) top = window.innerHeight - popoverHeight - 16;
+        if (top < 16) top = 16;
+        var arrowTop = rect.top + rect.height / 2 - top - 7;
+        arrowTop = Math.max(24, Math.min(popoverHeight - 24, arrowTop));
+        popover.style.setProperty("--addon-popover-left", left + "px");
+        popover.style.setProperty("--addon-popover-top", top + "px");
+        popover.style.setProperty("--addon-arrow-top", arrowTop + "px");
+      }
+
+      function setVisible(visible, anchor) {
+        if (visible && anchor) currentAnchor = anchor;
+        modal.classList.toggle("is-hidden", !visible);
+        modal.setAttribute("aria-hidden", String(!visible));
+        if (visible) requestAnimationFrame(function () { placePopover(currentAnchor); });
+      }
+
+      document.addEventListener("click", function (event) {
+        var opener = event.target.closest("[data-addon-open]");
+        if (opener) {
+          event.preventDefault();
+          event.stopPropagation();
+          renderAddonDetail(opener.getAttribute("data-addon-count") || "1");
+          setVisible(true, opener);
+          return;
+        }
+        if (event.target.closest("[data-addon-close]")) {
+          event.preventDefault();
+          setVisible(false);
+          return;
+        }
+        if (!modal.classList.contains("is-hidden") && !event.target.closest(".addon-detail-popover")) {
+          setVisible(false);
+        }
+      });
+
+      window.addEventListener("resize", function () {
+        if (!modal.classList.contains("is-hidden")) placePopover(currentAnchor);
+      });
+
+      window.addEventListener("scroll", function () {
+        if (!modal.classList.contains("is-hidden")) placePopover(currentAnchor);
+      }, true);
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") setVisible(false);
+      });
+    })();
+  </script>
+
+</body>
+</html>

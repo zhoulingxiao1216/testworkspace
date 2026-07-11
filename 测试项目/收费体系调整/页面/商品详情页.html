@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>商品详情页 - Hubbuyer 1:1 还原</title>
+    <link rel="stylesheet" href="商品展示策略.css" />
+    <style>
+      @media (max-width: 900px) {
+        body.detail-restore {
+          background: #f5f6f8;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="ui-standard-frontstage.css" />
+</head>
+  <body class="detail-restore">
+    <div class="top-strip">
+      <div class="inner">
+        <div class="top-left">
+          <span class="top-chip top-country"><span class="nav-flag nav-flag-jp" aria-hidden="true"></span>Japan</span>
+          <span class="top-user">JPN8-TEST-，ようこそ</span>
+          <span class="top-chip top-logout">ログアウト</span>
+        </div>
+        <div class="top-right">
+          <span class="top-chip top-business">営業日</span>
+          <div class="language-switcher">
+            <button class="top-chip top-language" type="button" aria-haspopup="listbox" aria-expanded="false">
+              <span class="top-globe">◎</span><span class="language-current">日本語</span><span class="top-caret">⌄</span>
+            </button>
+            <div class="language-menu" role="listbox" aria-label="语言选择">
+              <button type="button" role="option" data-lang="zh">中文</button>
+              <button type="button" role="option" data-lang="ja">日本語</button>
+              <button type="button" role="option" data-lang="en">English</button>
+            </div>
+          </div>
+          <span class="top-chip top-rate"><span class="nav-flag nav-flag-cn" aria-hidden="true"></span>1 CNY ≈ <span class="nav-flag nav-flag-jp" aria-hidden="true"></span>24.75 JPY</span>
+        </div>
+      </div>
+    </div>
+
+    <header class="search-header">
+      <div class="inner">
+        <div class="brand">
+          <img src="https://b2b.hubbuyer.com/img/logo.CISXBqiB.png" alt="Hubbuyer B2B" />
+        </div>
+        <div class="search-box">
+          <div class="search-icon">⌕</div>
+          <input value="女装" aria-label="搜索关键词" />
+          <div class="hot-tags">
+            <span>圣诞节</span>
+            <span>万圣节</span>
+            <span>宠物喂食器</span>
+          </div>
+          <button class="search-button">搜索</button>
+        </div>
+        <button class="img-search-button">
+          <img class="w-16" src="../../../../user-b2b-view/src/assets/img/search/SearchImg.png" alt="" />
+          图片搜索
+        </button>
+        <a class="cart-link" href="购物车页面.html" aria-label="进入购物车">
+          <img src="https://b2b.hubbuyer.com/img/SearchCart.p8phzvpX.svg" alt="" />
+          <span>购物车</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="restore-main">
+      <div class="restore-layout">
+        <section class="restore-left" aria-labelledby="restore-title">
+          <nav class="restore-tabbar" aria-label="商品详情导航">
+            <a href="#product-info">商品信息</a>
+            <a class="active" href="#product-detail">商品详情</a>
+            <a href="#set-products">套装商品</a>
+            <a href="#shop-hot">店铺热销</a>
+          </nav>
+
+          <section class="restore-product-head" id="product-info">
+            <h1 id="restore-title">2026年新款衬衫裙，收腰显瘦，时尚名媛气质法式设计感小众连衣裙女</h1>
+            <div class="restore-meta-row">
+              <span>商品评价 <b>0</b></span>
+              <span>月销量 <b>0</b></span>
+              <span>复购率 <b>0</b></span>
+              <span class="source-link">1688</span>
+              <span class="meta-action">复制链接</span>
+              <span class="meta-action">加入收藏</span>
+            </div>
+          </section>
+
+          <section class="restore-gallery" aria-label="商品图片">
+            <div class="restore-thumb-rail">
+              <span class="rail-arrow" aria-hidden="true">⌃</span>
+              <span class="video-dot" aria-hidden="true">▶</span>
+              <button class="restore-thumb" type="button" aria-label="查看商品图 1" data-full="https://cbu01.alicdn.com/img/ibank/O1CN01cVZibi28eMFFRoiNb_!!1800607957-0-cib.jpg">
+                <img src="https://cbu01.alicdn.com/img/ibank/O1CN01cVZibi28eMFFRoiNb_!!1800607957-0-cib.jpg" alt="商品缩略图 1" />
+              </button>
+              <button class="restore-thumb active" type="button" aria-label="查看商品图 2" data-full="https://cbu01.alicdn.com/img/ibank/O1CN01BuVycS28eMF86ar57_!!1800607957-0-cib.jpg">
+                <img src="https://cbu01.alicdn.com/img/ibank/O1CN01BuVycS28eMF86ar57_!!1800607957-0-cib.jpg" alt="商品缩略图 2" />
+              </button>
+              <button class="restore-thumb" type="button" aria-label="查看商品图 3" data-full="https://cbu01.alicdn.com/img/ibank/O1CN011caRd728eMEwxs52e_!!1800607957-0-cib.jpg">
+                <img src="https://cbu01.alicdn.com/img/ibank/O1CN011caRd728eMEwxs52e_!!1800607957-0-cib.jpg" alt="商品缩略图 3" />
+              </button>
+              <button class="restore-thumb" type="button" aria-label="查看商品图 4" data-full="https://cbu01.alicdn.com/img/ibank/O1CN01c86IkX28eMFCkDmQf_!!1800607957-0-cib.jpg">
+                <img src="https://cbu01.alicdn.com/img/ibank/O1CN01c86IkX28eMFCkDmQf_!!1800607957-0-cib.jpg" alt="商品缩略图 4" />
+              </button>
+              <button class="restore-thumb" type="button" aria-label="查看商品图 5" data-full="https://cbu01.alicdn.com/img/ibank/O1CN01KibTkv28eMFAmyOmH_!!1800607957-0-cib.jpg">
+                <img src="https://cbu01.alicdn.com/img/ibank/O1CN01KibTkv28eMFAmyOmH_!!1800607957-0-cib.jpg" alt="商品缩略图 5" />
+              </button>
+              <span class="rail-arrow" aria-hidden="true">⌄</span>
+            </div>
+            <div class="restore-main-image">
+              <img id="restoreMainImage" src="https://cbu01.alicdn.com/img/ibank/O1CN01BuVycS28eMF86ar57_!!1800607957-0-cib.jpg" alt="藏青色衬衫连衣裙主图" />
+              <button type="button" aria-label="放大图片">⛶</button>
+            </div>
+          </section>
+
+          <section class="restore-section restore-attributes">
+            <div class="restore-section-head">
+              <h2>商品信息</h2>
+              <button type="button">商品图片下载</button>
+            </div>
+            <div class="restore-attribute-table">
+              <div><span>产地</span><b>广州</b></div>
+              <div><span>风格</span><b>通勤风</b></div>
+              <div><span>尺码</span><b>S,M,L,XL,XXL,XXXL</b></div>
+              <div><span>工艺</span><b>高温定型</b></div>
+              <div><span>设计</span><b>A字裙</b></div>
+              <div><span>图案</span><b>纯色</b></div>
+              <div><span>颜色</span><b>藏青色</b></div>
+              <div><span>袖长</span><b>短袖</b></div>
+              <div><span>裙子类别</span><b>连衣裙</b></div>
+              <div><span>领型</span><b>POLO领</b></div>
+              <div><span>发布年/季节</span><b>2026年春</b></div>
+              <div><span>腰型</span><b>高腰</b></div>
+              <div><span>裙长</span><b>中长裙</b></div>
+              <div><span>裙型</span><b>A字裙</b></div>
+              <div><span>面料名称</span><b>聚酯纤维</b></div>
+              <div><span>跨境货源</span><b>是</b></div>
+            </div>
+            <button class="more-attrs" type="button">查看更多</button>
+          </section>
+
+          <section class="restore-section restore-detail-images" id="product-detail">
+            <h2>商品详情</h2>
+            <img src="https://cbu01.alicdn.com/img/ibank/O1CN01cVZibi28eMFFRoiNb_!!1800607957-0-cib.jpg" alt="商品详情图 1" loading="eager" />
+            <img src="https://cbu01.alicdn.com/img/ibank/O1CN01BuVycS28eMF86ar57_!!1800607957-0-cib.jpg" alt="商品详情图 2" loading="lazy" />
+            <img src="https://cbu01.alicdn.com/img/ibank/O1CN011caRd728eMEwxs52e_!!1800607957-0-cib.jpg" alt="商品详情图 3" loading="lazy" />
+            <img src="https://cbu01.alicdn.com/img/ibank/O1CN01c86IkX28eMFCkDmQf_!!1800607957-0-cib.jpg" alt="商品详情图 4" loading="lazy" />
+            <img src="https://cbu01.alicdn.com/img/ibank/O1CN01KibTkv28eMFAmyOmH_!!1800607957-0-cib.jpg" alt="商品详情图 5" loading="lazy" />
+            <img src="https://cbu01.alicdn.com/img/ibank/O1CN01Ms6tbV28eMF76MAcQ_!!1800607957-0-cib.jpg" alt="商品详情图 6" loading="lazy" />
+            <img src="https://cbu01.alicdn.com/img/ibank/O1CN01coYnUq28eMF86aNzi_!!1800607957-0-cib.jpg" alt="商品详情图 7" loading="lazy" />
+            <img src="https://cbu01.alicdn.com/img/ibank/O1CN01WxSDUt28eMF4127PN_!!1800607957-0-cib.jpg" alt="商品详情图 8" loading="lazy" />
+            <img src="https://cbu01.alicdn.com/img/ibank/O1CN01qfzCQO28eMF8Y1J7A_!!1800607957-0-cib.jpg" alt="商品详情图 9" loading="lazy" />
+            <img src="https://cbu01.alicdn.com/img/ibank/O1CN01X3616f28eMF6J2zsO_!!1800607957-0-cib.jpg" alt="商品详情图 10" loading="lazy" />
+            <img src="https://cbu01.alicdn.com/img/ibank/O1CN01qDZHfH28eMFEfj0ES_!!1800607957-0-cib.jpg" alt="商品详情图 11" loading="lazy" />
+            <img src="https://cbu01.alicdn.com/img/ibank/O1CN01dddazi28eMEwxtHun_!!1800607957-0-cib.jpg" alt="商品详情图 12" loading="lazy" />
+            <img src="https://cbu01.alicdn.com/img/ibank/O1CN01RNV8Yf28eMF8Y1RSP_!!1800607957-0-cib.jpg" alt="商品详情图 13" loading="lazy" />
+            <img src="https://cbu01.alicdn.com/img/ibank/O1CN01B2p4cd28eMFDUS5Pt_!!1800607957-0-cib.jpg" alt="商品详情图 14" loading="lazy" />
+            <img src="https://cbu01.alicdn.com/img/ibank/O1CN01ltviUc28eMF6J40II_!!1800607957-0-cib.jpg" alt="商品详情图 15" loading="lazy" />
+            <img src="https://cbu01.alicdn.com/img/ibank/O1CN01qX809u28eMFAmwzVU_!!1800607957-0-cib.jpg" alt="商品详情图 16" loading="lazy" />
+          </section>
+
+          <section class="restore-section" id="set-products">
+            <h2>套装商品</h2>
+            <div class="restore-set-grid">
+              <article><img src="https://cbu01.alicdn.com/img/ibank/O1CN01luPlMu28eMBNvNInH_!!1800607957-0-cib.jpg" alt="" loading="lazy" /><p><span>1688</span> 长袖缎面衬衫女设计感小众</p><b>19.00 CNY</b></article>
+              <article><img src="https://cbu01.alicdn.com/img/ibank/10960168270_536975936.jpg" alt="" loading="lazy" /><p><span>1688</span> 森女文艺大码棉麻半身裙</p><b>30.00 CNY</b></article>
+              <article><img src="https://cbu01.alicdn.com/img/ibank/O1CN01ZtNKXb28eMRI0KWAJ_!!1800607957-0-cib.jpg" alt="" loading="lazy" /><p><span>1688</span> 女士中长款风衣韩版外套</p><b>55.00 CNY</b></article>
+              <article><img src="https://cbu01.alicdn.com/img/ibank/O1CN01NUmPBT28eMLlDrdNF_!!1800607957-0-cib.jpg" alt="" loading="lazy" /><p><span>1688</span> 夏季宽松轻薄短款外套</p><b>23.00 CNY</b></article>
+              <article><img src="https://cbu01.alicdn.com/img/ibank/17016464608_536975936.jpg" alt="" loading="lazy" /><p><span>1688</span> 夏季棉麻阔腿休闲裤</p><b>20.00 CNY</b></article>
+              <article><img src="https://cbu01.alicdn.com/img/ibank/O1CN01dNoAUu28eMZ7g1Ls5_!!1800607957-0-cib.jpg" alt="" loading="lazy" /><p><span>1688</span> 韩版波点连帽防晒衫</p><b>29.00 CNY</b></article>
+              <article><img src="https://cbu01.alicdn.com/img/ibank/23502321303_536975936.jpg" alt="" loading="lazy" /><p><span>1688</span> 文艺棉麻高腰阔腿裤</p><b>20.00 CNY</b></article>
+              <article><img src="https://cbu01.alicdn.com/img/ibank/O1CN017dZaT71K6iOOSeIo4_!!2206459871115-0-cib.jpg" alt="" loading="lazy" /><p><span>1688</span> 春秋休闲亚麻小西服</p><b>38.00 CNY</b></article>
+            </div>
+          </section>
+
+          <section class="restore-section" id="shop-hot">
+            <div class="restore-section-head">
+              <h2>店铺热销</h2>
+              <button type="button">查看更多</button>
+            </div>
+            <div class="restore-hot-grid">
+              <article><em>01</em><img src="https://cbu01.alicdn.com/img/ibank/O1CN01luPlMu28eMBNvNInH_!!1800607957-0-cib.jpg" alt="" loading="lazy" /><p><span>1688</span> 长袖缎面衬衫女设计感小众 2026 春夏</p><b>19.00 CNY</b><small>月销量：40972　复购率：40%</small></article>
+              <article><em>02</em><img src="https://cbu01.alicdn.com/img/ibank/10960168270_536975936.jpg" alt="" loading="lazy" /><p><span>1688</span> 森女文艺大码棉麻半身裙</p><b>30.00 CNY</b><small>月销量：8660　复购率：56%</small></article>
+              <article><em>03</em><img src="https://cbu01.alicdn.com/img/ibank/O1CN01ZtNKXb28eMRI0KWAJ_!!1800607957-0-cib.jpg" alt="" loading="lazy" /><p><span>1688</span> 女士中长款风衣韩版外套</p><b>55.00 CNY</b><small>月销量：8221　复购率：37%</small></article>
+              <article><em>04</em><img src="https://cbu01.alicdn.com/img/ibank/O1CN01NUmPBT28eMLlDrdNF_!!1800607957-0-cib.jpg" alt="" loading="lazy" /><p><span>1688</span> 夏季宽松轻薄短款外套</p><b>23.00 CNY</b><small>月销量：6719　复购率：45%</small></article>
+              <article><em>05</em><img src="https://cbu01.alicdn.com/img/ibank/17016464608_536975936.jpg" alt="" loading="lazy" /><p><span>1688</span> 夏季棉麻阔腿休闲裤</p><b>20.00 CNY</b><small>月销量：4863　复购率：35%</small></article>
+              <article><em>06</em><img src="https://cbu01.alicdn.com/img/ibank/O1CN01dNoAUu28eMZ7g1Ls5_!!1800607957-0-cib.jpg" alt="" loading="lazy" /><p><span>1688</span> 韩版波点连帽防晒衫</p><b>29.00 CNY</b><small>月销量：3019　复购率：55%</small></article>
+              <article><em>07</em><img src="https://cbu01.alicdn.com/img/ibank/23502321303_536975936.jpg" alt="" loading="lazy" /><p><span>1688</span> 文艺棉麻高腰阔腿裤</p><b>20.00 CNY</b><small>月销量：1629　复购率：33%</small></article>
+              <article><em>08</em><img src="https://cbu01.alicdn.com/img/ibank/O1CN017dZaT71K6iOOSeIo4_!!2206459871115-0-cib.jpg" alt="" loading="lazy" /><p><span>1688</span> 春秋休闲亚麻小西服</p><b>38.00 CNY</b><small>月销量：547　复购率：50%</small></article>
+            </div>
+          </section>
+        </section>
+
+        <aside class="restore-price-panel" aria-label="价格与规格选择">
+          <div class="price-card">
+            <section class="member-price-module scheme-4" aria-label="Hubbuyer价格">
+              <div class="member-scheme-panel tier-plan active" data-scheme-panel="scheme-4">
+                <div class="tier-plan-split">
+                  <div class="tier-split-area tier-split-price">
+                    <div class="tier-price-grid comparison-grid">
+                      <div class="tier-row price-row">
+                        <span class="tier-label">Hubbuyer价格</span>
+                        <div class="tier-cell"><strong>39.00<small>CNY</small></strong><span>（5.40 USD）</span></div>
+                        <div class="tier-cell"><strong>38.00<small>CNY</small></strong><span>（5.26 USD）</span></div>
+                        <div class="tier-cell"><strong>37.00<small>CNY</small></strong><span>（5.12 USD）</span></div>
+                      </div>
+                      <div class="tier-row muted-row">
+                        <span class="tier-label">1688价</span>
+                        <span class="detail-origin-price">45.00 <small>CNY</small></span>
+                        <span class="detail-origin-price">44.00 <small>CNY</small></span>
+                        <span class="detail-origin-price">43.00 <small>CNY</small></span>
+                      </div>
+                      <div class="tier-row order-row">
+                        <span class="tier-label">最小起订量</span>
+                        <span>≥2件</span>
+                        <span>≥10件</span>
+                        <span>≥100件</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div class="guide-row">● 采购指南</div>
+
+            <div class="restore-sku-block">
+              <div class="restore-sku-title">颜色</div>
+              <button class="restore-color" type="button">
+                <img src="https://cbu01.alicdn.com/img/ibank/O1CN01rZq9M128eMFFRqKCJ_!!1800607957-0-cib.jpg" alt="" />
+                <span>藏青色</span>
+              </button>
+
+              <div class="restore-sku-title size-title">尺寸</div>
+              <div class="restore-sku-list">
+                <div><span>S</span><b>39.00 CNY</b><em>库存: 99971</em><div class="restore-count" aria-label="数量选择"><button class="qty-step" type="button" aria-label="减少数量">−</button><span class="qty-value">0</span><button class="qty-step" type="button" aria-label="增加数量">＋</button></div></div>
+                <div><span>M</span><b>39.00 CNY</b><em>库存: 99962</em><div class="restore-count" aria-label="数量选择"><button class="qty-step" type="button" aria-label="减少数量">−</button><span class="qty-value">0</span><button class="qty-step" type="button" aria-label="增加数量">＋</button></div></div>
+                <div><span>L</span><b>39.00 CNY</b><em>库存: 99952</em><div class="restore-count" aria-label="数量选择"><button class="qty-step" type="button" aria-label="减少数量">−</button><span class="qty-value">0</span><button class="qty-step" type="button" aria-label="增加数量">＋</button></div></div>
+                <div><span>XL</span><b>39.00 CNY</b><em>库存: 99954</em><div class="restore-count" aria-label="数量选择"><button class="qty-step" type="button" aria-label="减少数量">−</button><span class="qty-value">0</span><button class="qty-step" type="button" aria-label="增加数量">＋</button></div></div>
+                <div><span>XXL</span><b>39.00 CNY</b><em>库存: 99972</em><div class="restore-count" aria-label="数量选择"><button class="qty-step" type="button" aria-label="减少数量">−</button><span class="qty-value">0</span><button class="qty-step" type="button" aria-label="增加数量">＋</button></div></div>
+                <div><span>XXXL</span><b>39.00 CNY</b><em>库存: 99981</em><div class="restore-count" aria-label="数量选择"><button class="qty-step" type="button" aria-label="减少数量">−</button><span class="qty-value">0</span><button class="qty-step" type="button" aria-label="增加数量">＋</button></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="restore-price-footer">
+            <div class="restore-footer-summary">
+              <p data-selected-summary>已选择 <b>0</b> 种类 <b>0</b> 件</p>
+              <p class="domestic-freight" data-domestic-freight>预估国内运费：<strong>2.30CNY</strong></p>
+            </div>
+            <div class="restore-footer-actions">
+              <button type="button">加入购物车</button>
+              <span>商品金额：<strong data-cart-total>0 CNY</strong></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <script>
+      const languageLabels = {
+        zh: "中文",
+        ja: "日本語",
+        en: "English"
+      };
+      const languageHtmlLang = {
+        zh: "zh-CN",
+        ja: "ja-JP",
+        en: "en"
+      };
+      const searchKeywords = {
+        zh: "女装",
+        ja: "レディース服",
+        en: "Women clothing"
+      };
+      const textTranslations = {
+        "商品详情页 - Hubbuyer 1:1 还原": { zh: "商品详情页 - Hubbuyer 1:1 还原", ja: "商品詳細 - Hubbuyer 1:1再現", en: "Product Detail - Hubbuyer 1:1 Recreation" },
+        "Japan": { zh: "日本", ja: "Japan", en: "Japan" },
+        "JPN8-TEST-，ようこそ": { zh: "JPN8-TEST-，欢迎您", ja: "JPN8-TEST-，ようこそ", en: "JPN8-TEST-, welcome" },
+        "ログアウト": { zh: "退出登录", ja: "ログアウト", en: "Logout" },
+        "営業日": { zh: "营业日", ja: "営業日", en: "Business day" },
+        "语言选择": { zh: "语言选择", ja: "言語選択", en: "Language selection" },
+        "搜索关键词": { zh: "搜索关键词", ja: "検索キーワード", en: "Search keyword" },
+        "搜索": { zh: "搜索", ja: "検索", en: "Search" },
+        "图片搜索": { zh: "图片搜索", ja: "画像検索", en: "Image search" },
+        "进入购物车": { zh: "进入购物车", ja: "カートへ移動", en: "Go to cart" },
+        "购物车": { zh: "购物车", ja: "カート", en: "Cart" },
+        "圣诞节": { zh: "圣诞节", ja: "クリスマス", en: "Christmas" },
+        "万圣节": { zh: "万圣节", ja: "ハロウィン", en: "Halloween" },
+        "宠物喂食器": { zh: "宠物喂食器", ja: "ペット給餌器", en: "Pet feeder" },
+        "商品详情导航": { zh: "商品详情导航", ja: "商品詳細ナビ", en: "Product detail navigation" },
+        "商品信息": { zh: "商品信息", ja: "商品情報", en: "Product info" },
+        "商品详情": { zh: "商品详情", ja: "商品詳細", en: "Product details" },
+        "套装商品": { zh: "套装商品", ja: "セット商品", en: "Set products" },
+        "店铺热销": { zh: "店铺热销", ja: "店舗売れ筋", en: "Store best sellers" },
+        "2026年新款衬衫裙，收腰显瘦，时尚名媛气质法式设计感小众连衣裙女": { zh: "2026年新款衬衫裙，收腰显瘦，时尚名媛气质法式设计感小众连衣裙女", ja: "2026年新作シャツワンピース、ウエストマークで細見え、上品なフレンチデザイン", en: "2026 new shirt dress, waist-slimming French niche design for women" },
+        "商品评价": { zh: "商品评价", ja: "商品レビュー", en: "Reviews" },
+        "月销量": { zh: "月销量", ja: "月販売数", en: "Monthly sold" },
+        "复购率": { zh: "复购率", ja: "リピート率", en: "Repurchase rate" },
+        "复制链接": { zh: "复制链接", ja: "リンクをコピー", en: "Copy link" },
+        "加入收藏": { zh: "加入收藏", ja: "お気に入りに追加", en: "Add to favorites" },
+        "商品图片": { zh: "商品图片", ja: "商品画像", en: "Product images" },
+        "商品图片下载": { zh: "商品图片下载", ja: "商品画像をダウンロード", en: "Download product images" },
+        "产地": { zh: "产地", ja: "生産地", en: "Origin" },
+        "广州": { zh: "广州", ja: "広州", en: "Guangzhou" },
+        "风格": { zh: "风格", ja: "スタイル", en: "Style" },
+        "通勤风": { zh: "通勤风", ja: "通勤風", en: "Commuter style" },
+        "尺码": { zh: "尺码", ja: "サイズ", en: "Size" },
+        "工艺": { zh: "工艺", ja: "加工", en: "Craft" },
+        "高温定型": { zh: "高温定型", ja: "高温成型", en: "High-temperature setting" },
+        "设计": { zh: "设计", ja: "デザイン", en: "Design" },
+        "A字裙": { zh: "A字裙", ja: "Aラインスカート", en: "A-line skirt" },
+        "图案": { zh: "图案", ja: "柄", en: "Pattern" },
+        "纯色": { zh: "纯色", ja: "無地", en: "Solid color" },
+        "颜色": { zh: "颜色", ja: "カラー", en: "Color" },
+        "藏青色": { zh: "藏青色", ja: "ネイビー", en: "Navy" },
+        "袖长": { zh: "袖长", ja: "袖丈", en: "Sleeve length" },
+        "短袖": { zh: "短袖", ja: "半袖", en: "Short sleeve" },
+        "裙子类别": { zh: "裙子类别", ja: "ワンピース種類", en: "Dress category" },
+        "连衣裙": { zh: "连衣裙", ja: "ワンピース", en: "Dress" },
+        "领型": { zh: "领型", ja: "襟型", en: "Collar" },
+        "POLO领": { zh: "POLO领", ja: "ポロ襟", en: "Polo collar" },
+        "发布年/季节": { zh: "发布年/季节", ja: "発売年/季節", en: "Release year/season" },
+        "2026年春": { zh: "2026年春", ja: "2026年春", en: "Spring 2026" },
+        "腰型": { zh: "腰型", ja: "ウエスト", en: "Waist type" },
+        "高腰": { zh: "高腰", ja: "ハイウエスト", en: "High waist" },
+        "裙长": { zh: "裙长", ja: "スカート丈", en: "Dress length" },
+        "中长裙": { zh: "中长裙", ja: "ミドル丈", en: "Midi length" },
+        "裙型": { zh: "裙型", ja: "シルエット", en: "Skirt type" },
+        "面料名称": { zh: "面料名称", ja: "生地名", en: "Fabric" },
+        "聚酯纤维": { zh: "聚酯纤维", ja: "ポリエステル", en: "Polyester" },
+        "跨境货源": { zh: "跨境货源", ja: "越境供給", en: "Cross-border supply" },
+        "是": { zh: "是", ja: "はい", en: "Yes" },
+        "查看更多": { zh: "查看更多", ja: "もっと見る", en: "View more" },
+        "价格与规格选择": { zh: "价格与规格选择", ja: "価格と仕様を選択", en: "Price and SKU selection" },
+        "Hubbuyer价格": { zh: "Hubbuyer价格", ja: "Hubbuyer价格", en: "Hubbuyer Price" },
+        "1688价": { zh: "1688价", ja: "1688価格", en: "1688 price" },
+        "最小起订量": { zh: "最小起订量", ja: "最小注文数", en: "MOQ" },
+        "≥2件": { zh: "≥2件", ja: "2点以上", en: "2+ pcs" },
+        "≥10件": { zh: "≥10件", ja: "10点以上", en: "10+ pcs" },
+        "≥100件": { zh: "≥100件", ja: "100点以上", en: "100+ pcs" },
+        "● 采购指南": { zh: "● 采购指南", ja: "● 仕入れガイド", en: "● Purchase guide" },
+        "尺寸": { zh: "尺寸", ja: "サイズ", en: "Size" },
+        "数量选择": { zh: "数量选择", ja: "数量選択", en: "Quantity selector" },
+        "减少数量": { zh: "减少数量", ja: "数量を減らす", en: "Decrease quantity" },
+        "增加数量": { zh: "增加数量", ja: "数量を増やす", en: "Increase quantity" },
+        "已选择": { zh: "已选择", ja: "選択済み", en: "Selected" },
+        "种类": { zh: "种类", ja: "種類", en: "types" },
+        "件": { zh: "件", ja: "点", en: "pcs" },
+        "预估国内运费：": { zh: "预估国内运费：", ja: "预估国内运费：", en: "Estimated domestic freight:" },
+        "加入购物车": { zh: "加入购物车", ja: "カートに追加", en: "Add to cart" },
+        "商品金额：": { zh: "商品金额：", ja: "商品金額：", en: "Product amount:" },
+        "长袖缎面衬衫女设计感小众": { zh: "长袖缎面衬衫女设计感小众", ja: "デザイン感のある長袖サテンシャツ", en: "Long-sleeve satin blouse with niche design" },
+        "森女文艺大码棉麻半身裙": { zh: "森女文艺大码棉麻半身裙", ja: "森ガール風大きめ綿麻スカート", en: "Mori-style plus-size cotton linen skirt" },
+        "女士中长款风衣韩版外套": { zh: "女士中长款风衣韩版外套", ja: "レディース韓国風ミドル丈トレンチ", en: "Women's mid-length Korean trench coat" },
+        "夏季宽松轻薄短款外套": { zh: "夏季宽松轻薄短款外套", ja: "夏向けゆったり薄手ショートジャケット", en: "Loose lightweight summer short jacket" },
+        "夏季棉麻阔腿休闲裤": { zh: "夏季棉麻阔腿休闲裤", ja: "夏向け綿麻ワイドカジュアルパンツ", en: "Summer cotton linen wide-leg pants" },
+        "韩版波点连帽防晒衫": { zh: "韩版波点连帽防晒衫", ja: "韓国風ドット柄フード付き日除けシャツ", en: "Korean polka-dot hooded sun shirt" },
+        "文艺棉麻高腰阔腿裤": { zh: "文艺棉麻高腰阔腿裤", ja: "文芸風綿麻ハイウエストワイドパンツ", en: "Artistic cotton linen high-waist wide pants" },
+        "春秋休闲亚麻小西服": { zh: "春秋休闲亚麻小西服", ja: "春秋カジュアルリネンブレザー", en: "Casual linen blazer for spring and autumn" },
+        "长袖缎面衬衫女设计感小众 2026 春夏": { zh: "长袖缎面衬衫女设计感小众 2026 春夏", ja: "デザイン感のある長袖サテンシャツ 2026春夏", en: "Long-sleeve satin blouse, niche design, 2026 spring/summer" }
+      };
+      const fragmentTranslations = {
+        "月销量：": { zh: "月销量：", ja: "月販売数：", en: "Monthly sold:" },
+        "复购率：": { zh: "复购率：", ja: "リピート率：", en: "Repurchase:" },
+        "库存:": { zh: "库存:", ja: "在庫:", en: "Stock:" },
+        "查看商品图 ": { zh: "查看商品图 ", ja: "商品画像を見る ", en: "View product image " },
+        "商品缩略图 ": { zh: "商品缩略图 ", ja: "商品サムネイル ", en: "Product thumbnail " },
+        "商品详情图 ": { zh: "商品详情图 ", ja: "商品詳細画像 ", en: "Product detail image " }
+      };
+      const languageSwitcher = document.querySelector(".language-switcher");
+      const languageToggle = document.querySelector(".top-language");
+      const languageMenu = document.querySelector(".language-menu");
+      const languageCurrent = document.querySelector(".language-current");
+      const languageOptions = Array.from(document.querySelectorAll(".language-menu [data-lang]"));
+      let activeLanguage = "zh";
+      const translatableTextNodes = [];
+      const textWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+          if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          const parent = node.parentElement;
+          if (!parent || parent.closest(".language-menu") || parent.tagName === "SCRIPT" || parent.tagName === "STYLE") {
+            return NodeFilter.FILTER_REJECT;
+          }
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+      while (textWalker.nextNode()) {
+        translatableTextNodes.push({
+          node: textWalker.currentNode,
+          original: textWalker.currentNode.nodeValue
+        });
+      }
+      const translatableAttributes = [];
+      document.querySelectorAll("[aria-label], [title], [alt]").forEach((element) => {
+        ["aria-label", "title", "alt"].forEach((attribute) => {
+          if (!element.hasAttribute(attribute)) return;
+          translatableAttributes.push({
+            element,
+            attribute,
+            original: element.getAttribute(attribute)
+          });
+        });
+      });
+
+      const setLanguageMenuOpen = (isOpen) => {
+        if (!languageSwitcher || !languageToggle) return;
+        languageSwitcher.classList.toggle("is-open", isOpen);
+        languageToggle.setAttribute("aria-expanded", String(isOpen));
+      };
+
+      const translateValue = (value, language) => {
+        const translation = textTranslations[value];
+        if (translation) return translation[language] || value;
+        let translated = value;
+        Object.entries(fragmentTranslations).forEach(([fragment, labels]) => {
+          translated = translated.replaceAll(fragment, labels[language] || fragment);
+        });
+        return translated;
+      };
+
+      const translateTextNodes = (language) => {
+        translatableTextNodes.forEach(({ node, original }) => {
+          const trimmed = original.trim();
+          const translated = translateValue(trimmed, language);
+          const prefix = original.match(/^\s*/)[0];
+          const suffix = original.match(/\s*$/)[0];
+          node.nodeValue = translated === trimmed ? original : `${prefix}${translated}${suffix}`;
+        });
+      };
+
+      const translateAttributes = (language) => {
+        translatableAttributes.forEach(({ element, attribute, original }) => {
+          element.setAttribute(attribute, translateValue(original, language));
+        });
+      };
+
+      const wrapCurrencyUnits = (scope = document.body) => {
+        const walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, {
+          acceptNode(node) {
+            if (!/\d[\d,.]*\s*CNY/.test(node.nodeValue)) return NodeFilter.FILTER_REJECT;
+            const parent = node.parentElement;
+            if (!parent || parent.closest("script, style, .currency-unit")) return NodeFilter.FILTER_REJECT;
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        });
+        const nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach((node) => {
+          const fragment = document.createDocumentFragment();
+          const parts = node.nodeValue.split(/(\d[\d,.]*\s*)CNY/g);
+          parts.forEach((part, index) => {
+            if (!part) return;
+            if (index % 2 === 1) {
+              fragment.append(document.createTextNode(part.trimEnd()));
+              const unit = document.createElement("span");
+              unit.className = "currency-unit";
+              unit.textContent = "CNY";
+              fragment.append(unit);
+            } else {
+              fragment.append(document.createTextNode(part));
+            }
+          });
+          node.replaceWith(fragment);
+        });
+      };
+
+      const applyLanguage = (language) => {
+        activeLanguage = language;
+        document.documentElement.lang = languageHtmlLang[language] || "zh-CN";
+        document.title = translateValue("商品详情页 - Hubbuyer 1:1 还原", language);
+        if (languageCurrent) languageCurrent.textContent = languageLabels[language];
+        languageOptions.forEach((option) => {
+          const isActive = option.dataset.lang === language;
+          option.classList.toggle("is-active", isActive);
+          option.setAttribute("aria-selected", String(isActive));
+        });
+        translateTextNodes(language);
+        translateAttributes(language);
+        const searchInput = document.querySelector(".search-box input");
+        if (searchInput) {
+          searchInput.value = searchKeywords[language] || searchKeywords.zh;
+          searchInput.setAttribute("aria-label", translateValue("搜索关键词", language));
+        }
+        updatePurchaseSummary();
+        wrapCurrencyUnits();
+      };
+
+      if (languageSwitcher && languageToggle) {
+        languageToggle.addEventListener("click", (event) => {
+          event.stopPropagation();
+          setLanguageMenuOpen(!languageSwitcher.classList.contains("is-open"));
+        });
+        languageOptions.forEach((option) => {
+          option.addEventListener("click", (event) => {
+            event.stopPropagation();
+            applyLanguage(option.dataset.lang);
+            setLanguageMenuOpen(false);
+          });
+        });
+        document.addEventListener("click", () => setLanguageMenuOpen(false));
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") setLanguageMenuOpen(false);
+        });
+        applyLanguage("ja");
+      }
+
+      document.querySelectorAll(".detail-restore .restore-thumb").forEach((button) => {
+        button.addEventListener("click", () => {
+          const image = document.getElementById("restoreMainImage");
+          document.querySelectorAll(".detail-restore .restore-thumb").forEach((item) => item.classList.remove("active"));
+          button.classList.add("active");
+          image.src = button.dataset.full;
+        });
+      });
+
+      document.querySelector(".search-button")?.addEventListener("click", () => {
+        window.location.href = "商品列表页.html";
+      });
+
+      function formatMoney(value) {
+        return Number(value || 0).toFixed(2);
+      }
+
+      function getMemberUnitPrice(totalPieces) {
+        if (totalPieces >= 100) return 37;
+        if (totalPieces >= 10) return 38;
+        return 39;
+      }
+
+      function updatePurchaseSummary() {
+        const rows = Array.from(document.querySelectorAll(".detail-restore .restore-sku-list > div"));
+        let selectedTypes = 0;
+        let totalPieces = 0;
+        rows.forEach((row) => {
+          const valueNode = row.querySelector(".qty-value");
+          const quantity = Number(row.dataset.quantity || valueNode?.textContent || 0);
+          row.dataset.quantity = String(quantity);
+          if (valueNode) valueNode.textContent = String(quantity);
+          row.classList.toggle("has-qty", quantity > 0);
+          const minusButton = row.querySelector(".qty-step:first-child");
+          if (minusButton) minusButton.disabled = quantity <= 0;
+          if (quantity > 0) selectedTypes += 1;
+          totalPieces += quantity;
+        });
+
+        const summary = document.querySelector("[data-selected-summary]");
+        if (summary) {
+          summary.innerHTML = `${translateValue("已选择", activeLanguage)} <b>${selectedTypes}</b> ${translateValue("种类", activeLanguage)} <b>${totalPieces}</b> ${translateValue("件", activeLanguage)}`;
+        }
+
+        const freight = document.querySelector("[data-domestic-freight]");
+        if (freight) {
+          const estimatedFreight = totalPieces > 0 ? totalPieces * 2.3 : 2.3;
+          freight.innerHTML = `${translateValue("预估国内运费：", activeLanguage)}<strong>${formatMoney(estimatedFreight)}CNY</strong>`;
+        }
+
+        const total = document.querySelector("[data-cart-total]");
+        if (total) {
+          total.innerHTML = `${formatMoney(totalPieces * getMemberUnitPrice(totalPieces))} <span class="currency-unit">CNY</span>`;
+        }
+        wrapCurrencyUnits();
+      }
+
+      document.querySelectorAll(".detail-restore .restore-count").forEach((counter) => {
+        const row = counter.closest(".restore-sku-list > div");
+        const minusButton = counter.querySelector(".qty-step:first-child");
+        const plusButton = counter.querySelector(".qty-step:last-child");
+        const setQuantity = (nextQuantity) => {
+          if (!row) return;
+          row.dataset.quantity = String(Math.max(0, nextQuantity));
+          updatePurchaseSummary();
+        };
+        minusButton?.addEventListener("click", () => setQuantity(Number(row?.dataset.quantity || 0) - 1));
+        plusButton?.addEventListener("click", () => setQuantity(Number(row?.dataset.quantity || 0) + 1));
+      });
+      updatePurchaseSummary();
+    </script>`r`n</body>
+</html>
+
+
