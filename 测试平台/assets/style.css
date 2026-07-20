@@ -189,6 +189,54 @@ button[kind="secondary"]:hover {
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4) !important;
 }
 
+/* 首页辅助工具入口 */
+.home-tools-header {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0.2rem 0 0.55rem 0;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 700;
+}
+.home-tools-header i {
+    color: var(--warning);
+    font-size: 0.95rem;
+}
+div[class*="st-key-home_tool_"] button {
+    min-height: 3.05rem !important;
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0.62rem 0.85rem !important;
+    background: var(--bg-surface) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+}
+div[class*="st-key-home_tool_"] button p {
+    width: 100% !important;
+    color: var(--text-primary) !important;
+    font-size: 0.92rem !important;
+    font-weight: 600 !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    white-space: normal !important;
+}
+div[class*="st-key-home_tool_"] button:hover {
+    background: var(--bg-hover) !important;
+    border-color: var(--brand) !important;
+    transform: translateY(-1px);
+}
+div[class*="st-key-home_tool_"] button:disabled {
+    background: rgba(21, 26, 42, 0.62) !important;
+    border-color: var(--border-dim) !important;
+    opacity: 0.6 !important;
+    transform: none !important;
+}
+div[class*="st-key-home_tool_"] button:disabled p {
+    color: var(--text-secondary) !important;
+}
+
 /* 6. 输入框 / 文本域 */
 .stTextInput > div > div > input,
 .stTextArea > div > div > textarea {

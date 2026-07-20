@@ -1,0 +1,1149 @@
+{
+  "filename": "注文番号_ 825326071713.xlsx",
+  "uid": "8253",
+  "optional_order_id": "",
+  "meta": {
+    "source": "header_scan",
+    "header_row_idx": 1,
+    "col_order": 4,
+    "col_sku": 5,
+    "col_main_order": 3,
+    "col_order_letter": "E",
+    "col_sku_letter": "F",
+    "col_main_order_letter": "D",
+    "header_order": "商品番号",
+    "header_sku": "貴社SKU",
+    "header_main_order": "注文番号",
+    "header": [
+      "画像",
+      "商品名",
+      "sku",
+      "注文番号",
+      "商品番号",
+      "貴社SKU",
+      "ASIN",
+      "FNSKU",
+      "単価",
+      "発注数",
+      "合計",
+      "変動単価",
+      "ブランド名",
+      "SKU",
+      "販売価格",
+      "カラー",
+      "サイズ",
+      "バーコード文字列",
+      "下げ札は必要ですか（はい／いいえ）",
+      "シールは必要ですか（はい／いいえ）"
+    ],
+    "parsed_count": 71,
+    "total_rows": 73
+  },
+  "plan": [
+    {
+      "order_id": "1386637",
+      "external_id": "K0133ブラックM",
+      "main_order_id": "825326071713",
+      "row_no": 3,
+      "current_sku": "K0133ブラックM",
+      "action": "skip",
+      "reason": "SKU 已一致"
+    },
+    {
+      "order_id": "1386638",
+      "external_id": "K0133ブラックS",
+      "main_order_id": "825326071713",
+      "row_no": 4,
+      "current_sku": "K0133ブラックS",
+      "action": "skip",
+      "reason": "SKU 已一致"
+    },
+    {
+      "order_id": "1386639",
+      "external_id": "K0133ブラックL",
+      "main_order_id": "825326071713",
+      "row_no": 5,
+      "current_sku": "K0133ブラックL",
+      "action": "skip",
+      "reason": "SKU 已一致"
+    },
+    {
+      "order_id": "1386640",
+      "external_id": "K0134ネイビーM",
+      "main_order_id": "825326071713",
+      "row_no": 6,
+      "current_sku": "K0134ネイビーM",
+      "action": "skip",
+      "reason": "SKU 已一致"
+    },
+    {
+      "order_id": "1386641",
+      "external_id": "K0134ネイビーL",
+      "main_order_id": "825326071713",
+      "row_no": 7,
+      "current_sku": "K0134ネイビーL",
+      "action": "skip",
+      "reason": "SKU 已一致"
+    },
+    {
+      "order_id": "1386642",
+      "external_id": "K0134ネイビーS",
+      "main_order_id": "825326071713",
+      "row_no": 8,
+      "current_sku": "K0134ネイビーS",
+      "action": "skip",
+      "reason": "SKU 已一致"
+    },
+    {
+      "order_id": "1386643",
+      "external_id": "K0135ブラックL",
+      "main_order_id": "825326071713",
+      "row_no": 9,
+      "current_sku": "K0135ブラックL",
+      "action": "skip",
+      "reason": "SKU 已一致"
+    },
+    {
+      "order_id": "1386644",
+      "external_id": "K0135ブラックS",
+      "main_order_id": "825326071713",
+      "row_no": 10,
+      "current_sku": "K0135ブラックS",
+      "action": "skip",
+      "reason": "SKU 已一致"
+    },
+    {
+      "order_id": "1386645",
+      "external_id": "K0135ブラックM",
+      "main_order_id": "825326071713",
+      "row_no": 11,
+      "current_sku": "K0135ブラックM",
+      "action": "skip",
+      "reason": "SKU 已一致"
+    },
+    {
+      "order_id": "1386646",
+      "external_id": "K0136ブラックS",
+      "main_order_id": "825326071713",
+      "row_no": 12,
+      "current_sku": "K0136ブラックS",
+      "action": "skip",
+      "reason": "SKU 已一致"
+    },
+    {
+      "order_id": "1386647",
+      "external_id": "K0136ブラックL",
+      "main_order_id": "825326071713",
+      "row_no": 13,
+      "current_sku": "K0136ブラックL",
+      "action": "skip",
+      "reason": "SKU 已一致"
+    },
+    {
+      "order_id": "1386648",
+      "external_id": "K0136ブラックM",
+      "main_order_id": "825326071713",
+      "row_no": 14,
+      "current_sku": "K0136ブラックM",
+      "action": "skip",
+      "reason": "SKU 已一致"
+    },
+    {
+      "order_id": "1386649",
+      "external_id": "K0137オフホワイトM",
+      "main_order_id": "825326071713",
+      "row_no": 15,
+      "current_sku": "K0137オフホワイトM",
+      "action": "skip",
+      "reason": "SKU 已一致"
+    },
+    {
+      "order_id": "1386650",
+      "external_id": "K0137オフホワイトS",
+      "main_order_id": "825326071713",
+      "row_no": 16,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386651",
+      "external_id": "K0137オフホワイトL",
+      "main_order_id": "825326071713",
+      "row_no": 17,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386652",
+      "external_id": "K0138モカFREE",
+      "main_order_id": "825326071713",
+      "row_no": 18,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386653",
+      "external_id": "K0138ブラックFREE",
+      "main_order_id": "825326071713",
+      "row_no": 19,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386654",
+      "external_id": "K0138オフホワイトFREE",
+      "main_order_id": "825326071713",
+      "row_no": 20,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386655",
+      "external_id": "K0139ホワイトM",
+      "main_order_id": "825326071713",
+      "row_no": 21,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386656",
+      "external_id": "K0139ピンクS",
+      "main_order_id": "825326071713",
+      "row_no": 22,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386657",
+      "external_id": "K0139ホワイトS",
+      "main_order_id": "825326071713",
+      "row_no": 23,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386658",
+      "external_id": "K0139ブラックS",
+      "main_order_id": "825326071713",
+      "row_no": 24,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386659",
+      "external_id": "K0139ホワイトL",
+      "main_order_id": "825326071713",
+      "row_no": 25,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386660",
+      "external_id": "K0139ピンクM",
+      "main_order_id": "825326071713",
+      "row_no": 26,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386661",
+      "external_id": "K0139ライトブルーL",
+      "main_order_id": "825326071713",
+      "row_no": 27,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386662",
+      "external_id": "K0139ライトブルーS",
+      "main_order_id": "825326071713",
+      "row_no": 28,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386663",
+      "external_id": "K0139ピンクL",
+      "main_order_id": "825326071713",
+      "row_no": 29,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386664",
+      "external_id": "K0139ブラックM",
+      "main_order_id": "825326071713",
+      "row_no": 30,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386665",
+      "external_id": "K0139ブラックL",
+      "main_order_id": "825326071713",
+      "row_no": 31,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386666",
+      "external_id": "K0139ライトブルーM",
+      "main_order_id": "825326071713",
+      "row_no": 32,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386667",
+      "external_id": "K0140ホワイトS",
+      "main_order_id": "825326071713",
+      "row_no": 33,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386668",
+      "external_id": "K0140ホワイトM",
+      "main_order_id": "825326071713",
+      "row_no": 34,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386669",
+      "external_id": "K0140ホワイトL",
+      "main_order_id": "825326071713",
+      "row_no": 35,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386670",
+      "external_id": "K0141ライトブルーL",
+      "main_order_id": "825326071713",
+      "row_no": 36,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386671",
+      "external_id": "K0141ライトブルーM",
+      "main_order_id": "825326071713",
+      "row_no": 37,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386672",
+      "external_id": "K0141ライトブルーS",
+      "main_order_id": "825326071713",
+      "row_no": 38,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386673",
+      "external_id": "K0142オフホワイトFREE",
+      "main_order_id": "825326071713",
+      "row_no": 39,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386674",
+      "external_id": "K0142ピンクFREE",
+      "main_order_id": "825326071713",
+      "row_no": 40,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386675",
+      "external_id": "K0142グレーFREE",
+      "main_order_id": "825326071713",
+      "row_no": 41,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386676",
+      "external_id": "K0143ブラックFREE",
+      "main_order_id": "825326071713",
+      "row_no": 42,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386677",
+      "external_id": "K0143ベージュFREE",
+      "main_order_id": "825326071713",
+      "row_no": 43,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386678",
+      "external_id": "K0143ホワイトFREE",
+      "main_order_id": "825326071713",
+      "row_no": 44,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386679",
+      "external_id": "K0144ホワイトFREE",
+      "main_order_id": "825326071713",
+      "row_no": 45,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386680",
+      "external_id": "K0144ライトグリーンFREE",
+      "main_order_id": "825326071713",
+      "row_no": 46,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386681",
+      "external_id": "K0144ピンクFREE",
+      "main_order_id": "825326071713",
+      "row_no": 47,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386682",
+      "external_id": "K0144グレーFREE",
+      "main_order_id": "825326071713",
+      "row_no": 48,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386683",
+      "external_id": "K0144ブラックFREE",
+      "main_order_id": "825326071713",
+      "row_no": 49,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386684",
+      "external_id": "K0145ホワイトM",
+      "main_order_id": "825326071713",
+      "row_no": 50,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386685",
+      "external_id": "K0145ホワイトS",
+      "main_order_id": "825326071713",
+      "row_no": 51,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386686",
+      "external_id": "K0145ホワイトL",
+      "main_order_id": "825326071713",
+      "row_no": 52,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386616",
+      "external_id": "K0146ホワイト×ブラックM",
+      "main_order_id": "825326071713",
+      "row_no": 53,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386617",
+      "external_id": "K0146ホワイト×ブラックL",
+      "main_order_id": "825326071713",
+      "row_no": 54,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386618",
+      "external_id": "K0146ホワイト×ブラックS",
+      "main_order_id": "825326071713",
+      "row_no": 55,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386619",
+      "external_id": "K0147グレーL",
+      "main_order_id": "825326071713",
+      "row_no": 56,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386620",
+      "external_id": "K0147グレーS",
+      "main_order_id": "825326071713",
+      "row_no": 57,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386621",
+      "external_id": "K0147ブラックL",
+      "main_order_id": "825326071713",
+      "row_no": 58,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386622",
+      "external_id": "K0147ブラックM",
+      "main_order_id": "825326071713",
+      "row_no": 59,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386623",
+      "external_id": "K0147ブラックS",
+      "main_order_id": "825326071713",
+      "row_no": 60,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386624",
+      "external_id": "K0147グレーM",
+      "main_order_id": "825326071713",
+      "row_no": 61,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386625",
+      "external_id": "K0148グレーL",
+      "main_order_id": "825326071713",
+      "row_no": 62,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386626",
+      "external_id": "K0148ピンクL",
+      "main_order_id": "825326071713",
+      "row_no": 63,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386627",
+      "external_id": "K0148ホワイトL",
+      "main_order_id": "825326071713",
+      "row_no": 64,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386628",
+      "external_id": "K0148ホワイトM",
+      "main_order_id": "825326071713",
+      "row_no": 65,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386629",
+      "external_id": "K0148ピンクM",
+      "main_order_id": "825326071713",
+      "row_no": 66,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386630",
+      "external_id": "K0148ピンクS",
+      "main_order_id": "825326071713",
+      "row_no": 67,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386631",
+      "external_id": "K0148グレーM",
+      "main_order_id": "825326071713",
+      "row_no": 68,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386632",
+      "external_id": "K0148グレーS",
+      "main_order_id": "825326071713",
+      "row_no": 69,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386633",
+      "external_id": "K0148ホワイトS",
+      "main_order_id": "825326071713",
+      "row_no": 70,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386634",
+      "external_id": "K0149ネイビーS",
+      "main_order_id": "825326071713",
+      "row_no": 71,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386635",
+      "external_id": "K0149ネイビーL",
+      "main_order_id": "825326071713",
+      "row_no": 72,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    },
+    {
+      "order_id": "1386636",
+      "external_id": "K0149ネイビーM",
+      "main_order_id": "825326071713",
+      "row_no": 73,
+      "current_sku": "",
+      "action": "update",
+      "reason": "待同步（未在主订单中匹配到该商品番号）"
+    }
+  ],
+  "results": [
+    {
+      "row_no": 16,
+      "order_id": "1386650",
+      "external_id": "K0137オフホワイトS",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 17,
+      "order_id": "1386651",
+      "external_id": "K0137オフホワイトL",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 18,
+      "order_id": "1386652",
+      "external_id": "K0138モカFREE",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 19,
+      "order_id": "1386653",
+      "external_id": "K0138ブラックFREE",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 20,
+      "order_id": "1386654",
+      "external_id": "K0138オフホワイトFREE",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 21,
+      "order_id": "1386655",
+      "external_id": "K0139ホワイトM",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 22,
+      "order_id": "1386656",
+      "external_id": "K0139ピンクS",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 23,
+      "order_id": "1386657",
+      "external_id": "K0139ホワイトS",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 24,
+      "order_id": "1386658",
+      "external_id": "K0139ブラックS",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 25,
+      "order_id": "1386659",
+      "external_id": "K0139ホワイトL",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 26,
+      "order_id": "1386660",
+      "external_id": "K0139ピンクM",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 27,
+      "order_id": "1386661",
+      "external_id": "K0139ライトブルーL",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 28,
+      "order_id": "1386662",
+      "external_id": "K0139ライトブルーS",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 29,
+      "order_id": "1386663",
+      "external_id": "K0139ピンクL",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 30,
+      "order_id": "1386664",
+      "external_id": "K0139ブラックM",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 31,
+      "order_id": "1386665",
+      "external_id": "K0139ブラックL",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 32,
+      "order_id": "1386666",
+      "external_id": "K0139ライトブルーM",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 33,
+      "order_id": "1386667",
+      "external_id": "K0140ホワイトS",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 34,
+      "order_id": "1386668",
+      "external_id": "K0140ホワイトM",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 35,
+      "order_id": "1386669",
+      "external_id": "K0140ホワイトL",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 36,
+      "order_id": "1386670",
+      "external_id": "K0141ライトブルーL",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 37,
+      "order_id": "1386671",
+      "external_id": "K0141ライトブルーM",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 38,
+      "order_id": "1386672",
+      "external_id": "K0141ライトブルーS",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 39,
+      "order_id": "1386673",
+      "external_id": "K0142オフホワイトFREE",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 40,
+      "order_id": "1386674",
+      "external_id": "K0142ピンクFREE",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 41,
+      "order_id": "1386675",
+      "external_id": "K0142グレーFREE",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 42,
+      "order_id": "1386676",
+      "external_id": "K0143ブラックFREE",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 43,
+      "order_id": "1386677",
+      "external_id": "K0143ベージュFREE",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 44,
+      "order_id": "1386678",
+      "external_id": "K0143ホワイトFREE",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 45,
+      "order_id": "1386679",
+      "external_id": "K0144ホワイトFREE",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 46,
+      "order_id": "1386680",
+      "external_id": "K0144ライトグリーンFREE",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 47,
+      "order_id": "1386681",
+      "external_id": "K0144ピンクFREE",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 48,
+      "order_id": "1386682",
+      "external_id": "K0144グレーFREE",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 49,
+      "order_id": "1386683",
+      "external_id": "K0144ブラックFREE",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 50,
+      "order_id": "1386684",
+      "external_id": "K0145ホワイトM",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 51,
+      "order_id": "1386685",
+      "external_id": "K0145ホワイトS",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 52,
+      "order_id": "1386686",
+      "external_id": "K0145ホワイトL",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 53,
+      "order_id": "1386616",
+      "external_id": "K0146ホワイト×ブラックM",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 54,
+      "order_id": "1386617",
+      "external_id": "K0146ホワイト×ブラックL",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 55,
+      "order_id": "1386618",
+      "external_id": "K0146ホワイト×ブラックS",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 56,
+      "order_id": "1386619",
+      "external_id": "K0147グレーL",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 57,
+      "order_id": "1386620",
+      "external_id": "K0147グレーS",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 58,
+      "order_id": "1386621",
+      "external_id": "K0147ブラックL",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 59,
+      "order_id": "1386622",
+      "external_id": "K0147ブラックM",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 60,
+      "order_id": "1386623",
+      "external_id": "K0147ブラックS",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 61,
+      "order_id": "1386624",
+      "external_id": "K0147グレーM",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 62,
+      "order_id": "1386625",
+      "external_id": "K0148グレーL",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 63,
+      "order_id": "1386626",
+      "external_id": "K0148ピンクL",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 64,
+      "order_id": "1386627",
+      "external_id": "K0148ホワイトL",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 65,
+      "order_id": "1386628",
+      "external_id": "K0148ホワイトM",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 66,
+      "order_id": "1386629",
+      "external_id": "K0148ピンクM",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 67,
+      "order_id": "1386630",
+      "external_id": "K0148ピンクS",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 68,
+      "order_id": "1386631",
+      "external_id": "K0148グレーM",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 69,
+      "order_id": "1386632",
+      "external_id": "K0148グレーS",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 70,
+      "order_id": "1386633",
+      "external_id": "K0148ホワイトS",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 71,
+      "order_id": "1386634",
+      "external_id": "K0149ネイビーS",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 72,
+      "order_id": "1386635",
+      "external_id": "K0149ネイビーL",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 73,
+      "order_id": "1386636",
+      "external_id": "K0149ネイビーM",
+      "previous_sku": "",
+      "status": "success",
+      "detail": "已更新"
+    }
+  ]
+}

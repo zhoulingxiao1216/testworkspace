@@ -1,0 +1,1566 @@
+{
+  "meta": {
+    "startedAt": "2026-07-16T02:06:44.085Z",
+    "endedAt": "2026-07-16T02:09:35.605Z",
+    "startUrl": "https://main-b2b.hubbuyer.com/jp",
+    "authenticated": false,
+    "note": "未使用使用者 Chrome 登入態；會員專屬快捷入口未覆蓋。"
+  },
+  "homeExtraction": {
+    "url": "https://main-b2b.hubbuyer.com/jp",
+    "title": "Hubbuyer | B2B調達プラットフォーム",
+    "textLength": 1222,
+    "internalLinkCount": 17,
+    "checkedInternalLinkCount": 17,
+    "buttonCount": 16,
+    "checkedMoreButtonIndices": [
+      2,
+      3,
+      7,
+      10,
+      11,
+      12
+    ]
+  },
+  "summary": {
+    "totalChecks": 42,
+    "counts": {
+      "PASS": 37,
+      "FAIL": 3,
+      "WARN": 2
+    },
+    "issueCount": 10
+  },
+  "home": {
+    "label": "首頁 /jp",
+    "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+    "status": 200,
+    "navError": null,
+    "elapsedMs": 14872,
+    "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+    "title": "Hubbuyer | B2B調達プラットフォーム",
+    "readyState": "interactive",
+    "textLen": 5045,
+    "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 0.16 USD 検索 画像検索 カート カテゴリー Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688日本式の女性の着物の浴衣のエンボスの定型のベルトの蝶結びの頭の花の腰の封の着物の中で飾りの道具を掛けます。 22.00 CNY 1688シャツの光防止の胸の針はvネックの女性のピンを掛けて服を飾って神器の襟元のピンの小さ",
+    "visibleImgs": 55,
+    "blank": false,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "result": "PASS"
+  },
+  "linkResults": [
+    {
+      "label": "1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒップホップガードのチェーンの個性的な装飾 1.99 CNY",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/ins-679576027694",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 6605,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/titanium-steel-non-fading-three-ring-ring-necklace-female-male-fashion-ins-european-and-american-street-hip-hop-sweater-chain-personalized-accessories-679576027694",
+      "title": "チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒップホップガードのチェーンの個性的な装飾 | Hubbuyer",
+      "readyState": "complete",
+      "textLen": 1778,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > 服飾部品、アクセサリー > 首飾り 义乌市优宿电子商务商行 お気に入り店舗 店舗ページへ 総合評価 4.0 商品品質 3.0 リピート率 56% チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒップホップガードのチェーンの個性的な装飾 商品評価 4.6 月間販売数 1467 リピート率 55.79% 1688 お気に入りに追加 商品情報 商品詳細 ショップの売れ筋 商品情報 商",
+      "visibleImgs": 50,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "1688欧米の子供の髪飾りの弾力性ナイロンの平車の底の材料の柔らかいヘアバンドの赤ちゃんの快適な写真のヘッドバンドの部品 1.45 CNY",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/product-649929520659",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 6002,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/european-and-american-children-s-hair-accessories-elastic-nylon-flat-car-base-soft-hair-belt-baby-comfortable-photo-headband-accessories-649929520659",
+      "title": "欧米の子供の髪飾りの弾力性ナイロンの平車の底の材料の柔らかいヘアバンドの赤ちゃんの快適な写真のヘッドバンドの部品 | Hubbuyer",
+      "readyState": "interactive",
+      "textLen": 4456,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > 服飾部品、アクセサリー > 髪飾り、頭飾り 义乌慧民饰品厂 お気に入り店舗 店舗ページへ 総合評価 4.0 商品品質 5.0 リピート率 59% 欧米の子供の髪飾りの弾力性ナイロンの平車の底の材料の柔らかいヘアバンドの赤ちゃんの快適な写真のヘッドバンドの部品 商品評価 5.0 月間販売数 539 リピート率 59.15% 1688 お気に入りに追加 商品情報 商品詳細 ショップの売れ筋 商品情報 商品",
+      "visibleImgs": 98,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "1688牛革製の細いベルト、女性用スカートの装飾、シンプルなスーツ用本革ベルト、女性用アクセサリー、高級感、越境配送 14.00 CNY",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/product-643468030315",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 7110,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/cowhide-thin-belt-for-women-simple-decorative-belt-for-dresses-genuine-leather-belt-for-women-high-end-accessory-cross-border-shipping-643468030315",
+      "title": "牛革製の細いベルト、女性用スカートの装飾、シンプルなスーツ用本革ベルト、女性用アクセサリー、高級感、越境配送 | Hubbuyer",
+      "readyState": "complete",
+      "textLen": 4541,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > 服飾部品、アクセサリー > ベルト/ウエストチェーン/ウエストシール 义乌市柏拉皮具有限公司 お気に入り店舗 店舗ページへ 総合評価 5.0 商品品質 5.0 リピート率 57% 牛革製の細いベルト、女性用スカートの装飾、シンプルなスーツ用本革ベルト、女性用アクセサリー、高級感、越境配送 商品評価 5.0 月間販売数 967 リピート率 56.9% 1688 お気に入りに追加 商品情報 商品詳細 ショ",
+      "visibleImgs": 131,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://bizcommon.alicdn.com/3ac96445e9b13cd1/L60KtUTV6YOHQ1eSdNh/na49zuiD2i1kdSlmNtD_254907038107_sd_hq.mp4?biz=community-c23d0a1334dd4637&t=213e049417841676344687246e0bfa&t=213e049417841676344687246e0bfa&b=community&p=cloudvideo_http_cbu_vod",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "1688韓国版男女モデルの司会者の胸飾りのスーツの装飾の暗号化のバラのブローチのフリンジチェーンの男性のスーツの装飾 3.50 CNY",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/product-610593788421",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 6459,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/korean-style-men-s-and-women-s-mc-chest-accessories-for-suit-accessories-encrypted-rose-brooch-tassel-chain-men-s-suit-accessories-610593788421",
+      "title": "韓国版男女モデルの司会者の胸飾りのスーツの装飾の暗号化のバラのブローチのフリンジチェーンの男性のスーツの装飾 | Hubbuyer",
+      "readyState": "complete",
+      "textLen": 1791,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > 服飾部品、アクセサリー > 服飾り 义乌市跨雄电子商务商行 お気に入り店舗 店舗ページへ 総合評価 4.0 商品品質 5.0 リピート率 71% 韓国版男女モデルの司会者の胸飾りのスーツの装飾の暗号化のバラのブローチのフリンジチェーンの男性のスーツの装飾 商品評価 5.0 月間販売数 14170 リピート率 71.28% 1688 お気に入りに追加 商品情報 商品詳細 ショップの売れ筋 商品情報 商品",
+      "visibleImgs": 61,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "1688ブローチの真珠の針は腰のボタンを収めて光の固定の服を防ぎます。 0.45 CNY",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/product-672071947723",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 6537,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/brooch-pearl-buckle-waist-tightening-buckle-anti-exposure-fixed-clothing-accessories-waistline-modification-tool-waist-tightening-pin-672071947723",
+      "title": "ブローチの真珠の針は腰のボタンを収めて光の固定の服を防ぎます。 | Hubbuyer",
+      "readyState": "interactive",
+      "textLen": 4378,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > 服飾部品、アクセサリー > 服飾り 义乌市糖衣饰品有限公司 お気に入り店舗 店舗ページへ 総合評価 4.5 商品品質 3.6 リピート率 63% ブローチの真珠の針は腰のボタンを収めて光の固定の服を防ぎます。 商品評価 5.0 月間販売数 16152 リピート率 62.51% 1688 お気に入りに追加 商品情報 商品詳細 ショップの売れ筋 商品情報 商品画像をダウンロード 材料 金属 ORIGIN ",
+      "visibleImgs": 39,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "(no text)",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/4-ac-894774835272",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 5389,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/light-luxury-and-cool-lenzing-tencel-silk-summer-quilt-four-piece-set-classy-summer-air-conditioned-quilt-can-be-given-as-a-gift-wide-brimmed-pillowcase-894774835272",
+      "title": "軽くて涼しいレンチングテンセルシルクサマーキルト4点セット、高級サマーACキルト、ギフト用ワイドサイド枕カバー | Hubbuyer",
+      "readyState": "interactive",
+      "textLen": 2850,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > ホームテキスタイル > セット類 南通叠石桥家纺织造商 お気に入り店舗 店舗ページへ 総合評価 4.0 商品品質 4.0 リピート率 38% 軽くて涼しいレンチングテンセルシルクサマーキルト4点セット、高級サマーACキルト、ギフト用ワイドサイド枕カバー 商品評価 5.0 月間販売数 2 リピート率 37.92% 1688 お気に入りに追加 商品情報 商品詳細 ショップの売れ筋 商品情報 商品画像をダウ",
+      "visibleImgs": 58,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "(no text)",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/4-894126989680",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 5508,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/nantong-home-textile-bedding-set-washed-ice-silk-fully-embroidered-summer-quilt-bed-sheet-pillowcase-four-piece-set-single-summer-quilt-air-conditioning-quilt-894126989680",
+      "title": "南通家纺寝具セット 水洗い可能なアイスシルク総刺繍 夏用涼感キルト・シーツ・枕カバー4点セット シングル夏用キルト・エアコンキルト | Hubbuyer",
+      "readyState": "interactive",
+      "textLen": 2540,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > ホームテキスタイル > セット類 花间集纺织品 お気に入り店舗 店舗ページへ 総合評価 5.0 商品品質 4.3 リピート率 42% 南通家纺寝具セット 水洗い可能なアイスシルク総刺繍 夏用涼感キルト・シーツ・枕カバー4点セット シングル夏用キルト・エアコンキルト 商品評価 5.0 月間販売数 0 リピート率 42.38% 1688 お気に入りに追加 商品情報 商品詳細 ショップの売れ筋 商品情報 商",
+      "visibleImgs": 48,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "(no text)",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/product-893705100725",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 5421,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/washed-ice-silk-summer-quilt-bed-sheet-pillowcase-full-embroidered-four-piece-set-single-summer-quilt-bed-sheet-pillowcase-summer-cool-quilt-air-conditioning-quilt-893705100725",
+      "title": "水洗い氷糸夏はシーツ枕カバーで刺繍されています。 | Hubbuyer",
+      "readyState": "interactive",
+      "textLen": 2439,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > ホームテキスタイル > セット類 花间集纺织品 お気に入り店舗 店舗ページへ 総合評価 5.0 商品品質 4.3 リピート率 42% 水洗い氷糸夏はシーツ枕カバーで刺繍されています。 商品評価 5.0 月間販売数 0 リピート率 42.38% 1688 お気に入りに追加 商品情報 商品詳細 ショップの売れ筋 商品情報 商品画像をダウンロード 材料 化学繊維 スタイル ライトラグジュアリースタイル 寸法",
+      "visibleImgs": 26,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "(no text)",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/proea-5280-u-2-542525759859",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 6084,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/proea-baloui-5280-men-s-pure-cotton-boxer-briefs-combed-cotton-u-convex-single-layer-breathable-wide-side-two-pack-542525759859",
+      "title": "Proea宝易5280男性純綿平角下着コーミング綿u凸単層通気幅2本入り | Hubbuyer",
+      "readyState": "interactive",
+      "textLen": 1848,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > ペットと園芸 > 林業及び林業副産物 > 下着 > メンズパンツ 阳江市江城区文龙服装店 お気に入り店舗 店舗ページへ 総合評価 4.5 商品品質 5.0 リピート率 72% Proea宝易5280男性純綿平角下着コーミング綿u凸単層通気幅2本入り 商品評価 5.0 月間販売数 390 リピート率 72.49% 1688 お気に入りに追加 商品情報 商品詳細 ショップの売れ筋 商品情報 商品画像をダウ",
+      "visibleImgs": 48,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://caiyuanbao.alicdn.com/a9b5b21ee64d2b47/9PwhcYqKKFxBaw2Jy0G/HTyhQ3rc9ExxLsDch9L_248631031761_hd_hq.mp4?auth_key=1784170344-0-0-fab7aad245decb4a452c92fcfc6f2dcc&biz=video-fa0aebe37f94b2a8&t=213e049417841676449332346e0bfa&t=213e049417841676449332346e0bfa&b=video&p=cloudvideo_http_800000017",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "(no text)",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/7a-80-795434386764",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 6104,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/7a-antibacterial-80-tencel-modal-men-s-underwear-naked-lycra-breathable-boxers-mid-waist-traceless-underwear-for-men-795434386764",
+      "title": "7a抗菌80本天糸モーダルメンズパンツ裸感ライクラ通気性平角ズボン中腰無痕パンツ男 | Hubbuyer",
+      "readyState": "complete",
+      "textLen": 1943,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > ペットと園芸 > 林業及び林業副産物 > 下着 > メンズパンツ 珠海君曼服装有限公司 お気に入り店舗 店舗ページへ 総合評価 5.0 商品品質 3.6 リピート率 57% 7a抗菌80本天糸モーダルメンズパンツ裸感ライクラ通気性平角ズボン中腰無痕パンツ男 商品評価 4.8 月間販売数 761 リピート率 57.09% 1688 お気に入りに追加 商品情報 商品詳細 ショップの売れ筋 商品情報 商品画",
+      "visibleImgs": 70,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "(no text)",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/product-649531397559",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 6048,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/men-s-underwear-men-s-boxer-briefs-ice-mesh-summer-youth-sports-comfortable-breathable-boxer-shorts-649531397559",
+      "title": "メンズ下着、メンズボクサーパンツ、アイスシルクメッシュ、夏のユーススポーツ、快適で通気性のあるボクサーパンツ | Hubbuyer",
+      "readyState": "complete",
+      "textLen": 2022,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > ペットと園芸 > 林業及び林業副産物 > 下着 > メンズパンツ 江北新区欧时力百货经营部 お気に入り店舗 店舗ページへ 総合評価 4.5 商品品質 5.0 リピート率 75% メンズ下着、メンズボクサーパンツ、アイスシルクメッシュ、夏のユーススポーツ、快適で通気性のあるボクサーパンツ 商品評価 4.9 月間販売数 1301 リピート率 74.91% 1688 お気に入りに追加 商品情報 商品詳細 シ",
+      "visibleImgs": 59,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://caiyuanbao.alicdn.com/a678c1a1ea287482/b0OZT5398r9kmQFW4T9/aywmz7lZBZOtrfEiEmX_322964678193_mp4_264_hd.mp4?auth_key=1784170345-0-0-7a34fb422c85c0c1f548f1dfedd18192&biz=community-66e3f6d104f8a7ff&t=213e049417841676459182603e0bfa&t=213e049417841676459182603e0bfa&b=community&p=cloudvideo_http_c",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "(no text)",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/5-7-722071853584",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 5387,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/modal-leggings-women-s-summer-thin-inner-wear-tight-safety-pants-anti-exposure-cropped-pants-outer-wear-stretch-cropped-pants-722071853584",
+      "title": "モーダルのレギンスの女性の夏の薄いタイプの中でガードルの安全ズボンを着て、光の5分のズボンの外で弾力性の7分のズボンを着ます。 | Hubbuyer",
+      "readyState": "complete",
+      "textLen": 1976,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > レディース服 > レディースレギンス 亿南服装厂 お気に入り店舗 店舗ページへ 総合評価 4.0 商品品質 3.6 リピート率 67% モーダルのレギンスの女性の夏の薄いタイプの中でガードルの安全ズボンを着て、光の5分のズボンの外で弾力性の7分のズボンを着ます。 商品評価 4.8 月間販売数 697 リピート率 67.42% 1688 お気に入りに追加 商品情報 商品詳細 ショップの売れ筋 商品情報 ",
+      "visibleImgs": 71,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "(no text)",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/product-817614811003",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 5759,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/summer-thin-shark-pants-women-s-outer-wear-peach-hip-yoga-pants-women-s-high-waist-hip-lifting-fitness-no-embarrassment-line-barbie-pants-817614811003",
+      "title": "夏の薄いタイプのサメのズボンの女性は外に蜜桃の尻のヨガのズボンの女性の腰を着て尻のフィットネスを持ちます。 | Hubbuyer",
+      "readyState": "interactive",
+      "textLen": 2069,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > レディース服 > レディースレギンス 东阳市汉纯服饰 お気に入り店舗 店舗ページへ 総合評価 5.0 商品品質 4.0 リピート率 57% 夏の薄いタイプのサメのズボンの女性は外に蜜桃の尻のヨガのズボンの女性の腰を着て尻のフィットネスを持ちます。 商品評価 5.0 月間販売数 2113 リピート率 57% 1688 お気に入りに追加 商品情報 商品詳細 ショップの売れ筋 商品情報 商品画像をダウンロー",
+      "visibleImgs": 44,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "(no text)",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/2026-645187540784",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 5753,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/2026-safety-shorts-for-women-anti-exposure-non-curling-can-be-worn-outside-plus-size-ice-silk-summer-thin-lace-shorts-for-inner-wear-645187540784",
+      "title": "Hubbuyer | B2B詳細",
+      "readyState": "interactive",
+      "textLen": 638,
+      "textSample": "Japan ログイン 会員登録 トップページ 営業日 1 CNY ≈ 25.23 JPY 検索 画像検索 カート B2Bトップページ お気に入り店舗 店舗ページへ 総合評価 0 商品品質 0 リピート率 0% 2026年女性用安全パンツ、露出防止、裾が丸まらない、外着としても着用可能、大きいサイズ、アイスシルク、夏用薄手レース、インナーショーツ 商品評価 0 月間販売数 0 リピート率 0 1688 お気に入りに追加 ショップの売れ筋 ショップの売れ筋 さらに表示 単価 最小注文数 ご案内 サイズ 白-貝殻レース ",
+      "visibleImgs": 29,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "(no text)",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/15-889373058335",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 5514,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/cleaning-suit-15-piece-set-cleaning-car-tools-interior-wheel-paint-surface-cleaning-with-storage-tool-box-889373058335",
+      "title": "清潔セット15点セット清潔自動車ツール内装ハブ塗装面清潔収納付き工具箱 | Hubbuyer",
+      "readyState": "interactive",
+      "textLen": 2361,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > カー用品 > 美容ケア 普乐士科技 お気に入り店舗 店舗ページへ 総合評価 4.5 商品品質 5.0 リピート率 30% 清潔セット15点セット清潔自動車ツール内装ハブ塗装面清潔収納付き工具箱 商品評価 5.0 月間販売数 4 リピート率 30.06% 1688 お気に入りに追加 商品情報 商品詳細 ショップの売れ筋 商品情報 商品画像をダウンロード 材料 プラスチック 出身地 安徽省 仕様 カスタマ",
+      "visibleImgs": 43,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://caiyuanbao.alicdn.com/2da476065ce29979/a658c34f67740e43/20250916_6184fe8e6be21966_534283155284_328334545603796_published_mp4_264_hd_taobao.mp4?auth_key=1784170350-0-0-6052c57c21a23e9c1171517e8f2998c9&biz=community-1a799f6f120dea57&t=213e049417841676506533429e0bfa&t=213e049417841676506533429e",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "(no text)",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/product-911218599295",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 5139,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/wholesale-household-daily-use-magic-broom-set-foldable-and-rotatable-for-storage-non-stick-hair-broom-set-for-home-use-911218599295",
+      "title": "卸売家庭用日用品マジックほうきセット、折りたたみ式回転収納、髪がくっつかないほうきセット、家庭用 | Hubbuyer",
+      "readyState": "interactive",
+      "textLen": 2556,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > 収納清掃用具 > 家事清掃用具 轩雅拖把厂 お気に入り店舗 店舗ページへ 総合評価 4.5 商品品質 2.3 リピート率 55% 卸売家庭用日用品マジックほうきセット、折りたたみ式回転収納、髪がくっつかないほうきセット、家庭用 商品評価 0.0 月間販売数 781 リピート率 55.3% 1688 お気に入りに追加 商品情報 商品詳細 ショップの売れ筋 商品情報 商品画像をダウンロード 材料 PP 出",
+      "visibleImgs": 51,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "(no text)",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/product-929439254585",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 4818,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/wholesale-storage-household-sponge-cup-brush-long-handled-thermos-cup-brush-multifunctional-detachable-brush-baby-bottle-cleaning-brush-929439254585",
+      "title": "卸売収納家庭用スポンジカップブラシ、長柄保温カップブラシ、多機能取り外し可能ブラシ、哺乳瓶洗浄ブラシ | Hubbuyer",
+      "readyState": "complete",
+      "textLen": 1713,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > 収納清掃用具 > 家事清掃用具 永康市悦盛工贸有限公司 お気に入り店舗 店舗ページへ 総合評価 4.5 商品品質 5.0 リピート率 41% 卸売収納家庭用スポンジカップブラシ、長柄保温カップブラシ、多機能取り外し可能ブラシ、哺乳瓶洗浄ブラシ 商品評価 3.5 月間販売数 119219 リピート率 41.26% 1688 お気に入りに追加 商品情報 商品詳細 ショップの売れ筋 商品情報 商品画像をダウ",
+      "visibleImgs": 52,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS"
+    }
+  ],
+  "actionResults": [
+    {
+      "label": "搜尋：輸入「ペット餌入れ器」後點擊検索",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": "locator.fill: Timeout 30000ms exceeded. Call log: \u001b[2m - waiting for locator('input').first()\u001b[22m \u001b[2m - locator resolved to <input value=\"\" type=\"text\" tabindex=\"0\" role=\"combobox\" autocomplete=\"off\" spellcheck=\"false\" id=\"el-id-1024-216\" aria-expanded=\"false\" aria-haspopup=\"listbox\" class=\"el-select__input\" aria-activedescendant=\"\" aria-autocomplete=\"none",
+      "elapsedMs": 31581,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "interactive",
+      "textLen": 1222,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 53,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "FAIL",
+      "action": "搜尋：輸入「ペット餌入れ器」後點擊検索",
+      "expected": "跳轉搜尋結果頁",
+      "clickInfo": null,
+      "changedUrl": false
+    },
+    {
+      "label": "圖片搜尋：画像検索",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3241,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 2658,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 91,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "圖片搜尋：画像検索",
+      "expected": "打開圖片搜尋/上傳入口或登入提示",
+      "clickInfo": {
+        "clicked": true,
+        "count": 12,
+        "tag": "DIV",
+        "text": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY 検索 画像検索 カート カテゴリー Hubbuyer B2B Sourcing Platform Hubbuyerへようこそ！ 会員登録 Hubbuyerで、中国輸",
+        "href": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1358,
+          "h": 2715
+        }
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "購物車：カート",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3193,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 4680,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 113,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "購物車：カート",
+      "expected": "進入購物車或登入提示",
+      "clickInfo": {
+        "clicked": true,
+        "count": 24,
+        "tag": "DIV",
+        "text": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある",
+        "href": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1358,
+          "h": 2715
+        }
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "分類：カテゴリー",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3175,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 4722,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 113,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "分類：カテゴリー",
+      "expected": "展開分類菜單",
+      "clickInfo": {
+        "clicked": true,
+        "count": 23,
+        "tag": "DIV",
+        "text": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある",
+        "href": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1358,
+          "h": 2715
+        }
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "上方導覽：(B2B)ご利用ガイド",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3186,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 4680,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 112,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "上方導覽：(B2B)ご利用ガイド",
+      "expected": "跳轉使用指南頁",
+      "clickInfo": {
+        "clicked": true,
+        "count": 13,
+        "tag": "DIV",
+        "text": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある",
+        "href": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1358,
+          "h": 2715
+        }
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "上方導覽：(B2B)サービス/料金",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3173,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 4680,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 113,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "上方導覽：(B2B)サービス/料金",
+      "expected": "跳轉服務/費率頁",
+      "clickInfo": {
+        "clicked": true,
+        "count": 13,
+        "tag": "DIV",
+        "text": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある",
+        "href": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1358,
+          "h": 2715
+        }
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "上方導覽：(B2B)国際送料",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3173,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 4722,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 111,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "上方導覽：(B2B)国際送料",
+      "expected": "跳轉國際送料頁",
+      "clickInfo": {
+        "clicked": true,
+        "count": 13,
+        "tag": "DIV",
+        "text": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある",
+        "href": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1358,
+          "h": 2715
+        }
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "上方導覽：Blog",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3225,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 1222,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 53,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "上方導覽：Blog",
+      "expected": "跳轉 Blog 頁",
+      "clickInfo": {
+        "clicked": true,
+        "count": 2,
+        "tag": "DIV",
+        "text": "Blog",
+        "href": null,
+        "rect": {
+          "x": 915,
+          "y": 97,
+          "w": 77,
+          "h": 38
+        }
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "上方導覽：よくある質問",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3168,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 4589,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 103,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "上方導覽：よくある質問",
+      "expected": "跳轉 FAQ 頁",
+      "clickInfo": {
+        "clicked": true,
+        "count": 13,
+        "tag": "DIV",
+        "text": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある",
+        "href": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1358,
+          "h": 2715
+        }
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "商品 Tab：Amazon新品",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3189,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 1226,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 16882026年女性用安全パンツ、露出防止、裾が丸まらない、外着としても着用可",
+      "visibleImgs": 44,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "商品 Tab：Amazon新品",
+      "expected": "切換商品列表 Tab",
+      "clickInfo": {
+        "clicked": true,
+        "count": 1,
+        "tag": "DIV",
+        "text": "Amazon新品",
+        "href": null,
+        "rect": {
+          "x": 574,
+          "y": 154,
+          "w": 119,
+          "h": 40
+        }
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "商品 Tab：Amazon人気",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3129,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 1196,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688使い捨てシーツ4点セット漫画プリント布団カバー枕カバーホテル出張携帯男女",
+      "visibleImgs": 44,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "商品 Tab：Amazon人気",
+      "expected": "切換商品列表 Tab",
+      "clickInfo": {
+        "clicked": true,
+        "count": 1,
+        "tag": "DIV",
+        "text": "Amazon人気",
+        "href": null,
+        "rect": {
+          "x": 692,
+          "y": 154,
+          "w": 119,
+          "h": 40
+        }
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "商品 Tab：1688売れ筋",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3150,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "interactive",
+      "textLen": 1250,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688モップフック、モップクリップ、壁掛けパンチフリーバroomsweepクリ",
+      "visibleImgs": 44,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "商品 Tab：1688売れ筋",
+      "expected": "切換商品列表 Tab",
+      "clickInfo": {
+        "clicked": true,
+        "count": 1,
+        "tag": "DIV",
+        "text": "1688売れ筋",
+        "href": null,
+        "rect": {
+          "x": 811,
+          "y": 154,
+          "w": 92,
+          "h": 40
+        }
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "會員入口：会員登録",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3137,
+      "finalUrl": "https://main-auth.hubbuyer.com/jump_common?jump_data=%7B%22jump_source_url%22%3A%22https%3A%2F%2Fmain-b2b.hubbuyer.com%2Fjp%22%2C%22jump_site%22%3A%22B2B%22%2C%22token%22%3A%22%22%2C%22jump_go_url%22%3A%22%2Fsign%2Fup%22%2C%22nation_key%22%3A%22Japan%22%2C%22language_key%22%3A%22japanese%22%2C%22language_val%22%3A%22%22%7D",
+      "title": "Hubbuyer",
+      "readyState": "complete",
+      "textLen": 0,
+      "textSample": "",
+      "visibleImgs": 0,
+      "blank": true,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://main-api.hubbuyer.com/api_ali/product/detail",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://main-api.hubbuyer.com/api_ali/product/detail",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://main-api.hubbuyer.com/api_ali/product/detail",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://main-api.hubbuyer.com/api_ali/product/detail",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://main-b2b.hubbuyer.com/cdn-cgi/rum?",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://oss.hubbuyer.com/flag/monaco_mco.jpg",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "badResponses": [],
+      "result": "FAIL",
+      "action": "會員入口：会員登録",
+      "expected": "打開註冊頁/彈窗",
+      "clickInfo": {
+        "clicked": true,
+        "count": 3,
+        "tag": "DIV",
+        "text": "会員登録",
+        "href": null,
+        "rect": {
+          "x": 187,
+          "y": 4,
+          "w": 70,
+          "h": 25
+        }
+      },
+      "changedUrl": true
+    },
+    {
+      "label": "會員入口：ログイン",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3168,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 1222,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 53,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "WARN",
+      "action": "會員入口：ログイン",
+      "expected": "打開登入頁/彈窗",
+      "clickInfo": {
+        "clicked": false,
+        "count": 1
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "服務入口：1688越境アシスタント",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3176,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 4589,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 113,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "服務入口：1688越境アシスタント",
+      "expected": "跳轉/打開服務頁",
+      "clickInfo": {
+        "clicked": true,
+        "count": 10,
+        "tag": "DIV",
+        "text": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある",
+        "href": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1358,
+          "h": 2715
+        }
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "服務入口：拡張機能",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3124,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 1332,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 48,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "服務入口：拡張機能",
+      "expected": "跳轉/打開服務頁",
+      "clickInfo": {
+        "clicked": true,
+        "count": 2,
+        "tag": "DIV",
+        "text": "拡張機能",
+        "href": null,
+        "rect": {
+          "x": 1160,
+          "y": 473,
+          "w": 88,
+          "h": 69
+        }
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "服務入口：OEM",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3200,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 1332,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 58,
+      "blank": false,
+      "consoleErrors": [
+        "Failed to load resource: net::ERR_TIMED_OUT"
+      ],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://oss.hubbuyer.com/flag/austria_aut.jpg",
+          "failure": "net::ERR_TIMED_OUT"
+        }
+      ],
+      "badResponses": [],
+      "result": "WARN",
+      "action": "服務入口：OEM",
+      "expected": "跳轉/打開服務頁",
+      "clickInfo": {
+        "clicked": true,
+        "count": 2,
+        "tag": "DIV",
+        "text": "OEM",
+        "href": null,
+        "rect": {
+          "x": 1248,
+          "y": 473,
+          "w": 88,
+          "h": 69
+        }
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "服務入口：D2C",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3139,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 1332,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 58,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "服務入口：D2C",
+      "expected": "跳轉/打開服務頁",
+      "clickInfo": {
+        "clicked": true,
+        "count": 2,
+        "tag": "DIV",
+        "text": "D2C",
+        "href": null,
+        "rect": {
+          "x": 1072,
+          "y": 559,
+          "w": 88,
+          "h": 69
+        }
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "さらに表示按鈕 #1",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": "locator.click: Timeout 5000ms exceeded. Call log: \u001b[2m - waiting for locator('button').nth(2)\u001b[22m \u001b[2m - locator resolved to <button type=\"button\" aria-label=\"Carousel arrow right\" class=\"el-carousel__arrow el-carousel__arrow--right\">…</button>\u001b[22m \u001b[2m - attempting click action\u001b[22m \u001b[2m 2 × waiting for element to be visible, enabled and stable\u001b[22m \u001b[2m ",
+      "elapsedMs": 9474,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 1222,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 53,
+      "blank": false,
+      "consoleErrors": [
+        "Failed to load resource: net::ERR_TIMED_OUT",
+        "Failed to load resource: net::ERR_TIMED_OUT"
+      ],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://oss.hubbuyer.com/flag/argentina_arg.jpg",
+          "failure": "net::ERR_TIMED_OUT"
+        },
+        {
+          "url": "https://oss.hubbuyer.com/flag/belize_blz.jpg",
+          "failure": "net::ERR_TIMED_OUT"
+        }
+      ],
+      "badResponses": [],
+      "result": "FAIL",
+      "action": "さらに表示按鈕 #1",
+      "expected": "跳轉更多列表/分類頁",
+      "clickInfo": null,
+      "changedUrl": false
+    },
+    {
+      "label": "さらに表示按鈕 #2",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3309,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 1222,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 53,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "さらに表示按鈕 #2",
+      "expected": "跳轉更多列表/分類頁",
+      "clickInfo": {
+        "clicked": true,
+        "buttonIndex": 3
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "さらに表示按鈕 #3",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3241,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 1222,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 53,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "さらに表示按鈕 #3",
+      "expected": "跳轉更多列表/分類頁",
+      "clickInfo": {
+        "clicked": true,
+        "buttonIndex": 7
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "さらに表示按鈕 #4",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 9227,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 1222,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 53,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "さらに表示按鈕 #4",
+      "expected": "跳轉更多列表/分類頁",
+      "clickInfo": {
+        "clicked": true,
+        "buttonIndex": 10
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "さらに表示按鈕 #5",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3295,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 1222,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 44,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "さらに表示按鈕 #5",
+      "expected": "跳轉更多列表/分類頁",
+      "clickInfo": {
+        "clicked": true,
+        "buttonIndex": 11
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "さらに表示按鈕 #6",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3877,
+      "finalUrl": "https://main-auth.hubbuyer.com/sign/up",
+      "title": "Hubbuyer | B2Bソーシングプラットフォーム",
+      "readyState": "complete",
+      "textLen": 356,
+      "textSample": "ホームページ 営業日 日本語 Hubbuyer ※ 発注前商談可能 私たちは、丁寧なコミュニケーションを通じて、より正確で信頼いただけるサービスの提供に努めています 15年以上の豊富な仕入れ代行業界経験を持つ業務部部長が対応 私たちは、お客様のニーズを深く理解し、最適なご提案をいたします さまざまなご質問に丁寧に対応いたします。 弊社システムの操作方法についても、わかりやすくご説明いたします 適切な検品方法やオプション、配送方法をご提案いたします。 ZOOM・お電話・Chatwork などを通じてご相談を承ります。",
+      "visibleImgs": 0,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://main-b2b.hubbuyer.com/cdn-cgi/rum?",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://main-api.hubbuyer.com/api_ali/product/detail",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://main-api.hubbuyer.com/api_ali/product/keyword",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://main-api.hubbuyer.com/api_b2b/index/moduleTop",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://main-api.hubbuyer.com/api_ali/product/detail",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://main-api.hubbuyer.com/api_ali/product/detail",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "さらに表示按鈕 #6",
+      "expected": "跳轉更多列表/分類頁",
+      "clickInfo": {
+        "clicked": true,
+        "buttonIndex": 12
+      },
+      "changedUrl": true
+    }
+  ],
+  "issues": [
+    {
+      "label": "1688牛革製の細いベルト、女性用スカートの装飾、シンプルなスーツ用本革ベルト、女性用アクセサリー、高級感、越境配送 14.00 CNY",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/product-643468030315",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 7110,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/cowhide-thin-belt-for-women-simple-decorative-belt-for-dresses-genuine-leather-belt-for-women-high-end-accessory-cross-border-shipping-643468030315",
+      "title": "牛革製の細いベルト、女性用スカートの装飾、シンプルなスーツ用本革ベルト、女性用アクセサリー、高級感、越境配送 | Hubbuyer",
+      "readyState": "complete",
+      "textLen": 4541,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > 服飾部品、アクセサリー > ベルト/ウエストチェーン/ウエストシール 义乌市柏拉皮具有限公司 お気に入り店舗 店舗ページへ 総合評価 5.0 商品品質 5.0 リピート率 57% 牛革製の細いベルト、女性用スカートの装飾、シンプルなスーツ用本革ベルト、女性用アクセサリー、高級感、越境配送 商品評価 5.0 月間販売数 967 リピート率 56.9% 1688 お気に入りに追加 商品情報 商品詳細 ショ",
+      "visibleImgs": 131,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://bizcommon.alicdn.com/3ac96445e9b13cd1/L60KtUTV6YOHQ1eSdNh/na49zuiD2i1kdSlmNtD_254907038107_sd_hq.mp4?biz=community-c23d0a1334dd4637&t=213e049417841676344687246e0bfa&t=213e049417841676344687246e0bfa&b=community&p=cloudvideo_http_cbu_vod",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "(no text)",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/proea-5280-u-2-542525759859",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 6084,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/proea-baloui-5280-men-s-pure-cotton-boxer-briefs-combed-cotton-u-convex-single-layer-breathable-wide-side-two-pack-542525759859",
+      "title": "Proea宝易5280男性純綿平角下着コーミング綿u凸単層通気幅2本入り | Hubbuyer",
+      "readyState": "interactive",
+      "textLen": 1848,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > ペットと園芸 > 林業及び林業副産物 > 下着 > メンズパンツ 阳江市江城区文龙服装店 お気に入り店舗 店舗ページへ 総合評価 4.5 商品品質 5.0 リピート率 72% Proea宝易5280男性純綿平角下着コーミング綿u凸単層通気幅2本入り 商品評価 5.0 月間販売数 390 リピート率 72.49% 1688 お気に入りに追加 商品情報 商品詳細 ショップの売れ筋 商品情報 商品画像をダウ",
+      "visibleImgs": 48,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://caiyuanbao.alicdn.com/a9b5b21ee64d2b47/9PwhcYqKKFxBaw2Jy0G/HTyhQ3rc9ExxLsDch9L_248631031761_hd_hq.mp4?auth_key=1784170344-0-0-fab7aad245decb4a452c92fcfc6f2dcc&biz=video-fa0aebe37f94b2a8&t=213e049417841676449332346e0bfa&t=213e049417841676449332346e0bfa&b=video&p=cloudvideo_http_800000017",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "(no text)",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/product-649531397559",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 6048,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/men-s-underwear-men-s-boxer-briefs-ice-mesh-summer-youth-sports-comfortable-breathable-boxer-shorts-649531397559",
+      "title": "メンズ下着、メンズボクサーパンツ、アイスシルクメッシュ、夏のユーススポーツ、快適で通気性のあるボクサーパンツ | Hubbuyer",
+      "readyState": "complete",
+      "textLen": 2022,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > ペットと園芸 > 林業及び林業副産物 > 下着 > メンズパンツ 江北新区欧时力百货经营部 お気に入り店舗 店舗ページへ 総合評価 4.5 商品品質 5.0 リピート率 75% メンズ下着、メンズボクサーパンツ、アイスシルクメッシュ、夏のユーススポーツ、快適で通気性のあるボクサーパンツ 商品評価 4.9 月間販売数 1301 リピート率 74.91% 1688 お気に入りに追加 商品情報 商品詳細 シ",
+      "visibleImgs": 59,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://caiyuanbao.alicdn.com/a678c1a1ea287482/b0OZT5398r9kmQFW4T9/aywmz7lZBZOtrfEiEmX_322964678193_mp4_264_hd.mp4?auth_key=1784170345-0-0-7a34fb422c85c0c1f548f1dfedd18192&biz=community-66e3f6d104f8a7ff&t=213e049417841676459182603e0bfa&t=213e049417841676459182603e0bfa&b=community&p=cloudvideo_http_c",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "(no text)",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp/products/15-889373058335",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 5514,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp/products/cleaning-suit-15-piece-set-cleaning-car-tools-interior-wheel-paint-surface-cleaning-with-storage-tool-box-889373058335",
+      "title": "清潔セット15点セット清潔自動車ツール内装ハブ塗装面清潔収納付き工具箱 | Hubbuyer",
+      "readyState": "interactive",
+      "textLen": 2361,
+      "textSample": "America ログイン 会員登録 トップページ 営業日 1 CNY ≈ 0.16 USD B2Bトップページ > カー用品 > 美容ケア 普乐士科技 お気に入り店舗 店舗ページへ 総合評価 4.5 商品品質 5.0 リピート率 30% 清潔セット15点セット清潔自動車ツール内装ハブ塗装面清潔収納付き工具箱 商品評価 5.0 月間販売数 4 リピート率 30.06% 1688 お気に入りに追加 商品情報 商品詳細 ショップの売れ筋 商品情報 商品画像をダウンロード 材料 プラスチック 出身地 安徽省 仕様 カスタマ",
+      "visibleImgs": 43,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://caiyuanbao.alicdn.com/2da476065ce29979/a658c34f67740e43/20250916_6184fe8e6be21966_534283155284_328334545603796_published_mp4_264_hd_taobao.mp4?auth_key=1784170350-0-0-6052c57c21a23e9c1171517e8f2998c9&biz=community-1a799f6f120dea57&t=213e049417841676506533429e0bfa&t=213e049417841676506533429e",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "badResponses": [],
+      "result": "PASS"
+    },
+    {
+      "label": "搜尋：輸入「ペット餌入れ器」後點擊検索",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": "locator.fill: Timeout 30000ms exceeded. Call log: \u001b[2m - waiting for locator('input').first()\u001b[22m \u001b[2m - locator resolved to <input value=\"\" type=\"text\" tabindex=\"0\" role=\"combobox\" autocomplete=\"off\" spellcheck=\"false\" id=\"el-id-1024-216\" aria-expanded=\"false\" aria-haspopup=\"listbox\" class=\"el-select__input\" aria-activedescendant=\"\" aria-autocomplete=\"none",
+      "elapsedMs": 31581,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "interactive",
+      "textLen": 1222,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 53,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "FAIL",
+      "action": "搜尋：輸入「ペット餌入れ器」後點擊検索",
+      "expected": "跳轉搜尋結果頁",
+      "clickInfo": null,
+      "changedUrl": false
+    },
+    {
+      "label": "會員入口：会員登録",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3137,
+      "finalUrl": "https://main-auth.hubbuyer.com/jump_common?jump_data=%7B%22jump_source_url%22%3A%22https%3A%2F%2Fmain-b2b.hubbuyer.com%2Fjp%22%2C%22jump_site%22%3A%22B2B%22%2C%22token%22%3A%22%22%2C%22jump_go_url%22%3A%22%2Fsign%2Fup%22%2C%22nation_key%22%3A%22Japan%22%2C%22language_key%22%3A%22japanese%22%2C%22language_val%22%3A%22%22%7D",
+      "title": "Hubbuyer",
+      "readyState": "complete",
+      "textLen": 0,
+      "textSample": "",
+      "visibleImgs": 0,
+      "blank": true,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://main-api.hubbuyer.com/api_ali/product/detail",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://main-api.hubbuyer.com/api_ali/product/detail",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://main-api.hubbuyer.com/api_ali/product/detail",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://main-api.hubbuyer.com/api_ali/product/detail",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://main-b2b.hubbuyer.com/cdn-cgi/rum?",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://oss.hubbuyer.com/flag/monaco_mco.jpg",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "badResponses": [],
+      "result": "FAIL",
+      "action": "會員入口：会員登録",
+      "expected": "打開註冊頁/彈窗",
+      "clickInfo": {
+        "clicked": true,
+        "count": 3,
+        "tag": "DIV",
+        "text": "会員登録",
+        "href": null,
+        "rect": {
+          "x": 187,
+          "y": 4,
+          "w": 70,
+          "h": 25
+        }
+      },
+      "changedUrl": true
+    },
+    {
+      "label": "會員入口：ログイン",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3168,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 1222,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 53,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": [],
+      "result": "WARN",
+      "action": "會員入口：ログイン",
+      "expected": "打開登入頁/彈窗",
+      "clickInfo": {
+        "clicked": false,
+        "count": 1
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "服務入口：OEM",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3200,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 1332,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 58,
+      "blank": false,
+      "consoleErrors": [
+        "Failed to load resource: net::ERR_TIMED_OUT"
+      ],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://oss.hubbuyer.com/flag/austria_aut.jpg",
+          "failure": "net::ERR_TIMED_OUT"
+        }
+      ],
+      "badResponses": [],
+      "result": "WARN",
+      "action": "服務入口：OEM",
+      "expected": "跳轉/打開服務頁",
+      "clickInfo": {
+        "clicked": true,
+        "count": 2,
+        "tag": "DIV",
+        "text": "OEM",
+        "href": null,
+        "rect": {
+          "x": 1248,
+          "y": 473,
+          "w": 88,
+          "h": 69
+        }
+      },
+      "changedUrl": false
+    },
+    {
+      "label": "さらに表示按鈕 #1",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": "locator.click: Timeout 5000ms exceeded. Call log: \u001b[2m - waiting for locator('button').nth(2)\u001b[22m \u001b[2m - locator resolved to <button type=\"button\" aria-label=\"Carousel arrow right\" class=\"el-carousel__arrow el-carousel__arrow--right\">…</button>\u001b[22m \u001b[2m - attempting click action\u001b[22m \u001b[2m 2 × waiting for element to be visible, enabled and stable\u001b[22m \u001b[2m ",
+      "elapsedMs": 9474,
+      "finalUrl": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "readyState": "complete",
+      "textLen": 1222,
+      "textSample": "Japan ログイン 会員登録 営業日 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒ",
+      "visibleImgs": 53,
+      "blank": false,
+      "consoleErrors": [
+        "Failed to load resource: net::ERR_TIMED_OUT",
+        "Failed to load resource: net::ERR_TIMED_OUT"
+      ],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://oss.hubbuyer.com/flag/argentina_arg.jpg",
+          "failure": "net::ERR_TIMED_OUT"
+        },
+        {
+          "url": "https://oss.hubbuyer.com/flag/belize_blz.jpg",
+          "failure": "net::ERR_TIMED_OUT"
+        }
+      ],
+      "badResponses": [],
+      "result": "FAIL",
+      "action": "さらに表示按鈕 #1",
+      "expected": "跳轉更多列表/分類頁",
+      "clickInfo": null,
+      "changedUrl": false
+    },
+    {
+      "label": "さらに表示按鈕 #6",
+      "requestedUrl": "https://main-b2b.hubbuyer.com/jp",
+      "status": 200,
+      "navError": null,
+      "elapsedMs": 3877,
+      "finalUrl": "https://main-auth.hubbuyer.com/sign/up",
+      "title": "Hubbuyer | B2Bソーシングプラットフォーム",
+      "readyState": "complete",
+      "textLen": 356,
+      "textSample": "ホームページ 営業日 日本語 Hubbuyer ※ 発注前商談可能 私たちは、丁寧なコミュニケーションを通じて、より正確で信頼いただけるサービスの提供に努めています 15年以上の豊富な仕入れ代行業界経験を持つ業務部部長が対応 私たちは、お客様のニーズを深く理解し、最適なご提案をいたします さまざまなご質問に丁寧に対応いたします。 弊社システムの操作方法についても、わかりやすくご説明いたします 適切な検品方法やオプション、配送方法をご提案いたします。 ZOOM・お電話・Chatwork などを通じてご相談を承ります。",
+      "visibleImgs": 0,
+      "blank": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "https://main-b2b.hubbuyer.com/cdn-cgi/rum?",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://main-api.hubbuyer.com/api_ali/product/detail",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://main-api.hubbuyer.com/api_ali/product/keyword",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://main-api.hubbuyer.com/api_b2b/index/moduleTop",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://main-api.hubbuyer.com/api_ali/product/detail",
+          "failure": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://main-api.hubbuyer.com/api_ali/product/detail",
+          "failure": "net::ERR_ABORTED"
+        }
+      ],
+      "badResponses": [],
+      "result": "PASS",
+      "action": "さらに表示按鈕 #6",
+      "expected": "跳轉更多列表/分類頁",
+      "clickInfo": {
+        "clicked": true,
+        "buttonIndex": 12
+      },
+      "changedUrl": true
+    }
+  ]
+}

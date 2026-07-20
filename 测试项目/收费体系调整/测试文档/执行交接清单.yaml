@@ -1,27 +1,62 @@
-total_cases: 14
-priority_distribution:
-  Critical: 10
-  High: 3
-  Medium: 1
-  Low: 0
+project: 收费体系调整
+version: agent1-redesign-2026-07-20
+case_summary:
+  total_cases: 48
+  priority_distribution:
+    Critical: 30
+    High: 16
+    Medium: 2
+    Low: 0
+  smoke_cases: 15
+module_distribution:
+  C-GOODS: 8
+  C-CART: 8
+  C-QUOTE: 10
+  A-ORDER: 7
+  A-SETTLE: 10
+  G-EXPORT: 5
 env_requirements:
-  - requirement: "1个全新白板账号 (Account-Normal) 用于非会员计费验证"
-  - requirement: "1个企业会员账号 (Account-VIP) 用于免代采手续费打标验证"
-  - requirement: "1个最高权限财务账号 (Account-Admin) 用于进行二次差额确认及确定清算"
-  - requirement: "1688商品数据Mock池，需涵盖正常promotionPrice与空值异常返回"
-estimated_time: "5.0 工日"
-execution_queue:
-  - TC-C-GOODS-001
-  - TC-C-GOODS-002
-  - TC-C-GOODS-003
-  - TC-C-CART-001
-  - TC-C-CART-002
-  - TC-C-QUOTE-001
-  - TC-C-QUOTE-002
-  - TC-C-QUOTE-003
-  - TC-A-ORDER-001
-  - TC-A-SETTLE-001
-  - TC-A-SETTLE-002
-  - TC-A-SETTLE-003
-  - TC-A-SETTLE-004
-  - TC-G-EXPORT-001
+  - "Account-Normal：无会员权益客户账号，用于普通报价、代采手续费正常收取。"
+  - "Account-VIP：会员客户账号，用于 promotionPrice、会员已省、免/减代采手续费。"
+  - "Account-Admin：具备订单清算、资金处理、导出和审计查看权限。"
+  - "Account-Limited：无清算和敏感财务权限，用于权限边界和接口越权校验。"
+  - "Item-A：1688 原价、promotionPrice、SKU、库存、起订量、预估国内运费均有效。"
+  - "Item-B：promotionPrice 缺失、为 0、非法格式或接口异常。"
+  - "Item-C：普通商品或无会员权益商品，用于混合购物车和会员已省排除校验。"
+  - "Order-PositiveDiff：订单差额 > 0，需准备余额充足和余额不足两种客户资金状态。"
+  - "Order-NegativeDiff：订单差额 < 0，用于退款链路。"
+  - "Order-ZeroDiff：订单差额 = 0，用于无资金流水审计。"
+external_dependencies:
+  - "1688 Mock/API：支持 promotionPrice 正常、缺失、为 0、非法、变价，以及 product.freight.estimate 正常/异常。"
+  - "沙箱支付：支持支付成功、失败、取消、平台服务费展示，不触发真实扣款。"
+  - "导出服务：支持报价单、订单、全商品、清算报表、打印/PDF 模板输出。"
+execution_order:
+  smoke:
+    - TC-C-GOODS-001
+    - TC-C-GOODS-002
+    - TC-C-GOODS-006
+    - TC-C-CART-001
+    - TC-C-CART-003
+    - TC-C-CART-006
+    - TC-C-QUOTE-001
+    - TC-C-QUOTE-002
+    - TC-C-QUOTE-005
+    - TC-A-ORDER-001
+    - TC-A-SETTLE-001
+    - TC-A-SETTLE-002
+    - TC-A-SETTLE-006
+    - TC-A-SETTLE-007
+    - TC-G-EXPORT-001
+  critical_full:
+    - "执行全部 Critical 用例，优先覆盖价格源、报价单快照、平台服务费隔离、清算公式、资金闭环、权限和导出。"
+  extended:
+    - "执行全部 High/Medium 用例，补齐多店铺、状态流转、过期、日志、多语言和打印模板。"
+blocking_rules:
+  - "任一 Critical 用例失败，不允许输出测试通过结论。"
+  - "promotionPrice 回退旧单价、报价单快照被实时价污染、清算公式错误、资金流水重复或权限绕过，均判定为阻塞上线。"
+  - "支付、余额、不足金、退款相关验证必须使用测试账号和沙箱能力，不得使用真实客户资金。"
+deliverables:
+  - "测试点大纲.md"
+  - "收费体系调整测试用例.md"
+  - "工期评估.md"
+  - "第六阶段_用例反射评审报告.md"

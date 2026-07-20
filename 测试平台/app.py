@@ -36,6 +36,14 @@ if "confirm_reset" not in st.session_state:
 
 global_df = load_data()
 
+HOME_TOOLS = [
+    ("🏷️ 进入 SKU 智能比对", "pages/2_sku_verify.py", "sku_verify"),
+    ("🧩 进入业务反馈 BUG 分析", "pages/5_业务反馈BUG分析.py", "bug_feedback"),
+    ("📦 进入 SKU 批量同步", "pages/4_sku_bulk_sync.py", "sku_bulk_sync"),
+    ("🏷️ 进入 8160贴纸SKU修改工具", "pages/6_8160贴纸SKU修改工具.py", "sticker_sku"),
+    ("🚦 进入性能压测配置", "pages/3_性能压测.py", "perf_test"),
+]
+
 # ── 全局共同侧边栏 ──────────────────────────────────────────
 render_sidebar(global_df)
 
@@ -119,12 +127,19 @@ with col_upload:
                     st.rerun()
 
     st.markdown("---")
-    st.markdown("**🏷️ 其它辅助工具**")
-    st.page_link("pages/2_sku_verify.py", label="🏷️ 进入 SKU 智能比对", use_container_width=True)
-    st.page_link("pages/5_业务反馈BUG分析.py", label="🧩 进入业务反馈 BUG 分析", use_container_width=True)
-    if st.button("📦 进入 SKU 批量同步", use_container_width=True, key="goto_sku_bulk_sync"):
-        st.switch_page("pages/4_sku_bulk_sync.py")
-    st.page_link("pages/3_性能压测.py", label="🚦 进入性能压测配置", use_container_width=True)
+    st.markdown(
+        '<div class="home-tools-header"><i class="fas fa-toolbox"></i><span>其它辅助工具</span></div>',
+        unsafe_allow_html=True,
+    )
+    for label, target_page, key_suffix in HOME_TOOLS:
+        page_exists = (Path(__file__).parent / target_page).exists()
+        if st.button(
+            label,
+            use_container_width=True,
+            disabled=not page_exists,
+            key=f"home_tool_{key_suffix}",
+        ):
+            st.switch_page(target_page)
 
 with col_batch_mgmt:
     all_sources = sorted(global_df["source_file"].dropna().unique().tolist()) if not global_df.empty else []

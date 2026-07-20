@@ -45,7 +45,7 @@ class ReportGenerator:
         # status_register = get_status_by_keyword("注册")  # register.py 未实现，暂时移除
         status_img_search = get_status_by_keyword("商品图搜")
         status_keyword_search = get_status_by_keyword("关键词搜索")
-        status_member_pricing = get_status_by_keyword("会员价格")
+        status_member_pricing = get_status_by_keyword("价格体系")
 
         # 解析商品加购任务的子任务状态（从消息中查找）
         add_cart_message = ""

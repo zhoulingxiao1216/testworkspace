@@ -1,0 +1,686 @@
+[
+  {
+    "label": "搜尋",
+    "status": 200,
+    "click": null,
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 5079,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": "locator.fill: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[placeholder*=\"キーワード\"], input[placeholder*=\"URL\"], input[placeholder*=\"商品名\"]').first()\u001b[22m\n",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "圖片搜尋",
+    "text": "画像検索",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1903,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": 0,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 12
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "購物車",
+    "text": "カート",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1903,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": 0,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 24
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "分類",
+    "text": "カテゴリー",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1903,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": 0,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 23
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_TIMED_OUT"
+    ],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "導覽-ご利用ガイド",
+    "text": "(B2B)ご利用ガイド",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1903,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": 0,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 13
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_TIMED_OUT"
+    ],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "導覽-サービス/料金",
+    "text": "(B2B)サービス/料金",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1903,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": 0,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 13
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "導覽-国際送料",
+    "text": "(B2B)国際送料",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1903,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": 0,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 13
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_TIMED_OUT"
+    ],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "導覽-Blog",
+    "text": "Blog",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1903,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": 0,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 13
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "導覽-よくある質問",
+    "text": "よくある質問",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1903,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": 0,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 13
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "Tab-Amazon新品",
+    "text": "Amazon新品",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1903,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": 0,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 14
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "Tab-Amazon人気",
+    "text": "Amazon人気",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1903,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": 0,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 14
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "Tab-1688売れ筋",
+    "text": "1688売れ筋",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1903,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": 0,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 14
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_TIMED_OUT"
+    ],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "会員登録",
+    "text": "会員登録",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1903,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": 0,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 21
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_TIMED_OUT"
+    ],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "ログイン-side",
+    "text": "ログイン",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1903,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": 0,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 18
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "服務-1688越境",
+    "text": "1688越境アシスタント",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1903,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": 0,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 10
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_TIMED_OUT"
+    ],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "服務-拡張機能",
+    "text": "拡張機能",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1903,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": 0,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 10
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "服務-OEM",
+    "text": "OEM",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1903,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": 0,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 10
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_TIMED_OUT"
+    ],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "服務-D2C",
+    "text": "D2C",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1903,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": 0,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 10
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_TIMED_OUT"
+    ],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "更多-首屏商品模組",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1903,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": 0,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 49
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "更多-グローバル厳選",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1403,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": -500,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 64
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_TIMED_OUT"
+    ],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "更多-爆売れチャンス",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1403,
+      "text": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さら",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": -500,
+        "w": 1358,
+        "h": 3807
+      },
+      "count": 64
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  {
+    "label": "更多-おすすめ",
+    "status": 200,
+    "click": {
+      "x": 679,
+      "y": 1471,
+      "text": "Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表示 Amazon売れ筋 楽天売れ筋 Amazon新品 Amazon人気 1688売れ筋 1688チタン鋼は色落ちしない三環指輪のネックレスの女性男性潮ins欧米の街頭ヒップホップガードのチェーンの個性的な装飾 1.",
+      "tag": "DIV",
+      "href": null,
+      "rect": {
+        "left": 0,
+        "top": -365,
+        "w": 1358,
+        "h": 3672
+      },
+      "count": 64
+    },
+    "finalInfo": {
+      "url": "https://main-b2b.hubbuyer.com/jp",
+      "title": "Hubbuyer | B2B調達プラットフォーム",
+      "textLen": 4911,
+      "sample": "Japan ログイン 会員登録 営業日 日本語 1 CNY ≈ 25.23 JPY クリスマス ハロウィン ペット餌入れ器 検索 画像検索 カート カテゴリー (B2B)ご利用ガイド (B2B)サービス/料金 (B2B)国際送料 Blog よくある質問 Hubbuyer B2B Sourcing Platform さらに表示 さらに表示 さらに表示 さらに表"
+    },
+    "popupInfo": null,
+    "changedUrl": false,
+    "navErr": null,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_TIMED_OUT"
+    ],
+    "pageErrors": [],
+    "badResponses": []
+  }
+]

@@ -34,6 +34,9 @@ class Notifier:
         ("B2B 指定报价单支付", "B2B指定报价单支付"),
         ("B2B&D2C 插件加购", "B2B&D2C插件添加1688&淘宝商品"),
     ]
+    PRICING_API_ITEMS = [
+        ("💰 价格体系专项", "价格体系专项巡检链路"),
+    ]
     BRIDGE_API_ITEMS = [
         ("📋 报价单审核(联动)", "后台报价单审核"),
         ("📦 代购订单审核(联动)", "后台代购订单审核"),
@@ -49,6 +52,7 @@ class Notifier:
     SECTIONS = [
         ("📍 全球站生产站点访问检查", WEB_ITEMS),
         ("💼 前台核心业务检查", FRONTEND_API_ITEMS),
+        ("💰 价格体系专项检查", PRICING_API_ITEMS),
         ("🔗 前后台联动检查", BRIDGE_API_ITEMS),
         ("🔧 后台管理检查点", BACKEND_ADMIN_ITEMS),
         ("📊 外部 API 用量统计", EXTERNAL_API_ITEMS),
@@ -64,6 +68,10 @@ class Notifier:
     _ONEBOUND_KEY = "万邦 API 前日调用统计"
     _ONEBOUND_MSG_PART_RE = re.compile(
         r"(?P<label>[^|]+?)\s+实际:(?P<real>\d+)\s+总计:(?P<all>\d+)"
+    )
+    _MEMBER_PRICING_KEY = "价格体系专项巡检链路"
+    _MEMBER_PRICING_STATS_RE = re.compile(
+        r"Passed=(?P<passed>\d+)\s+Failed=(?P<failed>\d+)\s+Skipped=(?P<skipped>\d+)"
     )
 
     @staticmethod
@@ -237,6 +245,27 @@ class Notifier:
         return lines
 
     @staticmethod
+    def _member_pricing_extra_lines(report_data):
+        """价格体系专项巡检摘要：展示断言通过、失败、跳过数量。"""
+        item = report_data.get(Notifier._MEMBER_PRICING_KEY, {})
+        message = str(item.get("message") or "")
+        if not message:
+            return []
+
+        match = Notifier._MEMBER_PRICING_STATS_RE.search(message)
+        if match:
+            return [
+                "　价格体系断言: Passed={passed} Failed={failed} Skipped={skipped}".format(
+                    passed=match.group("passed"),
+                    failed=match.group("failed"),
+                    skipped=match.group("skipped"),
+                )
+            ]
+
+        short_msg = message[:120] + ("..." if len(message) > 120 else "")
+        return [f"　{short_msg}"]
+
+    @staticmethod
     def send_wechat_report(report_data, is_all_pass):
         """
         统一使用动态美化模板推送：
@@ -294,6 +323,9 @@ class Notifier:
             shipping_extra = Notifier._shipping_extra_line(report_data)
             if shipping_extra:
                 content += f"{shipping_extra}\n"
+        if "价格体系" in section_title:
+            for line in Notifier._member_pricing_extra_lines(report_data):
+                content += f"{line}\n"
         if "外部 API" in section_title:
             for line in Notifier._onebound_extra_lines(report_data):
                 content += f"{line}\n"
