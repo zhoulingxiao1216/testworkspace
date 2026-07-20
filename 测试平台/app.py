@@ -44,6 +44,58 @@ HOME_TOOLS = [
     ("🚦 进入性能压测配置", "pages/3_性能压测.py", "perf_test"),
 ]
 
+
+def _parse_archive_source_time(archive_file: Path):
+    """从导入归档文件名还原原始 source_file 和导入时间。"""
+    try:
+        source_stem, date_part, time_part = archive_file.stem.rsplit("_", 2)
+    except ValueError:
+        return None
+    if not (date_part.isdigit() and time_part.isdigit()):
+        return None
+    try:
+        imported_at = datetime.strptime(f"{date_part}_{time_part}", "%Y%m%d_%H%M%S")
+    except ValueError:
+        return None
+    return f"{source_stem}{archive_file.suffix}", imported_at
+
+
+def _build_source_upload_meta(source_files):
+    archive_dir = Path(__file__).parent / "测试用例导入记录"
+    source_set = set(source_files)
+    latest_by_source = {}
+    if archive_dir.exists():
+        for archive_file in archive_dir.glob("*.md"):
+            parsed = _parse_archive_source_time(archive_file)
+            if not parsed:
+                continue
+            source_file, imported_at = parsed
+            if source_file not in source_set:
+                continue
+            if source_file not in latest_by_source or imported_at > latest_by_source[source_file]:
+                latest_by_source[source_file] = imported_at
+
+    return {
+        source_file: {
+            "month": imported_at.strftime("%Y-%m"),
+            "display": imported_at.strftime("%Y-%m-%d %H:%M"),
+        }
+        for source_file, imported_at in latest_by_source.items()
+    }
+
+
+def _format_month_filter(month_value: str) -> str:
+    if month_value == "__ALL__":
+        return "全部月份"
+    if month_value == "__UNKNOWN__":
+        return "未记录月份"
+    try:
+        parsed = datetime.strptime(month_value, "%Y-%m")
+    except ValueError:
+        return month_value
+    return f"{parsed.year}年{parsed.month:02d}月"
+
+
 # ── 全局共同侧边栏 ──────────────────────────────────────────
 render_sidebar(global_df)
 
@@ -131,15 +183,18 @@ with col_upload:
         '<div class="home-tools-header"><i class="fas fa-toolbox"></i><span>其它辅助工具</span></div>',
         unsafe_allow_html=True,
     )
-    for label, target_page, key_suffix in HOME_TOOLS:
-        page_exists = (Path(__file__).parent / target_page).exists()
-        if st.button(
-            label,
-            use_container_width=True,
-            disabled=not page_exists,
-            key=f"home_tool_{key_suffix}",
-        ):
-            st.switch_page(target_page)
+    for index in range(0, len(HOME_TOOLS), 2):
+        tool_cols = st.columns(2)
+        for col, (label, target_page, key_suffix) in zip(tool_cols, HOME_TOOLS[index:index + 2]):
+            page_exists = (Path(__file__).parent / target_page).exists()
+            with col:
+                if st.button(
+                    label,
+                    use_container_width=True,
+                    disabled=not page_exists,
+                    key=f"home_tool_{key_suffix}",
+                ):
+                    st.switch_page(target_page)
 
 with col_batch_mgmt:
     all_sources = sorted(global_df["source_file"].dropna().unique().tolist()) if not global_df.empty else []
@@ -193,20 +248,49 @@ if st.session_state.orphan_tc_ids:
         st.rerun()
 
 st.markdown("<br/>", unsafe_allow_html=True)
-st.markdown('<div class="history-section-header"><h2><i class="fas fa-history"></i> 工作看板</h2></div>', unsafe_allow_html=True)
+source_files_for_board = [s for s in global_df["source_file"].dropna().unique().tolist() if s] if not global_df.empty else []
+source_upload_meta = _build_source_upload_meta(source_files_for_board)
+known_months = sorted({meta["month"] for meta in source_upload_meta.values()}, reverse=True)
+has_unknown_month = any(source_file not in source_upload_meta for source_file in source_files_for_board)
+month_options = ["__ALL__", *known_months, *(["__UNKNOWN__"] if has_unknown_month else [])]
 
-total = len(global_df)
-pass_cnt = int((global_df["status"] == "Pass").sum()) if total else 0
-fail_cnt = int((global_df["status"] == "Fail").sum()) if total else 0
+header_col, month_col = st.columns([1, 1])
+with header_col:
+    st.markdown('<div class="history-section-header"><h2><i class="fas fa-history"></i> 工作看板</h2></div>', unsafe_allow_html=True)
+with month_col:
+    selected_month = st.selectbox(
+        "上传月份",
+        options=month_options,
+        format_func=_format_month_filter,
+        key="home_dashboard_month_filter",
+        label_visibility="collapsed",
+    )
+
+if selected_month == "__ALL__":
+    board_source_files = source_files_for_board
+elif selected_month == "__UNKNOWN__":
+    board_source_files = [source_file for source_file in source_files_for_board if source_file not in source_upload_meta]
+else:
+    board_source_files = [
+        source_file
+        for source_file in source_files_for_board
+        if source_upload_meta.get(source_file, {}).get("month") == selected_month
+    ]
+
+board_df = global_df if selected_month == "__ALL__" else global_df[global_df["source_file"].isin(board_source_files)]
+
+total = len(board_df)
+pass_cnt = int((board_df["status"] == "Pass").sum()) if total else 0
+fail_cnt = int((board_df["status"] == "Fail").sum()) if total else 0
 
 total_stats = {"total": total, "pass": pass_cnt, "fail": fail_cnt, "pending": total - pass_cnt - fail_cnt}
 files_data = []
-if not global_df.empty:
-    for f in global_df["source_file"].unique():
+if not board_df.empty:
+    for f in board_source_files:
         if not f: continue
-        sf_df = global_df[global_df["source_file"] == f]
+        sf_df = board_df[board_df["source_file"] == f]
         files_data.append({
-            "filename": f, "timestamp": "", "total": len(sf_df),
+            "filename": f, "timestamp": source_upload_meta.get(f, {}).get("display", ""), "total": len(sf_df),
             "pass": int((sf_df["status"] == "Pass").sum()),
             "fail": int((sf_df["status"] == "Fail").sum()),
             "pending": int((sf_df["status"].isin(["Untested", "Blocked"])).sum())
