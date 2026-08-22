@@ -7,6 +7,8 @@ import random
 import requests
 import traceback
 import urllib3
+import base64
+from urllib.parse import quote
 from datetime import datetime
 
 # 禁用 InsecureRequestWarning 警告
@@ -36,6 +38,112 @@ def emit_result(final_result):
     """输出 runner 可解析的最终 JSON，并返回原结果。"""
     print(json.dumps(final_result, ensure_ascii=False), flush=True)
     return final_result
+
+def _clean_token(token):
+    return (token or "").replace("Bearer ", "").strip()
+
+def _token_claims(token):
+    clean = _clean_token(token)
+    try:
+        payload = clean.split(".")[1]
+        payload += "=" * (-len(payload) % 4)
+        return json.loads(base64.urlsafe_b64decode(payload.encode("utf-8")).decode("utf-8"))
+    except Exception:
+        return {}
+
+def _site_context(token, config=None, task_config=None):
+    config = config or {}
+    task_config = task_config or {}
+    claims = _token_claims(token)
+    nation = task_config.get("nation") or config.get("nation") or claims.get("login_nation") or "Japan"
+    language_by_nation = {
+        "Japan": "japanese",
+        "Korea": "korean",
+        "United States": "english",
+        "USA": "english",
+    }
+    currency_by_nation = {
+        "Japan": "JPY",
+        "Korea": "KRW",
+        "United States": "USD",
+        "USA": "USD",
+    }
+    language = task_config.get("language") or config.get("language") or language_by_nation.get(nation, "english")
+    currency = task_config.get("currency") or config.get("currency") or currency_by_nation.get(nation, "USD")
+    return {"currency": currency, "language": language, "nation": nation}
+
+def _append_cookie(cookie_str, name, value):
+    if not value:
+        return cookie_str or ""
+    cookie_str = (cookie_str or "").strip().rstrip(";")
+    if f"{name}=" in cookie_str:
+        return cookie_str
+    return (cookie_str + "; " if cookie_str else "") + f"{name}={value}"
+
+def _frontend_cookie(cookie_str, token, language, nation):
+    clean = _clean_token(token)
+    cookie_str = _append_cookie(cookie_str, "pro_auth_token", clean)
+    site_value = quote(json.dumps(
+        {"agreeCookie": True, "language": language, "nation": nation},
+        separators=(",", ":"),
+    ))
+    return _append_cookie(cookie_str, "pro_site", site_value)
+
+def _string_ids(ids):
+    return [str(item) for item in (ids or []) if item not in ("", None)]
+
+def _excluded_item_ids(config):
+    return {
+        str(item).strip()
+        for item in (config.get("B2B_Addon_ExcludedItemIds", []) if isinstance(config, dict) else [])
+        if item not in ("", None) and str(item).strip()
+    }
+
+def _cart_product_id(item):
+    for key in ("item_id", "goods_id", "num_iid", "ItemID"):
+        value = item.get(key)
+        if value not in ("", None):
+            return str(value)
+    return ""
+
+def _response_summary(response):
+    try:
+        body = response.json()
+        code = body.get("code")
+        msg = body.get("message", body.get("msg", ""))
+        return f"status={response.status_code} code={code} msg={msg}"
+    except Exception:
+        text = (getattr(response, "text", "") or "").strip()
+        return f"status={getattr(response, 'status_code', '')} body={text[:300]}"
+
+def _build_fjx_headers(base_headers, token, cookie_str, context):
+    clean = _clean_token(token)
+    headers = dict(base_headers or {})
+    headers.update({
+        "accept": "application/json, text/plain, */*",
+        "accept-language": "zh-CN,zh;q=0.9",
+        "content-type": "application/json",
+        "currency": context["currency"],
+        "language": context["language"],
+        "nation": context["nation"],
+        "origin": "https://fjx.hubbuyer.com",
+        "Origin": "https://fjx.hubbuyer.com",
+        "priority": "u=1, i",
+        "referer": "https://fjx.hubbuyer.com/",
+        "sec-ch-ua": '"Google Chrome";v="147", "Not.A/Brand";v="8", "Chromium";v="147"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": '"Windows"',
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-site",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "withcredentials": "true",
+        "adminlogintoken": "",
+    })
+    if clean:
+        headers["userlogintoken"] = clean
+    headers["Cookie"] = _frontend_cookie(cookie_str or headers.get("Cookie", ""), clean, context["language"], context["nation"])
+    return headers
 
 def load_addon_payloads():
     """加载附加项请求参数"""
@@ -86,15 +194,70 @@ def _pick_first_matching_uuid(groups, keyword_groups):
                     return item["uuid"]
     return None
 
-def get_runtime_fjx_selection(base_url, endpoints, headers):
+def _uuid_list(value):
+    if isinstance(value, str):
+        value = value.strip()
+        return [value] if value else []
+    if isinstance(value, (list, tuple, set)):
+        return [str(item).strip() for item in value if item not in ("", None)]
+    return []
+
+def _enabled_uuid_set(items):
+    return {
+        str(item.get("uuid"))
+        for item in (items or [])
+        if _is_enabled_uuid_item(item)
+    }
+
+def _flatten_enabled_fjx_items(groups):
+    items = []
+    for group in groups or []:
+        if not isinstance(group, dict):
+            continue
+        for item in group.get("fjx_config_data", []) or []:
+            if _is_enabled_uuid_item(item):
+                items.append(item)
+    return items
+
+def _configured_runtime_selection(fjx_config, check_items, groups, user_fjx_items):
+    fjx_config = fjx_config or {}
+
+    available_checks = _enabled_uuid_set(check_items)
+    check_uuid = ""
+    for uuid in _uuid_list(fjx_config.get("check_config_uuid")):
+        if uuid in available_checks:
+            check_uuid = uuid
+            break
+    if not check_uuid and check_items:
+        check_uuid = check_items[0]["uuid"]
+
+    available_fjx = _enabled_uuid_set(_flatten_enabled_fjx_items(groups))
+    selected_fjx = []
+    for uuid in _uuid_list(fjx_config.get("fjx_config_uuid_arr")):
+        if uuid in available_fjx and uuid not in selected_fjx:
+            selected_fjx.append(uuid)
+
+    available_user_fjx = _enabled_uuid_set(user_fjx_items)
+    selected_user_fjx = []
+    for uuid in _uuid_list(fjx_config.get("user_fjx_config_uuid_arr")):
+        if uuid in available_user_fjx and uuid not in selected_user_fjx:
+            selected_user_fjx.append(uuid)
+
+    return check_uuid, selected_fjx, selected_user_fjx
+
+def get_runtime_fjx_selection(base_url, endpoints, headers, cart_ids=None, fjx_config=None):
     """
     全球站改版后，检品/附加项 UUID 由 fjx iframe 实时列表提供。
     旧静态 C25/F25 清单可能已下架，直接保存会被后端判定为未选择检品。
     """
     list_path = endpoints.get("B2B_Addon_CheckFjxList") or "/api_b2b/cartQuoteStep1/getCheckFjxList"
+    payload = {}
+    string_cart_ids = _string_ids(cart_ids)
+    if string_cart_ids:
+        payload["cart_detail_id_arr"] = string_cart_ids
     response = requests.post(
         f"{base_url}{list_path}",
-        json={},
+        json=payload,
         headers=headers,
         timeout=REQUEST_TIMEOUT_API,
         verify=False,
@@ -102,7 +265,10 @@ def get_runtime_fjx_selection(base_url, endpoints, headers):
     )
     check = AssertionTool.verify_api_common(response)
     if not check["success"]:
-        raise RuntimeError(f"获取新版附加项列表失败: {check.get('message', '未知错误')}")
+        raise RuntimeError(
+            f"获取新版附加项列表失败: {check.get('message', '未知错误')} | "
+            f"{_response_summary(response)}"
+        )
 
     data = response.json().get("data", {})
     check_items = [item for item in data.get("check_data", []) if _is_enabled_uuid_item(item)]
@@ -110,18 +276,25 @@ def get_runtime_fjx_selection(base_url, endpoints, headers):
         raise RuntimeError("新版附加项列表无可用检品 UUID")
 
     groups = data.get("fjx_data", [])
-    selected_fjx = []
+    user_fjx_items = [item for item in data.get("user_fjx_data", []) if _is_enabled_uuid_item(item)]
+    check_config_uuid, selected_fjx, selected_user_fjx = _configured_runtime_selection(
+        fjx_config,
+        check_items,
+        groups,
+        user_fjx_items,
+    )
     # 普通可选附加项只选择新版列表中明确存在的非设计项；吊牌/FBA/洗标等设计项由各自保存接口写入。
     preferred_uuid_rules = [
         [["贴纸"], ["sticker"]],
         [["fba"], ["opp", "四角"], ["4-fold"]],
     ]
-    for keyword_groups in preferred_uuid_rules:
-        uuid = _pick_first_matching_uuid(groups, keyword_groups)
-        if uuid and uuid not in selected_fjx:
-            selected_fjx.append(uuid)
+    if not selected_fjx and not selected_user_fjx:
+        for keyword_groups in preferred_uuid_rules:
+            uuid = _pick_first_matching_uuid(groups, keyword_groups)
+            if uuid and uuid not in selected_fjx:
+                selected_fjx.append(uuid)
 
-    if not selected_fjx:
+    if not selected_fjx and not selected_user_fjx:
         for group in groups:
             for item in group.get("fjx_config_data", []):
                 if _is_enabled_uuid_item(item) and not item.get("is_design"):
@@ -130,7 +303,7 @@ def get_runtime_fjx_selection(base_url, endpoints, headers):
             if selected_fjx:
                 break
 
-    return check_items[0]["uuid"], selected_fjx, []
+    return check_config_uuid, selected_fjx, selected_user_fjx
 
 def load_or_create_id_mapping():
     """加载或创建邮箱-ID映射文件"""
@@ -286,6 +459,8 @@ def run(task_config=None):
     try:
         # 1. 加载配置与数据
         addon_payloads = load_addon_payloads()
+        fjx_config = load_fjx_ids()
+        excluded_item_ids = _excluded_item_ids(addon_payloads)
         all_rules = AssertionTool.get_rules_dynamically("B2B_Addon", root_path)
         
         # 获取登录账号（从规则或配置中获取）
@@ -336,19 +511,34 @@ def run(task_config=None):
         
         base_url = API_CONFIG.get("BASE_URL", "").rstrip('/')
         endpoints = API_CONFIG.get("ENDPOINTS", {})
+        site_context = _site_context(
+            b2b_token,
+            addon_payloads.get("B2B_Addon_FjxContext", {}),
+            task_config,
+        )
+        b2b_cookie = _frontend_cookie(
+            b2b_cookie,
+            b2b_token,
+            site_context["language"],
+            site_context["nation"],
+        )
         
         # 3. 步骤1：B2B购物车列表调用
-        shopping_list_url = f"{base_url}{endpoints.get('B2B_Addon_shoppinglist', '')}"
         shopping_list_payload = addon_payloads.get("B2B_Addon_shoppinglist", {"page": 1})
+        shopping_list_url = f"{base_url}{endpoints.get('B2B_Addon_shoppinglist', '')}"
+        shopping_list_headers = get_b2b_headers(
+            base_url,
+            b2b_token,
+            b2b_cookie,
+            currency=site_context["currency"],
+            language=site_context["language"],
+            nation=site_context["nation"],
+        )
         # 为购物车附加项流程设置正确的headers（currpath和referer）
-        shopping_list_headers = get_b2b_headers(base_url, b2b_token, b2b_cookie)
         # 覆盖购物车相关的currpath和referer
         shopping_list_headers['currpath'] = '/user/shopping/b2b_carts/'
         shopping_list_headers['referer'] = f'{base_url}/web_view/user/shopping/b2b_carts/'
-        fjx_headers = shopping_list_headers.copy()
-        fjx_headers['Origin'] = 'https://fjx.hubbuyer.com'
-        fjx_headers['origin'] = 'https://fjx.hubbuyer.com'
-        fjx_headers['referer'] = 'https://fjx.hubbuyer.com/'
+        fjx_headers = _build_fjx_headers(shopping_list_headers, b2b_token, b2b_cookie, site_context)
         
         try:
             response = requests.post(shopping_list_url, json=shopping_list_payload, headers=shopping_list_headers, timeout=REQUEST_TIMEOUT_API, verify=False, proxies={'http': None, 'https': None})
@@ -377,6 +567,7 @@ def run(task_config=None):
                     seller_data = []
                 
                 id_list = []
+                skipped_item_ids = []
                 # 遍历每个 seller
                 for seller in seller_data:
                     if isinstance(seller, dict):
@@ -387,6 +578,10 @@ def run(task_config=None):
                             for item in seller_items:
                                 if isinstance(item, dict):
                                     item_id = item.get("id")
+                                    product_id = _cart_product_id(item)
+                                    if product_id in excluded_item_ids:
+                                        skipped_item_ids.append(f"{item_id}:{product_id}")
+                                        continue
                                     if item_id:
                                         id_list.append(item_id)
                 
@@ -403,7 +598,8 @@ def run(task_config=None):
                 id_mapping[target_mail] = [{"id": item_id} for item_id in id_list]
                 save_id_mapping(id_mapping)
                 stored_ids = id_list
-                msgs.append(f"购物车列表:OK(获取到{len(id_list)}个ID)")
+                skip_msg = f",跳过{len(skipped_item_ids)}个异常商品" if skipped_item_ids else ""
+                msgs.append(f"购物车列表:OK(获取到{len(id_list)}个ID{skip_msg})")
                 
             except Exception as e:
                 return emit_result({
@@ -456,11 +652,13 @@ def run(task_config=None):
         check_config_uuid, selected_fjx, selected_user_fjx = get_runtime_fjx_selection(
             base_url,
             endpoints,
-            fjx_headers
+            fjx_headers,
+            cart_ids,
+            fjx_config
         )
         
         # 更新 payload 中的字段，作用于本次报价单会提交的所有购物车明细
-        step2_base_payload["cart_detail_id_arr"] = cart_ids
+        step2_base_payload["cart_detail_id_arr"] = _string_ids(cart_ids)
         step2_base_payload["check_config_uuid"] = check_config_uuid
         step2_base_payload["fjx_config_uuid_arr"] = selected_fjx
         step2_base_payload["user_fjx_config_uuid_arr"] = selected_user_fjx
@@ -470,9 +668,10 @@ def run(task_config=None):
             response = requests.post(step2_url, json=step2_payload, headers=fjx_headers, timeout=REQUEST_TIMEOUT_API, verify=False, proxies={'http': None, 'https': None})
             check = AssertionTool.verify_api_common(response, rules=all_rules.get("B2B_Addon_Servicefjx", {}))
             if not check["success"]:
-                error_msg = f"选择商品附加项失败: {check.get('message', '未知错误')}"
+                detail = f"{check.get('message', '未知错误')} | {_response_summary(response)}"
+                error_msg = f"选择商品附加项失败: {detail}"
                 error_details.append(error_msg)
-                msgs.append(f"选择商品附加项:FAIL({check.get('message', '未知错误')})")
+                msgs.append(f"选择商品附加项:FAIL({detail})")
             else:
                 msgs.append(f"选择商品附加项:OK({','.join(selected_fjx)})")
         except Exception as e:

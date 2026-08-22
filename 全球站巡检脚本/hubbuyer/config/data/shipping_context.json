@@ -1,14 +1,14 @@
 {
-  "order_no": "B2B-DD-KOR8-260717-343",
-  "order_detail_id": 7043,
-  "quantity": 3,
+  "order_no": "B2B-DD-KOR8-260822-407",
+  "order_detail_id": 7544,
+  "quantity": 1,
   "user_main_uuid": "KOR8",
-  "product_uuid": "D000009633",
-  "ku_stock_in_log_id": 3548,
-  "ship_order_no": "WL-KOR8-260717-006",
-  "ship_order_detail_id": 3424,
-  "box_id": 546,
-  "waybill_date": "0717",
-  "waybill_counter": 3,
-  "goods_uuid": "G260717152543E551BFEC"
+  "product_uuid": "D000010278",
+  "ku_stock_in_log_id": 3659,
+  "ship_order_no": "WL-KOR8-260822-009",
+  "ship_order_detail_id": 3550,
+  "box_id": 604,
+  "waybill_date": "0822",
+  "waybill_counter": 2,
+  "goods_uuid": "G260822114614E72BE004"
 }

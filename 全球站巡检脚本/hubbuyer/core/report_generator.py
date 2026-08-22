@@ -165,28 +165,26 @@ class ReportGenerator:
             d2c_all_ok = False
         status_d2c_addon = "✅" if d2c_all_ok else ("❌" if d2c_has_fail else "⚪")
 
-        # 解析B2B提交自助报价单任务的子任务状态（D2C流程已注释）
+        # 解析B2B提交委托报价任务的子任务状态（D2C流程已注释）
         submit_order_message = ""
         for desc, info in flat_results.items():
-            if "提交自助报价单" in desc or "自助报价单" in desc:
+            if "提交委托报价" in desc or "提交自助报价单" in desc or "自助报价单" in desc:
                 msg = info.get("message") or ""
                 actual = info.get("actual") or ""
                 submit_order_message = f"{msg} | {actual}"
                 break
-        # 提交自助报价单需要检查的步骤（只检查B2B）
-        submit_order_steps = ["B2B提交自助报价单"]
+        # 提交委托报价需要检查的步骤（只检查B2B）
+        submit_order_steps = ["B2B提交委托报价", "B2B提交自助报价单"]
         submit_order_all_ok = True
         submit_order_has_fail = False
         if submit_order_message:
-            for step in submit_order_steps:
-                if f"{step}:OK" in submit_order_message:
-                    continue
-                elif f"{step}:FAIL" in submit_order_message:
-                    submit_order_all_ok = False
-                    submit_order_has_fail = True
-                    break
-                else:
-                    submit_order_all_ok = False
+            if any(f"{step}:OK" in submit_order_message for step in submit_order_steps):
+                submit_order_all_ok = True
+            elif any(f"{step}:FAIL" in submit_order_message for step in submit_order_steps):
+                submit_order_all_ok = False
+                submit_order_has_fail = True
+            else:
+                submit_order_all_ok = False
         else:
             submit_order_all_ok = False
         status_submit_order = "✅" if submit_order_all_ok else ("❌" if submit_order_has_fail else "⚪")
@@ -317,7 +315,7 @@ class ReportGenerator:
             f"• B2B 编辑保存附加项           {status_b2b_addon}",
             f"• 会员价格/附加项专项           {status_member_pricing}",
             f"• D2C 选择商品附加项           {status_d2c_addon}",
-            f"• B2B 提交自助报价单           {status_submit_order}",
+            f"• B2B 提交委托报价             {status_submit_order}",
             f"• B2B 支付报价单               {status_payment}",
             f"• B2B&D2C 谷歌浏览器插件（淘宝/1688）      {status_plugin}",
             "",

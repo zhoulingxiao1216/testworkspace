@@ -1,7 +1,7 @@
 {
   "submit_order_task": {
     "key": "check_api_submit_order",
-    "desc": "B2B 提交自助报价单",
+    "desc": "B2B 提交委托报价",
     "script": "checker/api/submit_order.py"
   }
 }

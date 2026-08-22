@@ -36,7 +36,7 @@ def init_db() -> None:
         actual_result - 实际结果描述
         bug_link      - 关联 Bug 链接
         actual_amount - 实际金额（财务类用例专用，单位：元）
-        tc_id         - 用例唯一编号（如 TC-001），用于防重复导入
+        tc_id         - 用例编号（如 TC-001），与 source_file 共同用于防重复导入
     """
     ddl = """
     CREATE TABLE IF NOT EXISTS test_cases (
@@ -75,8 +75,11 @@ def init_db() -> None:
             conn.execute("ALTER TABLE test_cases ADD COLUMN source_file TEXT DEFAULT ''")
         except sqlite3.OperationalError:
             pass
+        # 旧版仅按 tc_id 全局唯一，会导致不同项目复用同一编号时继承旧执行状态。
+        # 改为「来源文件 + tc_id」唯一，同一项目重导更新，不同项目独立保留。
+        conn.execute("DROP INDEX IF EXISTS uix_tc_id")
         conn.execute(
-            "CREATE UNIQUE INDEX IF NOT EXISTS uix_tc_id ON test_cases(tc_id)"
+            "CREATE UNIQUE INDEX IF NOT EXISTS uix_source_tc_id ON test_cases(source_file, tc_id)"
         )
     print(f"[init_db] 数据库已就绪：{DB_PATH}")
 
@@ -198,11 +201,11 @@ def upsert_case(
     source_file: str = "",
 ) -> tuple[int, str]:
     """
-    按 tc_id 执行 Upsert：TC 编号已存在则更新字段，否则插入新记录。
+    按 source_file + tc_id 执行 Upsert：同一来源内编号已存在则更新字段，否则插入新记录。
     执行状态（status / actual_result）在 Update 时不会被覆盖，保留已有结果。
 
     Args:
-        tc_id    : 唯一用例编号，如 TC-001
+        tc_id    : 用例编号，如 TC-001
         module   : 所属模块
         title    : 用例标题
         priority : 优先级
@@ -217,7 +220,8 @@ def upsert_case(
 
     with get_connection() as conn:
         row = conn.execute(
-            "SELECT id FROM test_cases WHERE tc_id = ?", (tc_id,)
+            "SELECT id FROM test_cases WHERE source_file = ? AND tc_id = ?",
+            (source_file, tc_id),
         ).fetchone()
 
         if row:
@@ -278,18 +282,39 @@ def get_tc_ids_by_source(source_file: str) -> set[str]:
     return {r["tc_id"] for r in rows}
 
 
-def delete_cases_by_tc_ids(tc_ids: list[str]) -> int:
-    """按 tc_id 列表批量删除指定用例，返回删除条数。"""
+def find_tc_id_conflicts(tc_ids: list[str], source_file: str) -> list[sqlite3.Row]:
+    """查找当前导入编号在其他来源中已存在的记录，用于提示跨项目撞号。"""
+    clean_ids = sorted({tc_id for tc_id in tc_ids if tc_id})
+    if not clean_ids:
+        return []
+    placeholders = ", ".join("?" for _ in clean_ids)
+    sql = f"""
+    SELECT tc_id, source_file, status, title
+    FROM   test_cases
+    WHERE  tc_id IN ({placeholders})
+       AND COALESCE(source_file, '') <> ?
+    ORDER  BY tc_id, source_file
+    """
+    with get_connection() as conn:
+        return conn.execute(sql, [*clean_ids, source_file]).fetchall()
+
+
+def delete_cases_by_tc_ids(tc_ids: list[str], source_file: str | None = None) -> int:
+    """按 tc_id 列表批量删除指定用例；传入 source_file 时限定当前来源。"""
     if not tc_ids:
         return 0
     placeholders = ", ".join("?" for _ in tc_ids)
+    if source_file is not None:
+        sql = f"DELETE FROM test_cases WHERE source_file = ? AND tc_id IN ({placeholders})"
+        params = [source_file, *tc_ids]
+    else:
+        sql = f"DELETE FROM test_cases WHERE tc_id IN ({placeholders})"
+        params = list(tc_ids)
     with get_connection() as conn:
-        cursor = conn.execute(
-            f"DELETE FROM test_cases WHERE tc_id IN ({placeholders})",
-            list(tc_ids),
-        )
+        cursor = conn.execute(sql, params)
         count = cursor.rowcount
-    print(f"[delete_cases_by_tc_ids] 已删除 {count} 条废弃用例")
+    scope = f" 来源={source_file}" if source_file is not None else ""
+    print(f"[delete_cases_by_tc_ids] 已删除 {count} 条废弃用例{scope}")
     return count
 
 

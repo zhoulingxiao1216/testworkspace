@@ -23,7 +23,7 @@ API_CONFIG = {
         "B2B_Addon_WashCollar":"/api_b2b/designFjxWash/create", #洗标
         "D2C_Addon_shoppinglist":"",
         "D2C_Addon_add":"",
-        "submit_order_B2B":"/api_b2b/quote/create", #提交自助报价单
+        "submit_order_B2B":"/api_b2b/quote/create", #提交委托报价
         #"submit_order_saveAddress_D2C":"/api_user/d2c_shopping/saveAddress", #选择收货地址
         "submit_order_D2C":"", #提交报价单
         "payment_B2B_list":"/api_b2b/quote/list", #B2B报价单列表

@@ -29,7 +29,7 @@ class Notifier:
         ("B2B 加购1688&淘宝商品", "B2B&D2C 商品加购接口校验"),
         ("B2B 编辑保存附加项", "B2B 选择商品附加项"),
         ("D2C 选择商品附加项", "D2C 选择商品附加项"),
-        ("B2B 提交自助报价单", "B2B 提交自助报价单"),
+        ("B2B 提交委托报价", "B2B 提交委托报价"),
         ("B2B 支付报价单", "B2B报价单支付"),
         ("B2B 指定报价单支付", "B2B指定报价单支付"),
         ("B2B&D2C 插件加购", "B2B&D2C插件添加1688&淘宝商品"),
@@ -142,7 +142,7 @@ class Notifier:
                 return order_no
 
         fallback_keys = {
-            "quote": ["B2B 提交自助报价单", "B2B报价单支付", "B2B指定报价单支付"],
+            "quote": ["B2B 提交委托报价", "B2B 提交自助报价单", "B2B报价单支付", "B2B指定报价单支付"],
             "purchase": ["B2B报价单支付", "B2B指定报价单支付"],
         }
         for fb_key in fallback_keys.get(order_type, []):

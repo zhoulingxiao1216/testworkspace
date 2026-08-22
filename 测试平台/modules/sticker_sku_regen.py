@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -165,6 +166,7 @@ def _fetch_all_via_sakura_db_tool(sql: str, params: Sequence[Any] | None = None)
         text=True,
         encoding="utf-8",
         errors="replace",
+        env={**os.environ, "PYTHONIOENCODING": "utf-8"},
         timeout=60,
         check=False,
     )
@@ -196,6 +198,10 @@ def _to_int(value: Any, default: int = -1) -> int:
         return int(value)
     except (TypeError, ValueError):
         return default
+
+
+def _is_deleted_pub_row(row: Dict[str, Any]) -> bool:
+    return _to_int(row.get("pub_delete_time"), 0) > 0
 
 
 def fetch_target_rows(
@@ -238,13 +244,14 @@ LEFT JOIN xierun.quotedetail q
    AND q.uid = od.uid
 LEFT JOIN `api-open`.pub_api_order_new p
     ON p.id = (
-        SELECT MAX(p2.id)
+        SELECT p2.id
         FROM `api-open`.pub_api_order_new p2
         WHERE p2.user_order_id = od.order_id
           AND p2.uuid = od.uid
 {upload_type_filter}          AND p2.source_id = 1
           AND p2.is_stickers = 1
-          AND p2.delete_time = 0
+        ORDER BY CASE WHEN p2.delete_time = 0 THEN 0 ELSE 1 END, p2.id DESC
+        LIMIT 1
     )
 LEFT JOIN xierun.pic_newspaper pn
     ON pn.pic_id = (
@@ -294,6 +301,8 @@ ORDER BY od.order_id
             reasons.append("主订单号不匹配")
         if not row.get("pub_id"):
             reasons.append("未找到对应上传批次的 pub_api_order_new 记录")
+        if row.get("pub_id") and _is_deleted_pub_row(row):
+            reasons.append("最新贴纸上传记录已作废，需勾选恢复后才能更新")
         if upload_type and row.get("pub_id") and normalize_text(row.get("upload_type")) != upload_type:
             reasons.append("上传批次 / type 不匹配")
         if row.get("pub_id") and _to_int(row.get("source_id")) != 1:
@@ -348,6 +357,7 @@ def fetch_manual_change_rows(
     item_id: str,
     new_top_sku: str,
     new_barcode_sku: str,
+    allow_restore_deleted: bool = False,
 ) -> List[Dict[str, Any]]:
     """按用户手工输入的目标 SKU / 贴纸条码构建单商品预检查结果。"""
 
@@ -360,6 +370,8 @@ def fetch_manual_change_rows(
     reasons: List[str] = []
     if not row.get("pub_id"):
         reasons.append("未找到对应商品或最新有效贴纸上传记录")
+    if row.get("pub_id") and _is_deleted_pub_row(row) and not allow_restore_deleted:
+        reasons.append("最新贴纸上传记录已作废，请勾选允许恢复后再更新")
     if row.get("pub_id") and _to_int(row.get("source_id")) != 1:
         reasons.append("source_id 不是 1，非订单 Excel 导入记录")
     if row.get("pub_id") and _to_int(row.get("is_stickers")) != 1:
@@ -372,6 +384,9 @@ def fetch_manual_change_rows(
     if reasons:
         status = "blocked"
         reason = "；".join(reasons)
+    elif _is_deleted_pub_row(row):
+        status = "ready"
+        reason = "可更新，将恢复已作废上传记录并重置贴纸状态"
     elif target_top_sku == current_top_sku and target_barcode_sku == current_barcode_sku:
         status = "already_target"
         reason = "修改后 SKU 和贴纸条码均与当前值一致，不会纳入 UPDATE。"
@@ -432,6 +447,7 @@ def execute_item_update(
     item_id: str,
     new_top_sku: str,
     new_barcode_sku: str,
+    allow_restore_deleted: bool = False,
 ) -> Dict[str, Any]:
     """确认更新单个商品的贴纸 SKU / 贴纸条码。"""
 
@@ -451,12 +467,15 @@ def execute_item_update(
     before = fetch_item_snapshot(main_order_id, item_id)
     if not before.get("pub_id"):
         raise StickerSkuToolError("未找到该商品最新有效贴纸上传记录，不能更新。")
+    restore_deleted = _is_deleted_pub_row(before)
+    if restore_deleted and not allow_restore_deleted:
+        raise StickerSkuToolError("该商品最新贴纸上传记录已作废，请勾选允许恢复后再更新。")
 
     current_top_sku = normalize_text(before.get("current_top_sku"))
     current_barcode_sku = normalize_text(before.get("barcode_sku"))
     top_changed = target_top_sku != current_top_sku
     barcode_changed = target_barcode_sku != current_barcode_sku
-    if not top_changed and not barcode_changed:
+    if not top_changed and not barcode_changed and not restore_deleted:
         raise StickerSkuToolError("修改后 SKU 和贴纸条码均与当前值一致，无需更新。")
 
     cfg = _load_sakura_db_config()
@@ -501,30 +520,41 @@ WHERE od.uid = %s
                     )
                     affected["quotedetail"] = cursor.rowcount
 
-                if barcode_changed:
+                if barcode_changed or restore_deleted:
+                    set_parts = []
+                    set_params: List[Any] = []
+                    if barcode_changed:
+                        set_parts.append("sku = %s")
+                        set_params.append(target_barcode_sku)
+                    if restore_deleted:
+                        set_parts.append("delete_time = 0")
+                        set_parts.append("stickers_status = 0")
+
+                    delete_time_condition = "AND delete_time = %s" if restore_deleted else "AND delete_time = 0"
+                    sku_condition = "AND sku = %s" if barcode_changed else ""
+                    where_params: List[Any] = [before["pub_id"], TARGET_USER_ID, item_id]
+                    if restore_deleted:
+                        where_params.append(_to_int(before.get("pub_delete_time"), 0))
+                    if barcode_changed:
+                        where_params.append(current_barcode_sku)
+
                     cursor.execute(
-                        """
+                        f"""
 UPDATE `api-open`.pub_api_order_new
-SET sku = %s
+SET {", ".join(set_parts)}
 WHERE id = %s
   AND uuid = %s
   AND user_order_id = %s
   AND source_id = 1
   AND is_stickers = 1
-  AND delete_time = 0
-  AND sku = %s
+  {delete_time_condition}
+  {sku_condition}
 """.strip(),
-                        (
-                            target_barcode_sku,
-                            before["pub_id"],
-                            TARGET_USER_ID,
-                            item_id,
-                            current_barcode_sku,
-                        ),
+                        tuple(set_params + where_params),
                     )
                     affected["pub_api_order_new"] = cursor.rowcount
                     if cursor.rowcount != 1:
-                        raise StickerSkuToolError("pub_api_order_new.sku 更新行数异常，已回滚。")
+                        raise StickerSkuToolError("pub_api_order_new 更新行数异常，已回滚。")
 
             conn.commit()
         except Exception:
@@ -541,6 +571,8 @@ WHERE id = %s
             "item_id": item_id,
             "target_top_sku": target_top_sku,
             "target_barcode_sku": target_barcode_sku,
+            "allow_restore_deleted": allow_restore_deleted,
+            "restore_deleted": restore_deleted,
             "affected": affected,
             "before": before,
             "after": after,
@@ -549,7 +581,11 @@ WHERE id = %s
     return {"affected": affected, "before": before, "after": after, "log_path": str(log_path)}
 
 
-def trigger_sticker_regenerate(main_order_id: str, item_id: str) -> Dict[str, Any]:
+def trigger_sticker_regenerate(
+    main_order_id: str,
+    item_id: str,
+    allow_restore_deleted: bool = False,
+) -> Dict[str, Any]:
     """重置单个商品贴纸生成状态。"""
 
     main_order_id = validate_main_order_id(main_order_id)
@@ -561,6 +597,9 @@ def trigger_sticker_regenerate(main_order_id: str, item_id: str) -> Dict[str, An
     before = fetch_item_snapshot(main_order_id, item_id)
     if not before.get("pub_id"):
         raise StickerSkuToolError("未找到该商品最新有效贴纸上传记录，不能重新生成。")
+    restore_deleted = _is_deleted_pub_row(before)
+    if restore_deleted and not allow_restore_deleted:
+        raise StickerSkuToolError("该商品最新贴纸上传记录已作废，请勾选允许恢复后再重新生成。")
 
     cfg = _load_sakura_db_config()
     affected = 0
@@ -569,17 +608,22 @@ def trigger_sticker_regenerate(main_order_id: str, item_id: str) -> Dict[str, An
         try:
             with conn.cursor() as cursor:
                 cursor.execute(
-                    """
+                    f"""
 UPDATE `api-open`.pub_api_order_new
-SET stickers_status = 0
+SET {"delete_time = 0, " if restore_deleted else ""}stickers_status = 0
 WHERE id = %s
   AND uuid = %s
   AND user_order_id = %s
   AND source_id = 1
   AND is_stickers = 1
-  AND delete_time = 0
+  {"AND delete_time = %s" if restore_deleted else "AND delete_time = 0"}
 """.strip(),
-                    (before["pub_id"], TARGET_USER_ID, item_id),
+                    (
+                        before["pub_id"],
+                        TARGET_USER_ID,
+                        item_id,
+                        *([_to_int(before.get("pub_delete_time"), 0)] if restore_deleted else []),
+                    ),
                 )
                 affected = cursor.rowcount
             conn.commit()
@@ -595,6 +639,8 @@ WHERE id = %s
             "action": "regenerate_sticker",
             "main_order_id": main_order_id,
             "item_id": item_id,
+            "allow_restore_deleted": allow_restore_deleted,
+            "restore_deleted": restore_deleted,
             "affected": affected,
             "before": before,
             "after": after,

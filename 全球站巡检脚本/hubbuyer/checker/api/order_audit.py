@@ -5,7 +5,6 @@ import json
 import os
 import sys
 import requests
-import traceback
 
 current_file = os.path.abspath(__file__)
 root_path = os.path.dirname(os.path.dirname(os.path.dirname(current_file)))
@@ -18,13 +17,13 @@ from core.path_manager import DATA_DIR
 from checker.api.quote_order_store import (
     get_latest_submitted_quote,
     mark_quote_audited,
+    clear_quote_audit_state,
     resolve_target_mail,
-    convert_quote_to_order_no,
-    revert_order_to_quote_no,
 )
 
 LOGIN_PATH = "/admin/login/login"
-AUDIT_PATH = "/admin_b2b/order/purchaseStatusUpdate"
+QUOTE_DETAIL_PATH = "/admin_b2b/quoteDetail/find"
+REVIEW_QUOTE_PATH = "/admin_b2b/quote/reviewQuote"
 
 
 def admin_api_base_url():
@@ -85,21 +84,43 @@ def _admin_login():
     return token
 
 
-def _convert_quote_to_order_no(quote_no):
-    return convert_quote_to_order_no(quote_no)
-
-
-def _revert_order_to_quote_no(order_no):
-    return revert_order_to_quote_no(order_no)
-
-
-def _audit_quote(token, quote_no):
-    url = admin_api_base_url() + AUDIT_PATH
+def _fetch_quote_detail(token, quote_no):
+    url = admin_api_base_url() + QUOTE_DETAIL_PATH
     headers = build_admin_auth_headers(token)
     resp = requests.post(
         url,
         headers=headers,
-        json={"order_no": quote_no},
+        json={"quote_no": quote_no},
+        timeout=REQUEST_TIMEOUT_API,
+        proxies={"http": None, "https": None},
+    )
+    resp.raise_for_status()
+    return resp.json()
+
+
+def _extract_quote_data(body):
+    data = body.get("data", {}) if isinstance(body, dict) else {}
+    if not isinstance(data, dict):
+        return {}
+    quote_data = data.get("quote_data") or data.get("quoteData") or data.get("quote")
+    if isinstance(quote_data, dict):
+        return quote_data
+    if data.get("id") and data.get("quote_no"):
+        return data
+    return {}
+
+
+def _review_quote(token, quote_id, quote_status=200, remark=""):
+    url = admin_api_base_url() + REVIEW_QUOTE_PATH
+    headers = build_admin_auth_headers(token)
+    resp = requests.post(
+        url,
+        headers=headers,
+        json={
+            "quote_id": quote_id,
+            "quote_status": quote_status,
+            "remark": remark or "",
+        },
         timeout=REQUEST_TIMEOUT_API,
         proxies={"http": None, "https": None},
     )
@@ -115,23 +136,43 @@ def run(task_config=None):
     try:
         quote_no = get_latest_submitted_quote(target_mail)
         if not quote_no:
-            raise RuntimeError("未找到本轮提交的报价单，请先执行提交自助报价单")
+            raise RuntimeError("未找到本轮提交的报价单，请先执行提交委托报价")
         if not quote_no.startswith("B2B-BJ"):
             raise RuntimeError(f"报价单号格式异常: {quote_no}")
 
+        clear_quote_audit_state(orderid_file, target_mail)
         msgs.append(f"报价单号获取:OK({quote_no})")
         token = _admin_login()
         msgs.append("后台登录:OK")
 
-        body = _audit_quote(token, quote_no)
-        resp_code = body.get("code")
-        resp_msg = body.get("message", "")
-
-        if resp_code == 200:
-            mark_quote_audited(orderid_file, target_mail, quote_no)
-            msgs.append(f"报价单审核:OK({quote_no})")
+        detail_body = _fetch_quote_detail(token, quote_no)
+        detail_code = detail_body.get("code")
+        if detail_code != 200:
+            detail_msg = detail_body.get("message", "")
+            msgs.append(f"报价单详情:FAIL(code={detail_code} msg={detail_msg})")
         else:
-            msgs.append(f"报价单审核:FAIL(code={resp_code} msg={resp_msg})")
+            quote_data = _extract_quote_data(detail_body)
+            quote_id = quote_data.get("id") or quote_data.get("quote_id")
+            current_status = quote_data.get("status")
+            if not quote_id:
+                msgs.append("报价单详情:FAIL(未解析到quote_id)")
+            else:
+                msgs.append(f"报价单详情:OK(id={quote_id} status={current_status})")
+                if str(current_status) == "200":
+                    mark_quote_audited(orderid_file, target_mail, quote_no)
+                    msgs.append(f"报价单审核:OK(已通过:{quote_no})")
+                elif str(current_status) in ("400", "500"):
+                    msgs.append(f"报价单审核:FAIL(当前状态={current_status})")
+                else:
+                    body = _review_quote(token, quote_id, quote_status=200)
+                    resp_code = body.get("code")
+                    resp_msg = body.get("message", "")
+
+                    if resp_code == 200:
+                        mark_quote_audited(orderid_file, target_mail, quote_no)
+                        msgs.append(f"报价单审核:OK({quote_no})")
+                    else:
+                        msgs.append(f"报价单审核:FAIL(code={resp_code} msg={resp_msg})")
 
     except Exception as e:
         msgs.append(f"执行异常:{type(e).__name__}: {str(e)}")

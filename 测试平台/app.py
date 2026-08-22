@@ -7,12 +7,13 @@ from __future__ import annotations
 import streamlit as st
 from datetime import datetime
 from pathlib import Path
+import re
 import pandas as pd
 
 from db_manager import (
     init_db, upsert_case, get_tc_ids_by_source, 
     delete_cases_by_tc_ids, get_cases_by_source, delete_cases_by_source,
-    reset_all_status
+    reset_all_status, find_tc_id_conflicts,
 )
 from md_parser import parse_md_text
 from modules.frontend_dashboard import st_dashboard_grid
@@ -25,7 +26,7 @@ local_css()
 # Session State Keys
 for key in ["active_file_filter", "confirm_delete_file", "orphan_tc_ids", "orphan_source", 
             "confirm_reset", "import_result", "last_upload_key", "current_upload_key", 
-            "upload_records", "upload_filename"]:
+            "upload_records", "upload_filename", "upload_source_label"]:
     if key not in st.session_state:
         st.session_state[key] = "" if "key" in key or "result" in key or "source" in key else (None if "records" in key or "delete" in key else ([] if "orphan" in key else False))
 
@@ -42,6 +43,7 @@ HOME_TOOLS = [
     ("📦 进入 SKU 批量同步", "pages/4_sku_bulk_sync.py", "sku_bulk_sync"),
     ("🏷️ 进入 8160贴纸SKU修改工具", "pages/6_8160贴纸SKU修改工具.py", "sticker_sku"),
     ("🚦 进入性能压测配置", "pages/3_性能压测.py", "perf_test"),
+    ("🌐 进入全球站访问量查询", "pages/7_global_traffic.py", "global_traffic"),
 ]
 
 
@@ -96,6 +98,43 @@ def _format_month_filter(month_value: str) -> str:
     return f"{parsed.year}年{parsed.month:02d}月"
 
 
+_INVALID_SOURCE_CHARS = re.compile(r'[<>:"/\\|?*\x00-\x1f]+')
+
+
+def _safe_source_part(value: str) -> str:
+    """生成可作为归档文件名和 source_file 的稳定片段。"""
+    cleaned = _INVALID_SOURCE_CHARS.sub("_", value.strip())
+    cleaned = re.sub(r"\s+", "", cleaned)
+    cleaned = re.sub(r"_+", "_", cleaned).strip("._ ")
+    return cleaned
+
+
+def _extract_project_name(md_text: str) -> str:
+    """优先从 Markdown 一级标题提取项目名，避免不同项目同名测试用例.md 撞号。"""
+    for line in md_text.lstrip("\ufeff").splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        if line.startswith("# "):
+            title = line[2:].strip()
+            title = re.sub(r"\s*测试用例(?:集)?\s*$", "", title).strip()
+            return title
+        if line.startswith("#### "):
+            break
+    return ""
+
+
+def _build_import_source_label(filename: str, md_text: str) -> str:
+    """构造项目级来源标识：项目名_原文件名.md。"""
+    safe_filename = _safe_source_part(Path(filename).name) or "测试用例.md"
+    project_name = _safe_source_part(_extract_project_name(md_text))
+    if not project_name:
+        return safe_filename
+    if Path(safe_filename).stem.startswith(project_name):
+        return safe_filename
+    return f"{project_name}_{safe_filename}"
+
+
 # ── 全局共同侧边栏 ──────────────────────────────────────────
 render_sidebar(global_df)
 
@@ -114,7 +153,7 @@ with col_upload:
     uploaded = st.file_uploader(
         "选择 .md 文件",
         type=["md"],
-        help="支持 #### TC-XXX 格式的 Markdown 文件，重复 TC 编号将更新已有记录",
+        help="支持 #### TC-XXX 格式的 Markdown 文件；同一项目来源内重复 TC 编号将更新已有记录，不同项目独立保留。",
     )
 
     if uploaded is not None:
@@ -124,24 +163,35 @@ with col_upload:
             with st.spinner(f"正在解析 {uploaded.name}…"):
                 try:
                     text = uploaded.getvalue().decode("utf-8-sig")
+                    source_label = _build_import_source_label(uploaded.name, text)
                     records = parse_md_text(text)
                 except Exception as exc:
                     st.error(f"文件读取失败：{exc}")
                     records = []
+                    source_label = uploaded.name
             st.session_state.upload_records = records
             st.session_state.upload_filename = uploaded.name
+            st.session_state.upload_source_label = source_label
             st.session_state.current_upload_key = file_key
 
         records = st.session_state.upload_records
         filename = st.session_state.upload_filename
+        source_label = st.session_state.upload_source_label or filename
 
         if st.session_state.last_upload_key == file_key and records is None:
-            st.info(f"`{filename}` 已成功导入。如需重导请改变文件。")
+            st.info(f"`{source_label}` 已成功导入。如需重导请改变文件。")
         elif records is not None:
             if not records:
                 st.warning("未检测到符合格式的本用例，请核对文件格式。")
             else:
-                st.info(f"解析到 **{len(records)}** 条用例，点击执行入库。")
+                st.info(f"解析到 **{len(records)}** 条用例，来源标识：`{source_label}`。点击执行入库。")
+                conflicts = find_tc_id_conflicts([r.get("tc_id") for r in records], source_label)
+                if conflicts:
+                    conflict_sources = sorted({r["source_file"] for r in conflicts if r["source_file"]})
+                    with st.expander(f"检测到 {len(conflicts)} 个 TC 编号在其他来源中也存在，本次将按当前来源独立导入"):
+                        st.caption("历史来源：" + "、".join(f"`{s}`" for s in conflict_sources[:8]))
+                        if len(conflict_sources) > 8:
+                            st.caption(f"另有 {len(conflict_sources) - 8} 个来源未展开。")
                 if st.button("🚀 开始解析并入库", type="primary", use_container_width=True):
                     n_ins = n_upd = n_fail = 0
                     prog = st.progress(0, text="写入中…")
@@ -149,7 +199,7 @@ with col_upload:
                         tc_id, r_copy = r.get("tc_id"), {k: v for k, v in r.items() if k != "tc_id"}
                         r_copy["sort_order"] = i
                         try:
-                            _, action = upsert_case(tc_id=tc_id, source_file=filename, **r_copy)
+                            _, action = upsert_case(tc_id=tc_id, source_file=source_label, **r_copy)
                             if action == "inserted": n_ins += 1
                             else: n_upd += 1
                         except Exception as exc:
@@ -157,21 +207,21 @@ with col_upload:
                             st.error(f"{tc_id} 写入失败：{exc}")
                         prog.progress((i + 1) / len(records), text=f"写入中… {i + 1}/{len(records)}")
 
-                    st.session_state.import_result = f"成功导入 {n_ins + n_upd} 条用例 (新增 {n_ins}, 更新 {n_upd}, 失败 {n_fail})"
+                    st.session_state.import_result = f"成功导入 {n_ins + n_upd} 条用例 (新增 {n_ins}, 更新 {n_upd}, 失败 {n_fail})；来源标识：{source_label}"
 
                     archive_dir = Path(__file__).parent / "测试用例导入记录"
                     archive_dir.mkdir(exist_ok=True)
                     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-                    (archive_dir / f"{Path(filename).stem}_{ts}{Path(filename).suffix}").write_bytes(uploaded.getvalue())
+                    (archive_dir / f"{Path(source_label).stem}_{ts}{Path(source_label).suffix}").write_bytes(uploaded.getvalue())
 
                     st.session_state.last_upload_key = file_key
                     st.session_state.upload_records = None
 
-                    existing_tc_ids = get_tc_ids_by_source(filename)
+                    existing_tc_ids = get_tc_ids_by_source(source_label)
                     new_tc_ids = {r.get("tc_id") for r in records if r.get("tc_id")}
                     orphans = existing_tc_ids - new_tc_ids
                     if orphans:
-                        st.session_state.orphan_tc_ids, st.session_state.orphan_source = sorted(orphans), filename
+                        st.session_state.orphan_tc_ids, st.session_state.orphan_source = sorted(orphans), source_label
                     else:
                         st.session_state.orphan_tc_ids, st.session_state.orphan_source = [], ""
                     
@@ -238,7 +288,7 @@ if st.session_state.orphan_tc_ids:
     st.warning(f"⚠️ 检测到 **{len(orphan_list)}** 条用例在新版 `{src}` 中已不存在：\n\n" + ", ".join(f"`{t}`" for t in orphan_list[:20]) + ("…" if len(orphan_list) > 20 else ""))
     c1, c2 = st.columns(2)
     if c1.button("🗑️ 同步删除废弃用例", type="primary", use_container_width=True):
-        n_del = delete_cases_by_tc_ids(orphan_list)
+        n_del = delete_cases_by_tc_ids(orphan_list, source_file=src)
         st.session_state.orphan_tc_ids, st.session_state.orphan_source = [], ""
         st.session_state.import_result += f"\n已同步清理 {n_del} 条废弃用例。"
         st.cache_data.clear()

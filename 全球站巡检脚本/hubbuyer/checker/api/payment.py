@@ -228,7 +228,7 @@ def run(task_config=None):
                                 detail = f"{detail} | api_msg={body.get('message')}"
                         except Exception:
                             pass
-                        msgs.append(f"B2B报价单支付:FAIL({detail})")
+                        msgs.append(f"B2B报价单支付:FAIL({round_quote}: {detail})")
         except Exception as e:
             msgs.append(f"B2B流程异常:FAIL({str(e)})")
         

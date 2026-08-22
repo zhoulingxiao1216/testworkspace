@@ -68,7 +68,9 @@ class CookieManager:
                     clean_jwt = raw_token.replace("Bearer ", "").strip()
                     # B2B Cookie：完整版本，包含所有必要的 cookie（基于 postman）
                     cookie_template = (
+                        f"PHPSID=qokjm6u9opg4qoo68pn3q48g2d; "
                         f"PHPSESSID=qokjm6u9opg4qoo68pn3q48g2d; "
+                        f"pro_auth_token={clean_jwt}; "
                         f"server_login_token={clean_jwt}; "
                         f"loginToken={clean_jwt}; "
                         f"login_token={clean_jwt}; "

@@ -77,15 +77,23 @@ def mark_quote_audited(orderid_file, target_mail, quote_no):
     _save_orderid_mapping(orderid_file, mapping)
 
 
+def clear_quote_audit_state(orderid_file, target_mail):
+    """开始新一轮报价单审核前清理历史联动单号，避免后续支付误用旧单。"""
+    mapping = _load_orderid_mapping(orderid_file)
+    if target_mail not in mapping:
+        mapping[target_mail] = {"B2B": [], "D2C": []}
+    mapping[target_mail]["B2B_quote_pending_pay"] = ""
+    mapping[target_mail]["B2B_quote_audited"] = ""
+    mapping[target_mail]["B2B_round_quote"] = ""
+    mapping[target_mail]["B2B_round_order"] = ""
+    _save_orderid_mapping(orderid_file, mapping)
+
+
 def get_audited_pending_pay_quote(orderid_file, target_mail):
     """读取已通过报价单审核、待前台支付的报价单号"""
     mapping = _load_orderid_mapping(orderid_file)
     info = mapping.get(target_mail, {})
-    pending = (info.get("B2B_quote_pending_pay") or "").strip()
-    if pending:
-        return pending
-    audited = (info.get("B2B_quote_audited") or "").strip()
-    return audited
+    return (info.get("B2B_quote_pending_pay") or "").strip()
 
 
 def update_orderid_after_pay(orderid_file, target_mail, quote_no):

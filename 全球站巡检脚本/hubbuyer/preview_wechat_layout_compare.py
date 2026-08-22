@@ -26,9 +26,9 @@ SAMPLE_REPORT = {
         "success": True,
         "message": "购物车列表:OK(获取到2个ID) | FBA编写保存:OK(2个)",
     },
-    "B2B 提交自助报价单": {
+    "B2B 提交委托报价": {
         "success": True,
-        "message": "B2B提交自助报价单:OK(订单号:B2B-BJ-KOR8-260616-398)",
+        "message": "B2B提交委托报价:OK(订单号:B2B-BJ-KOR8-260616-398)",
     },
     "B2B报价单支付": {
         "success": True,

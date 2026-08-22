@@ -163,97 +163,13 @@
   ],
   "B2B_taobao": [
     {
-      "product_index_uuid": "2026013008578603",
-      "item_id": "973985240957",
+      "product_index_uuid": "202608221138105D995C4111",
+      "item_id": "1024615202405",
       "platform": "pc",
       "goods_info": [
         {
-          "spec_id": 5923975608298,
-          "sku_id": 5923975608298,
-          "quantity": 4
-        }
-      ]
-    },
-    {
-      "product_index_uuid": "2026013010012427",
-      "item_id": "1005985283846",
-      "platform": "pc",
-      "goods_info": [
-        {
-          "spec_id": 6169053271511,
-          "sku_id": 6169053271511,
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "product_index_uuid": "2026013010011838",
-      "item_id": "937114328833",
-      "platform": "pc",
-      "goods_info": [
-        {
-          "spec_id": 5827862724491,
-          "sku_id": 5827862724491,
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "product_index_uuid": "2026013010016272",
-      "item_id": "748468176862",
-      "platform": "pc",
-      "goods_info": [
-        {
-          "spec_id": 5646702165612,
-          "sku_id": 5646702165612,
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "product_index_uuid": "2026013010013401",
-      "item_id": "977375782003",
-      "platform": "pc",
-      "goods_info": [
-        {
-          "spec_id": 5932151420806,
-          "sku_id": 5932151420806,
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "product_index_uuid": "2026013010019838",
-      "item_id": "1005031744991",
-      "platform": "pc",
-      "goods_info": [
-        {
-          "spec_id": 5996379525185,
-          "sku_id": 5996379525185,
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "product_index_uuid": "2026013010022385",
-      "item_id": "967913069115",
-      "platform": "pc",
-      "goods_info": [
-        {
-          "spec_id": 6081055079442,
-          "sku_id": 6081055079442,
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "product_index_uuid": "2026013010029854",
-      "item_id": "635755541429",
-      "platform": "pc",
-      "goods_info": [
-        {
-          "spec_id": 4969296675270,
-          "sku_id": 4969296675270,
+          "spec_id": 6281014666594,
+          "sku_id": 6281014666594,
           "quantity": 1
         }
       ]

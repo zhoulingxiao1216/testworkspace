@@ -168,6 +168,10 @@ def _clean_token(token):
     return (token or "").replace("Bearer ", "").strip()
 
 
+def _string_ids(ids):
+    return [str(item) for item in (ids or []) if item not in ("", None)]
+
+
 def _extract_login_token(response):
     token = ""
     try:
@@ -235,9 +239,10 @@ def _cookie_from_token(token):
     if not clean:
         return ""
     return (
+        "PHPSID=qokjm6u9opg4qoo68pn3q48g2d; "
         "PHPSESSID=qokjm6u9opg4qoo68pn3q48g2d; "
-        "server_login_token=%s; loginToken=%s; login_token=%s"
-    ) % (clean, clean, clean)
+        "pro_auth_token=%s; server_login_token=%s; loginToken=%s; login_token=%s"
+    ) % (clean, clean, clean, clean)
 
 
 def resolve_user_credentials(case, task_config=None):
@@ -282,7 +287,7 @@ def resolve_user_credentials(case, task_config=None):
 def _case_headers(config, case, token, cookie):
     base_url = (config.get("apiBaseUrl") or API_CONFIG.get("BASE_URL") or "").rstrip("/")
     defaults = config.get("defaults") or {}
-    return get_b2b_headers(
+    headers = get_b2b_headers(
         base_url,
         token,
         cookie,
@@ -290,6 +295,14 @@ def _case_headers(config, case, token, cookie):
         language=case.get("language") or defaults.get("language") or "korean",
         nation=case.get("nation") or defaults.get("nation") or "Korea",
     )
+    headers.update({
+        "origin": "https://fjx.hubbuyer.com",
+        "Origin": "https://fjx.hubbuyer.com",
+        "referer": "https://fjx.hubbuyer.com/",
+        "adminlogintoken": "",
+        "withcredentials": "true",
+    })
+    return headers
 
 
 def request_json(base_url, path, headers, payload):
@@ -535,7 +548,7 @@ def _cart_detail_ids_from_store(target_mail):
     ids = []
     for item in rows:
         if isinstance(item, dict) and item.get("id"):
-            ids.append(item.get("id"))
+            ids.append(str(item.get("id")))
     return ids
 
 
@@ -557,6 +570,7 @@ def run_cart_preview(config, case, headers, target_mail, recorder, flat=None):
     cart_ids = preview.get("cartDetailIds") or []
     if preview.get("useStoredCartDetailIds") and not cart_ids:
         cart_ids = _cart_detail_ids_from_store(target_mail)
+    cart_ids = _string_ids(cart_ids)
     if not cart_ids:
         if from_global:
             recorder.fail("%s-费用预览" % name, "统一开关已开启但缺少 cartDetailIds")
@@ -682,7 +696,7 @@ def run_cart_preview(config, case, headers, target_mail, recorder, flat=None):
     )
 
 
-def run_snapshot_checks(config, case, user_headers, recorder):
+def run_snapshot_checks(config, case, user_headers, target_mail, recorder):
     checks = case.get("snapshotChecks") or []
     name = case.get("name") or "未命名用例"
     enabled, from_global = _is_feature_enabled("snapshot", True)
@@ -707,7 +721,15 @@ def run_snapshot_checks(config, case, user_headers, recorder):
                 if admin_token is None:
                     admin_token = _admin_login_lazy()
                 headers = _build_admin_auth_headers_lazy(admin_token)
-            response = request_json(base_url, item.get("path"), headers, item.get("body") or {})
+            path = item.get("path")
+            body = dict(item.get("body") or {})
+            if (path or "") == DEFAULT_CHECK_PATH and "cart_detail_id_arr" not in body:
+                ids = item.get("cartDetailIds") or case.get("cartDetailIds") or []
+                if item.get("useStoredCartDetailIds", case.get("useStoredCartDetailIds")):
+                    ids = ids or _cart_detail_ids_from_store(target_mail)
+                if ids:
+                    body["cart_detail_id_arr"] = _string_ids(ids)
+            response = request_json(base_url, path, headers, body)
             text = json.dumps(response, ensure_ascii=False)
             recorder.pass_("%s接口" % label)
             for expected in item.get("expectContains") or []:
@@ -824,7 +846,7 @@ def run_case(config, case, task_config, recorder):
             if case.get("useStoredCartDetailIds"):
                 ids = ids or _cart_detail_ids_from_store(target_mail)
             if ids:
-                payload["cart_detail_id_arr"] = ids
+                payload["cart_detail_id_arr"] = _string_ids(ids)
         response = request_json(base_url, case.get("checkFjxListPath") or DEFAULT_CHECK_PATH, headers, payload)
         recorder.pass_("%s-附加项列表接口" % name)
         flat = flatten_check_fjx_list(response)
@@ -832,7 +854,7 @@ def run_case(config, case, task_config, recorder):
     except Exception as e:
         recorder.fail("%s-附加项列表接口" % name, str(e), traceback.format_exc())
 
-    run_snapshot_checks(config, case, headers, recorder)
+    run_snapshot_checks(config, case, headers, target_mail, recorder)
     run_service_pricing(config, case, recorder)
     run_ship_fjx_checks(config, case, recorder)
 

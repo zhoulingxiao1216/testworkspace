@@ -1,35 +1,47 @@
 project: 收费体系调整
-version: agent1-redesign-2026-07-20
+version: agent1-incremental-clearing-2026-07-22
+source_requirements:
+  - "清算逻辑优化-产品需求文档.html"
+  - "清算逻辑优化-功能清单.html"
+  - "清算逻辑优化-业务流程图.html"
+  - "清算逻辑对比.html"
+  - "订单清算.xlsx"
+  - "页面/订单详情页.html"
+  - "页面/管理端页面/订单清算记录-新清算逻辑.html"
 case_summary:
-  total_cases: 48
+  total_cases: 59
   priority_distribution:
-    Critical: 30
-    High: 16
+    Critical: 37
+    High: 20
     Medium: 2
     Low: 0
-  smoke_cases: 15
+  smoke_cases: 22
 module_distribution:
   C-GOODS: 8
   C-CART: 8
-  C-QUOTE: 10
-  A-ORDER: 7
-  A-SETTLE: 10
+  C-QUOTE: 11
+  A-ORDER: 10
+  A-SETTLE: 17
   G-EXPORT: 5
 env_requirements:
   - "Account-Normal：无会员权益客户账号，用于普通报价、代采手续费正常收取。"
   - "Account-VIP：会员客户账号，用于 promotionPrice、会员已省、免/减代采手续费。"
-  - "Account-Admin：具备订单清算、资金处理、导出和审计查看权限。"
+  - "Account-Admin：具备订单详情、订单清算、订单清算记录、导出和审计查看权限。"
   - "Account-Limited：无清算和敏感财务权限，用于权限边界和接口越权校验。"
   - "Item-A：1688 原价、promotionPrice、SKU、库存、起订量、预估国内运费均有效。"
   - "Item-B：promotionPrice 缺失、为 0、非法格式或接口异常。"
   - "Item-C：普通商品或无会员权益商品，用于混合购物车和会员已省排除校验。"
-  - "Order-PositiveDiff：订单差额 > 0，需准备余额充足和余额不足两种客户资金状态。"
-  - "Order-NegativeDiff：订单差额 < 0，用于退款链路。"
-  - "Order-ZeroDiff：订单差额 = 0，用于无资金流水审计。"
+  - "Order-Clear-Refund：报价单支付金额 > 实际清算金额，用于客户应退还方向。"
+  - "Order-Clear-Topup：报价单支付金额 < 实际清算金额，用于客户需补款方向。"
+  - "Order-Clear-Zero：报价单支付金额 = 实际清算金额，用于无需处理方向。"
+  - "Order-History-Settled：已清算历史订单，保存结果与新公式计算结果存在差异，用于验证不自动重算。"
+  - "Order-History-Unsettled-Missing：未清算历史订单且缺少必要金额，用于验证确认清算阻断。"
+  - "Order-Fee-Dialogs：含检品方式、附加项、店铺其他费用、订单其他费用明细，用于弹窗和合计校验。"
 external_dependencies:
   - "1688 Mock/API：支持 promotionPrice 正常、缺失、为 0、非法、变价，以及 product.freight.estimate 正常/异常。"
   - "沙箱支付：支持支付成功、失败、取消、平台服务费展示，不触发真实扣款。"
-  - "导出服务：支持报价单、订单、全商品、清算报表、打印/PDF 模板输出。"
+  - "清算测试数据：支持店铺退款合并、店铺返现、实际支出、到付/退换货运费、实际检品费用、实际附加项费用、订单其他费用和实际代采手续费。"
+  - "导出服务：支持报价单、订单、全商品、清算记录、打印/PDF 模板输出；本次不默认验收导出文件列级格式。"
 execution_order:
   smoke:
     - TC-C-GOODS-001
@@ -41,22 +53,32 @@ execution_order:
     - TC-C-QUOTE-001
     - TC-C-QUOTE-002
     - TC-C-QUOTE-005
-    - TC-A-ORDER-001
+    - TC-C-QUOTE-010
+    - TC-C-QUOTE-011
+    - TC-A-ORDER-008
+    - TC-A-ORDER-009
+    - TC-A-ORDER-010
     - TC-A-SETTLE-001
     - TC-A-SETTLE-002
-    - TC-A-SETTLE-006
-    - TC-A-SETTLE-007
-    - TC-G-EXPORT-001
+    - TC-A-SETTLE-003
+    - TC-A-SETTLE-005
+    - TC-A-SETTLE-011
+    - TC-A-SETTLE-014
+    - TC-A-SETTLE-015
+    - TC-G-EXPORT-003
   critical_full:
-    - "执行全部 Critical 用例，优先覆盖价格源、报价单快照、平台服务费隔离、清算公式、资金闭环、权限和导出。"
+    - "执行全部 Critical 用例，优先覆盖价格源、报价单快照、平台服务费隔离、新清算公式、差额方向、历史兼容、权限和清算记录。"
   extended:
-    - "执行全部 High/Medium 用例，补齐多店铺、状态流转、过期、日志、多语言和打印模板。"
+    - "执行全部 High/Medium 用例，补齐多店铺、状态流转、过期、日志、多语言、四类费用弹窗和打印模板。"
 blocking_rules:
   - "任一 Critical 用例失败，不允许输出测试通过结论。"
-  - "promotionPrice 回退旧单价、报价单快照被实时价污染、清算公式错误、资金流水重复或权限绕过，均判定为阻塞上线。"
-  - "支付、余额、不足金、退款相关验证必须使用测试账号和沙箱能力，不得使用真实客户资金。"
+  - "promotionPrice 回退旧单价、报价单快照被实时价污染、继续使用旧清算公式、订单差额正负方向反向、未保存费用参与重算、已清算历史订单被自动重算或权限绕过，均判定为阻塞上线。"
+  - "清算确认不得触发真实客户资金；退款渠道、补扣资金执行和导出文件格式超出本次页面级 PRD 时，需另列专项验证。"
 deliverables:
+  - "架构级需求摘要.md"
+  - "superpowers.md"
   - "测试点大纲.md"
   - "收费体系调整测试用例.md"
   - "工期评估.md"
   - "第六阶段_用例反射评审报告.md"
+  - "第七阶段_需求更新审计记录_2026-07-22.md"

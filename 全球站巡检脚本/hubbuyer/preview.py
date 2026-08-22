@@ -12,7 +12,7 @@ report_data = {
     'B2B 商品图搜接口校验': {'success': True, 'message': 'B2B:OK(双200)'},
     'B2B&D2C 商品加购接口校验': {'success': True, 'message': 'B2B_1688:OK | B2B_taobao:OK'},
     'B2B 选择商品附加项': {'success': False, 'message': "FBA编写保存:FAIL(('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))"},
-    'B2B 提交自助报价单': {'success': True, 'message': 'B2B提交自助报价单:OK'},
+    'B2B 提交委托报价': {'success': True, 'message': 'B2B提交委托报价:OK'},
     'B2B报价单支付': {'success': True, 'message': 'B2B报价单列表:OK | B2B报价单支付:跳过(距离上次支付未满3天)'},
     'B2B 1688&淘宝 关键词搜索接口校验': {'success': True, 'message': 'B2B_1688_keyword:OK | B2B_taobao_keyword:OK'},
 }

@@ -24,7 +24,7 @@ from config.data.headers import get_b2b_headers
 # from config.data.headers import get_d2c_headers  # D2C流程已注释，不再需要
 
 def run(task_config=None):
-    """B2B自助报价单提交流程执行器"""
+    """B2B委托报价提交流程执行器"""
     msgs = []
     
     try:
@@ -197,44 +197,58 @@ def run(task_config=None):
         # 4. B2B流程：独立执行
         try:
             if not b2b_token or not b2b_cookie:
-                msgs.append("B2B提交自助报价单:FAIL(缺失B2B凭据)")
+                msgs.append("B2B提交委托报价:FAIL(缺失B2B凭据)")
             else:
                 submit_b2b_url = f"{base_url}{endpoints.get('submit_order_B2B', '')}"
                 submit_b2b_headers = get_b2b_headers(base_url, b2b_token, b2b_cookie)
                 submit_b2b_headers['content-type'] = 'application/json'
                 
                 # 构建B2B提交请求参数
-                # 新格式：{"quote_type":1,"logistics_config_id":27,"cart_detail_id_arr":[2467]}
+                # 委托报价格式：{"quote_type":2,"logistics_config_id":26,"cart_detail_id_arr":[2467]}
                 submit_b2b_payload = {}
                 
                 # 从JSON配置中读取基础参数
                 b2b_submit_config = submit_payloads.get("B2B_submit", {})
                 
-                # 设置quote_type（优先使用配置，默认1）
-                submit_b2b_payload["quote_type"] = b2b_submit_config.get("quote_type", b2b_submit_config.get("quoteType", 1))
+                # 设置quote_type（委托报价固定为2，防止误提交为自助报价）
+                quote_type = b2b_submit_config.get("quote_type", b2b_submit_config.get("quoteType", 2))
+                try:
+                    quote_type = int(quote_type)
+                except (TypeError, ValueError):
+                    msgs.append(f"B2B提交委托报价:FAIL(quote_type配置无效:{quote_type})")
+                    submit_b2b_payload = None
+
+                if submit_b2b_payload is not None and quote_type != 2:
+                    msgs.append(f"B2B提交委托报价:FAIL(quote_type应为2，实际{quote_type})")
+                    submit_b2b_payload = None
+
+                if submit_b2b_payload is not None:
+                    submit_b2b_payload["quote_type"] = quote_type
                 
-                # 设置logistics_config_id（优先使用配置，默认27）
-                submit_b2b_payload["logistics_config_id"] = b2b_submit_config.get("logistics_config_id", b2b_submit_config.get("ExpressID", 27))
+                # 设置logistics_config_id（优先使用配置，默认26）
+                if submit_b2b_payload is not None:
+                    submit_b2b_payload["logistics_config_id"] = b2b_submit_config.get("logistics_config_id", b2b_submit_config.get("ExpressID", 26))
                 
                 # 设置cart_detail_id_arr
                 # 优先使用JSON配置中的cart_detail_id_arr
-                json_cart_detail_id_arr = b2b_submit_config.get("cart_detail_id_arr", [])
-                if json_cart_detail_id_arr and isinstance(json_cart_detail_id_arr, list) and len(json_cart_detail_id_arr) > 0:
-                    # 使用JSON中配置的cart_detail_id_arr
-                    submit_b2b_payload["cart_detail_id_arr"] = json_cart_detail_id_arr
-                elif b2b_cart_detail_ids:
-                    # 使用B2B_Addon_id.json中的所有id
-                    submit_b2b_payload["cart_detail_id_arr"] = b2b_cart_detail_ids
-                else:
-                    msgs.append("B2B提交自助报价单:FAIL(未找到购物车ID)")
-                    # 未找到购物车ID，不执行请求
-                    submit_b2b_payload = None
+                if submit_b2b_payload is not None:
+                    json_cart_detail_id_arr = b2b_submit_config.get("cart_detail_id_arr", [])
+                    if json_cart_detail_id_arr and isinstance(json_cart_detail_id_arr, list) and len(json_cart_detail_id_arr) > 0:
+                        # 使用JSON中配置的cart_detail_id_arr
+                        submit_b2b_payload["cart_detail_id_arr"] = json_cart_detail_id_arr
+                    elif b2b_cart_detail_ids:
+                        # 使用B2B_Addon_id.json中的所有id
+                        submit_b2b_payload["cart_detail_id_arr"] = b2b_cart_detail_ids
+                    else:
+                        msgs.append("B2B提交委托报价:FAIL(未找到购物车ID)")
+                        # 未找到购物车ID，不执行请求
+                        submit_b2b_payload = None
                 
                 # 只有在有有效payload时才执行请求
                 if submit_b2b_payload:
                     # 打印请求参数（调试用）
-                    # print(f"[B2B提交自助报价单] URL: {submit_b2b_url}")
-                    # print(f"[B2B提交自助报价单] Payload: {json.dumps(submit_b2b_payload, ensure_ascii=False, indent=2)}")
+                    # print(f"[B2B提交委托报价] URL: {submit_b2b_url}")
+                    # print(f"[B2B提交委托报价] Payload: {json.dumps(submit_b2b_payload, ensure_ascii=False, indent=2)}")
                     
                     response = requests.post(submit_b2b_url, json=submit_b2b_payload, headers=submit_b2b_headers, timeout=REQUEST_TIMEOUT_API, verify=False, proxies={'http': None, 'https': None})
                     check = AssertionTool.verify_api_common(response, rules=all_rules.get("B2B_submit", {}))
@@ -273,13 +287,13 @@ def run(task_config=None):
                                 with open(record_file, "w", encoding="utf-8") as f:
                                     json.dump(record_data, f, ensure_ascii=False, indent=2)
                                 
-                                msgs.append(f"B2B提交自助报价单:OK(订单号:{quote_no})")
+                                msgs.append(f"B2B提交委托报价:OK(订单号:{quote_no})")
                             else:
-                                msgs.append("B2B提交自助报价单:OK(未解析到订单号)")
+                                msgs.append("B2B提交委托报价:OK(未解析到订单号)")
                         except Exception as e:
-                            msgs.append(f"B2B提交自助报价单:OK(订单号提取异常:{str(e)})")
+                            msgs.append(f"B2B提交委托报价:OK(订单号提取异常:{str(e)})")
                     else:
-                        msgs.append(f"B2B提交自助报价单:FAIL({check.get('message', '未知错误')})")
+                        msgs.append(f"B2B提交委托报价:FAIL({check.get('message', '未知错误')})")
         except Exception as e:
             msgs.append(f"B2B流程异常:FAIL({str(e)})")
         
@@ -289,7 +303,7 @@ def run(task_config=None):
             "success": all_success,
             "message": " | ".join(msgs),
             "status_code": 200 if all_success else 500,
-            "actual": f"自助报价单提交流程: {' | '.join(msgs)}"
+            "actual": f"委托报价提交流程: {' | '.join(msgs)}"
         }
         
     except Exception as e:

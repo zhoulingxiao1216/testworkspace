@@ -199,7 +199,10 @@ def _bug_intake_prompt(feedback_text: str) -> str:
 业务原话：
 {feedback_text or "业务未填写文字描述，请主要依据截图识别问题。"}
 
-请只输出以下三段，不要输出其他标题、原因分析、风险评级、代码建议：
+请只输出以下四段，不要输出其他标题、原因分析、风险评级、代码建议：
+
+【BUG标题】
+1. ...
 
 【前提条件】
 1. ...
@@ -212,6 +215,7 @@ def _bug_intake_prompt(feedback_text: str) -> str:
 1. ...
 
 整理规则：
+- 【BUG标题】用一句话概括问题，格式建议为“模块/页面 + 异常现象”，标题要短，适合直接作为 TAPD 缺陷标题。
 - 【前提条件】写账号、系统、页面、订单号、报价单号、客户、环境、链接等已知前置条件。
 - 【操作步骤&实际结果】按业务实际反馈整理操作路径和当前异常结果，可以合并写在同一步里。
 - 【预期结果】写系统应该达到的正确表现。
@@ -221,6 +225,9 @@ def _bug_intake_prompt(feedback_text: str) -> str:
 - 不要输出“初步疑似原因”“需要进一步检查”“严重级别”等分析内容。
 
 参考格式：
+【BUG标题】
+1. 后台报价单/代购订单修改负责人下拉框缺少“请选择”选项
+
 【前提条件】
 1. 后台 b2b 系统，报价单和代购订单中修改负责人页面。
 
@@ -341,8 +348,10 @@ base_url = "https://generativelanguage.googleapis.com/v1beta/openai/"
 model = "你的 Gemini 文本模型"
 vision_model = "你的 Gemini 图片理解模型"
 timeout = 60
+max_retries = 2
 temperature = 0.2
 api_type = "chat_completions"
+trust_env = false
 """.strip(),
             language="toml",
         )
@@ -355,8 +364,10 @@ base_url = "https://api.openai.com/v1"
 model = "你的 OpenAI 文本模型"
 vision_model = "你的 OpenAI 图片理解模型"
 timeout = 60
+max_retries = 2
 temperature = 0.2
 api_type = "responses"
+trust_env = false
 """.strip(),
             language="toml",
         )

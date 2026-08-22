@@ -80,6 +80,9 @@ def fetch_all(
     safe_limit = max(1, min(int(limit), 5000))
     with get_readonly_connection() as conn:
         with conn.cursor() as cursor:
-            cursor.execute(sql, params or ())
+            if params:
+                cursor.execute(sql, params)
+            else:
+                cursor.execute(sql)
             rows = cursor.fetchmany(safe_limit)
     return list(rows)

@@ -6,6 +6,21 @@
         "fjx_config_uuid_arr": [],
         "user_fjx_config_uuid_arr": []
     },
+    "B2B_Addon_FjxContext": {
+        "currency": "USD",
+        "language": "korean",
+        "nation": "Korea"
+    },
+    "B2B_Addon_ExcludedItemIds": [
+        "748468176862",
+        "937114328833",
+        "977375782003",
+        "1005031744991",
+        "967913069115",
+        "973985240957",
+        "1005985283846",
+        "635755541429"
+    ],
     "B2B_Addon_SKU": {
         "cart_detail_id": "",
         "custom_sku": {

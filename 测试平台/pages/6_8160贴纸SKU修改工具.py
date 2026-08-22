@@ -49,6 +49,19 @@ def status_label(status: str) -> str:
     }.get(status, status or "")
 
 
+def is_deleted_upload(row: Dict[str, Any]) -> bool:
+    try:
+        return int(row.get("pub_delete_time") or 0) > 0
+    except (TypeError, ValueError):
+        return False
+
+
+def upload_record_label(row: Dict[str, Any]) -> str:
+    if not row.get("pub_id"):
+        return "未找到"
+    return "已作废" if is_deleted_upload(row) else "有效"
+
+
 def rows_to_dataframe(rows: List[Dict[str, Any]]) -> pd.DataFrame:
     return pd.DataFrame(
         [
@@ -60,6 +73,7 @@ def rows_to_dataframe(rows: List[Dict[str, Any]]) -> pd.DataFrame:
                 "目标贴纸条码": row.get("new_barcode_sku", "") or "—",
                 "上传批次": row.get("upload_type", "") or "—",
                 "pub_id": row.get("pub_id", "") or "—",
+                "上传记录": upload_record_label(row),
                 "贴纸状态": row.get("stickers_status", "") if row.get("stickers_status") is not None else "—",
                 "当前贴纸标题": row.get("pic_title", "") or "—",
                 "最新贴纸时间": row.get("pic_add_time", "") or "—",
@@ -94,7 +108,13 @@ def load_current_snapshot() -> Dict[str, Any]:
 
 def run_precheck() -> Dict[str, Any]:
     main_order_id, item_id, new_top_sku, new_barcode_sku = parse_form_inputs()
-    rows = fetch_manual_change_rows(main_order_id, item_id, new_top_sku, new_barcode_sku)
+    rows = fetch_manual_change_rows(
+        main_order_id,
+        item_id,
+        new_top_sku,
+        new_barcode_sku,
+        allow_restore_deleted=allow_restore_deleted_input,
+    )
     resolved_upload_type = ""
     for row in rows:
         if row.get("upload_type"):
@@ -133,7 +153,7 @@ left, right = st.columns([1, 1])
 
 with left:
     main_order_input = st.text_input("主订单号", value=DEFAULT_MAIN_ORDER_ID)
-    st.caption("上传批次 / type 将按商品番号自动识别最新有效贴纸上传记录。")
+    st.caption("上传批次 / type 将按商品番号优先识别最新有效贴纸上传记录。")
     item_col, confirm_col = st.columns([3, 1], vertical_alignment="bottom")
     item_id_input = item_col.text_input(
         "商品番号",
@@ -141,6 +161,10 @@ with left:
         help="每次只允许填写一个商品番号。",
     )
     confirm_clicked = confirm_col.button("确认读取", use_container_width=True)
+    allow_restore_deleted_input = st.checkbox(
+        "允许恢复已作废上传记录",
+        help="仅恢复当前商品对应的 pub_api_order_new 单条记录，并重置贴纸状态。",
+    )
 
 if confirm_clicked:
     try:
@@ -157,6 +181,8 @@ with right:
     current_col1, current_col2 = st.columns(2)
     current_col1.text_input("当前 SKU", value=snapshot.get("current_top_sku", ""), disabled=True)
     current_col2.text_input("当前贴纸条码", value=snapshot.get("barcode_sku", ""), disabled=True)
+    if snapshot and is_deleted_upload(snapshot):
+        st.warning("当前读取到的是已作废上传记录；勾选允许恢复后，才可更新或重新生成。")
 
     target_col1, target_col2 = st.columns(2)
     target_top_sku_input = target_col1.text_input(
@@ -187,6 +213,7 @@ if update_clicked:
                 state["item_ids"][0],
                 state.get("target_top_sku", ""),
                 state.get("target_barcode_sku", ""),
+                allow_restore_deleted=allow_restore_deleted_input,
             )
             st.session_state[SNAPSHOT_STATE_KEY] = result["after"]
             st.session_state[PAGE_STATE_KEY] = {
@@ -207,7 +234,11 @@ if regenerate_clicked:
     try:
         main_order_id = validate_main_order_id(main_order_input)
         with st.spinner("正在重置贴纸生成状态..."):
-            result = trigger_sticker_regenerate(main_order_id, item_id_input)
+            result = trigger_sticker_regenerate(
+                main_order_id,
+                item_id_input,
+                allow_restore_deleted=allow_restore_deleted_input,
+            )
             st.session_state[SNAPSHOT_STATE_KEY] = result["after"]
             st.session_state[PAGE_STATE_KEY] = {
                 "main_order_id": main_order_id,
