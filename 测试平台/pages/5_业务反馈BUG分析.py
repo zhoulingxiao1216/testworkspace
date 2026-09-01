@@ -1,17 +1,14 @@
-"""Business feedback BUG intake and AI-assisted root-cause analysis."""
+"""Business feedback BUG intake and AI-assisted TAPD description."""
 
 from __future__ import annotations
 
 import base64
-import json
 import re
-import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-import pandas as pd
 import streamlit as st
 
 _APP_ROOT = Path(__file__).resolve().parent.parent
@@ -20,28 +17,19 @@ if str(_APP_ROOT) not in sys.path:
 
 from modules.ai_client import AIConfigError, is_ai_configured, run_ai_analysis
 from modules.paste_feedback import paste_feedback
-from modules.readonly_db import assert_select_only, fetch_all
 from utils import local_css
 
 WORKSPACE_ROOT = Path(r"D:\test_workspace")
 PROJECTS_ROOT = WORKSPACE_ROOT / "测试项目"
-BUG_DOC_TITLE = "业务反馈 BUG 提交单"
 PROJECT_CODE_DIRS = {
     "樱花站": Path(r"D:\sakura"),
     "全球站": Path(r"D:\global\Global"),
-}
-GLOBAL_CODE_KEYWORD_ROUTES = {
-    "前台问题": "user-b2b-view",
-    "介绍中心": "user-all-view",
-    "PDA": "global-wms",
-    "IM": "global-im",
-    "后台问题": "admin-all-view",
 }
 
 st.set_page_config(page_title="业务反馈BUG分析", page_icon="🧩", layout="wide")
 local_css()
 st.title("🧩 业务反馈 BUG 分析")
-st.caption("面向截图 + 一句话反馈的 BUG 记录、AI 初判、只读深度分析和提交单生成。")
+st.caption("面向截图 + 一句话反馈的 BUG 记录，AI 自动整理 TAPD 缺陷描述。")
 
 
 def _safe_filename(value: str, fallback: str = "bug") -> str:
@@ -50,30 +38,8 @@ def _safe_filename(value: str, fallback: str = "bug") -> str:
     return safe[:80] or fallback
 
 
-def _state_key(prefix: str, project_name: str) -> str:
-    return f"{prefix}_{_safe_filename(project_name, fallback='project')}"
-
-
 def _resolve_code_dir(project_name: str) -> Path:
     return PROJECT_CODE_DIRS.get(project_name, PROJECTS_ROOT / project_name)
-
-
-def _resolve_search_dirs(project_name: str, keywords: str) -> tuple[Path, list[Path], list[str]]:
-    project_dir = _resolve_code_dir(project_name)
-    if project_name != "全球站":
-        return project_dir, [project_dir], []
-
-    normalized_keywords = (keywords or "").lower()
-    matched_routes = []
-    search_dirs = []
-    for keyword, relative_dir in GLOBAL_CODE_KEYWORD_ROUTES.items():
-        if keyword.lower() not in normalized_keywords:
-            continue
-        route_dir = project_dir / relative_dir
-        matched_routes.append(f"{keyword} -> {relative_dir}")
-        search_dirs.append(route_dir)
-
-    return project_dir, search_dirs or [project_dir], matched_routes
 
 
 def _ensure_bug_dirs(project_name: str) -> tuple[Path, Path]:
@@ -122,73 +88,6 @@ def _save_current_images(project_name: str, clipboard_images: list[dict[str, str
     saved = [*_save_clipboard_images(project_name, clipboard_images), *_save_uploads(project_name, uploaded_files)]
     st.session_state["bug_saved_images"] = saved
     return saved
-
-
-def _run_git(project_dir: Path, args: list[str]) -> str:
-    try:
-        result = subprocess.run(
-            ["git", "-C", str(project_dir), *args],
-            check=False,
-            capture_output=True,
-            text=True,
-            encoding="utf-8",
-            errors="replace",
-            timeout=20,
-        )
-    except Exception as exc:  # noqa: BLE001
-        return f"执行失败：{exc}"
-    return (result.stdout or result.stderr or "无输出").strip()[:6000]
-
-
-def _collect_code_context(project_name: str, keywords: str) -> dict[str, Any]:
-    project_dir, search_dirs, matched_routes = _resolve_search_dirs(project_name, keywords)
-    if not project_dir.exists():
-        return {"project_dir": str(project_dir), "exists": False, "message": "项目代码目录不存在"}
-
-    context: dict[str, Any] = {
-        "project_dir": str(project_dir),
-        "search_dirs": [str(path) for path in search_dirs],
-        "matched_routes": matched_routes,
-        "exists": True,
-        "git_status": _run_git(project_dir, ["status", "--short"]),
-        "git_latest_log": _run_git(project_dir, ["log", "-3", "--oneline", "--decorate"]),
-        "matches": [],
-    }
-    terms = [x.strip() for x in re.split(r"[,，\n\s]+", keywords or "") if x.strip()]
-    if not terms:
-        return context
-
-    suffixes = {".py", ".js", ".ts", ".tsx", ".vue", ".php", ".java", ".go", ".sql", ".md", ".yaml", ".yml", ".json"}
-    skip_parts = {"node_modules", ".git", "__pycache__", "dist", "build", "vendor"}
-    matches = []
-    for search_dir in search_dirs:
-        if not search_dir.exists():
-            continue
-        for path in search_dir.rglob("*"):
-            if len(matches) >= 30:
-                break
-            if not path.is_file() or path.suffix.lower() not in suffixes:
-                continue
-            if any(part in skip_parts for part in path.parts):
-                continue
-            try:
-                text = path.read_text(encoding="utf-8", errors="ignore")
-            except Exception:
-                continue
-            hit_terms = [term for term in terms if term.lower() in text.lower()]
-            if not hit_terms:
-                continue
-            lines = []
-            for line_no, line in enumerate(text.splitlines(), start=1):
-                if any(term.lower() in line.lower() for term in hit_terms):
-                    lines.append({"line": line_no, "text": line.strip()[:240]})
-                if len(lines) >= 5:
-                    break
-            matches.append({"file": str(path.relative_to(project_dir)), "terms": hit_terms, "lines": lines})
-        if len(matches) >= 30:
-            break
-    context["matches"] = matches
-    return context
 
 
 def _bug_intake_prompt(feedback_text: str) -> str:
@@ -240,96 +139,11 @@ def _bug_intake_prompt(feedback_text: str) -> str:
 """.strip()
 
 
-def _deep_analysis_prompt(feedback_text: str, initial_analysis: str, code_context: dict[str, Any], db_summary: str) -> str:
-    return f"""
-你是测试平台的深度根因分析 Agent。当前任务只做问题检查，不做代码修复；数据库只允许查询。
-
-业务反馈：
-{feedback_text or "无业务文字描述"}
-
-AI 初步分析：
-{initial_analysis or "尚未生成"}
-
-只读代码检查结果：
-{json.dumps(code_context, ensure_ascii=False, indent=2)}
-
-只读数据库检查结果：
-{db_summary or "尚未执行数据库查询"}
-
-请输出 Markdown，固定包含：
-## 根因判断
-## 证据链
-## 可能涉及代码位置
-## 数据库检查结论
-## 风险评估
-## 是否建议提交 BUG
-## 待研发确认项
-
-要求：明确区分已确认事实和推测；不要输出代码修复内容；不要建议执行写库 SQL。
-""".strip()
-
-
-def _build_bug_report(project_name: str, reporter: str, feedback_text: str, image_paths: list[Path], initial: str, deep: str, severity: str) -> str:
-    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    attachments = "\n".join(f"- `{path}`" for path in image_paths) or "- 无"
-    return f"""# {BUG_DOC_TITLE}
-
-## 基本信息
-
-| 字段 | 内容 |
-| --- | --- |
-| 项目 | {project_name or "未选择"} |
-| 反馈人 | {reporter or "未填写"} |
-| 生成时间 | {now} |
-| 严重级别 | {severity or "待确认"} |
-| 分析方式 | 截图/业务原话 + TAPD 缺陷描述 + 只读深度分析 |
-
-## 业务原始反馈
-
-{feedback_text or "业务未填写文字描述，仅提供截图。"}
-
-## 截图附件
-
-{attachments}
-
-## TAPD 缺陷描述
-
-{initial or "未生成"}
-
-## 深度分析结论
-
-{deep or "未生成"}
-
-## 提交约束
-
-- 本单仅记录问题现象、证据链和疑似原因。
-- 未做代码修复。
-- 数据库检查仅允许只读查询。
-- 敏感凭据、Token、Cookie、Webhook 不得写入本单。
-
-## 变更记录
-
-| 时间 | 说明 |
-| --- | --- |
-| {now} | 由测试平台生成业务反馈 BUG 提交单 |
-"""
-
-
-def _save_bug_report(project_name: str, markdown_text: str) -> Path:
-    doc_dir, _ = _ensure_bug_dirs(project_name)
-    target = doc_dir / f"BUG提交单_{datetime.now().strftime('%Y-%m-%d_%H%M%S')}.md"
-    target.write_text(markdown_text, encoding="utf-8")
-    return target
-
-
 for key, default in {
     "bug_saved_images": [],
     "bug_initial_analysis": "",
-    "bug_code_contexts": {},
-    "bug_db_result": "",
-    "bug_deep_analysis": "",
-    "bug_report_markdown": "",
-    "bug_report_path": "",
+    "bug_generate_tapd_payload": {},
+    "bug_generate_tapd_requested": False,
 }.items():
     st.session_state.setdefault(key, default)
 
@@ -406,100 +220,37 @@ with left:
                 with cols[index % len(cols)]:
                     st.image(str(image_path), caption=image_path.name, width=220)
 
+with right:
     st.subheader("2. TAPD 缺陷描述")
+
+    if st.session_state.get("bug_generate_tapd_requested"):
+        payload = st.session_state.get("bug_generate_tapd_payload") or {}
+        pending_feedback_text = str(payload.get("feedback_text") or "")
+        pending_image_paths = [Path(path) for path in payload.get("image_paths", [])]
+        st.session_state["bug_generate_tapd_requested"] = False
+        st.session_state["bug_generate_tapd_payload"] = {}
+        try:
+            with st.spinner("AI 正在整理 TAPD 缺陷描述..."):
+                st.session_state["bug_initial_analysis"] = run_ai_analysis(
+                    _bug_intake_prompt(pending_feedback_text),
+                    image_paths=pending_image_paths,
+                    use_vision_model=bool(pending_image_paths),
+                )
+        except AIConfigError as exc:
+            st.error(str(exc))
+        except Exception as exc:  # noqa: BLE001
+            st.error(f"AI 分析失败：{exc}")
+
+    st.text_area("TAPD 缺陷描述（可编辑）", key="bug_initial_analysis", height=420)
+
     if st.button("AI生成TAPD缺陷描述", type="primary", use_container_width=True, disabled=not configured):
         image_paths = _save_current_images(project_name, clipboard_images, uploaded_files)
         if not feedback_text and not image_paths:
             st.error("请至少提供截图或业务原话。")
         else:
-            try:
-                with st.spinner("AI 正在整理 TAPD 缺陷描述..."):
-                    st.session_state["bug_initial_analysis"] = run_ai_analysis(
-                        _bug_intake_prompt(feedback_text),
-                        image_paths=image_paths,
-                        use_vision_model=bool(image_paths),
-                    )
-            except AIConfigError as exc:
-                st.error(str(exc))
-            except Exception as exc:  # noqa: BLE001
-                st.error(f"AI 分析失败：{exc}")
-    st.text_area("TAPD 缺陷描述（可编辑）", key="bug_initial_analysis", height=260)
-
-with right:
-    st.subheader("3. 只读深度分析")
-    code_contexts = st.session_state.setdefault("bug_code_contexts", {})
-    keyword_key = _state_key("bug_code_keywords", project_name)
-    if keyword_key not in st.session_state:
-        st.session_state[keyword_key] = "入金 重复 客户 余额 订单 审核"
-    search_keywords = st.text_input("代码检索关键词", key=keyword_key)
-    _, current_search_dirs, current_routes = _resolve_search_dirs(project_name, search_keywords)
-    st.caption(f"当前项目：{project_name}；只读检索目录：{'、'.join(str(path) for path in current_search_dirs)}")
-    if project_name == "全球站":
-        st.caption("全球站关键词路由：前台问题→user-b2b-view；介绍中心→user-all-view；PDA→global-wms；IM→global-im；后台问题→admin-all-view")
-        if current_routes:
-            st.info(f"已命中优先检索范围：{'；'.join(current_routes)}")
-    if st.button(f"只读检查{project_name}项目代码", use_container_width=True, key=_state_key("bug_code_search", project_name)):
-        with st.spinner("正在只读检索项目代码..."):
-            code_contexts[project_name] = _collect_code_context(project_name, search_keywords)
-            st.session_state["bug_code_contexts"] = code_contexts
-    current_code_context = code_contexts.get(project_name, {})
-    if current_code_context:
-        st.json(current_code_context, expanded=False)
-
-    with st.expander("数据库只读查询", expanded=False):
-        st.caption("仅允许单条 SELECT。禁止 INSERT/UPDATE/DELETE/ALTER/DROP/TRUNCATE 等写入或变更语句。")
-        sql_text = st.text_area("SQL", height=120, placeholder="select * from table_name where id = ... limit 20")
-        limit = st.number_input("最多读取行数", min_value=1, max_value=5000, value=100, step=50)
-        if st.button("执行只读查询", use_container_width=True):
-            try:
-                assert_select_only(sql_text)
-                rows = fetch_all(sql_text, limit=int(limit))
-                st.session_state["bug_db_result"] = json.dumps(rows, ensure_ascii=False, indent=2) if rows else "查询成功，无结果。"
-                st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
-            except Exception as exc:  # noqa: BLE001
-                st.error(f"查询被拒绝或执行失败：{exc}")
-    if st.session_state["bug_db_result"]:
-        st.text_area("数据库查询结果摘要", key="bug_db_result", height=160)
-
-    if st.button("AI生成深度分析结论", type="primary", use_container_width=True, disabled=not configured):
-        try:
-            with st.spinner("AI 正在汇总代码和数据库证据..."):
-                st.session_state["bug_deep_analysis"] = run_ai_analysis(
-                    _deep_analysis_prompt(
-                        feedback_text,
-                        st.session_state["bug_initial_analysis"],
-                        current_code_context,
-                        st.session_state["bug_db_result"],
-                    )
-                )
-        except AIConfigError as exc:
-            st.error(str(exc))
-        except Exception as exc:  # noqa: BLE001
-            st.error(f"深度分析失败：{exc}")
-    st.text_area("深度分析结论（可编辑）", key="bug_deep_analysis", height=260)
-
-    st.subheader("4. BUG 提交单")
-    if st.button("生成BUG提交单", type="primary", use_container_width=True):
-        image_paths = _save_current_images(project_name, clipboard_images, uploaded_files)
-        markdown_text = _build_bug_report(
-            project_name,
-            reporter,
-            feedback_text,
-            image_paths,
-            st.session_state["bug_initial_analysis"],
-            st.session_state["bug_deep_analysis"],
-            severity,
-        )
-        st.session_state["bug_report_markdown"] = markdown_text
-        target = _save_bug_report(project_name, markdown_text)
-        st.session_state["bug_report_path"] = str(target)
-        st.success(f"BUG 提交单已生成：{target}")
-    if st.session_state["bug_report_markdown"]:
-        st.download_button(
-            "下载BUG提交单",
-            data=st.session_state["bug_report_markdown"].encode("utf-8"),
-            file_name=Path(st.session_state["bug_report_path"] or "BUG提交单.md").name,
-            mime="text/markdown",
-            use_container_width=True,
-        )
-        st.markdown(st.session_state["bug_report_markdown"])
+            st.session_state["bug_generate_tapd_payload"] = {
+                "feedback_text": feedback_text,
+                "image_paths": [str(path) for path in image_paths],
+            }
+            st.session_state["bug_generate_tapd_requested"] = True
+            st.rerun()

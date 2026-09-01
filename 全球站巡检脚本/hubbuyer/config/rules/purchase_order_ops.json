@@ -19,6 +19,11 @@
     "json_path": "code",
     "expected": 200
   },
+  "print_status_api": {
+    "status_code": 200,
+    "json_path": "code",
+    "expected": 200
+  },
   "warehouse_in_api": {
     "status_code": 200,
     "json_path": "code",

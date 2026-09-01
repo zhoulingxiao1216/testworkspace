@@ -50,6 +50,58 @@
       "idempotent_codes": [40000],
       "idempotent_message_contains": ["已正品", "正品", "没有可操作", "已到货"]
     },
+    "print_sticker": {
+      "enabled": true,
+      "desc": "贴纸打印状态",
+      "url": "/admin_b2b/orderDetail/updatePrintStatus",
+      "method": "POST",
+      "admin_site_origin": "",
+      "headers": {},
+      "json": {
+        "type": "sticker"
+      },
+      "idempotent_codes": [40000],
+      "idempotent_message_contains": ["已打印", "打印", "已更新"]
+    },
+    "print_hang_tag": {
+      "enabled": true,
+      "desc": "吊牌打印状态",
+      "url": "/admin_b2b/orderDetail/updatePrintStatus",
+      "method": "POST",
+      "admin_site_origin": "",
+      "headers": {},
+      "json": {
+        "type": "hang_tag"
+      },
+      "idempotent_codes": [40000],
+      "idempotent_message_contains": ["已打印", "打印", "已更新"]
+    },
+    "print_wash": {
+      "enabled": true,
+      "desc": "洗标打印状态",
+      "url": "/admin_b2b/orderDetail/updatePrintStatus",
+      "method": "POST",
+      "admin_site_origin": "",
+      "headers": {},
+      "json": {
+        "type": "wash"
+      },
+      "idempotent_codes": [40000],
+      "idempotent_message_contains": ["已打印", "打印", "已更新"]
+    },
+    "print_fba": {
+      "enabled": true,
+      "desc": "FBA打印状态",
+      "url": "/admin_b2b/orderDetail/updatePrintStatus",
+      "method": "POST",
+      "admin_site_origin": "",
+      "headers": {},
+      "json": {
+        "type": "fba"
+      },
+      "idempotent_codes": [40000],
+      "idempotent_message_contains": ["已打印", "打印", "已更新"]
+    },
     "warehouse_in": {
       "enabled": true,
       "desc": "入库",

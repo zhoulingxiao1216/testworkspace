@@ -5,6 +5,7 @@ import json
 import os
 import re
 import sys
+import time
 import traceback
 
 import requests
@@ -63,23 +64,53 @@ def _post(token, cfg_block, payload, all_rules, rule_key):
     if not url:
         return {"success": False, "message": f"url 为空({rule_key})", "body": {}, "status_code": 0}
     headers = _build_audit_headers(token, cfg_block)
-    resp = requests.post(
-        url,
-        headers=headers,
-        json=payload,
-        timeout=REQUEST_TIMEOUT_API,
-        verify=False,
-        proxies={"http": None, "https": None},
-    )
+
+    retry_statuses = set()
+    for status in cfg_block.get("retry_http_statuses") or []:
+        try:
+            retry_statuses.add(int(status))
+        except (TypeError, ValueError):
+            pass
+    try:
+        retry_times = max(0, int(cfg_block.get("retry_times") or 0))
+    except (TypeError, ValueError):
+        retry_times = 0
+    try:
+        retry_interval = max(0, float(cfg_block.get("retry_interval") or 0))
+    except (TypeError, ValueError):
+        retry_interval = 0
+
+    resp = None
+    for attempt in range(retry_times + 1):
+        resp = requests.post(
+            url,
+            headers=headers,
+            json=payload,
+            timeout=REQUEST_TIMEOUT_API,
+            verify=False,
+            proxies={"http": None, "https": None},
+        )
+        if resp.status_code not in retry_statuses or attempt >= retry_times:
+            break
+        if retry_interval:
+            time.sleep(retry_interval)
+
     rules = all_rules.get(rule_key) or all_rules.get("default") or {}
     check = AssertionTool.verify_api_common(resp, rules=rules)
     try:
         body = resp.json()
     except Exception:
         body = {}
+    message = check.get("message", "")
+    if not check["success"]:
+        body_text = (getattr(resp, "text", "") or "").strip().replace("\r", " ").replace("\n", " ")
+        if len(body_text) > 300:
+            body_text = body_text[:300] + "..."
+        if body_text:
+            message = f"{message} | url={url} | response={body_text}"
     return {
         "success": check["success"],
-        "message": check.get("message", ""),
+        "message": message,
         "body": body,
         "status_code": resp.status_code,
     }

@@ -9,7 +9,7 @@
 # 1. 核心环境开关
 # ==========================================
 
-ENV_TYPE = "prod"
+ENV_TYPE = "main"
 
 # ==========================================
 # 2. 业务巡检开关
@@ -105,11 +105,11 @@ SCRIPT_RUNNER_TIMEOUT = 120     # 脚本执行器超时时间 (增加至120秒�
 
 # 7.通知配置
 # 是否开启“全通过报告”推送 (True: 开启, False: 关闭)
-ENABLE_NORMAL_NOTIFIER = True
+ENABLE_NORMAL_NOTIFIER = False
 # A群：全通关报告 Webhook 地址
 WEBHOOK_URL_NORMAL = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=74a91292-a1ac-49e1-b1df-7cea1f54588b"  # Webhook--IT部-每日巡检汇报群
 
 # 是否开启“故障报警”推送 (True: 开启, False: 关闭)
-ENABLE_ALARM_NOTIFIER = True
+ENABLE_ALARM_NOTIFIER = False
 # B群：故障报警 Webhook 地址
 WEBHOOK_URL_ALARM = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=e28fa03c-3299-4ba7-bb51-e7de294a16d7"  # Webhook--测试和报错通知群

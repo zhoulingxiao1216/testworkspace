@@ -428,6 +428,88 @@ def _build_shipping_ctx(order_no, payload, item, body):
     return ctx
 
 
+def _parse_order_detail_ids(raw_ids):
+    if isinstance(raw_ids, (list, tuple, set)):
+        values = raw_ids
+    else:
+        values = str(raw_ids or "").split(",")
+    ids = []
+    for value in values:
+        text = str(value or "").strip()
+        if text:
+            ids.append(text)
+    return ids
+
+
+def _normalize_detail_id(detail_id):
+    text = str(detail_id or "").strip()
+    return int(text) if text.isdigit() else text
+
+
+def _execute_print_status_step(token, seller_ctx, step_cfg, rule_key, all_rules):
+    step_cfg = step_cfg or {}
+    desc = step_cfg.get("desc") or "打印状态"
+    if not step_cfg or not step_cfg.get("enabled"):
+        return {"success": True, "skipped": True, "message": f"{desc}:跳过(未启用)"}
+
+    url = (step_cfg.get("url") or "").strip()
+    if not url:
+        return {"success": False, "message": f"{desc}:FAIL(url 为空)"}
+
+    payload_template = dict(step_cfg.get("json") or {})
+    print_type = str(payload_template.get("type") or step_cfg.get("type") or "").strip()
+    if not print_type:
+        return {"success": False, "message": f"{desc}:FAIL(type 为空)"}
+
+    detail_ids = _parse_order_detail_ids(seller_ctx.get("order_detail_ids"))
+    if not detail_ids:
+        return {"success": False, "message": f"{desc}:FAIL(order_detail_id 为空)"}
+
+    method = (step_cfg.get("method") or "POST").upper()
+    headers = _build_audit_headers(token, step_cfg)
+    success_ids = []
+    failures = []
+    for detail_id in detail_ids:
+        payload = dict(payload_template)
+        payload["order_detail_id"] = _normalize_detail_id(detail_id)
+        payload["type"] = print_type
+
+        response = requests.request(
+            method,
+            url,
+            headers=headers,
+            json=payload,
+            timeout=REQUEST_TIMEOUT_API,
+            verify=False,
+            proxies={"http": None, "https": None},
+        )
+        check = AssertionTool.verify_api_common(response, rules=all_rules.get(rule_key, {}))
+        try:
+            body = response.json()
+        except Exception:
+            body = {}
+
+        if check["success"] or _is_idempotent_success(body, step_cfg):
+            success_ids.append(str(detail_id))
+            continue
+
+        detail = check.get("message", "未知错误")
+        if body.get("message"):
+            detail = f"{detail} | api_msg={body.get('message')}"
+        failures.append(f"{detail_id}:{detail}")
+
+    if failures:
+        fail_text = "; ".join(failures[:5])
+        if len(failures) > 5:
+            fail_text += f"; 其余{len(failures) - 5}项失败"
+        return {"success": False, "message": f"{desc}:FAIL(type={print_type}|{fail_text})"}
+
+    return {
+        "success": True,
+        "message": f"{desc}:OK(type={print_type}|ids={','.join(success_ids)})",
+    }
+
+
 def _execute_post_step(token, order_no, seller_ctx, step_cfg, rule_key, all_rules):
     if not step_cfg or not step_cfg.get("enabled"):
         return {"success": True, "skipped": True, "message": f"{step_cfg.get('desc', '步骤')}:跳过(未启用)"}
@@ -577,6 +659,10 @@ def run(task_config=None):
             ("one_click_purchase", "one_click_purchase_api", "一键采购"),
             ("one_click_arrival", "one_click_arrival_api", "一键到货"),
             ("one_click_genuine", "one_click_genuine_api", "一键正品"),
+            ("print_sticker", "print_status_api", "贴纸打印状态"),
+            ("print_hang_tag", "print_status_api", "吊牌打印状态"),
+            ("print_wash", "print_status_api", "洗标打印状态"),
+            ("print_fba", "print_status_api", "FBA打印状态"),
             ("warehouse_in", "warehouse_in_api", "入库"),
         ]
         for step_key, rule_key, default_desc in step_defs:
@@ -586,6 +672,10 @@ def run(task_config=None):
                 sellers = _fetch_order_sellers(token, order_no, target_cfg.get("detail_api"))
                 step_result = _execute_warehouse_in_step(
                     token, order_no, sellers, seller_ctx, step_cfg, rule_key, all_rules, target_cfg
+                )
+            elif step_key.startswith("print_"):
+                step_result = _execute_print_status_step(
+                    token, seller_ctx, step_cfg, rule_key, all_rules
                 )
             else:
                 step_result = _execute_post_step(

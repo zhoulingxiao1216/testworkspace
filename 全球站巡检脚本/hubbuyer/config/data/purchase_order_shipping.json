@@ -80,7 +80,10 @@
     "url": "/admin_b2b/shipOrderDetail/completeBox",
     "method": "POST",
     "admin_site_origin": "",
-    "headers": {}
+    "headers": {},
+    "retry_http_statuses": [502, 503, 504],
+    "retry_times": 2,
+    "retry_interval": 2
   },
   "remove_settling_api": {
     "enabled": true,
