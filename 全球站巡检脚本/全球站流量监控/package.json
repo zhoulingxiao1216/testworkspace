@@ -1,0 +1,22 @@
+{
+  "name": "global-1688-traffic-monitor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "1688 开放平台应用流量监控，首次人工登录后复用浏览器登录态检查应用流量。",
+  "scripts": {
+    "login": "node login-once.mjs",
+    "login:headless": "MONITOR_CONFIG=./config.bt.example.json MONITOR_HEADLESS=true node login-headless.mjs",
+    "check": "node check-traffic.mjs",
+    "check:bt": "MONITOR_CONFIG=./config.bt.example.json MONITOR_HEADLESS=true node check-traffic.mjs",
+    "inspect": "python main.py",
+    "inspect:bt": "MONITOR_CONFIG=./config.bt.example.json MONITOR_HEADLESS=true python main.py",
+    "self-test": "node check-traffic.mjs --self-test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "playwright": "^1.46.0"
+  }
+}

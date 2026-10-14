@@ -1,0 +1,11 @@
+{
+  "OPEN1688_TRAFFIC": {
+    "key": "check_open1688_traffic",
+    "desc": "1688 开放平台应用流量监控",
+    "script": "checker/api/open1688_traffic.py",
+    "node_script": "check-traffic.mjs",
+    "runner_timeout": 180,
+    "expected": "1688 应用流量低于阈值",
+    "config_file": "config.json"
+  }
+}

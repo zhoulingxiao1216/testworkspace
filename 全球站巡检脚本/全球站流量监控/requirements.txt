@@ -1,0 +1,2 @@
+# 当前 Python 巡检框架仅使用标准库。
+# Node 依赖请执行 npm install。

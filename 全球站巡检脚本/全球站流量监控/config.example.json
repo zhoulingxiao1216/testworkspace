@@ -1,0 +1,44 @@
+{
+  "consoleUrl": "https://open.1688.com/console",
+  "appDetailUrl": "https://open.1688.com/develop/app/detail?appKey=9466082",
+  "appKey": "9466082",
+  "appName": "樱花代购さくら代行",
+  "threshold": 300000,
+  "unit": "次/天",
+  "browserProfileDir": "./browser-profile",
+  "headless": false,
+  "browser": {
+    "channel": "chrome",
+    "executablePath": "",
+    "viewport": null,
+    "enableViewportEmulation": false,
+    "args": ["--disable-gpu"]
+  },
+  "timeouts": {
+    "navigationMs": 45000,
+    "pageReadyMs": 15000,
+    "settleMs": 3000,
+    "notifyMs": 10000
+  },
+  "retry": {
+    "attempts": 2,
+    "intervalMs": 3000
+  },
+  "parse": {
+    "label": "应用流量",
+    "allowGlobalRatioFallback": false
+  },
+  "logs": {
+    "dir": "./logs",
+    "trafficLog": "./logs/traffic.log",
+    "latestResult": "./logs/latest-result.json",
+    "screenshotDir": "./logs/screenshots",
+    "screenshotOnFailure": true
+  },
+  "notify": {
+    "enabled": false,
+    "type": "wecom",
+    "webhookUrlEnv": "MONITOR_WEBHOOK_URL",
+    "onlyOnWarning": false
+  }
+}

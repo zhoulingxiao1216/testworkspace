@@ -1,0 +1,53 @@
+{
+    "release":  "hubbuyer-patrol-20260917-r1",
+    "scope":  "Patrol scripts only; no Global backend code or credentials",
+    "source_git_head":  "283572eff8d67f32fb9aee5a7de6aea7a9c8102a",
+    "source_state":  "Working tree snapshot; not a committed release",
+    "files":  [
+                  {
+                      "path":  "config_steps.merge.json",
+                      "bytes":  11150,
+                      "sha256":  "293c9283e925f77bc2d839dfda484784b488457ef4535180cbc828160ff8b1ce"
+                  },
+                  {
+                      "path":  "上线步骤.md",
+                      "bytes":  2927,
+                      "sha256":  "230926707812a50bb6d324d11b2dda0189038defd11b6812bdf3e59c07a7ceba"
+                  },
+                  {
+                      "path":  "发布说明.md",
+                      "bytes":  2994,
+                      "sha256":  "ea7d39828a6c66d99f7aa4f427a8bc76a8b6f0f17f1395f592bdacce8038bc91"
+                  },
+                  {
+                      "path":  "payload/checker/api/add_cart.py",
+                      "bytes":  14060,
+                      "sha256":  "79ed71576ff6e44bfcbe0e6b1b7e70cc7ca9ee0f67f99ee1a30783d8616ae589"
+                  },
+                  {
+                      "path":  "payload/checker/api/backend_admin_checkpoint.py",
+                      "bytes":  6111,
+                      "sha256":  "2c247fdb0a904429d9f0cbe6e6208e11eed9c2247079a258c650425bffe70171"
+                  },
+                  {
+                      "path":  "payload/checker/api/purchase_order_ops.py",
+                      "bytes":  37671,
+                      "sha256":  "f876232cf83d110d09e394781961e9e63368b18e0ef8a2894b051c3dc79d0947"
+                  },
+                  {
+                      "path":  "payload/checker/api/purchase_order_shipping.py",
+                      "bytes":  28734,
+                      "sha256":  "ba7e037dcecb3e5996ea37e5dec4777082e9da2ed0c39bf6c02e6ccfa31b859a"
+                  },
+                  {
+                      "path":  "payload/tests/test_add_cart_taobao.py",
+                      "bytes":  1828,
+                      "sha256":  "8ac6b5f77c17622028ddc8519c797c73079038036db2d86b30f454714b8d769a"
+                  },
+                  {
+                      "path":  "payload/tests/test_purchase_order_ops_genuine.py",
+                      "bytes":  6138,
+                      "sha256":  "6a260feaa4e5e5c644fcb213ebd99a5e2d5f78e9045bc805ac76b8059d113eec"
+                  }
+              ]
+}

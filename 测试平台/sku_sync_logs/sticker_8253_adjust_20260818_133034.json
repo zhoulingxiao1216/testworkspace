@@ -1,0 +1,807 @@
+{
+  "action": "adjust_8253_short_stickers",
+  "main_order_id": "825326080615",
+  "uid": "8253",
+  "overwrite_manual": true,
+  "summary": {
+    "total": 61,
+    "success": 61,
+    "failed": 0,
+    "skipped": 0
+  },
+  "results": [
+    {
+      "order_id": "1400985",
+      "external_id": "K9011オフホワイトONESIZE",
+      "pic_id": "103610",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1400986",
+      "external_id": "K9011ブラックONESIZE",
+      "pic_id": "103611",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1400987",
+      "external_id": "K9012グリーンONESIZE",
+      "pic_id": "103612",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1400988",
+      "external_id": "K9012レッドONESIZE",
+      "pic_id": "103613",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1400989",
+      "external_id": "K9012ブラックONESIZE",
+      "pic_id": "103614",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1400990",
+      "external_id": "K9012グレーONESIZE",
+      "pic_id": "103615",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1400991",
+      "external_id": "K9012オフホワイトONESIZE",
+      "pic_id": "103616",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1400992",
+      "external_id": "K9013オレンジONESIZE",
+      "pic_id": "103617",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1400993",
+      "external_id": "K9013ブルーONESIZE",
+      "pic_id": "103618",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1400994",
+      "external_id": "K9013グリーンONESIZE",
+      "pic_id": "103619",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1400995",
+      "external_id": "K9013イエローONESIZE",
+      "pic_id": "103620",
+      "config_id": "44359",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1400996",
+      "external_id": "K9000レッドONESIZE",
+      "pic_id": "103560",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1400997",
+      "external_id": "K9000ブラックONESIZE",
+      "pic_id": "103561",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1400998",
+      "external_id": "K9000グレーONESIZE",
+      "pic_id": "103562",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1400999",
+      "external_id": "K9000オフホワイトONESIZE",
+      "pic_id": "103563",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401000",
+      "external_id": "K9001ピンクONESIZE",
+      "pic_id": "103564",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401001",
+      "external_id": "K9001パープルONESIZE",
+      "pic_id": "103565",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401002",
+      "external_id": "K9001ブラックONESIZE",
+      "pic_id": "103566",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401003",
+      "external_id": "K9001ライトブルーONESIZE",
+      "pic_id": "103567",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401004",
+      "external_id": "K9001グリーンONESIZE",
+      "pic_id": "103568",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401005",
+      "external_id": "K9001カーキONESIZE",
+      "pic_id": "103569",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401006",
+      "external_id": "K9001ブラックONESIZE",
+      "pic_id": "103570",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401007",
+      "external_id": "K9001オフホワイトONESIZE",
+      "pic_id": "103571",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401008",
+      "external_id": "K9002ピンクONESIZE",
+      "pic_id": "103572",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401009",
+      "external_id": "K9002ネイビーONESIZE",
+      "pic_id": "103573",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401010",
+      "external_id": "K9002グリーンONESIZE",
+      "pic_id": "103574",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401011",
+      "external_id": "K9002カーキONESIZE",
+      "pic_id": "103575",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401012",
+      "external_id": "K9002ブラックONESIZE",
+      "pic_id": "103576",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401013",
+      "external_id": "K9002オフホワイトONESIZE",
+      "pic_id": "103577",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401014",
+      "external_id": "K9003ブラウンONESIZE",
+      "pic_id": "103578",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401015",
+      "external_id": "K9003ブラックONESIZE",
+      "pic_id": "103579",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401016",
+      "external_id": "K9004ブラックONESIZE",
+      "pic_id": "103580",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401017",
+      "external_id": "K9004レッドONESIZE",
+      "pic_id": "103581",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401018",
+      "external_id": "K9005ブルーONESIZE",
+      "pic_id": "103582",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401019",
+      "external_id": "K9005カーキONESIZE",
+      "pic_id": "103583",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401020",
+      "external_id": "K9005パープルONESIZE",
+      "pic_id": "103584",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401021",
+      "external_id": "K9005ブラウンONESIZE",
+      "pic_id": "103585",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401022",
+      "external_id": "K9005レッドONESIZE",
+      "pic_id": "103586",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401023",
+      "external_id": "K9005ブラックONESIZE",
+      "pic_id": "103587",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401024",
+      "external_id": "K9006カーキONESIZE",
+      "pic_id": "103588",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401025",
+      "external_id": "K9006グリーンONESIZE",
+      "pic_id": "103589",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401026",
+      "external_id": "K9006ピンクONESIZE",
+      "pic_id": "103590",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401027",
+      "external_id": "K9006オフホワイトONESIZE",
+      "pic_id": "103591",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401028",
+      "external_id": "K9006ブラックONESIZE",
+      "pic_id": "103592",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401029",
+      "external_id": "K9007チョコONESIZE",
+      "pic_id": "103593",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401030",
+      "external_id": "K9007ベージュONESIZE",
+      "pic_id": "103594",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401031",
+      "external_id": "K9007ブラウンONESIZE",
+      "pic_id": "103595",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401032",
+      "external_id": "K9007ブラックONESIZE",
+      "pic_id": "103596",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401033",
+      "external_id": "K9008ブラックONESIZE",
+      "pic_id": "103597",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401034",
+      "external_id": "K9008ブランONESIZE",
+      "pic_id": "103598",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401035",
+      "external_id": "K9008ベージュONESIZE",
+      "pic_id": "103599",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401036",
+      "external_id": "K9008ライトグリーンONESIZE",
+      "pic_id": "103600",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401037",
+      "external_id": "K9008ピンクONESIZE",
+      "pic_id": "103601",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401038",
+      "external_id": "K9009ホワイト×ブラックONESIZE",
+      "pic_id": "103602",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401039",
+      "external_id": "K9009ホワイト×ブルーONESIZE",
+      "pic_id": "103603",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401040",
+      "external_id": "K9009ホワイト×ピンクONESIZE",
+      "pic_id": "103604",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401041",
+      "external_id": "K9010グリーンONESIZE",
+      "pic_id": "103605",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401042",
+      "external_id": "K9010ブラックONESIZE",
+      "pic_id": "103606",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401043",
+      "external_id": "K9010グレーONESIZE",
+      "pic_id": "103607",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401044",
+      "external_id": "K9010オフホワイトONESIZE",
+      "pic_id": "103608",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    },
+    {
+      "order_id": "1401045",
+      "external_id": "K9010カーキONESIZE",
+      "pic_id": "103609",
+      "config_id": "-15582",
+      "status": "success",
+      "reason": "saved",
+      "response": {
+        "status": 1,
+        "msg": "編集完了",
+        "data": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+node_modules/
+browser-profile/
+config.local.json
+config/secrets.local.json
+logs/*
+!logs/.gitkeep

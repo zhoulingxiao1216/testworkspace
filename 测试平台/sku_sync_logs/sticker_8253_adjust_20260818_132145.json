@@ -1,0 +1,23 @@
+{
+  "action": "adjust_8253_short_stickers",
+  "main_order_id": "825326080615",
+  "uid": "8253",
+  "overwrite_manual": false,
+  "summary": {
+    "total": 1,
+    "success": 0,
+    "failed": 0,
+    "skipped": 1
+  },
+  "results": [
+    {
+      "order_id": "1401007",
+      "external_id": "K9001オフホワイトONESIZE",
+      "pic_id": "103571",
+      "config_id": "-15582",
+      "status": "skipped",
+      "reason": "manual_json_url",
+      "response": {}
+    }
+  ]
+}

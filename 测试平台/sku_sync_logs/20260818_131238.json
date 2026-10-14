@@ -1,0 +1,1296 @@
+{
+  "filename": "注文番_825326080615.xlsx",
+  "uid": "8253",
+  "optional_order_id": "825326080615",
+  "meta": {
+    "source": "header_scan",
+    "header_row_idx": 1,
+    "col_order": 4,
+    "col_sku": 5,
+    "col_main_order": 3,
+    "col_order_letter": "E",
+    "col_sku_letter": "F",
+    "col_main_order_letter": "D",
+    "header_order": "商品番号",
+    "header_sku": "貴社SKU",
+    "header_main_order": "注文番号",
+    "header": [
+      "画像",
+      "商品名",
+      "sku",
+      "注文番号",
+      "商品番号",
+      "貴社SKU",
+      "ASIN",
+      "FNSKU",
+      "単価",
+      "発注数",
+      "合計",
+      "変動単価",
+      "ブランド名",
+      "SKU",
+      "販売価格",
+      "カラー",
+      "サイズ",
+      "バーコード文字列",
+      "下げ札は必要ですか（はい／いいえ）",
+      "シールは必要ですか（はい／いいえ）"
+    ],
+    "parsed_count": 61,
+    "total_rows": 63,
+    "backend_sku_preview_status": "ok",
+    "backend_sku_mapping_count": 61
+  },
+  "plan": [
+    {
+      "order_id": "1400996",
+      "external_id": "K9000レッドONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 3,
+      "current_sku": "K9000��å�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1400997",
+      "external_id": "K9000ブラックONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 4,
+      "current_sku": "K9000�֥�å�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1400998",
+      "external_id": "K9000グレーONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 5,
+      "current_sku": "K9000����`ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1400999",
+      "external_id": "K9000オフホワイトONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 6,
+      "current_sku": "K9000���եۥ磻��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401000",
+      "external_id": "K9001ピンクONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 7,
+      "current_sku": "K9001�ԥ�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401001",
+      "external_id": "K9001パープルONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 8,
+      "current_sku": "K9001�ѩ`�ץ�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401002",
+      "external_id": "K9001ブラックONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 9,
+      "current_sku": "K9001�֥�å�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401003",
+      "external_id": "K9001ライトブルーONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 10,
+      "current_sku": "K9001�饤�ȥ֥�`ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401004",
+      "external_id": "K9001グリーンONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 11,
+      "current_sku": "K9001����`��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401005",
+      "external_id": "K9001カーキONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 12,
+      "current_sku": "K9001���`��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401006",
+      "external_id": "K9001ブラックONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 13,
+      "current_sku": "K9001�֥�å�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401007",
+      "external_id": "K9001オフホワイトONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 14,
+      "current_sku": "K9001���եۥ磻��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401008",
+      "external_id": "K9002ピンクONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 15,
+      "current_sku": "K9002�ԥ�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401009",
+      "external_id": "K9002ネイビーONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 16,
+      "current_sku": "K9002�ͥ��ө`ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401010",
+      "external_id": "K9002グリーンONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 17,
+      "current_sku": "K9002グリーンONESIZE",
+      "action": "skip",
+      "reason": "SKU 已一致"
+    },
+    {
+      "order_id": "1401011",
+      "external_id": "K9002カーキONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 18,
+      "current_sku": "K9002���`��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401012",
+      "external_id": "K9002ブラックONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 19,
+      "current_sku": "K9002�֥�å�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401013",
+      "external_id": "K9002オフホワイトONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 20,
+      "current_sku": "K9002オフホワイトONESIZE",
+      "action": "skip",
+      "reason": "SKU 已一致"
+    },
+    {
+      "order_id": "1401014",
+      "external_id": "K9003ブラウンONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 21,
+      "current_sku": "K9003�֥饦��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401015",
+      "external_id": "K9003ブラックONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 22,
+      "current_sku": "K9003�֥�å�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401016",
+      "external_id": "K9004ブラックONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 23,
+      "current_sku": "K9004�֥�å�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401017",
+      "external_id": "K9004レッドONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 24,
+      "current_sku": "K9004��å�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401018",
+      "external_id": "K9005ブルーONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 25,
+      "current_sku": "K9005�֥�`ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401019",
+      "external_id": "K9005カーキONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 26,
+      "current_sku": "K9005���`��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401020",
+      "external_id": "K9005パープルONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 27,
+      "current_sku": "K9005�ѩ`�ץ�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401021",
+      "external_id": "K9005ブラウンONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 28,
+      "current_sku": "K9005�֥饦��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401022",
+      "external_id": "K9005レッドONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 29,
+      "current_sku": "K9005��å�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401023",
+      "external_id": "K9005ブラックONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 30,
+      "current_sku": "K9005�֥�å�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401024",
+      "external_id": "K9006カーキONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 31,
+      "current_sku": "K9006���`��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401025",
+      "external_id": "K9006グリーンONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 32,
+      "current_sku": "K9006����`��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401026",
+      "external_id": "K9006ピンクONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 33,
+      "current_sku": "K9006�ԥ�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401027",
+      "external_id": "K9006オフホワイトONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 34,
+      "current_sku": "K9006���եۥ磻��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401028",
+      "external_id": "K9006ブラックONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 35,
+      "current_sku": "K9006�֥�å�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401029",
+      "external_id": "K9007チョコONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 36,
+      "current_sku": "K9007���祳ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401030",
+      "external_id": "K9007ベージュONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 37,
+      "current_sku": "K9007�٩`����ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401031",
+      "external_id": "K9007ブラウンONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 38,
+      "current_sku": "K9007�֥饦��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401032",
+      "external_id": "K9007ブラックONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 39,
+      "current_sku": "K9007�֥�å�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401033",
+      "external_id": "K9008ブラックONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 40,
+      "current_sku": "K9008�֥�å�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401034",
+      "external_id": "K9008ブランONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 41,
+      "current_sku": "K9008�֥��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401035",
+      "external_id": "K9008ベージュONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 42,
+      "current_sku": "K9008�٩`����ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401036",
+      "external_id": "K9008ライトグリーンONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 43,
+      "current_sku": "K9008�饤�ȥ���`��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401037",
+      "external_id": "K9008ピンクONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 44,
+      "current_sku": "K9008�ԥ�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401038",
+      "external_id": "K9009ホワイト×ブラックONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 45,
+      "current_sku": "K9009�ۥ磻�ȡ��֥�å�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401039",
+      "external_id": "K9009ホワイト×ブルーONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 46,
+      "current_sku": "K9009�ۥ磻�ȡ��֥�`ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401040",
+      "external_id": "K9009ホワイト×ピンクONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 47,
+      "current_sku": "K9009�ۥ磻�ȡ��ԥ�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401041",
+      "external_id": "K9010グリーンONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 48,
+      "current_sku": "K9010����`��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401042",
+      "external_id": "K9010ブラックONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 49,
+      "current_sku": "K9010�֥�å�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401043",
+      "external_id": "K9010グレーONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 50,
+      "current_sku": "K9010����`ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401044",
+      "external_id": "K9010オフホワイトONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 51,
+      "current_sku": "K9010���եۥ磻��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1401045",
+      "external_id": "K9010カーキONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 52,
+      "current_sku": "K9010���`��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1400985",
+      "external_id": "K9011オフホワイトONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 53,
+      "current_sku": "K9011���եۥ磻��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1400986",
+      "external_id": "K9011ブラックONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 54,
+      "current_sku": "K9011�֥�å�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1400987",
+      "external_id": "K9012グリーンONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 55,
+      "current_sku": "K9012����`��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1400988",
+      "external_id": "K9012レッドONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 56,
+      "current_sku": "K9012��å�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1400989",
+      "external_id": "K9012ブラックONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 57,
+      "current_sku": "K9012�֥�å�ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1400990",
+      "external_id": "K9012グレーONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 58,
+      "current_sku": "K9012����`ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1400991",
+      "external_id": "K9012オフホワイトONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 59,
+      "current_sku": "K9012���եۥ磻��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1400992",
+      "external_id": "K9013オレンジONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 60,
+      "current_sku": "K9013�����ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1400993",
+      "external_id": "K9013ブルーONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 61,
+      "current_sku": "K9013�֥�`ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1400994",
+      "external_id": "K9013グリーンONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 62,
+      "current_sku": "K9013����`��ONESIZE",
+      "action": "update",
+      "reason": "待同步"
+    },
+    {
+      "order_id": "1400995",
+      "external_id": "K9013イエローONESIZE",
+      "main_order_id": "825326080615",
+      "row_no": 63,
+      "current_sku": "K9013イエローONESIZE",
+      "action": "skip",
+      "reason": "SKU 已一致"
+    }
+  ],
+  "selected_update_rows": [
+    {
+      "row_no": 3,
+      "order_id": "1400996"
+    },
+    {
+      "row_no": 4,
+      "order_id": "1400997"
+    },
+    {
+      "row_no": 5,
+      "order_id": "1400998"
+    },
+    {
+      "row_no": 6,
+      "order_id": "1400999"
+    },
+    {
+      "row_no": 7,
+      "order_id": "1401000"
+    },
+    {
+      "row_no": 8,
+      "order_id": "1401001"
+    },
+    {
+      "row_no": 9,
+      "order_id": "1401002"
+    },
+    {
+      "row_no": 10,
+      "order_id": "1401003"
+    },
+    {
+      "row_no": 11,
+      "order_id": "1401004"
+    },
+    {
+      "row_no": 12,
+      "order_id": "1401005"
+    },
+    {
+      "row_no": 13,
+      "order_id": "1401006"
+    },
+    {
+      "row_no": 14,
+      "order_id": "1401007"
+    },
+    {
+      "row_no": 15,
+      "order_id": "1401008"
+    },
+    {
+      "row_no": 16,
+      "order_id": "1401009"
+    },
+    {
+      "row_no": 18,
+      "order_id": "1401011"
+    },
+    {
+      "row_no": 19,
+      "order_id": "1401012"
+    },
+    {
+      "row_no": 21,
+      "order_id": "1401014"
+    },
+    {
+      "row_no": 22,
+      "order_id": "1401015"
+    },
+    {
+      "row_no": 23,
+      "order_id": "1401016"
+    },
+    {
+      "row_no": 24,
+      "order_id": "1401017"
+    },
+    {
+      "row_no": 25,
+      "order_id": "1401018"
+    },
+    {
+      "row_no": 26,
+      "order_id": "1401019"
+    },
+    {
+      "row_no": 27,
+      "order_id": "1401020"
+    },
+    {
+      "row_no": 28,
+      "order_id": "1401021"
+    },
+    {
+      "row_no": 29,
+      "order_id": "1401022"
+    },
+    {
+      "row_no": 30,
+      "order_id": "1401023"
+    },
+    {
+      "row_no": 31,
+      "order_id": "1401024"
+    },
+    {
+      "row_no": 32,
+      "order_id": "1401025"
+    },
+    {
+      "row_no": 33,
+      "order_id": "1401026"
+    },
+    {
+      "row_no": 34,
+      "order_id": "1401027"
+    },
+    {
+      "row_no": 35,
+      "order_id": "1401028"
+    },
+    {
+      "row_no": 36,
+      "order_id": "1401029"
+    },
+    {
+      "row_no": 37,
+      "order_id": "1401030"
+    },
+    {
+      "row_no": 38,
+      "order_id": "1401031"
+    },
+    {
+      "row_no": 39,
+      "order_id": "1401032"
+    },
+    {
+      "row_no": 40,
+      "order_id": "1401033"
+    },
+    {
+      "row_no": 41,
+      "order_id": "1401034"
+    },
+    {
+      "row_no": 42,
+      "order_id": "1401035"
+    },
+    {
+      "row_no": 43,
+      "order_id": "1401036"
+    },
+    {
+      "row_no": 44,
+      "order_id": "1401037"
+    },
+    {
+      "row_no": 45,
+      "order_id": "1401038"
+    },
+    {
+      "row_no": 46,
+      "order_id": "1401039"
+    },
+    {
+      "row_no": 47,
+      "order_id": "1401040"
+    },
+    {
+      "row_no": 48,
+      "order_id": "1401041"
+    },
+    {
+      "row_no": 49,
+      "order_id": "1401042"
+    },
+    {
+      "row_no": 50,
+      "order_id": "1401043"
+    },
+    {
+      "row_no": 51,
+      "order_id": "1401044"
+    },
+    {
+      "row_no": 52,
+      "order_id": "1401045"
+    },
+    {
+      "row_no": 53,
+      "order_id": "1400985"
+    },
+    {
+      "row_no": 54,
+      "order_id": "1400986"
+    },
+    {
+      "row_no": 55,
+      "order_id": "1400987"
+    },
+    {
+      "row_no": 56,
+      "order_id": "1400988"
+    },
+    {
+      "row_no": 57,
+      "order_id": "1400989"
+    },
+    {
+      "row_no": 58,
+      "order_id": "1400990"
+    },
+    {
+      "row_no": 59,
+      "order_id": "1400991"
+    },
+    {
+      "row_no": 60,
+      "order_id": "1400992"
+    },
+    {
+      "row_no": 61,
+      "order_id": "1400993"
+    },
+    {
+      "row_no": 62,
+      "order_id": "1400994"
+    }
+  ],
+  "skipped_by_unselected": 0,
+  "results": [
+    {
+      "row_no": 3,
+      "order_id": "1400996",
+      "external_id": "K9000レッドONESIZE",
+      "previous_sku": "K9000��å�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 4,
+      "order_id": "1400997",
+      "external_id": "K9000ブラックONESIZE",
+      "previous_sku": "K9000�֥�å�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 5,
+      "order_id": "1400998",
+      "external_id": "K9000グレーONESIZE",
+      "previous_sku": "K9000����`ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 6,
+      "order_id": "1400999",
+      "external_id": "K9000オフホワイトONESIZE",
+      "previous_sku": "K9000���եۥ磻��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 7,
+      "order_id": "1401000",
+      "external_id": "K9001ピンクONESIZE",
+      "previous_sku": "K9001�ԥ�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 8,
+      "order_id": "1401001",
+      "external_id": "K9001パープルONESIZE",
+      "previous_sku": "K9001�ѩ`�ץ�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 9,
+      "order_id": "1401002",
+      "external_id": "K9001ブラックONESIZE",
+      "previous_sku": "K9001�֥�å�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 10,
+      "order_id": "1401003",
+      "external_id": "K9001ライトブルーONESIZE",
+      "previous_sku": "K9001�饤�ȥ֥�`ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 11,
+      "order_id": "1401004",
+      "external_id": "K9001グリーンONESIZE",
+      "previous_sku": "K9001����`��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 12,
+      "order_id": "1401005",
+      "external_id": "K9001カーキONESIZE",
+      "previous_sku": "K9001���`��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 13,
+      "order_id": "1401006",
+      "external_id": "K9001ブラックONESIZE",
+      "previous_sku": "K9001�֥�å�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 14,
+      "order_id": "1401007",
+      "external_id": "K9001オフホワイトONESIZE",
+      "previous_sku": "K9001���եۥ磻��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 15,
+      "order_id": "1401008",
+      "external_id": "K9002ピンクONESIZE",
+      "previous_sku": "K9002�ԥ�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 16,
+      "order_id": "1401009",
+      "external_id": "K9002ネイビーONESIZE",
+      "previous_sku": "K9002�ͥ��ө`ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 18,
+      "order_id": "1401011",
+      "external_id": "K9002カーキONESIZE",
+      "previous_sku": "K9002���`��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 19,
+      "order_id": "1401012",
+      "external_id": "K9002ブラックONESIZE",
+      "previous_sku": "K9002�֥�å�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 21,
+      "order_id": "1401014",
+      "external_id": "K9003ブラウンONESIZE",
+      "previous_sku": "K9003�֥饦��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 22,
+      "order_id": "1401015",
+      "external_id": "K9003ブラックONESIZE",
+      "previous_sku": "K9003�֥�å�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 23,
+      "order_id": "1401016",
+      "external_id": "K9004ブラックONESIZE",
+      "previous_sku": "K9004�֥�å�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 24,
+      "order_id": "1401017",
+      "external_id": "K9004レッドONESIZE",
+      "previous_sku": "K9004��å�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 25,
+      "order_id": "1401018",
+      "external_id": "K9005ブルーONESIZE",
+      "previous_sku": "K9005�֥�`ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 26,
+      "order_id": "1401019",
+      "external_id": "K9005カーキONESIZE",
+      "previous_sku": "K9005���`��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 27,
+      "order_id": "1401020",
+      "external_id": "K9005パープルONESIZE",
+      "previous_sku": "K9005�ѩ`�ץ�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 28,
+      "order_id": "1401021",
+      "external_id": "K9005ブラウンONESIZE",
+      "previous_sku": "K9005�֥饦��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 29,
+      "order_id": "1401022",
+      "external_id": "K9005レッドONESIZE",
+      "previous_sku": "K9005��å�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 30,
+      "order_id": "1401023",
+      "external_id": "K9005ブラックONESIZE",
+      "previous_sku": "K9005�֥�å�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 31,
+      "order_id": "1401024",
+      "external_id": "K9006カーキONESIZE",
+      "previous_sku": "K9006���`��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 32,
+      "order_id": "1401025",
+      "external_id": "K9006グリーンONESIZE",
+      "previous_sku": "K9006����`��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 33,
+      "order_id": "1401026",
+      "external_id": "K9006ピンクONESIZE",
+      "previous_sku": "K9006�ԥ�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 34,
+      "order_id": "1401027",
+      "external_id": "K9006オフホワイトONESIZE",
+      "previous_sku": "K9006���եۥ磻��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 35,
+      "order_id": "1401028",
+      "external_id": "K9006ブラックONESIZE",
+      "previous_sku": "K9006�֥�å�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 36,
+      "order_id": "1401029",
+      "external_id": "K9007チョコONESIZE",
+      "previous_sku": "K9007���祳ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 37,
+      "order_id": "1401030",
+      "external_id": "K9007ベージュONESIZE",
+      "previous_sku": "K9007�٩`����ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 38,
+      "order_id": "1401031",
+      "external_id": "K9007ブラウンONESIZE",
+      "previous_sku": "K9007�֥饦��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 39,
+      "order_id": "1401032",
+      "external_id": "K9007ブラックONESIZE",
+      "previous_sku": "K9007�֥�å�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 40,
+      "order_id": "1401033",
+      "external_id": "K9008ブラックONESIZE",
+      "previous_sku": "K9008�֥�å�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 41,
+      "order_id": "1401034",
+      "external_id": "K9008ブランONESIZE",
+      "previous_sku": "K9008�֥��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 42,
+      "order_id": "1401035",
+      "external_id": "K9008ベージュONESIZE",
+      "previous_sku": "K9008�٩`����ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 43,
+      "order_id": "1401036",
+      "external_id": "K9008ライトグリーンONESIZE",
+      "previous_sku": "K9008�饤�ȥ���`��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 44,
+      "order_id": "1401037",
+      "external_id": "K9008ピンクONESIZE",
+      "previous_sku": "K9008�ԥ�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 45,
+      "order_id": "1401038",
+      "external_id": "K9009ホワイト×ブラックONESIZE",
+      "previous_sku": "K9009�ۥ磻�ȡ��֥�å�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 46,
+      "order_id": "1401039",
+      "external_id": "K9009ホワイト×ブルーONESIZE",
+      "previous_sku": "K9009�ۥ磻�ȡ��֥�`ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 47,
+      "order_id": "1401040",
+      "external_id": "K9009ホワイト×ピンクONESIZE",
+      "previous_sku": "K9009�ۥ磻�ȡ��ԥ�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 48,
+      "order_id": "1401041",
+      "external_id": "K9010グリーンONESIZE",
+      "previous_sku": "K9010����`��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 49,
+      "order_id": "1401042",
+      "external_id": "K9010ブラックONESIZE",
+      "previous_sku": "K9010�֥�å�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 50,
+      "order_id": "1401043",
+      "external_id": "K9010グレーONESIZE",
+      "previous_sku": "K9010����`ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 51,
+      "order_id": "1401044",
+      "external_id": "K9010オフホワイトONESIZE",
+      "previous_sku": "K9010���եۥ磻��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 52,
+      "order_id": "1401045",
+      "external_id": "K9010カーキONESIZE",
+      "previous_sku": "K9010���`��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 53,
+      "order_id": "1400985",
+      "external_id": "K9011オフホワイトONESIZE",
+      "previous_sku": "K9011���եۥ磻��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 54,
+      "order_id": "1400986",
+      "external_id": "K9011ブラックONESIZE",
+      "previous_sku": "K9011�֥�å�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 55,
+      "order_id": "1400987",
+      "external_id": "K9012グリーンONESIZE",
+      "previous_sku": "K9012����`��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 56,
+      "order_id": "1400988",
+      "external_id": "K9012レッドONESIZE",
+      "previous_sku": "K9012��å�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 57,
+      "order_id": "1400989",
+      "external_id": "K9012ブラックONESIZE",
+      "previous_sku": "K9012�֥�å�ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 58,
+      "order_id": "1400990",
+      "external_id": "K9012グレーONESIZE",
+      "previous_sku": "K9012����`ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 59,
+      "order_id": "1400991",
+      "external_id": "K9012オフホワイトONESIZE",
+      "previous_sku": "K9012���եۥ磻��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 60,
+      "order_id": "1400992",
+      "external_id": "K9013オレンジONESIZE",
+      "previous_sku": "K9013�����ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 61,
+      "order_id": "1400993",
+      "external_id": "K9013ブルーONESIZE",
+      "previous_sku": "K9013�֥�`ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    },
+    {
+      "row_no": 62,
+      "order_id": "1400994",
+      "external_id": "K9013グリーンONESIZE",
+      "previous_sku": "K9013����`��ONESIZE",
+      "status": "success",
+      "detail": "已更新"
+    }
+  ]
+}
