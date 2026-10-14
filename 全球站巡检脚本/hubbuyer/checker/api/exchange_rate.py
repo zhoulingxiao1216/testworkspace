@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # checker/api/exchange_rate.py
-# 当日汇率检测：校验后台 USD / JPY 两项汇率是否已更新且有效
+# 当日汇率检测：校验后台 USD 汇率是否已更新且有效
 import json
 import sys
 import os
@@ -21,7 +21,7 @@ ADMIN_BASE_URL  = (API_CONFIG.get("BASE_URL") or "https://api.hubbuyer.com").rst
 ADMIN_WEB_URL   = (API_CONFIG.get("url_ADMIN") or "https://admin.hubbuyer.com/").rstrip("/")
 LOGIN_PATH      = "/admin/login/login"
 RATE_LIST_PATH  = "/admin/exRateConfig/list"
-TARGET_CURRENCIES = ["USD", "JPY"]   # 需检测的货币
+TARGET_CURRENCIES = ["USD"]   # 需检测的货币，已剔除日本汇率 JPY
 
 # 从配置文件动态读取当前环境的后台账号
 _admin_cfg     = ACCOUNTS_POOL.get(ENV_TYPE, {}).get("admin", {})

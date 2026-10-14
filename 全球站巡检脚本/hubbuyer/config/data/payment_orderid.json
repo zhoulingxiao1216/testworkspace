@@ -7,6 +7,7 @@
   },
   "mxnrq@airsworld.net": {
     "B2B": [
+      "B2B-DD-KOR8-260917-519",
       "B2B-BJ-KOR8-260828-506",
       "B2B-BJ-KOR8-260826-504",
       "B2B-BJ-KOR8-260820-503",
@@ -29,12 +30,12 @@
       "B2B-BJ-KOR8-260703-484"
     ],
     "D2C": [],
-    "last_pay_time_B2B": "2026-08-31 08:27:39",
-    "B2B_quote_latest": "B2B-BJ-KOR8-260831-429",
-    "B2B_order_latest": "B2B-DD-KOR8-260831-429",
+    "last_pay_time_B2B": "2026-09-17 09:27:04",
+    "B2B_quote_latest": "B2B-BJ-KOR8-260917-519",
+    "B2B_order_latest": "B2B-DD-KOR8-260917-519",
     "B2B_quote_pending_pay": "",
-    "B2B_quote_audited": "",
-    "B2B_round_order": "",
-    "B2B_round_quote": ""
+    "B2B_quote_audited": "B2B-BJ-KOR8-260917-519",
+    "B2B_round_order": "B2B-DD-KOR8-260917-519",
+    "B2B_round_quote": "B2B-BJ-KOR8-260917-519"
   }
 }

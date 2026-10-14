@@ -48,7 +48,7 @@ SAMPLE_REPORT = {
     },
     "后台管理检查点-汇率": {
         "success": True,
-        "message": "USD(银行:0.15 全球站:0.16) | JPY(银行:24 全球站:24.75)",
+        "message": "USD(银行:0.15 全球站:0.16)",
     },
 }
 

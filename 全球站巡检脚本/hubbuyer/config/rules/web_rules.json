@@ -15,7 +15,7 @@
     "script": "checker/web/url_B2B_pc.py",
     "rules": {
       "status_code": 200,
-      "title_contains": "Hubbuyer | B2B Sourcing Platform"
+      "title_contains": "HubBuyer | B2B Sourcing Platform"
     }
   },
   "url_D2C_pc": {

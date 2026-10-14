@@ -39,7 +39,8 @@ except ImportError:
         if extra_headers:
             headers.update(extra_headers)
         return headers
-from checker.api.purchase_order_audit import _build_audit_headers
+from checker.api.purchase_order_audit import _build_audit_headers, _resolve_order_no
+from checker.api.quote_order_store import resolve_target_mail
 from checker.api.shipping_context_store import (
     load_shipping_context,
     save_shipping_context,
@@ -301,11 +302,37 @@ def run(task_config=None):
         # ── 严格本轮数据校验 ──────────────────────────────────────────────────
         ctx = load_shipping_context()
         required_keys = ["order_no", "order_detail_id", "quantity", "user_main_uuid"]
-        missing = [k for k in required_keys if not ctx.get(k)]
+        missing = [k for k in required_keys if ctx.get(k) is None or ctx.get(k) == ""]
         if missing:
             raise RuntimeError(
                 f"发货上下文缺失字段 {missing}，请先运行仓配(purchase_order_ops)并确保入库成功"
             )
+        try:
+            quantity = int(ctx["quantity"])
+        except (TypeError, ValueError):
+            raise RuntimeError(
+                f"发货上下文字段 quantity 非法({ctx.get('quantity')})，请先运行仓配(purchase_order_ops)并确保入库成功"
+            )
+        if quantity <= 0:
+            raise RuntimeError(
+                f"发货上下文字段 quantity 无可发货数量({quantity})，请重新运行仓配(purchase_order_ops)并确认入库数量大于0"
+            )
+        if cfg.get("strict_round_data", True):
+            target_mail = resolve_target_mail()
+            expected_order_no = _resolve_order_no(
+                {
+                    "order_no": cfg.get("order_no", ""),
+                    "auto_resolve_order_no": cfg.get("auto_resolve_order_no", True),
+                },
+                os.path.join(DATA_DIR, "payment_orderid.json"),
+                target_mail,
+            )
+            ctx_order_no = str(ctx.get("order_no") or "")
+            if ctx_order_no != expected_order_no:
+                raise RuntimeError(
+                    f"发货上下文订单号({ctx_order_no})与本轮订单号({expected_order_no})不一致，"
+                    "请先运行仓配(purchase_order_ops)并确保本轮入库成功"
+                )
 
         target_product_id = cfg.get("target_product_id", "")
         saved_product_id = str(ctx.get("product_id") or "")
@@ -320,7 +347,6 @@ def run(task_config=None):
 
         order_detail_id = ctx["order_detail_id"]
         ku_stock_in_log_id = ctx.get("ku_stock_in_log_id")
-        quantity = int(ctx["quantity"])
         user_main_uuid = ctx["user_main_uuid"]
         order_no = ctx.get("order_no", "")
 

@@ -121,6 +121,55 @@ def standardize_b2b_payload(payload):
     """标准化 B2B payload：保持原始类型"""
     return payload
 
+def refresh_taobao_payload(payload, base_url, headers):
+    """Refresh the detail index while preserving the configured SKU and quantity."""
+    response = requests.get(
+        f"{base_url}/api_tb/product/detail",
+        # Cached language-specific details can retain an obsolete index and empty SKUs.
+        params={"item_id": str(payload["item_id"]), "site": "b2b", "cache": 0},
+        headers=headers,
+        timeout=REQUEST_TIMEOUT_API,
+        verify=False,
+        proxies={"http": None, "https": None},
+    )
+    response.raise_for_status()
+    body = response.json()
+    if body.get("code") != 200:
+        raise ValueError(f"淘宝详情获取失败: code={body.get('code')} api_msg={body.get('message') or body.get('msg')}")
+    detail = (body.get("data") or {}).get("data") or {}
+    if not detail.get("product_index_uuid"):
+        raise ValueError("淘宝详情缺少 product_index_uuid")
+    expected_item_id = str(payload["item_id"]).strip()
+    # 不同详情版本暴露的 ID 字段不同；所有已提供的商品 ID 都必须一致。
+    returned_ids = {
+        key: str(detail[key]).strip()
+        for key in ("product_index_item_id", "offerId", "offer_id")
+        if detail.get(key) is not None and str(detail[key]).strip()
+    }
+    if not returned_ids:
+        raise ValueError(f"淘宝详情缺少可核验商品ID: requested={expected_item_id}")
+    if any(value != expected_item_id for value in returned_ids.values()):
+        raise ValueError(
+            f"淘宝详情商品ID与加购商品不一致: requested={expected_item_id} "
+            f"returned={json.dumps(returned_ids, ensure_ascii=False)}"
+        )
+    skus = {str(row.get("skuId")): row for row in detail.get("productSkuInfos") or []}
+    goods = []
+    for configured in payload.get("goods_info") or []:
+        sku = skus.get(str(configured.get("sku_id")))
+        if not sku:
+            raise ValueError(
+                f"淘宝详情中不存在配置的SKU: {configured.get('sku_id')} "
+                f"item_id={expected_item_id} cache=0 sku_count={len(skus)}"
+            )
+        if sku.get("specId") is None or not str(sku["specId"]).strip():
+            raise ValueError(f"淘宝详情SKU缺少specId: {configured.get('sku_id')} item_id={expected_item_id}")
+        goods.append(dict(configured, sku_id=sku["skuId"], spec_id=sku["specId"]))
+    if not goods:
+        raise ValueError("淘宝加购 goods_info 为空")
+    return dict(payload, product_index_uuid=detail["product_index_uuid"], goods_info=goods)
+
+
 def prepare_d2c_payload(payload):
     """
     准备 D2C payload：转换为 URL 编码的表单数据（完全匹配 postman 格式）
@@ -246,11 +295,21 @@ def run(task_config=None):
                     item_id = str(payload.get("item_id", payload.get("ItemID", "")))
                     item_url = payload.get("ItemURL", "")
                     req_headers = get_b2b_headers(base_url, b2b_token, b2b_cookie, item_id=item_id, item_url=item_url)
+                    if task_name == "B2B_taobao":
+                        payload = refresh_taobao_payload(payload, base_url, req_headers)
                     standard_payload = standardize_b2b_payload(payload)
                     response = requests.post(url, json=standard_payload, headers=req_headers, timeout=REQUEST_TIMEOUT_API, verify=False, proxies={'http': None, 'https': None})
 
                 # 5. 统一结果处理
                 check = AssertionTool.verify_api_common(response, rules=all_rules.get(task_name, {}))
+                if not check["success"]:
+                    try:
+                        body = response.json()
+                        api_message = (body.get("message") or body.get("msg")) if isinstance(body, dict) else None
+                        if api_message:
+                            check["message"] = f"{check.get('message', '未知错误')} | api_msg={api_message} | item_id={item_id}"
+                    except ValueError:
+                        pass
                 results_status[task_name] = check["success"]
                 msgs.append(f"{task_name}:{'OK' if check['success'] else 'FAIL(' + check.get('message', '未知错误') + ')'}")
 

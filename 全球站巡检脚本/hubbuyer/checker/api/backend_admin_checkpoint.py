@@ -93,13 +93,25 @@ def run(task_config=None):
             summary_parts.append("汇率:跳过")
 
         if _module_enabled(cfg, "purchase_order_shipping", "check_api_purchase_order_shipping"):
-            from checker.api.purchase_order_shipping import run as run_purchase_order_shipping
+            ops_result = sub_results.get(SUB_OPS_DESC) or {}
+            if not ops_result.get("success"):
+                shipping_result = {
+                    "success": True,
+                    "message": "发货链路:跳过(代购仓配失败，避免使用旧发货上下文)",
+                    "status_code": 200,
+                    "actual": "发货链路:跳过(代购仓配失败，避免使用旧发货上下文)",
+                }
+            else:
+                from checker.api.purchase_order_shipping import run as run_purchase_order_shipping
 
-            shipping_result = _normalize_sub_result(
-                SUB_SHIPPING_DESC, run_purchase_order_shipping(task_config)
-            )
+                shipping_result = _normalize_sub_result(
+                    SUB_SHIPPING_DESC, run_purchase_order_shipping(task_config)
+                )
             sub_results[SUB_SHIPPING_DESC] = shipping_result
-            summary_parts.append(f"发货链路:{'OK' if shipping_result['success'] else 'FAIL'}")
+            if "跳过" in shipping_result.get("message", ""):
+                summary_parts.append("发货链路:跳过")
+            else:
+                summary_parts.append(f"发货链路:{'OK' if shipping_result['success'] else 'FAIL'}")
         else:
             sub_results[SUB_SHIPPING_DESC] = {
                 "success": True,

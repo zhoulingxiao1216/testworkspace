@@ -19,7 +19,7 @@ ACCOUNTS_POOL = {
         # 后台管理员账号（用于后台接口巡检，如汇率检测）
         "admin": {
             "account": "test-zhou",
-            "password": "123456qwe"
+            "password": "zaq12wsx"
         }
     },
     "main": {
@@ -36,8 +36,8 @@ ACCOUNTS_POOL = {
         ],
         # 后台管理员账号（用于后台接口巡检，如汇率检测）
         "admin": {
-            "account": "test-zhou",
-            "password": "123456qwe"
+            "account": "admin",
+            "password": "123333"
         }
     },
     "test": {

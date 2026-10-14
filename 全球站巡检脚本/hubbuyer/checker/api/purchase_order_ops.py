@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 # checker/api/purchase_order_ops.py
-# 后台代购订单操作：一键采购 / 一键到货 / 一键正品 / 入库（按店铺抽样）
+# 后台代购订单操作：一键采购 / 一键到货 / 正品 / 入库（按店铺抽样）
 import json
 import os
 import sys
 import traceback
+import time
 import requests
 
 current_file = os.path.abspath(__file__)
@@ -44,9 +45,17 @@ def _is_idempotent_success(body, step_cfg):
     message = str(body.get("message") or "")
     allowed_codes = step_cfg.get("idempotent_codes") or []
     keywords = step_cfg.get("idempotent_message_contains") or []
-    if code in allowed_codes and any(k in message for k in keywords):
-        return True
-    return False
+    excludes = step_cfg.get("idempotent_message_excludes") or []
+    if code not in allowed_codes:
+        return False
+    if excludes and any(k in message for k in excludes):
+        return False
+    return any(k in message for k in keywords)
+
+
+GENUINE_FJX_SYNC_FAILURE_MESSAGES = (
+    "正品更新附加项数量失败",
+)
 
 
 WAREHOUSE_PRICE_KEYS = (
@@ -90,6 +99,81 @@ def _pending_store_qty(detail_item):
     except (TypeError, ValueError):
         return 0
     return max(genuine - stored, 0)
+
+
+def _to_int_qty(value):
+    try:
+        return int(float(value or 0))
+    except (TypeError, ValueError):
+        return 0
+
+
+def _expected_genuine_qty(detail_item):
+    """后台正品数量：到货数 - 不良数 - 待定数。"""
+    if not isinstance(detail_item, dict):
+        return 0
+    arrived = _to_int_qty(
+        detail_item.get("arrive_qty")
+        or detail_item.get("arrival_qty")
+        or detail_item.get("arrive_num")
+    )
+    bad = _to_int_qty(
+        detail_item.get("bad_qty")
+        or detail_item.get("defective_qty")
+        or detail_item.get("bad_num")
+    )
+    waiting = _to_int_qty(detail_item.get("wait_qty"))
+    return max(arrived - bad - waiting, 0)
+
+
+def _current_genuine_qty(detail_item):
+    if not isinstance(detail_item, dict):
+        return 0
+    return _to_int_qty(detail_item.get("genuine_qty") or detail_item.get("genuine_qty_num"))
+
+
+def _detail_has_expected_genuine_qty(detail_item):
+    expected = _expected_genuine_qty(detail_item)
+    actual = _current_genuine_qty(detail_item)
+    if expected > 0:
+        return actual >= expected, actual, expected
+    return actual > 0, actual, expected
+
+
+def _find_detail_item(sellers, detail_id, seller_open_id=None):
+    detail_id_text = str(detail_id)
+    seller_open_id_text = str(seller_open_id or "").strip()
+    for seller in sellers or []:
+        if seller_open_id_text and str(seller.get("seller_open_id") or "").strip() != seller_open_id_text:
+            continue
+        for item in seller.get("detail_data") or []:
+            if isinstance(item, dict) and str(item.get("id")) == detail_id_text:
+                return item
+    return None
+
+
+def _is_genuine_fjx_sync_failure(body):
+    if not isinstance(body, dict):
+        return False
+    message = str(body.get("message") or "")
+    return any(text in message for text in GENUINE_FJX_SYNC_FAILURE_MESSAGES)
+
+
+def _verify_genuine_written_after_fjx_sync_failure(token, order_no, target_cfg, seller_ctx, detail_id):
+    """只读复核当前正品数量；已有数量不能证明本次失败请求成功。"""
+    sellers = _fetch_order_sellers(token, order_no, target_cfg.get("detail_api"))
+    item = _find_detail_item(
+        sellers,
+        detail_id,
+        seller_open_id=seller_ctx.get("seller_open_id"),
+    )
+    if not item:
+        return False, "刷新订单明细后未找到该商品"
+
+    has_expected, actual, expected = _detail_has_expected_genuine_qty(item)
+    if has_expected:
+        return True, f"正品数已落库(genuine_qty={actual}, expected={expected})"
+    return False, f"正品数未达预期(genuine_qty={actual}, expected={expected})"
 
 
 def _resolve_warehouse_seller(token, order_no, target_cfg, seller_ctx):
@@ -510,6 +594,110 @@ def _execute_print_status_step(token, seller_ctx, step_cfg, rule_key, all_rules)
     }
 
 
+def _execute_genuine_step(token, order_no, seller_ctx, step_cfg, rule_key, all_rules, target_cfg):
+    """执行正品请求；失败后复核数量供诊断，不将业务失败转为通过。"""
+    if not step_cfg or not step_cfg.get("enabled"):
+        return {"success": True, "skipped": True, "message": f"{step_cfg.get('desc', '正品')}:跳过(未启用)"}
+
+    url = (step_cfg.get("url") or "").strip()
+    if not url:
+        return {"success": False, "message": f"{step_cfg.get('desc', '正品')}:FAIL(url 为空)"}
+
+    desc = step_cfg.get("desc") or "正品"
+    headers = _build_audit_headers(token, step_cfg)
+    detail_ids = _parse_order_detail_ids(seller_ctx.get("order_detail_ids"))
+    if not detail_ids:
+        return {"success": False, "message": f"{desc}:FAIL(order_detail_ids 为空)"}
+
+    detail_id_field = step_cfg.get("detail_id_field") or "order_detail_id"
+    success_ids = []
+    warnings = []
+    failures = []
+    for detail_id in detail_ids:
+        payload = dict(step_cfg.get("json") or {})
+        payload["order_no"] = order_no
+        payload["seller_open_id"] = seller_ctx["seller_open_id"]
+        payload[detail_id_field] = _normalize_detail_id(detail_id)
+
+        for attempt in range(2):
+            # 仅重试明确已返回的附加项同步失败，避开同秒零变更误判。
+            if attempt:
+                time.sleep(1.2)
+            try:
+                response = requests.post(
+                    url,
+                    headers=headers,
+                    json=payload,
+                    timeout=REQUEST_TIMEOUT_API,
+                    verify=False,
+                    proxies={"http": None, "https": None},
+                )
+            except requests.RequestException as exc:
+                failures.append(f"{detail_id}:请求异常({type(exc).__name__})，未继续重试")
+                break
+            check = AssertionTool.verify_api_common(response, rules=all_rules.get(rule_key, {}))
+            try:
+                body = response.json()
+            except ValueError:
+                body = {}
+            if not isinstance(body, dict):
+                body = {}
+
+            if check["success"] and (not attempt or body.get("code") == 200):
+                if attempt:
+                    try:
+                        verified, verify_msg = _verify_genuine_written_after_fjx_sync_failure(
+                            token, order_no, target_cfg, seller_ctx, detail_id,
+                        )
+                    except Exception as exc:
+                        verified, verify_msg = False, f"数量复核异常({type(exc).__name__})"
+                    if not verified:
+                        failures.append(f"{detail_id}:重试接口成功但{verify_msg}")
+                        break
+                    warnings.append(f"{detail_id}:间隔1.2秒重试1次成功|{verify_msg}")
+                success_ids.append(str(detail_id))
+                break
+            if not attempt and _is_idempotent_success(body, step_cfg):
+                success_ids.append(str(detail_id))
+                break
+
+            detail = check.get("message", "未知错误")
+            if body.get("message"):
+                detail = f"{detail} | api_msg={body['message']}"
+            sync_failure = (
+                response.status_code == 200
+                and body.get("code") == 40000
+                and _is_genuine_fjx_sync_failure(body)
+            )
+            if sync_failure and not attempt:
+                warnings.append(f"{detail_id}:首次失败({detail})")
+                continue
+            if _is_genuine_fjx_sync_failure(body):
+                try:
+                    _, verify_msg = _verify_genuine_written_after_fjx_sync_failure(
+                        token, order_no, target_cfg, seller_ctx, detail_id,
+                    )
+                except Exception as exc:
+                    verify_msg = f"数量复核异常({type(exc).__name__})"
+                warnings.append(f"{detail_id}:{verify_msg}")
+            failures.append(f"{detail_id}:{'重试1次仍失败|' if attempt else ''}{detail}")
+            break
+
+    if failures:
+        fail_text = "; ".join(failures[:5])
+        if len(failures) > 5:
+            fail_text += f"; 其余{len(failures) - 5}项失败"
+        if warnings:
+            fail_text += f"; 复核:{' ; '.join(warnings[:5])}"
+        return {"success": False, "message": f"{desc}:FAIL({fail_text})"}
+
+    warn_text = f"|WARN({' ; '.join(warnings[:5])})" if warnings else ""
+    return {
+        "success": True,
+        "message": f"{desc}:OK({seller_ctx['seller_name']}|ids={','.join(success_ids)}{warn_text})",
+    }
+
+
 def _execute_post_step(token, order_no, seller_ctx, step_cfg, rule_key, all_rules):
     if not step_cfg or not step_cfg.get("enabled"):
         return {"success": True, "skipped": True, "message": f"{step_cfg.get('desc', '步骤')}:跳过(未启用)"}
@@ -518,7 +706,57 @@ def _execute_post_step(token, order_no, seller_ctx, step_cfg, rule_key, all_rule
     if not url:
         return {"success": False, "message": f"{step_cfg.get('desc', '步骤')}:FAIL(url 为空)"}
 
+    desc = step_cfg.get("desc") or step_cfg.get("key") or "步骤"
     headers = _build_audit_headers(token, step_cfg)
+
+    if step_cfg.get("payload_mode") == "single_detail":
+        detail_ids = _parse_order_detail_ids(seller_ctx.get("order_detail_ids"))
+        if not detail_ids:
+            return {"success": False, "message": f"{desc}:FAIL(order_detail_ids 为空)"}
+
+        detail_id_field = step_cfg.get("detail_id_field") or "order_detail_id"
+        success_ids = []
+        failures = []
+        for detail_id in detail_ids:
+            payload = dict(step_cfg.get("json") or {})
+            payload["order_no"] = order_no
+            payload["seller_open_id"] = seller_ctx["seller_open_id"]
+            payload[detail_id_field] = _normalize_detail_id(detail_id)
+
+            response = requests.post(
+                url,
+                headers=headers,
+                json=payload,
+                timeout=REQUEST_TIMEOUT_API,
+                verify=False,
+                proxies={"http": None, "https": None},
+            )
+            check = AssertionTool.verify_api_common(response, rules=all_rules.get(rule_key, {}))
+            try:
+                body = response.json()
+            except Exception:
+                body = {}
+
+            if check["success"] or _is_idempotent_success(body, step_cfg):
+                success_ids.append(str(detail_id))
+                continue
+
+            detail = check.get("message", "未知错误")
+            if body.get("message"):
+                detail = f"{detail} | api_msg={body.get('message')}"
+            failures.append(f"{detail_id}:{detail}")
+
+        if failures:
+            fail_text = "; ".join(failures[:5])
+            if len(failures) > 5:
+                fail_text += f"; 其余{len(failures) - 5}项失败"
+            return {"success": False, "message": f"{desc}:FAIL({fail_text})"}
+
+        return {
+            "success": True,
+            "message": f"{desc}:OK({seller_ctx['seller_name']}|ids={','.join(success_ids)})",
+        }
+
     payload = dict(step_cfg.get("json") or {})
     payload["order_no"] = order_no
     payload["seller_open_id"] = seller_ctx["seller_open_id"]
@@ -533,7 +771,6 @@ def _execute_post_step(token, order_no, seller_ctx, step_cfg, rule_key, all_rule
         proxies={"http": None, "https": None},
     )
     check = AssertionTool.verify_api_common(response, rules=all_rules.get(rule_key, {}))
-    desc = step_cfg.get("desc") or step_cfg.get("key") or "步骤"
 
     if check["success"]:
         return {"success": True, "message": f"{desc}:OK({seller_ctx['seller_name']}|ids={seller_ctx['order_detail_ids']})"}
@@ -658,7 +895,7 @@ def run(task_config=None):
         step_defs = [
             ("one_click_purchase", "one_click_purchase_api", "一键采购"),
             ("one_click_arrival", "one_click_arrival_api", "一键到货"),
-            ("one_click_genuine", "one_click_genuine_api", "一键正品"),
+            ("one_click_genuine", "one_click_genuine_api", "正品"),
             ("print_sticker", "print_status_api", "贴纸打印状态"),
             ("print_hang_tag", "print_status_api", "吊牌打印状态"),
             ("print_wash", "print_status_api", "洗标打印状态"),
@@ -677,6 +914,10 @@ def run(task_config=None):
                 step_result = _execute_print_status_step(
                     token, seller_ctx, step_cfg, rule_key, all_rules
                 )
+            elif step_key == "one_click_genuine":
+                step_result = _execute_genuine_step(
+                    token, order_no, seller_ctx, step_cfg, rule_key, all_rules, target_cfg
+                )
             else:
                 step_result = _execute_post_step(
                     token, order_no, seller_ctx, step_cfg, rule_key, all_rules
@@ -692,7 +933,13 @@ def run(task_config=None):
                 if _ctx:
                     try:
                         from checker.api.shipping_context_store import save_shipping_context
-                        save_shipping_context(_ctx)
+                        stale_ship_fields = {
+                            "ship_order_no": "",
+                            "ship_order_detail_id": "",
+                            "ship_order_detail_id_from_list": "",
+                            "box_id": "",
+                        }
+                        save_shipping_context(dict(stale_ship_fields, **_ctx))
                     except Exception:
                         pass
 

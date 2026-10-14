@@ -37,18 +37,24 @@
       "headers": {},
       "json": {},
       "idempotent_codes": [40000],
-      "idempotent_message_contains": ["已到货", "到货", "没有可操作"]
+      "idempotent_message_contains": ["已到货", "没有可操作"],
+      "idempotent_message_excludes": ["未采购", "未付款", "失败", "错误", "异常", "无法", "不能", "不可", "缺少"]
     },
     "one_click_genuine": {
       "enabled": true,
-      "desc": "一键正品",
-      "url": "/admin_b2b/orderDetailUpdate/oneClickGenuine",
+      "desc": "正品",
+      "url": "/admin_b2b/orderDetailUpdate/updateGenuineQty",
       "method": "POST",
       "admin_site_origin": "",
       "headers": {},
-      "json": {},
+      "json": {
+        "offline_admin_id": 0
+      },
+      "payload_mode": "single_detail",
+      "detail_id_field": "order_detail_id",
       "idempotent_codes": [40000],
-      "idempotent_message_contains": ["已正品", "正品", "没有可操作", "已到货"]
+      "idempotent_message_contains": ["已正品", "没有可操作"],
+      "idempotent_message_excludes": ["未到货", "未正品", "失败", "错误", "异常", "无法", "不能", "不可", "缺少"]
     },
     "print_sticker": {
       "enabled": true,
@@ -61,7 +67,8 @@
         "type": "sticker"
       },
       "idempotent_codes": [40000],
-      "idempotent_message_contains": ["已打印", "打印", "已更新"]
+      "idempotent_message_contains": ["已打印", "已更新"],
+      "idempotent_message_excludes": ["未打印", "失败", "错误", "异常", "无法", "不能", "不可", "缺少"]
     },
     "print_hang_tag": {
       "enabled": true,
@@ -74,7 +81,8 @@
         "type": "hang_tag"
       },
       "idempotent_codes": [40000],
-      "idempotent_message_contains": ["已打印", "打印", "已更新"]
+      "idempotent_message_contains": ["已打印", "已更新"],
+      "idempotent_message_excludes": ["未打印", "失败", "错误", "异常", "无法", "不能", "不可", "缺少"]
     },
     "print_wash": {
       "enabled": true,
@@ -87,7 +95,8 @@
         "type": "wash"
       },
       "idempotent_codes": [40000],
-      "idempotent_message_contains": ["已打印", "打印", "已更新"]
+      "idempotent_message_contains": ["已打印", "已更新"],
+      "idempotent_message_excludes": ["未打印", "失败", "错误", "异常", "无法", "不能", "不可", "缺少"]
     },
     "print_fba": {
       "enabled": true,
@@ -100,7 +109,8 @@
         "type": "fba"
       },
       "idempotent_codes": [40000],
-      "idempotent_message_contains": ["已打印", "打印", "已更新"]
+      "idempotent_message_contains": ["已打印", "已更新"],
+      "idempotent_message_excludes": ["未打印", "失败", "错误", "异常", "无法", "不能", "不可", "缺少"]
     },
     "warehouse_in": {
       "enabled": true,
@@ -113,7 +123,8 @@
       "ku_shelves_code": "B-2-003",
       "line_mode": "first_pending_line",
       "idempotent_codes": [40000],
-      "idempotent_message_contains": ["已入库", "入库"]
+      "idempotent_message_contains": ["已入库"],
+      "idempotent_message_excludes": ["请处理后再入库", "未完成", "未打印", "失败", "错误", "异常", "无法", "不能", "不可", "缺少"]
     }
   }
 }

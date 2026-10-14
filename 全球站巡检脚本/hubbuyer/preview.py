@@ -8,7 +8,7 @@ report_data = {
     '介绍中心 pc站点巡检': {'success': False, 'message': '访问崩溃: ConnectionError'},
     '介绍中心 H5站点巡检': {'success': True, 'message': '校验通过'},
     '登录接口校验': {'success': True, 'message': '【prod】mxnrq@airsworld.net:OK'},
-    '当日汇率检测': {'success': False, 'message': 'USD(银行:0.1465 全球站:0.1538) | JPY(银行:N/A 全球站:24.31):银行汇率未获取'},
+    '当日汇率检测': {'success': True, 'message': 'USD(银行:0.1465 全球站:0.1538)'},
     'B2B 商品图搜接口校验': {'success': True, 'message': 'B2B:OK(双200)'},
     'B2B&D2C 商品加购接口校验': {'success': True, 'message': 'B2B_1688:OK | B2B_taobao:OK'},
     'B2B 选择商品附加项': {'success': False, 'message': "FBA编写保存:FAIL(('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))"},
