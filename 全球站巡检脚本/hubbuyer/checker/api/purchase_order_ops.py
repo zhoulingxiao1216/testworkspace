@@ -6,7 +6,6 @@ import os
 import sys
 import traceback
 import time
-import requests
 
 current_file = os.path.abspath(__file__)
 root_path = os.path.dirname(os.path.dirname(os.path.dirname(current_file)))
@@ -14,6 +13,7 @@ if root_path not in sys.path:
     sys.path.insert(0, root_path)
 
 from config.settings import REQUEST_TIMEOUT_API, API_CONFIG, ENV_TYPE
+from core import http_client as requests
 from core.rules.assertion import AssertionTool
 from core.path_manager import DATA_DIR
 from checker.api.order_audit import _admin_login
@@ -23,7 +23,7 @@ except ImportError:
     def admin_api_base_url():
         return (API_CONFIG.get("BASE_URL") or "https://api.hubbuyer.com").rstrip("/")
 from checker.api.purchase_order_audit import _resolve_order_no, _build_audit_headers
-from checker.api.quote_order_store import resolve_target_mail
+from checker.api.quote_order_store import resolve_target_mail, current_round_binding
 from core.path_manager import normalize_purchase_order_ops_config
 
 TARGET_CONFIG_FILE = "purchase_order_ops.json"
@@ -475,6 +475,7 @@ def _build_shipping_ctx(order_no, payload, item, body):
     """从入库成功结果中提取发货上下文字段。"""
     log_data = (payload.get("ku_stock_in_log_data") or [{}])[0]
     ctx = {
+        **current_round_binding(),
         "order_no": order_no,
         "order_detail_id": log_data.get("order_detail_id"),
         "quantity": int(float(log_data.get("quantity") or 0)),

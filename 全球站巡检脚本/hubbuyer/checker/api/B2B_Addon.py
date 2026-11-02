@@ -4,7 +4,6 @@ import json
 import os
 import sys
 import random
-import requests
 import traceback
 import urllib3
 import base64
@@ -23,6 +22,7 @@ if root_path not in sys.path:
 from config.settings import API_CONFIG, REQUEST_TIMEOUT_API
 from core.rules.assertion import AssertionTool
 from core.path_manager import TOKEN_DIR, DATA_DIR
+from core import http_client as requests
 from config.data.cookie import CookieManager
 from config.data.headers import get_b2b_headers
 # ==========================================

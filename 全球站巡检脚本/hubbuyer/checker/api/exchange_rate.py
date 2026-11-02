@@ -4,7 +4,6 @@
 import json
 import sys
 import os
-import requests
 from datetime import datetime
 
 # --- 初始化根路径 ---
@@ -14,6 +13,7 @@ if root_path not in sys.path:
     sys.path.insert(0, root_path)
 
 from config.settings import REQUEST_TIMEOUT_API, ENV_TYPE, API_CONFIG
+from core import http_client as requests
 from config.data.login_data import ACCOUNTS_POOL
 
 # ── 常量配置 ────────────────────────────────────────────────────────

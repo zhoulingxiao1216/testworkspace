@@ -15,6 +15,7 @@ ENV_TYPE = "main"
 # 2. 业务巡检开关
 # ==========================================
 INSPECTION_SWITCHES = {
+    "check_api_im_connectivity": ENV_TYPE == "prod",  # IM仅配置生产环境
     "check_web_url_B2B_h5": False,      #b2b_h5网页访问开关
     "check_web_url_B2B_pc": True,      #b2b_pc网页访问开关
     "check_web_url_D2C_pc": False,      #d2c_h5网页访问开关

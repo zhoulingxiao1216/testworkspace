@@ -129,10 +129,26 @@ def run_login_check(task_config=None, custom_accounts=None):
                 if not token_val:
                     try:
                         res_json = response.json()
-                        token_val = res_json.get("data", {}).get("token")
+                        data = res_json.get("data")
+                        if isinstance(data, dict):
+                            for key in ("token", "login_token", "access_token", "pro_auth_token"):
+                                candidate = data.get(key)
+                                if (isinstance(candidate, str) and candidate.strip()
+                                        and candidate.strip().lower() not in ("null", "none")):
+                                    token_val = candidate.strip()
+                                    break
                     except Exception:
                         pass
-                
+
+                # 接口成功不等于获得有效登录态；禁止将空 Token 写入文件。
+                if (not isinstance(token_val, str) or not token_val.strip()
+                        or token_val.strip().lower() in ("null", "none")):
+                    results_summary.append(
+                        f"{mail}:ERR(登录接口通过但未返回有效Token，请核对响应字段、Set-Cookie及环境配置)"
+                    )
+                    continue
+                token_val = token_val.strip()
+
                 success_count += 1
                 last_valid_token = token_val
                 all_current_tokens[mail] = token_val

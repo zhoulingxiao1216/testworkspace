@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 # d:\sakuradk3\config\data\headers.py
 
+def get_im_user_headers(origin, token):
+    """IM 用户侧鉴权请求头，Token 由登录巡检提供。"""
+    return {'authorization': token.replace('Bearer ', '').strip(), 'logintype': 'user',
+            'origin': origin, 'referer': origin + '/', 'content-type': 'application/json'}
+
+
 def get_base_headers(base_url):
     """基础请求头（不带 Token）"""
     return {

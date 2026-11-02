@@ -4,7 +4,6 @@
 import json
 import os
 import sys
-import requests
 import traceback
 from urllib.parse import urlparse
 
@@ -14,6 +13,7 @@ if root_path not in sys.path:
     sys.path.insert(0, root_path)
 
 from config.settings import REQUEST_TIMEOUT_API, ENV_TYPE
+from core import http_client as requests
 from core.rules.assertion import AssertionTool
 from core.path_manager import DATA_DIR, normalize_api_block
 from checker.api.order_audit import _admin_login, admin_api_base_url, build_admin_auth_headers
@@ -37,15 +37,13 @@ def _load_target_config():
 
 def _resolve_order_no(target_cfg, orderid_file, target_mail):
     order_no = (target_cfg.get("order_no") or "").strip()
-    if target_cfg.get("auto_resolve_order_no"):
-        resolved = get_round_paid_order(orderid_file, target_mail)
-        if not resolved:
-            raise RuntimeError("未找到本轮已支付的代购订单号，请先完成前台报价单支付")
-        validate_round_order_matches_quote(target_mail, resolved)
-        return resolved
-    if order_no:
-        return order_no
-    raise RuntimeError("未找到本轮已支付的代购订单号，请先完成前台报价单支付")
+    resolved = get_round_paid_order(orderid_file, target_mail)
+    if not resolved:
+        raise RuntimeError("未找到本轮新增且已支付的代购订单号，请先完成本轮报价单支付")
+    if order_no and order_no != resolved:
+        raise RuntimeError("配置订单号与本轮新增订单不一致，禁止使用固定历史订单")
+    validate_round_order_matches_quote(target_mail, resolved)
+    return resolved
 
 
 def _build_audit_headers(token, audit_cfg):
@@ -90,12 +88,11 @@ def _execute_audit_api(token, order_no, audit_cfg, all_rules):
         "verify": False,
         "proxies": {"http": None, "https": None},
     }
-    if audit_cfg.get("json") is not None:
-        payload = dict(audit_cfg["json"])
-        payload["order_no"] = order_no
-        kwargs["json"] = payload
-    elif audit_cfg.get("body") is not None:
-        kwargs["data"] = audit_cfg["body"]
+    if audit_cfg.get("body") is not None:
+        raise RuntimeError("本轮订单联动禁止原始请求体，请使用JSON并由脚本注入本轮order_no")
+    payload = dict(audit_cfg.get("json") or {})
+    payload["order_no"] = order_no
+    kwargs["json"] = payload
 
     response = requests.request(method, url, **kwargs)
     check = AssertionTool.verify_api_common(response, rules=all_rules.get("audit_api", {}))

@@ -8,7 +8,6 @@ import sys
 import time
 import traceback
 
-import requests
 
 current_file = os.path.abspath(__file__)
 root_path = os.path.dirname(os.path.dirname(os.path.dirname(current_file)))
@@ -16,6 +15,7 @@ if root_path not in sys.path:
     sys.path.insert(0, root_path)
 
 from config.settings import REQUEST_TIMEOUT_API, ENV_TYPE
+from core import http_client as requests
 from core.rules.assertion import AssertionTool
 from core.path_manager import DATA_DIR, normalize_purchase_order_shipping_config
 from checker.api.order_audit import _admin_login
@@ -40,7 +40,7 @@ except ImportError:
             headers.update(extra_headers)
         return headers
 from checker.api.purchase_order_audit import _build_audit_headers, _resolve_order_no
-from checker.api.quote_order_store import resolve_target_mail
+from checker.api.quote_order_store import resolve_target_mail, validate_shipping_round, current_round_binding
 from checker.api.shipping_context_store import (
     load_shipping_context,
     save_shipping_context,
@@ -147,7 +147,7 @@ def _fetch_ku_stock_in_log_id(token, user_main_uuid, order_no, cfg, product_uuid
                     "user_name": "",
                     "order_detail_uuid": product_uuid,
                     "serial_number": "",
-                    "order_no": "",
+                    "order_no": order_no,
                 }
                 resp = requests.post(
                     stock_url, headers=headers, json=payload,
@@ -157,7 +157,7 @@ def _fetch_ku_stock_in_log_id(token, user_main_uuid, order_no, cfg, product_uuid
                 body = resp.json()
                 if body.get("code") == 200:
                     data = body.get("data") or {}
-                    rows = (
+                    rows = data if isinstance(data, list) else (
                         data.get("all_stock_data")
                         or data.get("list")
                         or data.get("data")
@@ -165,8 +165,11 @@ def _fetch_ku_stock_in_log_id(token, user_main_uuid, order_no, cfg, product_uuid
                     )
                     if isinstance(data, list):
                         rows = data
-                    if rows:
-                        log_id = rows[0].get("id") or rows[0].get("ku_stock_in_log_id")
+                    context = load_shipping_context()
+                    matches = [row for row in rows if row.get("order_no") == order_no
+                               and str(row.get("order_detail_id")) == str(context.get("order_detail_id"))]
+                    if len(matches) == 1:
+                        log_id = matches[0].get("id") or matches[0].get("ku_stock_in_log_id")
                         if log_id:
                             return int(log_id)
             except Exception:
@@ -174,54 +177,92 @@ def _fetch_ku_stock_in_log_id(token, user_main_uuid, order_no, cfg, product_uuid
     return None
 
 
+def _read_shipping_rows(token, api_cfg, payload):
+    if not api_cfg.get("enabled") or not api_cfg.get("url"):
+        raise RuntimeError("发货查询接口未启用或缺少URL")
+    response = requests.post(
+        api_cfg["url"], headers=_build_audit_headers(token, api_cfg), json=payload,
+        timeout=REQUEST_TIMEOUT_API, verify=False, proxies={"http": None, "https": None},
+    )
+    body = response.json()
+    if response.status_code != 200 or body.get("code") != 200:
+        raise RuntimeError(f"发货查询失败: HTTP={response.status_code} code={body.get('code')}")
+    data = body.get("data") or {}
+    rows = data if isinstance(data, list) else data.get("data", data.get("list", []))
+    if not isinstance(rows, list):
+        raise RuntimeError("发货查询返回的列表结构无法识别")
+    return rows
+
+
+def _shipping_detail_payload(ship_order_no):
+    return {"ship_order_no": ship_order_no, "order_detail_uuid": "", "ku_box_name": "",
+            "distribute_status": "", "type": "detail_list", "is_insert": 0}
+
+
+def _matching_shipping_details(rows, context, ship_order_no):
+    fields = ("order_no", "order_detail_id", "user_main_uuid")
+    if any(context.get(key) in (None, "") for key in fields):
+        raise RuntimeError("缺少本轮源订单、明细或账号，禁止匹配发货单")
+    return [row for row in rows if isinstance(row, dict)
+            and row.get("ship_order_no") == ship_order_no
+            and all(str(row.get(key)) == str(context[key]) for key in fields)]
+
+
 def _query_latest_ship_order_no(token, user_main_uuid, cfg, all_rules):
-    """createShipOrder 接口不返回单号，改从发货单列表中取最新一条。
-    同时尝试从行数据中提取 ship_order_detail_id 并写入上下文缓存。
-    """
+    """Resolve a shipment by its current-round source details, never by list rank."""
     list_cfg = cfg.get("ship_order_list_api") or {}
     if not list_cfg.get("enabled"):
         return None
-    payload = {
-        "page": 1,
-        "limit": 5,
-        "user_main_uuid": user_main_uuid,
-    }
-    try:
-        url = (list_cfg.get("url") or "").strip()
-        if not url:
+    context = load_shipping_context()
+    validate_shipping_round(context, resolve_target_mail())
+    if str(context.get("user_main_uuid")) != str(user_main_uuid):
+        raise RuntimeError("发货列表查询账号与本轮入库账号不一致")
+    rows = []
+    seen_pages = set()
+    # 历史单量会持续增长，必须读到末页后才能判断本轮发货单唯一性。
+    # 保留异常接口的有限请求保护，但不再以100条业务数据作为截止条件。
+    for page in range(1, 1001):
+        page_rows = _read_shipping_rows(token, list_cfg, {
+            "page": page, "limit": 20, "user_main_uuid": user_main_uuid,
+        })
+        if not page_rows:
+            break
+        page_key = tuple(sorted(json.dumps(row, sort_keys=True, ensure_ascii=False)
+                                for row in page_rows))
+        if page_key in seen_pages:
+            raise RuntimeError("发货列表分页重复，页码未推进，无法确认查询完整性")
+        seen_pages.add(page_key)
+        rows.extend(page_rows)
+        if len(page_rows) < 20:
+            break
+    else:
+        raise RuntimeError("发货列表已达1000页安全上限，无法确认查询完整性，请核对分页接口或缩小查询范围")
+    candidates = []
+    seen = set()
+    for row in rows:
+        no = row.get("ship_order_no")
+        if not isinstance(no, str) or not no.startswith("WL-") or no in seen:
+            continue
+        if str(row.get("user_main_uuid")) != str(user_main_uuid):
+            continue
+        seen.add(no)
+        details = _read_shipping_rows(token, cfg.get("ship_order_detail_list_api") or {},
+                                      _shipping_detail_payload(no))
+        matches = _matching_shipping_details(details, context, no)
+        if len(matches) > 1:
             return None
-        headers = _build_audit_headers(token, list_cfg)
-        resp = requests.post(
-            url,
-            headers=headers,
-            json=payload,
-            timeout=REQUEST_TIMEOUT_API,
-            verify=False,
-            proxies={"http": None, "https": None},
-        )
-        body = resp.json()
-        data = body.get("data") or {}
-        # 兼容 {data: {list: [...]}} 和 {data: [...]}
-        rows = data.get("list") or data.get("data") or []
-        if isinstance(data, list):
-            rows = data
-        if not rows:
-            return None
-        # 取第一条（最新）
-        row = rows[0]
-        no = row.get("ship_order_no") or row.get("no") or row.get("order_no")
-        # 尝试从行中提取 detail_id（部分 list 接口把 details 内嵌在行数据里）
-        detail_id = None
-        for dkey in ("details", "ship_order_details", "detail_list", "detail"):
-            sub = row.get(dkey)
-            if sub and isinstance(sub, list) and sub[0]:
-                detail_id = sub[0].get("id") or sub[0].get("ship_order_detail_id")
-                break
-        if detail_id:
-            save_shipping_context({"ship_order_detail_id_from_list": detail_id})
-        return no
-    except Exception:
+        if len(matches) == 1:
+            candidates.append((no, matches[0]))
+    if len(candidates) != 1:
         return None
+    no, detail = candidates[0]
+    detail_id = detail.get("id") or detail.get("ship_order_detail_id")
+    if not detail_id:
+        return None
+    save_shipping_context({"ship_order_detail_id_from_list": detail_id,
+                           "verified_ship_order_no": no,
+                           "verified_source_order_detail_id": context["order_detail_id"]})
+    return no
 
 
 def _fetch_ship_order_detail_id(token, ship_order_no, cfg, all_rules, msgs):
@@ -232,54 +273,23 @@ def _fetch_ship_order_detail_id(token, ship_order_no, cfg, all_rules, msgs):
     # 优先检查列表查询时已提取的 detail_id
     ctx_now = load_shipping_context()
     cached_detail_id = ctx_now.get("ship_order_detail_id_from_list")
-    if cached_detail_id:
+    if (cached_detail_id and ctx_now.get("verified_ship_order_no") == ship_order_no
+            and ctx_now.get("verified_source_order_detail_id") == ctx_now.get("order_detail_id")):
         msgs.append(f"明细查询:OK(detail_id={cached_detail_id}，来自列表缓存)")
         return cached_detail_id
 
     detail_cfg = cfg.get("ship_order_detail_list_api") or {}
     if not detail_cfg.get("enabled"):
         raise RuntimeError("ship_order_detail_list_api 未启用，无法获取 ship_order_detail_id")
-    payload = {
-        "ship_order_no": ship_order_no,
-        "order_detail_uuid": "",
-        "ku_box_name": "",
-        "distribute_status": "",
-        "type": "detail_list",
-        "is_insert": 0,
-    }
-    # 直接发 HTTP 请求，不走 AssertionTool 断言（允许业务 code 不为 200 时灵活处理）
-    url = (detail_cfg.get("url") or "").strip()
-    if not url:
-        raise RuntimeError("ship_order_detail_list_api url 为空")
-    headers = _build_audit_headers(token, detail_cfg)
-    try:
-        resp = requests.post(
-            url, headers=headers, json=payload,
-            timeout=REQUEST_TIMEOUT_API, verify=False,
-            proxies={"http": None, "https": None},
-        )
-        body = resp.json()
-    except Exception as e:
-        raise RuntimeError(f"发货单明细接口请求异常: {e}")
-
-    def _parse_rows(b):
-        data_field = b.get("data") or {}
-        # goodsList 返回 {data: {data: [...]}}
-        if isinstance(data_field, dict):
-            inner = data_field.get("data") or data_field.get("list") or []
-            if isinstance(inner, list) and inner:
-                return inner
-        if isinstance(data_field, list):
-            return data_field
-        return []
-
-    rows = _parse_rows(body)
+    rows = _read_shipping_rows(token, detail_cfg, _shipping_detail_payload(ship_order_no))
     if not rows:
         raise RuntimeError(
-            f"发货单明细列表为空或接口错误，ship_order_no={ship_order_no}，"
-            f"响应: code={body.get('code')} msg={body.get('message', body.get('msg', ''))}"
+            f"发货单明细列表为空，ship_order_no={ship_order_no}"
         )
-    detail_id = rows[0].get("id") or rows[0].get("ship_order_detail_id")
+    matches = _matching_shipping_details(rows, ctx_now, ship_order_no)
+    if len(matches) != 1:
+        raise RuntimeError("发货明细无法唯一匹配本轮订单明细，禁止取列表首条")
+    detail_id = matches[0].get("id") or matches[0].get("ship_order_detail_id")
     if not detail_id:
         raise RuntimeError(f"明细列表返回但无法解析 id 字段，行数据: {rows[0]}")
     msgs.append(f"明细查询:OK(detail_id={detail_id})")
@@ -301,6 +311,7 @@ def run(task_config=None):
 
         # ── 严格本轮数据校验 ──────────────────────────────────────────────────
         ctx = load_shipping_context()
+        validate_shipping_round(ctx, resolve_target_mail())
         required_keys = ["order_no", "order_detail_id", "quantity", "user_main_uuid"]
         missing = [k for k in required_keys if ctx.get(k) is None or ctx.get(k) == ""]
         if missing:
@@ -366,8 +377,6 @@ def run(task_config=None):
         if not create_cfg.get("enabled"):
             raise RuntimeError("create_ship_order_api 未启用，发货链路无法启动")
 
-        from datetime import datetime
-        today_str = datetime.now().strftime("%m%d")
         create_payload = {
             "ku_stock_in_log_data": [{
                 "order_detail_id": order_detail_id,
@@ -382,7 +391,7 @@ def run(task_config=None):
             "importer_address_id": "",
             "tariff_account_id": "",
             "tariff_payment_type": cfg.get("tariff_payment_type", 1),
-            "deport_remark": f"巡检测试创建发货单-{today_str}",
+            "deport_remark": f"巡检测试创建发货单-{current_round_binding()['run_id']}",
             "config_param": cfg.get("config_param", []),
         }
         r = _post(token, create_cfg, create_payload, all_rules, "create_ship_order_api")
@@ -391,18 +400,15 @@ def run(task_config=None):
 
         # 提取 ship_order_no
         ship_order_no = _extract_from_body(
-            r["body"], "ship_order_no", "shipOrderNo", "order_no", "no"
+            r["body"], "ship_order_no", "shipOrderNo"
         )
-        if not ship_order_no:
-            # 尝试从响应字符串中用正则找 WL- 前缀单号
-            m = re.search(r"WL-[A-Z0-9]+-[0-9\-]+", json.dumps(r["body"], ensure_ascii=False))
-            if m:
-                ship_order_no = m.group(0)
+        if ship_order_no and not str(ship_order_no).startswith("WL-"):
+            raise RuntimeError("创建接口返回的发货单号格式无效")
         if not ship_order_no:
             # 接口仅返回 sign:True 不含单号，查询最新发货单列表来获取
             ship_order_no = _query_latest_ship_order_no(token, user_main_uuid, cfg, all_rules)
         if not ship_order_no:
-            raise RuntimeError(f"创建发货单成功但无法提取 ship_order_no，响应: {r['body']}")
+            raise RuntimeError("无法唯一匹配本轮订单的发货单：请核对发货详情中的订单号、源明细及账号")
 
         save_shipping_context({"ship_order_no": ship_order_no})
         msgs.append(f"创建发货单:OK({ship_order_no})")

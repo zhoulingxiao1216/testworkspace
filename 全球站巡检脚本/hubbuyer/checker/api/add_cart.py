@@ -6,7 +6,6 @@ import sys
 import random
 import re
 import urllib.parse
-import requests
 import traceback
 import urllib3
 
@@ -20,6 +19,7 @@ if root_path not in sys.path:
     sys.path.insert(0, root_path)
 
 from config.settings import API_CONFIG, REQUEST_TIMEOUT_API
+from core import http_client as requests
 from core.rules.assertion import AssertionTool
 from core.path_manager import TOKEN_DIR, DATA_DIR
 from config.data.cookie import CookieManager
@@ -122,9 +122,17 @@ def standardize_b2b_payload(payload):
     return payload
 
 def refresh_taobao_payload(payload, base_url, headers):
+    return _refresh_b2b_payload(payload, base_url, headers, "api_tb", "淘宝")
+
+
+def refresh_1688_payload(payload, base_url, headers):
+    return _refresh_b2b_payload(payload, base_url, headers, "api_ali", "1688")
+
+
+def _refresh_b2b_payload(payload, base_url, headers, api_prefix, platform_name):
     """Refresh the detail index while preserving the configured SKU and quantity."""
     response = requests.get(
-        f"{base_url}/api_tb/product/detail",
+        f"{base_url}/{api_prefix}/product/detail",
         # Cached language-specific details can retain an obsolete index and empty SKUs.
         params={"item_id": str(payload["item_id"]), "site": "b2b", "cache": 0},
         headers=headers,
@@ -135,10 +143,10 @@ def refresh_taobao_payload(payload, base_url, headers):
     response.raise_for_status()
     body = response.json()
     if body.get("code") != 200:
-        raise ValueError(f"淘宝详情获取失败: code={body.get('code')} api_msg={body.get('message') or body.get('msg')}")
+        raise ValueError(f"{platform_name}详情获取失败: code={body.get('code')} api_msg={body.get('message') or body.get('msg')}")
     detail = (body.get("data") or {}).get("data") or {}
     if not detail.get("product_index_uuid"):
-        raise ValueError("淘宝详情缺少 product_index_uuid")
+        raise ValueError(f"{platform_name}详情缺少 product_index_uuid")
     expected_item_id = str(payload["item_id"]).strip()
     # 不同详情版本暴露的 ID 字段不同；所有已提供的商品 ID 都必须一致。
     returned_ids = {
@@ -147,10 +155,10 @@ def refresh_taobao_payload(payload, base_url, headers):
         if detail.get(key) is not None and str(detail[key]).strip()
     }
     if not returned_ids:
-        raise ValueError(f"淘宝详情缺少可核验商品ID: requested={expected_item_id}")
+        raise ValueError(f"{platform_name}详情缺少可核验商品ID: requested={expected_item_id}")
     if any(value != expected_item_id for value in returned_ids.values()):
         raise ValueError(
-            f"淘宝详情商品ID与加购商品不一致: requested={expected_item_id} "
+            f"{platform_name}详情商品ID与加购商品不一致: requested={expected_item_id} "
             f"returned={json.dumps(returned_ids, ensure_ascii=False)}"
         )
     skus = {str(row.get("skuId")): row for row in detail.get("productSkuInfos") or []}
@@ -159,14 +167,14 @@ def refresh_taobao_payload(payload, base_url, headers):
         sku = skus.get(str(configured.get("sku_id")))
         if not sku:
             raise ValueError(
-                f"淘宝详情中不存在配置的SKU: {configured.get('sku_id')} "
+                f"{platform_name}详情中不存在配置的SKU: {configured.get('sku_id')} "
                 f"item_id={expected_item_id} cache=0 sku_count={len(skus)}"
             )
         if sku.get("specId") is None or not str(sku["specId"]).strip():
-            raise ValueError(f"淘宝详情SKU缺少specId: {configured.get('sku_id')} item_id={expected_item_id}")
+            raise ValueError(f"{platform_name}详情SKU缺少specId: {configured.get('sku_id')} item_id={expected_item_id}")
         goods.append(dict(configured, sku_id=sku["skuId"], spec_id=sku["specId"]))
     if not goods:
-        raise ValueError("淘宝加购 goods_info 为空")
+        raise ValueError(f"{platform_name}加购 goods_info 为空")
     return dict(payload, product_index_uuid=detail["product_index_uuid"], goods_info=goods)
 
 
@@ -297,6 +305,8 @@ def run(task_config=None):
                     req_headers = get_b2b_headers(base_url, b2b_token, b2b_cookie, item_id=item_id, item_url=item_url)
                     if task_name == "B2B_taobao":
                         payload = refresh_taobao_payload(payload, base_url, req_headers)
+                    elif task_name == "B2B_1688":
+                        payload = refresh_1688_payload(payload, base_url, req_headers)
                     standard_payload = standardize_b2b_payload(payload)
                     response = requests.post(url, json=standard_payload, headers=req_headers, timeout=REQUEST_TIMEOUT_API, verify=False, proxies={'http': None, 'https': None})
 

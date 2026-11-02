@@ -3,7 +3,6 @@
 import json
 import os
 import sys
-import requests
 import traceback
 import urllib3
 
@@ -19,6 +18,8 @@ if root_path not in sys.path:
 from config.settings import API_CONFIG, REQUEST_TIMEOUT_API
 from core.rules.assertion import AssertionTool
 from core.path_manager import TOKEN_DIR, DATA_DIR
+from core import http_client as requests
+from checker.api.quote_order_store import begin_quote_submission, record_submitted_quote
 from config.data.cookie import CookieManager
 from config.data.headers import get_b2b_headers
 # from config.data.headers import get_d2c_headers  # D2C流程已注释，不再需要
@@ -59,6 +60,8 @@ def run(task_config=None):
             target_mail = task_config.get("login_account", "").strip()
         if not target_mail:
             target_mail = "qa1tr@2200freefonts.com"
+
+        begin_quote_submission(target_mail)
         
         # 3. 获取 Cookie 和 Token
         b2b_cookie = CookieManager.get_b2b_cookie(target_mail)
@@ -263,42 +266,20 @@ def run(task_config=None):
                                 quote_no = data_field.get("quote_no", "") or data_field.get("quoteNo", "") or data_field.get("order_no", "")
                             
                             if quote_no:
-                                # 保存到 submit_order_record.json
-                                record_file = os.path.join(DATA_DIR, "submit_order_record.json")
-                                record_data = {}
-                                if os.path.exists(record_file):
-                                    try:
-                                        with open(record_file, "r", encoding="utf-8") as f:
-                                            record_data = json.load(f)
-                                    except:
-                                        pass
-                                
-                                if target_mail not in record_data:
-                                    record_data[target_mail] = []
-                                
-                                from datetime import datetime
-                                record_data[target_mail].insert(0, {
-                                    "quote_no": quote_no,
-                                    "submit_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                                })
-                                # 只保留最近20条记录
-                                record_data[target_mail] = record_data[target_mail][:20]
-                                
-                                with open(record_file, "w", encoding="utf-8") as f:
-                                    json.dump(record_data, f, ensure_ascii=False, indent=2)
+                                record_submitted_quote(target_mail, quote_no)
                                 
                                 msgs.append(f"B2B提交委托报价:OK(订单号:{quote_no})")
                             else:
-                                msgs.append("B2B提交委托报价:OK(未解析到订单号)")
+                                msgs.append("B2B提交委托报价:FAIL(未解析到订单号)")
                         except Exception as e:
-                            msgs.append(f"B2B提交委托报价:OK(订单号提取异常:{str(e)})")
+                            msgs.append(f"B2B提交委托报价:FAIL(订单号提取异常:{str(e)})")
                     else:
                         msgs.append(f"B2B提交委托报价:FAIL({check.get('message', '未知错误')})")
         except Exception as e:
             msgs.append(f"B2B流程异常:FAIL({str(e)})")
         
         # 7. 汇总结果
-        all_success = all(":OK" in msg for msg in msgs)
+        all_success = bool(msgs) and all(":OK" in msg for msg in msgs)
         final_result = {
             "success": all_success,
             "message": " | ".join(msgs),

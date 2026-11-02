@@ -308,6 +308,7 @@ class ReportGenerator:
             "💼 核心业务检查",
             "",
             f"• B2B 登录        {status_login}",
+            f"• IM巡检消息发送        {get_status_by_keyword('IM巡检消息发送')}",
             f"• B2B 商品图搜        {status_img_search}",
             f"• B2B 关键词搜索        {status_keyword_search}",
             f"• B2B 加购1688商品       {status_add_cart_1688}",

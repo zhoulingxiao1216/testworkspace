@@ -27,6 +27,10 @@ class ScriptRunner:
         try:
             env = os.environ.copy()
             env['PYTHONIOENCODING'] = 'utf-8' # 强制 UTF-8 编码
+            # Never inherit another invocation's order identity implicitly.
+            env.pop("HUBBUYER_RUN_ID", None)
+            if task_config.get("inspection_run_id"):
+                env["HUBBUYER_RUN_ID"] = task_config["inspection_run_id"]
             runner_timeout = task_config.get("runner_timeout") or SCRIPT_RUNNER_TIMEOUT
 
             # --- 【核心新增】 ---

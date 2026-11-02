@@ -26,7 +26,7 @@ ACCOUNTS_POOL = {
         # 前台巡检账号列表（支持多账号轮询）
         "frontend": [
             {
-                "email": "mxnrq@airsworld.net",
+                "email": "zhoulingxiao1216@naver.com",
                 "password": "123456",
                 "code": "",
                 "type": "password",
@@ -42,11 +42,18 @@ ACCOUNTS_POOL = {
     },
     "test": {
         "frontend": [
-            {"email": "", "password": ""}
+            {
+                "email": "mxnrq@airsworld.net",
+                "password": "123456",
+                "code": "",
+                "type": "password",
+                "jump_url": "https://b2b.hubbuyer.com/jump_common",
+                "jump_site": "B2B"
+            }
         ],
         "admin": {
-            "account": "",
-            "password": ""
+            "account": "admin",
+            "password": "123333"
         }
     }
 }

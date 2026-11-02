@@ -4,7 +4,6 @@
 import json
 import os
 import sys
-import requests
 
 current_file = os.path.abspath(__file__)
 root_path = os.path.dirname(os.path.dirname(os.path.dirname(current_file)))
@@ -12,6 +11,7 @@ if root_path not in sys.path:
     sys.path.insert(0, root_path)
 
 from config.settings import REQUEST_TIMEOUT_API, ENV_TYPE, API_CONFIG
+from core import http_client as requests
 from config.data.login_data import ACCOUNTS_POOL
 from core.path_manager import DATA_DIR
 from checker.api.quote_order_store import (

@@ -5,6 +5,9 @@
 API_CONFIG = {
     "BASE_URL": "https://api.hubbuyer.com",
     "ENDPOINTS": {
+        "im_ticket": "/chat/chat/wsTicket",
+        "im_rooms": "/chat/room/list",
+        "im_send": "/chat/message/send",
         "login": "/api/login/login",
         "image_search_B2B": "/api_ali/product/imageSearch", #图搜
         "image_search_D2C": "",

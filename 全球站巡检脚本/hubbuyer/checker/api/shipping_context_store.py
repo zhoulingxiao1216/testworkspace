@@ -27,6 +27,10 @@ def load_shipping_context():
 def save_shipping_context(updates):
     """合并写入，不覆盖已有字段（除非主动传入）。"""
     existing = load_shipping_context()
+    if "order_no" in updates:
+        # A warehouse result starts a new shipment context. Optional old IDs
+        # must not inherit the new round identity when the API omits them.
+        existing = {key: existing[key] for key in ("waybill_date", "waybill_counter") if key in existing}
     existing.update({k: v for k, v in updates.items() if v is not None})
     with open(_path(), "w", encoding="utf-8") as f:
         json.dump(existing, f, ensure_ascii=False, indent=2)

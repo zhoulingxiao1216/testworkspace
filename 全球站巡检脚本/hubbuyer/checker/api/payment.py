@@ -3,7 +3,6 @@
 import json
 import os
 import sys
-import requests
 import traceback
 import urllib3
 from datetime import datetime, timedelta
@@ -20,6 +19,7 @@ if root_path not in sys.path:
 from config.settings import API_CONFIG, REQUEST_TIMEOUT_API
 from core.rules.assertion import AssertionTool
 from core.path_manager import TOKEN_DIR, DATA_DIR
+from core import http_client as requests
 from config.data.cookie import CookieManager
 from config.data.headers import get_b2b_headers, get_b2b_pay_headers
 from checker.api.quote_order_store import (

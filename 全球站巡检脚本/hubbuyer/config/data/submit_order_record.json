@@ -1,6 +1,21 @@
 {
   "mxnrq@airsworld.net": [
     {
+      "quote_no": "B2B-BJ-KOR8-261028-544",
+      "status": "submitted",
+      "submit_time": "2026-10-28 11:55:38",
+      "run_id": "4de315934ae04ddc9d2a1f8c89822d93",
+      "env_type": "prod"
+    },
+    {
+      "quote_no": "B2B-BJ-KOR8-261022-520",
+      "submit_time": "2026-10-22 15:06:52"
+    },
+    {
+      "quote_no": "B2B-BJ-KOR8-261022-519",
+      "submit_time": "2026-10-22 14:56:39"
+    },
+    {
       "quote_no": "B2B-BJ-KOR8-260917-519",
       "submit_time": "2026-09-17 09:26:41"
     },
@@ -67,18 +82,81 @@
     {
       "quote_no": "B2B-BJ-KOR8-260828-422",
       "submit_time": "2026-08-28 15:57:58"
+    }
+  ],
+  "zhoulingxiao1216@naver.com": [
+    {
+      "quote_no": "B2B-BJ-KOR8-261031-534",
+      "status": "submitted",
+      "submit_time": "2026-10-31 13:14:12",
+      "run_id": "55460848bce247269fbaced16b4c5cd5",
+      "env_type": "main"
     },
     {
-      "quote_no": "B2B-BJ-KOR8-260828-421",
-      "submit_time": "2026-08-28 15:43:46"
+      "quote_no": "B2B-BJ-KOR8-261028-533",
+      "status": "submitted",
+      "submit_time": "2026-10-28 11:50:51",
+      "run_id": "27cda0a0077c4fa8be46fb6816c8e04d",
+      "env_type": "main"
     },
     {
-      "quote_no": "B2B-BJ-KOR8-260828-420",
-      "submit_time": "2026-08-28 15:35:45"
+      "quote_no": "B2B-BJ-KOR8-261027-532",
+      "status": "submitted",
+      "submit_time": "2026-10-27 18:09:32",
+      "run_id": "8caf1ffe12304de9897018af8ad246b7",
+      "env_type": "main"
     },
     {
-      "quote_no": "B2B-BJ-KOR8-260822-407",
-      "submit_time": "2026-08-22 11:46:38"
+      "quote_no": "B2B-BJ-KOR8-261022-529",
+      "status": "submitted",
+      "submit_time": "2026-10-22 17:33:20",
+      "run_id": "8021ddd4ed9142ca85c07b5a4e7176ae",
+      "env_type": "main"
+    },
+    {
+      "quote_no": "B2B-BJ-KOR8-261022-528",
+      "status": "submitted",
+      "submit_time": "2026-10-22 17:08:07",
+      "run_id": "82af3ac0c571441792fe5f05e21ef802",
+      "env_type": "main"
+    },
+    {
+      "quote_no": "B2B-BJ-KOR8-261022-527",
+      "status": "submitted",
+      "submit_time": "2026-10-22 16:56:56",
+      "run_id": "84adbcf807a64d4dab759d396eb66db9",
+      "env_type": "main"
+    },
+    {
+      "quote_no": "B2B-BJ-KOR8-261022-526",
+      "submit_time": "2026-10-22 16:38:50"
+    },
+    {
+      "quote_no": "",
+      "status": "submission_started",
+      "submit_time": "2026-10-22 16:38:47"
+    },
+    {
+      "quote_no": "B2B-BJ-KOR8-261022-525",
+      "submit_time": "2026-10-22 15:31:27"
+    },
+    {
+      "quote_no": "",
+      "status": "submission_started",
+      "submit_time": "2026-10-22 15:31:25"
+    },
+    {
+      "quote_no": "B2B-BJ-KOR8-261022-524",
+      "submit_time": "2026-10-22 15:30:02"
+    },
+    {
+      "quote_no": "",
+      "status": "submission_started",
+      "submit_time": "2026-10-22 15:29:59"
+    },
+    {
+      "quote_no": "B2B-BJ-KOR8-261022-523",
+      "submit_time": "2026-10-22 15:11:42"
     }
   ]
 }

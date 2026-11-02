@@ -58,7 +58,14 @@ def run(task_config=None):
     summary_parts = []
 
     try:
-        if _module_enabled(cfg, "purchase_order_ops", "check_api_purchase_order_ops"):
+        blocked = (task_config or {}).get("blocked_order_chain")
+        if blocked and _module_enabled(cfg, "purchase_order_ops", "check_api_purchase_order_ops"):
+            sub_results[SUB_OPS_DESC] = {
+                "success": False, "status_code": 424,
+                "message": f"代购仓配:阻断({blocked}，避免使用历史订单)",
+            }
+            summary_parts.append("代购仓配:阻断")
+        elif _module_enabled(cfg, "purchase_order_ops", "check_api_purchase_order_ops"):
             from checker.api.purchase_order_ops import run as run_purchase_order_ops
 
             ops_result = _normalize_sub_result(

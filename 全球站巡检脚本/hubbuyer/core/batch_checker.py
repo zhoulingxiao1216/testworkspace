@@ -3,6 +3,7 @@
 import os
 import time
 import json
+from uuid import uuid4
 from core.runner import ScriptRunner
 # --- 1：从 settings 导入 INSPECTION_INTERVAL ---
 from config.settings import INSPECTION_SWITCHES, ENV_TYPE, API_CONFIG, INSPECTION_INTERVAL 
@@ -20,7 +21,9 @@ class BatchChecker:
 
     # --- 确保 run_all_checks 在类内部 ---
     def run_all_checks(self):
+        inspection_run_id = uuid4().hex
         print(f"\n🚀 启动全局动态巡检 | 环境: {ENV_TYPE}")
+        print(f"巡检轮次: {inspection_run_id}")
         
         if not os.path.exists(self.rules_dir):
             print(f"❌ 错误: 找不到配置目录 {self.rules_dir}")
@@ -30,6 +33,7 @@ class BatchChecker:
         priority = [
             "web_rules.json",
             "login_rules.json",
+            "im_connectivity.json",
             "img_search.json",
             "keyword_search.json",
             "add_cart.json",
@@ -40,6 +44,9 @@ class BatchChecker:
             "payment.json",
             "purchase_order_audit.json",
             "backend_admin.json",
+            "purchase_order_ops.json",
+            "exchange_rate.json",
+            "purchase_order_shipping.json",
             "member_pricing_complete_chain.json",
             "onebound_daily_stats.json",
         ]
@@ -47,6 +54,15 @@ class BatchChecker:
         json_files.sort(key=lambda x: (priority.index(x) if x in priority else len(priority), x))
         batch_results = {}
         processed_keys = set()  # 用于确保每个 Key 在整场巡检中只出现一次
+        task_results = {}
+        dependencies = {
+            "check_api_im_connectivity": "check_api_login",
+            "check_api_order_audit": "check_api_submit_order",
+            "check_api_payment": "check_api_order_audit",
+            "check_api_purchase_order_audit": "check_api_payment",
+            "check_api_purchase_order_ops": "check_api_purchase_order_audit",
+            "check_api_purchase_order_shipping": "check_api_purchase_order_ops",
+        }
 
         def _store_task_result(task_desc, task_config, result):
             entry = {
@@ -106,8 +122,15 @@ class BatchChecker:
 
                     # --- 2. 检查开关 ---
                     if INSPECTION_SWITCHES.get(task_key, False):
+                        if task_key == "check_api_backend_admin":
+                            # These modules are owned by the combined backend check.
+                            processed_keys.update({
+                                "check_api_purchase_order_ops", "check_api_exchange_rate",
+                                "check_api_purchase_order_shipping",
+                            })
                         # 动态注入 URL
                         task_config["url"] = API_CONFIG.get(site_id)
+                        task_config["inspection_run_id"] = inspection_run_id
                         script_path = task_config.get("script")
 
                         # --- 移除了此处原本死板的 if batch_results: sleep(5) ---
@@ -116,7 +139,19 @@ class BatchChecker:
 
                         try:
                             # 执行并记录
-                            result = ScriptRunner.run(script_path, self.project_root, task_config)
+                            prerequisite = dependencies.get(task_key)
+                            if prerequisite and not task_results.get(prerequisite, {}).get("success"):
+                                result = {
+                                    "success": False, "skipped": True, "status_code": 424,
+                                    "message": f"前置检查未通过或未执行: {prerequisite}，已阻断，避免使用历史订单",
+                                }
+                            else:
+                                if task_key == "check_api_backend_admin" and not task_results.get(
+                                    "check_api_purchase_order_audit", {}
+                                ).get("success"):
+                                    task_config["blocked_order_chain"] = "本轮代购订单审核未通过或未执行"
+                                result = ScriptRunner.run(script_path, self.project_root, task_config)
+                            task_results[task_key] = result
                             
                             self.logger.log_task(
                                 name=task_desc,

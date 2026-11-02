@@ -20,7 +20,7 @@ from core.rules.assertion import AssertionTool
 from core.path_manager import TOKEN_DIR, DATA_DIR
 from config.data.cookie import CookieManager
 from config.data.headers import get_b2b_pay_headers
-from checker.api.quote_order_store import update_orderid_after_pay
+from checker.api.quote_order_store import update_orderid_after_pay, get_audited_pending_pay_quote
 from checker.api.payment import update_pay_time
 from checker.api.payment import update_pay_time
 
@@ -119,6 +119,8 @@ def run(task_config=None):
         target_mail = _resolve_account_mail(target_cfg, token_file)
         b2b_token, b2b_cookie, _ = _get_b2b_credentials(target_mail)
         orderid_file = os.path.join(DATA_DIR, "payment_orderid.json")
+        if get_audited_pending_pay_quote(orderid_file, target_mail) != quote_no:
+            raise RuntimeError("指定报价单不是本轮新增且审核通过的订单，禁止支付历史订单")
 
         api_base_url = API_CONFIG.get("BASE_URL", "").rstrip("/")
         endpoints = API_CONFIG.get("ENDPOINTS", {})
