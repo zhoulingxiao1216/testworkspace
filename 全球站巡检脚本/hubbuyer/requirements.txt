@@ -5,3 +5,6 @@ requests>=2.25.1
 urllib3>=1.26.0
 # IM依赖，部署Python需3.8及以上
 websocket-client>=1.6,<1.9
+
+# Onebound login captcha OCR
+ddddocr>=1.4.11,<1.7

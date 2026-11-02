@@ -3,7 +3,9 @@
 # 万邦控制台：拉取指定日期 API 调用次数统计（巡检默认取前一日）
 import json
 import os
+import re
 import sys
+import time
 from collections import defaultdict
 from datetime import datetime, timedelta
 
@@ -29,12 +31,53 @@ DEFAULT_HEADERS = {
 }
 
 
+class CaptchaRecognitionError(RuntimeError):
+    """Raised when a Onebound captcha cannot be fetched or recognized."""
+
+
+def _fetch_captcha(session, base_url, timeout):
+    url = f"{base_url.rstrip('/')}/index.php?go=front&do=authcode"
+    resp = session.get(
+        url,
+        params={"_": int(time.time() * 1000)},
+        headers={
+            **DEFAULT_HEADERS,
+            "referer": f"{base_url.rstrip('/')}/?go=login&do=login",
+        },
+        timeout=timeout,
+        proxies={"http": None, "https": None},
+    )
+    resp.raise_for_status()
+    content_type = str(resp.headers.get("content-type") or "").lower()
+    image_bytes = resp.content or b""
+    if not image_bytes or not content_type.startswith("image/"):
+        raise CaptchaRecognitionError("Onebound captcha image response is invalid")
+    return image_bytes
+
+
+def _recognize_captcha(image_bytes, ocr=None):
+    if ocr is None:
+        try:
+            import ddddocr
+        except ImportError as exc:
+            raise CaptchaRecognitionError(
+                "Onebound captcha OCR dependency is unavailable; install ddddocr"
+            ) from exc
+        ocr = ddddocr.DdddOcr(show_ad=False)
+
+    ocr.set_ranges("0123456789")
+    value = str(ocr.classification(image_bytes) or "").strip()
+    if not re.fullmatch(r"\d{4}", value):
+        raise CaptchaRecognitionError("Onebound captcha OCR did not return four digits")
+    return value
+
+
 def _load_config():
     with open(DATA_FILE, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
-def _build_session(cfg, timeout):
+def _build_session(cfg, timeout, ocr=None):
     login_cfg = cfg.get("login") or {}
     username = str(login_cfg.get("username") or "").strip()
     password = str(login_cfg.get("password") or "").strip()
@@ -42,28 +85,80 @@ def _build_session(cfg, timeout):
 
     if username and password:
         session = requests.Session()
-        login_url = f"{base_url}/?go=login&do=login"
-        resp = session.post(
-            login_url,
-            data={"username": username, "password": password},
-            headers={
-                **DEFAULT_HEADERS,
-                "referer": f"{base_url}/?go=login&do=login",
-                "content-type": "application/x-www-form-urlencoded",
-            },
-            timeout=timeout,
-            proxies={"http": None, "https": None},
+        session.trust_env = False
+        login_url = f"{base_url}/?go=front&do=login"
+        try:
+            max_attempts = int(login_cfg.get("captcha_max_attempts", 3))
+        except (TypeError, ValueError):
+            max_attempts = 3
+        if max_attempts <= 0:
+            max_attempts = 3
+
+        last_recognition_error = None
+        for attempt in range(1, max_attempts + 1):
+            try:
+                image_bytes = _fetch_captcha(session, base_url, timeout)
+                authcode = _recognize_captcha(image_bytes, ocr=ocr)
+            except CaptchaRecognitionError as exc:
+                last_recognition_error = exc
+                if attempt == max_attempts:
+                    category = (
+                        "captcha acquisition"
+                        if "image response" in str(exc)
+                        else "OCR"
+                    )
+                    raise RuntimeError(
+                        f"Onebound captcha {category} failed after {max_attempts} attempts"
+                    ) from exc
+                continue
+
+            resp = session.post(
+                login_url,
+                data={
+                    "username": username,
+                    "password": password,
+                    "authcode": authcode,
+                },
+                headers={
+                    **DEFAULT_HEADERS,
+                    "referer": f"{base_url}/?go=login&do=login",
+                    "content-type": "application/x-www-form-urlencoded",
+                },
+                timeout=timeout,
+                proxies={"http": None, "https": None},
+            )
+            resp.raise_for_status()
+            body = resp.text.strip()
+            if not body.startswith("{"):
+                raise RuntimeError("Onebound login returned a non-JSON response")
+            payload = resp.json()
+            status = payload.get("status")
+            if status not in (0, "0", False, None):
+                return session
+
+            error = str(
+                (payload.get("data") or {}).get("error")
+                or payload.get("error_msg")
+                or "unknown error"
+            )
+            error_lower = error.lower()
+            is_captcha_error = (
+                "验证码" in error
+                or "图形码" in error
+                or "captcha" in error_lower
+                or "authcode" in error_lower
+            )
+            if not is_captcha_error:
+                raise RuntimeError(f"Onebound login failed: {error}")
+            if attempt == max_attempts:
+                raise RuntimeError(
+                    f"Onebound captcha rejected after {max_attempts} attempts"
+                )
+
+        raise RuntimeError(
+            f"Onebound captcha OCR failed after {max_attempts} attempts: "
+            f"{type(last_recognition_error).__name__}"
         )
-        resp.raise_for_status()
-        body = resp.text.strip()
-        if not body.startswith("{"):
-            raise RuntimeError(f"万邦登录返回非 JSON: {body[:120]}")
-        payload = resp.json()
-        status = payload.get("status")
-        if status in (0, "0", False, None):
-            error = (payload.get("data") or {}).get("error") or payload.get("error_msg") or "未知错误"
-            raise RuntimeError(f"万邦登录失败: {error}")
-        return session
 
     cookies = cfg.get("cookies") or {}
     if not cookies.get("PHPSESSID"):
@@ -72,6 +167,7 @@ def _build_session(cfg, timeout):
             "或手动填写 cookies.PHPSESSID"
         )
     session = requests.Session()
+    session.trust_env = False
     session.cookies.update(cookies)
     return session
 
