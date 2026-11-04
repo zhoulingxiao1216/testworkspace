@@ -44,6 +44,7 @@ HOME_TOOLS = [
     ("🏷️ 进入 8160贴纸SKU修改工具", "pages/6_8160贴纸SKU修改工具.py", "sticker_sku"),
     ("🚦 进入性能压测配置", "pages/3_性能压测.py", "perf_test"),
     ("🌐 进入全球站访问量查询", "pages/7_global_traffic.py", "global_traffic"),
+    ("⚡ 进入 7182 进程加速工具", "pages/8_7182进程加速工具.py", "accelerator_7182"),
 ]
 
 

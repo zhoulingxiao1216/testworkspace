@@ -43,3 +43,9 @@ http://localhost:8501
 同步日志目录：`sku_sync_logs/`。
 
 详细方案见 `docs/BulkUpload-SKU-sync-test-platform-plan.md`。
+
+## 7182 进程加速工具
+
+页面路径：`pages/8_7182进程加速工具.py`
+
+工具使用 `.streamlit/secrets.toml` 中的 `database.formal.ssh` 配置，在服务器上受控执行 `NewOrderTask7182::matchData()`。只能选择 20、30、50 轮，同一时间只允许一个平台加速任务。停止按钮会在当前轮次返回后结束，不会终止 Sakura 自有进程。

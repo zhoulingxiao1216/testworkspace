@@ -42,7 +42,7 @@
   },
   "zhoulingxiao1216@naver.com": {
     "B2B": [
-      "B2B-DD-KOR8-261102-535",
+      "B2B-DD-KOR8-261102-536",
       "B2B-BJ-KOR8-260828-506",
       "B2B-BJ-KOR8-260826-504",
       "B2B-BJ-KOR8-260820-503",
@@ -66,13 +66,13 @@
     ],
     "D2C": [],
     "B2B_quote_pending_pay": "",
-    "B2B_quote_audited": "B2B-BJ-KOR8-261102-535",
-    "B2B_round_quote": "B2B-BJ-KOR8-261102-535",
-    "B2B_round_order": "B2B-DD-KOR8-261102-535",
-    "B2B_quote_latest": "B2B-BJ-KOR8-261102-535",
-    "B2B_order_latest": "B2B-DD-KOR8-261102-535",
-    "last_pay_time_B2B": "2026-11-02 10:46:45",
-    "run_id": "072e7aaf113041b2bd35ca857a7c6642",
+    "B2B_quote_audited": "B2B-BJ-KOR8-261102-536",
+    "B2B_round_quote": "B2B-BJ-KOR8-261102-536",
+    "B2B_round_order": "B2B-DD-KOR8-261102-536",
+    "B2B_quote_latest": "B2B-BJ-KOR8-261102-536",
+    "B2B_order_latest": "B2B-DD-KOR8-261102-536",
+    "last_pay_time_B2B": "2026-11-02 10:55:45",
+    "run_id": "55105f0af6924076bb6eabdf515bfc16",
     "env_type": "main"
   }
 }
